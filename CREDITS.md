@@ -72,12 +72,9 @@ Commons. Consulte a página de cada arquivo para os termos completos.
 | Harbin | [Palácios de gelo à noite](https://commons.wikimedia.org/wiki/File:Snow_and_Ice_World_festival_in_Harbin%2C_China_(3238519038).jpg) | Rincewind42 | CC BY 2.0 |
 | Harbin | [Arte de gelo na Avenida Central](https://commons.wikimedia.org/wiki/File:Central_Street_(Zhongyang_Dajie)%2C_Harbin_13_Ice_(snow)_sculpture.jpg) | Enming Yan | CC BY-SA 4.0 |
 
-Nenhuma fotografia foi alterada no repositório. Cartões, capas e miniaturas
-solicitam versões de até 1280 px ao Wikimedia Commons e aplicam apenas
-enquadramento visual por CSS (`object-fit: cover`). Ao ampliar uma foto na
-galeria, o visualizador solicita o arquivo original preservado pelo Commons;
-o link exibido junto à imagem leva à página da fonte, com dimensões, tamanho,
-autoria e licença.
+Nenhuma fotografia foi alterada no repositório; o navegador solicita versões
+redimensionadas ao Wikimedia Commons e aplica apenas enquadramento visual por
+CSS (`object-fit: cover`).
 
 ## Vídeos
 
