@@ -44,6 +44,8 @@ Depois, acesse `http://localhost:8080`.
 
 - Layout responsivo, com prioridade para celulares.
 - Oito guias completos, filtros e recomendação por estilo de viagem.
+- Trinta e duas fichas práticas de atrações, com localização, acesso, preço de
+  entrada, horário, duração sugerida e orientação de reserva.
 - Favoritos e comparação de até três destinos, salvos no navegador.
 - Rota sugerida para uma primeira viagem.
 - Sessenta e quatro fotografias licenciadas via Wikimedia Commons — oito por
@@ -81,5 +83,7 @@ só é carregado quando uma foto é ampliada.
 - Cores, tipografia e responsividade: `styles.css`
 - Título, metadados e estrutura geral: `index.html`
 
-As regras de entrada, ingressos, horários e condições climáticas mudam. Revise
-as fontes oficiais antes de publicar atualizações factuais.
+Os dados práticos foram revisados em julho de 2026. Regras de entrada,
+ingressos, horários e condições climáticas mudam; por isso, os valores sazonais
+ou sem tabela oficial estável aparecem como referência e devem ser
+reconfirmados nas fontes indicadas.

@@ -1599,37 +1599,174 @@ p {
   font-size: 15px;
 }
 
-.highlight-list {
-  display: grid;
-  gap: 0;
-  border-top: 1px solid var(--line);
+.attraction-disclaimer {
+  margin: -5px 0 17px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--gold);
+  color: #5f675f;
+  background: rgba(201, 151, 55, 0.09);
+  font-size: 12px;
 }
 
-.highlight-list article {
+.highlight-list {
+  display: grid;
+  gap: 12px;
+}
+
+.attraction-card {
+  overflow: hidden;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 253, 248, 0.76);
+  box-shadow: 0 10px 24px rgba(38, 53, 45, 0.045);
+}
+
+.attraction-heading {
   display: grid;
   grid-template-columns: 34px 1fr;
   gap: 12px;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
 }
 
-.highlight-list span {
+.attraction-number {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
   color: var(--vermilion);
+  background: rgba(177, 57, 38, 0.09);
   font-family: var(--serif);
   font-size: 13px;
 }
 
-.highlight-list h4 {
+.attraction-heading h4 {
   margin: 0 0 4px;
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
+  line-height: 1.1;
 }
 
-.highlight-list p {
+.attraction-summary {
   margin: 0;
   color: #616b64;
+  font-size: 13px;
+}
+
+.attraction-facts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 15px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.attraction-facts div {
+  min-width: 0;
+  padding: 11px;
+  border-bottom: 1px solid var(--line);
+}
+
+.attraction-facts div:last-child {
+  border-bottom: 0;
+}
+
+.attraction-facts dt {
+  margin-bottom: 4px;
+  color: var(--jade);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.attraction-facts dd {
+  margin: 0;
+  color: #37423c;
   font-size: 12px;
+  line-height: 1.45;
+}
+
+.attraction-logistics {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.attraction-logistics p {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  color: #5c665f;
+  font-size: 12px;
+}
+
+.attraction-logistics strong {
+  color: var(--ink);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.attraction-foot {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 13px;
+  padding-top: 11px;
+  border-top: 1px dashed var(--line);
+}
+
+.attraction-status {
+  display: inline-flex;
+  max-width: 68%;
+  align-items: center;
+  border-radius: 999px;
+  padding: 5px 8px;
+  color: #23644c;
+  background: rgba(44, 121, 86, 0.1);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.attraction-status.is-reference {
+  color: #825c17;
+  background: rgba(201, 151, 55, 0.14);
+}
+
+.attraction-foot a {
+  flex: 0 0 auto;
+  color: var(--vermilion);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.attraction-foot a:hover,
+.attraction-foot a:focus-visible {
+  text-decoration: underline;
+}
+
+@media (min-width: 520px) {
+  .attraction-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .attraction-facts div:nth-child(odd) {
+    border-right: 1px solid var(--line);
+  }
+
+  .attraction-facts div:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .attraction-logistics p {
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 10px;
+  }
 }
 
 .tips-list {

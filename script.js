@@ -22,19 +22,113 @@ const destinations = [
     highlights: [
       {
         title: "Exército de Terracota",
-        text: "Milhares de figuras em tamanho natural integram o mausoléu do primeiro imperador Qin, patrimônio reconhecido pela UNESCO.",
+        summary:
+          "Os três fossos com guerreiros, cavalos e carruagens revelam a escala do complexo do primeiro imperador. O bilhete inclui Lishan Garden.",
+        location:
+          "Distrito de Lintong, cerca de 35–40 km a nordeste do centro de Xi’an.",
+        access:
+          "Metrô Linha 9 até Huaqingchi, saída C, seguido dos ônibus Lintong 602 ou 613; conte 1h30–2h desde o centro.",
+        admission:
+          "RMB 120 adulto; RMB 60 para estudantes elegíveis. Inclui os fossos, Lishan Garden e traslado entre as áreas.",
+        hours:
+          "16 mar–15 nov: 08:30–17:00; 16 nov–15 mar: 08:30–16:30. De 11 jul a 21 ago/2026, horário ampliado divulgado: 08:00–19:30.",
+        duration: "3–4 horas; até 5 horas incluindo Lishan Garden.",
+        booking:
+          "Reserva nominal antecipada obrigatória. Leve o passaporte original e chegue cerca de 30 minutos antes.",
+        priceNote: "Oficial · verão a confirmar",
+        sources: [
+          {
+            label: "Museu oficial — ingressos e horários",
+            url: "https://www.bmy.com.cn/jingtai/bmyweb/ticketing.html",
+          },
+          {
+            label: "UNESCO — Mausoléu do Imperador Qin",
+            url: "https://whc.unesco.org/en/list/441/",
+          },
+        ],
       },
       {
         title: "Muralha de Xi’an",
-        text: "Um circuito preservado para caminhar ou pedalar, especialmente agradável perto do pôr do sol.",
+        summary:
+          "A fortificação Ming circunda quase 14 km do centro histórico; o trecho de Yongningmen é prático para caminhar, pedalar e ver o pôr do sol.",
+        location:
+          "Circunda o centro; o acesso principal de Yongningmen fica na extremidade sul do núcleo histórico.",
+        access:
+          "Metrô Linha 2 até Yongningmen. Também há acessos pelas portas Norte, Leste e Oeste.",
+        admission:
+          "RMB 54 adulto; RMB 27 para visitantes elegíveis de 7 a 18 anos. Bicicleta e depósito são pagos à parte.",
+        hours:
+          "Referência desde 1 jul/2026: 08:00–22:00. Portões e saídas disponíveis podem variar durante eventos.",
+        duration: "2–3 horas; 3–4 horas para uma volta extensa a pé.",
+        booking:
+          "Compra no dia costuma ser possível, mas reserve em fins de semana, feriados e eventos noturnos. Leve o passaporte.",
+        priceNote: "Referência — confirmar portão e bicicleta",
+        sources: [
+          {
+            label: "Site oficial da Muralha de Xi’an",
+            url: "https://www.chinaxiancitywall.com/",
+          },
+          {
+            label: "Tarifa e horário atualizados",
+            url: "https://www.travelchinaguide.com/attraction/shaanxi/xian/citywall.htm",
+          },
+        ],
       },
       {
-        title: "Bairro Muçulmano",
-        text: "Comida de rua, mesquitas e a herança multicultural ligada às rotas comerciais.",
+        title: "Bairro Muçulmano + Grande Mesquita",
+        summary:
+          "Ruas de comida da comunidade Hui e uma mesquita ativa de pátios chineses, caligrafia árabe e longa história comercial.",
+        location:
+          "Área da Torre do Tambor; a mesquita fica na Huajue Lane, a 5–10 minutos a pé.",
+        access:
+          "Metrô Linhas 2 ou 6 até Zhonglou e caminhada de 10–15 minutos pela Torre do Tambor.",
+        admission:
+          "Bairro grátis. Mesquita: referência de RMB 25 de mar a nov e RMB 15 de dez a fev.",
+        hours:
+          "Bairro mais ativo do fim da manhã até cerca de 22:00. Mesquita: referência 09:00–20:00 de mar a nov; 09:00–18:00 de dez a fev.",
+        duration:
+          "1h30–2h30 com refeição; 40–60 minutos dentro da mesquita.",
+        booking:
+          "Sem reserva habitual. Vista-se discretamente e respeite áreas de fiéis e restrições durante orações.",
+        priceNote: "Referência — confirmar na entrada",
+        sources: [
+          {
+            label: "Grande Mesquita — tarifas e horários",
+            url: "https://www.chinahighlights.com/xian/attraction/great-mosque.htm",
+          },
+          {
+            label: "Localização e transporte",
+            url: "https://www.travelchinaguide.com/attraction/shaanxi/xian/great_mosque.htm",
+          },
+        ],
       },
       {
         title: "Grande Pagode do Ganso Selvagem",
-        text: "Marco budista da era Tang e ponto importante para compreender os intercâmbios da Rota da Seda.",
+        summary:
+          "Marco budista construído para guardar textos trazidos da Índia por Xuanzang, com pátios, subida opcional e praças iluminadas.",
+        location:
+          "Distrito de Yanta, cerca de 5 km ao sul da Muralha.",
+        access:
+          "Metrô Linhas 3 ou 4 até Dayanta e caminhada de 10–15 minutos ao Templo Da Ci’en.",
+        admission:
+          "RMB 10 para o Templo Da Ci’en; subida ao pagode custa mais RMB 25.",
+        hours:
+          "1 mar–14 out: 08:30–18:00; 15 out–fev: 08:30–17:40. Entrada encerra uma hora antes.",
+        duration:
+          "1h30–2 horas; acrescente tempo para a praça e as fontes.",
+        booking:
+          "Normalmente sem reserva. Leve o passaporte e confirme os horários das fontes, que podem parar por clima ou manutenção.",
+        priceNote: "Referência — confirmar fontes e subida",
+        sources: [
+          {
+            label: "Horários, preços e última entrada",
+            url: "https://www.travelchinaguide.com/attraction/shaanxi/xian/bigwildgoose.htm",
+          },
+          {
+            label: "UNESCO — corredor Chang’an–Tianshan",
+            url: "https://whc.unesco.org/en/list/1442/",
+          },
+        ],
       },
     ],
     tips: [
@@ -155,19 +249,112 @@ const destinations = [
     highlights: [
       {
         title: "Base dos Pandas",
-        text: "Centro de conservação e pesquisa com visitas por horário; os animais costumam estar mais ativos pela manhã.",
+        summary:
+          "Grande centro de conservação com pandas-gigantes, pandas-vermelhos, berçários e espaços educativos entre bambuzais.",
+        location:
+          "1375 Panda Avenue, distrito de Chenghua, cerca de 10 km ao norte da Praça Tianfu.",
+        access:
+          "Metrô Linha 3 até Panda Avenue, saída A, e micro-ônibus 408 ao Portão Sul; linha 409 atende o Portão Oeste.",
+        admission:
+          "RMB 55 adulto; RMB 27 para estudante elegível. Há gratuidade oficial para faixas etárias específicas.",
+        hours:
+          "Mar–out: 07:30–12:00 e 12:00–17:00; fecha progressivamente às 18:00. Nov–fev: 08:00–16:30; fecha às 17:30.",
+        duration: "3–5 horas.",
+        booking:
+          "Reserva nominal online obrigatória, liberada até 14 dias antes. Estrangeiros devem levar o passaporte original.",
+        priceNote: "Oficial · reserva obrigatória",
+        sources: [
+          {
+            label: "Panda Base — ingressos e horários",
+            url: "https://m.panda.org.cn/en/service/ticket/",
+          },
+          {
+            label: "Panda Base — transporte público",
+            url: "https://m.panda.org.cn/en/service/transit/",
+          },
+        ],
       },
       {
         title: "Parque do Povo",
-        text: "Casas de chá, cadeiras sob as árvores e um bom retrato do ritmo social da cidade.",
+        summary:
+          "Jardins, dança, mahjong e vida cotidiana; a centenária Casa de Chá Heming é a parada clássica para chá em gaiwan.",
+        location:
+          "12 Shaocheng Road, distrito de Qingyang, cerca de 1,5 km a oeste da Praça Tianfu.",
+        access:
+          "Metrô Linha 2 até People’s Park; o parque começa junto às saídas da estação.",
+        admission:
+          "Parque grátis. Chá na Heming parte de aproximadamente RMB 16–20; opções e apresentações especiais custam mais.",
+        hours:
+          "Referência: verão 06:00–22:30; inverno 06:30–22:00. A casa de chá pode operar por período menor.",
+        duration: "1h30–3 horas.",
+        booking:
+          "Sem reserva para o parque; mesas à beira do lago são por ordem de chegada. Confirme preços na casa de chá.",
+        priceNote: "Referência — consumo pago à parte",
+        sources: [
+          {
+            label: "Site oficial do Parque do Povo",
+            url: "https://www.cdpeoplespark.cn/",
+          },
+          {
+            label: "Xinhua — Casa de Chá Heming",
+            url: "https://www.news.cn/photo/2023-08/14/c_1129801735.htm",
+          },
+        ],
       },
       {
         title: "Templo Wuhou e Jinli",
-        text: "Memória dos Três Reinos, jardins e uma rua animada por lanternas e petiscos.",
+        summary:
+          "Museu dos Três Reinos com templos, estátuas e o mausoléu de Liu Bei; a vizinha Jinli reúne lanches, lojas e lanternas.",
+        location:
+          "231 Wuhouci Street, distrito de Wuhou, cerca de 3 km a sudoeste da Praça Tianfu.",
+        access:
+          "Metrô Linha 10 até Wuhou Shrine; a estação Gaoshengqiao da Linha 3 é outra opção.",
+        admission:
+          "Templo Wuhou: RMB 50 adulto e RMB 25 meia-entrada; Jinli é gratuita.",
+        hours:
+          "Templo 08:30–18:30, venda até 17:30. Jinli não tem catraca e as lojas seguem horários próprios.",
+        duration: "2 horas no museu; 3–4 horas incluindo Jinli.",
+        booking:
+          "Compra oficial antecipada recomendada; leve o passaporte. Festivais podem usar regras e ingressos especiais.",
+        priceNote: "Oficial · Jinli gratuita",
+        sources: [
+          {
+            label: "Museu Wuhou — site oficial",
+            url: "https://www.wuhouci.net.cn/",
+          },
+          {
+            label: "Prefeitura de Chengdu — Wuhou",
+            url: "https://www.chengdu.gov.cn/cdsrmzf/c181931/2026-05/25/content_4815bca2b69a40fc8633f13393031ea4.shtml",
+          },
+        ],
       },
       {
-        title: "Qingcheng e Dujiangyan",
-        text: "Taoismo, montanha e um sistema de irrigação milenar ainda em funcionamento.",
+        title: "Dujiangyan + Monte Qingcheng",
+        summary:
+          "Sistema hidráulico milenar ainda ativo e uma montanha taoista de floresta e templos; combinar os dois exige um dia longo.",
+        location:
+          "Dujiangyan fica 60 km a noroeste de Chengdu; a entrada frontal de Qingcheng fica cerca de 20 km adiante.",
+        access:
+          "Trem desde Xipu até Lidui Gongyuan ou Qingchengshan; use táxi ou ônibus local entre as atrações.",
+        admission:
+          "RMB 80 para Dujiangyan + RMB 80 para Qingcheng frontal. Teleférico, barco e veículos internos à parte.",
+        hours:
+          "Em 2026, 08:00–17:00 para ambos. Teleféricos e veículos encerram antes; evite chegar depois das 15:00.",
+        duration:
+          "7–10 horas combinados; 3–5 horas para cada atração separadamente.",
+        booking:
+          "Reserve em fins de semana e feriados e leve o passaporte. Chuva forte pode fechar trilhas, teleféricos ou pontes.",
+        priceNote: "Oficial · extras cobrados à parte",
+        sources: [
+          {
+            label: "Prefeitura de Chengdu — Dujiangyan",
+            url: "https://www.chengdu.gov.cn/cdsrmzf/c181937/2026-04/29/content_9471c0b8c1904784b06177b1ef0795ad.shtml",
+          },
+          {
+            label: "Prefeitura de Chengdu — Qingcheng",
+            url: "https://www.chengdu.gov.cn/cdsrmzf/c181931/2026-05/25/content_2c43a37fd8434041802affada70bd84f.shtml",
+          },
+        ],
       },
     ],
     tips: [
@@ -288,19 +475,114 @@ const destinations = [
     highlights: [
       {
         title: "Cruzeiro pelo Rio Li",
-        text: "Um trajeto matinal de Guilin a Yangshuo por cerca de 83 quilômetros entre picos cársticos.",
+        summary:
+          "Viagem de cerca de quatro horas entre picos cársticos e aldeias, funcionando também como deslocamento de ida para Yangshuo.",
+        location:
+          "Embarque a 28 km do centro: navios 3 estrelas em Mopanshan e 4 estrelas em Zhujiang; chegada em Longtoushan, Yangshuo.",
+        access:
+          "Táxi, Didi ou traslado ao cais; saia do centro de Guilin cerca de 1h30 antes para retirada e segurança.",
+        admission:
+          "RMB 215 no navio 3 estrelas; RMB 360 no 4 estrelas. Alimentação e serviço variam por categoria.",
+        hours:
+          "Saídas geralmente entre 09:00 e 10:00; cais e horário dependem do rio e da embarcação indicada no bilhete.",
+        duration:
+          "Cerca de 4 horas no rio; reserve 6 horas com traslado e check-in.",
+        booking:
+          "Pré-venda recomendada no serviço oficial “Lijiang Ticket Office”. Leve o passaporte e confirme embarcação e cais.",
+        priceNote: "Oficial · trajeto só de ida",
+        sources: [
+          {
+            label: "Rio Li — tabela oficial de tarifas",
+            url: "https://www.liriver.com.cn/mobile/article/lyfw.pwxx",
+          },
+          {
+            label: "Rio Li — cais e pré-venda",
+            url: "https://en.liriver.com.cn/mobile/article/lyfw.jtcx",
+          },
+        ],
       },
       {
         title: "Rio Yulong",
-        text: "Jangada, bicicleta e caminhos entre campos, vilas e pequenas pontes.",
+        summary:
+          "Balsas conduzidas por barqueiros atravessam arrozais, pontes antigas e pequenos açudes; cada rota tem duração e cais final diferentes.",
+        location:
+          "Zona rural a oeste de Yangshuo; cais como Jima, Jinlong Bridge e Shuiedi ficam 6–15 km de West Street.",
+        access:
+          "Táxi, Didi, traslado ou bicicleta ao cais. Bicicletas não entram nas balsas; organize o retorno do cais final.",
+        admission:
+          "Referência RMB 200–320 por balsa para até 2 pessoas: rotas curtas ~RMB 200; rotas de 80–90 min ~RMB 320.",
+        hours:
+          "Referência sazonal: cais principais por volta de 07:30–17:30/18:00; rio cheio, vento ou tempestade suspendem saídas.",
+        duration:
+          "40–90 minutos na água; reserve 2–3 horas com deslocamentos.",
+        booking:
+          "Bilhetes limitados e nominais pelo WeChat oficial “Yulong River”. Leve o passaporte; pode ser necessário validar no cais.",
+        priceNote: "Referência — depende da rota",
+        sources: [
+          {
+            label: "Rotas e reserva nominal",
+            url: "https://gl.bendibao.com/tour/2025715/18244.shtm",
+          },
+          {
+            label: "Preços e durações de 2026",
+            url: "https://www.yangshuomountainretreat.com/blog/en/bamboo-rafting-yangshuo-the-complete-guide-2026/",
+          },
+        ],
       },
       {
         title: "Caverna da Flauta de Junco",
-        text: "Salões naturais com estalactites e colunas em um percurso de aproximadamente uma hora.",
+        summary:
+          "Grandes salões de estalactites e estalagmites com iluminação colorida; opção útil para chuva ou calor intenso.",
+        location:
+          "1 Ludi Road, distrito de Xiufeng, cerca de 5 km a noroeste do centro de Guilin.",
+        access:
+          "Ônibus urbano 3, táxi ou Didi; 15–25 minutos desde os lagos centrais.",
+        admission:
+          "Referência de balcão: RMB 90 adulto; ofertas online a partir de RMB 82. Carrinho externo é cobrado à parte.",
+        hours:
+          "Em 2026 foi publicado 07:30–18:00; alguns canais encerram vendas para o mesmo dia às 16:30.",
+        duration: "1–1h30.",
+        booking:
+          "Compra no dia costuma ser possível, mas reserve em fins de semana. Leve o passaporte para retirada ou validação.",
+        priceNote: "Referência — confirmar última entrada",
+        sources: [
+          {
+            label: "Horário e endereço em 2026",
+            url: "https://gl.bendibao.com/tour/2026429/18573.shtm",
+          },
+          {
+            label: "Preço de balcão e reserva",
+            url: "https://www.citsguilin.com/menpiao/ludiyan.htm",
+          },
+        ],
       },
       {
         title: "Terraços de Longji",
-        text: "Um dia extra rende trilhas e aldeias, com cores que mudam conforme o calendário agrícola.",
+        summary:
+          "Ping’an, Jinkeng Dazhai e aldeias tradicionais reúnem trilhas e campos que mudam de cor com o calendário agrícola.",
+        location:
+          "Condado de Longsheng, cerca de 75–80 km ao norte de Guilin; Ping’an e Jinkeng são bases diferentes.",
+        access:
+          "Ônibus turístico desde Guilin ou carro particular; conte 2–3 horas por sentido e escolha uma zona principal.",
+        admission:
+          "RMB 80, válido por 3 dias. Teleférico de Jinkeng ao Golden Buddha Peak: referência RMB 70 ida ou RMB 100 ida e volta.",
+        hours:
+          "Área aberta o ano todo; referência de última admissão às 21:00. Bilheteria, ônibus e teleférico têm horários menores.",
+        duration:
+          "Dia inteiro desde Guilin; idealmente uma noite para trilhas e amanhecer.",
+        booking:
+          "Reserve transporte e hospedagem na colheita e feriados. Leve QR code e passaporte; chuva e névoa reduzem a visibilidade.",
+        priceNote: "Referência — confirmar transporte interno",
+        sources: [
+          {
+            label: "Site oficial dos Terraços de Longji",
+            url: "https://wp.longjitour.com/",
+          },
+          {
+            label: "Tarifas e teleférico em 2026",
+            url: "https://m.gl.bendibao.com/tour/18555.shtm",
+          },
+        ],
       },
     ],
     tips: [
@@ -420,20 +702,113 @@ const destinations = [
       "Zhangjiajie é a escolha mais impactante para quem busca natureza dramática. O parque exige estratégia: áreas distantes, ônibus internos, teleféricos, elevador e muitos degraus tornam os dias intensos.",
     highlights: [
       {
-        title: "Wulingyuan",
-        text: "Mais de três mil pilares estreitos de arenito quartzoso compõem o conjunto reconhecido pela UNESCO.",
+        title: "Parque de Zhangjiajie / Wulingyuan",
+        summary:
+          "O grande conjunto de pilares de arenito reúne Yuanjiajie, Tianzi Mountain, Golden Whip Stream e outras áreas. O bilhete vale vários dias.",
+        location:
+          "Distrito de Wulingyuan, cerca de 30 km ao norte do centro de Zhangjiajie; hospedar-se em Wulingyuan facilita o Portão Leste.",
+        access:
+          "Ônibus do terminal central de Zhangjiajie até Wulingyuan. Use o Portão Leste para Tianzi/Bailong ou o Portão Sul para Golden Whip Stream.",
+        admission:
+          "RMB 165 só a entrada, válida por 4 dias; pacote com ônibus ecológicos por cerca de RMB 236. Teleféricos e elevador são cobrados à parte.",
+        hours:
+          "Normalmente 07:30–17:00; a faixa reservada determina a entrada e pode mudar por chuva ou controle de fluxo.",
+        duration: "2 dias ideais; 1 dia apenas para uma rota de destaques.",
+        booking:
+          "Reserva nominal antecipada, com número do passaporte. Leve o documento original e confira portão e faixa de entrada.",
+        priceNote: "Oficial · bilhete válido por 4 dias",
+        sources: [
+          {
+            label: "Portal oficial de Wulingyuan — bilhetes",
+            url: "https://www.hnzjj.com/index.php/Ticket/show/2.html",
+          },
+          {
+            label: "Governo de Hunan — reserva e limite diário",
+            url: "https://enghunan.gov.cn/hneng/News/Localnews/202506/t20250623_33717855.html",
+          },
+        ],
       },
       {
-        title: "Yuanjiajie e Tianzi",
-        text: "Os mirantes elevados mais famosos, com chance de névoa e mar de nuvens.",
+        title: "Yuanjiajie + Tianzi Mountain",
+        summary:
+          "Yuanjiajie concentra a Hallelujah Mountain e a Primeira Ponte sob o Céu; Tianzi oferece panoramas amplos e chance de mar de nuvens.",
+        location:
+          "Setores elevados dentro do Parque Florestal, acessíveis pelo Portão Leste de Wulingyuan.",
+        access:
+          "Ônibus ecológico interno até o Bailong Elevator ou o teleférico de Tianzi; ônibus conectam os mirantes no topo.",
+        admission:
+          "Incluídos no parque. Bailong Elevator: RMB 65 por trecho; teleférico de Tianzi: RMB 72 por trecho.",
+        hours:
+          "Acompanham o parque, aproximadamente 07:30–17:00; a última descida pode ocorrer antes do fechamento.",
+        duration: "5–7 horas, incluindo deslocamentos e filas.",
+        booking:
+          "Reserve parque e transportes no canal oficial. No verão e em feriados, defina rota e horários com antecedência.",
+        priceNote: "Oficial · transportes não incluídos",
+        sources: [
+          {
+            label: "Portal oficial — Bailong Elevator",
+            url: "https://www.hnzjj.com/index.php/Ticket/show/9.html",
+          },
+          {
+            label: "Portal oficial — teleférico de Tianzi",
+            url: "https://www.hnzjj.com/index.php/Ticket/show/8.html",
+          },
+        ],
       },
       {
         title: "Golden Whip Stream",
-        text: "Caminhada mais suave pelo vale, cercada por floresta e paredões.",
+        summary:
+          "Trilha de cerca de 7,5 km junto ao riacho, entre mata e paredões. É possível caminhar apenas um trecho e retornar.",
+        location:
+          "Setor sul do parque; começa perto do Portão Sul e termina em Shuirao Simen.",
+        access:
+          "Entre pelo Portão Sul ou use o ônibus ecológico do Portão Leste até Shuirao Simen e caminhe no sentido contrário.",
+        admission:
+          "Sem cobrança adicional; incluído no ingresso de RMB 165. O ônibus interno exige o pacote correspondente.",
+        hours:
+          "Durante o horário do parque, normalmente 07:30–17:00; não inicie o percurso integral perto do fechamento.",
+        duration:
+          "2,5–3,5 horas no percurso integral; 1–1,5 hora em um trecho curto.",
+        booking:
+          "Usa a reserva e o passaporte do parque. Não alimente os macacos e evite trechos isolados durante chuva forte.",
+        priceNote: "Oficial · incluído no parque",
+        sources: [
+          {
+            label: "Portal oficial — ingresso do parque",
+            url: "https://www.hnzjj.com/index.php/Ticket/show/2.html",
+          },
+          {
+            label: "Governo de Hunan — roteiro oficial",
+            url: "https://www.enghunan.gov.cn/hneng/Tourism/GoldenTravelRoutes/202603/t20260306_33926729.html",
+          },
+        ],
       },
       {
-        title: "Tianmen e Grand Canyon",
-        text: "Arco natural, passarelas na montanha e a ponte de vidro para quem quer mais adrenalina.",
+        title: "Tianmen Mountain",
+        summary:
+          "Atração separada de Wulingyuan, com Tianmen Cave, passarelas na falésia, trechos de vidro e uma longa viagem panorâmica.",
+        location:
+          "Distrito de Yongding; estação inferior do teleférico na Dayong Road, no centro de Zhangjiajie.",
+        access:
+          "Táxi ou ônibus urbano até a estação inferior. A reserva define uma rota A, B ou C combinando teleférico e ônibus.",
+        admission:
+          "Entrada RMB 72; transportes variam por rota: teleférico RMB 108 por trecho, express RMB 76, escadas rolantes RMB 42 e ônibus RMB 33.",
+        hours:
+          "Em 2026, bilheteria 07:30–16:00; abertura às 08:00 e última entrada às 16:00.",
+        duration: "5–7 horas.",
+        booking:
+          "Reserva nominal por faixa horária recomendada. Vento, gelo, tempestades ou manutenção podem alterar a rota.",
+        priceNote: "Referência — confirmar o pacote da rota",
+        sources: [
+          {
+            label: "Governo de Hunan — operação em 2026",
+            url: "https://www.enghunan.gov.cn/hneng/News/Localnews/202605/t20260513_33976257.html",
+          },
+          {
+            label: "Portal oficial — Tianmen Mountain",
+            url: "https://www.hnzjj.com/index.php/Ticket/show/6.html",
+          },
+        ],
       },
     ],
     tips: [
@@ -553,20 +928,113 @@ const destinations = [
       "Hangzhou combina uma cidade moderna com uma paisagem clássica cuidadosamente construída ao redor do Lago Oeste. Funciona especialmente bem para quem quer beleza sem uma agenda fisicamente pesada.",
     highlights: [
       {
-        title: "Lago Oeste",
-        text: "Calçadas, jardins, ilhas e barcos formam uma paisagem cultural reconhecida pela UNESCO.",
+        title: "Lago Oeste + Three Pools",
+        summary:
+          "Margens, jardins, ilhas, diques e pagodes formam a paisagem UNESCO. O barco até Xiaoyingzhou acrescenta a vista dos Três Espelhos da Lua.",
+        location:
+          "A oeste do centro de Hangzhou; a margem leste fica perto da estação Longxiangqiao.",
+        access:
+          "Metrô Linha 1 até Longxiangqiao. Ônibus e bicicletas atendem Su Causeway, Broken Bridge e Flower Harbor.",
+        admission:
+          "Margens e diques grátis. Barco com desembarque em Three Pools: RMB 55 comum ou RMB 70 de luxo, incluindo a ilha.",
+        hours:
+          "Área externa 24 horas. De abril a agosto, barcos normalmente 08:00–17:00; última saída da ilha por volta de 17:40.",
+        duration: "3–5 horas; dia inteiro para contornar o lago com calma.",
+        booking:
+          "Sem reserva para caminhar. Bilhetes de barco nos píeres; mau tempo pode suspender a navegação.",
+        priceNote: "Referência — confirmar no píer",
+        sources: [
+          {
+            label: "UNESCO — West Lake Cultural Landscape",
+            url: "https://whc.unesco.org/en/list/1334/",
+          },
+          {
+            label: "Hangzhou — gratuidade dos pontos do lago",
+            url: "https://ehangzhou.gov.cn/2020-06/24/c_270462.htm",
+          },
+        ],
       },
       {
-        title: "Lingyin e Feilai Peak",
-        text: "Complexo budista com templo, floresta e esculturas rupestres.",
+        title: "Lingyin Temple + Feilai Peak",
+        summary:
+          "Um dos templos budistas mais importantes de Hangzhou, cercado por floresta e centenas de esculturas rupestres.",
+        location:
+          "Fayun Lane, colinas a noroeste do Lago Oeste, cerca de 5–6 km da margem leste.",
+        access:
+          "Ônibus 7 desde a região do Lago Oeste ou táxi/Didi; não há metrô junto ao portão.",
+        admission:
+          "Grátis desde 1º de dezembro de 2025, incluindo Lingyin, Feilai Peak, Yongfu e Taoguang.",
+        hours:
+          "Reservas divididas em 07:30–12:00 e 12:00–17:00; chegue dentro da faixa escolhida.",
+        duration:
+          "3–5 horas para Lingyin, Feilai Peak e ao menos um templo secundário.",
+        booking:
+          "Reserva nominal obrigatória pelo miniprograma “杭州灵隐飞来峰”, de 1 a 7 dias antes. Leve o passaporte original.",
+        priceNote: "Oficial · entrada gratuita com reserva",
+        sources: [
+          {
+            label: "Hangzhou — gratuidade desde dezembro de 2025",
+            url: "https://www.ehangzhou.gov.cn/2025-12/04/c_295784.htm",
+          },
+          {
+            label: "Regras, horários e documentos",
+            url: "https://www.chinajob.com/city/detail.php?cata2=city_life&city_id=l5ywPe0ZhmTuy9cMGn&id=DbC7GuNiZbFIx3ldC6&p=1",
+          },
+        ],
       },
       {
-        title: "Longjing e Meijiawu",
-        text: "Plantações, casas de chá e contato com a cultura do famoso chá verde.",
+        title: "Longjing + Meijiawu",
+        summary:
+          "Aldeias entre plantações de chá Longjing, com trilhas, casas de chá e experiências de colheita e torrefação.",
+        location:
+          "Colinas a sudoeste do Lago Oeste; Longjing fica a 5–7 km da margem e Meijiawu a cerca de 10 km.",
+        access:
+          "Ônibus 27 ou 87 até Longjing; ônibus 1314 atende Meijiawu. Táxi/Didi leva 20–40 minutos.",
+        admission:
+          "Grátis para aldeias e caminhos públicos; degustações, colheita, torrefação e pequenos museus têm preços próprios.",
+        hours:
+          "Aldeias acessíveis o dia todo; para casas de chá e experiências, visite aproximadamente 08:00–17:00.",
+        duration: "2–4 horas; até 5 horas com trilha e experiência de chá.",
+        booking:
+          "Não é necessária para caminhar. Reserve experiências no fim de março e abril e confirme o preço antes de aceitar chá ou refeição.",
+        priceNote: "Referência — serviços têm preço próprio",
+        sources: [
+          {
+            label: "Hangzhou — Meijiawu Tea Culture Village",
+            url: "https://www.ehangzhou.gov.cn/2018-08/15/c_262280.htm",
+          },
+          {
+            label: "Portal governamental — chá Longjing",
+            url: "https://govt.chinadaily.com.cn/s/202103/17/WS6051a7c6498e7a02c6f69e9b/nothing-replaces-my-cup-of-hangzhou-green-tea.html",
+          },
+        ],
       },
       {
         title: "Xixi Wetland",
-        text: "Canais, vegetação e barcos em um parque de áreas úmidas próximo à cidade.",
+        summary:
+          "Zona úmida urbana de canais, lagos, pomares e aldeias. O barco elétrico conecta áreas distantes e reduz a caminhada.",
+        location:
+          "518 Tianmushan Road, oeste de Hangzhou, cerca de 5 km a oeste do Lago Oeste.",
+        access:
+          "Metrô Linha 3 até Xixi Wetland South ou Linha 19 até Xixi Wetland North; confira o portão do bilhete.",
+        admission:
+          "RMB 80; barco elétrico RMB 60; carrinho elétrico RMB 10 por trecho. Alguns corredores públicos são gratuitos.",
+        hours:
+          "Abr–7 out: 07:30–18:30, última entrada 18:00. 8 out–mar: 08:00–17:30, última entrada 17:00.",
+        duration: "4–6 horas.",
+        booking:
+          "Compre no canal oficial “西溪湿地” ou na bilheteria. Em fins de semana, reserve também o barco.",
+        priceNote: "Referência — confirmar temporada e barco",
+        sources: [
+          {
+            label: "Hangzhou — localização, preço e sazonalidade",
+            url: "https://www.ehangzhou.gov.cn/2020-04/22/c_269840.htm",
+          },
+          {
+            label: "Horários detalhados e barcos",
+            url: "https://m.hz.bendibao.com/jingdian/xixishidigongyuan/",
+          },
+        ],
       },
     ],
     tips: [
@@ -686,20 +1154,113 @@ const destinations = [
       "A Cidade Antiga preserva um sistema de canais e um tecido urbano moldado pela cultura Naxi e pela antiga Rota do Chá e dos Cavalos. A 2.400 metros, Lijiang também abre caminho para paisagens alpinas.",
     highlights: [
       {
-        title: "Dayan e Black Dragon Pool",
-        text: "Ruas de pedra, pontes, canais e uma vista clássica da montanha ao fundo.",
+        title: "Dayan + Black Dragon Pool",
+        summary:
+          "Dayan preserva canais, pontes e ruas da Rota do Chá e dos Cavalos; o parque oferece a vista clássica da Jade Dragon Snow Mountain.",
+        location:
+          "Dayan ocupa o centro histórico; Black Dragon Pool fica 1–1,5 km ao norte, seguindo o canal desde a roda-d’água.",
+        access:
+          "Ônibus ou táxi da estação até os portões de Dayan. O parque fica a 15–25 minutos a pé do portão norte.",
+        admission:
+          "Taxa de conservação de RMB 50, válida por 365 dias e também aplicável a Shuhe e Baisha; o parque não cobra bilhete separado.",
+        hours:
+          "Dayan 24 horas. Black Dragon Pool: 07:30–21:00, última entrada 20:30; Elephant Hill costuma fechar às 16:00.",
+        duration: "4–6 horas em Dayan e 1–2 horas no parque.",
+        booking:
+          "Normalmente sem reserva, salvo controle de lotação. Leve o passaporte e guarde o comprovante da taxa.",
+        priceNote: "Referência — confirmar controle de acesso",
+        sources: [
+          {
+            label: "UNESCO — Dayan e Black Dragon Pool",
+            url: "https://whc.unesco.org/en/list/811/",
+          },
+          {
+            label: "Taxa de conservação de Lijiang",
+            url: "https://www.jfdaily.com/news/detail?id=948059",
+          },
+        ],
       },
       {
-        title: "Shuhe e Baisha",
-        text: "Núcleos históricos mais tranquilos e ligados à cultura Naxi.",
+        title: "Shuhe + Baisha",
+        summary:
+          "Núcleos históricos mais tranquilos ligados à cultura Naxi; Baisha guarda murais religiosos de diferentes tradições.",
+        location:
+          "Shuhe fica cerca de 4 km a noroeste de Dayan; Baisha, aproximadamente 8 km ao norte.",
+        access:
+          "Ônibus 11 para Shuhe e ônibus 6 para Baisha; táxi/Didi facilita combinar as duas.",
+        admission:
+          "Aldeias sem bilhete separado, cobertas pela taxa de conservação de RMB 50. Murais de Baisha: RMB 20.",
+        hours:
+          "Ruas 24 horas; museu de Shuhe aproximadamente 07:30–17:30 e Murais de Baisha 08:00–17:30.",
+        duration: "2–3 horas em cada aldeia; 5–6 horas para ambas.",
+        booking:
+          "Em geral não é necessária. Guarde o comprovante da taxa e confirme o horário dos murais no dia.",
+        priceNote: "Referência — confirmar murais no dia",
+        sources: [
+          {
+            label: "UNESCO — Shuhe e Baisha",
+            url: "https://whc.unesco.org/en/list/811/",
+          },
+          {
+            label: "Lijiang oficial — Murais de Baisha",
+            url: "https://www.lijiang.cn/article/169846.html",
+          },
+        ],
       },
       {
         title: "Jade Dragon Snow Mountain",
-        text: "Teleféricos e paisagem alpina com forte variação de altitude.",
+        summary:
+          "Complexo de alta montanha com Glacier Park a 4.506 m, Spruce Meadow e os lagos azul-turquesa de Blue Moon Valley.",
+        location:
+          "Condado de Yulong, ao norte de Lijiang; 60–80 minutos por estrada desde a Cidade Antiga.",
+        access:
+          "Ônibus turístico 101 desde Zhongyi Market, transfer oficial ou táxi até o centro de visitantes.",
+        admission:
+          "Entrada RMB 100 + ônibus ecológico RMB 20. Jul–ago/2026: Glacier Park Cableway RMB 120 e Spruce Meadow RMB 40.",
+        hours:
+          "No verão de 2026: 05:45–16:30. Teleféricos têm faixas próprias e podem parar por vento ou tempestade.",
+        duration: "Dia inteiro, 7–10 horas.",
+        booking:
+          "Reserve entrada e teleférico nos canais oficiais com até 7 dias de antecedência. Compra nominal e passaporte obrigatório.",
+        priceNote: "Oficial · tarifa especial jul–ago/2026",
+        sources: [
+          {
+            label: "Lijiang oficial — preços do verão de 2026",
+            url: "https://www.lijiang.cn/article/175988.html",
+          },
+          {
+            label: "Lijiang Tourism — horários e reserva",
+            url: "https://m.wenlvnews.com/p/753710.html",
+          },
+        ],
       },
       {
         title: "Tiger Leaping Gorge",
-        text: "Bate-volta panorâmico ou travessia com pernoite para quem procura trilha.",
+        summary:
+          "O setor de Lijiang oferece passarelas e mirantes sobre o rio Jinsha e é mais simples para bate-volta do que a travessia de trekking.",
+        location:
+          "Longpan Township, condado de Yulong, cerca de 80 km de Lijiang; 1,5–2 horas por estrada.",
+        access:
+          "Ônibus turístico, excursão ou carro pela estrada Lijiang–Shangri-La. Confirme que o bilhete é do setor de Lijiang.",
+        admission:
+          "Grátis de 25 jul a 3 ago/2026 após reabertura; tarifa regular de referência do setor de Lijiang: cerca de RMB 65.",
+        hours:
+          "Referência abr–out: 07:30–16:30; nov–mar: 08:00–16:00. Chuvas podem causar fechamento imediato.",
+        duration:
+          "2–3 horas no setor panorâmico; dia inteiro com deslocamentos.",
+        booking:
+          "Confira o aviso oficial na manhã da visita. O parque reabriu em 23 jul/2026 após inspeção de segurança.",
+        priceNote: "Referência — status muda com as chuvas",
+        sources: [
+          {
+            label: "Lijiang Tourism — regra temporária de 2026",
+            url: "https://m.wenlvnews.com/p/753890.html",
+          },
+          {
+            label: "Aviso de reabertura em 23 jul/2026",
+            url: "https://www.sohu.com/a/1053459602_121019331",
+          },
+        ],
       },
     ],
     tips: [
@@ -819,20 +1380,116 @@ const destinations = [
       "Huangshan parece uma pintura chinesa em três dimensões. É patrimônio misto, cultural e natural, e combina trilhas por picos de granito com as vilas históricas de Huizhou.",
     highlights: [
       {
-        title: "Picos e Mar de Nuvens",
-        text: "Bright Summit, Begin-to-Believe Peak e mirantes onde os picos emergem da névoa.",
+        title: "Área Cênica de Huangshan",
+        summary:
+          "Núcleo da Montanha Amarela, com pinheiros, granito e trilhas entre Guangmingding, Tiandu e Lianhua.",
+        location:
+          "Distrito de Huangshan; Tangkou, junto ao Portão Sul, é a base prática, a cerca de 1 hora de Huangshan North.",
+        access:
+          "Ônibus de Huangshan North a Tangkou. O ônibus interno obrigatório leva a Yungu Temple ou Ciguang Pavilion.",
+        admission:
+          "RMB 190 de 21 jan a 19 dez/2026; RMB 150 de 20 dez a 20 jan. Teleféricos por trecho: RMB 80–90, com tarifa menor no inverno.",
+        hours:
+          "25 jul–31 ago/2026: seg–sex 06:30–17:10; sáb–dom 06:00–17:40. Última subida a pé às 15:00.",
+        duration:
+          "1 dia completo; 2 dias com pernoite para um ritmo mais confortável.",
+        booking:
+          "Reserva nominal por horário e direção no miniapp oficial, preferencialmente 3 dias antes. Leve o passaporte original.",
+        priceNote: "Oficial · preços e horário de 2026",
+        sources: [
+          {
+            label: "Política oficial de preços de 2026",
+            url: "https://m.gmw.cn/2025-12/19/content_1304270257.htm",
+          },
+          {
+            label: "Horários oficiais do verão de 2026",
+            url: "https://www.ctdsb.net/c1722_202607/2811615.html",
+          },
+        ],
       },
       {
         title: "Xihai Grand Canyon",
-        text: "Trilhas e mirantes entre paredes de granito; alguns setores fecham sazonalmente.",
+        summary:
+          "Escadarias e mirantes dramáticos entre Paiyun Pavilion e Tianhai. O funicular permite reduzir parte da subida.",
+        location:
+          "Dentro da Área Cênica, entre Paiyun Pavilion e a região de Tianhai/Baiyun.",
+        access:
+          "Suba por Yungu ou Taiping e caminhe até Paiyun Pavilion; desça pela trilha e retorne pelo funicular de Xihai.",
+        admission:
+          "Incluído no parque. Funicular: RMB 100 por trecho na temporada regular de 2026 e RMB 80 no inverno.",
+        hours:
+          "Segue a operação do parque. Costuma fechar no inverno e pode ser interditado por chuva, gelo ou manutenção.",
+        duration:
+          "4–6 horas na rota completa; 2–3 horas com funicular e rota parcial.",
+        booking:
+          "Sem reserva separada, mas parque e transporte devem estar reservados. Confira a abertura no dia e comece antes do meio-dia.",
+        priceNote: "Oficial · operação sazonal",
+        sources: [
+          {
+            label: "Preços oficiais e funicular em 2026",
+            url: "https://m.gmw.cn/2025-12/19/content_1304270257.htm",
+          },
+          {
+            label: "Aviso de reabertura sazonal",
+            url: "https://m.gmw.cn/2025-03/19/content_1303994721.htm",
+          },
+        ],
       },
       {
-        title: "Pinheiros e fontes termais",
-        text: "Duas das paisagens tradicionais que tornaram a montanha célebre na arte chinesa.",
+        title: "Nascer do sol e mar de nuvens",
+        summary:
+          "Guangmingding, Danxia Peak e Beihai estão entre os pontos procurados para amanhecer e mar de nuvens, sempre dependentes do clima.",
+        location:
+          "Região alta; Guangmingding fica no setor central e Danxia Peak perto de Xihai Hotel e Paiyun Pavilion.",
+        access:
+          "Suba no horário normal e durma em hotel autorizado no topo. Não é possível iniciar a subida pela portaria de madrugada.",
+        admission:
+          "Sem ingresso adicional. Hospedagem, refeições, ônibus e teleféricos são cobrados à parte e têm preços dinâmicos.",
+        hours:
+          "Mirantes sem horário independente; hotéis informam a previsão do nascer do sol. Portarias e teleféricos fecham de madrugada.",
+        duration:
+          "1 pernoite, mais 60–90 minutos para deslocamento e observação.",
+        booking:
+          "Reserve primeiro o hotel no topo e depois o ingresso. Confirme com o hotel o mirante indicado e a previsão meteorológica.",
+        priceNote: "Referência — hospedagem tem preço dinâmico",
+        sources: [
+          {
+            label: "Roteiro oficial com pernoite",
+            url: "https://wap.huangshan.com.cn/detail/strategy/fjqlyzx",
+          },
+          {
+            label: "Política oficial de ingressos 2026",
+            url: "https://m.gmw.cn/2025-12/19/content_1304270257.htm",
+          },
+        ],
       },
       {
         title: "Hongcun e Xidi",
-        text: "Vilas UNESCO com casas, ruelas e sistemas de água históricos na base da montanha.",
+        summary:
+          "Vilas UNESCO de arquitetura Huizhou, com residências, salões ancestrais, canais e ruelas de pedra.",
+        location:
+          "Condado de Yi, a oeste da cidade de Huangshan; ambas ficam na mesma rota de ônibus.",
+        access:
+          "Ônibus desde Huangshan North leva cerca de 1h30 e passa por Xidi antes de Hongcun; há transporte entre as vilas.",
+        admission:
+          "Preço cheio RMB 104 por vila. Em jul/2026, plataformas exibiam RMB 94 por vila e combo por RMB 159.",
+        hours:
+          "Xidi: 07:30–20:30. Hongcun: referência de 07:30–17:30; confirme acesso noturno e último ônibus.",
+        duration:
+          "3–5 horas por vila; 7–9 horas para ambas no mesmo dia.",
+        booking:
+          "Compra antecipada recomendada em fins de semana. Leve o passaporte vinculado ao QR code e confira a regra de reentrada.",
+        priceNote: "Referência — promoções variam",
+        sources: [
+          {
+            label: "Site oficial de Xidi — horário e endereço",
+            url: "https://www.chinaxidi.com.cn/",
+          },
+          {
+            label: "Operador oficial — preço cheio",
+            url: "https://www.chinaxidi.com.cn/run_href.html?typeid=110",
+          },
+        ],
       },
     ],
     tips: [
@@ -953,19 +1610,111 @@ const destinations = [
     highlights: [
       {
         title: "Ice-Snow World",
-        text: "Construções gigantes de gelo, iluminação noturna e atrações que dependem do frio.",
+        summary:
+          "Parque noturno de palácios de gelo, esculturas, shows, roda-gigante e supertobogã; entre antes do acendimento das luzes.",
+        location:
+          "Distrito de Songbei, lado oeste de Sun Island, na margem norte do rio Songhua.",
+        access:
+          "Metrô Linha 2 até Ice and Snow World, saída 3; o acesso leste fica a cerca de 50 metros.",
+        admission:
+          "Referência 2025–26: adulto RMB 328 e tarifa reduzida RMB 240. Preço de 2026–27 ainda não anunciado.",
+        hours:
+          "Referência 2025–26: 10:00–22:00, última entrada por volta de 21:30. Datas de 2026–27 ainda não anunciadas.",
+        duration: "4–6 horas.",
+        booking:
+          "Compre no canal oficial e leve o passaporte. Atrações disputadas podem exigir reserva adicional após a entrada.",
+        priceNote: "Referência da edição 2025–26",
+        sources: [
+          {
+            label: "Site oficial — ingressos e transporte",
+            url: "https://ice.hrbicesnow.com/",
+          },
+          {
+            label: "Heilongjiang — preço da 27ª edição",
+            url: "https://wlt.hlj.gov.cn/wlt/c114169/202510/c00_31879336.shtml",
+          },
+        ],
       },
       {
-        title: "Sun Island",
-        text: "Grandes esculturas de neve que ficam melhores sob a luz do dia.",
+        title: "Sun Island Snow Expo",
+        summary:
+          "Exposição diurna de esculturas monumentais de neve, mais artística e tranquila que o Ice-Snow World.",
+        location:
+          "Sun Island Scenic Area, distrito de Songbei, entre o centro histórico e o Ice-Snow World.",
+        access:
+          "Metrô Linha 2 até Sun Island, saídas 2 ou 3; a saída 2 fica mais perto do centro de visitantes.",
+        admission:
+          "Referência da edição 2025–26: RMB 198; pré-abertura promocional RMB 128.",
+        hours:
+          "Referência 2025–26: 09:00–17:00, bilheteria até 16:00 e última entrada 16:30.",
+        duration: "3–4 horas.",
+        booking:
+          "Reserve pelo WeChat oficial de Sun Island e leve o documento original. Reconfirme a abertura poucos dias antes.",
+        priceNote: "Referência da edição 2025–26",
+        sources: [
+          {
+            label: "38ª edição — preço, horário e entrada",
+            url: "https://www.hrbtv.net/folder477/2025-12-25/1112971.html",
+          },
+          {
+            label: "Xinhua — abertura e reserva oficial",
+            url: "https://www.news.cn/local/20251227/4077d12f929d4e6dad4e979ca4a032b3/c.html",
+          },
+        ],
       },
       {
         title: "Central Avenue",
-        text: "Rua de pedestres com fachadas europeias e sabores de influência russa.",
+        summary:
+          "Mais de um quilômetro de arquitetura europeia, cafés, restaurantes russos e especialidades como sorvete Madier.",
+        location:
+          "Distrito de Daoli, entre Jingwei Street e o rio Songhua.",
+        access:
+          "Metrô Linha 2 até Central Avenue; percorra a rua no sentido do Flood Control Monument e do rio.",
+        admission: "Gratuito.",
+        hours:
+          "Via pública aberta 24 horas; lojas, apresentações e restaurantes seguem horários próprios.",
+        duration:
+          "2–3 horas; 4 horas com refeição e caminhada na margem do rio.",
+        booking:
+          "Não exige reserva nem documento. No inverno, use calçado antiderrapante e planeje pausas em locais aquecidos.",
+        priceNote: "Oficial · acesso livre",
+        sources: [
+          {
+            label: "Heilongjiang — patrimônio arquitetônico",
+            url: "https://wlt.hlj.gov.cn/wlt/c114169/202409/c00_31768407.shtml",
+          },
+          {
+            label: "Harbin — atrações gratuitas no exterior",
+            url: "https://hrbcredit.harbin.gov.cn/creditMess.do?conId=57e92ca168c5434d8d0ea62663f66ca1&method=showDetailHtml",
+          },
+        ],
       },
       {
-        title: "Santa Sofia",
-        text: "A catedral ortodoxa é o símbolo arquitetônico mais reconhecível de Harbin.",
+        title: "Catedral de Santa Sofia",
+        summary:
+          "Marco de tijolos vermelhos e cúpula verde que hoje funciona como galeria de arquitetura; a praça externa é especialmente bonita ao entardecer.",
+        location:
+          "88 Toulong Street, distrito de Daoli, a 10–15 minutos a pé do trecho sul de Central Avenue.",
+        access:
+          "Chegue a pé desde Central Avenue, de táxi ou ônibus até Zhaolin Street.",
+        admission:
+          "Praça externa grátis. Referência jul/2026 para o interior: RMB 25 adulto e RMB 20 reduzido.",
+        hours:
+          "Referência de 29 jul/2026: 08:30–21:00, última entrada 20:45. Eventos podem alterar o acesso.",
+        duration: "45–90 minutos.",
+        booking:
+          "Praça sem reserva. Para o interior, compre na bilheteria ou plataforma autorizada e leve o passaporte.",
+        priceNote: "Referência — confirmar eventos no dia",
+        sources: [
+          {
+            label: "Heilongjiang — descrição oficial",
+            url: "https://wlt.hlj.gov.cn/wlt/c114169/202402/c00_31710322.shtml",
+          },
+          {
+            label: "Tarifas consultadas em julho de 2026",
+            url: "https://touch.piao.qunar.com/touch/detail_6085.html",
+          },
+        ],
       },
     ],
     tips: [
@@ -1377,14 +2126,65 @@ function openDestination(id, updateHash = true) {
   state.current = id;
 
   const highlights = destination.highlights
-    .map(
-      (item, index) => `
-        <article>
-          <span>${String(index + 1).padStart(2, "0")}</span>
-          <div><h4>${item.title}</h4><p>${item.text}</p></div>
+    .map((item, index) => {
+      const source = item.sources?.[0];
+      const noteIsReference = /referência|estimad|sazonal|última edição/i.test(
+        item.priceNote || "",
+      );
+
+      return `
+        <article class="attraction-card">
+          <div class="attraction-heading">
+            <span class="attraction-number">${String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <h4>${escapeAttribute(item.title)}</h4>
+              <p class="attraction-summary">${escapeAttribute(item.summary || item.text)}</p>
+            </div>
+          </div>
+
+          <dl class="attraction-facts">
+            <div>
+              <dt>Localização</dt>
+              <dd>${escapeAttribute(item.location || "Consulte a fonte oficial")}</dd>
+            </div>
+            <div>
+              <dt>Ingresso</dt>
+              <dd>${escapeAttribute(item.admission || "Consulte a fonte oficial")}</dd>
+            </div>
+            <div>
+              <dt>Funcionamento</dt>
+              <dd>${escapeAttribute(item.hours || "Consulte a fonte oficial")}</dd>
+            </div>
+            <div>
+              <dt>Tempo de visita</dt>
+              <dd>${escapeAttribute(item.duration || "Varia conforme o roteiro")}</dd>
+            </div>
+          </dl>
+
+          <div class="attraction-logistics">
+            <p>
+              <strong>Como chegar</strong>
+              <span>${escapeAttribute(item.access || "Planeje o deslocamento a partir da base indicada no guia.")}</span>
+            </p>
+            <p>
+              <strong>Reserva e atenção</strong>
+              <span>${escapeAttribute(item.booking || "Confirme as regras vigentes antes da visita.")}</span>
+            </p>
+          </div>
+
+          <footer class="attraction-foot">
+            <span class="attraction-status ${noteIsReference ? "is-reference" : ""}">
+              ${escapeAttribute(item.priceNote || "Confirme preço e horário antes da visita")}
+            </span>
+            ${
+              source
+                ? `<a href="${escapeAttribute(source.url)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(source.label || "Conferir dados")} ↗</a>`
+                : ""
+            }
+          </footer>
         </article>
-      `,
-    )
+      `;
+    })
     .join("");
 
   const tips = destination.tips.map((tip) => `<li>${tip}</li>`).join("");
@@ -1443,8 +2243,13 @@ function openDestination(id, updateHash = true) {
           </section>
 
           <section class="dialog-section">
-            <p class="kicker">Não deixe de ver</p>
-            <h3>Quatro pontos para montar o roteiro</h3>
+            <p class="kicker">Planejamento atração por atração</p>
+            <h3>Informações práticas dos principais pontos</h3>
+            <p class="attraction-disclaimer">
+              Valores por adulto em renminbi (RMB), salvo indicação diferente.
+              Dados revisados em julho de 2026; itens sazonais e preços de
+              referência estão identificados e devem ser reconfirmados.
+            </p>
             <div class="highlight-list">${highlights}</div>
           </section>
 
@@ -1654,12 +2459,16 @@ async function shareDestination() {
 
 function renderSources() {
   const sources = destinations
-    .flatMap((destination) =>
-      destination.sources.map((source) => ({
+    .flatMap((destination) => {
+      const attractionSources = destination.highlights.flatMap(
+        (highlight) => highlight.sources || [],
+      );
+
+      return [...destination.sources, ...attractionSources].map((source) => ({
         ...source,
         destination: destination.name,
-      })),
-    )
+      }));
+    })
     .filter(
       (source, index, array) =>
         array.findIndex((candidate) => candidate.url === source.url) === index,
@@ -1668,7 +2477,7 @@ function renderSources() {
   document.querySelector("[data-source-list]").innerHTML = sources
     .map(
       (source) =>
-        `<a href="${source.url}" target="_blank" rel="noopener noreferrer"><strong>${source.destination}</strong> — ${source.label} ↗</a>`,
+        `<a href="${escapeAttribute(source.url)}" target="_blank" rel="noopener noreferrer"><strong>${escapeAttribute(source.destination)}</strong> — ${escapeAttribute(source.label)} ↗</a>`,
     )
     .join("");
 

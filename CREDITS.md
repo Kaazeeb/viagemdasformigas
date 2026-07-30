@@ -84,6 +84,11 @@ fallback.
 
 ## Principais referências editoriais
 
+As fichas práticas do site reúnem 32 atrações e exibem, junto a cada uma,
+o link usado para verificar localização, ingresso, funcionamento e reservas.
+Quando não existe tabela oficial pública e estável, o dado aparece
+explicitamente como referência.
+
 - [UNESCO — Mausoléu do Primeiro Imperador Qin](https://whc.unesco.org/en/list/441/)
 - [Base oficial de Pesquisa e Reprodução do Panda-Gigante de Chengdu](https://m.panda.org.cn/en/service/ticket/)
 - [UNESCO — Monte Qingcheng e Sistema de Irrigação de Dujiangyan](https://whc.unesco.org/en/list/1001/)
