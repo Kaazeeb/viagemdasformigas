@@ -47,7 +47,7 @@ Depois, acesse `http://localhost:8080`.
 - Favoritos e comparação de até três destinos, salvos no navegador.
 - Rota sugerida para uma primeira viagem.
 - Sessenta e quatro fotografias licenciadas via Wikimedia Commons — oito por
-  destino, com atrações variadas.
+  destino, com atrações variadas, galeria ampliável e acesso ao arquivo original.
 - Oito vídeos incorporados com o modo de privacidade aprimorada do YouTube.
 - Créditos de imagens e fontes editoriais visíveis no próprio site.
 - Fallback visual para imagens e link direto caso um vídeo não possa ser

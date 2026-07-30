@@ -1096,9 +1096,12 @@ const grid = document.querySelector("[data-destination-grid]");
 const emptyState = document.querySelector("[data-empty-state]");
 const dialog = document.querySelector("[data-destination-dialog]");
 const dialogContent = document.querySelector("[data-dialog-content]");
+const photoViewer = document.querySelector("[data-photo-viewer]");
 const matchResult = document.querySelector("[data-match-result]");
 const toast = document.querySelector("[data-toast]");
 let toastTimer;
+let currentPhotoIndex = 0;
+let photoViewerReturnFocus = null;
 
 function readStorage(key) {
   try {
@@ -1134,6 +1137,13 @@ function imageMarkup(image, options = {}) {
   return `<img src="${escapeAttribute(image.src)}" alt="${escapeAttribute(
     image.alt,
   )}" loading="${loading}" decoding="async" referrerpolicy="no-referrer" />`;
+}
+
+function originalImageUrl(image) {
+  if (image.src.includes("/Special:FilePath/")) {
+    return image.src.replace(/\?width=\d+$/, "");
+  }
+  return image.src.replace("/thumb/", "/").replace(/\/[^/]+$/, "");
 }
 
 function cardMarkup(destination) {
@@ -1375,7 +1385,10 @@ function openDestination(id, updateHash = true) {
     .map(
       (image, index) => `
         <figure class="media" data-label="${escapeAttribute(destination.name)}">
-          ${imageMarkup(image)}
+          <button class="gallery-photo" type="button" data-open-photo="${index}" aria-label="Ampliar ${escapeAttribute(image.caption || image.alt)}">
+            ${imageMarkup(image)}
+            <span class="gallery-zoom" aria-hidden="true">Ampliar ↗</span>
+          </button>
           <figcaption>
             <span>${String(index + 1).padStart(2, "0")} / ${String(
               destination.images.length,
@@ -1473,6 +1486,54 @@ function openDestination(id, updateHash = true) {
   if (updateHash && location.hash !== `#destino-${id}`) {
     history.pushState({ destination: id }, "", `#destino-${id}`);
   }
+}
+
+function renderPhotoViewer() {
+  const destination = destinationById(state.current);
+  if (!destination) return;
+  const image = destination.images[currentPhotoIndex];
+  const viewerImage = photoViewer.querySelector("[data-photo-viewer-image]");
+  viewerImage.src = originalImageUrl(image);
+  viewerImage.alt = image.alt;
+  photoViewer.querySelector("[data-photo-viewer-title]").textContent = image.caption || image.alt;
+  photoViewer.querySelector("[data-photo-viewer-count]").textContent = `${currentPhotoIndex + 1} / ${destination.images.length}`;
+  photoViewer.querySelector("[data-photo-viewer-credit]").textContent = `Foto: ${image.credit} · ${image.license}`;
+  photoViewer.querySelector("[data-photo-viewer-source]").href = image.page;
+  photoViewer.querySelector("[data-photo-viewer-stage]").dataset.label = destination.name;
+}
+
+function openPhoto(index, trigger) {
+  currentPhotoIndex = index;
+  photoViewerReturnFocus = trigger;
+  renderPhotoViewer();
+  photoViewer.hidden = false;
+  photoViewer.querySelector("[data-photo-viewer-close]").focus();
+}
+
+function closePhoto() {
+  if (photoViewer.hidden) return;
+  photoViewer.hidden = true;
+  photoViewer.querySelector("[data-photo-viewer-image]").removeAttribute("src");
+  photoViewerReturnFocus?.focus();
+}
+
+function movePhoto(offset) {
+  const destination = destinationById(state.current);
+  if (!destination) return;
+  currentPhotoIndex = (currentPhotoIndex + offset + destination.images.length) % destination.images.length;
+  renderPhotoViewer();
+}
+
+function usePhotoAsGuideCover() {
+  const destination = destinationById(state.current);
+  const heroImage = dialogContent.querySelector(".dialog-hero img");
+  if (!destination || !heroImage) return;
+  const image = destination.images[currentPhotoIndex];
+  heroImage.src = image.src;
+  heroImage.alt = image.alt;
+  closePhoto();
+  dialog.scrollTo({ top: 64, behavior: "smooth" });
+  showToast("Capa alterada apenas neste guia. O cartão principal não mudou.");
 }
 
 function closeDestination(updateHash = true) {
@@ -1589,7 +1650,9 @@ document.addEventListener("click", (event) => {
   const target = event.target.closest("button, a");
   if (!target) return;
 
-  if (target.matches("[data-open-destination]")) {
+  if (target.matches("[data-open-photo]")) {
+    openPhoto(Number(target.dataset.openPhoto), target);
+  } else if (target.matches("[data-open-destination]")) {
     event.preventDefault();
     openDestination(target.dataset.openDestination);
   } else if (target.matches("[data-compare-destination]")) {
@@ -1617,6 +1680,20 @@ document.addEventListener("click", (event) => {
   } else if (target.matches("[data-load-video]")) {
     loadVideo(target.dataset.loadVideo, target);
   }
+});
+
+photoViewer.addEventListener("click", (event) => {
+  if (event.target.closest("[data-photo-viewer-close]")) closePhoto();
+  else if (event.target.closest("[data-photo-viewer-previous]")) movePhoto(-1);
+  else if (event.target.closest("[data-photo-viewer-next]")) movePhoto(1);
+  else if (event.target.closest("[data-photo-viewer-cover]")) usePhotoAsGuideCover();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!photoViewer.hidden && event.key === "Escape") closePhoto();
+  else if (!photoViewer.hidden && event.key === "ArrowLeft") movePhoto(-1);
+  else if (!photoViewer.hidden && event.key === "ArrowRight") movePhoto(1);
+  else if (event.key === "Escape" && dialog.open) closeDestination();
 });
 
 dialog.addEventListener("click", (event) => {
