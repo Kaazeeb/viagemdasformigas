@@ -2,8 +2,10 @@
 
 ## Fotografias
 
-As 64 imagens abaixo — oito por destino — são carregadas a partir do Wikimedia
-Commons. Consulte a página de cada arquivo para os termos completos.
+As 82 imagens do site são carregadas a partir do Wikimedia Commons: as 64
+fotografias da galeria original aparecem primeiro e as 18 novas imagens dos
+guias “Em profundidade” estão na tabela adicional. Consulte cada arquivo para
+os termos completos.
 
 | Destino | Fotografia | Autor | Licença |
 |---|---|---|---|
@@ -72,6 +74,29 @@ Commons. Consulte a página de cada arquivo para os termos completos.
 | Harbin | [Palácios de gelo à noite](https://commons.wikimedia.org/wiki/File:Snow_and_Ice_World_festival_in_Harbin%2C_China_(3238519038).jpg) | Rincewind42 | CC BY 2.0 |
 | Harbin | [Arte de gelo na Avenida Central](https://commons.wikimedia.org/wiki/File:Central_Street_(Zhongyang_Dajie)%2C_Harbin_13_Ice_(snow)_sculpture.jpg) | Enming Yan | CC BY-SA 4.0 |
 
+### Fotografias adicionais — guias “Em profundidade”
+
+| Destino | Fotografia | Autor | Licença |
+|---|---|---|---|
+| Xi’an | [Cavalos e guerreiros de terracota](https://commons.wikimedia.org/wiki/File:51900-Terracota-Army.jpg) | Xiquinhosilva | CC BY 2.0 |
+| Xi’an | [Bicicletas sobre a muralha](https://commons.wikimedia.org/wiki/File:Bicycles_Xian_city_wall_Dagny.JPG) | Immanuel Giel | CC BY-SA 4.0 |
+| Xi’an | [Pavilhão Fênix da Grande Mesquita](https://commons.wikimedia.org/wiki/File:Xian_2006_6-62.jpg) | G41rn8 | CC BY-SA 4.0 |
+| Chengdu | [Filhotes na Base dos Pandas](https://commons.wikimedia.org/wiki/File:Chengdu-Pandareservat-32-Babystation-2012-gje.jpg) | Gerd Eichmann | CC BY-SA 4.0 |
+| Chengdu | [Lago e pontes no Parque do Povo](https://commons.wikimedia.org/wiki/File:Peoples_Park_Chengdu_lake_and_stone_bridges_2026_01_23_dllu.jpg) | Daniel Lu (dllu) | CC BY-SA 4.0 |
+| Chengdu | [Templo Sanyi em Wuhou](https://commons.wikimedia.org/wiki/File:Sanyi_Temple,_Wuhou_Shrine_-_Chengdu,_China_-_DSC05407.jpg) | Daderot | CC0 |
+| Guilin + Yangshuo | [Paredões cársticos do Rio Li](https://commons.wikimedia.org/wiki/File:The_famous_Li_River_karsts_now_begin_to_show_(35910345682).jpg) | shankar s. | CC BY 2.0 |
+| Guilin + Yangshuo | [Balsas no Rio Yulong](https://commons.wikimedia.org/wiki/File:Yulong_river-Yangshuo_-Guilin-China_-_panoramio.jpg) | HALUK COMERTEL | CC BY 3.0 |
+| Guilin + Yangshuo | [Formações da Caverna da Flauta de Junco](https://commons.wikimedia.org/wiki/File:Reed_Flute_Cave_89013-Guilin_(44934930442).jpg) | xiquinhosilva | CC BY 2.0 |
+| Zhangjiajie | [Parque Florestal Nacional](https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park.jpg) | Kuruman | CC BY 2.0 |
+| Zhangjiajie | [Pilares de Tianzi na névoa](https://commons.wikimedia.org/wiki/File:Misty_rock_formations_in_Tianzi_Mountain_(%E5%A4%A9%E5%AD%90%E5%B1%B1%EF%BC%89.jpg) | Rocio Gil | CC BY-SA 4.0 |
+| Zhangjiajie | [Golden Whip Stream](https://commons.wikimedia.org/wiki/File:%E9%87%91%E9%9E%AD%E6%BA%AA%E9%A3%8E%E5%85%89_-_panoramio_(8).jpg) | 江上清风1961 | CC BY 3.0 |
+| Lijiang | [Canal da East Street](https://commons.wikimedia.org/wiki/File:East_Street_canal,_Old_Town_of_Lijiang.JPG) | BrokenSphere | CC BY-SA 3.0 |
+| Lijiang | [Cena urbana em Baisha](https://commons.wikimedia.org/wiki/File:Baisha_Old_Town_(21183444262).jpg) | Luca Casartelli | CC BY-SA 2.0 |
+| Lijiang | [Montanha do Dragão de Jade](https://commons.wikimedia.org/wiki/File:Lijiang_Yunnan_China_Jade-Dragon-Snow-Mountain-02.jpg) | CEphoto, Uwe Aranas | CC BY-SA 3.0 |
+| Huangshan | [Vista de Shixin Peak](https://commons.wikimedia.org/wiki/File:Huangshan_view.JPG) | JesseW900 | CC BY-SA 4.0 |
+| Huangshan | [Xihai Grand Canyon](https://commons.wikimedia.org/wiki/File:West_Sea_Grand_Canyon_of_Huangshan_20141108.jpg) | 颐园新居 | CC BY-SA 4.0 |
+| Huangshan | [Amanhecer de inverno](https://commons.wikimedia.org/wiki/File:Huangshan_at_sunrise_in_winter_1.jpg) | Dcpeets | CC BY-SA 4.0 |
+
 Nenhuma fotografia foi alterada no repositório; o navegador solicita versões
 redimensionadas ao Wikimedia Commons e aplica apenas enquadramento visual por
 CSS (`object-fit: cover`).
@@ -88,6 +113,11 @@ As fichas práticas do site reúnem 32 atrações e exibem, junto a cada uma,
 o link usado para verificar localização, ingresso, funcionamento e reservas.
 Quando não existe tabela oficial pública e estável, o dado aparece
 explicitamente como referência.
+
+Os 18 guias “Em profundidade” também apresentam suas fontes ao final de cada
+texto. Foram priorizados UNESCO, órgãos públicos, operadores oficiais e
+instituições culturais; associações promocionais ou interpretações modernas
+estão identificadas no próprio conteúdo.
 
 - [UNESCO — Mausoléu do Primeiro Imperador Qin](https://whc.unesco.org/en/list/441/)
 - [Base oficial de Pesquisa e Reprodução do Panda-Gigante de Chengdu](https://m.panda.org.cn/en/service/ticket/)

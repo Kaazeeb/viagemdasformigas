@@ -1817,6 +1817,31 @@ const destinations = [
   },
 ];
 
+Object.entries(window.ROTA_CHINA_DEEP_DIVES || {}).forEach(
+  ([destinationId, deepDives]) => {
+    const destination = destinations.find((item) => item.id === destinationId);
+    if (!destination) return;
+
+    destination.deepDives = deepDives.map(
+      ({ primaryImageIndex, extraImage, photo, ...deepDive }) => {
+        const newImage = extraImage || photo;
+        let extraImageIndex = destination.images.findIndex(
+          (image) => image.file === newImage.file,
+        );
+
+        if (extraImageIndex < 0) {
+          extraImageIndex = destination.images.push(newImage) - 1;
+        }
+
+        return {
+          ...deepDive,
+          imageIndexes: [primaryImageIndex, extraImageIndex],
+        };
+      },
+    );
+  },
+);
+
 const categoryLabels = {
   history: "História",
   food: "Gastronomia",
@@ -1883,6 +1908,17 @@ function escapeAttribute(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
+}
+
+function sourceRecord(source) {
+  if (typeof source !== "string") return source;
+
+  try {
+    const hostname = new URL(source).hostname.replace(/^www\./, "");
+    return { label: hostname, url: source };
+  } catch {
+    return { label: "Fonte editorial", url: source };
+  }
 }
 
 function destinationById(id) {
@@ -2128,6 +2164,7 @@ function openDestination(id, updateHash = true) {
   const highlights = destination.highlights
     .map((item, index) => {
       const source = item.sources?.[0];
+      const hasDeepDive = Boolean(destination.deepDives?.[index]);
       const noteIsReference = /referência|estimad|sazonal|última edição/i.test(
         item.priceNote || "",
       );
@@ -2176,11 +2213,102 @@ function openDestination(id, updateHash = true) {
             <span class="attraction-status ${noteIsReference ? "is-reference" : ""}">
               ${escapeAttribute(item.priceNote || "Confirme preço e horário antes da visita")}
             </span>
-            ${
-              source
-                ? `<a href="${escapeAttribute(source.url)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(source.label || "Conferir dados")} ↗</a>`
-                : ""
-            }
+            <span class="attraction-actions">
+              ${
+                source
+                  ? `<a href="${escapeAttribute(source.url)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(source.label || "Conferir dados")} ↗</a>`
+                  : ""
+              }
+              ${
+                hasDeepDive
+                  ? `<button type="button" data-deep-link="${index}">Ler em profundidade ↓</button>`
+                  : ""
+              }
+            </span>
+          </footer>
+        </article>
+      `;
+    })
+    .join("");
+
+  const deepDives = (destination.deepDives || [])
+    .map((item, index) => {
+      const photos = item.imageIndexes
+        .map((imageIndex, photoIndex) => {
+          const image = destination.images[imageIndex];
+          if (!image) return "";
+
+          return `
+            <figure class="deep-dive-photo media" data-label="${escapeAttribute(destination.name)}">
+              <button
+                type="button"
+                class="gallery-zoom"
+                data-open-image="${imageIndex}"
+                aria-label="Ampliar ${escapeAttribute(image.caption || image.alt)}"
+              >
+                ${imageMarkup(image)}
+                <span class="gallery-zoom-badge" aria-hidden="true">⛶</span>
+              </button>
+              <figcaption>
+                <span>${photoIndex === 0 ? "Vista principal" : "Outro olhar"}</span>
+                <strong>${escapeAttribute(image.caption || image.alt)}</strong>
+                <small>Foto: ${escapeAttribute(image.credit)} · ${escapeAttribute(image.license)}</small>
+              </figcaption>
+            </figure>
+          `;
+        })
+        .join("");
+
+      const notes = item.notes
+        .map((note) => `<li>${escapeAttribute(note)}</li>`)
+        .join("");
+      const sources = item.sources
+        .slice(0, 3)
+        .map((source) => {
+          const normalized = sourceRecord(source);
+          return `<a href="${escapeAttribute(normalized.url)}" target="_blank" rel="noopener noreferrer">${escapeAttribute(normalized.label)} ↗</a>`;
+        })
+        .join("");
+
+      return `
+        <article class="deep-dive-card" id="deep-dive-${index}">
+          <header class="deep-dive-header">
+            <div class="deep-dive-index">
+              <span>${String(index + 1).padStart(2, "0")}</span>
+              <small>top 3</small>
+            </div>
+            <div>
+              <p class="deep-dive-eyebrow">${escapeAttribute(item.eyebrow)}</p>
+              <h4>${escapeAttribute(item.title)}</h4>
+              <p class="deep-dive-lede">${escapeAttribute(item.intro)}</p>
+            </div>
+          </header>
+
+          <div class="deep-dive-media">${photos}</div>
+
+          <div class="deep-dive-body">
+            <section class="deep-dive-chapter">
+              <h5>${escapeAttribute(item.contextTitle)}</h5>
+              <p>${escapeAttribute(item.context)}</p>
+            </section>
+            <section class="deep-dive-chapter">
+              <h5>${escapeAttribute(item.experienceTitle)}</h5>
+              <p>${escapeAttribute(item.experience)}</p>
+            </section>
+            <section class="deep-dive-chapter">
+              <h5>${escapeAttribute(item.routeTitle)}</h5>
+              <p>${escapeAttribute(item.route)}</p>
+            </section>
+          </div>
+
+          <aside class="deep-dive-notes">
+            <strong>Notas para aproveitar melhor</strong>
+            <ul>${notes}</ul>
+          </aside>
+
+          <footer class="deep-dive-sources">
+            <span>Para continuar pesquisando</span>
+            <div>${sources}</div>
           </footer>
         </article>
       `;
@@ -2252,6 +2380,23 @@ function openDestination(id, updateHash = true) {
             </p>
             <div class="highlight-list">${highlights}</div>
           </section>
+
+          ${
+            deepDives
+              ? `
+                <section class="dialog-section deep-dive-section">
+                  <p class="kicker">Em profundidade</p>
+                  <h3>Três lugares para entender ${escapeAttribute(destination.name)}</h3>
+                  <p class="deep-dive-intro">
+                    Além dos dados práticos, estes ensaios curtos explicam por que
+                    cada lugar importa, como a visita se desenrola e qual sequência
+                    ajuda a perceber melhor seus detalhes.
+                  </p>
+                  <div class="deep-dive-list">${deepDives}</div>
+                </section>
+              `
+              : ""
+          }
 
           <section class="dialog-section">
             <p class="kicker">Galeria</p>
@@ -2463,8 +2608,11 @@ function renderSources() {
       const attractionSources = destination.highlights.flatMap(
         (highlight) => highlight.sources || [],
       );
+      const deepDiveSources = (destination.deepDives || []).flatMap(
+        (deepDive) => deepDive.sources || [],
+      ).map(sourceRecord);
 
-      return [...destination.sources, ...attractionSources].map((source) => ({
+      return [...destination.sources, ...attractionSources, ...deepDiveSources].map((source) => ({
         ...source,
         destination: destination.name,
       }));
@@ -2531,6 +2679,16 @@ document.addEventListener("click", (event) => {
     toggleSavedView();
   } else if (target.matches("[data-open-image]")) {
     openLightbox(target.dataset.openImage);
+  } else if (target.matches("[data-deep-link]")) {
+    const deepDive = dialogContent.querySelector(
+      `#deep-dive-${target.dataset.deepLink}`,
+    );
+    deepDive?.scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+      block: "start",
+    });
   } else if (target.matches("[data-lightbox-close]")) {
     closeLightbox();
   } else if (target.matches("[data-lightbox-prev]")) {

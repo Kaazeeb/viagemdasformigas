@@ -46,10 +46,13 @@ Depois, acesse `http://localhost:8080`.
 - Oito guias completos, filtros e recomendação por estilo de viagem.
 - Trinta e duas fichas práticas de atrações, com localização, acesso, preço de
   entrada, horário, duração sugerida e orientação de reserva.
+- Dezoito guias “Em profundidade” para os três principais pontos de Xi’an,
+  Chengdu, Guilin/Yangshuo, Zhangjiajie, Lijiang e Huangshan, com contexto,
+  experiência, roteiro e notas editoriais.
 - Favoritos e comparação de até três destinos, salvos no navegador.
 - Rota sugerida para uma primeira viagem.
-- Sessenta e quatro fotografias licenciadas via Wikimedia Commons — oito por
-  destino, com atrações variadas.
+- Oitenta e duas fotografias licenciadas via Wikimedia Commons — onze em cada
+  destino expandido e oito em Hangzhou e Harbin.
 - Galeria ampliável em tela cheia, com os arquivos originais, setas, teclado e
   gesto lateral no celular.
 - Oito vídeos incorporados com o modo de privacidade aprimorada do YouTube.
@@ -63,6 +66,7 @@ Depois, acesse `http://localhost:8080`.
 .
 ├── index.html
 ├── styles.css
+├── deep-dives.js
 ├── script.js
 ├── CREDITS.md
 ├── LICENSE
@@ -79,7 +83,8 @@ só é carregado quando uma foto é ampliada.
 
 ## Personalização rápida
 
-- Textos, destinos, links, fotos e vídeos: `script.js`
+- Ensaios e fotos da seção “Em profundidade”: `deep-dives.js`
+- Fichas práticas, destinos, demais fotos e vídeos: `script.js`
 - Cores, tipografia e responsividade: `styles.css`
 - Título, metadados e estrutura geral: `index.html`
 
