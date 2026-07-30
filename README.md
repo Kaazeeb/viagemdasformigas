@@ -47,7 +47,9 @@ Depois, acesse `http://localhost:8080`.
 - Favoritos e comparação de até três destinos, salvos no navegador.
 - Rota sugerida para uma primeira viagem.
 - Sessenta e quatro fotografias licenciadas via Wikimedia Commons — oito por
-  destino, com atrações variadas, galeria ampliável e acesso ao arquivo original.
+  destino, com atrações variadas.
+- Galeria ampliável em tela cheia, com os arquivos originais, setas, teclado e
+  gesto lateral no celular.
 - Oito vídeos incorporados com o modo de privacidade aprimorada do YouTube.
 - Créditos de imagens e fontes editoriais visíveis no próprio site.
 - Fallback visual para imagens e link direto caso um vídeo não possa ser
@@ -70,7 +72,8 @@ Depois, acesse `http://localhost:8080`.
 As fotografias e os vídeos são carregados de seus provedores originais. Isso
 mantém o repositório leve, mas requer conexão com a internet. As licenças e os
 links de atribuição das fotografias estão em `CREDITS.md` e na seção “Fontes e
-créditos” do site.
+créditos” do site. As miniaturas são otimizadas; o arquivo em resolução original
+só é carregado quando uma foto é ampliada.
 
 ## Personalização rápida
 

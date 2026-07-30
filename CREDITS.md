@@ -54,7 +54,7 @@ Commons. Consulte a página de cada arquivo para os termos completos.
 | Lijiang | [Telhados e vielas da Cidade Antiga](https://commons.wikimedia.org/wiki/File:1_lijiang_old_town_2012a.jpg) | Chensiyuan | CC BY-SA 4.0 |
 | Lijiang | [Vila histórica de Baisha](https://commons.wikimedia.org/wiki/File:Baisha_Old_Town_(21193749275).jpg) | Luca Casartelli | CC BY-SA 2.0 |
 | Lijiang | [Vale da Lua Azul](https://commons.wikimedia.org/wiki/File:%E7%8E%89%E9%BE%99%E9%9B%AA%E5%B1%B1_%E8%93%9D%E6%9C%88%E8%B0%B7_Blue_Moon_Valley_-_panoramio.jpg) | Ma Martin | CC BY-SA 3.0 |
-| Lijiang | [Desfiladeiro do Salto do Tigre](https://commons.wikimedia.org/wiki/File:Tiger_Leaping_Gorge_(48372621992).jpg) | David Stanley | CC BY 2.0 |
+| Lijiang | [Desfiladeiro do Salto do Tigre](https://commons.wikimedia.org/wiki/File:Yunnan_China_Tiger-Leaping-Gorge-04.jpg) | CEphoto, Uwe Aranas | CC BY-SA 3.0 |
 | Huangshan | [Picos de granito de Huangshan](https://commons.wikimedia.org/wiki/File:Huangshan_pic_4.jpg) | Chi King | CC BY 2.0 |
 | Huangshan | [Huangshan acima das nuvens](https://commons.wikimedia.org/wiki/File:El_parque_nacional_de_HuangShan._Un_espectacular_paisaje_de_monta%C3%B1as_rocosas_por_encima_de_las_nubes._%2815732624395%29.jpg) | Carlos Adampol Galindo | CC BY-SA 2.0 |
 | Huangshan | [Pinheiro da Recepção](https://commons.wikimedia.org/wiki/File:%E8%BF%8E%E5%AE%A2%E6%9D%BE_Welcome_Pine_-_panoramio.jpg) | Lienyuan Lee | CC BY 3.0 |
@@ -62,22 +62,19 @@ Commons. Consulte a página de cada arquivo para os termos completos.
 | Huangshan | [Nascer do sol em Beihai](https://commons.wikimedia.org/wiki/File:HuangshanSunrise.JPG) | Bgwwlm | CC BY-SA 3.0 |
 | Huangshan | [Mar de Nuvens](https://commons.wikimedia.org/wiki/File:Sea_of_clouds_viewed_from_the_top_of_Huangshan.jpg) | JesseW900 | CC BY-SA 4.0 |
 | Huangshan | [Vila histórica de Hongcun](https://commons.wikimedia.org/wiki/File:Hongcun.jpg) | Udo Schoene | CC BY 2.5 |
-| Huangshan | [Arquitetura tradicional de Xidi](https://commons.wikimedia.org/wiki/File:Xidi_-_04.JPG) | Anna Frodesiak | Domínio público |
+| Huangshan | [Arquitetura tradicional de Xidi](https://commons.wikimedia.org/wiki/File:Xidi,_Anhui.jpg) | EditQ | CC BY-SA 4.0 |
 | Harbin | [Ice and Snow World](https://commons.wikimedia.org/wiki/File:Harbin_Ice_and_Snow_World_2010.jpg) | Dayou_X | CC BY-SA 2.0 |
 | Harbin | [Catedral de Santa Sofia](https://commons.wikimedia.org/wiki/File:Saint_Sophia_Cathedral,_Harbin_06.01.2026.jpg) | SmallSonMarex | CC BY-SA 4.0 |
 | Harbin | [Avenida Central](https://commons.wikimedia.org/wiki/File:Central_Street_(Zhongyang_Dajie)%2C_Harbin_6.jpg) | Enming Yan | CC BY-SA 4.0 |
 | Harbin | [Esculturas de neve da Ilha do Sol](https://commons.wikimedia.org/wiki/File:2011_Harbin_Sun_Island_International_Snow_Sculpture_EXPO_07.JPG) | Caliva | CC BY-SA 4.0 |
 | Harbin | [Rio Songhua congelado](https://commons.wikimedia.org/wiki/File:Frozen_Songhua_River.jpg) | ChiralJon | CC BY 2.0 |
-| Harbin | [Igreja de Santo Aleixo](https://commons.wikimedia.org/wiki/File:St._Alexeevsky_Church_-_Harbin_(15279298170).jpg) | Keith Simpkins | CC BY 2.0 |
+| Harbin | [Igreja de Santo Aleixo](https://commons.wikimedia.org/wiki/File:St._Alexeevsky_Church_-_Harbin_(15466036705).jpg) | Keith Simpkins | CC BY 2.0 |
 | Harbin | [Palácios de gelo à noite](https://commons.wikimedia.org/wiki/File:Snow_and_Ice_World_festival_in_Harbin%2C_China_(3238519038).jpg) | Rincewind42 | CC BY 2.0 |
 | Harbin | [Arte de gelo na Avenida Central](https://commons.wikimedia.org/wiki/File:Central_Street_(Zhongyang_Dajie)%2C_Harbin_13_Ice_(snow)_sculpture.jpg) | Enming Yan | CC BY-SA 4.0 |
 
-Nenhuma fotografia foi alterada no repositório. Cartões, capas e miniaturas
-solicitam versões de até 1280 px ao Wikimedia Commons e aplicam apenas
-enquadramento visual por CSS (`object-fit: cover`). Ao ampliar uma foto na
-galeria, o visualizador solicita o arquivo original preservado pelo Commons;
-o link exibido junto à imagem leva à página da fonte, com dimensões, tamanho,
-autoria e licença.
+Nenhuma fotografia foi alterada no repositório; o navegador solicita versões
+redimensionadas ao Wikimedia Commons e aplica apenas enquadramento visual por
+CSS (`object-fit: cover`).
 
 ## Vídeos
 

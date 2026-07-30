@@ -772,11 +772,11 @@ const destinations = [
         alt: "Lagos azul-turquesa do Vale da Lua Azul aos pés da Montanha do Dragão de Jade",
       },
       {
-        file: "Tiger Leaping Gorge (48372621992).jpg",
-        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Tiger%20Leaping%20Gorge%20(48372621992).jpg?width=1280",
-        page: "https://commons.wikimedia.org/wiki/File:Tiger_Leaping_Gorge_(48372621992).jpg",
-        credit: "David Stanley",
-        license: "CC BY 2.0",
+        file: "Yunnan China Tiger-Leaping-Gorge-04.jpg",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Yunnan%20China%20Tiger-Leaping-Gorge-04.jpg?width=1280",
+        page: "https://commons.wikimedia.org/wiki/File:Yunnan_China_Tiger-Leaping-Gorge-04.jpg",
+        credit: "CEphoto, Uwe Aranas",
+        license: "CC BY-SA 3.0",
         caption: "Desfiladeiro do Salto do Tigre",
         alt: "Rio Jinsha correndo entre as montanhas íngremes do Desfiladeiro do Salto do Tigre",
       },
@@ -905,13 +905,13 @@ const destinations = [
         alt: "Casas brancas tradicionais de Hongcun refletidas no lago diante da vila",
       },
       {
-        file: "Xidi - 04.JPG",
-        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Xidi%20-%2004.JPG?width=1280",
-        page: "https://commons.wikimedia.org/wiki/File:Xidi_-_04.JPG",
-        credit: "Anna Frodesiak",
-        license: "Domínio público",
+        file: "Xidi, Anhui.jpg",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Xidi%2C%20Anhui.jpg?width=1280",
+        page: "https://commons.wikimedia.org/wiki/File:Xidi,_Anhui.jpg",
+        credit: "EditQ",
+        license: "CC BY-SA 4.0",
         caption: "Arquitetura tradicional de Xidi",
-        alt: "Rua e casas tradicionais de fachadas brancas na antiga vila de Xidi",
+        alt: "Casas tradicionais, pavilhão e lago na antiga vila de Xidi",
       },
     ],
     video: {
@@ -1020,9 +1020,9 @@ const destinations = [
         alt: "Rio Songhua coberto de gelo e neve durante o inverno em Harbin",
       },
       {
-        file: "St. Alexeevsky Church - Harbin (15279298170).jpg",
-        src: "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20Alexeevsky%20Church%20-%20Harbin%20(15279298170).jpg?width=1280",
-        page: "https://commons.wikimedia.org/wiki/File:St._Alexeevsky_Church_-_Harbin_(15279298170).jpg",
+        file: "St. Alexeevsky Church - Harbin (15466036705).jpg",
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/St.%20Alexeevsky%20Church%20-%20Harbin%20(15466036705).jpg?width=1280",
+        page: "https://commons.wikimedia.org/wiki/File:St._Alexeevsky_Church_-_Harbin_(15466036705).jpg",
         credit: "Keith Simpkins",
         license: "CC BY 2.0",
         caption: "Igreja de Santo Aleixo",
@@ -1090,20 +1090,26 @@ const state = {
   compare: readStorage("rotaChinaCompare"),
   saved: readStorage("rotaChinaSaved"),
   current: null,
+  lightboxIndex: 0,
 };
 
 const grid = document.querySelector("[data-destination-grid]");
 const emptyState = document.querySelector("[data-empty-state]");
 const dialog = document.querySelector("[data-destination-dialog]");
 const dialogContent = document.querySelector("[data-dialog-content]");
-const photoViewer = document.querySelector("[data-photo-viewer]");
+const lightbox = document.querySelector("[data-image-lightbox]");
+const lightboxImage = document.querySelector("[data-lightbox-image]");
+const lightboxMedia = document.querySelector("[data-lightbox-media]");
+const lightboxLoading = document.querySelector("[data-lightbox-loading]");
+const lightboxCounter = document.querySelector("[data-lightbox-counter]");
+const lightboxCaption = document.querySelector("[data-lightbox-caption]");
+const lightboxCredit = document.querySelector("[data-lightbox-credit]");
+const lightboxResolution = document.querySelector("[data-lightbox-resolution]");
+const lightboxOriginal = document.querySelector("[data-lightbox-original]");
 const matchResult = document.querySelector("[data-match-result]");
 const toast = document.querySelector("[data-toast]");
 let toastTimer;
-let currentPhotoIndex = 0;
-let photoViewerReturnFocus = null;
-let photoRequest = 0;
-let photoTouchStartX = null;
+let lightboxTouchStart = null;
 
 function readStorage(key) {
   try {
@@ -1141,11 +1147,10 @@ function imageMarkup(image, options = {}) {
   )}" loading="${loading}" decoding="async" referrerpolicy="no-referrer" />`;
 }
 
-function originalImageUrl(image) {
-  if (image.src.includes("/Special:FilePath/")) {
-    return image.src.replace(/\?width=\d+$/, "");
-  }
-  return image.src.replace("/thumb/", "/").replace(/\/[^/]+$/, "");
+function originalImageSource(image) {
+  return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(
+    image.file,
+  )}`;
 }
 
 function cardMarkup(destination) {
@@ -1387,9 +1392,14 @@ function openDestination(id, updateHash = true) {
     .map(
       (image, index) => `
         <figure class="media" data-label="${escapeAttribute(destination.name)}">
-          <button class="gallery-photo" type="button" data-open-photo="${index}" aria-label="Ampliar ${escapeAttribute(image.caption || image.alt)}">
+          <button
+            type="button"
+            class="gallery-zoom"
+            data-open-image="${index}"
+            aria-label="Ampliar ${escapeAttribute(image.caption || image.alt)}"
+          >
             ${imageMarkup(image)}
-            <span class="gallery-zoom" aria-hidden="true">Ampliar ↗</span>
+            <span class="gallery-zoom-badge" aria-hidden="true">⛶</span>
           </button>
           <figcaption>
             <span>${String(index + 1).padStart(2, "0")} / ${String(
@@ -1441,6 +1451,9 @@ function openDestination(id, updateHash = true) {
           <section class="dialog-section">
             <p class="kicker">Galeria</p>
             <h3>${destination.images.length} perspectivas do destino</h3>
+            <p class="gallery-instruction">
+              Toque em uma foto para ampliar e navegar pela galeria em resolução original.
+            </p>
             <div class="dialog-gallery">${gallery}</div>
           </section>
         </div>
@@ -1490,59 +1503,93 @@ function openDestination(id, updateHash = true) {
   }
 }
 
-function renderPhotoViewer() {
+function updateLightbox() {
   const destination = destinationById(state.current);
   if (!destination) return;
-  const image = destination.images[currentPhotoIndex];
-  const viewerImage = photoViewer.querySelector("[data-photo-viewer-image]");
-  const request = ++photoRequest;
-  viewerImage.src = image.src;
-  viewerImage.alt = image.alt;
-  photoViewer.querySelector("[data-photo-viewer-title]").textContent = image.caption || image.alt;
-  photoViewer.querySelector("[data-photo-viewer-count]").textContent = `${currentPhotoIndex + 1} / ${destination.images.length}`;
-  photoViewer.querySelector("[data-photo-viewer-credit]").textContent = `Foto: ${image.credit} · ${image.license}`;
-  photoViewer.querySelector("[data-photo-viewer-source]").href = image.page;
-  photoViewer.querySelector("[data-photo-viewer-stage]").dataset.label = destination.name;
 
-  const fullSizeImage = new Image();
-  fullSizeImage.onload = () => {
-    if (request === photoRequest && photoViewer.open) viewerImage.src = fullSizeImage.src;
+  const image = destination.images[state.lightboxIndex];
+  if (!image) return;
+
+  const source = originalImageSource(image);
+  const number = String(state.lightboxIndex + 1).padStart(2, "0");
+  const total = String(destination.images.length).padStart(2, "0");
+
+  lightboxCounter.textContent = `${number} / ${total} · ${destination.name}`;
+  lightboxCaption.textContent = image.caption || image.alt;
+  lightboxCredit.textContent = `Foto: ${image.credit} · ${image.license}`;
+  lightboxResolution.textContent = "";
+  lightboxOriginal.href = source;
+  lightboxOriginal.setAttribute(
+    "aria-label",
+    `Abrir o arquivo original de ${image.caption || destination.name}`,
+  );
+
+  lightboxMedia.dataset.label = destination.name;
+  lightboxMedia.classList.remove("is-fallback");
+  lightboxMedia.classList.add("is-loading");
+  lightboxLoading.hidden = false;
+  lightboxLoading.textContent = "Carregando foto original…";
+  lightboxImage.hidden = false;
+  lightboxImage.alt = image.alt;
+  lightboxImage.referrerPolicy = "no-referrer";
+  lightboxImage.dataset.source = source;
+
+  lightboxImage.onload = () => {
+    if (lightboxImage.dataset.source !== source) return;
+    lightboxMedia.classList.remove("is-loading");
+    lightboxLoading.hidden = true;
+    lightboxResolution.textContent = `${lightboxImage.naturalWidth.toLocaleString(
+      "pt-BR",
+    )} × ${lightboxImage.naturalHeight.toLocaleString("pt-BR")} px · arquivo original`;
   };
-  fullSizeImage.src = originalImageUrl(image);
+
+  lightboxImage.onerror = () => {
+    if (lightboxImage.dataset.source !== source) return;
+    lightboxMedia.classList.remove("is-loading");
+    lightboxMedia.classList.add("is-fallback");
+    lightboxImage.hidden = true;
+    lightboxLoading.hidden = false;
+    lightboxLoading.textContent =
+      "Não foi possível carregar a foto. Use o link do arquivo original.";
+  };
+
+  lightboxImage.src = source;
+  if (lightboxImage.complete && lightboxImage.naturalWidth > 0) {
+    lightboxImage.onload();
+  }
 }
 
-function openPhoto(index, trigger) {
-  currentPhotoIndex = index;
-  photoViewerReturnFocus = trigger;
-  renderPhotoViewer();
-  if (!photoViewer.open) photoViewer.showModal();
-  photoViewer.querySelector("[data-photo-viewer-close]").focus();
-}
-
-function closePhoto() {
-  if (photoViewer.open) photoViewer.close();
-}
-
-function movePhoto(offset) {
+function openLightbox(index) {
   const destination = destinationById(state.current);
   if (!destination) return;
-  currentPhotoIndex = (currentPhotoIndex + offset + destination.images.length) % destination.images.length;
-  renderPhotoViewer();
+
+  const requestedIndex = Number(index);
+  state.lightboxIndex = Number.isInteger(requestedIndex)
+    ? Math.min(Math.max(requestedIndex, 0), destination.images.length - 1)
+    : 0;
+
+  updateLightbox();
+  if (!lightbox.open) lightbox.showModal();
+  document.body.classList.add("lightbox-open");
 }
 
-function usePhotoAsGuideCover() {
+function showAdjacentImage(step) {
   const destination = destinationById(state.current);
-  const heroImage = dialogContent.querySelector(".dialog-hero img");
-  if (!destination || !heroImage) return;
-  const image = destination.images[currentPhotoIndex];
-  heroImage.src = image.src;
-  heroImage.alt = image.alt;
-  closePhoto();
-  dialog.scrollTo({ top: 64, behavior: "smooth" });
-  showToast("Capa alterada apenas neste guia. O cartão principal não mudou.");
+  if (!destination) return;
+
+  state.lightboxIndex =
+    (state.lightboxIndex + step + destination.images.length) %
+    destination.images.length;
+  updateLightbox();
+}
+
+function closeLightbox() {
+  if (lightbox.open) lightbox.close();
+  document.body.classList.remove("lightbox-open");
 }
 
 function closeDestination(updateHash = true) {
+  if (lightbox.open) closeLightbox();
   if (dialog.open) dialog.close();
   document.body.classList.remove("dialog-open");
   state.current = null;
@@ -1656,9 +1703,7 @@ document.addEventListener("click", (event) => {
   const target = event.target.closest("button, a");
   if (!target) return;
 
-  if (target.matches("[data-open-photo]")) {
-    openPhoto(Number(target.dataset.openPhoto), target);
-  } else if (target.matches("[data-open-destination]")) {
+  if (target.matches("[data-open-destination]")) {
     event.preventDefault();
     openDestination(target.dataset.openDestination);
   } else if (target.matches("[data-compare-destination]")) {
@@ -1675,6 +1720,14 @@ document.addEventListener("click", (event) => {
     renderDestinations();
   } else if (target.matches("[data-show-saved]")) {
     toggleSavedView();
+  } else if (target.matches("[data-open-image]")) {
+    openLightbox(target.dataset.openImage);
+  } else if (target.matches("[data-lightbox-close]")) {
+    closeLightbox();
+  } else if (target.matches("[data-lightbox-prev]")) {
+    showAdjacentImage(-1);
+  } else if (target.matches("[data-lightbox-next]")) {
+    showAdjacentImage(1);
   } else if (target.matches("[data-dialog-close]")) {
     closeDestination();
   } else if (target.matches("[data-dialog-save]")) {
@@ -1688,43 +1741,6 @@ document.addEventListener("click", (event) => {
   }
 });
 
-photoViewer.addEventListener("click", (event) => {
-  if (event.target.closest("[data-photo-viewer-close]")) closePhoto();
-  else if (event.target.closest("[data-photo-viewer-previous]")) movePhoto(-1);
-  else if (event.target.closest("[data-photo-viewer-next]")) movePhoto(1);
-  else if (event.target.closest("[data-photo-viewer-cover]")) usePhotoAsGuideCover();
-});
-
-document.addEventListener("keydown", (event) => {
-  if (photoViewer.open && event.key === "Escape") {
-    event.preventDefault();
-    closePhoto();
-  } else if (photoViewer.open && event.key === "ArrowLeft") {
-    event.preventDefault();
-    movePhoto(-1);
-  } else if (photoViewer.open && event.key === "ArrowRight") {
-    event.preventDefault();
-    movePhoto(1);
-  } else if (event.key === "Escape" && dialog.open) closeDestination();
-});
-
-photoViewer.addEventListener("close", () => {
-  photoRequest += 1;
-  photoViewer.querySelector("[data-photo-viewer-image]").removeAttribute("src");
-  photoViewerReturnFocus?.focus();
-});
-
-photoViewer.addEventListener("touchstart", (event) => {
-  photoTouchStartX = event.changedTouches[0].clientX;
-}, { passive: true });
-
-photoViewer.addEventListener("touchend", (event) => {
-  if (photoTouchStartX === null) return;
-  const distance = event.changedTouches[0].clientX - photoTouchStartX;
-  photoTouchStartX = null;
-  if (Math.abs(distance) > 50) movePhoto(distance > 0 ? -1 : 1);
-}, { passive: true });
-
 dialog.addEventListener("click", (event) => {
   if (event.target === dialog) closeDestination();
 });
@@ -1732,6 +1748,56 @@ dialog.addEventListener("click", (event) => {
 dialog.addEventListener("close", () => {
   document.body.classList.remove("dialog-open");
 });
+
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+lightbox.addEventListener("close", () => {
+  document.body.classList.remove("lightbox-open");
+});
+
+document.addEventListener("keydown", (event) => {
+  if (!lightbox.open) return;
+
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    showAdjacentImage(-1);
+  } else if (event.key === "ArrowRight") {
+    event.preventDefault();
+    showAdjacentImage(1);
+  } else if (event.key === "Escape") {
+    event.preventDefault();
+    closeLightbox();
+  }
+});
+
+lightboxMedia.addEventListener(
+  "touchstart",
+  (event) => {
+    if (event.touches.length !== 1) return;
+    lightboxTouchStart = {
+      x: event.touches[0].clientX,
+      y: event.touches[0].clientY,
+    };
+  },
+  { passive: true },
+);
+
+lightboxMedia.addEventListener(
+  "touchend",
+  (event) => {
+    if (!lightboxTouchStart || !event.changedTouches.length) return;
+
+    const deltaX = event.changedTouches[0].clientX - lightboxTouchStart.x;
+    const deltaY = event.changedTouches[0].clientY - lightboxTouchStart.y;
+    lightboxTouchStart = null;
+
+    if (Math.abs(deltaX) < 50 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+    showAdjacentImage(deltaX < 0 ? 1 : -1);
+  },
+  { passive: true },
+);
 
 window.addEventListener("popstate", () => {
   const match = location.hash.match(/^#destino-([a-z0-9-]+)$/);
