@@ -1,0 +1,1890 @@
+.beijing-page {
+  --bj-red: #7b2420;
+  --bj-red-dark: #531612;
+  --bj-gold: #d0a15f;
+  --bj-gold-pale: #f2d8a8;
+  --bj-ink: #1b211d;
+  --bj-paper: #f4eddf;
+  --bj-paper-deep: #e8ddca;
+  --bj-stone: #c8bba4;
+  --bj-blue: #315a66;
+  background:
+    linear-gradient(90deg, rgba(83, 22, 18, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(83, 22, 18, 0.025) 1px, transparent 1px),
+    var(--bj-paper);
+  background-size: 52px 52px;
+}
+
+.beijing-page h1,
+.beijing-page h2,
+.beijing-page h3 {
+  color: var(--bj-ink);
+}
+
+.beijing-page button,
+.beijing-page a {
+  touch-action: manipulation;
+}
+
+.beijing-header {
+  background: rgba(71, 17, 15, 0.96);
+}
+
+.beijing-header .brand-seal,
+.beijing-footer .brand-seal {
+  color: var(--bj-red-dark);
+  background: #ecd09a;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.beijing-header .desktop-nav {
+  gap: 22px;
+}
+
+.beijing-back {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.beijing-back span:first-child {
+  font-size: 17px;
+}
+
+.beijing-section {
+  width: var(--content);
+  margin-inline: auto;
+  padding-block: 78px;
+}
+
+.beijing-section-heading {
+  max-width: 760px;
+  margin-bottom: 32px;
+}
+
+.beijing-section-heading.compact {
+  max-width: 680px;
+}
+
+.beijing-section-heading h2 {
+  max-width: 13ch;
+  margin-bottom: 16px;
+  font-family: var(--serif);
+  font-size: clamp(38px, 11vw, 64px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.beijing-section-heading > p:last-child,
+.heading-split > p {
+  color: #536057;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.beijing-kicker {
+  margin-bottom: 9px;
+  color: var(--bj-red);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.beijing-hero {
+  position: relative;
+  display: grid;
+  min-height: calc(100svh - 72px);
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 78% 15%, rgba(208, 161, 95, 0.17), transparent 26rem),
+    linear-gradient(135deg, #28100e 0%, #531613 58%, #761f1b 100%);
+}
+
+.beijing-hero::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  content: "";
+  mask-image: linear-gradient(to right, #000, transparent 65%);
+  pointer-events: none;
+}
+
+.beijing-hero-copy {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  width: var(--content);
+  margin-inline: auto;
+  padding: 68px 0 48px;
+}
+
+.beijing-overline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.beijing-overline span {
+  color: var(--bj-gold-pale);
+  font-family: var(--serif);
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+.beijing-hero h1 {
+  max-width: 8ch;
+  margin-bottom: 22px;
+  color: #fffaf0;
+  font-family: var(--serif);
+  font-size: clamp(64px, 20vw, 124px);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.77;
+}
+
+.beijing-hero-lede {
+  max-width: 590px;
+  margin-bottom: 27px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.beijing-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+.beijing-hero-actions .button {
+  min-height: 48px;
+  padding-inline: 18px;
+}
+
+.beijing-button-primary {
+  color: #3b1713;
+  background: var(--bj-gold-pale);
+  border-color: var(--bj-gold-pale);
+}
+
+.beijing-button-primary:hover,
+.beijing-button-primary:focus-visible {
+  color: #2b0d0b;
+  background: #ffe5b3;
+}
+
+.beijing-button-secondary {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.beijing-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 500px;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+  padding-top: 19px;
+}
+
+.beijing-hero-stats div + div {
+  padding-left: 14px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.beijing-hero-stats dt {
+  color: #fff3dd;
+  font-family: var(--serif);
+  font-size: 27px;
+  line-height: 1;
+}
+
+.beijing-hero-stats dd {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.53);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.beijing-hero-gallery {
+  position: relative;
+  min-height: 48svh;
+  order: -1;
+}
+
+.beijing-hero-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: linear-gradient(150deg, rgba(208, 161, 95, 0.17), transparent 60%);
+}
+
+.beijing-hero-placeholder span {
+  color: rgba(255, 242, 218, 0.18);
+  font-family: var(--serif);
+  font-size: 33vw;
+  line-height: 0.75;
+}
+
+.beijing-hero-placeholder small {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+}
+
+.beijing-hero-photo {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background: #260e0c;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.beijing-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.beijing-hero-photo::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(27, 6, 5, 0.42), transparent 55%);
+  content: "";
+  pointer-events: none;
+}
+
+.beijing-hero-photo figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 12px;
+  bottom: 10px;
+  left: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.beijing-hero-photo-main {
+  inset: 28px 24px 8px 14%;
+  border-radius: 2px 2px 54px 2px;
+}
+
+.beijing-hero-photo-side {
+  display: none;
+}
+
+.beijing-scroll {
+  display: none;
+}
+
+.beijing-overview {
+  padding-bottom: 36px;
+}
+
+.beijing-overview-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.beijing-overview-grid article {
+  position: relative;
+  min-height: 205px;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid rgba(83, 22, 18, 0.13);
+  border-radius: 2px 22px 2px 22px;
+  background: rgba(255, 253, 248, 0.67);
+}
+
+.overview-icon {
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  color: rgba(123, 36, 32, 0.09);
+  font-family: var(--serif);
+  font-size: 68px;
+  line-height: 1;
+}
+
+.overview-label,
+.day-zone {
+  margin-bottom: 7px;
+  color: var(--bj-red);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.beijing-overview-grid h3 {
+  margin-bottom: 10px;
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.beijing-overview-grid article > p:last-child {
+  margin: 0;
+  color: #596159;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.beijing-trip-alert {
+  display: flex;
+  gap: 16px;
+  margin-top: 42px;
+  padding: 21px;
+  border: 1px solid rgba(123, 36, 32, 0.22);
+  border-radius: 2px 20px 2px 20px;
+  background: #efe0c8;
+}
+
+.beijing-trip-alert > span {
+  flex: 0 0 auto;
+  color: var(--bj-red);
+  font-family: var(--serif);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.beijing-trip-alert h3 {
+  margin-bottom: 7px;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.beijing-trip-alert p:last-child {
+  margin: 0;
+  color: #5e625b;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.beijing-itinerary {
+  width: 100%;
+  padding-inline: max(16px, calc((100vw - 1180px) / 2));
+  color: #fff;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.026) 25%, transparent 25%) 0 0 / 42px 42px,
+    #18231e;
+}
+
+.beijing-itinerary .beijing-section-heading h2,
+.beijing-itinerary .beijing-section-heading > div h2 {
+  color: #fff9ed;
+}
+
+.beijing-itinerary .beijing-kicker {
+  color: #dcb576;
+}
+
+.beijing-itinerary .heading-split > p {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.beijing-day-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.beijing-day-list li {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 15px;
+  padding: 23px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.day-number {
+  color: #d9ae6d;
+  font-family: var(--serif);
+  font-size: 28px;
+}
+
+.beijing-day-list .day-zone {
+  color: rgba(225, 184, 117, 0.75);
+}
+
+.beijing-day-list h3 {
+  margin-bottom: 8px;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.beijing-day-list p:last-child {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.day-effort {
+  display: none;
+}
+
+.beijing-filter {
+  display: flex;
+  gap: 8px;
+  margin: 0 calc((100vw - min(1180px, 100vw - 32px)) / -2) 26px;
+  padding: 0 max(16px, calc((100vw - 1180px) / 2)) 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.beijing-filter::-webkit-scrollbar {
+  display: none;
+}
+
+.beijing-filter button {
+  flex: 0 0 auto;
+  min-height: 39px;
+  padding: 8px 14px;
+  border: 1px solid rgba(83, 22, 18, 0.18);
+  border-radius: 999px;
+  color: #5c625c;
+  background: transparent;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.beijing-filter button.is-active {
+  color: #fff;
+  background: var(--bj-red);
+  border-color: var(--bj-red);
+}
+
+.beijing-attraction-list {
+  display: grid;
+  gap: 22px;
+}
+
+.beijing-media-note {
+  display: flex;
+  gap: 12px;
+  margin: -4px 0 28px;
+  padding: 14px 16px;
+  border-left: 2px solid var(--bj-gold);
+  color: #5b635d;
+  background: rgba(255, 253, 248, 0.58);
+}
+
+.beijing-media-note > span {
+  color: var(--bj-red);
+  font-family: var(--serif);
+  font-size: 22px;
+}
+
+.beijing-media-note p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.beijing-attraction-card {
+  overflow: hidden;
+  border: 1px solid rgba(83, 22, 18, 0.14);
+  border-radius: 2px 28px 2px 28px;
+  background: rgba(255, 253, 248, 0.88);
+  box-shadow: 0 18px 55px rgba(54, 35, 22, 0.07);
+}
+
+.beijing-attraction-card[hidden] {
+  display: none;
+}
+
+.attraction-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32%;
+  grid-template-rows: 124px 124px;
+  gap: 3px;
+  background: var(--bj-paper-deep);
+}
+
+.attraction-photo-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: #d4c8b5;
+  cursor: zoom-in;
+}
+
+.attraction-photo-button:first-child {
+  grid-row: 1 / 3;
+}
+
+.attraction-media.photo-count-1 {
+  grid-template-columns: 1fr;
+}
+
+.attraction-media.photo-count-2 .attraction-photo-button:nth-child(2) {
+  grid-row: 1 / 3;
+}
+
+.attraction-photo-placeholder {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  place-items: center;
+  color: rgba(123, 36, 32, 0.18);
+  background: #ded2bf;
+  font-family: var(--serif);
+  font-size: 110px;
+}
+
+.attraction-photo-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.attraction-photo-button:hover img,
+.attraction-photo-button:focus-visible img {
+  transform: scale(1.025);
+}
+
+.attraction-photo-button span {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: grid;
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(26, 26, 22, 0.66);
+  font-size: 13px;
+}
+
+.attraction-content {
+  padding: 23px 20px 22px;
+}
+
+.attraction-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.attraction-number,
+.attraction-category {
+  color: var(--bj-red);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.attraction-category {
+  color: #788078;
+}
+
+.beijing-attraction-card h3 {
+  margin-bottom: 9px;
+  font-family: var(--serif);
+  font-size: clamp(29px, 8vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.attraction-summary {
+  margin-bottom: 18px;
+  color: #4f5a52;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.attraction-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin: 0 0 17px;
+  border: 1px solid rgba(83, 22, 18, 0.11);
+  border-radius: 12px;
+  background: rgba(83, 22, 18, 0.11);
+}
+
+.attraction-facts div {
+  padding: 11px;
+  background: #faf5eb;
+}
+
+.attraction-facts dt {
+  margin-bottom: 4px;
+  color: #8a8276;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.attraction-facts dd {
+  color: #28332d;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.attraction-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.attraction-expand {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  border: 1px solid var(--bj-red);
+  border-radius: 999px;
+  color: var(--bj-red-dark);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.attraction-expand span {
+  font-size: 17px;
+  line-height: 1;
+  transition: transform 180ms ease;
+}
+
+.beijing-attraction-card.is-expanded .attraction-expand span {
+  transform: rotate(45deg);
+}
+
+.attraction-gallery-launch {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 1px solid #d1a35f;
+  border-radius: 999px;
+  color: #3d2b1c;
+  background: #f0d8ae;
+  font-size: 11px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.attraction-gallery-launch b {
+  color: var(--bj-red-dark);
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.attraction-gallery-launch span {
+  color: var(--bj-red);
+  font-size: 14px;
+}
+
+.attraction-detail {
+  padding-top: 22px;
+}
+
+.attraction-detail[hidden] {
+  display: none;
+}
+
+.attraction-detail-grid {
+  display: grid;
+  gap: 21px;
+}
+
+.attraction-detail h4 {
+  margin: 0 0 7px;
+  color: var(--bj-red-dark);
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.attraction-detail p {
+  margin: 0;
+  color: #505a53;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.attraction-gallery-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 24px 0 10px;
+}
+
+.attraction-gallery-header h4 {
+  margin: 0;
+}
+
+.attraction-gallery-header span {
+  color: #8a8276;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.attraction-gallery-strip {
+  display: flex;
+  gap: 7px;
+  margin-inline: -4px;
+  padding: 4px 4px 10px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-color: rgba(123, 36, 32, 0.35) transparent;
+  scrollbar-width: thin;
+}
+
+.attraction-gallery-thumb {
+  position: relative;
+  flex: 0 0 112px;
+  height: 78px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  border-radius: 2px 12px 2px 12px;
+  background: #d7cdbd;
+  scroll-snap-align: start;
+  cursor: zoom-in;
+}
+
+.attraction-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.attraction-gallery-thumb:hover img,
+.attraction-gallery-thumb:focus-visible img {
+  transform: scale(1.045);
+}
+
+.attraction-gallery-thumb span {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  display: grid;
+  min-width: 22px;
+  height: 20px;
+  padding-inline: 4px;
+  place-items: center;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(30, 24, 20, 0.7);
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.attraction-notes {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.attraction-notes li {
+  position: relative;
+  padding: 11px 12px 11px 34px;
+  border-left: 2px solid var(--bj-gold);
+  color: #566059;
+  background: #f5eddf;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.attraction-notes li::before {
+  position: absolute;
+  left: 11px;
+  color: var(--bj-red);
+  content: "记";
+  font-family: var(--serif);
+  font-size: 14px;
+}
+
+.attraction-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(83, 22, 18, 0.12);
+}
+
+.attraction-links a {
+  color: var(--bj-red-dark);
+  font-size: 10px;
+  font-weight: 900;
+  text-underline-offset: 3px;
+}
+
+.beijing-map-section {
+  width: 100%;
+  padding-inline: max(16px, calc((100vw - 1180px) / 2));
+  background: #e5dac7;
+}
+
+.beijing-map-shell {
+  overflow: hidden;
+  border: 1px solid rgba(48, 42, 31, 0.18);
+  border-radius: 2px 28px 2px 28px;
+  background: #faf6ed;
+  box-shadow: 0 24px 70px rgba(52, 39, 27, 0.13);
+}
+
+.beijing-map-toolbar {
+  display: flex;
+  gap: 6px;
+  padding: 12px;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(48, 42, 31, 0.12);
+}
+
+.beijing-map-toolbar button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  min-height: 36px;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid rgba(48, 42, 31, 0.16);
+  border-radius: 999px;
+  color: #65665f;
+  background: #f5efe4;
+  font-size: 9px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.beijing-map-toolbar button.is-active {
+  color: #fff;
+  background: #26382f;
+  border-color: #26382f;
+}
+
+.map-key {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bj-red);
+}
+
+.key-station {
+  background: var(--bj-blue);
+}
+
+.key-airport {
+  background: #a66c17;
+}
+
+.beijing-map {
+  z-index: 1;
+  height: min(68svh, 650px);
+  min-height: 430px;
+  background: #d8d0c2;
+}
+
+.beijing-map .leaflet-popup-content-wrapper,
+.beijing-map .leaflet-popup-tip {
+  color: #223029;
+  background: #fffaf1;
+}
+
+.beijing-map .leaflet-popup-content-wrapper {
+  border-radius: 3px 15px 3px 15px;
+}
+
+.beijing-map .leaflet-popup-content {
+  min-width: 170px;
+  margin: 13px 15px;
+}
+
+.map-popup strong,
+.map-popup span,
+.map-popup a {
+  display: block;
+}
+
+.map-popup strong {
+  margin-bottom: 3px;
+  font-family: var(--serif);
+  font-size: 16px;
+}
+
+.map-popup span {
+  color: #6a726c;
+  font-size: 10px;
+}
+
+.map-popup a {
+  margin-top: 8px;
+  color: var(--bj-red-dark);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.beijing-div-icon {
+  display: grid;
+  width: 28px !important;
+  height: 28px !important;
+  margin: -14px 0 0 -14px !important;
+  place-items: center;
+  border: 2px solid #fff8ec;
+  border-radius: 50% 50% 50% 6px;
+  color: #fff;
+  background: var(--bj-red);
+  box-shadow: 0 3px 10px rgba(30, 25, 18, 0.34);
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 900;
+  transform: rotate(-45deg);
+}
+
+.beijing-div-icon span {
+  transform: rotate(45deg);
+}
+
+.beijing-div-icon.station {
+  background: var(--bj-blue);
+  border-radius: 50%;
+  transform: none;
+}
+
+.beijing-div-icon.station span {
+  transform: none;
+}
+
+.beijing-div-icon.airport {
+  background: #9b661a;
+  border-radius: 4px;
+  transform: rotate(45deg);
+}
+
+.beijing-div-icon.airport span {
+  transform: rotate(-45deg);
+}
+
+.map-unavailable {
+  padding: 18px;
+  color: #4d5951;
+  background: #f8f0df;
+}
+
+.map-unavailable p {
+  margin: 3px 0 0;
+  font-size: 12px;
+}
+
+.map-location-index {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  padding: 1px;
+  background: rgba(47, 48, 40, 0.11);
+}
+
+.map-location-index button,
+.map-location-index a {
+  min-width: 0;
+  padding: 10px;
+  border: 0;
+  color: #4d5951;
+  background: #fffaf1;
+  font-size: 9px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.map-location-index b {
+  color: var(--bj-red);
+}
+
+.reference-map-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.reference-map-card {
+  overflow: hidden;
+  border: 1px solid rgba(83, 22, 18, 0.14);
+  border-radius: 2px 24px 2px 24px;
+  background: #fffaf1;
+}
+
+.reference-map-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 310px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  background: #ded7c9;
+  cursor: zoom-in;
+}
+
+.reference-map-image img {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  object-fit: contain;
+  background: #f7f5ef;
+}
+
+.reference-map-image span {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(24, 32, 28, 0.82);
+  font-size: 9px;
+  font-weight: 900;
+}
+
+.reference-map-copy {
+  padding: 19px;
+}
+
+.reference-map-copy h3 {
+  margin-bottom: 7px;
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.reference-map-copy p {
+  margin-bottom: 11px;
+  color: #5d675f;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.reference-map-copy a {
+  color: var(--bj-red-dark);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.beijing-hotels {
+  width: 100%;
+  padding-inline: max(16px, calc((100vw - 1180px) / 2));
+  color: #fff;
+  background: #4f1715;
+}
+
+.beijing-hotels .beijing-section-heading h2 {
+  color: #fff8eb;
+}
+
+.beijing-hotels .beijing-kicker {
+  color: #e0b976;
+}
+
+.beijing-hotels .heading-split > p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hotel-check-note {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 22px;
+  padding: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 2px 18px 2px 18px;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.hotel-check-note > span {
+  color: #efca8e;
+  font-family: var(--serif);
+  font-size: 28px;
+}
+
+.hotel-check-note strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.hotel-check-note p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.hotel-search-link {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  margin-top: 12px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.hotel-grid {
+  display: grid;
+  gap: 13px;
+}
+
+.hotel-card {
+  position: relative;
+  overflow: hidden;
+  padding: 21px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 2px 22px 2px 22px;
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(27, 10, 9, 0.31);
+}
+
+.hotel-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 15px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  color: #2b1a0e;
+  background: #eccb91;
+  font-size: 8px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hotel-status.reference {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hotel-card h3 {
+  margin-bottom: 5px;
+  color: #fff;
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.hotel-area {
+  margin-bottom: 16px;
+  color: #e6bd78;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.hotel-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-block: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hotel-price-row strong {
+  color: #fff6e6;
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.hotel-price-row span {
+  font-size: 9px;
+  text-align: right;
+}
+
+.hotel-card ul {
+  display: grid;
+  gap: 7px;
+  margin: 0 0 17px;
+  padding: 0;
+  list-style: none;
+}
+
+.hotel-card li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.hotel-card li::before {
+  position: absolute;
+  left: 0;
+  color: #e6bd78;
+  content: "•";
+}
+
+.hotel-card a {
+  display: inline-flex;
+  min-height: 41px;
+  align-items: center;
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.hotel-card small {
+  display: block;
+  margin-top: 13px;
+  color: rgba(255, 255, 255, 0.39);
+  font-size: 8px;
+  line-height: 1.5;
+}
+
+.transport-tabs {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 19px;
+}
+
+.transport-tabs button {
+  min-height: 42px;
+  padding: 8px 14px;
+  border: 1px solid rgba(83, 22, 18, 0.16);
+  border-radius: 999px;
+  color: #666b66;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.transport-tabs button.is-active {
+  color: #fff;
+  background: var(--bj-red);
+  border-color: var(--bj-red);
+}
+
+.terminal-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.terminal-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 230px;
+  padding: 23px;
+  border: 1px solid rgba(83, 22, 18, 0.13);
+  border-radius: 2px 22px 2px 22px;
+  background: rgba(255, 253, 248, 0.75);
+}
+
+.terminal-card::after {
+  position: absolute;
+  right: 10px;
+  bottom: -28px;
+  color: rgba(83, 22, 18, 0.055);
+  content: attr(data-symbol);
+  font-family: var(--serif);
+  font-size: 130px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.terminal-code {
+  margin-bottom: 9px;
+  color: var(--bj-red);
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+}
+
+.terminal-card h3 {
+  margin-bottom: 9px;
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.terminal-card p {
+  margin-bottom: 13px;
+  color: #58625b;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.terminal-card dl {
+  display: grid;
+  gap: 7px;
+}
+
+.terminal-card dl div {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 9px;
+  padding-top: 7px;
+  border-top: 1px solid rgba(83, 22, 18, 0.09);
+  font-size: 10px;
+}
+
+.terminal-card dt {
+  color: #8a8276;
+  font-weight: 900;
+}
+
+.terminal-card dd {
+  color: #3c4941;
+  font-weight: 700;
+}
+
+.beijing-tips {
+  width: 100%;
+  padding-inline: max(16px, calc((100vw - 1180px) / 2));
+  background: #e4d9c5;
+}
+
+.beijing-tip-grid {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(83, 22, 18, 0.12);
+  border-radius: 2px 26px 2px 26px;
+  background: rgba(83, 22, 18, 0.13);
+}
+
+.beijing-tip-grid article {
+  position: relative;
+  min-height: 190px;
+  padding: 21px;
+  background: #f7f0e4;
+}
+
+.beijing-tip-grid article > span {
+  display: block;
+  margin-bottom: 26px;
+  color: var(--bj-red);
+  font-family: var(--serif);
+  font-size: 22px;
+}
+
+.beijing-tip-grid h3 {
+  margin-bottom: 8px;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.beijing-tip-grid p {
+  margin: 0;
+  color: #5a645d;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.beijing-sources details {
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(83, 22, 18, 0.13);
+  border-radius: 2px 15px 2px 15px;
+  background: rgba(255, 253, 248, 0.65);
+}
+
+.beijing-sources summary {
+  padding: 15px 17px;
+  color: var(--bj-red-dark);
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.beijing-source-list,
+.beijing-credit-list {
+  display: grid;
+  gap: 9px;
+  padding: 0 17px 17px;
+}
+
+.beijing-source-list a,
+.beijing-credit-list a {
+  display: block;
+  padding-top: 9px;
+  border-top: 1px solid rgba(83, 22, 18, 0.1);
+  color: var(--bj-red-dark);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+  text-underline-offset: 3px;
+}
+
+.beijing-credit-list small {
+  display: block;
+  color: #777d77;
+}
+
+.beijing-footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.beijing-mobile-nav {
+  position: fixed;
+  z-index: 44;
+  right: 10px;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+  left: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  color: #fff;
+  background: rgba(71, 17, 15, 0.95);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(16px);
+}
+
+.beijing-mobile-nav a {
+  display: grid;
+  min-height: 46px;
+  place-items: center;
+  padding: 3px;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 8px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.beijing-mobile-nav span {
+  color: #efca8e;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.beijing-lightbox {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background: rgba(9, 13, 11, 0.97);
+}
+
+.beijing-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.beijing-lightbox-shell {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+.beijing-lightbox-toolbar {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 9px;
+  font-weight: 850;
+}
+
+.beijing-lightbox-hint {
+  display: none;
+}
+
+.beijing-lightbox-toolbar button {
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: #fff;
+  background: transparent;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.beijing-lightbox-stage {
+  display: grid;
+  min-height: 0;
+  grid-template-columns: 42px minmax(0, 1fr) 42px;
+  align-items: center;
+}
+
+.beijing-lightbox-stage > button {
+  z-index: 2;
+  display: grid;
+  width: 37px;
+  height: 52px;
+  place-items: center;
+  border: 0;
+  border-radius: 0 99px 99px 0;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.beijing-lightbox-stage > button:last-child {
+  justify-self: end;
+  border-radius: 99px 0 0 99px;
+}
+
+.beijing-lightbox-stage figure {
+  display: grid;
+  min-width: 0;
+  max-height: calc(100svh - 58px);
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: center;
+  padding: 10px 0 15px;
+}
+
+.beijing-lightbox-stage img {
+  width: 100%;
+  height: 100%;
+  max-height: calc(100svh - 165px);
+  object-fit: contain;
+}
+
+.beijing-lightbox-stage figcaption {
+  padding-top: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 9px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.beijing-lightbox-stage figcaption strong,
+.beijing-lightbox-stage figcaption span,
+.beijing-lightbox-stage figcaption a {
+  display: block;
+}
+
+.beijing-lightbox-stage figcaption strong {
+  color: #fff;
+  font-size: 11px;
+}
+
+.beijing-lightbox-stage figcaption a {
+  margin-top: 4px;
+  color: #efca8e;
+}
+
+@media (min-width: 520px) {
+  .beijing-overview-grid,
+  .hotel-grid,
+  .terminal-grid,
+  .beijing-tip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .attraction-media {
+    grid-template-rows: 175px 175px;
+  }
+
+  .attraction-content {
+    padding: 28px;
+  }
+
+  .attraction-facts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .map-location-index {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 720px) {
+  .beijing-section {
+    padding-block: 104px;
+  }
+
+  .heading-split {
+    display: grid;
+    max-width: none;
+    grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.65fr);
+    gap: 70px;
+    align-items: end;
+  }
+
+  .heading-split > p {
+    margin-bottom: 6px;
+  }
+
+  .beijing-hero-gallery {
+    min-height: 58svh;
+  }
+
+  .beijing-hero-photo-main {
+    inset: 36px 15% 10px 22%;
+  }
+
+  .beijing-hero-photo-side {
+    display: block;
+    right: 4%;
+    bottom: -5%;
+    width: 31%;
+    height: 43%;
+    border-radius: 44px 2px 2px 2px;
+    transform: rotate(2deg);
+  }
+
+  .beijing-day-list li {
+    grid-template-columns: 60px minmax(0, 1fr) 130px;
+    gap: 22px;
+    align-items: center;
+    padding: 29px 0;
+  }
+
+  .day-effort {
+    display: block;
+    color: rgba(255, 255, 255, 0.38);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  .beijing-attraction-card {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  }
+
+  .beijing-attraction-card:nth-child(even) .attraction-media {
+    order: 2;
+  }
+
+  .attraction-media {
+    grid-template-rows: 50% 50%;
+    min-height: 520px;
+  }
+
+  .attraction-content {
+    align-self: center;
+    padding: 34px;
+  }
+
+  .attraction-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .attraction-gallery-thumb {
+    flex-basis: 142px;
+    height: 96px;
+  }
+
+  .reference-map-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reference-map-image {
+    height: 380px;
+  }
+
+  .map-location-index {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .beijing-lightbox-hint {
+    display: inline;
+  }
+
+  .beijing-lightbox-stage {
+    grid-template-columns: 70px minmax(0, 1fr) 70px;
+  }
+
+  .beijing-lightbox-stage > button {
+    width: 54px;
+    height: 72px;
+  }
+}
+
+@media (min-width: 960px) {
+  .beijing-back span:last-child {
+    display: inline;
+  }
+
+  .beijing-mobile-nav {
+    display: none;
+  }
+
+  .beijing-hero {
+    min-height: calc(100vh - 80px);
+    grid-template-columns: minmax(0, 0.94fr) minmax(480px, 1.06fr);
+  }
+
+  .beijing-hero-copy {
+    align-self: center;
+    width: auto;
+    margin: 0;
+    padding: 90px 20px 100px max(32px, calc((100vw - 1180px) / 2));
+  }
+
+  .beijing-hero-gallery {
+    min-height: 0;
+    order: initial;
+  }
+
+  .beijing-hero-photo-main {
+    inset: 8% 8% 10% 7%;
+    border-radius: 2px 2px 80px 2px;
+  }
+
+  .beijing-hero-photo-side {
+    right: 1%;
+    bottom: 5%;
+    width: 34%;
+    height: 40%;
+  }
+
+  .beijing-hero-placeholder span {
+    font-size: min(24vw, 310px);
+  }
+
+  .beijing-scroll {
+    position: absolute;
+    z-index: 3;
+    right: max(32px, calc((100vw - 1180px) / 2));
+    bottom: 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.57);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .beijing-overview-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .beijing-overview-grid article:nth-child(even) {
+    transform: translateY(26px);
+  }
+
+  .beijing-attraction-list {
+    gap: 38px;
+  }
+
+  .beijing-attraction-card {
+    grid-template-columns: minmax(380px, 0.95fr) minmax(0, 1.05fr);
+  }
+
+  .attraction-media {
+    min-height: 620px;
+  }
+
+  .attraction-content {
+    padding: 44px;
+  }
+
+  .hotel-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .terminal-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .beijing-tip-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .beijing-tip-grid article {
+    min-height: 230px;
+  }
+
+  .map-location-index {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beijing-page *,
+  .beijing-page *::before,
+  .beijing-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

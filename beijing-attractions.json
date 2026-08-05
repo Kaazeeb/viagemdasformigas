@@ -1,0 +1,470 @@
+[
+  {
+    "id": "forbidden-city",
+    "name": "Cidade Proibida",
+    "chinese": "故宫博物院",
+    "category": "Patrimônio imperial",
+    "summary": "Centro político e cerimonial dos impérios Ming e Qing entre 1420 e 1911, a Cidade Proibida forma um eixo monumental de pátios, salões, portões e jardins. Hoje abriga o Museu do Palácio e uma coleção extraordinária de arte chinesa. A visita segue predominantemente do Portão Meridiano, ao sul, para o Portão da Proeza Divina, ao norte.",
+    "why": "É a atração essencial para compreender como arquitetura, hierarquia e ritual organizavam o poder imperial. O eixo central apresenta os grandes salões de Estado, mas os setores laterais revelam aposentos, galerias, pavilhões e detalhes mais humanos. Reserve tempo para sair do percurso mais congestionado e visitar uma ala lateral. Depois da saída norte, combine com o Parque Jingshan: a subida curta permite enxergar o complexo inteiro e entender sua posição no Eixo Central de Pequim.",
+    "highlights": [
+      "Salões da Harmonia Suprema, Central e Preservada",
+      "Jardim Imperial e aposentos internos",
+      "Galeria dos Tesouros ou Galeria dos Relógios"
+    ],
+    "location": "4 Jingshan Qianjie; entrada de visitantes pelo Portão Meridiano, ao sul",
+    "district": "Dongcheng",
+    "coords": [39.9163, 116.3972],
+    "nearestMetro": "Tian'anmen East ou Tian'anmen West, Linha 1; a saída ocorre ao norte, sem retorno pelo mesmo portão",
+    "admissionRmb": "¥60 de 1 abr a 31 out; ¥40 de 1 nov a 31 mar. Galeria dos Tesouros e Galeria dos Relógios: ¥10 cada.",
+    "hours": "Alta temporada: 08:30–17:00, última entrada aproximadamente 16:00. Baixa: 08:30–16:30, última entrada aproximadamente 15:30. Fecha às segundas, salvo feriados.",
+    "duration": "4–6 horas",
+    "booking": "Reserva nominal fortemente necessária; a janela costuma abrir 7 dias antes. Use o site oficial e cadastre os dados exatamente como no passaporte. Leve o documento original e não conte com ingresso disponível na hora.",
+    "bestTime": "Primeiro horário de terça a sexta; setembro oferece temperatura mais agradável, mas continua muito concorrido.",
+    "officialSource": {
+      "label": "Museu do Palácio — site internacional",
+      "url": "https://intl.dpm.org.cn/index.html?l=en"
+    }
+  },
+  {
+    "id": "tiananmen-square",
+    "name": "Praça Tiananmen",
+    "chinese": "天安门广场",
+    "category": "Espaço cívico",
+    "summary": "Grande praça cívica no centro do Eixo Central de Pequim, ladeada pelo Museu Nacional da China e pelo Grande Salão do Povo. Nela ficam o Monumento aos Heróis do Povo, o Mausoléu de Mao e a vista frontal do Portão Tiananmen. Embora a entrada seja gratuita, o acesso é controlado por reserva nominal e sucessivas inspeções de segurança.",
+    "why": "A praça ajuda a ler a transformação de Pequim de capital imperial em capital política moderna. Mais do que um ponto para fotografar o retrato de Mao, ela estabelece relações de escala e simetria entre instituições nacionais, monumentos e a entrada da Cidade Proibida. A cerimônia diária de hasteamento da bandeira ocorre ao nascer do sol e atrai multidões. Para uma visita mais tranquila, atravesse a praça durante o dia e combine-a com o Museu Nacional ou o eixo Qianmen–Tiananmen.",
+    "highlights": [
+      "Portão Tiananmen visto da praça",
+      "Monumento aos Heróis do Povo",
+      "Cerimônias de hasteamento e arriamento da bandeira"
+    ],
+    "location": "East Chang'an Avenue, entre Qianmen e o Portão Tiananmen",
+    "district": "Dongcheng",
+    "coords": [39.9055, 116.3976],
+    "nearestMetro": "Tian'anmen East ou Tian'anmen West, Linha 1; Qianmen, Linhas 2 e 8, para o lado sul",
+    "admissionRmb": "Gratuita. Atrações internas próximas, como o Portão Tiananmen e o Mausoléu, têm reservas próprias.",
+    "hours": "Referência oficial geral: 05:00–22:00; acesso real acompanha cerimônias, controles de segurança e eventuais restrições oficiais.",
+    "duration": "1–2 horas; acrescente tempo para filas e segurança",
+    "booking": "Reserva nominal obrigatória, normalmente de 1 a 7 dias antes, pelo miniprograma 天安门广场预约参观. O sistema web pode não verificar telefones estrangeiros; outra pessoa pode incluir o visitante na reserva. Leve o passaporte original. Reservas da praça, Museu Nacional, Cidade Proibida e Mausoléu são independentes.",
+    "bestTime": "Após 09:00 para evitar a multidão da bandeira, ou no arriamento; chegue muito antes se quiser assistir ao hasteamento.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — regras de reserva de Tiananmen",
+      "url": "https://english.beijing.gov.cn/livinginbeijing/easyliving/202409/t20240923_3903402.html"
+    }
+  },
+  {
+    "id": "temple-of-heaven",
+    "name": "Templo do Céu",
+    "chinese": "天坛公园",
+    "category": "Arquitetura ritual",
+    "summary": "O maior conjunto histórico chinês dedicado a sacrifícios ao Céu foi usado pelos imperadores Ming e Qing para rituais e preces por boas colheitas. Seu desenho combina cosmologia, matemática, acústica e paisagismo. A famosa Sala de Oração pelas Boas Colheitas é apenas uma parte de um parque muito maior, ligado pelo elevado Caminho de Cinábrio.",
+    "why": "O conjunto é uma aula visual sobre a antiga concepção de que o Céu era redondo e a Terra quadrada. Percorrer o eixo entre o Altar Circular, a Abóbada Imperial do Céu e a Sala de Oração transforma símbolos abstratos em arquitetura. Pela manhã, as áreas arborizadas também revelam a vida cotidiana de Pequim, com moradores praticando tai chi, dança e jogos. O bilhete combinado é a escolha certa: o ingresso simples do parque não inclui os monumentos principais.",
+    "highlights": [
+      "Sala de Oração pelas Boas Colheitas",
+      "Altar Circular e Pedra do Centro do Céu",
+      "Abóbada Imperial e Muro do Eco"
+    ],
+    "location": "7 Tiantan Neidongli, ao sul do centro histórico",
+    "district": "Dongcheng",
+    "coords": [39.8822, 116.4066],
+    "nearestMetro": "Tiantandongmen, Linha 5, saída A; Tianqiao, Linha 8, saída C",
+    "admissionRmb": "Alta temporada: parque ¥15, combinado ¥34. Baixa: parque ¥10, combinado ¥28. O combinado inclui os monumentos principais.",
+    "hours": "Parque: 06:00–22:00 de abr a out e 06:30–22:00 de nov a mar, última entrada 21:00. Monumentos: 08:00–18:00 na alta e 08:00–17:00 na baixa; fecham às segundas, salvo feriados.",
+    "duration": "2,5–4 horas",
+    "booking": "Compre o bilhete combinado pelo canal oficial ou no guichê, conforme disponibilidade. A plataforma oficial aceita passaporte; em fins de semana e feriados, reserve com antecedência.",
+    "bestTime": "07:00–09:00 para observar a vida local; entre nos monumentos quando abrirem às 08:00.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — guia oficial do Templo do Céu",
+      "url": "https://english.beijing.gov.cn/specials/parktours/guidevisitors/templeofheaven/"
+    }
+  },
+  {
+    "id": "summer-palace",
+    "name": "Palácio de Verão",
+    "chinese": "颐和园",
+    "category": "Jardim imperial",
+    "summary": "Um vasto jardim imperial organizado em torno do Lago Kunming e da Colina da Longevidade. Palácios, templos, pontes e pavilhões aparecem como cenas sucessivas em uma paisagem inspirada nos jardins do sul da China. O local combina monumentos formais com longas caminhadas à beira da água e oferece uma experiência muito diferente da densidade arquitetônica da Cidade Proibida.",
+    "why": "É a melhor demonstração em Pequim de como os jardins chineses constroem paisagens por meio de enquadramentos, mudanças de nível e vistas emprestadas. O Longo Corredor, a Torre da Fragrância de Buda, o Barco de Mármore e a Ponte dos Dezessete Arcos formam uma visita completa, mas não ficam próximos entre si. Planeje uma rota linear entre Beigongmen e o Portão Leste, ou use um barco quando disponível. O bilhete combinado compensa para quem pretende entrar nas atrações internas.",
+    "highlights": [
+      "Longo Corredor e Barco de Mármore",
+      "Torre da Fragrância de Buda",
+      "Lago Kunming e Ponte dos Dezessete Arcos"
+    ],
+    "location": "19 Xinjian Gongmen Road, noroeste do centro",
+    "district": "Haidian",
+    "coords": [39.9999, 116.2755],
+    "nearestMetro": "Beigongmen, Linha 4, para o portão norte; Xiyuan, Linhas 4 e 16, para o portão leste",
+    "admissionRmb": "Alta: entrada ¥30 ou combinado ¥60. Baixa: ¥20 ou combinado ¥50. Barcos e alguns serviços são cobrados separadamente.",
+    "hours": "Parque: 06:00–20:00 de abr a out, última entrada 19:00; 06:30–19:00 de nov a mar, última entrada 18:00. Atrações internas geralmente 08:00–18:00 na alta e 08:30–17:00 na baixa; algumas fecham às segundas.",
+    "duration": "4–6 horas",
+    "booking": "Disponível pelo canal oficial do Palácio de Verão e pela plataforma municipal de parques, com passaporte. Em setembro, compre antecipadamente e confirme se o barco está operando.",
+    "bestTime": "Manhã cedo para caminhar; fim de tarde para luz sobre o lago e a Ponte dos Dezessete Arcos.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — guia oficial do Palácio de Verão",
+      "url": "https://english.beijing.gov.cn/specials/parktours/guidevisitors/summerpalace/index.html"
+    }
+  },
+  {
+    "id": "mutianyu-great-wall",
+    "name": "Grande Muralha de Mutianyu",
+    "chinese": "慕田峪长城",
+    "category": "Grande Muralha",
+    "summary": "Trecho restaurado da Grande Muralha em montanhas muito arborizadas do distrito de Huairou. Mutianyu possui torres próximas, muralhas auxiliares e amplas vistas sobre os cumes. É mais trabalhoso de alcançar que Badaling, porém costuma proporcionar uma caminhada mais agradável. Teleférico, chairlift e tobogã permitem ajustar o passeio à disposição física e ao tempo disponível.",
+    "why": "Para a maioria dos visitantes independentes, Mutianyu oferece o melhor equilíbrio entre paisagem, preservação e infraestrutura. Subir por um sistema e descer por outro permite caminhar por várias torres sem repetir todo o trajeto. A região entre as torres 14 e 20 concentra panoramas famosos, mas inclui subidas fortes. O ingresso básico não cobre traslado interno nem transporte de montanha, portanto compare o pacote completo. Separe praticamente um dia inteiro, considerando duas horas ou mais de deslocamento por trecho.",
+    "highlights": [
+      "Sequência de torres sobre cristas arborizadas",
+      "Caminhada entre as torres 14 e 20",
+      "Descida opcional de tobogã"
+    ],
+    "location": "Mutianyu Village, Bohai Town, cerca de 70 km a nordeste do centro",
+    "district": "Huairou",
+    "coords": [40.4319, 116.5704],
+    "nearestMetro": "Sem metrô próximo. De Dongzhimen, use o 916 Express até Huairou Beidajie e conecte aos ônibus H23, H3 ou H71; ônibus turísticos diretos simplificam o trajeto.",
+    "admissionRmb": "Entrada adulta ¥45. Shuttle interno, teleférico, chairlift e tobogã são extras; confirme o valor do pacote escolhido.",
+    "hours": "16 mar–15 nov: normalmente 07:30–18:00, com possível extensão aos fins de semana. 16 nov–15 mar: 08:00–17:30. Tours noturnos de verão são sazonais; em 2026 ocorreram até 31 de agosto.",
+    "duration": "4–5 horas no local; 8–10 horas com transporte desde o centro",
+    "booking": "Embora o ingresso diurno possa estar disponível no local, reserve antecipadamente com nome e passaporte pelo site oficial, sobretudo em setembro e fins de semana. Confira separadamente o último horário do shuttle e dos meios de subida.",
+    "bestTime": "Chegada antes de 09:00 ou depois de 13:30; manhã clara após chuva costuma ter melhor visibilidade.",
+    "officialSource": {
+      "label": "Site oficial da Grande Muralha de Mutianyu",
+      "url": "https://mutianyugreatwall.com/"
+    }
+  },
+  {
+    "id": "badaling-great-wall",
+    "name": "Grande Muralha de Badaling",
+    "chinese": "八达岭长城",
+    "category": "Grande Muralha",
+    "summary": "Badaling é o trecho mais famoso e acessível da Grande Muralha a partir de Pequim. Suas muralhas restauradas dividem-se em rotas norte e sul, com torres, passagens íngremes e infraestrutura ampla. A estação ferroviária próxima facilita muito o passeio independente, embora a popularidade produza filas e grandes concentrações de visitantes nos horários de excursões.",
+    "why": "É uma escolha prática para quem prioriza transporte ferroviário, estrutura e acessibilidade. A rota norte conduz à Torre Norte 8, ponto elevado e imagem clássica de Badaling; a rota sul costuma ser menos disputada. Escadas, inclinações e multidões ainda exigem atenção, apesar dos teleféricos. Reserve o trem de ida e volta junto com o ingresso, pois os melhores horários esgotam. Mutianyu oferece ambiente mais tranquilo, enquanto Badaling vence em facilidade logística e importância histórica como vitrine nacional da Muralha.",
+    "highlights": [
+      "Torre Norte 8 e vistas da muralha sinuosa",
+      "Rotas norte e sul com perfis diferentes",
+      "Museu da Grande Muralha, quando aberto"
+    ],
+    "location": "Badaling Town, aproximadamente 70 km a noroeste do centro",
+    "district": "Yanqing",
+    "coords": [40.3599, 116.02],
+    "nearestMetro": "Sem metrô direto. Trens de alta velocidade saem de Beijing North ou Qinghe para Badaling Great Wall; a linha suburbana S2 e ônibus oficiais são alternativas.",
+    "admissionRmb": "¥40 de 1 abr a 31 out; ¥35 de 1 nov a 31 mar. Teleféricos e produtos noturnos são cobrados separadamente.",
+    "hours": "Alta temporada: 06:30–16:30. Baixa: 07:30–16:00. Tours noturnos possuem calendário e ingresso próprios.",
+    "duration": "3–4 horas no local; 6–8 horas com deslocamentos",
+    "booking": "A página municipal informa que o ingresso pode ser comprado no local, mas a reserva antecipada é recomendada. Leve o passaporte e compre os bilhetes de trem assim que forem liberados; não dependa do último serviço de retorno.",
+    "bestTime": "Primeiro trem da manhã em dia útil; evite fins de semana e feriados nacionais.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — ingressos de Badaling",
+      "url": "https://english.beijing.gov.cn/specials/ticketing/attractions/202407/t20240717_3751609.html"
+    }
+  },
+  {
+    "id": "lama-temple",
+    "name": "Templo Lama",
+    "chinese": "雍和宫",
+    "category": "Templo budista",
+    "summary": "Antiga residência principesca transformada em um importante mosteiro do budismo tibetano, o Yonghegong reúne arquitetura Qing, pátios cerimoniais, incenso e imagens religiosas. Os salões crescem em escala ao longo do eixo. O ponto culminante é a enorme imagem de Maitreya esculpida em um único tronco, instalada no Pavilhão das Dez Mil Felicidades.",
+    "why": "Diferentemente de muitos monumentos históricos, o Templo Lama permanece como lugar ativo de devoção. O interesse está tanto na arquitetura quanto nos rituais realizados por fiéis, portanto a visita pede comportamento respeitoso. Siga o eixo até o grande Maitreya, observando as mudanças de função e iconografia dos salões. A proximidade permite formar um excelente circuito a pé com o Templo de Confúcio, Guozijian, Wudaoying Hutong e Ditan Park, reunindo religião, educação e vida de bairro em meio dia.",
+    "highlights": [
+      "Pavilhão das Dez Mil Felicidades e Maitreya",
+      "Salão de Yongyou e imagens budistas",
+      "Atmosfera de mosteiro ativo e rituais com incenso"
+    ],
+    "location": "12 Yonghegong Street",
+    "district": "Dongcheng",
+    "coords": [39.9473, 116.4175],
+    "nearestMetro": "Yonghegong Lama Temple, Linhas 2 e 5",
+    "admissionRmb": "¥25 adulto; descontos condicionados à documentação aceita.",
+    "hours": "1 abr–31 out: 09:00–17:00, venda/entrada até 16:30. 1 nov–31 mar: 09:00–16:30, venda até 16:00. Datas religiosas podem alterar o horário.",
+    "duration": "1,5–2 horas",
+    "booking": "Compre pelo canal oficial ou no local, sujeito à lotação. Leve o passaporte. Em datas do calendário lunar, chegue cedo e confira avisos extraordinários.",
+    "bestTime": "Logo após 09:00 em dia útil; evite horários de maior movimento religioso se quiser observar os salões com calma.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — informações do Yonghegong",
+      "url": "https://english.beijing.gov.cn/specials/240tour/index.html"
+    }
+  },
+  {
+    "id": "confucius-guozijian",
+    "name": "Templo de Confúcio e Guozijian",
+    "chinese": "孔庙和国子监博物馆",
+    "category": "Educação e filosofia",
+    "summary": "O conjunto reúne o Templo de Confúcio de Pequim e a antiga Academia Imperial, principal instituição estatal de ensino da China imperial. Estelas com nomes de aprovados nos exames, ciprestes antigos, pórticos e o salão Biyong ajudam a explicar como conhecimento, mérito e administração se relacionavam. A tranquila Guozijian Street completa a experiência.",
+    "why": "É uma das melhores atrações para entender a formação dos funcionários que administravam o império. A visita contextualiza os clássicos confucianos, os rigorosos exames imperiais e a maneira como educação e autoridade política se reforçavam. O ambiente costuma ser menos congestionado que os grandes palácios, permitindo observar inscrições e detalhes arquitetônicos. Como fica a poucos minutos do Templo Lama, os dois locais formam uma combinação natural, mas representam tradições diferentes: culto e estudo confucianos de um lado, budismo tibetano do outro.",
+    "highlights": [
+      "Floresta de estelas dos exames imperiais",
+      "Salão Biyong da Academia Imperial",
+      "Dacheng Hall e ciprestes históricos"
+    ],
+    "location": "13–15 Guozijian Street",
+    "district": "Dongcheng",
+    "coords": [39.946, 116.4087],
+    "nearestMetro": "Yonghegong Lama Temple, Linhas 2 e 5",
+    "admissionRmb": "¥30 adulto; ¥15 para categorias elegíveis mediante documento.",
+    "hours": "09:00–17:00, última entrada 16:30. Normalmente fecha às segundas, salvo feriados; calendários especiais de verão podem mudar o dia de fechamento.",
+    "duration": "1,5–2 horas",
+    "booking": "Reserva não costuma ser obrigatória para estrangeiros; a prefeitura informa venda no local com passaporte. Também há compra no WeChat oficial e no site do museu.",
+    "bestTime": "Fim da manhã ou começo da tarde, combinado ao Templo Lama e à rua Wudaoying.",
+    "officialSource": {
+      "label": "Templo de Confúcio e Museu da Academia Imperial — site oficial",
+      "url": "https://www.kmgzj.com/en/"
+    }
+  },
+  {
+    "id": "jingshan-park",
+    "name": "Parque Jingshan",
+    "chinese": "景山公园",
+    "category": "Parque histórico",
+    "summary": "A colina de Jingshan ergue-se imediatamente ao norte da Cidade Proibida e marca o ponto elevado do Eixo Central histórico. Criada em grande parte com terra retirada dos fossos imperiais, possui cinco pavilhões sobre o cume. O Pavilhão Wanchun oferece a vista panorâmica mais conhecida dos telhados dourados e pátios do antigo palácio.",
+    "why": "Poucas subidas tão curtas produzem uma leitura urbana tão clara. Do alto é possível enxergar a Cidade Proibida ao sul, as Torres do Tambor e do Sino ao norte e, em dias limpos, grande parte do centro. O parque funciona especialmente bem como continuação da visita ao palácio, cuja saída norte fica do outro lado da rua. Também merece visita independente no pôr do sol, quando a luz lateral destaca os telhados; apenas considere filas e espaço limitado no mirante principal.",
+    "highlights": [
+      "Panorama da Cidade Proibida no Pavilhão Wanchun",
+      "Cinco pavilhões sobre a colina",
+      "Peônias e jardins sazonais"
+    ],
+    "location": "44 Jingshan West Street, em frente à saída norte da Cidade Proibida",
+    "district": "Xicheng",
+    "coords": [39.9251, 116.3969],
+    "nearestMetro": "National Art Museum, Linha 8, seguida de caminhada; também é acessado diretamente após sair da Cidade Proibida",
+    "admissionRmb": "¥2 normalmente. Exposições e festivais, como o de peônias, podem elevar o ingresso para cerca de ¥10.",
+    "hours": "1 abr–31 out: 06:00–21:00, última entrada 20:30. 1 nov–31 mar: 06:30–20:00, última entrada 19:30.",
+    "duration": "1–1,5 hora",
+    "booking": "Ingresso disponível na plataforma municipal de parques e normalmente no guichê com passaporte. Em horários de pôr do sol, compre antes para reduzir espera.",
+    "bestTime": "45–60 minutos antes do pôr do sol ou logo após a abertura em dia de céu limpo.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — guia oficial de Jingshan",
+      "url": "https://english.beijing.gov.cn/specials/parktours/guidevisitors/jingshanpark/"
+    }
+  },
+  {
+    "id": "beihai-park",
+    "name": "Parque Beihai",
+    "chinese": "北海公园",
+    "category": "Jardim imperial",
+    "summary": "Um dos mais antigos jardins imperiais preservados da China, Beihai organiza-se em torno de um lago central. A Dagoba Branca domina a Ilha de Jade, enquanto a margem norte reúne o Muro dos Nove Dragões, pavilhões, templos e jardins menores. Barcos sazonais conectam áreas do parque e transformam a visita em um intervalo agradável entre monumentos.",
+    "why": "Beihai combina história, paisagem e vida cotidiana sem exigir um dia inteiro. A subida à Dagoba Branca oferece boas vistas; já a margem norte concentra detalhes decorativos e espaços mais silenciosos. A travessia completa é longa, portanto escolha uma rota de duas horas pela Ilha de Jade ou uma de quatro horas incluindo o Muro dos Nove Dragões. Sua posição permite combinar o parque com Jingshan, Shichahai e a Mansão do Príncipe Gong, formando um percurso coerente pela antiga cidade imperial.",
+    "highlights": [
+      "Dagoba Branca e Ilha de Jade",
+      "Muro dos Nove Dragões",
+      "Jardim Jingxin e pavilhões da margem norte"
+    ],
+    "location": "1 Wenjin Street, a oeste de Jingshan",
+    "district": "Xicheng",
+    "coords": [39.9244, 116.3832],
+    "nearestMetro": "Beihai North, Linha 6, para a margem norte",
+    "admissionRmb": "Alta temporada: entrada ¥10, combinado ¥20. Baixa: entrada ¥5, combinado ¥15. Barcos e atividades sazonais são extras.",
+    "hours": "Alta: 06:00–21:00, última entrada 20:30. Baixa: 06:30–20:00, última 19:30. Pátios pagos: 08:00–18:00 na alta e 08:30–17:00 na baixa; a maioria fecha às segundas.",
+    "duration": "2–4 horas",
+    "booking": "Use a plataforma municipal Visiting Beijing Parks, de 1 a 7 dias antes, ou confirme venda no guichê com passaporte. Regras antigas para estrangeiros exigiam contato prévio; verifique o aviso oficial atualizado antes da viagem.",
+    "bestTime": "Manhã cedo ou fim de tarde; os barcos dependem de clima e temporada.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — guia oficial de Beihai",
+      "url": "https://english.beijing.gov.cn/specials/parktours/guidevisitors/beihaipark/index.html"
+    }
+  },
+  {
+    "id": "national-museum-china",
+    "name": "Museu Nacional da China",
+    "chinese": "中国国家博物馆",
+    "category": "Museu",
+    "summary": "O enorme museu situado no lado leste da Praça Tiananmen apresenta arqueologia, arte e história chinesas em escala nacional. A exposição permanente Ancient China conduz o visitante por milênios de desenvolvimento material e político, com bronzes, cerâmicas, esculturas e objetos célebres. Outras galerias tratam da formação da China moderna e recebem exposições temporárias de grande porte.",
+    "why": "É a melhor escolha para construir uma linha do tempo ampla antes ou depois de visitar os sítios históricos da cidade. O edifício é extenso demais para uma leitura completa em uma única tarde; priorize Ancient China e acrescente apenas uma ou duas exposições. A entrada geral gratuita aumenta a disputa pelas reservas, e os procedimentos de segurança da área de Tiananmen consomem tempo. Não marque Museu Nacional e Cidade Proibida no mesmo período curto: ambos merecem várias horas e muita caminhada.",
+    "highlights": [
+      "Exposição permanente Ancient China",
+      "Bronzes, jades e cerâmicas de diferentes dinastias",
+      "Galerias sobre a China moderna e exposições temporárias"
+    ],
+    "location": "16 East Chang'an Avenue, lado leste da Praça Tiananmen",
+    "district": "Dongcheng",
+    "coords": [39.9039, 116.395],
+    "nearestMetro": "Tian'anmen East, Linha 1",
+    "admissionRmb": "Entrada geral gratuita; exposições especiais podem exigir ingresso pago.",
+    "hours": "09:00–17:00, última entrada 16:00; de 1 jun a 31 out, o museu informa extensão até 17:30, última entrada 16:30. Fecha às segundas, salvo feriados.",
+    "duration": "3–5 horas",
+    "booking": "Reserva nominal obrigatória e gratuita, disponível até 7 dias antes no sistema oficial, em três faixas de entrada. Use o passaporte original e reserve separadamente qualquer acesso exigido para a Praça Tiananmen.",
+    "bestTime": "Primeiro horário de terça a sexta; escolha previamente as galerias para evitar fadiga.",
+    "officialSource": {
+      "label": "Museu Nacional da China — informações de visita",
+      "url": "https://en.chnmuseum.cn/visit_692/"
+    }
+  },
+  {
+    "id": "drum-bell-towers-hutongs",
+    "name": "Torres do Tambor e do Sino e hutongs",
+    "chinese": "钟鼓楼及胡同",
+    "category": "Eixo Central e bairros históricos",
+    "summary": "As duas torres marcavam oficialmente as horas da capital durante as dinastias Yuan, Ming e Qing e encerram o Eixo Central histórico ao norte. Subir permite observar o tecido baixo de pátios e hutongs ao redor. A visita ganha sentido quando continua a pé por Zhonglouwan, Doufuchi, Yandaixiejie ou pelos becos menos comerciais do bairro.",
+    "why": "O conjunto mostra Pequim em duas escalas: a arquitetura monumental de controle do tempo e a malha doméstica que cresceu à sua volta. O interior da Torre do Tambor preserva grandes tambores e costuma apresentar demonstrações; a Torre do Sino abriga o enorme sino de bronze. Depois, caminhe sem pressa pelos hutongs, lembrando que muitos pátios continuam residenciais. Combine com Shichahai, mas evite limitar o passeio à muito comercial Nanluoguxiang: ruas laterais revelam melhor a textura do bairro.",
+    "highlights": [
+      "Vista dos hutongs desde a Torre do Tambor",
+      "Grande sino de bronze da Torre do Sino",
+      "Caminhada por Zhonglouwan e Yandaixiejie"
+    ],
+    "location": "9 Zhonglouwan Hutong, ao norte de Shichahai",
+    "district": "Dongcheng",
+    "coords": [39.9406, 116.395],
+    "nearestMetro": "Shichahai, Linha 8",
+    "admissionRmb": "Torre do Tambor ¥20; Torre do Sino ¥15; combinado ¥30. Caminhar pelos hutongs é gratuito.",
+    "hours": "26 abr–25 out: 09:30–17:30, última entrada 17:20; combinado vendido até 16:30. 26 out–25 abr: 09:30–16:30, última 16:20. Feriados podem estender 30 minutos.",
+    "duration": "2,5–4 horas incluindo os hutongs",
+    "booking": "Ingressos individuais ou combinados podem ser adquiridos no canal oficial ou no local. Confirme no mesmo dia as demonstrações de tambor e respeite áreas residenciais fechadas.",
+    "bestTime": "Meio da tarde, continuando até Shichahai no pôr do sol.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — monumentos do Eixo Central",
+      "url": "https://english.beijing.gov.cn/specials/centralaxis/landmarksalongthecentralaxis/"
+    }
+  },
+  {
+    "id": "shichahai",
+    "name": "Shichahai",
+    "chinese": "什刹海",
+    "category": "Lagos e bairro histórico",
+    "summary": "Shichahai reúne os lagos Qianhai, Houhai e Xihai dentro de uma extensa área histórica de hutongs. Pontes, salgueiros, antigas residências, templos, bares e restaurantes criam ambientes diferentes ao longo das margens. A região foi ligada ao sistema do Grande Canal e permanece um dos melhores lugares para caminhar entre a antiga Pequim residencial e a cidade de lazer contemporânea.",
+    "why": "O valor de Shichahai está no percurso, não em uma única atração. Comece na estação Shichahai, atravesse a Ponte Wanning e Yandaixiejie, contorne Qianhai e siga para trechos mais tranquilos de Houhai ou Xihai. A área central fica ruidosa à noite, enquanto as margens ocidentais preservam atmosfera mais local. Barcos operam em meses quentes e pistas de gelo aparecem apenas quando as autoridades confirmam condições seguras. Combine com as Torres, Prince Gong ou Beihai conforme o ritmo.",
+    "highlights": [
+      "Ponte Yinding e vistas de Houhai",
+      "Ponte Wanning e ligação histórica ao Grande Canal",
+      "Hutongs, margens arborizadas e atividades sazonais"
+    ],
+    "location": "Área dos lagos ao norte de Beihai e oeste das Torres do Tambor e do Sino",
+    "district": "Xicheng",
+    "coords": [39.9375, 116.386],
+    "nearestMetro": "Shichahai, Linha 8; Beihai North, Linha 6, para a margem sudoeste",
+    "admissionRmb": "Área pública gratuita. Barcos, riquixás, pistas de gelo e atrações internas possuem preços próprios.",
+    "hours": "Área aberta durante todo o dia; estabelecimentos, barcos e atividades possuem horários independentes.",
+    "duration": "2–4 horas",
+    "booking": "Não é necessária para caminhar. Contrate apenas riquixás com preço claramente combinado e não entre em pátios residenciais sem autorização. Passeios de barco e gelo dependem da temporada.",
+    "bestTime": "Fim da tarde até o começo da noite; manhã cedo para uma experiência mais silenciosa.",
+    "officialSource": {
+      "label": "Visit Beijing — Área Cênica de Shichahai",
+      "url": "https://r.visitbeijing.com.cn/attraction/12"
+    }
+  },
+  {
+    "id": "prince-gong-mansion",
+    "name": "Mansão do Príncipe Gong",
+    "chinese": "恭王府博物馆",
+    "category": "Residência histórica",
+    "summary": "O complexo residencial e ajardinado é o mais célebre exemplo preservado de uma mansão principesca Qing em Pequim. Foi associado primeiro ao poderoso oficial Heshen e depois ao príncipe Gong, Yixin. Salões formais, pátios domésticos, corredores e um jardim com rochas artificiais revelam uma escala intermediária entre os palácios imperiais e as tradicionais residências siheyuan.",
+    "why": "A mansão acrescenta uma perspectiva social que falta aos grandes monumentos: mostra como vivia a elite imediatamente abaixo do imperador. Os eixos residenciais explicam hierarquia familiar, enquanto o jardim emprega grutas, água e enquadramentos para criar intimidade. O local é muito popular entre visitantes chineses e pode ficar congestionado em passagens estreitas. Reserve duas horas e combine com Shichahai, a poucos minutos. O famoso caractere Fu é um ponto disputado; não deixe que a fila substitua a observação do conjunto.",
+    "highlights": [
+      "Pátios e salões da residência principesca",
+      "Jardim traseiro, grutas e lago",
+      "Estela com o caractere Fu"
+    ],
+    "location": "17 West Qianhai Street, junto a Shichahai",
+    "district": "Xicheng",
+    "coords": [39.9377, 116.3863],
+    "nearestMetro": "Beihai North, Linha 6",
+    "admissionRmb": "¥40 por adulto.",
+    "hours": "08:30–17:00, última entrada 16:10 e venda até aproximadamente 16:00. Fecha às segundas, salvo feriados.",
+    "duration": "2–3 horas",
+    "booking": "Ingressos são liberados no site ou WeChat oficial a partir das 20:00, até 10 dias antes. Faça reserva nominal e leve o passaporte original.",
+    "bestTime": "Primeiro horário em dia útil; continue por Shichahai depois da visita.",
+    "officialSource": {
+      "label": "Museu da Mansão do Príncipe Gong — site oficial",
+      "url": "https://en.pgm.org.cn/"
+    }
+  },
+  {
+    "id": "798-art-district",
+    "name": "Distrito de Arte 798",
+    "chinese": "798艺术区",
+    "category": "Arte contemporânea",
+    "summary": "Antigo complexo industrial dos anos 1950 convertido em principal polo de arte contemporânea de Pequim. Galerias, museus, livrarias, cafés, esculturas e murais ocupam fábricas de tijolo e grandes naves iluminadas por claraboias. A área pública conecta-se ao 751 D·PARK, onde tubulações, gasômetros e passarelas preservam a presença da antiga infraestrutura industrial.",
+    "why": "O 798 mostra uma Pequim distante dos palácios: experimental, industrial e internacional. Em vez de tentar visitar tudo, consulte a programação e escolha duas instituições, como UCCA, 798CUBE ou galerias menores, deixando tempo para caminhar. As exposições mudam rapidamente e cada espaço define preço, horário e fechamento semanal. O distrito é particularmente fotogênico, mas não é apenas cenário; entrar em pelo menos uma mostra ajuda a entender sua relevância. A expansão da Linha 12 tornou o acesso mais simples.",
+    "highlights": [
+      "UCCA Center for Contemporary Art",
+      "Arquitetura fabril e esculturas ao ar livre",
+      "751 D·PARK e passarelas industriais"
+    ],
+    "location": "2–4 Jiuxianqiao Road",
+    "district": "Chaoyang",
+    "coords": [39.9841, 116.4946],
+    "nearestMetro": "Gaojiayuan, Linha 12, seguida de caminhada; Wangjing South ou Jiangtai, Linha 14, são alternativas",
+    "admissionRmb": "Área pública gratuita. Museus e exposições variam, frequentemente entre ¥40 e ¥150; algumas galerias são gratuitas.",
+    "hours": "Ruas e área pública abertas o dia inteiro. A maioria das instituições funciona aproximadamente 10:00–18:00 ou 19:00 e muitas fecham às segundas.",
+    "duration": "3–5 horas",
+    "booking": "Não há reserva para entrar no distrito. Consulte individualmente UCCA e outras exposições desejadas; mostras temporárias populares podem exigir horário marcado.",
+    "bestTime": "Terça a domingo, entre 11:00 e 17:00, quando galerias estão abertas; luz do fim da tarde favorece as áreas externas.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — 798-751 Park",
+      "url": "https://english.beijing.gov.cn/specials/240tour/index.html"
+    }
+  },
+  {
+    "id": "olympic-park",
+    "name": "Parque Olímpico e Ninho de Pássaro",
+    "chinese": "北京奥林匹克公园及国家体育场",
+    "category": "Arquitetura contemporânea",
+    "summary": "O eixo olímpico reúne o Estádio Nacional, conhecido como Ninho de Pássaro, o Centro Aquático Nacional, ou Cubo d'Água, a Torre Olímpica e extensas áreas públicas. O conjunto foi criado para os Jogos de 2008 e reutilizado em 2022, tornando Pequim a primeira cidade a sediar edições de verão e inverno dos Jogos Olímpicos.",
+    "why": "A visita funciona melhor no fim do dia, quando é possível perceber a escala urbana e depois ver os edifícios iluminados. O exterior gratuito já oferece as imagens mais conhecidas; entre no Ninho de Pássaro se houver interesse na estrutura, nas exposições ou em uma vista panorâmica. Concertos e eventos alteram acesso e horários com frequência. O eixo continua ao norte pelo Olympic Forest Park, permitindo combinar arquitetura com uma caminhada, mas as distâncias são maiores do que parecem no mapa.",
+    "highlights": [
+      "Estádio Nacional, o Ninho de Pássaro",
+      "Cubo d'Água e iluminação noturna",
+      "Eixo paisagístico e Torre Olímpica"
+    ],
+    "location": "Olympic Green, ao norte do centro histórico",
+    "district": "Chaoyang",
+    "coords": [39.9929, 116.3966],
+    "nearestMetro": "Olympic Sports Center ou Olympic Green, Linha 8; Olympic Green também atende a Linha 15",
+    "admissionRmb": "Áreas externas gratuitas. Visita panorâmica ao Ninho de Pássaro: cerca de ¥40 como referência; exposições, torre e atividades possuem ingressos próprios.",
+    "hours": "Áreas públicas com acesso amplo. Ninho de Pássaro: referência 10:00–22:00, última entrada 21:00. Concertos podem reduzir ou cancelar a visita turística.",
+    "duration": "2–4 horas",
+    "booking": "Não é necessária para os espaços externos. Confira o calendário do estádio antes de comprar entrada interna; eventos podem alterar o funcionamento no mesmo dia.",
+    "bestTime": "Chegue 60–90 minutos antes do pôr do sol e permaneça até a iluminação noturna.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — Parque Olímpico e Estádio Nacional",
+      "url": "https://english.beijing.gov.cn/specials/240tour/index.html"
+    }
+  },
+  {
+    "id": "ming-tombs",
+    "name": "Tumbas Ming",
+    "chinese": "明十三陵",
+    "category": "Patrimônio funerário",
+    "summary": "Treze imperadores Ming foram sepultados em um grande vale protegido pelas montanhas de Tianshou, ao norte de Pequim. As áreas visitáveis incluem o Caminho Sagrado, ladeado por esculturas de animais e oficiais, Changling, tumba do imperador Yongle, Dingling, com câmaras subterrâneas escavadas, e Zhaoling. Os setores são separados por vários quilômetros.",
+    "why": "O sítio amplia a narrativa iniciada na Cidade Proibida: os mesmos imperadores que organizaram a capital planejaram aqui sua paisagem funerária segundo princípios de feng shui. O Caminho Sagrado é a parte mais atmosférica, enquanto Changling preserva arquitetura acima do solo e Dingling oferece acesso incomum a uma câmara subterrânea. Como não existe um único núcleo compacto, transporte próprio, táxi contratado ou excursão melhora muito a experiência. Um roteiro sensato escolhe Caminho Sagrado e apenas uma ou duas tumbas.",
+    "highlights": [
+      "Caminho Sagrado e esculturas monumentais",
+      "Changling, mausoléu do imperador Yongle",
+      "Palácio subterrâneo de Dingling"
+    ],
+    "location": "Shisanling Town, vale das montanhas Tianshou, cerca de 50 km ao norte do centro",
+    "district": "Changping",
+    "coords": [40.294, 116.2314],
+    "nearestMetro": "Ming Tombs Scenic Area, Linha Changping, ainda exige conexão rodoviária; ônibus locais ou carro são necessários entre os setores",
+    "admissionRmb": "Alta: Caminho Sagrado ¥20, Changling ¥45, Dingling ¥60, Zhaoling ¥30. Baixa: ¥15, ¥30, cerca de ¥40 e ¥20, respectivamente. Cada área tem ingresso próprio.",
+    "hours": "Referência oficial: 08:30–17:30 na alta temporada e 08:30–16:30 na baixa. Horário final de entrada pode anteceder o fechamento.",
+    "duration": "4–6 horas no sítio; dia inteiro desde o centro",
+    "booking": "A prefeitura informa que não é exigida reserva e há venda no local. Leve o passaporte e confirme quais tumbas estão abertas; condições de conservação podem fechar áreas específicas.",
+    "bestTime": "Manhã de dia útil; primavera e setembro oferecem clima melhor para caminhar pelo vale.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — ingressos das Tumbas Ming",
+      "url": "https://english.beijing.gov.cn/specials/ticketing/attractions/202407/t20240719_3753671.html"
+    }
+  },
+  {
+    "id": "fragrant-hills",
+    "name": "Colinas Perfumadas",
+    "chinese": "香山公园",
+    "category": "Parque natural e histórico",
+    "summary": "Parque montanhoso nos subúrbios ocidentais, com quase nove séculos de história como paisagem imperial. Trilhas, templos, pavilhões e florestas conduzem ao Pico Incensário, que alcança cerca de 557 metros. A fama maior vem das folhas vermelhas de outono, embora a combinação de caminhada, patrimônio e vistas faça sentido também fora do auge da folhagem.",
+    "why": "É uma alternativa valiosa aos monumentos centrais quando se deseja natureza sem sair da rede urbana de transporte. A subida integral exige preparo e pode levar algumas horas; um teleférico sazonal oferece opção mais leve. O Templo das Nuvens Azuis, a Villa Shuangqing e os mirantes acrescentam camadas históricas à caminhada. O festival das folhas vermelhas, normalmente entre meados de outubro e início de novembro, traz beleza e multidões extremas. Em setembro, o parque permanece verde, mais silencioso e geralmente agradável.",
+    "highlights": [
+      "Trilhas ao Pico Incensário",
+      "Templo das Nuvens Azuis",
+      "Folhagem vermelha no fim do outono"
+    ],
+    "location": "40 Maimai Street, sopé das Colinas Ocidentais",
+    "district": "Haidian",
+    "coords": [39.9908, 116.186],
+    "nearestMetro": "Xiangshan, Linha Xijiao",
+    "admissionRmb": "¥10 de 1 abr a 15 nov; ¥5 de 16 nov a 31 mar. Teleférico e Templo das Nuvens Azuis são cobrados separadamente.",
+    "hours": "Alta temporada: 06:00–19:30, última entrada 18:30. Baixa: 06:00–19:00, última entrada 18:00.",
+    "duration": "3–5 horas",
+    "booking": "Estrangeiros podem reservar no WeChat oficial Fragrant Hills Park Services com passaporte. Durante o festival de folhas, compra antecipada e chegada fora do pico são essenciais.",
+    "bestTime": "Antes de 08:00 para caminhada; setembro tem menos multidões. Para folhas vermelhas, verifique o boletim anual de meados de outubro a novembro.",
+    "officialSource": {
+      "label": "Prefeitura de Pequim — guia oficial de Fragrant Hills",
+      "url": "https://english.beijing.gov.cn/specials/parktours/guidevisitors/fragranthillspark/"
+    }
+  }
+]

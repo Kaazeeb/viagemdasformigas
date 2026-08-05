@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Guia completo de Pequim com 18 atrações, 162 fotos em alta resolução, mapas, metrô, distritos, hotéis, estações, aeroportos e dicas práticas."
+    >
+    <meta name="theme-color" content="#691f1d">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Pequim em profundidade — Rota China">
+    <meta
+      property="og:description"
+      content="Planeje Pequim com 18 atrações, nove fotos por lugar, mapas, transporte, hospedagem e um roteiro de cinco dias."
+    >
+    <title>Pequim em profundidade — Rota China</title>
+    <link rel="preconnect" href="https://upload.wikimedia.org">
+    <link rel="preconnect" href="https://tile.openstreetmap.org">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIINfQ3ynhZIsC6E0eqCtoM1lT7kT6GfE="
+      crossorigin
+    >
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="beijing.css">
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin
+      defer
+    ></script>
+    <script src="beijing-data.js" defer></script>
+    <script src="beijing.js" defer></script>
+  </head>
+  <body class="beijing-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header beijing-header" id="topo">
+      <a class="brand" href="index.html" aria-label="Rota China, voltar ao guia principal">
+        <span class="brand-seal" aria-hidden="true">京</span>
+        <span>
+          <strong>Rota China</strong>
+          <small>Pequim em profundidade</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação da página">
+        <a href="#roteiro">Roteiro</a>
+        <a href="#atracoes">Atrações</a>
+        <a href="#mapa">Mapa</a>
+        <a href="#hoteis">Hotéis</a>
+        <a href="#transporte">Transporte</a>
+        <a href="#dicas">Dicas</a>
+      </nav>
+
+      <a class="beijing-back" href="index.html">
+        <span aria-hidden="true">←</span>
+        <span>8 destinos</span>
+      </a>
+    </header>
+
+    <main id="conteudo">
+      <section class="beijing-hero" id="inicio" aria-labelledby="beijing-title">
+        <div class="beijing-hero-copy">
+          <p class="beijing-overline"><span>北京</span> Guia especial · capital imperial</p>
+          <h1 id="beijing-title">Pequim,<br>camada por camada</h1>
+          <p class="beijing-hero-lede">
+            Palácios, templos, hutongs, arte contemporânea e a Grande Muralha em um guia
+            pensado para decidir onde ficar, o que reservar e como organizar cada dia.
+          </p>
+
+          <div class="beijing-hero-actions">
+            <a class="button beijing-button-primary" href="#atracoes">Ver atrações</a>
+            <a class="button beijing-button-secondary" href="#mapa">Abrir mapa</a>
+          </div>
+
+          <dl class="beijing-hero-stats">
+            <div><dt data-attraction-total>18</dt><dd>lugares essenciais</dd></div>
+            <div><dt data-photo-total>162</dt><dd>fotos em alta</dd></div>
+            <div><dt>5</dt><dd>dias organizados</dd></div>
+          </dl>
+        </div>
+
+        <div class="beijing-hero-gallery" data-hero-gallery role="group" aria-label="Imagens de Pequim">
+          <div class="beijing-hero-placeholder" aria-hidden="true">
+            <span>京</span>
+            <small>Beijing</small>
+          </div>
+        </div>
+
+        <a class="beijing-scroll" href="#visao-geral">
+          <span>Começar</span>
+          <span aria-hidden="true">↓</span>
+        </a>
+      </section>
+
+      <section class="beijing-overview beijing-section" id="visao-geral" aria-labelledby="overview-title">
+        <div class="beijing-section-heading">
+          <p class="beijing-kicker">Antes de montar os dias</p>
+          <h2 id="overview-title">Uma cidade com escala de país</h2>
+          <p>
+            Os pontos centrais parecem próximos no mapa, mas segurança, filas, reservas e
+            longas trocas de metrô mudam o tempo real. Agrupar por região é a regra mais útil.
+          </p>
+        </div>
+
+        <div class="beijing-overview-grid">
+          <article>
+            <span class="overview-icon" aria-hidden="true">轴</span>
+            <p class="overview-label">Eixo histórico</p>
+            <h3>Centro imperial</h3>
+            <p>Cidade Proibida, Tian’anmen, Jingshan, Beihai e hutongs formam o núcleo mais denso.</p>
+          </article>
+          <article>
+            <span class="overview-icon" aria-hidden="true">墙</span>
+            <p class="overview-label">Bate-volta</p>
+            <h3>Grande Muralha</h3>
+            <p>Mutianyu e Badaling são alternativas, não duas paradas do mesmo dia. Escolha uma.</p>
+          </article>
+          <article>
+            <span class="overview-icon" aria-hidden="true">约</span>
+            <p class="overview-label">Planejamento</p>
+            <h3>Reserve antes</h3>
+            <p>Palácio, Praça, museus e templos podem exigir janela marcada e documento original.</p>
+          </article>
+          <article>
+            <span class="overview-icon" aria-hidden="true">行</span>
+            <p class="overview-label">Mobilidade</p>
+            <h3>Metrô + caminhada</h3>
+            <p>A rede resolve as grandes distâncias; o último quilômetro quase sempre é a pé.</p>
+          </article>
+        </div>
+
+        <div class="beijing-trip-alert">
+          <span aria-hidden="true">月</span>
+          <div>
+            <p class="overview-label">Alerta para estas datas</p>
+            <h3>25–27 de setembro é o feriado do Festival do Meio-Outono</h3>
+            <p>
+              A estadia cruza os três dias do feriado nacional de 2026. Espere maior procura
+              por trens, hotéis e atrações; priorize reservas reembolsáveis e compre os
+              transportes assim que as janelas oficiais abrirem.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="beijing-itinerary beijing-section" id="roteiro" aria-labelledby="itinerary-title">
+        <div class="beijing-section-heading heading-split">
+          <div>
+            <p class="beijing-kicker">23–27 de setembro de 2026</p>
+            <h2 id="itinerary-title">Um roteiro de cinco dias sem zigue-zague</h2>
+          </div>
+          <p>
+            A ordem é uma base de decisão. Ajuste o dia da Cidade Proibida e dos museus à
+            disponibilidade real de ingressos.
+          </p>
+        </div>
+
+        <ol class="beijing-day-list">
+          <li>
+            <span class="day-number">01</span>
+            <div>
+              <p class="day-zone">Centro monumental</p>
+              <h3>Tian’anmen → Cidade Proibida → Jingshan</h3>
+              <p>Comece cedo, atravesse o palácio de sul a norte e termine com a vista do eixo central.</p>
+            </div>
+            <span class="day-effort">dia intenso</span>
+          </li>
+          <li>
+            <span class="day-number">02</span>
+            <div>
+              <p class="day-zone">Sul + história nacional</p>
+              <h3>Templo do Céu → Qianmen → Museu Nacional</h3>
+              <p>Jardim pela manhã, almoço no eixo de Qianmen e um museu de grande escala à tarde.</p>
+            </div>
+            <span class="day-effort">muito conteúdo</span>
+          </li>
+          <li>
+            <span class="day-number">03</span>
+            <div>
+              <p class="day-zone">Montanhas ao norte</p>
+              <h3>Mutianyu ou Badaling → Parque Olímpico</h3>
+              <p>Dedique o dia à Muralha e use o entardecer apenas para o Ninho de Pássaro iluminado.</p>
+            </div>
+            <span class="day-effort">bate-volta</span>
+          </li>
+          <li>
+            <span class="day-number">04</span>
+            <div>
+              <p class="day-zone">Noroeste + nordeste</p>
+              <h3>Palácio de Verão → Templo Lama → Guozijian</h3>
+              <p>O palácio ocupa a manhã; reserve o fim do dia para dois conjuntos vizinhos e compactos.</p>
+            </div>
+            <span class="day-effort">metrô + jardins</span>
+          </li>
+          <li>
+            <span class="day-number">05</span>
+            <div>
+              <p class="day-zone">Pequim vivida</p>
+              <h3>Beihai → Shichahai → Príncipe Gong → hutongs</h3>
+              <p>Um último dia flexível, com lagos, pátios e tempo para caminhar sem uma fila central.</p>
+            </div>
+            <span class="day-effort">ritmo livre</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="beijing-attractions beijing-section" id="atracoes" aria-labelledby="attractions-title">
+        <div class="beijing-section-heading heading-split">
+          <div>
+            <p class="beijing-kicker">Palácios, muralhas, parques e arte</p>
+            <h2 id="attractions-title">Os lugares que definem Pequim</h2>
+          </div>
+          <p>
+            Cada ficha reúne contexto, o que observar, localização, acesso e informação
+            prática. Preços e horários têm data de revisão e devem ser confirmados.
+          </p>
+        </div>
+
+        <div class="beijing-filter" role="group" aria-label="Filtrar atrações">
+          <button class="is-active" type="button" data-beijing-filter="all">Todas</button>
+          <button type="button" data-beijing-filter="imperial">Imperial</button>
+          <button type="button" data-beijing-filter="temples">Templos</button>
+          <button type="button" data-beijing-filter="wall">Muralha</button>
+          <button type="button" data-beijing-filter="neighborhoods">Bairros</button>
+          <button type="button" data-beijing-filter="modern">Moderna</button>
+          <button type="button" data-beijing-filter="nature">Natureza</button>
+        </div>
+
+        <div class="beijing-media-note">
+          <span aria-hidden="true">放</span>
+          <p>
+            <strong>Ampliação em qualidade real:</strong> os mosaicos usam miniaturas de 1280 px
+            e as faixas usam versões menores, mas o lightbox abre os arquivos em alta resolução. As <span data-photo-total>162</span> fotos têm
+            pelo menos 1920 px no maior lado e são adequadas para ampliação em tela.
+          </p>
+        </div>
+
+        <div class="beijing-attraction-list" data-beijing-attractions></div>
+        <noscript>
+          <p class="beijing-fallback">Ative o JavaScript para abrir as 18 fichas ilustradas e seus mapas.</p>
+        </noscript>
+      </section>
+
+      <section class="beijing-map-section beijing-section" id="mapa" aria-labelledby="map-title">
+        <div class="beijing-section-heading heading-split map-heading">
+          <div>
+            <p class="beijing-kicker">Orientação espacial</p>
+            <h2 id="map-title">Atrações, terminais e aeroportos no mapa</h2>
+          </div>
+          <p>
+            Toque nos marcadores para abrir a ficha correspondente. As coordenadas servem
+            para planejamento e não substituem a entrada correta indicada no ingresso.
+          </p>
+        </div>
+
+        <div class="beijing-map-shell">
+          <div class="beijing-map-toolbar" role="group" aria-label="Camadas do mapa">
+            <button class="is-active" type="button" data-map-layer="attractions">
+              <span class="map-key key-attraction" aria-hidden="true"></span>Atrações
+            </button>
+            <button class="is-active" type="button" data-map-layer="stations">
+              <span class="map-key key-station" aria-hidden="true"></span>Estações
+            </button>
+            <button class="is-active" type="button" data-map-layer="airports">
+              <span class="map-key key-airport" aria-hidden="true"></span>Aeroportos
+            </button>
+            <button type="button" data-map-reset>Mostrar tudo</button>
+          </div>
+          <section class="beijing-map" data-beijing-map aria-label="Mapa interativo de Pequim"></section>
+          <div class="map-unavailable" data-map-unavailable hidden>
+            <strong>O mapa interativo não carregou.</strong>
+            <p>A lista abaixo mantém coordenadas e links externos para cada ponto.</p>
+          </div>
+          <div class="map-location-index" data-map-location-index></div>
+        </div>
+      </section>
+
+      <section class="beijing-reference-maps beijing-section" aria-labelledby="reference-maps-title">
+        <div class="beijing-section-heading">
+          <p class="beijing-kicker">Duas leituras diferentes</p>
+          <h2 id="reference-maps-title">Metrô para mover; distritos para compreender</h2>
+          <p>
+            Abra as imagens para ampliar. O mapa de metrô ajuda nas conexões; o administrativo
+            mostra por que “Pequim” se estende muito além do centro histórico.
+          </p>
+        </div>
+        <div class="reference-map-grid" data-reference-maps></div>
+      </section>
+
+      <section class="beijing-hotels beijing-section" id="hoteis" aria-labelledby="hotels-title">
+        <div class="beijing-section-heading heading-split">
+          <div>
+            <p class="beijing-kicker">1 quarto · 2 adultos · 23–27 set. 2026</p>
+            <h2 id="hotels-title">Watchlist para buscar até ¥500 com café</h2>
+          </div>
+          <p>
+            Seleção orientada por localização e transporte. Tarifas de hotel são dinâmicas:
+            leia o selo de verificação de cada opção antes de considerar o teto confirmado.
+          </p>
+        </div>
+
+        <div class="hotel-check-note" data-hotel-check-note>
+          <span aria-hidden="true">价</span>
+          <div>
+            <strong>Como a checagem foi feita</strong>
+            <p data-hotel-method>Carregando a nota de verificação das tarifas…</p>
+            <a
+              class="hotel-search-link"
+              data-hotel-search
+              href="https://www.trip.com/hotels/list?city=1&amp;checkin=2026%2F09%2F23&amp;checkout=2026%2F09%2F27&amp;adult=2&amp;children=0&amp;crn=1&amp;curr=CNY"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Abrir busca com datas no Trip.com ↗</a>
+          </div>
+        </div>
+
+        <div class="hotel-grid" data-beijing-hotels></div>
+      </section>
+
+      <section class="beijing-transport beijing-section" id="transporte" aria-labelledby="transport-title">
+        <div class="beijing-section-heading heading-split">
+          <div>
+            <p class="beijing-kicker">Chegar e sair sem confundir terminais</p>
+            <h2 id="transport-title">Estações de trem e aeroportos</h2>
+          </div>
+          <p>
+            O nome “Beijing” aparece em vários terminais. Confirme a estação completa no bilhete;
+            escolher a errada pode significar atravessar a cidade.
+          </p>
+        </div>
+
+        <div class="transport-tabs" role="tablist" aria-label="Tipo de terminal">
+          <button class="is-active" type="button" role="tab" aria-selected="true" data-terminal-tab="stations">Estações ferroviárias</button>
+          <button type="button" role="tab" aria-selected="false" data-terminal-tab="airports">Aeroportos</button>
+        </div>
+        <div class="terminal-grid" data-terminal-grid></div>
+      </section>
+
+      <section class="beijing-tips beijing-section" id="dicas" aria-labelledby="tips-title">
+        <div class="beijing-section-heading">
+          <p class="beijing-kicker">Detalhes que mudam a viagem</p>
+          <h2 id="tips-title">Dicas práticas para Pequim</h2>
+          <p>Uma lista direta para evitar os erros mais comuns de reserva, deslocamento e ritmo.</p>
+        </div>
+
+        <div class="beijing-tip-grid">
+          <article>
+            <span>01</span>
+            <h3>Ingressos e passaporte</h3>
+            <p>Use o nome exatamente como no passaporte e leve o documento físico. Vários acessos vinculam a reserva ao número informado.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Praça Tian’anmen</h3>
+            <p>Há controle de segurança e acesso organizado. Reserve uma margem real antes do horário da Cidade Proibida.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Mapas no celular</h3>
+            <p>Amap e Baidu Maps costumam ter dados locais mais completos. Salve nomes e endereços também em caracteres chineses.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Pagamentos</h3>
+            <p>Configure Alipay ou WeChat Pay antes de sair; mantenha um cartão e algum dinheiro como redundância.</p>
+          </article>
+          <article>
+            <span>05</span>
+            <h3>Metrô em horário de pico</h3>
+            <p>Evite trocas centrais entre 7h30–9h30 e 17h–19h. A distância dentro das estações pode ser maior que a caminhada externa.</p>
+          </article>
+          <article>
+            <span>06</span>
+            <h3>Grande Muralha</h3>
+            <p>Mutianyu é paisagística e bem estruturada; Badaling tem acesso ferroviário e maior movimento. Não tente visitar ambas.</p>
+          </article>
+          <article>
+            <span>07</span>
+            <h3>Feriado na viagem</h3>
+            <p>De 25 a 27 de setembro de 2026 ocorre o Festival do Meio-Outono. Conte com maior lotação e reserve cedo.</p>
+          </article>
+          <article>
+            <span>08</span>
+            <h3>Comida e água</h3>
+            <p>Busque pato laqueado, zhajiangmian, jiaozi e cozinhas regionais. Água de torneira não deve ser presumida potável.</p>
+          </article>
+          <article>
+            <span>09</span>
+            <h3>Banheiros e caminhada</h3>
+            <p>Carregue papel e álcool em gel. Calçado confortável é essencial: palácios e parques somam muitos quilômetros.</p>
+          </article>
+          <article>
+            <span>10</span>
+            <h3>Plano de contingência</h3>
+            <p>Tenha capturas de tela das reservas, endereço do hotel em chinês e uma alternativa para atrações esgotadas.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="beijing-sources beijing-section" id="fontes" aria-labelledby="beijing-sources-title">
+        <div class="beijing-section-heading compact">
+          <p class="beijing-kicker">Transparência</p>
+          <h2 id="beijing-sources-title">Fontes, atualização e créditos</h2>
+          <p>
+            Informações operacionais foram pesquisadas em agosto de 2026. Regras, preços e
+            horários mudam; confira o link oficial antes de pagar.
+          </p>
+        </div>
+        <details>
+          <summary>Ver fontes editoriais</summary>
+          <div class="beijing-source-list" data-beijing-sources></div>
+        </details>
+        <details>
+          <summary>Ver créditos das imagens</summary>
+          <div class="beijing-credit-list" data-beijing-credits></div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer beijing-footer">
+      <div>
+        <span class="brand-seal" aria-hidden="true">京</span>
+        <p><strong>Pequim em profundidade</strong><br>Uma página especial do Rota China.</p>
+      </div>
+      <p>
+        Conteúdo informativo. Confirme regras e disponibilidade antes da viagem.<br>
+        Fotografias licenciadas; mapa interativo © OpenStreetMap contributors.
+      </p>
+      <div class="footer-links">
+        <a href="index.html">Guia principal</a>
+        <a href="#topo">Voltar ao topo ↑</a>
+      </div>
+    </footer>
+
+    <nav class="beijing-mobile-nav" aria-label="Navegação móvel">
+      <a href="#atracoes"><span aria-hidden="true">殿</span>Atrações</a>
+      <a href="#mapa"><span aria-hidden="true">图</span>Mapa</a>
+      <a href="#hoteis"><span aria-hidden="true">宿</span>Hotéis</a>
+      <a href="#transporte"><span aria-hidden="true">站</span>Terminais</a>
+    </nav>
+
+    <dialog class="beijing-lightbox" data-beijing-lightbox aria-labelledby="beijing-lightbox-caption">
+      <div class="beijing-lightbox-shell">
+        <div class="beijing-lightbox-toolbar">
+          <span data-beijing-lightbox-counter>01 / 01</span>
+          <span class="beijing-lightbox-hint">Use as setas ou deslize para os lados</span>
+          <button type="button" data-beijing-lightbox-close aria-label="Fechar foto ampliada">Fechar ×</button>
+        </div>
+        <div class="beijing-lightbox-stage">
+          <button type="button" data-beijing-lightbox-prev aria-label="Foto anterior">←</button>
+          <figure>
+            <img data-beijing-lightbox-image src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="">
+            <figcaption id="beijing-lightbox-caption">
+              <strong data-beijing-lightbox-caption></strong>
+              <span data-beijing-lightbox-credit></span>
+              <a data-beijing-lightbox-source href="#" target="_blank" rel="noopener noreferrer">Original e licença ↗</a>
+            </figcaption>
+          </figure>
+          <button type="button" data-beijing-lightbox-next aria-label="Próxima foto">→</button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

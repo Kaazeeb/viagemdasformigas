@@ -1,0 +1,889 @@
+{
+  "hotelMethod": {
+    "status": "no_confirmed_matches",
+    "requestedStay": {
+      "checkIn": "2026-09-23",
+      "checkOut": "2026-09-27",
+      "nights": 4,
+      "rooms": 1,
+      "adults": 2,
+      "children": 0,
+      "currency": "CNY",
+      "maximumNightlyRoomRate": 500,
+      "breakfastRequired": true
+    },
+    "checkedAt": "2026-08-05T08:03:57Z",
+    "searchUrl": "https://www.trip.com/hotels/list?city=1&checkin=2026%2F09%2F23&checkout=2026%2F09%2F27&optionId=1&optionType=City&directSearch=true&adult=2&children=0&crn=1&curr=CNY",
+    "result": "Nenhum hotel pôde ser confirmado de forma auditável com disponibilidade nas datas pedidas, diária de até CNY 500, café da manhã incluído, impostos e política de cancelamento.",
+    "limitation": "As páginas públicas rastreáveis do Trip.com ignoraram as datas de 23 a 27 de setembro de 2026 e mostraram apenas preços-piso para uma janela móvel de aproximadamente sete dias em agosto. As opções de quarto apareceram como ‘Check availability’. Por isso, os valores HKD abaixo são somente pisos observados em outras datas, não cotações da estadia solicitada. A indicação de café mostra que o hotel oferece café da manhã, mas não prova que ele esteja incluído em uma tarifa elegível.",
+    "usePolicy": "Exibir os hotéis somente como lista de acompanhamento. Antes da reserva, abrir o link do Trip.com, reaplicar 23–27/09/2026, 1 quarto, 2 adultos, 0 crianças e confirmar moeda CNY, café incluído, total com impostos e cancelamento.",
+    "holidayNotice": "A estadia coincide parcialmente com o feriado oficial chinês do Festival do Meio do Outono, de 25 a 27 de setembro de 2026; disponibilidade e tarifas podem mudar rapidamente."
+  },
+  "hotels": [
+    {
+      "status": "watchlist_unconfirmed",
+      "tripHotelId": "608516",
+      "name": "CitiGO Hotel Sanyuanqiao Beijing",
+      "district": "Chaoyang",
+      "area": "Sanyuanqiao / China International Exhibition Center",
+      "address": "Building 17, Courtyard A5, Shuguang Xili, Chaoyang District, Beijing 100028",
+      "nearestTransit": [
+        {
+          "name": "Sanyuanqiao",
+          "distanceMeters": 270,
+          "lines": ["10", "12", "Capital Airport Express"]
+        }
+      ],
+      "rating": {
+        "score": 9.6,
+        "scale": 10,
+        "reviewCount": 14491
+      },
+      "breakfastOffered": "Western and Chinese",
+      "publicPageOccupancy": {
+        "rooms": 1,
+        "adults": 2,
+        "children": 0
+      },
+      "displayedFloor": {
+        "amount": 209,
+        "currency": "HKD",
+        "dateWindow": "2026-08-06/2026-08-12",
+        "taxesIncluded": null,
+        "breakfastIncluded": null,
+        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
+      },
+      "requestedStayVerification": {
+        "available": null,
+        "cnyNightlyRate": null,
+        "atOrBelowCny500": null,
+        "breakfastIncludedInRate": null,
+        "taxesIncluded": null,
+        "cancellationPolicy": null,
+        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
+      },
+      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-608516/ibis-hotel-beijing-sanyuan-bridge/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=608516&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "status": "watchlist_unconfirmed",
+      "tripHotelId": "134514068",
+      "name": "Jingshang Hotel (Beijing Sanlitun Workers’ Stadium Metro)",
+      "district": "Chaoyang",
+      "area": "Sanlitun / Workers’ Stadium",
+      "address": "Building 1, Courtyard 26A, Dongzhimen Outer Street, Chaoyang District, Beijing",
+      "nearestTransit": [
+        {
+          "name": "Workers’ Stadium",
+          "distanceMeters": 950,
+          "lines": []
+        },
+        {
+          "name": "Dongzhimen",
+          "distanceMeters": 1000,
+          "lines": ["2", "13", "Capital Airport Express"]
+        }
+      ],
+      "rating": {
+        "score": 9.6,
+        "scale": 10,
+        "reviewCount": 352
+      },
+      "breakfastOffered": "Chinese",
+      "publicPageOccupancy": {
+        "rooms": 1,
+        "adults": 2,
+        "children": 0
+      },
+      "displayedFloor": {
+        "amount": 137,
+        "currency": "HKD",
+        "dateWindow": "2026-08-06/2026-08-12",
+        "taxesIncluded": null,
+        "breakfastIncluded": null,
+        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
+      },
+      "requestedStayVerification": {
+        "available": null,
+        "cnyNightlyRate": null,
+        "atOrBelowCny500": null,
+        "breakfastIncludedInRate": null,
+        "taxesIncluded": null,
+        "cancellationPolicy": null,
+        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
+      },
+      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-134514068/jingshang-hotel/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=134514068&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "status": "watchlist_unconfirmed",
+      "tripHotelId": "118834872",
+      "name": "Country Inn & Suites by Radisson, Beijing West Station North Square Hotel",
+      "district": "Fengtai",
+      "area": "Beijing West Railway Station",
+      "address": "1F, West Annex Building, North Square, No. 122 Lianhuachi East Road, Fengtai District, Beijing",
+      "nearestTransit": [
+        {
+          "name": "Beijing West Railway Station",
+          "distanceMeters": 330,
+          "lines": ["7", "9"]
+        }
+      ],
+      "rating": {
+        "score": 9.4,
+        "scale": 10,
+        "reviewCount": 2182
+      },
+      "breakfastOffered": "Chinese buffet",
+      "publicPageOccupancy": {
+        "rooms": 1,
+        "adults": 2,
+        "children": 0
+      },
+      "displayedFloor": {
+        "amount": 138,
+        "currency": "HKD",
+        "dateWindow": "2026-08-06/2026-08-12",
+        "taxesIncluded": null,
+        "breakfastIncluded": null,
+        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
+      },
+      "requestedStayVerification": {
+        "available": null,
+        "cnyNightlyRate": null,
+        "atOrBelowCny500": null,
+        "breakfastIncludedInRate": null,
+        "taxesIncluded": null,
+        "cancellationPolicy": null,
+        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
+      },
+      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-118834872/country-inn-suites-by-radissonbeijing-west-station-north-square-hotel/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=118834872&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "status": "watchlist_unconfirmed",
+      "tripHotelId": "429509",
+      "name": "Le Joy Hotel",
+      "district": "Xicheng",
+      "area": "Xidan / Financial Street",
+      "address": "Xidan Joy City, 131B Xidan North Street, Xicheng District, Beijing 100032",
+      "nearestTransit": [
+        {
+          "name": "Xidan",
+          "distanceMeters": 350,
+          "lines": ["1", "4"]
+        }
+      ],
+      "rating": {
+        "score": 9.5,
+        "scale": 10,
+        "reviewCount": 12150
+      },
+      "breakfastOffered": "Western and Chinese",
+      "publicPageOccupancy": {
+        "rooms": 1,
+        "adults": 2,
+        "children": 0
+      },
+      "displayedFloor": {
+        "amount": 348,
+        "currency": "HKD",
+        "dateWindow": "2026-08-06/2026-08-12",
+        "taxesIncluded": null,
+        "breakfastIncluded": null,
+        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
+      },
+      "requestedStayVerification": {
+        "available": null,
+        "cnyNightlyRate": null,
+        "atOrBelowCny500": null,
+        "breakfastIncludedInRate": null,
+        "taxesIncluded": null,
+        "cancellationPolicy": null,
+        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
+      },
+      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-429509/joy-city-hotel-and-apartment/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=429509&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "status": "watchlist_unconfirmed",
+      "tripHotelId": "80920781",
+      "name": "VOYAGE INTERNATIONAL HOTEL (Capital Airport New International Exhibition Store)",
+      "district": "Shunyi",
+      "area": "Tianzhu / Capital Airport",
+      "address": "No. 1 Fuqian 2nd Street, Tianzhu, Shunyi District, Beijing",
+      "nearestTransit": [
+        {
+          "name": "China International Exhibition Center",
+          "distanceMeters": 3400,
+          "lines": ["15"]
+        },
+        {
+          "name": "Capital Airport Terminal 2",
+          "distanceMeters": 3600,
+          "lines": ["Capital Airport Express"]
+        }
+      ],
+      "airportShuttle": "Free PEK airport shuttle advertised by the property",
+      "rating": {
+        "score": 9.8,
+        "scale": 10,
+        "reviewCount": 24714
+      },
+      "breakfastOffered": "Western, Chinese, Asian and vegetarian",
+      "publicPageOccupancy": {
+        "rooms": 1,
+        "adults": 2,
+        "children": 0
+      },
+      "displayedFloor": {
+        "amount": 303,
+        "currency": "HKD",
+        "dateWindow": "2026-08-03/2026-08-09",
+        "taxesIncluded": null,
+        "breakfastIncluded": null,
+        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
+      },
+      "requestedStayVerification": {
+        "available": null,
+        "cnyNightlyRate": null,
+        "atOrBelowCny500": null,
+        "breakfastIncludedInRate": null,
+        "taxesIncluded": null,
+        "cancellationPolicy": null,
+        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
+      },
+      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-80920781/voyage-international-hotel/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=80920781&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "status": "watchlist_unconfirmed",
+      "tripHotelId": "113612942",
+      "name": "Radisson Hotel Beijing Daxing Airport",
+      "district": "Daxing",
+      "area": "Beijing Daxing International Airport",
+      "address": "Building 4, Courtyard 2, Yuanjing West 2nd Road, Daxing District, Beijing",
+      "nearestTransit": [
+        {
+          "name": "Beijing Daxing International Airport",
+          "distanceMeters": 2000,
+          "lines": ["Daxing Airport Express", "Beijing–Xiong’an intercity railway"]
+        }
+      ],
+      "airportShuttle": "Free PKX airport shuttle advertised by the property",
+      "rating": {
+        "score": 9.6,
+        "scale": 10,
+        "reviewCount": 6050
+      },
+      "breakfastOffered": "Western, Chinese and vegetarian",
+      "publicPageOccupancy": {
+        "rooms": 1,
+        "adults": 2,
+        "children": 0
+      },
+      "displayedFloor": {
+        "amount": 265,
+        "currency": "HKD",
+        "dateWindow": "2026-08-06/2026-08-12",
+        "taxesIncluded": null,
+        "breakfastIncluded": null,
+        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
+      },
+      "requestedStayVerification": {
+        "available": null,
+        "cnyNightlyRate": null,
+        "atOrBelowCny500": null,
+        "breakfastIncludedInRate": null,
+        "taxesIncluded": null,
+        "cancellationPolicy": null,
+        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
+      },
+      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-113612942/radisson-hotel-beijing-daxing-airport/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=113612942&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "status": "watchlist_unconfirmed",
+      "tripHotelId": "129929782",
+      "name": "Orange Hotel (Beijing Garden Expo Park)",
+      "district": "Fengtai",
+      "area": "Garden Expo Park",
+      "address": "Building 4, Courtyard 3, Beimiao Village North, Dongheyan, Beigong Town, Fengtai District, Beijing",
+      "nearestTransit": [
+        {
+          "name": "Zhangguozhuang",
+          "distanceMeters": 3800,
+          "lines": ["14"]
+        },
+        {
+          "name": "Garden Expo Park",
+          "distanceMeters": 4600,
+          "lines": ["14"]
+        }
+      ],
+      "locationCaveat": "Pouco prático sem táxi ou carro por aplicativo.",
+      "rating": {
+        "score": 9.7,
+        "scale": 10,
+        "reviewCount": 205
+      },
+      "breakfastOffered": "Chinese",
+      "publicPageOccupancy": {
+        "rooms": 1,
+        "adults": 2,
+        "children": 0
+      },
+      "displayedFloor": {
+        "amount": 139,
+        "currency": "HKD",
+        "dateWindow": "2026-08-05/2026-08-11",
+        "taxesIncluded": null,
+        "breakfastIncluded": null,
+        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
+      },
+      "requestedStayVerification": {
+        "available": null,
+        "cnyNightlyRate": null,
+        "atOrBelowCny500": null,
+        "breakfastIncludedInRate": null,
+        "taxesIncluded": null,
+        "cancellationPolicy": null,
+        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
+      },
+      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-129929782/orange-hotel/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=129929782&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "status": "watchlist_unconfirmed",
+      "tripHotelId": "5988569",
+      "name": "GreenTree Alliance Hotel (Beijing Daxing District Yizhuang Jiugong Subway Station)",
+      "district": "Daxing",
+      "area": "Jiugong / Yizhuang",
+      "address": "North Gate of Lingxiu Shanzhuang, Jiutou Road, Jiugong, Daxing District, Beijing",
+      "nearestTransit": [
+        {
+          "name": "Jiugong",
+          "distanceMeters": 900,
+          "lines": ["Yizhuang"]
+        },
+        {
+          "name": "Yizhuangqiao",
+          "distanceMeters": 2500,
+          "lines": ["Yizhuang"]
+        }
+      ],
+      "rating": {
+        "score": 9.0,
+        "scale": 10,
+        "reviewCount": 244
+      },
+      "breakfastOffered": "Chinese buffet, 07:00–09:00",
+      "publicPageOccupancy": {
+        "rooms": 1,
+        "adults": 2,
+        "children": 0
+      },
+      "displayedFloor": {
+        "amount": 102,
+        "currency": "HKD",
+        "dateWindow": "2026-08-06/2026-08-12",
+        "taxesIncluded": null,
+        "breakfastIncluded": null,
+        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
+      },
+      "requestedStayVerification": {
+        "available": null,
+        "cnyNightlyRate": null,
+        "atOrBelowCny500": null,
+        "breakfastIncludedInRate": null,
+        "taxesIncluded": null,
+        "cancellationPolicy": null,
+        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
+      },
+      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-5988569/greentree-alliance-hotel/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=5988569&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    }
+  ],
+  "stations": [
+    {
+      "id": "beijing-railway-station",
+      "name": "Beijing Railway Station",
+      "nameZh": "北京站",
+      "district": "Dongcheng",
+      "coordinates": {
+        "lat": 39.9023,
+        "lng": 116.421
+      },
+      "metroLines": ["2"],
+      "mainServices": "Rotas para Tangshan e Qinhuangdao e serviços do eixo leste/nordeste, incluindo algumas partidas para Shenyang, Harbin, Nanjing e Shanghai.",
+      "tip": "Confirme o nome completo no bilhete: Beijing Station não é Beijing South, West, North, Chaoyang ou Fengtai."
+    },
+    {
+      "id": "beijing-west",
+      "name": "Beijing West Railway Station",
+      "nameZh": "北京西站",
+      "district": "Fengtai",
+      "coordinates": {
+        "lat": 39.894914,
+        "lng": 116.322062
+      },
+      "metroLines": ["7", "9"],
+      "mainServices": "Grande terminal para Zhengzhou, Xi’an, Lanzhou, Chengdu, Chongqing, Guiyang, Kunming, Wuhan, Nanchang, Changsha, Guangzhou e Hong Kong.",
+      "currentNote": "Desde 2026, também recebe o serviço suburbano Beijing Sub-Center Line após modernização.",
+      "tip": "Pode ser útil para a ferrovia intermunicipal ligada ao Aeroporto Daxing; horários devem ser confirmados no 12306."
+    },
+    {
+      "id": "beijing-south",
+      "name": "Beijing South Railway Station",
+      "nameZh": "北京南站",
+      "district": "Fengtai",
+      "coordinates": {
+        "lat": 39.86583,
+        "lng": 116.37639
+      },
+      "metroLines": ["4", "14"],
+      "mainServices": "Principal escolha para trens de alta velocidade a Tianjin, Jinan, Qingdao, Nanjing, Shanghai, Hangzhou e Suzhou.",
+      "tip": "É uma estação muito grande; reserve tempo para segurança, localização da sala de espera e embarque."
+    },
+    {
+      "id": "beijing-north",
+      "name": "Beijing North Railway Station",
+      "nameZh": "北京北站",
+      "district": "Xicheng",
+      "coordinates": {
+        "lat": 39.94528,
+        "lng": 116.34722
+      },
+      "metroLines": ["2", "4", "13"],
+      "metroHub": "Xizhimen",
+      "mainServices": "Zhangjiakou, Datong, Hohhot e Baotou; desde 2025 há também algumas ligações para Xi’an, Lanzhou e Chengdu.",
+      "tip": "É uma opção para Badaling, mas o trem e a estação de partida variam; confira o 12306 antes de ir."
+    },
+    {
+      "id": "beijing-chaoyang",
+      "name": "Beijing Chaoyang Railway Station",
+      "nameZh": "北京朝阳站",
+      "district": "Chaoyang",
+      "coordinates": {
+        "lat": 39.94722,
+        "lng": 116.50806
+      },
+      "metroLines": ["3"],
+      "mainServices": "Trens para Chengde e o nordeste, incluindo Shenyang, Dalian, Changchun, Changbaishan e Harbin.",
+      "tip": "A conexão da Linha 3 facilitou o acesso, mas não confunda esta estação com Beijing Railway Station."
+    },
+    {
+      "id": "beijing-fengtai",
+      "name": "Beijing Fengtai Railway Station",
+      "nameZh": "北京丰台站",
+      "district": "Fengtai",
+      "coordinates": {
+        "lat": 39.849639,
+        "lng": 116.30454
+      },
+      "metroLines": ["10", "16"],
+      "mainServices": "Rotas para Shanxi, Henan, Shaanxi, Jiangxi e Fujian, incluindo Taiyuan e Pingyao, Luoyang, Xi’an, Chengdu, Chongqing, Nanchang, Fuzhou e Xiamen.",
+      "tip": "É um terminal diferente de Beijing West, embora ambos fiquem no distrito de Fengtai."
+    },
+    {
+      "id": "qinghe",
+      "name": "Qinghe Railway Station",
+      "nameZh": "清河站",
+      "district": "Haidian",
+      "coordinates": {
+        "lat": 40.0389,
+        "lng": 116.3094
+      },
+      "metroLines": ["13", "Changping"],
+      "mainServices": "Badaling Great Wall, Zhangjiakou, Datong, Hohhot e serviços da ferrovia suburbana Huairou–Miyun.",
+      "tip": "Costuma ser a base ferroviária mais prática para Badaling; compre o trem certo e confira documento e estação no 12306."
+    }
+  ],
+  "airports": [
+    {
+      "id": "pek",
+      "iata": "PEK",
+      "icao": "ZBAA",
+      "name": "Beijing Capital International Airport",
+      "nameZh": "北京首都国际机场",
+      "area": "Shunyi / enclave de Chaoyang",
+      "coordinates": {
+        "lat": 40.0725,
+        "lng": 116.5975
+      },
+      "distanceFromCentralBeijingKm": 32,
+      "rail": {
+        "name": "Capital Airport Express",
+        "fareCny": 25,
+        "route": [
+          "Beixinqiao (Line 5)",
+          "Dongzhimen (Lines 2 and 13)",
+          "Sanyuanqiao (Lines 10 and 12)",
+          "Terminal 3",
+          "Terminal 2"
+        ],
+        "terminalCaveat": "Não há estação ferroviária no Terminal 1; use a ligação interna indicada pelo aeroporto."
+      },
+      "airportBus": "Desde 31/07/2026, a linha PEK–Beijing West opera 24 horas; as últimas partidas de PEK para Beijing South e Beijing Fengtai foram estendidas até 02:00.",
+      "hotlines": {
+        "airport": "010-96158",
+        "airportBus": "+86-10-64378900"
+      },
+      "tip": "Confira o terminal antes de escolher hotel ou transfer: T2 e T3 ficam em ramais distintos do Airport Express."
+    },
+    {
+      "id": "pkx",
+      "iata": "PKX",
+      "icao": "ZBAD",
+      "name": "Beijing Daxing International Airport",
+      "nameZh": "北京大兴国际机场",
+      "area": "Fronteira Daxing / Langfang",
+      "coordinates": {
+        "lat": 39.50917,
+        "lng": 116.41056
+      },
+      "distanceFromCentralBeijingKm": 46,
+      "rail": {
+        "name": "Daxing Airport Express",
+        "cityTerminal": "Caoqiao",
+        "connections": ["Line 10", "Line 19"],
+        "typicalJourneyMinutes": "19–20",
+        "ordinaryFareCny": 35,
+        "businessFareCny": 50,
+        "firstTrainFromCaoqiao": "05:30",
+        "scheduleCaveat": "O último trem varia; confira o horário oficial próximo da viagem."
+      },
+      "intercityRail": "A ferrovia Beijing–Xiong’an liga o aeroporto a Beijing West em serviços selecionados; consulte o 12306.",
+      "airportBus": "Desde 31/07/2026, a linha PKX–Beijing Railway Station opera 24 horas. Há também ônibus entre PKX e PEK via Universal Resort.",
+      "hotlines": {
+        "airport": "+86-10-81698565"
+      },
+      "tip": "PEK e PKX ficam em lados opostos da metrópole e a cerca de 65 km um do outro; confirme o código do aeroporto no bilhete."
+    }
+  ],
+  "tips": [
+    {
+      "category": "dates",
+      "title": "A viagem coincide com feriado",
+      "body": "O feriado oficial do Festival do Meio do Outono será de 25 a 27 de setembro de 2026. A estadia de 23 a 27/09 inclui todo o feriado, então reserve atrações, trens e hotel cedo e volte a confirmar horários e preços.",
+      "sourceRefs": ["beijing-holidays-2026"]
+    },
+    {
+      "category": "rail",
+      "title": "Leia o nome completo da estação",
+      "body": "Beijing, Beijing West, Beijing South, Beijing North, Beijing Chaoyang, Beijing Fengtai e Qinghe são terminais distintos e distantes entre si. Compare o nome em inglês e os caracteres chineses do bilhete com o mapa antes de sair.",
+      "sourceRefs": ["beijing-seven-stations-2026"]
+    },
+    {
+      "category": "rail",
+      "title": "Use o canal oficial 12306",
+      "body": "Cadastre e verifique o passaporte no 12306, compre com o mesmo nome e leve o documento original para viajar. Para quem não conhece a estação, uma margem prática de 45–60 minutos ajuda a absorver segurança e orientação interna, embora não seja uma garantia oficial.",
+      "sourceRefs": ["china-railway-12306", "foreign-passenger-rail-guide"]
+    },
+    {
+      "category": "great-wall",
+      "title": "Badaling de trem",
+      "body": "Qinghe e Beijing North atendem trens do corredor de Badaling. A estação e o serviço mudam conforme o horário; confirme no 12306 em vez de presumir que todo trem sai do mesmo terminal.",
+      "sourceRefs": ["beijing-station-services-2024", "china-railway-12306"]
+    },
+    {
+      "category": "metro",
+      "title": "Cartão estrangeiro no metrô",
+      "body": "O metrô de Beijing aceita pagamento por aproximação com cartões Visa e Mastercard emitidos no exterior. O Airport Express tem tarifa própria; mantenha um meio alternativo de pagamento para falhas de rede ou do emissor.",
+      "sourceRefs": ["beijing-metro-overseas-cards", "capital-airport-express-fare"]
+    },
+    {
+      "category": "airports",
+      "title": "PEK e PKX não são intercambiáveis",
+      "body": "Beijing Capital (PEK) fica a nordeste e Beijing Daxing (PKX) ao sul. Eles ficam a cerca de 65 km um do outro; confira o código IATA, o terminal e o último transporte antes de reservar hotel ou transfer.",
+      "sourceRefs": ["pek-reference", "pkx-reference"]
+    },
+    {
+      "category": "luggage",
+      "title": "Bagagem porta a estação",
+      "body": "Desde janeiro de 2026, os sete grandes terminais ferroviários de Beijing oferecem Easy Travel: CNY 68 para coleta/entrega entre endereço e estação e CNY 98 para serviço até ou desde a plataforma. A reserva é feita pelo 12306; confirme área de cobertura e antecedência.",
+      "sourceRefs": ["beijing-seven-stations-2026"]
+    },
+    {
+      "category": "hotels",
+      "title": "Revalide toda a tarifa de hotel",
+      "body": "A lista de hotéis é somente uma watchlist. No Trip.com, confirme as datas 23–27/09/2026, CNY, 1 quarto para 2 adultos, café incluído, total com impostos e política de cancelamento. Não use o piso HKD de agosto como orçamento.",
+      "sourceRefs": ["trip-search-requested-dates"]
+    }
+  ],
+  "sources": [
+    {
+      "id": "beijing-holidays-2026",
+      "title": "Public Holidays for 2026",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/workinginbeijing/laborrights/publicholidays/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-holiday-detail",
+      "title": "Official holiday information portal",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/workinginbeijing/laborrights/publicholidays/202204/t20220425_2689509.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-seven-stations-2026",
+      "title": "Beijing's seven major railway stations and Easy Travel service",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202601/t20260116_4437040.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-station-services-2024",
+      "title": "Beijing railway stations: metro access and principal destinations",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/latest/news/202412/t20241225_3973421.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-railway-easy-living",
+      "title": "Railway station transport guide",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/livinginbeijing/easyliving/202412/t20241211_3963022.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-west-subcenter-2026",
+      "title": "Beijing Sub-Center Line service update at Beijing West",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/livinginbeijing/transportation/railway/202607/t20260701_4741858.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-airport-buses-2026",
+      "title": "Airport bus routes adjusted from July 31, 2026",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/livinginbeijing/transportation/bus/202607/t20260727_4792045.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "pek-official",
+      "title": "Beijing Capital International Airport",
+      "publisher": "Beijing Capital International Airport",
+      "type": "official",
+      "url": "https://en.bcia.com.cn/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "capital-airport-express-fare",
+      "title": "Notice for Airport Express passengers",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/specials/beijinglifeonthesubway/noticeforpassengers/202504/t20250423_4072294.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "pkx-first-train-2026",
+      "title": "Daxing Airport Express first-train update",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/livinginbeijing/transportation/airport/202603/t20260306_4551020.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "caoqiao-city-terminal",
+      "title": "Caoqiao City Terminal",
+      "publisher": "Beijing Daxing International Airport",
+      "type": "official",
+      "url": "https://wechat.bdia.com.cn/cityTerminal",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "daxing-airport-express-fare",
+      "title": "Daxing Airport Express fare notice",
+      "publisher": "Beijing Major Projects Construction Headquarters Office",
+      "type": "official",
+      "url": "https://zdb.beijing.gov.cn/zwgk/tzgg/202503/P020250514822595020461.pdf",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-metro-overseas-cards",
+      "title": "Overseas bank cards accepted on Beijing Subway",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/livinginbeijing/transportation/beijingsubway/202409/t20240914_3891497.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "china-railway-12306",
+      "title": "China Railway 12306",
+      "publisher": "China Railway",
+      "type": "official",
+      "url": "https://www.12306.cn/en/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "foreign-passenger-rail-guide",
+      "title": "Rail travel guidance for foreign passengers",
+      "publisher": "Beijing Municipal Government",
+      "type": "official",
+      "url": "https://english.beijing.gov.cn/specials/aguidetoworkingandlivinginchinaasbusinessexpatriates2024/dailylifeservices/202404/t20240424_3635102.html",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "pek-reference",
+      "title": "Beijing Capital International Airport coordinates and overview",
+      "publisher": "Wikipedia",
+      "type": "secondary_reference",
+      "url": "https://en.wikipedia.org/wiki/Beijing_Capital_International_Airport",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "pkx-reference",
+      "title": "Beijing Daxing International Airport coordinates and overview",
+      "publisher": "Wikipedia",
+      "type": "secondary_reference",
+      "url": "https://en.wikipedia.org/wiki/Beijing_Daxing_International_Airport",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-station-coordinates",
+      "title": "Beijing railway station coordinates",
+      "publisher": "Wikipedia",
+      "type": "secondary_reference",
+      "url": "https://en.wikipedia.org/wiki/Beijing_railway_station",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-west-coordinates",
+      "title": "Beijing West railway station coordinates",
+      "publisher": "Wikipedia",
+      "type": "secondary_reference",
+      "url": "https://en.wikipedia.org/wiki/Beijing_West_railway_station",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-south-coordinates",
+      "title": "Beijing South railway station coordinates",
+      "publisher": "Wikipedia",
+      "type": "secondary_reference",
+      "url": "https://en.wikipedia.org/wiki/Beijing_South_railway_station",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-north-coordinates",
+      "title": "Beijing North railway station coordinates",
+      "publisher": "Wikipedia",
+      "type": "secondary_reference",
+      "url": "https://en.wikipedia.org/wiki/Beijing_North_railway_station",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-chaoyang-coordinates",
+      "title": "Beijing Chaoyang railway station coordinates",
+      "publisher": "Wikipedia",
+      "type": "secondary_reference",
+      "url": "https://en.wikipedia.org/wiki/Beijing_Chaoyang_railway_station",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "beijing-fengtai-coordinates",
+      "title": "Beijing Fengtai railway station coordinates",
+      "publisher": "Wikipedia",
+      "type": "secondary_reference",
+      "url": "https://en.wikipedia.org/wiki/Beijing_Fengtai_railway_station",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "qinghe-coordinates",
+      "title": "Qinghe Railway Station map reference",
+      "publisher": "Wikimedia Commons",
+      "type": "secondary_reference",
+      "url": "https://commons.wikimedia.org/wiki/File:13_006_at_Qinghe_Railway_Station_(20250907173834).jpg",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "trip-search-requested-dates",
+      "title": "Trip.com Beijing hotel search, requested dates and occupancy",
+      "publisher": "Trip.com",
+      "type": "commercial_dynamic",
+      "url": "https://www.trip.com/hotels/list?city=1&checkin=2026%2F09%2F23&checkout=2026%2F09%2F27&optionId=1&optionType=City&directSearch=true&adult=2&children=0&crn=1&curr=CNY",
+      "checkedAt": "2026-08-05T08:03:57Z",
+      "caveat": "A página pública não preservou as datas no conteúdo rastreável e exibiu somente pisos para outras datas."
+    },
+    {
+      "id": "trip-hotel-608516",
+      "title": "CitiGO Hotel Sanyuanqiao Beijing",
+      "publisher": "Trip.com",
+      "type": "commercial_dynamic",
+      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-608516/ibis-hotel-beijing-sanyuan-bridge/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "trip-hotel-134514068",
+      "title": "Jingshang Hotel (Beijing Sanlitun Workers’ Stadium Metro)",
+      "publisher": "Trip.com",
+      "type": "commercial_dynamic",
+      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-134514068/jingshang-hotel/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "trip-hotel-118834872",
+      "title": "Country Inn & Suites by Radisson, Beijing West Station North Square Hotel",
+      "publisher": "Trip.com",
+      "type": "commercial_dynamic",
+      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-118834872/country-inn-suites-by-radissonbeijing-west-station-north-square-hotel/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "trip-hotel-429509",
+      "title": "Le Joy Hotel",
+      "publisher": "Trip.com",
+      "type": "commercial_dynamic",
+      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-429509/joy-city-hotel-and-apartment/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "trip-hotel-80920781",
+      "title": "VOYAGE INTERNATIONAL HOTEL (Capital Airport New International Exhibition Store)",
+      "publisher": "Trip.com",
+      "type": "commercial_dynamic",
+      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-80920781/voyage-international-hotel/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "trip-hotel-113612942",
+      "title": "Radisson Hotel Beijing Daxing Airport",
+      "publisher": "Trip.com",
+      "type": "commercial_dynamic",
+      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-113612942/radisson-hotel-beijing-daxing-airport/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "trip-hotel-129929782",
+      "title": "Orange Hotel (Beijing Garden Expo Park)",
+      "publisher": "Trip.com",
+      "type": "commercial_dynamic",
+      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-129929782/orange-hotel/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    },
+    {
+      "id": "trip-hotel-5988569",
+      "title": "GreenTree Alliance Hotel (Beijing Daxing District Yizhuang Jiugong Subway Station)",
+      "publisher": "Trip.com",
+      "type": "commercial_dynamic",
+      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-5988569/greentree-alliance-hotel/",
+      "checkedAt": "2026-08-05T08:03:57Z"
+    }
+  ]
+}
