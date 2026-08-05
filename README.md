@@ -88,8 +88,8 @@ Depois, acesse `http://localhost:8080`.
 As fotografias e os vídeos são carregados de seus provedores originais. Isso
 mantém o repositório leve, mas requer conexão com a internet. As licenças e os
 links de atribuição das fotografias estão em `CREDITS.md` e na seção “Fontes e
-créditos” do site. As miniaturas são otimizadas; o arquivo em resolução original
-só é carregado quando uma foto é ampliada.
+créditos” do site. As miniaturas usam tamanhos responsivos; ao ampliar, o site carrega uma versão de até
+1920 px adequada para tela. O arquivo original continua disponível pelo link de crédito.
 
 ## Personalização rápida
 

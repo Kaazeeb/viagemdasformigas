@@ -136,17 +136,39 @@
     console.error(error);
   }
 
+  function thumbAt(url, width) {
+    if (!url || !/upload\.wikimedia\.org/.test(url)) return url;
+    if (/\/thumb\//.test(url) && /\/\d+px-/.test(url)) {
+      return url.replace(/\/\d+px-/, `/${width}px-`);
+    }
+    return url;
+  }
+
+  function responsiveImageMarkup(image, options = {}) {
+    const width = options.width || 640;
+    const widths = options.widths || [330, 640, 960, 1280];
+    const srcset = widths.map((item) => `${thumbAt(image.thumb, item)} ${item}w`).join(", ");
+    const loading = options.eager ? "eager" : "lazy";
+    const priority = options.priority ? ` fetchpriority="${options.priority}"` : "";
+    const dimensions = image.width && image.height
+      ? ` width="${Number(image.width)}" height="${Number(image.height)}"`
+      : "";
+    return `<img src="${escapeAttr(thumbAt(image.thumb, width))}" srcset="${escapeAttr(srcset)}" sizes="${escapeAttr(options.sizes || "100vw")}" alt="${escapeAttr(options.decorative ? "" : image.alt)}" loading="${loading}" decoding="async"${priority}${dimensions}>`;
+  }
+
   function normalizeImage(image = {}) {
     const thumb = image.thumb || image.src || image.url || image.preview || "";
     return {
       thumb,
-      large: image.large || image.original || thumb,
+      large: image.large || thumbAt(thumb, 1920),
       original: image.original || image.large || thumb,
       page: image.page || image.source || image.original || thumb,
       alt: image.alt || image.caption || "Imagem de Pequim",
       caption: image.caption || image.alt || "Pequim",
       credit: image.credit || image.author || "Ver página do arquivo",
       license: image.license || "Licença na página do arquivo",
+      width: image.width,
+      height: image.height,
     };
   }
 
@@ -180,9 +202,17 @@
 
   function heroFigure(rawImage, index, className, label, group) {
     const image = normalizeImage(rawImage);
+    const isMain = className.includes("main");
+    const markup = responsiveImageMarkup(image, {
+      eager: isMain,
+      priority: isMain ? "high" : "low",
+      width: isMain ? 1280 : 640,
+      widths: isMain ? [640, 960, 1280, 1600] : [330, 480, 640, 960],
+      sizes: isMain ? "(min-width: 960px) 49vw, 78vw" : "(min-width: 960px) 18vw, 31vw",
+    });
     return `
       <figure class="beijing-hero-photo ${className}" tabindex="0" role="button" data-open-media="${index}" data-media-group="${escapeAttr(group)}" aria-label="Ampliar foto: ${escapeHtml(image.caption)}">
-        <img src="${escapeAttr(image.thumb)}" alt="${escapeAttr(image.alt)}" fetchpriority="high">
+        ${markup}
         <figcaption>${escapeHtml(label)}</figcaption>
       </figure>`;
   }
@@ -279,10 +309,18 @@
 
   function renderAttractionImage(rawImage, imageIndex, mediaIndex, group) {
     const image = normalizeImage(rawImage);
+    const isMain = imageIndex === 0;
+    const markup = responsiveImageMarkup(image, {
+      width: isMain ? 640 : 330,
+      widths: isMain ? [330, 640, 960] : [220, 330, 480],
+      sizes: isMain
+        ? "(min-width: 960px) 31vw, (min-width: 720px) 29vw, 68vw"
+        : "(min-width: 960px) 15vw, (min-width: 720px) 14vw, 32vw",
+    });
     return `
       <button class="attraction-photo-button" type="button" data-open-media="${mediaIndex}" data-media-group="${escapeAttr(group)}" aria-label="Ampliar foto: ${escapeAttr(image.caption)}">
-        <img src="${escapeAttr(image.thumb)}" alt="${escapeAttr(image.alt)}" loading="lazy" decoding="async">
-        <span aria-hidden="true">${imageIndex === 0 ? "↗" : "+"}</span>
+        ${markup}
+        <span aria-hidden="true">${isMain ? "↗" : "+"}</span>
       </button>`;
   }
 
@@ -290,13 +328,9 @@
     const image = normalizeImage(rawImage);
     return `
       <button class="attraction-gallery-thumb" type="button" data-open-media="${mediaIndex}" data-media-group="${escapeAttr(group)}" aria-label="Abrir foto ${imageIndex + 1}: ${escapeAttr(image.caption)}">
-        <img src="${escapeAttr(smallThumb(image.thumb))}" alt="" loading="lazy" decoding="async">
+        ${responsiveImageMarkup(image, { width: 330, widths: [220, 330, 480], sizes: "142px", decorative: true })}
         <span>${String(imageIndex + 1).padStart(2, "0")}</span>
       </button>`;
-  }
-
-  function smallThumb(url) {
-    return url.replace(/\/\d+px-/, "/330px-");
   }
 
   function fact(label, value) {
@@ -346,7 +380,7 @@
       return `
         <article class="reference-map-card">
           <button class="reference-map-image" type="button" data-open-media="${index}" data-media-group="reference-maps" aria-label="Ampliar ${escapeAttr(mapItem.title || image.caption)}">
-            <img src="${escapeAttr(image.thumb)}" alt="${escapeAttr(image.alt)}" loading="lazy">
+            ${responsiveImageMarkup(image, { width: 960, widths: [640, 960, 1280, 1600], sizes: "(min-width: 720px) 50vw, 100vw" })}
             <span>Ampliar ↗</span>
           </button>
           <div class="reference-map-copy">

@@ -1925,11 +1925,39 @@ function destinationById(id) {
   return destinations.find((destination) => destination.id === id);
 }
 
+function wikimediaThumb(url, width) {
+  if (!url || !/upload\.wikimedia\.org/.test(url)) return url;
+  if (/\/thumb\//.test(url) && /\/\d+px-/.test(url)) {
+    return url.replace(/\/\d+px-/, `/${width}px-`);
+  }
+  return url;
+}
+
+function responsiveImageData(image, options = {}) {
+  const targetWidth = options.width || (options.eager ? 1280 : 640);
+  const src = wikimediaThumb(image.src, targetWidth);
+  const widths = options.widths || [330, 640, 960, 1280];
+  const srcset = widths
+    .map((width) => `${wikimediaThumb(image.src, width)} ${width}w`)
+    .join(", ");
+  return {
+    src,
+    srcset,
+    sizes:
+      options.sizes ||
+      "(min-width: 1180px) 560px, (min-width: 680px) calc(50vw - 48px), calc(100vw - 32px)",
+  };
+}
+
 function imageMarkup(image, options = {}) {
   const loading = options.eager ? "eager" : "lazy";
-  return `<img src="${escapeAttribute(image.src)}" alt="${escapeAttribute(
+  const priority = options.priority ? ` fetchpriority="${options.priority}"` : "";
+  const responsive = responsiveImageData(image, options);
+  return `<img src="${escapeAttribute(responsive.src)}" srcset="${escapeAttribute(
+    responsive.srcset,
+  )}" sizes="${escapeAttribute(responsive.sizes)}" alt="${escapeAttribute(
     image.alt,
-  )}" loading="${loading}" decoding="async" referrerpolicy="no-referrer" />`;
+  )}" loading="${loading}" decoding="async" referrerpolicy="no-referrer"${priority} />`;
 }
 
 function originalImageSource(image) {
@@ -2020,13 +2048,26 @@ function attachImageFallbacks(root = document) {
 }
 
 function setHeroImages() {
-  document.querySelectorAll("[data-commons-file]").forEach((image) => {
+  document.querySelectorAll("[data-commons-file]").forEach((image, index) => {
     const requested = image.dataset.commonsFile;
     const match = destinations
       .flatMap((destination) => destination.images)
       .find((item) => item.file === requested);
     if (match) {
-      image.src = match.src;
+      const isMain = index === 0;
+      const responsive = responsiveImageData(match, {
+        width: isMain ? 1280 : 640,
+        widths: isMain ? [640, 960, 1280, 1600] : [330, 480, 640, 960],
+        sizes: isMain
+          ? "(min-width: 960px) 46vw, (min-width: 680px) 71vw, 84vw"
+          : "(min-width: 960px) 18vw, (min-width: 680px) 30vw, 38vw",
+      });
+      image.src = responsive.src;
+      image.srcset = responsive.srcset;
+      image.sizes = responsive.sizes;
+      image.loading = isMain ? "eager" : "lazy";
+      image.fetchPriority = isMain ? "high" : "low";
+      image.decoding = "async";
       image.referrerPolicy = "no-referrer";
     }
   });
@@ -2347,7 +2388,7 @@ function openDestination(id, updateHash = true) {
 
   dialogContent.innerHTML = `
     <section class="dialog-hero media" data-label="${escapeAttribute(destination.name)}">
-      ${imageMarkup(destination.images[0], { eager: true })}
+      ${imageMarkup(destination.images[0], { eager: true, priority: "high", width: 1280, widths: [640, 960, 1280, 1600], sizes: "100vw" })}
       <div class="dialog-hero-copy">
         <p class="kicker">${String(destination.order).padStart(2, "0")} · ${destination.province}</p>
         <h2 id="dialog-title">${destination.name} <span aria-hidden="true">${destination.chinese}</span></h2>
@@ -2460,7 +2501,8 @@ function updateLightbox() {
   const image = destination.images[state.lightboxIndex];
   if (!image) return;
 
-  const source = originalImageSource(image);
+  const originalSource = originalImageSource(image);
+  const source = wikimediaThumb(image.src, 1920);
   const number = String(state.lightboxIndex + 1).padStart(2, "0");
   const total = String(destination.images.length).padStart(2, "0");
 
@@ -2468,7 +2510,7 @@ function updateLightbox() {
   lightboxCaption.textContent = image.caption || image.alt;
   lightboxCredit.textContent = `Foto: ${image.credit} · ${image.license}`;
   lightboxResolution.textContent = "";
-  lightboxOriginal.href = source;
+  lightboxOriginal.href = originalSource;
   lightboxOriginal.setAttribute(
     "aria-label",
     `Abrir o arquivo original de ${image.caption || destination.name}`,
@@ -2478,7 +2520,7 @@ function updateLightbox() {
   lightboxMedia.classList.remove("is-fallback");
   lightboxMedia.classList.add("is-loading");
   lightboxLoading.hidden = false;
-  lightboxLoading.textContent = "Carregando foto original…";
+  lightboxLoading.textContent = "Carregando foto em alta resolução…";
   lightboxImage.hidden = false;
   lightboxImage.alt = image.alt;
   lightboxImage.referrerPolicy = "no-referrer";
@@ -2490,7 +2532,7 @@ function updateLightbox() {
     lightboxLoading.hidden = true;
     lightboxResolution.textContent = `${lightboxImage.naturalWidth.toLocaleString(
       "pt-BR",
-    )} × ${lightboxImage.naturalHeight.toLocaleString("pt-BR")} px · arquivo original`;
+    )} × ${lightboxImage.naturalHeight.toLocaleString("pt-BR")} px · versão otimizada para tela`;
   };
 
   lightboxImage.onerror = () => {
