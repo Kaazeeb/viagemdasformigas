@@ -216,6 +216,7 @@
     {
       "status": "watchlist_unconfirmed",
       "tripHotelId": "80920781",
+      "coordinates": { "lat": 40.07185, "lng": 116.58390 },
       "name": "VOYAGE INTERNATIONAL HOTEL (Capital Airport New International Exhibition Store)",
       "district": "Shunyi",
       "area": "Tianzhu / Capital Airport",
@@ -268,6 +269,7 @@
     {
       "status": "watchlist_unconfirmed",
       "tripHotelId": "113612942",
+      "coordinates": { "lat": 39.52490, "lng": 116.42780 },
       "name": "Radisson Hotel Beijing Daxing Airport",
       "district": "Daxing",
       "area": "Beijing Daxing International Airport",
@@ -315,6 +317,7 @@
     {
       "status": "watchlist_unconfirmed",
       "tripHotelId": "129929782",
+      "coordinates": { "lat": 39.82720, "lng": 116.14510 },
       "name": "Orange Hotel (Beijing Garden Expo Park)",
       "district": "Fengtai",
       "area": "Garden Expo Park",
@@ -367,6 +370,7 @@
     {
       "status": "watchlist_unconfirmed",
       "tripHotelId": "5988569",
+      "coordinates": { "lat": 39.81220, "lng": 116.45580 },
       "name": "GreenTree Alliance Hotel (Beijing Daxing District Yizhuang Jiugong Subway Station)",
       "district": "Daxing",
       "area": "Jiugong / Yizhuang",
@@ -422,7 +426,19 @@
     { "id": "sanyuanqiao", "name": "Sanyuanqiao (三元桥)", "lines": ["10", "12", "Capital Airport Express"], "coords": [39.96137, 116.45661] },
     { "id": "guomao", "name": "Guomao (国贸)", "lines": ["1", "10"], "coords": [39.90848, 116.46184] },
     { "id": "qianmen", "name": "Qianmen (前门)", "lines": ["2", "8"], "coords": [39.89900, 116.39796] },
-    { "id": "wangfujing", "name": "Wangfujing (王府井)", "lines": ["1", "8"], "coords": [39.90815, 116.41131] }
+    { "id": "wangfujing", "name": "Wangfujing (王府井)", "lines": ["1", "8"], "coords": [39.90815, 116.41131] },
+    { "id": "xidan", "name": "Xidan (西单)", "lines": ["1", "4"], "coords": [39.90574, 116.36820] },
+    { "id": "nanluoguxiang", "name": "Nanluoguxiang (南锣鼓巷)", "lines": ["6", "8"], "coords": [39.93231, 116.39769] },
+    { "id": "yonghegong", "name": "Yonghegong Lama Temple (雍和宫)", "lines": ["2", "5"], "coords": [39.94793, 116.41154] },
+    { "id": "beixinqiao", "name": "Beixinqiao (北新桥)", "lines": ["5", "Capital Airport Express"], "coords": [39.93939, 116.41089] },
+    { "id": "shichahai", "name": "Shichahai (什刹海)", "lines": ["8"], "coords": [39.93595, 116.39006] },
+    { "id": "olympic-sports-center", "name": "Olympic Sports Center (奥体中心)", "lines": ["8"], "coords": [39.98413, 116.38758] },
+    { "id": "national-library", "name": "National Library (国家图书馆)", "lines": ["4", "9", "16"], "coords": [39.94122, 116.31873] },
+    { "id": "pinganli", "name": "Ping'anli (平安里)", "lines": ["4", "6", "19"], "coords": [39.93360, 116.37270] },
+    { "id": "beijing-south-metro", "name": "Beijing South Railway Station (北京南站)", "lines": ["4", "14"], "coords": [39.86583, 116.37639] },
+    { "id": "beijing-west-metro", "name": "Beijing West Railway Station (北京西站)", "lines": ["7", "9"], "coords": [39.89491, 116.32206] },
+    { "id": "tiananmen-east", "name": "Tian'anmen East (天安门东)", "lines": ["1"], "coords": [39.90750, 116.40110] },
+    { "id": "jishuitan", "name": "Jishuitan (积水潭)", "lines": ["2", "19"], "coords": [39.94624, 116.36582] }
   ],
   "stations": [
     {
