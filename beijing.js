@@ -412,6 +412,7 @@
           ${hotel.rating ? `<li>${escapeHtml(String(hotel.rating))}${hotel.reviews ? ` · ${escapeHtml(String(hotel.reviews))} avaliações` : ""}</li>` : ""}
         </ul>
         ${externalLink(hotel.liveUrl || hotel.url, "Ver tarifa ao vivo no Trip.com ↗", "hotel-link")}
+        ${hotel.coords ? `<a class="hotel-map-link" href="#mapa" data-focus-marker="hotel:${escapeAttr(hotel.id || slugify(hotel.name))}">Localizar no mapa ↓</a>` : ""}
         <small>Disponibilidade, tarifa em CNY, café incluído, impostos e cancelamento não foram expostos na consulta pública. Confira antes de reservar.</small>
       </article>`).join("");
   }
@@ -504,6 +505,8 @@
 
     const groups = {
       attractions: L.layerGroup().addTo(map),
+      hotels: L.layerGroup().addTo(map),
+      metro: L.layerGroup().addTo(map),
       stations: L.layerGroup().addTo(map),
       airports: L.layerGroup().addTo(map),
     };
@@ -589,6 +592,20 @@
       subtitle: item.metro || "Estação ferroviária",
       coords: item.coords,
     }));
+    const hotels = (guide.hotels || []).filter((item) => Array.isArray(item.coords)).map((item) => ({
+      key: `hotel:${item.id || slugify(item.name)}`,
+      type: "hotels",
+      name: item.name,
+      subtitle: `${item.area || item.district} · opção da watchlist`,
+      coords: item.coords,
+    }));
+    const metro = (guide.metroStations || []).map((item) => ({
+      key: `metro:${item.id || slugify(item.name)}`,
+      type: "metro",
+      name: item.name,
+      subtitle: `Metrô · linhas ${(item.lines || []).join(", ")}`,
+      coords: item.coords,
+    }));
     const airports = (guide.airports || []).map((item) => ({
       key: `airport:${item.id || slugify(item.code || item.name)}`,
       type: "airports",
@@ -596,12 +613,12 @@
       subtitle: item.code || "Aeroporto",
       coords: item.coords,
     }));
-    return [...attractions, ...stations, ...airports];
+    return [...attractions, ...hotels, ...metro, ...stations, ...airports];
   }
 
   function mapIcon(location) {
-    const className = location.type === "stations" ? "station" : location.type === "airports" ? "airport" : "";
-    const label = location.type === "attractions" ? location.number : location.type === "stations" ? "站" : "✈";
+    const className = location.type === "stations" ? "station" : location.type === "metro" ? "metro" : location.type === "hotels" ? "hotel" : location.type === "airports" ? "airport" : "";
+    const label = location.type === "attractions" ? location.number : location.type === "hotels" ? "H" : location.type === "metro" ? "M" : location.type === "stations" ? "站" : "✈";
     return L.divIcon({
       className: "",
       html: `<div class="beijing-div-icon ${className}"><span>${label}</span></div>`,
@@ -621,10 +638,10 @@
   function renderMapLocationIndex(locations, external) {
     const target = $("[data-map-location-index]");
     if (!target) return;
-    const labels = { attractions: "Atrações", stations: "Estações ferroviárias", airports: "Aeroportos" };
+    const labels = { attractions: "Atrações", hotels: "Hotéis da watchlist", metro: "Estações de metrô principais", stations: "Estações ferroviárias", airports: "Aeroportos" };
     target.innerHTML = Object.entries(labels).map(([type, label], groupIndex) => {
       const items = locations.filter((location) => location.type === type).map((location) => {
-      const prefix = location.type === "attractions" ? String(location.number).padStart(2, "0") : location.type === "stations" ? "站" : "✈";
+      const prefix = location.type === "attractions" ? String(location.number).padStart(2, "0") : location.type === "hotels" ? "H" : location.type === "metro" ? "M" : location.type === "stations" ? "站" : "✈";
       if (external) {
         const [lat, lon] = location.coords;
         return `<a href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=15/${lat}/${lon}" target="_blank" rel="noopener noreferrer"><b>${prefix}</b> ${escapeHtml(location.name)}</a>`;

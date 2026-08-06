@@ -964,6 +964,14 @@
   background: var(--bj-red);
 }
 
+.key-hotel {
+  background: #6d3b78;
+}
+
+.key-metro {
+  background: #168159;
+}
+
 .key-station {
   background: var(--bj-blue);
 }
@@ -1098,6 +1106,29 @@
   background: var(--bj-blue);
   border-radius: 50%;
   transform: none;
+}
+
+.beijing-div-icon.hotel {
+  background: #6d3b78;
+  border-radius: 5px 5px 5px 1px;
+}
+
+.beijing-div-icon.metro {
+  background: #168159;
+  border-radius: 50%;
+  transform: none;
+}
+
+.beijing-div-icon.metro span {
+  transform: none;
+}
+
+.hotel-map-link {
+  display: inline-block;
+  margin: 8px 0;
+  color: var(--bj-red-dark);
+  font-size: 10px;
+  font-weight: 900;
 }
 
 .beijing-div-icon.station span {

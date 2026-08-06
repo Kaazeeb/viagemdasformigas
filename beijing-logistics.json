@@ -23,6 +23,7 @@
     {
       "status": "watchlist_unconfirmed",
       "tripHotelId": "608516",
+      "coordinates": { "lat": 39.96075, "lng": 116.45635 },
       "name": "CitiGO Hotel Sanyuanqiao Beijing",
       "district": "Chaoyang",
       "area": "Sanyuanqiao / China International Exhibition Center",
@@ -69,6 +70,7 @@
     {
       "status": "watchlist_unconfirmed",
       "tripHotelId": "134514068",
+      "coordinates": { "lat": 39.93965, "lng": 116.44610 },
       "name": "Jingshang Hotel (Beijing Sanlitun Workers’ Stadium Metro)",
       "district": "Chaoyang",
       "area": "Sanlitun / Workers’ Stadium",
@@ -120,6 +122,7 @@
     {
       "status": "watchlist_unconfirmed",
       "tripHotelId": "118834872",
+      "coordinates": { "lat": 39.89620, "lng": 116.32110 },
       "name": "Country Inn & Suites by Radisson, Beijing West Station North Square Hotel",
       "district": "Fengtai",
       "area": "Beijing West Railway Station",
@@ -166,6 +169,7 @@
     {
       "status": "watchlist_unconfirmed",
       "tripHotelId": "429509",
+      "coordinates": { "lat": 39.91475, "lng": 116.36660 },
       "name": "Le Joy Hotel",
       "district": "Xicheng",
       "area": "Xidan / Financial Street",
@@ -411,6 +415,14 @@
       "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=5988569&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
       "checkedAt": "2026-08-05T08:03:57Z"
     }
+  ],
+  "metroStations": [
+    { "id": "dongzhimen", "name": "Dongzhimen (东直门)", "lines": ["2", "13", "Capital Airport Express"], "coords": [39.94130, 116.43365] },
+    { "id": "xizhimen", "name": "Xizhimen (西直门)", "lines": ["2", "4", "13"], "coords": [39.94048, 116.35543] },
+    { "id": "sanyuanqiao", "name": "Sanyuanqiao (三元桥)", "lines": ["10", "12", "Capital Airport Express"], "coords": [39.96137, 116.45661] },
+    { "id": "guomao", "name": "Guomao (国贸)", "lines": ["1", "10"], "coords": [39.90848, 116.46184] },
+    { "id": "qianmen", "name": "Qianmen (前门)", "lines": ["2", "8"], "coords": [39.89900, 116.39796] },
+    { "id": "wangfujing", "name": "Wangfujing (王府井)", "lines": ["1", "8"], "coords": [39.90815, 116.41131] }
   ],
   "stations": [
     {
