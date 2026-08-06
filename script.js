@@ -1858,6 +1858,8 @@ const vibeCopy = {
   winter: "Para transformar o frio no protagonista",
 };
 
+const LIGHTBOX_IMAGE_WIDTH = 1920;
+
 const state = {
   filter: "all",
   savedOnly: false,
@@ -1925,45 +1927,21 @@ function destinationById(id) {
   return destinations.find((destination) => destination.id === id);
 }
 
-function wikimediaThumb(url, width) {
-  if (!url || !/upload\.wikimedia\.org/.test(url)) return url;
-  if (/\/thumb\//.test(url) && /\/\d+px-/.test(url)) {
-    return url.replace(/\/\d+px-/, `/${width}px-`);
-  }
-  return url;
-}
-
-function responsiveImageData(image, options = {}) {
-  const targetWidth = options.width || (options.eager ? 1280 : 640);
-  const src = wikimediaThumb(image.src, targetWidth);
-  const widths = options.widths || [330, 640, 960, 1280];
-  const srcset = widths
-    .map((width) => `${wikimediaThumb(image.src, width)} ${width}w`)
-    .join(", ");
-  return {
-    src,
-    srcset,
-    sizes:
-      options.sizes ||
-      "(min-width: 1180px) 560px, (min-width: 680px) calc(50vw - 48px), calc(100vw - 32px)",
-  };
-}
-
 function imageMarkup(image, options = {}) {
   const loading = options.eager ? "eager" : "lazy";
-  const priority = options.priority ? ` fetchpriority="${options.priority}"` : "";
-  const responsive = responsiveImageData(image, options);
-  return `<img src="${escapeAttribute(responsive.src)}" srcset="${escapeAttribute(
-    responsive.srcset,
-  )}" sizes="${escapeAttribute(responsive.sizes)}" alt="${escapeAttribute(
+  return `<img src="${escapeAttribute(image.src)}" alt="${escapeAttribute(
     image.alt,
-  )}" loading="${loading}" decoding="async" referrerpolicy="no-referrer"${priority} />`;
+  )}" loading="${loading}" decoding="async" referrerpolicy="no-referrer" />`;
 }
 
 function originalImageSource(image) {
   return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(
     image.file,
   )}`;
+}
+
+function lightboxImageSource(image) {
+  return `${originalImageSource(image)}?width=${LIGHTBOX_IMAGE_WIDTH}`;
 }
 
 function cardMarkup(destination) {
@@ -2048,26 +2026,13 @@ function attachImageFallbacks(root = document) {
 }
 
 function setHeroImages() {
-  document.querySelectorAll("[data-commons-file]").forEach((image, index) => {
+  document.querySelectorAll("[data-commons-file]").forEach((image) => {
     const requested = image.dataset.commonsFile;
     const match = destinations
       .flatMap((destination) => destination.images)
       .find((item) => item.file === requested);
     if (match) {
-      const isMain = index === 0;
-      const responsive = responsiveImageData(match, {
-        width: isMain ? 1280 : 640,
-        widths: isMain ? [640, 960, 1280, 1600] : [330, 480, 640, 960],
-        sizes: isMain
-          ? "(min-width: 960px) 46vw, (min-width: 680px) 71vw, 84vw"
-          : "(min-width: 960px) 18vw, (min-width: 680px) 30vw, 38vw",
-      });
-      image.src = responsive.src;
-      image.srcset = responsive.srcset;
-      image.sizes = responsive.sizes;
-      image.loading = isMain ? "eager" : "lazy";
-      image.fetchPriority = isMain ? "high" : "low";
-      image.decoding = "async";
+      image.src = match.src;
       image.referrerPolicy = "no-referrer";
     }
   });
@@ -2388,7 +2353,7 @@ function openDestination(id, updateHash = true) {
 
   dialogContent.innerHTML = `
     <section class="dialog-hero media" data-label="${escapeAttribute(destination.name)}">
-      ${imageMarkup(destination.images[0], { eager: true, priority: "high", width: 1280, widths: [640, 960, 1280, 1600], sizes: "100vw" })}
+      ${imageMarkup(destination.images[0], { eager: true })}
       <div class="dialog-hero-copy">
         <p class="kicker">${String(destination.order).padStart(2, "0")} · ${destination.province}</p>
         <h2 id="dialog-title">${destination.name} <span aria-hidden="true">${destination.chinese}</span></h2>
@@ -2443,7 +2408,7 @@ function openDestination(id, updateHash = true) {
             <p class="kicker">Galeria</p>
             <h3>${destination.images.length} perspectivas do destino</h3>
             <p class="gallery-instruction">
-              Toque em uma foto para ampliar e navegar pela galeria em resolução original.
+              Toque em uma foto para ampliar e navegar pela galeria.
             </p>
             <div class="dialog-gallery">${gallery}</div>
           </section>
@@ -2502,7 +2467,7 @@ function updateLightbox() {
   if (!image) return;
 
   const originalSource = originalImageSource(image);
-  const source = wikimediaThumb(image.src, 1920);
+  const source = lightboxImageSource(image);
   const number = String(state.lightboxIndex + 1).padStart(2, "0");
   const total = String(destination.images.length).padStart(2, "0");
 
@@ -2520,7 +2485,7 @@ function updateLightbox() {
   lightboxMedia.classList.remove("is-fallback");
   lightboxMedia.classList.add("is-loading");
   lightboxLoading.hidden = false;
-  lightboxLoading.textContent = "Carregando foto em alta resolução…";
+  lightboxLoading.textContent = "Carregando foto…";
   lightboxImage.hidden = false;
   lightboxImage.alt = image.alt;
   lightboxImage.referrerPolicy = "no-referrer";
@@ -2530,9 +2495,7 @@ function updateLightbox() {
     if (lightboxImage.dataset.source !== source) return;
     lightboxMedia.classList.remove("is-loading");
     lightboxLoading.hidden = true;
-    lightboxResolution.textContent = `${lightboxImage.naturalWidth.toLocaleString(
-      "pt-BR",
-    )} × ${lightboxImage.naturalHeight.toLocaleString("pt-BR")} px · versão otimizada para tela`;
+    lightboxResolution.textContent = "";
   };
 
   lightboxImage.onerror = () => {
@@ -2542,7 +2505,7 @@ function updateLightbox() {
     lightboxImage.hidden = true;
     lightboxLoading.hidden = false;
     lightboxLoading.textContent =
-      "Não foi possível carregar a foto. Use o link do arquivo original.";
+      "Não foi possível carregar a foto. Tente abrir o arquivo original.";
   };
 
   lightboxImage.src = source;
