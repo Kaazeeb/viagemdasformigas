@@ -70,6 +70,7 @@
     setupAttractionFilters();
     setupTerminalTabs();
     setupLightbox();
+    await ensureLeaflet();
     setupMap();
     openDeepLinkedAttraction();
   }
@@ -89,6 +90,22 @@
   function checkResponse(response) {
     if (!response.ok) throw new Error(`Falha ao carregar ${response.url}`);
     return response.json();
+  }
+
+  function ensureLeaflet() {
+    if (window.L) return Promise.resolve(true);
+
+    const stylesheet = $("#leaflet-styles");
+    if (stylesheet) stylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
+
+    return new Promise((resolve) => {
+      const fallback = document.createElement("script");
+      fallback.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
+      fallback.onload = () => resolve(Boolean(window.L));
+      fallback.onerror = () => resolve(false);
+      document.head.append(fallback);
+      setTimeout(() => resolve(Boolean(window.L)), 5000);
+    });
   }
 
   function mergeGuide(attractions, logistics, media) {
@@ -444,16 +461,46 @@
 
     if (!window.L) {
       target.hidden = true;
+      const frame = target.closest(".beijing-map-frame");
+      if (frame) frame.hidden = true;
       $("[data-map-unavailable]").hidden = false;
+      const toolbar = $(".beijing-map-toolbar");
+      if (toolbar) toolbar.hidden = true;
+      const status = $("[data-map-status]");
+      if (status) status.textContent = "Mapa indisponível — use os links abaixo";
+      const hint = $(".map-gesture-hint");
+      if (hint) hint.hidden = true;
       renderMapLocationIndex(locations, true);
       return;
     }
 
-    map = L.map(target, { scrollWheelZoom: false, zoomControl: true });
+    map = L.map(target, {
+      scrollWheelZoom: false,
+      zoomControl: false,
+      tap: false,
+    });
+    L.control.zoom({ position: "bottomright" }).addTo(map);
+    const loading = $("[data-map-loading]");
+    const loadingMessage = $("[data-map-loading-message]");
+    let loadedTiles = 0;
+    let failedTiles = 0;
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    })
+      .on("tileload", () => {
+        loadedTiles += 1;
+        if (loadedTiles === 1) loading?.classList.add("is-hidden");
+      })
+      .on("tileerror", () => { failedTiles += 1; })
+      .addTo(map);
+    setTimeout(() => {
+      if (loadedTiles > 0) return;
+      loading?.classList.add("has-error");
+      if (loadingMessage) loadingMessage.textContent = failedTiles
+        ? "O mapa-base não carregou. Os marcadores e a lista abaixo continuam disponíveis."
+        : "A conexão com o mapa está demorando. Use a lista abaixo para abrir um ponto.";
+    }, 7000);
 
     const groups = {
       attractions: L.layerGroup().addTo(map),
@@ -470,7 +517,16 @@
       markerIndex.set(location.key, marker);
       bounds.push(location.coords);
     });
-    if (bounds.length) map.fitBounds(bounds, { padding: [24, 24], maxZoom: 10 });
+    const fitVisibleMarkers = () => {
+      const visible = locations
+        .filter((location) => map.hasLayer(groups[location.type]))
+        .map((location) => location.coords)
+        .filter(Array.isArray);
+      if (visible.length) map.fitBounds(visible, { padding: [32, 32], maxZoom: 11 });
+      const count = $("[data-map-status]");
+      if (count) count.textContent = `${visible.length} ${visible.length === 1 ? "ponto visível" : "pontos visíveis"}`;
+    };
+    if (bounds.length) fitVisibleMarkers();
 
     $$('[data-map-layer]').forEach((button) => {
       button.addEventListener("click", () => {
@@ -479,20 +535,36 @@
         if (active) map.removeLayer(group);
         else group.addTo(map);
         button.classList.toggle("is-active", !active);
+        button.setAttribute("aria-pressed", String(!active));
+        fitVisibleMarkers();
       });
+      button.setAttribute("aria-pressed", "true");
     });
 
     $("[data-map-reset]")?.addEventListener("click", () => {
       Object.values(groups).forEach((group) => group.addTo(map));
       $$('[data-map-layer]').forEach((button) => button.classList.add("is-active"));
-      map.fitBounds(bounds, { padding: [24, 24], maxZoom: 10 });
+      $$('[data-map-layer]').forEach((button) => button.setAttribute("aria-pressed", "true"));
+      fitVisibleMarkers();
     });
+
+    if (window.ResizeObserver) new ResizeObserver(() => map.invalidateSize()).observe(target);
 
     document.addEventListener("click", (event) => {
       const trigger = event.target.closest("[data-focus-marker]");
       if (!trigger) return;
       const marker = markerIndex.get(trigger.dataset.focusMarker);
       if (!marker) return;
+      const location = locations.find((item) => item.key === trigger.dataset.focusMarker);
+      if (location && !map.hasLayer(groups[location.type])) {
+        groups[location.type].addTo(map);
+        const layerButton = $(`[data-map-layer="${location.type}"]`);
+        layerButton?.classList.add("is-active");
+        layerButton?.setAttribute("aria-pressed", "true");
+      }
+      if (trigger.closest("[data-map-location-index]")) {
+        $("#map-title")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
       setTimeout(() => {
         map.setView(marker.getLatLng(), Math.max(map.getZoom(), 13), { animate: true });
         marker.openPopup();
@@ -533,7 +605,7 @@
     return L.divIcon({
       className: "",
       html: `<div class="beijing-div-icon ${className}"><span>${label}</span></div>`,
-      iconSize: [28, 28],
+      iconSize: [34, 34],
     });
   }
 
@@ -541,19 +613,25 @@
     const attractionLink = location.type === "attractions"
       ? `<a href="#atracao-${escapeAttr(location.id)}">Abrir ficha ↓</a>`
       : "";
-    return `<div class="map-popup"><strong>${escapeHtml(location.name)}</strong><span>${escapeHtml(location.subtitle || "")}</span>${attractionLink}</div>`;
+    const [lat, lon] = location.coords;
+    const externalLink = `<a href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}" target="_blank" rel="noopener noreferrer">Abrir no OpenStreetMap ↗</a>`;
+    return `<div class="map-popup"><strong>${escapeHtml(location.name)}</strong><span>${escapeHtml(location.subtitle || "")}</span>${attractionLink}${externalLink}</div>`;
   }
 
   function renderMapLocationIndex(locations, external) {
     const target = $("[data-map-location-index]");
     if (!target) return;
-    target.innerHTML = locations.map((location) => {
+    const labels = { attractions: "Atrações", stations: "Estações ferroviárias", airports: "Aeroportos" };
+    target.innerHTML = Object.entries(labels).map(([type, label], groupIndex) => {
+      const items = locations.filter((location) => location.type === type).map((location) => {
       const prefix = location.type === "attractions" ? String(location.number).padStart(2, "0") : location.type === "stations" ? "站" : "✈";
       if (external) {
         const [lat, lon] = location.coords;
         return `<a href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=15/${lat}/${lon}" target="_blank" rel="noopener noreferrer"><b>${prefix}</b> ${escapeHtml(location.name)}</a>`;
       }
       return `<button type="button" data-focus-marker="${escapeAttr(location.key)}"><b>${prefix}</b> ${escapeHtml(location.name)}</button>`;
+      }).join("");
+      return `<details class="map-location-group"${groupIndex === 0 ? " open" : ""}><summary>${label} (${locations.filter((location) => location.type === type).length})</summary><div class="map-location-items">${items}</div></details>`;
     }).join("");
   }
 
