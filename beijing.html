@@ -19,10 +19,12 @@
     <link rel="preconnect" href="https://upload.wikimedia.org">
     <link rel="preconnect" href="https://tile.openstreetmap.org">
     <link
+      id="leaflet-styles"
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIINfQ3ynhZIsC6E0eqCtoM1lT7kT6GfE="
       crossorigin
+      onerror="this.onerror=null;this.removeAttribute('integrity');this.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'"
     >
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="beijing.css">
@@ -270,15 +272,18 @@
               <span class="map-key key-airport" aria-hidden="true"></span>Aeroportos
             </button>
             <button class="map-reset" type="button" data-map-reset>Mostrar tudo</button>
-            <button class="map-expand" type="button" data-map-expand aria-expanded="false">
-              <span aria-hidden="true">⛶</span><span data-map-expand-label>Ampliar mapa</span>
-            </button>
           </div>
           <div class="map-status" aria-live="polite">
             <span data-map-status>Carregando pontos…</span>
-            <span class="map-gesture-hint">Arraste para explorar · use dois dedos para ampliar</span>
+            <span class="map-gesture-hint">Arraste o mapa para explorar</span>
           </div>
-          <section class="beijing-map" data-beijing-map aria-label="Mapa interativo de Pequim"></section>
+          <div class="beijing-map-frame">
+            <section class="beijing-map" data-beijing-map aria-label="Mapa interativo de Pequim"></section>
+            <div class="map-loading" data-map-loading role="status">
+              <span class="map-loading-spinner" aria-hidden="true"></span>
+              <span data-map-loading-message>Carregando o mapa…</span>
+            </div>
+          </div>
           <div class="map-unavailable" data-map-unavailable hidden>
             <strong>O mapa interativo não carregou.</strong>
             <p>A lista abaixo mantém coordenadas e links externos para cada ponto.</p>

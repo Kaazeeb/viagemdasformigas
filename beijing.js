@@ -70,6 +70,7 @@
     setupAttractionFilters();
     setupTerminalTabs();
     setupLightbox();
+    await ensureLeaflet();
     setupMap();
     openDeepLinkedAttraction();
   }
@@ -89,6 +90,22 @@
   function checkResponse(response) {
     if (!response.ok) throw new Error(`Falha ao carregar ${response.url}`);
     return response.json();
+  }
+
+  function ensureLeaflet() {
+    if (window.L) return Promise.resolve(true);
+
+    const stylesheet = $("#leaflet-styles");
+    if (stylesheet) stylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
+
+    return new Promise((resolve) => {
+      const fallback = document.createElement("script");
+      fallback.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
+      fallback.onload = () => resolve(Boolean(window.L));
+      fallback.onerror = () => resolve(false);
+      document.head.append(fallback);
+      setTimeout(() => resolve(Boolean(window.L)), 5000);
+    });
   }
 
   function mergeGuide(attractions, logistics, media) {
@@ -444,6 +461,8 @@
 
     if (!window.L) {
       target.hidden = true;
+      const frame = target.closest(".beijing-map-frame");
+      if (frame) frame.hidden = true;
       $("[data-map-unavailable]").hidden = false;
       const toolbar = $(".beijing-map-toolbar");
       if (toolbar) toolbar.hidden = true;
@@ -455,17 +474,33 @@
       return;
     }
 
-    const shell = target.closest(".beijing-map-shell");
     map = L.map(target, {
       scrollWheelZoom: false,
       zoomControl: false,
       tap: false,
     });
     L.control.zoom({ position: "bottomright" }).addTo(map);
+    const loading = $("[data-map-loading]");
+    const loadingMessage = $("[data-map-loading-message]");
+    let loadedTiles = 0;
+    let failedTiles = 0;
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    })
+      .on("tileload", () => {
+        loadedTiles += 1;
+        if (loadedTiles === 1) loading?.classList.add("is-hidden");
+      })
+      .on("tileerror", () => { failedTiles += 1; })
+      .addTo(map);
+    setTimeout(() => {
+      if (loadedTiles > 0) return;
+      loading?.classList.add("has-error");
+      if (loadingMessage) loadingMessage.textContent = failedTiles
+        ? "O mapa-base não carregou. Os marcadores e a lista abaixo continuam disponíveis."
+        : "A conexão com o mapa está demorando. Use a lista abaixo para abrir um ponto.";
+    }, 7000);
 
     const groups = {
       attractions: L.layerGroup().addTo(map),
@@ -513,19 +548,6 @@
       fitVisibleMarkers();
     });
 
-    const expandButton = $("[data-map-expand]");
-    const setExpanded = (expanded) => {
-      shell?.classList.toggle("is-expanded", expanded);
-      document.body.classList.toggle("map-is-expanded", expanded);
-      expandButton?.setAttribute("aria-expanded", String(expanded));
-      const label = $("[data-map-expand-label]");
-      if (label) label.textContent = expanded ? "Fechar mapa" : "Ampliar mapa";
-      setTimeout(() => map.invalidateSize(), 50);
-    };
-    expandButton?.addEventListener("click", () => setExpanded(!shell?.classList.contains("is-expanded")));
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && shell?.classList.contains("is-expanded")) setExpanded(false);
-    });
     if (window.ResizeObserver) new ResizeObserver(() => map.invalidateSize()).observe(target);
 
     document.addEventListener("click", (event) => {
@@ -540,7 +562,9 @@
         layerButton?.classList.add("is-active");
         layerButton?.setAttribute("aria-pressed", "true");
       }
-      if (trigger.closest("[data-map-location-index]")) target.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (trigger.closest("[data-map-location-index]")) {
+        $("#map-title")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
       setTimeout(() => {
         map.setView(marker.getLatLng(), Math.max(map.getZoom(), 13), { animate: true });
         marker.openPopup();
