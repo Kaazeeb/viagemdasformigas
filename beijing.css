@@ -893,7 +893,12 @@
   gap: 6px;
   padding: 12px;
   overflow-x: auto;
+  scrollbar-width: none;
   border-bottom: 1px solid rgba(48, 42, 31, 0.12);
+}
+
+.beijing-map-toolbar::-webkit-scrollbar {
+  display: none;
 }
 
 .beijing-map-toolbar button {
@@ -918,6 +923,40 @@
   border-color: #26382f;
 }
 
+.beijing-map-toolbar button:focus-visible,
+.map-location-index button:focus-visible {
+  outline: 3px solid rgba(38, 56, 47, 0.3);
+  outline-offset: 2px;
+}
+
+.beijing-map-toolbar .map-reset {
+  margin-left: auto;
+}
+
+.beijing-map-toolbar .map-expand {
+  color: #fff;
+  background: var(--bj-red-dark);
+  border-color: var(--bj-red-dark);
+}
+
+.map-status {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  color: #5c625d;
+  background: #fffaf1;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.map-gesture-hint {
+  color: #7b7d76;
+  font-weight: 600;
+}
+
 .map-key {
   width: 8px;
   height: 8px;
@@ -935,8 +974,8 @@
 
 .beijing-map {
   z-index: 1;
-  height: min(68svh, 650px);
-  min-height: 430px;
+  height: clamp(340px, 54svh, 520px);
+  min-height: 0;
   background: #d8d0c2;
 }
 
@@ -981,9 +1020,9 @@
 
 .beijing-div-icon {
   display: grid;
-  width: 28px !important;
-  height: 28px !important;
-  margin: -14px 0 0 -14px !important;
+  width: 34px !important;
+  height: 34px !important;
+  margin: -17px 0 0 -17px !important;
   place-items: center;
   border: 2px solid #fff8ec;
   border-radius: 50% 50% 50% 6px;
@@ -991,7 +1030,7 @@
   background: var(--bj-red);
   box-shadow: 0 3px 10px rgba(30, 25, 18, 0.34);
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 900;
   transform: rotate(-45deg);
 }
@@ -1032,11 +1071,32 @@
 }
 
 .map-location-index {
+  padding: 8px 12px 14px;
+  background: #f4ecde;
+}
+
+.map-location-group {
+  border-bottom: 1px solid rgba(47, 48, 40, 0.12);
+}
+
+.map-location-group:last-child {
+  border-bottom: 0;
+}
+
+.map-location-group summary {
+  padding: 12px 2px;
+  color: #303a34;
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+  list-style-position: inside;
+}
+
+.map-location-items {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px;
-  padding: 1px;
-  background: rgba(47, 48, 40, 0.11);
+  gap: 6px;
+  padding-bottom: 10px;
 }
 
 .map-location-index button,
@@ -1046,12 +1106,36 @@
   border: 0;
   color: #4d5951;
   background: #fffaf1;
+  border-radius: 8px;
   font-size: 9px;
   font-weight: 800;
   overflow-wrap: anywhere;
   text-align: left;
   text-decoration: none;
   cursor: pointer;
+}
+
+.beijing-map-shell.is-expanded {
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  border-radius: 0;
+}
+
+.beijing-map-shell.is-expanded .beijing-map {
+  flex: 1 1 auto;
+  height: auto;
+}
+
+.beijing-map-shell.is-expanded .map-location-index {
+  display: none;
+}
+
+body.map-is-expanded {
+  overflow: hidden;
 }
 
 .map-location-index b {
@@ -1665,7 +1749,7 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .map-location-index {
+  .map-location-items {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -1758,7 +1842,11 @@
     height: 380px;
   }
 
-  .map-location-index {
+  .beijing-map {
+    height: min(68svh, 650px);
+  }
+
+  .map-location-items {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
@@ -1874,7 +1962,7 @@
     min-height: 230px;
   }
 
-  .map-location-index {
+  .map-location-items {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
