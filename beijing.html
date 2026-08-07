@@ -281,7 +281,7 @@
           </div>
           <div class="map-status" aria-live="polite">
             <span data-map-status>Carregando pontos…</span>
-            <span class="map-gesture-hint">Arraste o mapa para explorar</span>
+            <span class="map-gesture-hint">Arraste e use a roda do mouse para ampliar ou reduzir</span>
           </div>
           <div class="beijing-map-frame">
             <section class="beijing-map" data-beijing-map aria-label="Mapa interativo de Pequim"></section>
@@ -467,12 +467,19 @@
         <div class="beijing-lightbox-toolbar">
           <span data-beijing-lightbox-counter>01 / 01</span>
           <span class="beijing-lightbox-hint">Use as setas ou deslize para os lados</span>
+          <span class="beijing-lightbox-map-controls" data-lightbox-map-controls hidden>
+            <button type="button" data-lightbox-zoom-out aria-label="Reduzir mapa">−</button>
+            <button type="button" data-lightbox-zoom-reset>Redefinir</button>
+            <button type="button" data-lightbox-zoom-in aria-label="Ampliar mapa">+</button>
+          </span>
           <button type="button" data-beijing-lightbox-close aria-label="Fechar foto ampliada">Fechar ×</button>
         </div>
         <div class="beijing-lightbox-stage">
           <button type="button" data-beijing-lightbox-prev aria-label="Foto anterior">←</button>
           <figure>
-            <img data-beijing-lightbox-image src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="">
+            <div class="beijing-lightbox-viewport" data-lightbox-viewport>
+              <img data-beijing-lightbox-image src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" draggable="false">
+            </div>
             <figcaption id="beijing-lightbox-caption">
               <strong data-beijing-lightbox-caption></strong>
               <span data-beijing-lightbox-credit></span>
