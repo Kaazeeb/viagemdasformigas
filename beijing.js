@@ -13,6 +13,12 @@
   let lightboxIndex = 0;
   let activeMediaIndices = [];
   let touchStartX = 0;
+  let lightboxMapMode = false;
+  let lightboxMapScale = 1;
+  let lightboxMapOffset = { x: 0, y: 0 };
+  const lightboxMapPointers = new Map();
+  let lightboxMapDrag = null;
+  let lightboxMapPinch = null;
 
   const categoryLabels = {
     imperial: "Imperial",
@@ -476,7 +482,7 @@
     }
 
     map = L.map(target, {
-      scrollWheelZoom: false,
+      scrollWheelZoom: true,
       zoomControl: false,
       tap: false,
     });
@@ -698,9 +704,15 @@
 
     const dialog = $("[data-beijing-lightbox]");
     if (!dialog) return;
+    const viewport = $("[data-lightbox-viewport]");
+    const image = $("[data-beijing-lightbox-image]");
+    const mapControls = $("[data-lightbox-map-controls]");
     $("[data-beijing-lightbox-close]")?.addEventListener("click", closeLightbox);
     $("[data-beijing-lightbox-prev]")?.addEventListener("click", () => moveLightbox(-1));
     $("[data-beijing-lightbox-next]")?.addEventListener("click", () => moveLightbox(1));
+    $("[data-lightbox-zoom-in]")?.addEventListener("click", () => setLightboxMapZoom(lightboxMapScale + 0.5));
+    $("[data-lightbox-zoom-out]")?.addEventListener("click", () => setLightboxMapZoom(lightboxMapScale - 0.5));
+    $("[data-lightbox-zoom-reset]")?.addEventListener("click", () => resetLightboxMap());
     dialog.addEventListener("cancel", (event) => {
       event.preventDefault();
       closeLightbox();
@@ -709,9 +721,11 @@
       if (event.target === dialog) closeLightbox();
     });
     dialog.addEventListener("touchstart", (event) => {
+      if (lightboxMapMode) return;
       touchStartX = event.changedTouches[0].clientX;
     }, { passive: true });
     dialog.addEventListener("touchend", (event) => {
+      if (lightboxMapMode) return;
       const delta = event.changedTouches[0].clientX - touchStartX;
       if (Math.abs(delta) > 55) moveLightbox(delta > 0 ? -1 : 1);
     }, { passive: true });
@@ -720,7 +734,59 @@
       if (event.key === "ArrowLeft") moveLightbox(-1);
       if (event.key === "ArrowRight") moveLightbox(1);
       if (event.key === "Escape") closeLightbox();
+      if (lightboxMapMode && (event.key === "+" || event.key === "=")) setLightboxMapZoom(lightboxMapScale + 0.5);
+      if (lightboxMapMode && event.key === "-") setLightboxMapZoom(lightboxMapScale - 0.5);
     });
+
+    viewport?.addEventListener("wheel", (event) => {
+      if (!lightboxMapMode) return;
+      event.preventDefault();
+      setLightboxMapZoom(lightboxMapScale + (event.deltaY < 0 ? 0.35 : -0.35));
+    }, { passive: false });
+
+    viewport?.addEventListener("pointerdown", (event) => {
+      if (!lightboxMapMode) return;
+      viewport.setPointerCapture(event.pointerId);
+      lightboxMapPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (lightboxMapPointers.size === 1) {
+        lightboxMapDrag = {
+          x: event.clientX,
+          y: event.clientY,
+          offset: { ...lightboxMapOffset },
+        };
+      } else if (lightboxMapPointers.size === 2) {
+        lightboxMapDrag = null;
+        lightboxMapPinch = {
+          distance: lightboxMapPointerDistance(),
+          scale: lightboxMapScale,
+        };
+      }
+    });
+
+    viewport?.addEventListener("pointermove", (event) => {
+      if (!lightboxMapMode || !lightboxMapPointers.has(event.pointerId)) return;
+      lightboxMapPointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (lightboxMapPointers.size >= 2 && lightboxMapPinch) {
+        const distance = lightboxMapPointerDistance();
+        setLightboxMapZoom(lightboxMapPinch.scale * (distance / lightboxMapPinch.distance));
+      } else if (lightboxMapDrag && lightboxMapScale > 1) {
+        lightboxMapOffset = {
+          x: lightboxMapDrag.offset.x + event.clientX - lightboxMapDrag.x,
+          y: lightboxMapDrag.offset.y + event.clientY - lightboxMapDrag.y,
+        };
+        applyLightboxMapTransform();
+      }
+    });
+
+    const endMapPointer = (event) => {
+      lightboxMapPointers.delete(event.pointerId);
+      if (lightboxMapPointers.size < 2) lightboxMapPinch = null;
+      if (!lightboxMapPointers.size) lightboxMapDrag = null;
+    };
+    viewport?.addEventListener("pointerup", endMapPointer);
+    viewport?.addEventListener("pointercancel", endMapPointer);
+    image?.addEventListener("load", applyLightboxMapTransform);
+    mapControls?.addEventListener("click", (event) => event.stopPropagation());
   }
 
   function openLightbox(index, group) {
@@ -730,6 +796,8 @@
     activeMediaIndices = groupedIndices?.length ? groupedIndices : mediaItems.map((_, mediaIndex) => mediaIndex);
     if (!activeMediaIndices.includes(index)) activeMediaIndices.unshift(index);
     lightboxIndex = index;
+    lightboxMapMode = group === "reference-maps";
+    resetLightboxMap();
     updateLightbox();
     if (dialog.open) return;
     if (typeof dialog.showModal === "function") dialog.showModal();
@@ -749,6 +817,7 @@
     const currentPosition = Math.max(0, activeMediaIndices.indexOf(lightboxIndex));
     const nextPosition = (currentPosition + direction + activeMediaIndices.length) % activeMediaIndices.length;
     lightboxIndex = activeMediaIndices[nextPosition];
+    resetLightboxMap();
     updateLightbox();
   }
 
@@ -756,14 +825,58 @@
     const item = mediaItems[lightboxIndex];
     if (!item) return;
     const image = $("[data-beijing-lightbox-image]");
+    const dialog = $("[data-beijing-lightbox]");
+    const viewport = $("[data-lightbox-viewport]");
     image.src = lightboxImageSource(item);
     image.alt = item.alt;
+    dialog?.classList.toggle("is-map-mode", lightboxMapMode);
+    viewport?.setAttribute("aria-label", lightboxMapMode ? "Mapa ampliável: use a roda, os botões ou arraste" : "Imagem ampliada");
+    $("[data-lightbox-map-controls]")?.toggleAttribute("hidden", !lightboxMapMode);
+    applyLightboxMapTransform();
     $("[data-beijing-lightbox-caption]").textContent = item.caption;
     $("[data-beijing-lightbox-credit]").textContent = `${item.credit} · ${item.license}`;
     const source = $("[data-beijing-lightbox-source]");
     source.href = item.page || item.original;
     const position = Math.max(0, activeMediaIndices.indexOf(lightboxIndex));
     $("[data-beijing-lightbox-counter]").textContent = `${String(position + 1).padStart(2, "0")} / ${String(activeMediaIndices.length).padStart(2, "0")}`;
+  }
+
+  function resetLightboxMap() {
+    lightboxMapScale = 1;
+    lightboxMapOffset = { x: 0, y: 0 };
+    lightboxMapPointers.clear();
+    lightboxMapDrag = null;
+    lightboxMapPinch = null;
+    applyLightboxMapTransform();
+  }
+
+  function setLightboxMapZoom(scale) {
+    lightboxMapScale = Math.min(8, Math.max(1, scale));
+    if (lightboxMapScale === 1) lightboxMapOffset = { x: 0, y: 0 };
+    applyLightboxMapTransform();
+  }
+
+  function applyLightboxMapTransform() {
+    const viewport = $("[data-lightbox-viewport]");
+    const image = $("[data-beijing-lightbox-image]");
+    if (!viewport || !image) return;
+    if (!lightboxMapMode) {
+      image.style.transform = "";
+      return;
+    }
+    const maxX = Math.max(0, (image.offsetWidth * (lightboxMapScale - 1)) / 2);
+    const maxY = Math.max(0, (image.offsetHeight * (lightboxMapScale - 1)) / 2);
+    lightboxMapOffset = {
+      x: Math.min(maxX, Math.max(-maxX, lightboxMapOffset.x)),
+      y: Math.min(maxY, Math.max(-maxY, lightboxMapOffset.y)),
+    };
+    image.style.transform = `translate(${lightboxMapOffset.x}px, ${lightboxMapOffset.y}px) scale(${lightboxMapScale})`;
+  }
+
+  function lightboxMapPointerDistance() {
+    const points = [...lightboxMapPointers.values()];
+    if (points.length < 2) return 1;
+    return Math.hypot(points[1].x - points[0].x, points[1].y - points[0].y);
   }
 
   function externalLink(url, label, className = "") {
