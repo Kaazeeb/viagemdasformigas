@@ -36,6 +36,8 @@ window.BEIJING_GUIDE_READY = Promise.all([
   const method = logistics.hotelMethod || {};
   const hotels = (logistics.hotels || []).map((hotel) => ({
     ...hotel,
+    id: hotel.tripHotelId,
+    coords: hotel.coordinates ? [hotel.coordinates.lat, hotel.coordinates.lng] : null,
     metro: (hotel.nearestTransit || []).map((stop) => {
       const distance = stop.distanceMeters ? ` · ${stop.distanceMeters} m` : "";
       const lines = stop.lines?.length ? ` · ${stop.lines.join("/")}` : "";
