@@ -984,6 +984,7 @@
   position: relative;
   height: clamp(360px, 55svh, 500px);
   overflow: hidden;
+  contain: paint;
   background: #d8d0c2;
 }
 

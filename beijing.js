@@ -617,7 +617,7 @@
         });
         storeMapKeys(METRO_MAP_STORAGE_KEY, hiddenMetroMapKeys);
         syncMetroDrawerState(stations, lines);
-        mapSelectionController?.setLocationsVisibility(keys, isVisibleOnMap);
+        mapSelectionController?.setMetroLocationsVisibility(keys, isVisibleOnMap);
         return;
       }
       const toggle = event.target.closest("[data-metro-map-toggle]");
@@ -628,7 +628,7 @@
       else hiddenMetroMapKeys.add(key);
       storeMapKeys(METRO_MAP_STORAGE_KEY, hiddenMetroMapKeys);
       syncMetroDrawerState(stations, lines);
-      mapSelectionController?.setLocationVisibility(key, isVisibleOnMap);
+      mapSelectionController?.setMetroLocationVisibility(key, isVisibleOnMap);
     });
     syncMetroDrawerState(stations, lines);
   }
@@ -841,11 +841,14 @@
     const refreshLocationIndex = () => {
       renderMapLocationIndex(selectableLocations(), false);
     };
+    const updateVisibleMarkerCount = (visibleCount = visibleMapLocations().length) => {
+      const count = $("[data-map-status]");
+      if (count) count.textContent = `${visibleCount} ${visibleCount === 1 ? "ponto visível" : "pontos visíveis"}`;
+    };
     const fitVisibleMarkers = () => {
       const visible = visibleMapLocations().map((location) => location.coords);
       if (visible.length) map.fitBounds(visible, { padding: [32, 32], maxZoom: 11 });
-      const count = $("[data-map-status]");
-      if (count) count.textContent = `${visible.length} ${visible.length === 1 ? "ponto visível" : "pontos visíveis"}`;
+      updateVisibleMarkerCount(visible.length);
     };
     refreshMetroLineLayers();
     refreshLocationIndex();
@@ -872,9 +875,15 @@
         setMarkerVisibility(key, isVisibleOnMap);
         finishSelectionChange();
       },
-      setLocationsVisibility(keys, isVisibleOnMap) {
+      setMetroLocationVisibility(key, isVisibleOnMap) {
+        setMarkerVisibility(key, isVisibleOnMap);
+        refreshMetroLineLayers();
+        updateVisibleMarkerCount();
+      },
+      setMetroLocationsVisibility(keys, isVisibleOnMap) {
         keys.forEach((key) => setMarkerVisibility(key, isVisibleOnMap));
-        finishSelectionChange();
+        refreshMetroLineLayers();
+        updateVisibleMarkerCount();
       },
     };
 
@@ -905,8 +914,7 @@
       resizeFrame = window.requestAnimationFrame(() => map.invalidateSize({ pan: false }));
     };
     if (window.ResizeObserver && mapFrame) new ResizeObserver(invalidateMapSize).observe(mapFrame);
-    window.addEventListener("resize", invalidateMapSize, { passive: true });
-    invalidateMapSize();
+    else window.addEventListener("resize", invalidateMapSize, { passive: true });
 
     document.addEventListener("click", (event) => {
       const trigger = event.target.closest("[data-focus-marker]");
