@@ -984,7 +984,6 @@
   position: relative;
   height: clamp(360px, 55svh, 500px);
   overflow: hidden;
-  contain: paint;
   background: #d8d0c2;
 }
 
@@ -1004,7 +1003,7 @@
   top: 12px;
   bottom: 12px;
   left: 0;
-  width: min(330px, calc(100% - 58px));
+  width: min(360px, calc(100% - 58px));
   color: #26382f;
   background: #fffaf1;
   box-shadow: 10px 0 28px rgba(30, 38, 33, 0.2);
@@ -1076,7 +1075,7 @@
 .metro-drawer-heading p {
   margin: 0 0 3px;
   color: #d8b36d;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1084,6 +1083,7 @@
 
 .metro-drawer-heading h3 {
   margin: 0;
+  color: #fff8eb;
   font-family: var(--serif);
   font-size: 27px;
   font-weight: 500;
@@ -1093,8 +1093,47 @@
   display: block;
   margin-top: 7px;
   color: rgba(255, 255, 255, 0.68);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 750;
+}
+
+.metro-drawer-search {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 7px;
+  margin-top: 13px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: #e4bd77;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.metro-drawer-search > span[aria-hidden] {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.metro-drawer-search input {
+  min-width: 0;
+  flex: 1;
+  padding: 8px 0;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+}
+
+.metro-drawer-search input::placeholder {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.metro-drawer-search:focus-within {
+  border-color: #e4bd77;
+  box-shadow: 0 0 0 2px rgba(228, 189, 119, 0.22);
 }
 
 .metro-drawer-content {
@@ -1117,14 +1156,14 @@
 .metro-line-overview h4 {
   margin: 0;
   color: #26382f;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 950;
 }
 
 .metro-line-overview > p {
   margin: 4px 0 12px;
   color: #6a726c;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.45;
 }
 
@@ -1132,6 +1171,20 @@
 .metro-station-list {
   display: grid;
   gap: 7px;
+}
+
+.metro-search-empty {
+  margin: 4px 0 0;
+  padding: 14px 10px;
+  border-radius: 8px;
+  color: #68736c;
+  background: #fffaf1;
+  font-size: 11px;
+  text-align: center;
+}
+
+.metro-search-empty[hidden] {
+  display: none;
 }
 
 .metro-line-detail {
@@ -1156,7 +1209,7 @@
 
 .metro-line-detail summary > span:last-child {
   color: #737a75;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
 }
 
@@ -1208,14 +1261,14 @@
 }
 
 .metro-line-toggle strong {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 950;
 }
 
 .metro-line-toggle small {
   margin-top: 2px;
   color: #6c756f;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .metro-line-toggle input {
@@ -1248,7 +1301,7 @@
   border-radius: 999px;
   color: #fff;
   background: var(--metro-line-color, #52685d);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 950;
   line-height: 1;
   white-space: nowrap;
@@ -1289,7 +1342,7 @@
   display: block;
   overflow: hidden;
   margin-bottom: 6px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.35;
   text-overflow: ellipsis;
 }
@@ -1303,7 +1356,7 @@
 .metro-station-focus .metro-line-badge {
   min-height: 17px;
   padding: 2px 5px;
-  font-size: 8px;
+  font-size: 9px;
 }
 
 .metro-map-toggle {
@@ -1348,6 +1401,11 @@
 
 .metro-map-toggle input:checked + .metro-map-toggle-track::after {
   transform: translateX(14px);
+}
+
+.metro-line-detail[hidden],
+.metro-station-item[hidden] {
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

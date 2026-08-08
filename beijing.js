@@ -110,9 +110,6 @@
   function ensureLeaflet() {
     if (window.L) return Promise.resolve(true);
 
-    const stylesheet = $("#leaflet-styles");
-    if (stylesheet) stylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
-
     return new Promise((resolve) => {
       const fallback = document.createElement("script");
       fallback.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
@@ -502,6 +499,7 @@
     const target = $("[data-metro-drawer-content]");
     const drawerToggle = $("[data-metro-drawer-toggle]");
     const drawerPanel = $("#metro-drawer-panel", drawer);
+    const searchInput = $("[data-metro-search]", drawer);
     if (!drawer || !target || !drawerToggle) return;
     const stations = (guide.metroStations || []).filter((station) => Array.isArray(station.coords));
     const stationsById = new Map(stations.map((station) => [station.id, station]));
@@ -553,6 +551,7 @@
               </div>
             </details>`;
           }).join("")}
+          <p class="metro-search-empty" data-metro-search-empty hidden>Nenhuma linha ou estação encontrada.</p>
         </div>
       </section>`;
 
@@ -567,6 +566,39 @@
     };
     setDrawerOpen(Boolean(window.matchMedia?.("(min-width: 720px)").matches));
     drawerToggle.addEventListener("click", () => setDrawerOpen(!drawer.classList.contains("is-open")));
+    let openLinesBeforeSearch = new Set();
+    let hasActiveSearch = false;
+    searchInput?.addEventListener("input", () => {
+      const query = normalizeMetroSearch(searchInput.value.trim());
+      const panels = $$('[data-metro-line-panel]', target);
+      if (query && !hasActiveSearch) {
+        openLinesBeforeSearch = new Set(panels.filter((panel) => panel.open).map((panel) => panel.dataset.metroLinePanel));
+      }
+      hasActiveSearch = Boolean(query);
+      let visibleLines = 0;
+      panels.forEach((panel) => {
+        const line = linesById.get(panel.dataset.metroLinePanel);
+        const lineMatches = normalizeMetroSearch(`${line?.name || ""} ${line?.id || ""}`).includes(query);
+        let matchingStations = 0;
+        $$('[data-metro-station]', panel).forEach((stationItem) => {
+          const stationName = $(".metro-station-focus strong", stationItem)?.textContent || "";
+          const stationMatches = normalizeMetroSearch(stationName).includes(query);
+          stationItem.hidden = Boolean(query) && !lineMatches && !stationMatches;
+          if (!stationItem.hidden) matchingStations += 1;
+        });
+        panel.hidden = Boolean(query) && !lineMatches && matchingStations === 0;
+        if (!panel.hidden) visibleLines += 1;
+        if (query && !panel.hidden) panel.open = true;
+        else if (!query) panel.open = openLinesBeforeSearch.has(panel.dataset.metroLinePanel);
+      });
+      const empty = $("[data-metro-search-empty]", target);
+      if (empty) empty.hidden = visibleLines > 0;
+    });
+    target.addEventListener("click", (event) => {
+      if (event.target.closest(".metro-station-focus") && window.matchMedia?.("(max-width: 719px)").matches) {
+        setDrawerOpen(false);
+      }
+    });
     drawer.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && drawer.classList.contains("is-open")) {
         setDrawerOpen(false);
@@ -603,6 +635,10 @@
 
   function metroMapKey(station) {
     return `metro:${station.id || slugify(station.name)}`;
+  }
+
+  function normalizeMetroSearch(value) {
+    return String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR");
   }
 
   function syncMetroDrawerState(stations, lines) {
@@ -870,6 +906,7 @@
     };
     if (window.ResizeObserver && mapFrame) new ResizeObserver(invalidateMapSize).observe(mapFrame);
     window.addEventListener("resize", invalidateMapSize, { passive: true });
+    invalidateMapSize();
 
     document.addEventListener("click", (event) => {
       const trigger = event.target.closest("[data-focus-marker]");
