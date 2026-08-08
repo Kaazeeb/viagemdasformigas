@@ -862,7 +862,14 @@
       fitVisibleMarkers();
     });
 
-    if (window.ResizeObserver) new ResizeObserver(() => map.invalidateSize()).observe(target);
+    const mapFrame = target.closest(".beijing-map-frame");
+    let resizeFrame = 0;
+    const invalidateMapSize = () => {
+      window.cancelAnimationFrame(resizeFrame);
+      resizeFrame = window.requestAnimationFrame(() => map.invalidateSize({ pan: false }));
+    };
+    if (window.ResizeObserver && mapFrame) new ResizeObserver(invalidateMapSize).observe(mapFrame);
+    window.addEventListener("resize", invalidateMapSize, { passive: true });
 
     document.addEventListener("click", (event) => {
       const trigger = event.target.closest("[data-focus-marker]");

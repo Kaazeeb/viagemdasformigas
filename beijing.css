@@ -984,7 +984,7 @@
   position: relative;
   height: clamp(360px, 55svh, 500px);
   overflow: hidden;
-  contain: layout paint;
+  contain: paint;
   background: #d8d0c2;
 }
 
@@ -1043,7 +1043,7 @@
 }
 
 .metro-drawer-toggle > span:last-child {
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1076,7 +1076,7 @@
 .metro-drawer-heading p {
   margin: 0 0 3px;
   color: #d8b36d;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 900;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1085,7 +1085,7 @@
 .metro-drawer-heading h3 {
   margin: 0;
   font-family: var(--serif);
-  font-size: 25px;
+  font-size: 27px;
   font-weight: 500;
 }
 
@@ -1093,7 +1093,7 @@
   display: block;
   margin-top: 7px;
   color: rgba(255, 255, 255, 0.68);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 750;
 }
 
@@ -1117,14 +1117,14 @@
 .metro-line-overview h4 {
   margin: 0;
   color: #26382f;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 950;
 }
 
 .metro-line-overview > p {
   margin: 4px 0 12px;
   color: #6a726c;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.45;
 }
 
@@ -1156,7 +1156,7 @@
 
 .metro-line-detail summary > span:last-child {
   color: #737a75;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 800;
 }
 
@@ -1208,14 +1208,14 @@
 }
 
 .metro-line-toggle strong {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 950;
 }
 
 .metro-line-toggle small {
   margin-top: 2px;
   color: #6c756f;
-  font-size: 7px;
+  font-size: 9px;
 }
 
 .metro-line-toggle input {
@@ -1248,7 +1248,7 @@
   border-radius: 999px;
   color: #fff;
   background: var(--metro-line-color, #52685d);
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 950;
   line-height: 1;
   white-space: nowrap;
@@ -1289,7 +1289,7 @@
   display: block;
   overflow: hidden;
   margin-bottom: 6px;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 1.35;
   text-overflow: ellipsis;
 }
@@ -1303,7 +1303,7 @@
 .metro-station-focus .metro-line-badge {
   min-height: 17px;
   padding: 2px 5px;
-  font-size: 6px;
+  font-size: 8px;
 }
 
 .metro-map-toggle {
@@ -1360,10 +1360,11 @@
 }
 
 .beijing-map {
-  position: relative;
+  position: absolute;
   z-index: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  width: auto;
+  height: auto;
   min-height: 0;
   background: #d8d0c2;
 }
@@ -2450,10 +2451,6 @@
 
   .reference-map-image {
     height: 380px;
-  }
-
-  .beijing-map {
-    height: 100%;
   }
 
   .beijing-map-frame {
