@@ -7,11 +7,13 @@
   const mediaItems = [];
   const mediaIndexes = new Map();
   const mediaGroups = new Map();
+  const lightboxPreloads = new Map();
   const markerIndex = new Map();
   let guide = null;
   let map = null;
   let lightboxIndex = 0;
   let activeMediaIndices = [];
+  let lightboxLoadToken = 0;
   let touchStartX = 0;
   let lightboxMapMode = false;
   let lightboxMapScale = 1;
@@ -164,6 +166,7 @@
     const thumb = image.thumb || image.src || image.url || image.preview || "";
     return {
       file: image.file || "",
+      local: image.local || "",
       thumb,
       large: image.large || image.original || thumb,
       original: image.original || image.large || thumb,
@@ -176,6 +179,7 @@
   }
 
   function lightboxImageSource(image) {
+    if (image.local) return image.local;
     if (!image.file) return image.thumb || image.large || image.original;
     return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(
       image.file,
@@ -793,12 +797,18 @@
     if (!Number.isFinite(index) || !mediaItems[index]) return;
     const dialog = $("[data-beijing-lightbox]");
     const groupedIndices = group ? mediaGroups.get(group) : null;
+    const isLocalGallery = Boolean(
+      groupedIndices?.length && groupedIndices.every((mediaIndex) => mediaItems[mediaIndex]?.local),
+    );
+    dialog.dataset.mediaGroup = group || "";
+    dialog.classList.toggle("is-local-gallery", isLocalGallery);
     activeMediaIndices = groupedIndices?.length ? groupedIndices : mediaItems.map((_, mediaIndex) => mediaIndex);
     if (!activeMediaIndices.includes(index)) activeMediaIndices.unshift(index);
     lightboxIndex = index;
     lightboxMapMode = group === "reference-maps";
     resetLightboxMap();
     updateLightbox();
+    if (isLocalGallery) preloadLightboxGroup(activeMediaIndices, index);
     if (dialog.open) return;
     if (typeof dialog.showModal === "function") dialog.showModal();
     else dialog.setAttribute("open", "");
@@ -806,10 +816,53 @@
   }
 
   function closeLightbox() {
+    lightboxLoadToken += 1;
     const dialog = $("[data-beijing-lightbox]");
     if (dialog?.open && typeof dialog.close === "function") dialog.close();
     else dialog?.removeAttribute("open");
+    if (dialog) {
+      delete dialog.dataset.mediaGroup;
+      dialog.classList.remove("is-local-gallery");
+    }
     document.body.classList.remove("lightbox-open");
+  }
+
+  function preloadLightboxGroup(indices, currentIndex) {
+    indices.forEach((mediaIndex) => {
+      const item = mediaItems[mediaIndex];
+      if (mediaIndex === currentIndex || !item?.local) return;
+      const source = lightboxImageSource(item);
+      loadLightboxImage(source).catch(() => {});
+    });
+  }
+
+  function loadLightboxImage(source, fetchPriority = "low") {
+    const cached = lightboxPreloads.get(source);
+    if (cached) {
+      if (fetchPriority === "high") cached.image.fetchPriority = "high";
+      return cached.promise;
+    }
+
+    const preload = new Image();
+    preload.decoding = "async";
+    preload.fetchPriority = fetchPriority;
+    const promise = new Promise((resolve, reject) => {
+      preload.addEventListener("load", async () => {
+        try {
+          await preload.decode();
+        } catch (_error) {
+          // A successful load is still usable when explicit decoding is unavailable.
+        }
+        resolve(preload);
+      }, { once: true });
+      preload.addEventListener("error", () => {
+        lightboxPreloads.delete(source);
+        reject(new Error(`Falha ao carregar ${source}`));
+      }, { once: true });
+    });
+    lightboxPreloads.set(source, { image: preload, promise });
+    preload.src = source;
+    return promise;
   }
 
   function moveLightbox(direction) {
@@ -821,14 +874,21 @@
     updateLightbox();
   }
 
-  function updateLightbox() {
+  async function updateLightbox() {
     const item = mediaItems[lightboxIndex];
     if (!item) return;
+    const loadToken = ++lightboxLoadToken;
     const image = $("[data-beijing-lightbox-image]");
     const dialog = $("[data-beijing-lightbox]");
     const viewport = $("[data-lightbox-viewport]");
-    image.src = lightboxImageSource(item);
-    image.alt = item.alt;
+    const media = $("[data-beijing-lightbox-media]");
+    const loading = $("[data-beijing-lightbox-loading]");
+    const imageSource = lightboxImageSource(item);
+    media.classList.add("is-loading");
+    media.classList.remove("has-load-error");
+    loading.hidden = false;
+    loading.textContent = "Carregando foto…";
+    image.alt = "";
     dialog?.classList.toggle("is-map-mode", lightboxMapMode);
     viewport?.setAttribute("aria-label", lightboxMapMode ? "Mapa ampliável: use a roda, os botões ou arraste" : "Imagem ampliada");
     $("[data-lightbox-map-controls]")?.toggleAttribute("hidden", !lightboxMapMode);
@@ -839,6 +899,26 @@
     source.href = item.page || item.original;
     const position = Math.max(0, activeMediaIndices.indexOf(lightboxIndex));
     $("[data-beijing-lightbox-counter]").textContent = `${String(position + 1).padStart(2, "0")} / ${String(activeMediaIndices.length).padStart(2, "0")}`;
+
+    try {
+      await loadLightboxImage(imageSource, "high");
+      if (loadToken !== lightboxLoadToken) return;
+      image.src = imageSource;
+      image.alt = item.alt;
+      try {
+        await image.decode();
+      } catch (_error) {
+        // The load event from the preloader already confirmed a usable image.
+      }
+      if (loadToken !== lightboxLoadToken) return;
+      media.classList.remove("is-loading");
+      loading.hidden = true;
+    } catch (_error) {
+      if (loadToken !== lightboxLoadToken) return;
+      media.classList.remove("is-loading");
+      media.classList.add("has-load-error");
+      loading.textContent = "Não foi possível carregar a foto.";
+    }
   }
 
   function resetLightboxMap() {
