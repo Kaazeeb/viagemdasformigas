@@ -285,6 +285,26 @@
           </div>
           <div class="beijing-map-frame">
             <section class="beijing-map" data-beijing-map aria-label="Mapa interativo de Pequim"></section>
+            <aside class="metro-drawer" data-metro-drawer aria-labelledby="metro-drawer-title">
+              <button
+                class="metro-drawer-toggle"
+                type="button"
+                data-metro-drawer-toggle
+                aria-expanded="false"
+                aria-controls="metro-drawer-panel"
+              >
+                <span aria-hidden="true">地铁</span>
+                <span data-metro-drawer-toggle-label>Metrô</span>
+              </button>
+              <div class="metro-drawer-panel" id="metro-drawer-panel">
+                <div class="metro-drawer-heading">
+                  <p>Planejamento por trilhos</p>
+                  <h3 id="metro-drawer-title">Linhas e estações</h3>
+                  <span data-metro-selection-status></span>
+                </div>
+                <div class="metro-drawer-content" data-metro-drawer-content></div>
+              </div>
+            </aside>
             <div class="map-loading" data-map-loading role="status">
               <span class="map-loading-spinner" aria-hidden="true"></span>
               <span data-map-loading-message>Carregando o mapa…</span>
