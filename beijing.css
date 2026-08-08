@@ -1351,11 +1351,24 @@
   background: rgba(27, 10, 9, 0.31);
 }
 
+.hotel-card.is-map-hidden {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(27, 10, 9, 0.18);
+}
+
+.hotel-card-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
 .hotel-status {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 15px;
+  margin-bottom: 0;
   padding: 5px 8px;
   border-radius: 999px;
   color: #2b1a0e;
@@ -1369,6 +1382,68 @@
 .hotel-status.reference {
   color: #fff;
   background: rgba(255, 255, 255, 0.14);
+}
+
+.hotel-map-toggle {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hotel-map-toggle input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.hotel-map-toggle-track {
+  position: relative;
+  width: 34px;
+  height: 20px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.22);
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.hotel-map-toggle-track::after {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  content: "";
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.hotel-map-toggle input:checked + .hotel-map-toggle-track {
+  border-color: #efca8e;
+  background: #9f352d;
+}
+
+.hotel-map-toggle input:checked + .hotel-map-toggle-track::after {
+  background: #fff8eb;
+  transform: translateX(14px);
+}
+
+.hotel-map-toggle input:focus-visible + .hotel-map-toggle-track {
+  outline: 2px solid #fff8eb;
+  outline-offset: 3px;
 }
 
 .hotel-card h3 {
@@ -1443,6 +1518,10 @@
   font-size: 10px;
   font-weight: 900;
   text-decoration: none;
+}
+
+.hotel-card a[hidden] {
+  display: none;
 }
 
 .hotel-card small {

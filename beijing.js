@@ -4,13 +4,16 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const LIGHTBOX_IMAGE_WIDTH = 1920;
+  const HOTEL_MAP_STORAGE_KEY = "rota-china:beijing:hidden-map-hotels:v1";
   const mediaItems = [];
   const mediaIndexes = new Map();
   const mediaGroups = new Map();
   const lightboxPreloads = new Map();
   const markerIndex = new Map();
+  const hiddenHotelMapKeys = new Set(readStoredHotelMapKeys());
   let guide = null;
   let map = null;
+  let hotelMapController = null;
   let lightboxIndex = 0;
   let activeMediaIndices = [];
   let lightboxLoadToken = 0;
@@ -407,9 +410,19 @@
     }
     if (searchLink && guide.hotelSearchUrl) searchLink.href = guide.hotelSearchUrl;
     if (!target) return;
-    target.innerHTML = (guide.hotels || []).map((hotel) => `
-      <article class="hotel-card">
-        <span class="hotel-status reference">Não confirmado para as datas</span>
+    target.innerHTML = (guide.hotels || []).map((hotel) => {
+      const key = hotelMapKey(hotel);
+      const isVisibleOnMap = !hiddenHotelMapKeys.has(key);
+      return `
+      <article class="hotel-card${isVisibleOnMap ? "" : " is-map-hidden"}" data-hotel-card="${escapeAttr(key)}">
+        <div class="hotel-card-toolbar">
+          <span class="hotel-status reference">Não confirmado para as datas</span>
+          <label class="hotel-map-toggle">
+            <input type="checkbox" role="switch" aria-label="Mostrar ${escapeAttr(hotel.name)} no mapa" data-hotel-map-toggle="${escapeAttr(key)}"${isVisibleOnMap ? " checked" : ""}>
+            <span class="hotel-map-toggle-track" aria-hidden="true"></span>
+            <span data-hotel-map-toggle-text>${isVisibleOnMap ? "No mapa" : "Fora do mapa"}</span>
+          </label>
+        </div>
         <h3>${escapeHtml(hotel.name)}</h3>
         <p class="hotel-area">${escapeHtml(hotel.area || hotel.district || "Pequim")} · ${escapeHtml(hotel.metro || hotel.access || "ver localização")}</p>
         <div class="hotel-price-row">
@@ -422,9 +435,52 @@
           ${hotel.rating ? `<li>${escapeHtml(String(hotel.rating))}${hotel.reviews ? ` · ${escapeHtml(String(hotel.reviews))} avaliações` : ""}</li>` : ""}
         </ul>
         ${externalLink(hotel.liveUrl || hotel.url, "Ver tarifa ao vivo no Trip.com ↗", "hotel-link")}
-        ${hotel.coords ? `<a class="hotel-map-link" href="#mapa" data-focus-marker="hotel:${escapeAttr(hotel.id || slugify(hotel.name))}">Localizar no mapa ↓</a>` : ""}
+        ${hotel.coords ? `<a class="hotel-map-link" href="#mapa" data-focus-marker="${escapeAttr(key)}"${isVisibleOnMap ? "" : " hidden"}>Localizar no mapa ↓</a>` : ""}
         <small>Disponibilidade, tarifa em CNY, café incluído, impostos e cancelamento não foram expostos na consulta pública. Confira antes de reservar.</small>
-      </article>`).join("");
+      </article>`;
+    }).join("");
+
+    target.addEventListener("change", (event) => {
+      const toggle = event.target.closest("[data-hotel-map-toggle]");
+      if (!toggle) return;
+      const key = toggle.dataset.hotelMapToggle;
+      const isVisibleOnMap = toggle.checked;
+      if (isVisibleOnMap) hiddenHotelMapKeys.delete(key);
+      else hiddenHotelMapKeys.add(key);
+      storeHotelMapKeys();
+      updateHotelCardMapState(toggle.closest("[data-hotel-card]"), isVisibleOnMap);
+      hotelMapController?.setHotelVisibility(key, isVisibleOnMap);
+    });
+  }
+
+  function hotelMapKey(hotel) {
+    return `hotel:${hotel.id || slugify(hotel.name)}`;
+  }
+
+  function readStoredHotelMapKeys() {
+    try {
+      const stored = JSON.parse(window.localStorage.getItem(HOTEL_MAP_STORAGE_KEY) || "[]");
+      return Array.isArray(stored) ? stored.filter((key) => typeof key === "string") : [];
+    } catch (_error) {
+      return [];
+    }
+  }
+
+  function storeHotelMapKeys() {
+    try {
+      window.localStorage.setItem(HOTEL_MAP_STORAGE_KEY, JSON.stringify([...hiddenHotelMapKeys]));
+    } catch (_error) {
+      // O filtro continua funcional durante a sessão quando o armazenamento está bloqueado.
+    }
+  }
+
+  function updateHotelCardMapState(card, isVisibleOnMap) {
+    if (!card) return;
+    card.classList.toggle("is-map-hidden", !isVisibleOnMap);
+    const label = $("[data-hotel-map-toggle-text]", card);
+    if (label) label.textContent = isVisibleOnMap ? "No mapa" : "Fora do mapa";
+    const mapLink = $("[data-focus-marker]", card);
+    if (mapLink) mapLink.hidden = !isVisibleOnMap;
   }
 
   function setupTerminalTabs() {
@@ -468,7 +524,8 @@
     const target = $("[data-beijing-map]");
     if (!target) return;
     const locations = buildLocations();
-    renderMapLocationIndex(locations, false);
+    const selectableLocations = () => locations.filter((location) => location.type !== "hotels" || !hiddenHotelMapKeys.has(location.key));
+    renderMapLocationIndex(selectableLocations(), false);
 
     if (!window.L) {
       target.hidden = true;
@@ -481,7 +538,7 @@
       if (status) status.textContent = "Mapa indisponível — use os links abaixo";
       const hint = $(".map-gesture-hint");
       if (hint) hint.hidden = true;
-      renderMapLocationIndex(locations, true);
+      renderMapLocationIndex(selectableLocations(), true);
       return;
     }
 
@@ -520,26 +577,46 @@
       stations: L.layerGroup().addTo(map),
       airports: L.layerGroup().addTo(map),
     };
-    const bounds = [];
 
     locations.forEach((location) => {
       if (!Array.isArray(location.coords)) return;
       const marker = L.marker(location.coords, { icon: mapIcon(location) });
       marker.bindPopup(mapPopup(location));
-      marker.addTo(groups[location.type]);
+      if (location.type !== "hotels" || !hiddenHotelMapKeys.has(location.key)) {
+        marker.addTo(groups[location.type]);
+      }
       markerIndex.set(location.key, marker);
-      bounds.push(location.coords);
     });
+    const visibleMapLocations = () => locations.filter((location) => {
+      if (!Array.isArray(location.coords) || !map.hasLayer(groups[location.type])) return false;
+      const marker = markerIndex.get(location.key);
+      return marker ? groups[location.type].hasLayer(marker) : false;
+    });
+    const refreshLocationIndex = () => {
+      renderMapLocationIndex(selectableLocations(), false);
+    };
     const fitVisibleMarkers = () => {
-      const visible = locations
-        .filter((location) => map.hasLayer(groups[location.type]))
-        .map((location) => location.coords)
-        .filter(Array.isArray);
+      const visible = visibleMapLocations().map((location) => location.coords);
       if (visible.length) map.fitBounds(visible, { padding: [32, 32], maxZoom: 11 });
       const count = $("[data-map-status]");
       if (count) count.textContent = `${visible.length} ${visible.length === 1 ? "ponto visível" : "pontos visíveis"}`;
     };
-    if (bounds.length) fitVisibleMarkers();
+    refreshLocationIndex();
+    fitVisibleMarkers();
+
+    hotelMapController = {
+      setHotelVisibility(key, isVisibleOnMap) {
+        const marker = markerIndex.get(key);
+        if (!marker) return;
+        if (isVisibleOnMap) groups.hotels.addLayer(marker);
+        else {
+          marker.closePopup();
+          groups.hotels.removeLayer(marker);
+        }
+        refreshLocationIndex();
+        fitVisibleMarkers();
+      },
+    };
 
     $$('[data-map-layer]').forEach((button) => {
       button.addEventListener("click", () => {
