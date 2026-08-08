@@ -1052,7 +1052,8 @@
 .metro-drawer-toggle:focus-visible,
 .metro-line-detail summary:focus-visible,
 .metro-station-focus:focus-visible,
-.metro-map-toggle input:focus-visible + .metro-map-toggle-track {
+.metro-map-toggle input:focus-visible + .metro-map-toggle-track,
+.metro-line-toggle input:focus-visible + .metro-map-toggle-track {
   outline: 3px solid #e4b961;
   outline-offset: 2px;
 }
@@ -1104,8 +1105,7 @@
   scrollbar-width: thin;
 }
 
-.metro-line-overview,
-.metro-station-selection {
+.metro-line-overview {
   padding: 17px;
 }
 
@@ -1114,8 +1114,7 @@
   background: #f5efe4;
 }
 
-.metro-line-overview h4,
-.metro-station-selection h4 {
+.metro-line-overview h4 {
   margin: 0;
   color: #26382f;
   font-size: 11px;
@@ -1161,14 +1160,84 @@
   font-weight: 800;
 }
 
-.metro-line-detail ul {
-  display: grid;
-  gap: 5px;
-  margin: 0;
-  padding: 0 10px 10px 24px;
-  color: #5b655f;
+.metro-line-detail summary > span:last-child::after {
+  content: "  +";
+}
+
+.metro-line-detail[open] summary > span:last-child::after {
+  content: "  −";
+}
+
+.metro-line-detail[open] summary {
+  border-bottom: 1px solid rgba(38, 56, 47, 0.12);
+}
+
+.metro-line-detail.is-map-hidden summary {
+  opacity: 0.62;
+}
+
+.metro-line-panel {
+  padding: 9px;
+  background: #f9f4ea;
+}
+
+.metro-line-panel .metro-station-list {
+  margin-top: 8px;
+}
+
+.metro-line-toggle {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 9px;
+  border-radius: 8px;
+  color: #26382f;
+  background: #e8eee9;
+  cursor: pointer;
+}
+
+.metro-line-toggle > span:first-child {
+  min-width: 0;
+}
+
+.metro-line-toggle strong,
+.metro-line-toggle small {
+  display: block;
+}
+
+.metro-line-toggle strong {
   font-size: 9px;
-  line-height: 1.4;
+  font-weight: 950;
+}
+
+.metro-line-toggle small {
+  margin-top: 2px;
+  color: #6c756f;
+  font-size: 7px;
+}
+
+.metro-line-toggle input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+.metro-line-toggle input:checked + .metro-map-toggle-track {
+  background: #168159;
+}
+
+.metro-line-toggle input:indeterminate + .metro-map-toggle-track {
+  background: #c18a2e;
+}
+
+.metro-line-toggle input:checked + .metro-map-toggle-track::after,
+.metro-line-toggle input:indeterminate + .metro-map-toggle-track::after {
+  transform: translateX(14px);
 }
 
 .metro-line-badge {
@@ -1183,17 +1252,6 @@
   font-weight: 950;
   line-height: 1;
   white-space: nowrap;
-}
-
-.metro-station-selection-heading {
-  margin-bottom: 11px;
-}
-
-.metro-station-selection-heading > span {
-  display: block;
-  margin-top: 3px;
-  color: #7a817c;
-  font-size: 8px;
 }
 
 .metro-station-item {
@@ -1427,8 +1485,14 @@
 }
 
 .beijing-div-icon.metro {
+  width: 18px !important;
+  height: 18px !important;
+  margin: -9px 0 0 -9px !important;
+  border-width: 1px;
   background: #168159;
   border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(30, 25, 18, 0.28);
+  font-size: 6px;
   transform: none;
 }
 

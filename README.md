@@ -46,6 +46,8 @@ Depois, acesse `http://localhost:8080`.
 - Página dedicada a Pequim com 18 atrações, roteiro de cinco dias, mapa
   interativo, mapa do metrô, mapa dos 16 distritos, sete estações ferroviárias,
   dois aeroportos, dicas e oito hotéis para conferência no Trip.com.
+- Painel retrátil com 306 estações de metrô em 15 linhas relevantes ao roteiro,
+  seleção persistente por estação ou linha e traçados sobre o mapa interativo.
 - Trinta e duas fichas práticas de atrações, com localização, acesso, preço de
   entrada, horário, duração sugerida e orientação de reserva.
 - Dezoito guias “Em profundidade” para os três principais pontos de Xi’an,
@@ -77,6 +79,7 @@ Depois, acesse `http://localhost:8080`.
 ├── beijing-data.js
 ├── beijing-attractions.json
 ├── beijing-logistics.json
+├── beijing-metro.json
 ├── beijing-media.json
 ├── CREDITS.md
 ├── LICENSE
