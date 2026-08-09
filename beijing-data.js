@@ -11,7 +11,11 @@ window.BEIJING_GUIDE_READY = Promise.all([
     if (!response.ok) throw new Error("Não foi possível carregar as imagens e os mapas.");
     return response.json();
   }),
-]).then(([attractions, logistics, media]) => {
+  fetch("beijing-metro.json").then((response) => {
+    if (!response.ok) throw new Error("Não foi possível carregar as linhas e estações de metrô.");
+    return response.json();
+  }),
+]).then(([attractions, logistics, media, metro]) => {
   const imagesByAttraction = media.imagesByAttraction || {};
   const imageKeys = {
     "forbidden-city": "cidade-proibida",
@@ -79,6 +83,8 @@ window.BEIJING_GUIDE_READY = Promise.all([
     hotels,
     stations,
     airports,
+    metroStations: metro.stations || logistics.metroStations || [],
+    metroLines: metro.lines || [],
     hotelSearchUrl: method.searchUrl,
     hotelMethod: `${method.result || "Nenhuma opção foi confirmada."} ${method.limitation || ""} ${method.holidayNotice || ""}`,
     attractions: attractions.map((attraction) => ({
@@ -89,6 +95,6 @@ window.BEIJING_GUIDE_READY = Promise.all([
       ...item,
       description: `${item.coverage || ""} ${item.title?.includes("metrô") ? "Use como referência e confirme extensões futuras no operador." : "Use para compreender a escala do município, não como mapa de navegação."}`.trim(),
     })),
-    sources: [...(logistics.sources || []), ...(media.sources || [])],
+    sources: [...(logistics.sources || []), ...(media.sources || []), ...(metro.sources || [])],
   };
 });

@@ -1,0 +1,3974 @@
+{
+  "updatedAt": "2026-08-08",
+  "scope": "Estações completas das 15 linhas que atendem os pontos destacados no roteiro de Pequim.",
+  "lines": [
+    {
+      "id": "1",
+      "name": "Linha 1 / Batong",
+      "color": "#A12830",
+      "circular": false,
+      "stations": [
+        "universal-resort",
+        "huazhuang",
+        "tuqiao",
+        "linheli",
+        "liyuan",
+        "jiukeshu",
+        "guoyuan",
+        "tongzhou-beiyuan",
+        "baliqiao",
+        "guaanzhuang",
+        "shuangqiao",
+        "communication-university-of-china",
+        "gaobeidian",
+        "sihui-east",
+        "osm-1303500865",
+        "dawanglu",
+        "guomao",
+        "yonganli",
+        "jianguomen",
+        "dongdan",
+        "wangfujing",
+        "tiananmen-east",
+        "tian-anmen-west",
+        "xidan",
+        "fuxingmen",
+        "nanlishi-lu",
+        "muxidi",
+        "military-museum",
+        "gongzhufen",
+        "wanshoulu",
+        "wukesong",
+        "yuquanlu",
+        "babaoshan",
+        "gucheng",
+        "pingguoyuan"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Linha 2",
+      "color": "#00529b",
+      "circular": true,
+      "stations": [
+        "xizhimen",
+        "chegongzhuang",
+        "fuchengmen",
+        "fuxingmen",
+        "changchunjie",
+        "xuanwumen",
+        "hepingmen",
+        "qianmen",
+        "chongwenmen",
+        "beijing-railway-station",
+        "jianguomen",
+        "chaoyangmen",
+        "dongsi-shitiao",
+        "dongzhimen",
+        "yonghegong",
+        "andingmen",
+        "gulou-dajie",
+        "jishuitan",
+        "xizhimen"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Linha 4 / Daxing",
+      "color": "#008994",
+      "circular": false,
+      "stations": [
+        "anheqiaobei",
+        "beigongmen",
+        "xiyuan",
+        "yuanmingyuan-park",
+        "peking-university-east-gate",
+        "zhongguancun",
+        "haidian-huangzhuang",
+        "renmin-university",
+        "weigongcun",
+        "national-library",
+        "beijing-zoo",
+        "xizhimen",
+        "xinjiekou",
+        "pinganli",
+        "xisi",
+        "lingjing-hutong",
+        "xidan",
+        "xuanwumen",
+        "osm-528929965",
+        "taoranting",
+        "beijing-south-metro",
+        "majiapu",
+        "jiaomen-west",
+        "gongyixiqiao",
+        "xin-gong",
+        "xihongmen",
+        "gaomidian-north",
+        "gaomidian-south",
+        "zaoyuan",
+        "qingyuanlu",
+        "huangcun-xidajie",
+        "huangcun-railway-station",
+        "yihezhuang",
+        "biomedical-base",
+        "tiangongyuan"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Linha 5",
+      "color": "#ae005f",
+      "circular": false,
+      "stations": [
+        "tiantongyuan-north",
+        "tiantongyuan",
+        "tiantongyuan-south",
+        "lishuiqiao",
+        "lishuiqiao-south",
+        "beiyuanlu-north",
+        "datunlu-east",
+        "huixinxijie-beikou",
+        "huixinxijie-nankou",
+        "heping-xiqiao",
+        "hepingli-beijie",
+        "yonghegong",
+        "beixinqiao",
+        "zhangzizhong-lu",
+        "dongsi",
+        "dengshikou",
+        "dongdan",
+        "chongwenmen",
+        "ciqikou",
+        "east-gate-of-temple-of-heaven",
+        "puhuangyu",
+        "liujiayao",
+        "songjiazhuang"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Linha 6",
+      "color": "#BB8900",
+      "circular": false,
+      "stations": [
+        "jin-anqiao",
+        "pingguoyuan",
+        "yang-zhuang",
+        "xihuang-cun",
+        "liaogong-zhuang",
+        "tian-cun",
+        "haidian-wuluju",
+        "cishousi",
+        "huayuanqiao",
+        "baishi-bridge-south",
+        "erligou",
+        "chegongzhuang-west",
+        "chegongzhuang",
+        "pinganli",
+        "beihai-north",
+        "nanluoguxiang",
+        "dongsi",
+        "chaoyangmen",
+        "dongdaqiao",
+        "hujialou",
+        "jintailu",
+        "shilipu",
+        "qingnianlu",
+        "dalianpo",
+        "huangqu",
+        "changying",
+        "caofang",
+        "wuzixueyuanlu",
+        "tongzhou-beiguan",
+        "tongyun-men",
+        "beiyunhe-west",
+        "beiyunhe-east",
+        "haojiafu",
+        "dongxiayuan",
+        "lucheng",
+        "luyang"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Linha 7",
+      "color": "#FFC66E",
+      "circular": false,
+      "stations": [
+        "universal-resort",
+        "huazhuang",
+        "gaoloujin",
+        "qunfang",
+        "wansheng-east",
+        "wansheng-west",
+        "heizhuanghu",
+        "langxinzhuang",
+        "huangchang",
+        "jiaohuachang",
+        "shuanghe",
+        "fatou",
+        "beijing-happy-valley",
+        "nanlouzizhuang",
+        "huagong",
+        "baiziwan",
+        "dajiaoting",
+        "jiulongshan",
+        "shuangjing",
+        "guangqumen-wai",
+        "guangqumen-nei",
+        "ciqikou",
+        "qiaowan",
+        "zhushikou",
+        "hufangqiao",
+        "osm-528929965",
+        "inner-guang-anmen",
+        "daguanying",
+        "wanzi",
+        "beijing-west-metro"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Linha 8",
+      "color": "#00997A",
+      "circular": false,
+      "stations": [
+        "yinghai",
+        "demao",
+        "wufu-tang",
+        "huojian-wanyuan",
+        "donggao-di",
+        "heyi",
+        "dahongmen-nan-south",
+        "dahongmen",
+        "haihu-tun",
+        "muxi-yuan",
+        "outer-yongdingmen",
+        "tianqiao",
+        "zhushikou",
+        "qianmen",
+        "wangfujing",
+        "jinyu-hutong",
+        "osm-6172173743",
+        "nanluoguxiang",
+        "shichahai",
+        "gulou-dajie",
+        "andeli-beijie",
+        "anhuaqiao",
+        "beitucheng",
+        "olympic-sports-center",
+        "olympic-park",
+        "forest-park-south-gate",
+        "lincuiqiao",
+        "yongtaizhuang",
+        "xixiaokou",
+        "yuxin",
+        "huoying",
+        "huilongguan-dongdajie",
+        "pingxifu",
+        "yuzhilu",
+        "zhuxinzhuang"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Linha 9",
+      "color": "#87D300",
+      "circular": false,
+      "stations": [
+        "guogongzhuang",
+        "fengtai-science-park",
+        "keyilu",
+        "fengtai-nanlu",
+        "fengtai-dongdajie",
+        "osm-2091794211",
+        "liuliqiao",
+        "liuliqiao-east",
+        "beijing-west-metro",
+        "military-museum",
+        "baiduizi",
+        "baishi-bridge-south",
+        "national-library"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Linha 10",
+      "color": "#178ABB",
+      "circular": true,
+      "stations": [
+        "xiju",
+        "niwa",
+        "fengtaizhan",
+        "capital-university-of-economics-business",
+        "jijiaomiao",
+        "caoqiao",
+        "jiaomen-west",
+        "jiaomen-east",
+        "dahongmen",
+        "shiliuzhuang",
+        "songjiazhuang",
+        "chengshousi",
+        "fenzhongsi",
+        "shilihe",
+        "panjiayuan",
+        "jinsong",
+        "shuangjing",
+        "guomao",
+        "jintaixizhao",
+        "hujialou",
+        "tuanjiehu",
+        "agricultural-exhibition-center",
+        "liangmaqiao",
+        "sanyuanqiao",
+        "taiyanggong",
+        "shaoyaoju",
+        "huixinxijie-nankou",
+        "anzhenmen",
+        "beitucheng",
+        "jiandemen",
+        "mudanyuan",
+        "xitucheng",
+        "zhichun-lu",
+        "zhichunli",
+        "haidian-huangzhuang",
+        "suzhoujie",
+        "bagou",
+        "huoqiying",
+        "changchunqiao",
+        "chedaogou",
+        "cishousi",
+        "xidiaoyutai",
+        "gongzhufen",
+        "lianhuaqiao",
+        "liuliqiao",
+        "xiju"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Linha 12",
+      "color": "#9B5A1A",
+      "circular": false,
+      "stations": [
+        "dongbabei",
+        "dongbaxi",
+        "tuofangying",
+        "gaojiayuan",
+        "jiangtaixi",
+        "sanyuanqiao",
+        "xibahe",
+        "guangximen",
+        "heping-xiqiao",
+        "osm-12433885699",
+        "anhuaqiao",
+        "osm-12433919303",
+        "beitaipingzhuang",
+        "osm-12433919307",
+        "osm-12433919310",
+        "renmin-university",
+        "osm-12433919313",
+        "changchunqiao",
+        "osm-12433919315",
+        "sijiqing-qiao"
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Linha 13",
+      "color": "#F9E700",
+      "circular": false,
+      "stations": [
+        "dongzhimen",
+        "liufang",
+        "guangximen",
+        "shaoyaoju",
+        "wangjing-west",
+        "beiyuan",
+        "lishuiqiao",
+        "huoying",
+        "huilongguan",
+        "longze",
+        "xi-erqi",
+        "qinghe-railway-station",
+        "shangdi",
+        "wudaokou",
+        "zhichun-lu",
+        "osm-12433919310",
+        "xizhimen"
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Linha 14",
+      "color": "#D4A7A1",
+      "circular": false,
+      "stations": [
+        "shan-gezhuang",
+        "laiguangying",
+        "donghuqu",
+        "wangjing",
+        "futong",
+        "wangjing-south",
+        "jiangtai",
+        "dongfeng-beiqiao",
+        "zaoying",
+        "chaoyang-park",
+        "jintailu",
+        "dawanglu",
+        "jiulongshan",
+        "pingleyuan",
+        "beijing-university-of-technology-west-gate",
+        "shilihe",
+        "fangzhuang",
+        "puhuangyu",
+        "jingtai",
+        "outer-yongdingmen",
+        "beijing-south-metro",
+        "jingfengmen",
+        "xitieying",
+        "caihuying",
+        "lize-business-district",
+        "dongguantou",
+        "xiju",
+        "osm-2091794211",
+        "dajing",
+        "guozhuangzi",
+        "dawayao",
+        "garden-expo-park",
+        "zhangguozhuang"
+      ]
+    },
+    {
+      "id": "16",
+      "name": "Linha 16",
+      "color": "#6DA843",
+      "circular": false,
+      "stations": [
+        "beianhe",
+        "wenyanglu",
+        "daoxianghulu",
+        "tundian",
+        "yongfeng",
+        "yongfeng-south",
+        "xibeiwang",
+        "malianwa",
+        "nongda-nanlu",
+        "xiyuan",
+        "wanquanhe-qiao",
+        "suzhoujie",
+        "osm-12433919313",
+        "wanshousi",
+        "national-library",
+        "erligou",
+        "ganjia-kou",
+        "yuyuantan-park-east-gate",
+        "muxidi-2",
+        "daguanying",
+        "honglian-nanlu",
+        "lize-business-district",
+        "dongguantou-south",
+        "fengtaizhan",
+        "fengtai-nanlu",
+        "fufengqiao",
+        "kandan",
+        "yushuzhuang",
+        "hongtaizhuang",
+        "wanpingcheng"
+      ]
+    },
+    {
+      "id": "19",
+      "name": "Linha 19",
+      "color": "#D6AAC1",
+      "circular": false,
+      "stations": [
+        "mudanyuan",
+        "beitaipingzhuang",
+        "jishuitan",
+        "pinganli",
+        "osm-5723775765",
+        "niujie",
+        "jingfengmen",
+        "caoqiao",
+        "osm-9385116429",
+        "xin-gong"
+      ]
+    },
+    {
+      "id": "Capital Airport Express",
+      "name": "Capital Airport Express",
+      "color": "#9B91B1",
+      "circular": false,
+      "stations": [
+        "beixinqiao",
+        "dongzhimen",
+        "sanyuanqiao",
+        "capital-airport-terminal-3",
+        "capital-airport-terminal-2"
+      ]
+    }
+  ],
+  "stations": [
+    {
+      "id": "agricultural-exhibition-center",
+      "name": "Agricultural Exhibition Center (农业展览馆)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.940249,
+        116.456359
+      ]
+    },
+    {
+      "id": "andeli-beijie",
+      "name": "Andeli Beijie (安德里北街)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.955572,
+        116.388613
+      ]
+    },
+    {
+      "id": "andingmen",
+      "name": "Andingmen (安定门)",
+      "lines": [
+        "2"
+      ],
+      "coords": [
+        39.947729,
+        116.402067
+      ]
+    },
+    {
+      "id": "anheqiaobei",
+      "name": "Anheqiaobei (安河桥北)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        40.011026,
+        116.263981
+      ]
+    },
+    {
+      "id": "anhuaqiao",
+      "name": "Anhuaqiao (安华桥)",
+      "lines": [
+        "8",
+        "12"
+      ],
+      "coords": [
+        39.967159,
+        116.388464
+      ]
+    },
+    {
+      "id": "anzhenmen",
+      "name": "Anzhenmen (安贞门)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.975807,
+        116.399183
+      ]
+    },
+    {
+      "id": "babaoshan",
+      "name": "Babaoshan (八宝山)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.906224,
+        116.229682
+      ]
+    },
+    {
+      "id": "bagou",
+      "name": "Bagou (巴沟)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.973318,
+        116.287518
+      ]
+    },
+    {
+      "id": "baiduizi",
+      "name": "Baiduizi (白堆子)",
+      "lines": [
+        "9"
+      ],
+      "coords": [
+        39.922573,
+        116.319714
+      ]
+    },
+    {
+      "id": "baishi-bridge-south",
+      "name": "Baishi Bridge South (白石桥南)",
+      "lines": [
+        "6",
+        "9"
+      ],
+      "coords": [
+        39.931799,
+        116.319016
+      ]
+    },
+    {
+      "id": "baiziwan",
+      "name": "Baiziwan (百子湾)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.891442,
+        116.49004
+      ]
+    },
+    {
+      "id": "baliqiao",
+      "name": "Baliqiao (八里桥)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.905088,
+        116.612777
+      ]
+    },
+    {
+      "id": "beianhe",
+      "name": "Beianhe (北安河)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        40.066819,
+        116.124415
+      ]
+    },
+    {
+      "id": "beigongmen",
+      "name": "Beigongmen (北宫门)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        40.001161,
+        116.271336
+      ]
+    },
+    {
+      "id": "beihai-north",
+      "name": "Beihai North (北海北)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.931781,
+        116.38022
+      ]
+    },
+    {
+      "id": "beijing-happy-valley",
+      "name": "Beijing Happy Valley (欢乐谷景区)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.865651,
+        116.493161
+      ]
+    },
+    {
+      "id": "beijing-railway-station",
+      "name": "Beijing Railway Station (北京站)",
+      "lines": [
+        "2"
+      ],
+      "coords": [
+        39.903538,
+        116.420956
+      ]
+    },
+    {
+      "id": "beijing-south-metro",
+      "name": "Beijing South Railway Station (北京南站)",
+      "lines": [
+        "4",
+        "14"
+      ],
+      "coords": [
+        39.863539,
+        116.372594
+      ]
+    },
+    {
+      "id": "beijing-university-of-technology-west-gate",
+      "name": "Beijing University of Technology West Gate (北工大西门)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.873641,
+        116.471297
+      ]
+    },
+    {
+      "id": "beijing-west-metro",
+      "name": "Beijing West Railway Station (北京西站)",
+      "lines": [
+        "7",
+        "9"
+      ],
+      "coords": [
+        39.893538,
+        116.315212
+      ]
+    },
+    {
+      "id": "beijing-zoo",
+      "name": "Beijing Zoo (动物园)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.936886,
+        116.332717
+      ]
+    },
+    {
+      "id": "beitaipingzhuang",
+      "name": "Beitaipingzhuang (北太平庄)",
+      "lines": [
+        "12",
+        "19"
+      ],
+      "coords": [
+        39.966791,
+        116.363829
+      ]
+    },
+    {
+      "id": "beitucheng",
+      "name": "Beitucheng (北土城)",
+      "lines": [
+        "8",
+        "10"
+      ],
+      "coords": [
+        39.976075,
+        116.38801
+      ]
+    },
+    {
+      "id": "beixinqiao",
+      "name": "Beixinqiao (北新桥)",
+      "lines": [
+        "5",
+        "Capital Airport Express"
+      ],
+      "coords": [
+        39.939543,
+        116.411367
+      ]
+    },
+    {
+      "id": "beiyuan",
+      "name": "Beiyuan (北苑)",
+      "lines": [
+        "13"
+      ],
+      "coords": [
+        40.041644,
+        116.428315
+      ]
+    },
+    {
+      "id": "beiyuanlu-north",
+      "name": "Beiyuanlu North (北苑路北)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        40.02902,
+        116.411874
+      ]
+    },
+    {
+      "id": "beiyunhe-east",
+      "name": "Beiyunhe East (北运河东)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.902027,
+        116.701819
+      ]
+    },
+    {
+      "id": "beiyunhe-west",
+      "name": "Beiyunhe West (北运河西)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.901734,
+        116.68218
+      ]
+    },
+    {
+      "id": "biomedical-base",
+      "name": "Biomedical Base (生物医药基地)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.685123,
+        116.315627
+      ]
+    },
+    {
+      "id": "caihuying",
+      "name": "Caihuying (菜户营)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.866328,
+        116.336671
+      ]
+    },
+    {
+      "id": "caofang",
+      "name": "Caofang (草房)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.923424,
+        116.610327
+      ]
+    },
+    {
+      "id": "caoqiao",
+      "name": "Caoqiao (草桥)",
+      "lines": [
+        "10",
+        "19"
+      ],
+      "coords": [
+        39.84533,
+        116.344108
+      ]
+    },
+    {
+      "id": "capital-airport-terminal-2",
+      "name": "Capital Airport Terminal 2 (首都机场2号航站楼)",
+      "lines": [
+        "Capital Airport Express"
+      ],
+      "coords": [
+        40.078013,
+        116.587134
+      ]
+    },
+    {
+      "id": "capital-airport-terminal-3",
+      "name": "Capital Airport Terminal 3 (首都机场3号航站楼)",
+      "lines": [
+        "Capital Airport Express"
+      ],
+      "coords": [
+        40.051759,
+        116.609692
+      ]
+    },
+    {
+      "id": "capital-university-of-economics-business",
+      "name": "Capital University of Economics & Business (首经贸)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.843139,
+        116.314143
+      ]
+    },
+    {
+      "id": "changchunjie",
+      "name": "Changchunjie (长椿街)",
+      "lines": [
+        "2"
+      ],
+      "coords": [
+        39.898003,
+        116.357216
+      ]
+    },
+    {
+      "id": "changchunqiao",
+      "name": "Changchunqiao (长春桥)",
+      "lines": [
+        "10",
+        "12"
+      ],
+      "coords": [
+        39.957427,
+        116.287997
+      ]
+    },
+    {
+      "id": "changying",
+      "name": "Changying (常营)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.924265,
+        116.593644
+      ]
+    },
+    {
+      "id": "chaoyang-park",
+      "name": "Chaoyang Park (朝阳公园)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.93195,
+        116.472374
+      ]
+    },
+    {
+      "id": "chaoyangmen",
+      "name": "Chaoyangmen (朝阳门)",
+      "lines": [
+        "2",
+        "6"
+      ],
+      "coords": [
+        39.923041,
+        116.42795
+      ]
+    },
+    {
+      "id": "chedaogou",
+      "name": "Chedaogou (车道沟)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.945164,
+        116.287811
+      ]
+    },
+    {
+      "id": "chegongzhuang",
+      "name": "Chegongzhuang (车公庄)",
+      "lines": [
+        "2",
+        "6"
+      ],
+      "coords": [
+        39.930978,
+        116.349098
+      ]
+    },
+    {
+      "id": "chegongzhuang-west",
+      "name": "Chegongzhuang West (车公庄西)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.931025,
+        116.337992
+      ]
+    },
+    {
+      "id": "chengshousi",
+      "name": "Chengshousi (成寿寺)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.84452,
+        116.442145
+      ]
+    },
+    {
+      "id": "chongwenmen",
+      "name": "Chongwenmen (崇文门)",
+      "lines": [
+        "2",
+        "5"
+      ],
+      "coords": [
+        39.899553,
+        116.411484
+      ]
+    },
+    {
+      "id": "ciqikou",
+      "name": "Ciqikou (磁器口)",
+      "lines": [
+        "5",
+        "7"
+      ],
+      "coords": [
+        39.891743,
+        116.412576
+      ]
+    },
+    {
+      "id": "cishousi",
+      "name": "Cishousi (慈寿寺)",
+      "lines": [
+        "6",
+        "10"
+      ],
+      "coords": [
+        39.931799,
+        116.288944
+      ]
+    },
+    {
+      "id": "communication-university-of-china",
+      "name": "Communication University of China (传媒大学)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.908071,
+        116.548842
+      ]
+    },
+    {
+      "id": "daguanying",
+      "name": "Daguanying (达官营)",
+      "lines": [
+        "7",
+        "16"
+      ],
+      "coords": [
+        39.889295,
+        116.330153
+      ]
+    },
+    {
+      "id": "dahongmen",
+      "name": "Dahongmen (大红门)",
+      "lines": [
+        "8",
+        "10"
+      ],
+      "coords": [
+        39.843729,
+        116.393991
+      ]
+    },
+    {
+      "id": "dahongmen-nan-south",
+      "name": "Dahongmen Nan(South) (大红门南)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.836106,
+        116.394912
+      ]
+    },
+    {
+      "id": "dajiaoting",
+      "name": "Dajiaoting (大郊亭)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.892235,
+        116.481348
+      ]
+    },
+    {
+      "id": "dajing",
+      "name": "Dajing (大井)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.864072,
+        116.268946
+      ]
+    },
+    {
+      "id": "dalianpo",
+      "name": "Dalianpo (褡裢坡)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.922639,
+        116.558365
+      ]
+    },
+    {
+      "id": "daoxianghulu",
+      "name": "Daoxianghulu (稻香湖路)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        40.067441,
+        116.18227
+      ]
+    },
+    {
+      "id": "datunlu-east",
+      "name": "Datunlu East (大屯路东)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        40.002537,
+        116.411022
+      ]
+    },
+    {
+      "id": "dawanglu",
+      "name": "Dawanglu (大望路)",
+      "lines": [
+        "1",
+        "14"
+      ],
+      "coords": [
+        39.907176,
+        116.470711
+      ]
+    },
+    {
+      "id": "dawayao",
+      "name": "Dawayao (大瓦窑)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.858351,
+        116.234439
+      ]
+    },
+    {
+      "id": "demao",
+      "name": "Demao (德茂)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.771703,
+        116.435105
+      ]
+    },
+    {
+      "id": "dengshikou",
+      "name": "Dengshikou (灯市口)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        39.915412,
+        116.41174
+      ]
+    },
+    {
+      "id": "dongbabei",
+      "name": "Dongbabei (东坝北)",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.974638,
+        116.55194
+      ]
+    },
+    {
+      "id": "dongbaxi",
+      "name": "Dongbaxi (东坝西)",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.973376,
+        116.528375
+      ]
+    },
+    {
+      "id": "dongdan",
+      "name": "Dongdan (东单)",
+      "lines": [
+        "1",
+        "5"
+      ],
+      "coords": [
+        39.906914,
+        116.413106
+      ]
+    },
+    {
+      "id": "dongdaqiao",
+      "name": "Dongdaqiao (东大桥)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.921428,
+        116.445566
+      ]
+    },
+    {
+      "id": "dongfeng-beiqiao",
+      "name": "Dongfeng Beiqiao (东风北桥)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.958275,
+        116.478931
+      ]
+    },
+    {
+      "id": "donggao-di",
+      "name": "Donggao Di (东高地)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.803837,
+        116.402358
+      ]
+    },
+    {
+      "id": "dongguantou",
+      "name": "Dongguantou (东管头)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.866183,
+        116.314433
+      ]
+    },
+    {
+      "id": "dongguantou-south",
+      "name": "Dongguantou South (东管头南)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.853344,
+        116.316976
+      ]
+    },
+    {
+      "id": "donghuqu",
+      "name": "Donghuqu (东湖渠)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        40.00913,
+        116.461081
+      ]
+    },
+    {
+      "id": "dongsi",
+      "name": "Dongsi (东四)",
+      "lines": [
+        "5",
+        "6"
+      ],
+      "coords": [
+        39.922993,
+        116.410913
+      ]
+    },
+    {
+      "id": "dongsi-shitiao",
+      "name": "Dongsi Shitiao (东四十条)",
+      "lines": [
+        "2"
+      ],
+      "coords": [
+        39.932285,
+        116.428095
+      ]
+    },
+    {
+      "id": "dongxiayuan",
+      "name": "Dongxiayuan (东夏园)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.902183,
+        116.727438
+      ]
+    },
+    {
+      "id": "dongzhimen",
+      "name": "Dongzhimen (东直门)",
+      "lines": [
+        "2",
+        "13",
+        "Capital Airport Express"
+      ],
+      "coords": [
+        39.940452,
+        116.42863
+      ]
+    },
+    {
+      "id": "east-gate-of-temple-of-heaven",
+      "name": "East Gate of Temple of Heaven (天坛东门)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        39.882256,
+        116.414479
+      ]
+    },
+    {
+      "id": "erligou",
+      "name": "Erligou (二里沟)",
+      "lines": [
+        "6",
+        "16"
+      ],
+      "coords": [
+        39.931112,
+        116.327398
+      ]
+    },
+    {
+      "id": "fangzhuang",
+      "name": "Fangzhuang (方庄)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.864669,
+        116.433945
+      ]
+    },
+    {
+      "id": "fatou",
+      "name": "Fatou (垡头)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.859637,
+        116.505713
+      ]
+    },
+    {
+      "id": "fengtai-dongdajie",
+      "name": "Fengtai Dongdajie (丰台东大街)",
+      "lines": [
+        "9"
+      ],
+      "coords": [
+        39.854172,
+        116.287865
+      ]
+    },
+    {
+      "id": "fengtai-nanlu",
+      "name": "Fengtai Nanlu (丰台南路)",
+      "lines": [
+        "9",
+        "16"
+      ],
+      "coords": [
+        39.839575,
+        116.290612
+      ]
+    },
+    {
+      "id": "fengtai-science-park",
+      "name": "Fengtai Science Park (丰台科技园)",
+      "lines": [
+        "9"
+      ],
+      "coords": [
+        39.823767,
+        116.291281
+      ]
+    },
+    {
+      "id": "fengtaizhan",
+      "name": "Fengtaizhan (丰台站)",
+      "lines": [
+        "10",
+        "16"
+      ],
+      "coords": [
+        39.849328,
+        116.297187
+      ]
+    },
+    {
+      "id": "fenzhongsi",
+      "name": "Fenzhongsi (分钟寺)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.850689,
+        116.447612
+      ]
+    },
+    {
+      "id": "forest-park-south-gate",
+      "name": "Forest Park South Gate (森林公园南门)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        40.0092,
+        116.386518
+      ]
+    },
+    {
+      "id": "fuchengmen",
+      "name": "Fuchengmen (阜成门)",
+      "lines": [
+        "2"
+      ],
+      "coords": [
+        39.92231,
+        116.349972
+      ]
+    },
+    {
+      "id": "fufengqiao",
+      "name": "Fufengqiao (富丰桥)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.835011,
+        116.281094
+      ]
+    },
+    {
+      "id": "futong",
+      "name": "Futong (阜通)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.990241,
+        116.465551
+      ]
+    },
+    {
+      "id": "fuxingmen",
+      "name": "Fuxingmen (复兴门)",
+      "lines": [
+        "1",
+        "2"
+      ],
+      "coords": [
+        39.905859,
+        116.350864
+      ]
+    },
+    {
+      "id": "ganjia-kou",
+      "name": "Ganjia Kou (甘家口)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.922447,
+        116.328414
+      ]
+    },
+    {
+      "id": "gaobeidian",
+      "name": "Gaobeidian (高碑店)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.908267,
+        116.525541
+      ]
+    },
+    {
+      "id": "gaojiayuan",
+      "name": "Gaojiayuan (高家园)",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.979178,
+        116.485035
+      ]
+    },
+    {
+      "id": "gaoloujin",
+      "name": "Gaoloujin (高楼金)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.861665,
+        116.679526
+      ]
+    },
+    {
+      "id": "gaomidian-north",
+      "name": "Gaomidian North (高米店北)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.773029,
+        116.324382
+      ]
+    },
+    {
+      "id": "gaomidian-south",
+      "name": "Gaomidian South (高米店南)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.762283,
+        116.325577
+      ]
+    },
+    {
+      "id": "garden-expo-park",
+      "name": "Garden Expo Park (园博园)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.860062,
+        116.195769
+      ]
+    },
+    {
+      "id": "gongyixiqiao",
+      "name": "Gongyixiqiao (公益西桥)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.835265,
+        116.364642
+      ]
+    },
+    {
+      "id": "gongzhufen",
+      "name": "Gongzhufen (公主坟)",
+      "lines": [
+        "1",
+        "10"
+      ],
+      "coords": [
+        39.906203,
+        116.303804
+      ]
+    },
+    {
+      "id": "guaanzhuang",
+      "name": "Guaanzhuang (管庄)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.908102,
+        116.593142
+      ]
+    },
+    {
+      "id": "guangqumen-nei",
+      "name": "Guangqumen Nei (广渠门内)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.892349,
+        116.427732
+      ]
+    },
+    {
+      "id": "guangqumen-wai",
+      "name": "Guangqumen Wai (广渠门外)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.892369,
+        116.443047
+      ]
+    },
+    {
+      "id": "guangximen",
+      "name": "Guangximen (光熙门)",
+      "lines": [
+        "12",
+        "13"
+      ],
+      "coords": [
+        39.967564,
+        116.424963
+      ]
+    },
+    {
+      "id": "gucheng",
+      "name": "Gucheng (古城)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.906151,
+        116.184298
+      ]
+    },
+    {
+      "id": "gulou-dajie",
+      "name": "Gulou Dajie (鼓楼大街)",
+      "lines": [
+        "2",
+        "8"
+      ],
+      "coords": [
+        39.947168,
+        116.387804
+      ]
+    },
+    {
+      "id": "guogongzhuang",
+      "name": "Guogongzhuang (郭公庄)",
+      "lines": [
+        "9"
+      ],
+      "coords": [
+        39.813381,
+        116.296063
+      ]
+    },
+    {
+      "id": "guomao",
+      "name": "Guomao (国贸)",
+      "lines": [
+        "1",
+        "10"
+      ],
+      "coords": [
+        39.907481,
+        116.454642
+      ]
+    },
+    {
+      "id": "guoyuan",
+      "name": "Guoyuan (果园)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.8923,
+        116.640758
+      ]
+    },
+    {
+      "id": "guozhuangzi",
+      "name": "Guozhuangzi (郭庄子)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.864098,
+        116.24835
+      ]
+    },
+    {
+      "id": "haidian-huangzhuang",
+      "name": "Haidian Huangzhuang (海淀黄庄)",
+      "lines": [
+        "4",
+        "10"
+      ],
+      "coords": [
+        39.974722,
+        116.311471
+      ]
+    },
+    {
+      "id": "haidian-wuluju",
+      "name": "Haidian Wuluju (海淀五路居)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.931331,
+        116.270893
+      ]
+    },
+    {
+      "id": "haihu-tun",
+      "name": "Haihu Tun (海户屯)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.851189,
+        116.394097
+      ]
+    },
+    {
+      "id": "haojiafu",
+      "name": "Haojiafu (郝家府)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.902089,
+        116.711363
+      ]
+    },
+    {
+      "id": "heizhuanghu",
+      "name": "Heizhuanghu (黑庄户)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.85776,
+        116.592774
+      ]
+    },
+    {
+      "id": "heping-xiqiao",
+      "name": "Heping Xiqiao (和平西桥)",
+      "lines": [
+        "5",
+        "12"
+      ],
+      "coords": [
+        39.967256,
+        116.411756
+      ]
+    },
+    {
+      "id": "hepingli-beijie",
+      "name": "Hepingli Beijie (和平里北街)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        39.95739,
+        116.41215
+      ]
+    },
+    {
+      "id": "hepingmen",
+      "name": "Hepingmen (和平门)",
+      "lines": [
+        "2"
+      ],
+      "coords": [
+        39.898645,
+        116.377997
+      ]
+    },
+    {
+      "id": "heyi",
+      "name": "Heyi (和义)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.814103,
+        116.39592
+      ]
+    },
+    {
+      "id": "honglian-nanlu",
+      "name": "Honglian Nanlu (红莲南路)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.876196,
+        116.330709
+      ]
+    },
+    {
+      "id": "hongtaizhuang",
+      "name": "Hongtaizhuang (洪泰庄)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.847498,
+        116.242982
+      ]
+    },
+    {
+      "id": "huagong",
+      "name": "Huagong (化工)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.884006,
+        116.497594
+      ]
+    },
+    {
+      "id": "huangchang",
+      "name": "Huangchang (黄厂)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.848015,
+        116.547523
+      ]
+    },
+    {
+      "id": "huangcun-railway-station",
+      "name": "Huangcun Railway Station (黄村火车站)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.721504,
+        116.326613
+      ]
+    },
+    {
+      "id": "huangcun-xidajie",
+      "name": "Huangcun Xidajie (黄村西大街)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.730421,
+        116.326483
+      ]
+    },
+    {
+      "id": "huangqu",
+      "name": "Huangqu (黄渠)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.922775,
+        116.573094
+      ]
+    },
+    {
+      "id": "huayuanqiao",
+      "name": "Huayuanqiao (花园桥)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.931074,
+        116.304112
+      ]
+    },
+    {
+      "id": "huazhuang",
+      "name": "Huazhuang (花庄)",
+      "lines": [
+        "1",
+        "7"
+      ],
+      "coords": [
+        39.855361,
+        116.689088
+      ]
+    },
+    {
+      "id": "hufangqiao",
+      "name": "Hufangqiao (虎坊桥)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.888456,
+        116.377382
+      ]
+    },
+    {
+      "id": "huilongguan",
+      "name": "Huilongguan (回龙观)",
+      "lines": [
+        "13"
+      ],
+      "coords": [
+        40.069532,
+        116.329912
+      ]
+    },
+    {
+      "id": "huilongguan-dongdajie",
+      "name": "Huilongguan Dongdajie (回龙观东大街)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        40.079721,
+        116.357311
+      ]
+    },
+    {
+      "id": "huixinxijie-beikou",
+      "name": "Huixinxijie Beikou (惠新西街北口)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        39.986179,
+        116.41089
+      ]
+    },
+    {
+      "id": "huixinxijie-nankou",
+      "name": "Huixinxijie Nankou (惠新西街南口)",
+      "lines": [
+        "5",
+        "10"
+      ],
+      "coords": [
+        39.975823,
+        116.411255
+      ]
+    },
+    {
+      "id": "hujialou",
+      "name": "Hujialou (呼家楼)",
+      "lines": [
+        "6",
+        "10"
+      ],
+      "coords": [
+        39.921949,
+        116.455634
+      ]
+    },
+    {
+      "id": "huojian-wanyuan",
+      "name": "Huojian Wanyuan (火箭万源)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.7985,
+        116.412431
+      ]
+    },
+    {
+      "id": "huoqiying",
+      "name": "Huoqiying (火器营)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.964231,
+        116.283415
+      ]
+    },
+    {
+      "id": "huoying",
+      "name": "Huoying (霍营)",
+      "lines": [
+        "8",
+        "13"
+      ],
+      "coords": [
+        40.069809,
+        116.354248
+      ]
+    },
+    {
+      "id": "inner-guang-anmen",
+      "name": "Inner Guang'anmen (广安门内)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.888671,
+        116.351741
+      ]
+    },
+    {
+      "id": "jiandemen",
+      "name": "Jiandemen (健德门)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.975141,
+        116.374939
+      ]
+    },
+    {
+      "id": "jiangtai",
+      "name": "Jiangtai (将台)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.969498,
+        116.483998
+      ]
+    },
+    {
+      "id": "jiangtaixi",
+      "name": "Jiangtaixi (将台西)",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.971413,
+        116.473928
+      ]
+    },
+    {
+      "id": "jianguomen",
+      "name": "Jianguomen (建国门)",
+      "lines": [
+        "1",
+        "2"
+      ],
+      "coords": [
+        39.907193,
+        116.429199
+      ]
+    },
+    {
+      "id": "jiaohuachang",
+      "name": "Jiaohuachang (焦化厂)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.854336,
+        116.531653
+      ]
+    },
+    {
+      "id": "jiaomen-east",
+      "name": "Jiaomen East (角门东)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.843802,
+        116.378912
+      ]
+    },
+    {
+      "id": "jiaomen-west",
+      "name": "Jiaomen West (角门西)",
+      "lines": [
+        "4",
+        "10"
+      ],
+      "coords": [
+        39.844416,
+        116.364943
+      ]
+    },
+    {
+      "id": "jijiaomiao",
+      "name": "Jijiaomiao (纪家庙)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.843133,
+        116.327352
+      ]
+    },
+    {
+      "id": "jin-anqiao",
+      "name": "Jin'anqiao (金安桥)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.921894,
+        116.156643
+      ]
+    },
+    {
+      "id": "jingfengmen",
+      "name": "Jingfengmen (景风门)",
+      "lines": [
+        "14",
+        "19"
+      ],
+      "coords": [
+        39.862022,
+        116.359049
+      ]
+    },
+    {
+      "id": "jingtai",
+      "name": "Jingtai (景泰)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.863706,
+        116.404938
+      ]
+    },
+    {
+      "id": "jinsong",
+      "name": "Jinsong (劲松)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.883121,
+        116.455263
+      ]
+    },
+    {
+      "id": "jintailu",
+      "name": "Jintailu (金台路)",
+      "lines": [
+        "6",
+        "14"
+      ],
+      "coords": [
+        39.921699,
+        116.472385
+      ]
+    },
+    {
+      "id": "jintaixizhao",
+      "name": "Jintaixizhao (金台夕照)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.915946,
+        116.455837
+      ]
+    },
+    {
+      "id": "jinyu-hutong",
+      "name": "Jinyu Hutong (金鱼胡同)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.915246,
+        116.404999
+      ]
+    },
+    {
+      "id": "jishuitan",
+      "name": "Jishuitan (积水潭)",
+      "lines": [
+        "2",
+        "19"
+      ],
+      "coords": [
+        39.946772,
+        116.366406
+      ]
+    },
+    {
+      "id": "jiukeshu",
+      "name": "Jiukeshu (九棵树)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.889182,
+        116.651627
+      ]
+    },
+    {
+      "id": "jiulongshan",
+      "name": "Jiulongshan (九龙山)",
+      "lines": [
+        "7",
+        "14"
+      ],
+      "coords": [
+        39.892231,
+        116.471542
+      ]
+    },
+    {
+      "id": "kandan",
+      "name": "Kandan (看丹)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.833863,
+        116.266542
+      ]
+    },
+    {
+      "id": "keyilu",
+      "name": "Keyilu (科怡路)",
+      "lines": [
+        "9"
+      ],
+      "coords": [
+        39.830881,
+        116.291478
+      ]
+    },
+    {
+      "id": "laiguangying",
+      "name": "Laiguangying (来广营)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        40.019218,
+        116.460692
+      ]
+    },
+    {
+      "id": "langxinzhuang",
+      "name": "Langxinzhuang (郎辛庄)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.855572,
+        116.564094
+      ]
+    },
+    {
+      "id": "liangmaqiao",
+      "name": "Liangmaqiao (亮马桥)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.948137,
+        116.456385
+      ]
+    },
+    {
+      "id": "lianhuaqiao",
+      "name": "Lianhuaqiao (莲花桥)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.896185,
+        116.304209
+      ]
+    },
+    {
+      "id": "liaogong-zhuang",
+      "name": "Liaogong Zhuang (廖公庄)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.931366,
+        116.220889
+      ]
+    },
+    {
+      "id": "lincuiqiao",
+      "name": "Lincuiqiao (林萃桥)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        40.020672,
+        116.366788
+      ]
+    },
+    {
+      "id": "lingjing-hutong",
+      "name": "Lingjing Hutong (灵境胡同)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.914948,
+        116.367164
+      ]
+    },
+    {
+      "id": "linheli",
+      "name": "Linheli (临河里)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.874308,
+        116.67287
+      ]
+    },
+    {
+      "id": "lishuiqiao",
+      "name": "Lishuiqiao (立水桥)",
+      "lines": [
+        "5",
+        "13"
+      ],
+      "coords": [
+        40.051536,
+        116.4056
+      ]
+    },
+    {
+      "id": "lishuiqiao-south",
+      "name": "Lishuiqiao South (立水桥南)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        40.040488,
+        116.408284
+      ]
+    },
+    {
+      "id": "liufang",
+      "name": "Liufang (柳芳)",
+      "lines": [
+        "13"
+      ],
+      "coords": [
+        39.956805,
+        116.426639
+      ]
+    },
+    {
+      "id": "liujiayao",
+      "name": "Liujiayao (刘家窑)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        39.855942,
+        116.415528
+      ]
+    },
+    {
+      "id": "liuliqiao",
+      "name": "Liuliqiao (六里桥)",
+      "lines": [
+        "9",
+        "10"
+      ],
+      "coords": [
+        39.879064,
+        116.297431
+      ]
+    },
+    {
+      "id": "liuliqiao-east",
+      "name": "Liuliqiao East (六里桥东)",
+      "lines": [
+        "9"
+      ],
+      "coords": [
+        39.885685,
+        116.308826
+      ]
+    },
+    {
+      "id": "liyuan",
+      "name": "Liyuan (梨园)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.882564,
+        116.66274
+      ]
+    },
+    {
+      "id": "lize-business-district",
+      "name": "Lize Business District (丽泽商务区)",
+      "lines": [
+        "14",
+        "16"
+      ],
+      "coords": [
+        39.866095,
+        116.325211
+      ]
+    },
+    {
+      "id": "longze",
+      "name": "Longze (龙泽)",
+      "lines": [
+        "13"
+      ],
+      "coords": [
+        40.069594,
+        116.313192
+      ]
+    },
+    {
+      "id": "lucheng",
+      "name": "Lucheng (潞城)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.901521,
+        116.741881
+      ]
+    },
+    {
+      "id": "luyang",
+      "name": "Luyang (潞阳)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.88891,
+        116.750856
+      ]
+    },
+    {
+      "id": "majiapu",
+      "name": "Majiapu (马家堡)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.851639,
+        116.365093
+      ]
+    },
+    {
+      "id": "malianwa",
+      "name": "Malianwa (马连洼)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        40.031462,
+        116.265625
+      ]
+    },
+    {
+      "id": "military-museum",
+      "name": "Military Museum (军事博物馆)",
+      "lines": [
+        "1",
+        "9"
+      ],
+      "coords": [
+        39.906214,
+        116.316599
+      ]
+    },
+    {
+      "id": "mudanyuan",
+      "name": "Mudanyuan (牡丹园)",
+      "lines": [
+        "10",
+        "19"
+      ],
+      "coords": [
+        39.975026,
+        116.363334
+      ]
+    },
+    {
+      "id": "muxi-yuan",
+      "name": "Muxi Yuan (木樨园)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.858713,
+        116.39335
+      ]
+    },
+    {
+      "id": "muxidi",
+      "name": "Muxidi (木樨地)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.906159,
+        116.331501
+      ]
+    },
+    {
+      "id": "muxidi-2",
+      "name": "Muxidi (木樨地（16号线）)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.907715,
+        116.327654
+      ]
+    },
+    {
+      "id": "nanlishi-lu",
+      "name": "Nanlishi Lu (南礼士路)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.905915,
+        116.346572
+      ]
+    },
+    {
+      "id": "nanlouzizhuang",
+      "name": "Nanlouzizhuang (南楼梓庄)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.873334,
+        116.495555
+      ]
+    },
+    {
+      "id": "nanluoguxiang",
+      "name": "Nanluogu Xiang (南锣鼓巷)",
+      "lines": [
+        "6",
+        "8"
+      ],
+      "coords": [
+        39.931972,
+        116.397181
+      ]
+    },
+    {
+      "id": "national-library",
+      "name": "National Library (国家图书馆)",
+      "lines": [
+        "4",
+        "9",
+        "16"
+      ],
+      "coords": [
+        39.941366,
+        116.318426
+      ]
+    },
+    {
+      "id": "niujie",
+      "name": "Niujie (牛街)",
+      "lines": [
+        "19"
+      ],
+      "coords": [
+        39.889632,
+        116.357304
+      ]
+    },
+    {
+      "id": "niwa",
+      "name": "Niwa (泥洼)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.857197,
+        116.298148
+      ]
+    },
+    {
+      "id": "nongda-nanlu",
+      "name": "Nongda Nanlu (农大南路)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        40.018363,
+        116.276908
+      ]
+    },
+    {
+      "id": "olympic-park",
+      "name": "Olympic Park (奥林匹克公园)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.999326,
+        116.386974
+      ]
+    },
+    {
+      "id": "olympic-sports-center",
+      "name": "Olympic Sports Center (奥体中心)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.984138,
+        116.387687
+      ]
+    },
+    {
+      "id": "outer-yongdingmen",
+      "name": "Outer Yongdingmen (永定门外)",
+      "lines": [
+        "8",
+        "14"
+      ],
+      "coords": [
+        39.865643,
+        116.393169
+      ]
+    },
+    {
+      "id": "panjiayuan",
+      "name": "Panjiayuan (潘家园)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.874899,
+        116.455075
+      ]
+    },
+    {
+      "id": "peking-university-east-gate",
+      "name": "Peking University East Gate (北京大学东门)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.990807,
+        116.309594
+      ]
+    },
+    {
+      "id": "pinganli",
+      "name": "Ping'anli (平安里)",
+      "lines": [
+        "4",
+        "6",
+        "19"
+      ],
+      "coords": [
+        39.931858,
+        116.364418
+      ]
+    },
+    {
+      "id": "pingguoyuan",
+      "name": "Pingguoyuan (苹果园)",
+      "lines": [
+        "1",
+        "6"
+      ],
+      "coords": [
+        39.924584,
+        116.171645
+      ]
+    },
+    {
+      "id": "pingleyuan",
+      "name": "Pingleyuan (平乐园)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.883853,
+        116.471305
+      ]
+    },
+    {
+      "id": "pingxifu",
+      "name": "Pingxifu (平西府)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        40.08871,
+        116.344291
+      ]
+    },
+    {
+      "id": "puhuangyu",
+      "name": "Puhuangyu (蒲黄榆)",
+      "lines": [
+        "5",
+        "14"
+      ],
+      "coords": [
+        39.864273,
+        116.416152
+      ]
+    },
+    {
+      "id": "qianmen",
+      "name": "Qianmen (前门)",
+      "lines": [
+        "2",
+        "8"
+      ],
+      "coords": [
+        39.898121,
+        116.393278
+      ]
+    },
+    {
+      "id": "qiaowan",
+      "name": "Qiaowan (桥湾)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.891316,
+        116.401324
+      ]
+    },
+    {
+      "id": "qinghe-railway-station",
+      "name": "Qinghe Railway Station (清河站)",
+      "lines": [
+        "13"
+      ],
+      "coords": [
+        40.039765,
+        116.308643
+      ]
+    },
+    {
+      "id": "qingnianlu",
+      "name": "Qingnianlu (青年路)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.921649,
+        116.511132
+      ]
+    },
+    {
+      "id": "qingyuanlu",
+      "name": "Qingyuanlu (清源路)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.741754,
+        116.326254
+      ]
+    },
+    {
+      "id": "qunfang",
+      "name": "Qunfang (群芳)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.862373,
+        116.664709
+      ]
+    },
+    {
+      "id": "renmin-university",
+      "name": "Renmin University (人民大学)",
+      "lines": [
+        "4",
+        "12"
+      ],
+      "coords": [
+        39.965763,
+        116.315668
+      ]
+    },
+    {
+      "id": "sanyuanqiao",
+      "name": "Sanyuanqiao (三元桥)",
+      "lines": [
+        "10",
+        "12",
+        "Capital Airport Express"
+      ],
+      "coords": [
+        39.959745,
+        116.45155
+      ]
+    },
+    {
+      "id": "shan-gezhuang",
+      "name": "Shan'gezhuang (善各庄)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        40.026526,
+        116.472548
+      ]
+    },
+    {
+      "id": "shangdi",
+      "name": "Shangdi (上地)",
+      "lines": [
+        "13"
+      ],
+      "coords": [
+        40.031762,
+        116.314068
+      ]
+    },
+    {
+      "id": "shaoyaoju",
+      "name": "Shaoyaoju (芍药居)",
+      "lines": [
+        "10",
+        "13"
+      ],
+      "coords": [
+        39.97601,
+        116.430664
+      ]
+    },
+    {
+      "id": "shichahai",
+      "name": "Shichahai (什刹海)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.935954,
+        116.39009
+      ]
+    },
+    {
+      "id": "shilihe",
+      "name": "Shilihe (十里河)",
+      "lines": [
+        "10",
+        "14"
+      ],
+      "coords": [
+        39.864829,
+        116.452463
+      ]
+    },
+    {
+      "id": "shilipu",
+      "name": "Shilipu (十里堡)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.921563,
+        116.495971
+      ]
+    },
+    {
+      "id": "shiliuzhuang",
+      "name": "Shiliuzhuang (石榴庄)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.84445,
+        116.40742
+      ]
+    },
+    {
+      "id": "shuanghe",
+      "name": "Shuanghe (双合)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.858239,
+        116.522362
+      ]
+    },
+    {
+      "id": "shuangjing",
+      "name": "Shuangjing (双井)",
+      "lines": [
+        "7",
+        "10"
+      ],
+      "coords": [
+        39.892154,
+        116.455285
+      ]
+    },
+    {
+      "id": "shuangqiao",
+      "name": "Shuangqiao (双桥)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.909093,
+        116.570981
+      ]
+    },
+    {
+      "id": "sihui-east",
+      "name": "Sihui East (四惠东)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.907241,
+        116.509482
+      ]
+    },
+    {
+      "id": "sijiqing-qiao",
+      "name": "Sijiqing Qiao (四季青桥)",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.942525,
+        116.268214
+      ]
+    },
+    {
+      "id": "songjiazhuang",
+      "name": "Songjiazhuang (宋家庄)",
+      "lines": [
+        "5",
+        "10"
+      ],
+      "coords": [
+        39.844503,
+        116.422217
+      ]
+    },
+    {
+      "id": "suzhoujie",
+      "name": "Suzhoujie (苏州街)",
+      "lines": [
+        "10",
+        "16"
+      ],
+      "coords": [
+        39.974396,
+        116.300055
+      ]
+    },
+    {
+      "id": "taiyanggong",
+      "name": "Taiyanggong (太阳宫)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.971349,
+        116.441224
+      ]
+    },
+    {
+      "id": "taoranting",
+      "name": "Taoranting (陶然亭)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.877434,
+        116.368085
+      ]
+    },
+    {
+      "id": "tian-cun",
+      "name": "Tian Cun (田村)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.92835,
+        116.246892
+      ]
+    },
+    {
+      "id": "tiananmen-east",
+      "name": "Tian'anmen East (天安门东)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.906412,
+        116.394912
+      ]
+    },
+    {
+      "id": "tian-anmen-west",
+      "name": "Tian'anmen West (天安门西)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.906036,
+        116.385159
+      ]
+    },
+    {
+      "id": "tiangongyuan",
+      "name": "Tiangongyuan (天宫院)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.66899,
+        116.313867
+      ]
+    },
+    {
+      "id": "tianqiao",
+      "name": "Tianqiao (天桥)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.881183,
+        116.392586
+      ]
+    },
+    {
+      "id": "tiantongyuan",
+      "name": "Tiantongyuan (天通苑)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        40.073783,
+        116.406614
+      ]
+    },
+    {
+      "id": "tiantongyuan-north",
+      "name": "Tiantongyuan North (天通苑北)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        40.082087,
+        116.406746
+      ]
+    },
+    {
+      "id": "tiantongyuan-south",
+      "name": "Tiantongyuan South (天通苑南)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        40.065127,
+        116.406485
+      ]
+    },
+    {
+      "id": "tongyun-men",
+      "name": "Tongyun Men (通运门)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.909933,
+        116.666897
+      ]
+    },
+    {
+      "id": "tongzhou-beiguan",
+      "name": "Tongzhou Beiguan (通州北关)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.917457,
+        116.65546
+      ]
+    },
+    {
+      "id": "tongzhou-beiyuan",
+      "name": "Tongzhou Beiyuan (通州北苑)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.902718,
+        116.631444
+      ]
+    },
+    {
+      "id": "tuanjiehu",
+      "name": "Tuanjiehu (团结湖)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.932238,
+        116.455874
+      ]
+    },
+    {
+      "id": "tundian",
+      "name": "Tundian (屯佃)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        40.06726,
+        116.209325
+      ]
+    },
+    {
+      "id": "tuofangying",
+      "name": "Tuofangying (驼房营)",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.979307,
+        116.499481
+      ]
+    },
+    {
+      "id": "tuqiao",
+      "name": "Tuqiao (土桥)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.870767,
+        116.680279
+      ]
+    },
+    {
+      "id": "universal-resort",
+      "name": "Universal Resort (环球度假区)",
+      "lines": [
+        "1",
+        "7"
+      ],
+      "coords": [
+        39.848092,
+        116.673519
+      ]
+    },
+    {
+      "id": "wangfujing",
+      "name": "Wangfujing (王府井)",
+      "lines": [
+        "1",
+        "8"
+      ],
+      "coords": [
+        39.907549,
+        116.405248
+      ]
+    },
+    {
+      "id": "wangjing",
+      "name": "Wangjing (望京)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.997734,
+        116.461984
+      ]
+    },
+    {
+      "id": "wangjing-south",
+      "name": "Wangjing South (望京南)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.982953,
+        116.475948
+      ]
+    },
+    {
+      "id": "wangjing-west",
+      "name": "Wangjing West (望京西)",
+      "lines": [
+        "13"
+      ],
+      "coords": [
+        39.993589,
+        116.441165
+      ]
+    },
+    {
+      "id": "wanpingcheng",
+      "name": "Wanpingcheng (宛平城)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.847798,
+        116.223382
+      ]
+    },
+    {
+      "id": "wanquanhe-qiao",
+      "name": "Wanquanhe Qiao (万泉河桥)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.983869,
+        116.294268
+      ]
+    },
+    {
+      "id": "wansheng-east",
+      "name": "Wansheng East (万盛东)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.862379,
+        116.650905
+      ]
+    },
+    {
+      "id": "wansheng-west",
+      "name": "Wansheng West (万盛西)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.862465,
+        116.626706
+      ]
+    },
+    {
+      "id": "wanshoulu",
+      "name": "Wanshoulu (万寿路)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.906264,
+        116.288773
+      ]
+    },
+    {
+      "id": "wanshousi",
+      "name": "Wanshousi (万寿寺)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.94713,
+        116.303249
+      ]
+    },
+    {
+      "id": "wanzi",
+      "name": "Wanzi (湾子)",
+      "lines": [
+        "7"
+      ],
+      "coords": [
+        39.888968,
+        116.321356
+      ]
+    },
+    {
+      "id": "weigongcun",
+      "name": "Weigongcun (魏公村)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.956334,
+        116.317068
+      ]
+    },
+    {
+      "id": "wenyanglu",
+      "name": "Wenyanglu (温阳路)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        40.067442,
+        116.155569
+      ]
+    },
+    {
+      "id": "wudaokou",
+      "name": "Wudaokou (五道口)",
+      "lines": [
+        "13"
+      ],
+      "coords": [
+        39.991575,
+        116.331677
+      ]
+    },
+    {
+      "id": "wufu-tang",
+      "name": "Wufu Tang (五福堂)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.784167,
+        116.416921
+      ]
+    },
+    {
+      "id": "wukesong",
+      "name": "Wukesong (五棵松)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.906262,
+        116.268033
+      ]
+    },
+    {
+      "id": "wuzixueyuanlu",
+      "name": "Wuzixueyuanlu (物资学院路)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.925896,
+        116.633497
+      ]
+    },
+    {
+      "id": "xi-erqi",
+      "name": "Xi'erqi (西二旗)",
+      "lines": [
+        "13"
+      ],
+      "coords": [
+        40.051752,
+        116.300244
+      ]
+    },
+    {
+      "id": "xibahe",
+      "name": "Xibahe (西坝河)",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.964443,
+        116.436093
+      ]
+    },
+    {
+      "id": "xibeiwang",
+      "name": "Xibeiwang (西北旺)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        40.047889,
+        116.252011
+      ]
+    },
+    {
+      "id": "xidan",
+      "name": "Xidan (西单)",
+      "lines": [
+        "1",
+        "4"
+      ],
+      "coords": [
+        39.905788,
+        116.368791
+      ]
+    },
+    {
+      "id": "xidiaoyutai",
+      "name": "Xidiaoyutai (西钓鱼台)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.921776,
+        116.291662
+      ]
+    },
+    {
+      "id": "xihongmen",
+      "name": "Xihongmen (西红门)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.788393,
+        116.322651
+      ]
+    },
+    {
+      "id": "xihuang-cun",
+      "name": "Xihuang Cun (西黄村)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.932409,
+        116.20061
+      ]
+    },
+    {
+      "id": "xiju",
+      "name": "Xiju (西局)",
+      "lines": [
+        "10",
+        "14"
+      ],
+      "coords": [
+        39.864656,
+        116.298303
+      ]
+    },
+    {
+      "id": "xin-gong",
+      "name": "Xin'Gong (新宫)",
+      "lines": [
+        "4",
+        "19"
+      ],
+      "coords": [
+        39.811098,
+        116.36032
+      ]
+    },
+    {
+      "id": "xinjiekou",
+      "name": "Xinjiekou (新街口)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.939381,
+        116.361344
+      ]
+    },
+    {
+      "id": "xisi",
+      "name": "Xisi (西四)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.922554,
+        116.366718
+      ]
+    },
+    {
+      "id": "xitieying",
+      "name": "Xitieying (西铁营)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.860063,
+        116.349698
+      ]
+    },
+    {
+      "id": "xitucheng",
+      "name": "Xitucheng (西土城)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.97495,
+        116.347761
+      ]
+    },
+    {
+      "id": "xixiaokou",
+      "name": "Xixiaokou (西小口)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        40.046083,
+        116.345217
+      ]
+    },
+    {
+      "id": "xiyuan",
+      "name": "Xiyuan (西苑)",
+      "lines": [
+        "4",
+        "16"
+      ],
+      "coords": [
+        39.997068,
+        116.285868
+      ]
+    },
+    {
+      "id": "xizhimen",
+      "name": "Xizhimen (西直门)",
+      "lines": [
+        "2",
+        "4",
+        "13"
+      ],
+      "coords": [
+        39.93941,
+        116.348705
+      ]
+    },
+    {
+      "id": "xuanwumen",
+      "name": "Xuanwumen (宣武门)",
+      "lines": [
+        "2",
+        "4"
+      ],
+      "coords": [
+        39.898364,
+        116.367982
+      ]
+    },
+    {
+      "id": "yang-zhuang",
+      "name": "Yang Zhuang (杨庄)",
+      "lines": [
+        "6"
+      ],
+      "coords": [
+        39.926412,
+        116.179545
+      ]
+    },
+    {
+      "id": "yihezhuang",
+      "name": "Yihezhuang (义和庄)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.711098,
+        116.312977
+      ]
+    },
+    {
+      "id": "yinghai",
+      "name": "Yinghai (瀛海)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.75989,
+        116.442769
+      ]
+    },
+    {
+      "id": "yonganli",
+      "name": "Yonganli (永安里)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.907143,
+        116.444153
+      ]
+    },
+    {
+      "id": "yongfeng",
+      "name": "Yongfeng (永丰)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        40.070609,
+        116.23248
+      ]
+    },
+    {
+      "id": "yongfeng-south",
+      "name": "Yongfeng South (永丰南)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        40.063002,
+        116.243471
+      ]
+    },
+    {
+      "id": "yonghegong",
+      "name": "Yonghegong Lama Temple (雍和宫)",
+      "lines": [
+        "2",
+        "5"
+      ],
+      "coords": [
+        39.947477,
+        116.410807
+      ]
+    },
+    {
+      "id": "yongtaizhuang",
+      "name": "Yongtaizhuang (永泰庄)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        40.036686,
+        116.3484
+      ]
+    },
+    {
+      "id": "yuanmingyuan-park",
+      "name": "Yuanmingyuan Park (圆明园)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.998243,
+        116.303703
+      ]
+    },
+    {
+      "id": "yuquanlu",
+      "name": "Yuquanlu (玉泉路)",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.906225,
+        116.246901
+      ]
+    },
+    {
+      "id": "yushuzhuang",
+      "name": "Yushuzhuang (榆树庄)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.837573,
+        116.253074
+      ]
+    },
+    {
+      "id": "yuxin",
+      "name": "Yuxin (育新)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        40.058346,
+        116.34118
+      ]
+    },
+    {
+      "id": "yuyuantan-park-east-gate",
+      "name": "Yuyuantan Park East Gate (玉渊潭东门)",
+      "lines": [
+        "16"
+      ],
+      "coords": [
+        39.913945,
+        116.328747
+      ]
+    },
+    {
+      "id": "yuzhilu",
+      "name": "Yuzhilu (育知路)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        40.086543,
+        116.320437
+      ]
+    },
+    {
+      "id": "zaoying",
+      "name": "Zaoying (枣营)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.942926,
+        116.46894
+      ]
+    },
+    {
+      "id": "zaoyuan",
+      "name": "Zaoyuan (枣园)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.751804,
+        116.325918
+      ]
+    },
+    {
+      "id": "zhangguozhuang",
+      "name": "Zhangguozhuang (张郭庄)",
+      "lines": [
+        "14"
+      ],
+      "coords": [
+        39.856787,
+        116.180922
+      ]
+    },
+    {
+      "id": "zhangzizhong-lu",
+      "name": "Zhangzizhong Lu (张自忠路)",
+      "lines": [
+        "5"
+      ],
+      "coords": [
+        39.932285,
+        116.411208
+      ]
+    },
+    {
+      "id": "zhichun-lu",
+      "name": "Zhichun Lu (知春路)",
+      "lines": [
+        "10",
+        "13"
+      ],
+      "coords": [
+        39.975189,
+        116.334821
+      ]
+    },
+    {
+      "id": "zhichunli",
+      "name": "Zhichunli (知春里)",
+      "lines": [
+        "10"
+      ],
+      "coords": [
+        39.974995,
+        116.32293
+      ]
+    },
+    {
+      "id": "zhongguancun",
+      "name": "Zhongguancun (中关村)",
+      "lines": [
+        "4"
+      ],
+      "coords": [
+        39.982692,
+        116.310254
+      ]
+    },
+    {
+      "id": "zhushikou",
+      "name": "Zhushikou (珠市口)",
+      "lines": [
+        "7",
+        "8"
+      ],
+      "coords": [
+        39.889438,
+        116.391783
+      ]
+    },
+    {
+      "id": "zhuxinzhuang",
+      "name": "Zhuxinzhuang (朱辛庄)",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        40.102996,
+        116.30764
+      ]
+    },
+    {
+      "id": "osm-2091794211",
+      "name": "七里庄",
+      "lines": [
+        "9",
+        "14"
+      ],
+      "coords": [
+        39.865574,
+        116.287065
+      ]
+    },
+    {
+      "id": "osm-6172173743",
+      "name": "中国美术馆",
+      "lines": [
+        "8"
+      ],
+      "coords": [
+        39.923547,
+        116.404639
+      ]
+    },
+    {
+      "id": "osm-1303500865",
+      "name": "四惠",
+      "lines": [
+        "1"
+      ],
+      "coords": [
+        39.907709,
+        116.489386
+      ]
+    },
+    {
+      "id": "osm-12433919310",
+      "name": "大钟寺",
+      "lines": [
+        "12",
+        "13"
+      ],
+      "coords": [
+        39.96573,
+        116.338412
+      ]
+    },
+    {
+      "id": "osm-5723775765",
+      "name": "太平桥",
+      "lines": [
+        "19"
+      ],
+      "coords": [
+        39.908773,
+        116.357093
+      ]
+    },
+    {
+      "id": "osm-12433885699",
+      "name": "安贞桥",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.967551,
+        116.400997
+      ]
+    },
+    {
+      "id": "osm-9385116429",
+      "name": "新发地",
+      "lines": [
+        "19"
+      ],
+      "coords": [
+        39.822576,
+        116.340099
+      ]
+    },
+    {
+      "id": "osm-12433919313",
+      "name": "苏州桥",
+      "lines": [
+        "12",
+        "16"
+      ],
+      "coords": [
+        39.961366,
+        116.301446
+      ]
+    },
+    {
+      "id": "osm-528929965",
+      "name": "菜市口",
+      "lines": [
+        "4",
+        "7"
+      ],
+      "coords": [
+        39.887967,
+        116.367801
+      ]
+    },
+    {
+      "id": "osm-12433919315",
+      "name": "蓝靛厂",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.955918,
+        116.2767
+      ]
+    },
+    {
+      "id": "osm-12433919307",
+      "name": "蓟门桥",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.966371,
+        116.34966
+      ]
+    },
+    {
+      "id": "osm-12433919303",
+      "name": "马甸桥",
+      "lines": [
+        "12"
+      ],
+      "coords": [
+        39.966902,
+        116.375832
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "beijing-subway-official-stations",
+      "label": "Beijing Subway — estações e informações oficiais",
+      "url": "https://www.bjsubway.com/station/xltcx/",
+      "accessed": "2026-08-08"
+    },
+    {
+      "id": "openstreetmap-beijing-subway-routes",
+      "label": "OpenStreetMap — coordenadas e ordem geográfica das linhas de metrô de Pequim",
+      "url": "https://www.openstreetmap.org/copyright",
+      "accessed": "2026-08-08"
+    }
+  ]
+}
