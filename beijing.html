@@ -18,14 +18,7 @@
     <title>Pequim em profundidade — Rota China</title>
     <link rel="preconnect" href="https://upload.wikimedia.org">
     <link rel="preconnect" href="https://tile.openstreetmap.org">
-    <link
-      id="leaflet-styles"
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIINfQ3ynhZIsC6E0eqCtoM1lT7kT6GfE="
-      crossorigin
-      onerror="this.onerror=null;this.removeAttribute('integrity');this.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'"
-    >
+    <link rel="stylesheet" href="assets/vendor/leaflet-1.9.4.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="beijing.css">
     <script
@@ -285,6 +278,31 @@
           </div>
           <div class="beijing-map-frame">
             <section class="beijing-map" data-beijing-map aria-label="Mapa interativo de Pequim"></section>
+            <aside class="metro-drawer" data-metro-drawer aria-labelledby="metro-drawer-title">
+              <button
+                class="metro-drawer-toggle"
+                type="button"
+                data-metro-drawer-toggle
+                aria-expanded="false"
+                aria-controls="metro-drawer-panel"
+              >
+                <span aria-hidden="true">地铁</span>
+                <span data-metro-drawer-toggle-label>Metrô</span>
+              </button>
+              <div class="metro-drawer-panel" id="metro-drawer-panel">
+                <div class="metro-drawer-heading">
+                  <p>Planejamento por trilhos</p>
+                  <h3 id="metro-drawer-title">Linhas e estações</h3>
+                  <span data-metro-selection-status></span>
+                  <label class="metro-drawer-search">
+                    <span class="visually-hidden">Buscar linha ou estação</span>
+                    <span aria-hidden="true">⌕</span>
+                    <input type="search" data-metro-search placeholder="Buscar linha ou estação">
+                  </label>
+                </div>
+                <div class="metro-drawer-content" data-metro-drawer-content></div>
+              </div>
+            </aside>
             <div class="map-loading" data-map-loading role="status">
               <span class="map-loading-spinner" aria-hidden="true"></span>
               <span data-map-loading-message>Carregando o mapa…</span>

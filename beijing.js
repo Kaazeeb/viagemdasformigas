@@ -4,13 +4,18 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const LIGHTBOX_IMAGE_WIDTH = 1920;
+  const HOTEL_MAP_STORAGE_KEY = "rota-china:beijing:hidden-map-hotels:v1";
+  const METRO_MAP_STORAGE_KEY = "rota-china:beijing:hidden-map-metro-line-stations:v2";
   const mediaItems = [];
   const mediaIndexes = new Map();
   const mediaGroups = new Map();
   const lightboxPreloads = new Map();
   const markerIndex = new Map();
+  const hiddenHotelMapKeys = new Set(readStoredHotelMapKeys());
+  const hiddenMetroSelectionKeys = new Set(readStoredMapKeys(METRO_MAP_STORAGE_KEY));
   let guide = null;
   let map = null;
+  let mapSelectionController = null;
   let lightboxIndex = 0;
   let activeMediaIndices = [];
   let lightboxLoadToken = 0;
@@ -73,6 +78,7 @@
     renderAttractions();
     renderReferenceMaps();
     renderHotels();
+    renderMetroDrawer();
     renderTerminals("stations");
     renderSources();
     setupAttractionFilters();
@@ -87,12 +93,13 @@
     if (window.BEIJING_GUIDE) return window.BEIJING_GUIDE;
     if (window.BEIJING_GUIDE_READY) return window.BEIJING_GUIDE_READY;
 
-    const [attractions, logistics, media] = await Promise.all([
+    const [attractions, logistics, media, metro] = await Promise.all([
       fetch("beijing-attractions.json").then(checkResponse),
       fetch("beijing-logistics.json").then(checkResponse),
       fetch("beijing-media.json").then(checkResponse),
+      fetch("beijing-metro.json").then(checkResponse),
     ]);
-    return mergeGuide(attractions, logistics, media);
+    return mergeGuide(attractions, logistics, media, metro);
   }
 
   function checkResponse(response) {
@@ -102,9 +109,6 @@
 
   function ensureLeaflet() {
     if (window.L) return Promise.resolve(true);
-
-    const stylesheet = $("#leaflet-styles");
-    if (stylesheet) stylesheet.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css";
 
     return new Promise((resolve) => {
       const fallback = document.createElement("script");
@@ -116,7 +120,7 @@
     });
   }
 
-  function mergeGuide(attractions, logistics, media) {
+  function mergeGuide(attractions, logistics, media, metro = {}) {
     const byAttraction = media.imagesByAttraction || {};
     const imageKeys = {
       "forbidden-city": "cidade-proibida",
@@ -141,12 +145,14 @@
     return {
       ...logistics,
       ...media,
+      metroStations: metro.stations || logistics.metroStations || [],
+      metroLines: metro.lines || [],
       attractions: attractions.map((item) => ({
         ...item,
         images: byAttraction[imageKeys[item.id]]?.images || [],
       })),
       referenceMaps: Object.values(media.referenceMaps || {}),
-      sources: [...(logistics.sources || []), ...(media.sources || [])],
+      sources: [...(logistics.sources || []), ...(media.sources || []), ...(metro.sources || [])],
     };
   }
 
@@ -407,9 +413,19 @@
     }
     if (searchLink && guide.hotelSearchUrl) searchLink.href = guide.hotelSearchUrl;
     if (!target) return;
-    target.innerHTML = (guide.hotels || []).map((hotel) => `
-      <article class="hotel-card">
-        <span class="hotel-status reference">Não confirmado para as datas</span>
+    target.innerHTML = (guide.hotels || []).map((hotel) => {
+      const key = hotelMapKey(hotel);
+      const isVisibleOnMap = !hiddenHotelMapKeys.has(key);
+      return `
+      <article class="hotel-card${isVisibleOnMap ? "" : " is-map-hidden"}" data-hotel-card="${escapeAttr(key)}">
+        <div class="hotel-card-toolbar">
+          <span class="hotel-status reference">Não confirmado para as datas</span>
+          <label class="hotel-map-toggle">
+            <input type="checkbox" role="switch" aria-label="Mostrar ${escapeAttr(hotel.name)} no mapa" data-hotel-map-toggle="${escapeAttr(key)}"${isVisibleOnMap ? " checked" : ""}>
+            <span class="hotel-map-toggle-track" aria-hidden="true"></span>
+            <span data-hotel-map-toggle-text>${isVisibleOnMap ? "No mapa" : "Fora do mapa"}</span>
+          </label>
+        </div>
         <h3>${escapeHtml(hotel.name)}</h3>
         <p class="hotel-area">${escapeHtml(hotel.area || hotel.district || "Pequim")} · ${escapeHtml(hotel.metro || hotel.access || "ver localização")}</p>
         <div class="hotel-price-row">
@@ -422,9 +438,290 @@
           ${hotel.rating ? `<li>${escapeHtml(String(hotel.rating))}${hotel.reviews ? ` · ${escapeHtml(String(hotel.reviews))} avaliações` : ""}</li>` : ""}
         </ul>
         ${externalLink(hotel.liveUrl || hotel.url, "Ver tarifa ao vivo no Trip.com ↗", "hotel-link")}
-        ${hotel.coords ? `<a class="hotel-map-link" href="#mapa" data-focus-marker="hotel:${escapeAttr(hotel.id || slugify(hotel.name))}">Localizar no mapa ↓</a>` : ""}
+        ${hotel.coords ? `<a class="hotel-map-link" href="#mapa" data-focus-marker="${escapeAttr(key)}"${isVisibleOnMap ? "" : " hidden"}>Localizar no mapa ↓</a>` : ""}
         <small>Disponibilidade, tarifa em CNY, café incluído, impostos e cancelamento não foram expostos na consulta pública. Confira antes de reservar.</small>
-      </article>`).join("");
+      </article>`;
+    }).join("");
+
+    target.addEventListener("change", (event) => {
+      const toggle = event.target.closest("[data-hotel-map-toggle]");
+      if (!toggle) return;
+      const key = toggle.dataset.hotelMapToggle;
+      const isVisibleOnMap = toggle.checked;
+      if (isVisibleOnMap) hiddenHotelMapKeys.delete(key);
+      else hiddenHotelMapKeys.add(key);
+      storeHotelMapKeys();
+      updateHotelCardMapState(toggle.closest("[data-hotel-card]"), isVisibleOnMap);
+      mapSelectionController?.setLocationVisibility(key, isVisibleOnMap);
+    });
+  }
+
+  function hotelMapKey(hotel) {
+    return `hotel:${hotel.id || slugify(hotel.name)}`;
+  }
+
+  function readStoredHotelMapKeys() {
+    return readStoredMapKeys(HOTEL_MAP_STORAGE_KEY);
+  }
+
+  function readStoredMapKeys(storageKey) {
+    try {
+      const stored = JSON.parse(window.localStorage.getItem(storageKey) || "[]");
+      return Array.isArray(stored) ? stored.filter((key) => typeof key === "string") : [];
+    } catch (_error) {
+      return [];
+    }
+  }
+
+  function storeHotelMapKeys() {
+    storeMapKeys(HOTEL_MAP_STORAGE_KEY, hiddenHotelMapKeys);
+  }
+
+  function storeMapKeys(storageKey, keys) {
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify([...keys]));
+    } catch (_error) {
+      // O filtro continua funcional durante a sessão quando o armazenamento está bloqueado.
+    }
+  }
+
+  function updateHotelCardMapState(card, isVisibleOnMap) {
+    if (!card) return;
+    card.classList.toggle("is-map-hidden", !isVisibleOnMap);
+    const label = $("[data-hotel-map-toggle-text]", card);
+    if (label) label.textContent = isVisibleOnMap ? "No mapa" : "Fora do mapa";
+    const mapLink = $("[data-focus-marker]", card);
+    if (mapLink) mapLink.hidden = !isVisibleOnMap;
+  }
+
+  function renderMetroDrawer() {
+    const drawer = $("[data-metro-drawer]");
+    const target = $("[data-metro-drawer-content]");
+    const drawerToggle = $("[data-metro-drawer-toggle]");
+    const drawerPanel = $("#metro-drawer-panel", drawer);
+    const searchInput = $("[data-metro-search]", drawer);
+    if (!drawer || !target || !drawerToggle) return;
+    const stations = (guide.metroStations || []).filter((station) => Array.isArray(station.coords));
+    const stationsById = new Map(stations.map((station) => [String(station.id), station]));
+    const lines = (guide.metroLines || []).length
+      ? guide.metroLines
+      : [...new Set(stations.flatMap((station) => station.lines || []))]
+        .sort(compareMetroLines)
+        .map((id) => ({ id, name: metroLineLabel(id), stations: stations.filter((station) => station.lines?.includes(id)).map((station) => station.id) }));
+    const linesById = new Map(lines.map((line) => [String(line.id), line]));
+
+    target.innerHTML = `
+      <section class="metro-line-overview" aria-labelledby="metro-lines-title">
+        <h4 id="metro-lines-title">Linhas que atendem estes pontos</h4>
+        <p>Abra uma linha para escolher suas estações. O controle geral ativa ou desativa toda a linha.</p>
+        <div class="metro-line-list">
+          ${lines.map((line) => {
+            const lineStations = metroLineStationIds(line).map((stationId) => stationsById.get(stationId)).filter(Boolean);
+            return `<details class="metro-line-detail" data-metro-line-panel="${escapeAttr(line.id)}">
+              <summary>
+                ${metroLineBadge(line)}
+                <span>${lineStations.length} ${lineStations.length === 1 ? "estação" : "estações"}</span>
+              </summary>
+              <div class="metro-line-panel">
+                <label class="metro-line-toggle">
+                  <span>
+                    <strong>Exibir linha completa</strong>
+                    <small data-metro-line-toggle-status></small>
+                  </span>
+                  <input type="checkbox" role="switch" aria-label="Exibir todas as estações da ${escapeAttr(line.name || metroLineLabel(line.id))}" data-metro-line-toggle="${escapeAttr(line.id)}">
+                  <span class="metro-map-toggle-track" aria-hidden="true"></span>
+                </label>
+                <div class="metro-station-list">
+                  ${lineStations.map((station) => {
+                    const markerKey = metroMapKey(station);
+                    const selectionKey = metroLineStationKey(line.id, station.id);
+                    const isSelectedForLine = !hiddenMetroSelectionKeys.has(selectionKey);
+                    const isVisibleOnMap = isMetroStationSelected(station);
+                    return `<article class="metro-station-item${isSelectedForLine ? "" : " is-map-hidden"}" data-metro-station="${escapeAttr(markerKey)}">
+                      <button class="metro-station-focus" type="button" data-focus-marker="${escapeAttr(markerKey)}"${isVisibleOnMap ? "" : " disabled"}>
+                        <strong>${escapeHtml(station.name)}</strong>
+                        <span>${(station.lines || []).map((lineId) => metroLineBadge(linesById.get(String(lineId)) || lineId)).join("")}</span>
+                      </button>
+                      <label class="metro-map-toggle">
+                        <input type="checkbox" role="switch" aria-label="Incluir ${escapeAttr(station.name)} na ${escapeAttr(line.name || metroLineLabel(line.id))}" data-metro-map-toggle="${escapeAttr(selectionKey)}" data-metro-station-id="${escapeAttr(station.id)}"${isSelectedForLine ? " checked" : ""}>
+                        <span class="metro-map-toggle-track" aria-hidden="true"></span>
+                        <span class="visually-hidden" data-metro-map-toggle-text>${isSelectedForLine ? "Incluída nesta linha" : "Fora desta linha"}</span>
+                      </label>
+                    </article>`;
+                  }).join("")}
+                </div>
+              </div>
+            </details>`;
+          }).join("")}
+          <p class="metro-search-empty" data-metro-search-empty hidden>Nenhuma linha ou estação encontrada.</p>
+        </div>
+      </section>`;
+
+    const setDrawerOpen = (isOpen) => {
+      drawer.classList.toggle("is-open", isOpen);
+      drawerToggle.setAttribute("aria-expanded", String(isOpen));
+      drawerToggle.setAttribute("aria-label", isOpen ? "Fechar painel de linhas e estações" : "Abrir painel de linhas e estações");
+      drawerPanel?.toggleAttribute("inert", !isOpen);
+      drawerPanel?.setAttribute("aria-hidden", String(!isOpen));
+      const label = $("[data-metro-drawer-toggle-label]", drawerToggle);
+      if (label) label.textContent = isOpen ? "Fechar" : "Metrô";
+    };
+    setDrawerOpen(Boolean(window.matchMedia?.("(min-width: 720px)").matches));
+    drawerToggle.addEventListener("click", () => setDrawerOpen(!drawer.classList.contains("is-open")));
+    let openLinesBeforeSearch = new Set();
+    let hasActiveSearch = false;
+    searchInput?.addEventListener("input", () => {
+      const query = normalizeMetroSearch(searchInput.value.trim());
+      const panels = $$('[data-metro-line-panel]', target);
+      if (query && !hasActiveSearch) {
+        openLinesBeforeSearch = new Set(panels.filter((panel) => panel.open).map((panel) => panel.dataset.metroLinePanel));
+      }
+      hasActiveSearch = Boolean(query);
+      let visibleLines = 0;
+      panels.forEach((panel) => {
+        const line = linesById.get(panel.dataset.metroLinePanel);
+        const lineMatches = normalizeMetroSearch(`${line?.name || ""} ${line?.id || ""}`).includes(query);
+        let matchingStations = 0;
+        $$('[data-metro-station]', panel).forEach((stationItem) => {
+          const stationName = $(".metro-station-focus strong", stationItem)?.textContent || "";
+          const stationMatches = normalizeMetroSearch(stationName).includes(query);
+          stationItem.hidden = Boolean(query) && !lineMatches && !stationMatches;
+          if (!stationItem.hidden) matchingStations += 1;
+        });
+        panel.hidden = Boolean(query) && !lineMatches && matchingStations === 0;
+        if (!panel.hidden) visibleLines += 1;
+        if (query && !panel.hidden) panel.open = true;
+        else if (!query) panel.open = openLinesBeforeSearch.has(panel.dataset.metroLinePanel);
+      });
+      const empty = $("[data-metro-search-empty]", target);
+      if (empty) empty.hidden = visibleLines > 0;
+    });
+    target.addEventListener("click", (event) => {
+      if (event.target.closest(".metro-station-focus") && window.matchMedia?.("(max-width: 719px)").matches) {
+        setDrawerOpen(false);
+      }
+    });
+    drawer.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && drawer.classList.contains("is-open")) {
+        setDrawerOpen(false);
+        drawerToggle.focus();
+      }
+    });
+    target.addEventListener("change", (event) => {
+      const lineToggle = event.target.closest("[data-metro-line-toggle]");
+      if (lineToggle) {
+        const line = linesById.get(lineToggle.dataset.metroLineToggle);
+        if (!line) return;
+        const isVisibleOnMap = lineToggle.checked;
+        const stationIds = metroLineStationIds(line);
+        stationIds.forEach((stationId) => {
+          const selectionKey = metroLineStationKey(line.id, stationId);
+          if (isVisibleOnMap) hiddenMetroSelectionKeys.delete(selectionKey);
+          else hiddenMetroSelectionKeys.add(selectionKey);
+        });
+        storeMapKeys(METRO_MAP_STORAGE_KEY, hiddenMetroSelectionKeys);
+        syncMetroDrawerState(stations, lines);
+        mapSelectionController?.refreshMetroSelection(stationIds);
+        return;
+      }
+      const toggle = event.target.closest("[data-metro-map-toggle]");
+      if (!toggle) return;
+      const selectionKey = toggle.dataset.metroMapToggle;
+      const isVisibleOnMap = toggle.checked;
+      if (isVisibleOnMap) hiddenMetroSelectionKeys.delete(selectionKey);
+      else hiddenMetroSelectionKeys.add(selectionKey);
+      storeMapKeys(METRO_MAP_STORAGE_KEY, hiddenMetroSelectionKeys);
+      syncMetroDrawerState(stations, lines);
+      mapSelectionController?.refreshMetroSelection([toggle.dataset.metroStationId]);
+    });
+    syncMetroDrawerState(stations, lines);
+  }
+
+  function metroMapKey(station) {
+    return `metro:${station.id || slugify(station.name)}`;
+  }
+
+  function metroLineStationKey(lineId, stationId) {
+    // Baldeações precisam de uma seleção por linha; uma chave só por estação acopla linhas diferentes.
+    return `metro-line:${encodeURIComponent(String(lineId))}:${encodeURIComponent(String(stationId))}`;
+  }
+
+  function metroLineStationIds(line) {
+    return [...new Set((line?.stations || []).map(String))];
+  }
+
+  function isMetroStationSelected(station) {
+    const stationId = station.id || slugify(station.name);
+    const lineIds = [...new Set((station.lines || []).map(String))];
+    return lineIds.length === 0 || lineIds.some((lineId) => !hiddenMetroSelectionKeys.has(metroLineStationKey(lineId, stationId)));
+  }
+
+  function normalizeMetroSearch(value) {
+    return String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR");
+  }
+
+  function syncMetroDrawerState(stations, lines) {
+    $$('[data-metro-map-toggle]').forEach((toggle) => {
+      const isSelectedForLine = !hiddenMetroSelectionKeys.has(toggle.dataset.metroMapToggle);
+      toggle.checked = isSelectedForLine;
+      const stationItem = toggle.closest("[data-metro-station]");
+      stationItem?.classList.toggle("is-map-hidden", !isSelectedForLine);
+      const focusButton = stationItem && $("[data-focus-marker]", stationItem);
+      const station = stations.find((item) => String(item.id) === toggle.dataset.metroStationId);
+      if (focusButton) focusButton.disabled = !station || !isMetroStationSelected(station);
+      const label = stationItem && $("[data-metro-map-toggle-text]", stationItem);
+      if (label) label.textContent = isSelectedForLine ? "Incluída nesta linha" : "Fora desta linha";
+    });
+    lines.forEach((line) => {
+      const toggle = $$('[data-metro-line-toggle]').find((item) => item.dataset.metroLineToggle === String(line.id));
+      if (!toggle) return;
+      const stationIds = metroLineStationIds(line);
+      const selectedCount = stationIds.filter((stationId) => !hiddenMetroSelectionKeys.has(metroLineStationKey(line.id, stationId))).length;
+      toggle.checked = selectedCount === stationIds.length;
+      toggle.indeterminate = selectedCount > 0 && selectedCount < stationIds.length;
+      const panel = toggle.closest("[data-metro-line-panel]");
+      panel?.classList.toggle("is-map-hidden", selectedCount === 0);
+      const status = panel && $("[data-metro-line-toggle-status]", panel);
+      if (status) status.textContent = `${selectedCount} de ${stationIds.length} selecionadas`;
+    });
+    updateMetroSelectionStatus(stations);
+  }
+
+  function updateMetroSelectionStatus(stations) {
+    const status = $("[data-metro-selection-status]");
+    if (!status) return;
+    const visible = stations.filter(isMetroStationSelected).length;
+    status.textContent = `${visible} de ${stations.length} estações selecionadas para o mapa`;
+  }
+
+  function compareMetroLines(first, second) {
+    const firstNumber = Number(first);
+    const secondNumber = Number(second);
+    if (Number.isFinite(firstNumber) && Number.isFinite(secondNumber)) return firstNumber - secondNumber;
+    if (Number.isFinite(firstNumber)) return -1;
+    if (Number.isFinite(secondNumber)) return 1;
+    return String(first).localeCompare(String(second), "pt-BR");
+  }
+
+  function metroLineBadge(line) {
+    const lineId = typeof line === "object" ? line.id : line;
+    const lineLabel = typeof line === "object" ? line.name : metroLineLabel(lineId);
+    const lineColor = typeof line === "object" && line.color ? line.color : metroLineColor(lineId);
+    return `<span class="metro-line-badge" style="--metro-line-color:${escapeAttr(lineColor)}">${escapeHtml(lineLabel)}</span>`;
+  }
+
+  function metroLineLabel(line) {
+    return /^\d+$/.test(String(line)) ? `Linha ${line}` : String(line).replace("Capital Airport Express", "Airport Express");
+  }
+
+  function metroLineColor(line) {
+    const colors = {
+      "1": "#a4343a", "2": "#2267a5", "4": "#167c83", "5": "#a93d73",
+      "6": "#a87524", "7": "#e08b22", "8": "#41824a", "9": "#75a843",
+      "10": "#168aa2", "12": "#715891", "13": "#d49a20", "14": "#c49a25",
+      "16": "#4d8c67", "19": "#53769e", "Capital Airport Express": "#385c74",
+    };
+    return colors[line] || "#52685d";
   }
 
   function setupTerminalTabs() {
@@ -468,7 +765,8 @@
     const target = $("[data-beijing-map]");
     if (!target) return;
     const locations = buildLocations();
-    renderMapLocationIndex(locations, false);
+    const selectableLocations = () => locations.filter(isMapLocationSelected);
+    renderMapLocationIndex(selectableLocations(), false);
 
     if (!window.L) {
       target.hidden = true;
@@ -481,7 +779,7 @@
       if (status) status.textContent = "Mapa indisponível — use os links abaixo";
       const hint = $(".map-gesture-hint");
       if (hint) hint.hidden = true;
-      renderMapLocationIndex(locations, true);
+      renderMapLocationIndex(selectableLocations(), true);
       return;
     }
 
@@ -520,26 +818,96 @@
       stations: L.layerGroup().addTo(map),
       airports: L.layerGroup().addTo(map),
     };
-    const bounds = [];
 
     locations.forEach((location) => {
       if (!Array.isArray(location.coords)) return;
       const marker = L.marker(location.coords, { icon: mapIcon(location) });
       marker.bindPopup(mapPopup(location));
-      marker.addTo(groups[location.type]);
+      if (isMapLocationSelected(location)) {
+        marker.addTo(groups[location.type]);
+      }
       markerIndex.set(location.key, marker);
-      bounds.push(location.coords);
     });
-    const fitVisibleMarkers = () => {
-      const visible = locations
-        .filter((location) => map.hasLayer(groups[location.type]))
-        .map((location) => location.coords)
+    const metroLineLayers = new Map();
+    (guide.metroLines || []).forEach((line) => {
+      const lineCoords = metroLineStationIds(line)
+        .map((stationId) => locations.find((location) => location.key === `metro:${stationId}`)?.coords)
         .filter(Array.isArray);
-      if (visible.length) map.fitBounds(visible, { padding: [32, 32], maxZoom: 11 });
-      const count = $("[data-map-status]");
-      if (count) count.textContent = `${visible.length} ${visible.length === 1 ? "ponto visível" : "pontos visíveis"}`;
+      if (line.circular && lineCoords.length > 1) lineCoords.push(lineCoords[0]);
+      if (lineCoords.length < 2) return;
+      const lineLayer = L.polyline(lineCoords, {
+        color: line.color || metroLineColor(line.id),
+        weight: 4,
+        opacity: 0.72,
+        lineCap: "round",
+        lineJoin: "round",
+      });
+      lineLayer.bindTooltip(escapeHtml(line.name || metroLineLabel(line.id)), { sticky: true });
+      metroLineLayers.set(line.id, lineLayer);
+    });
+    const refreshMetroLineLayers = () => {
+      (guide.metroLines || []).forEach((line) => {
+        const lineLayer = metroLineLayers.get(line.id);
+        if (!lineLayer) return;
+        const hasSelectedStations = metroLineStationIds(line)
+          .some((stationId) => !hiddenMetroSelectionKeys.has(metroLineStationKey(line.id, stationId)));
+        if (hasSelectedStations) groups.metro.addLayer(lineLayer);
+        else groups.metro.removeLayer(lineLayer);
+      });
     };
-    if (bounds.length) fitVisibleMarkers();
+    const visibleMapLocations = () => locations.filter((location) => {
+      if (!Array.isArray(location.coords) || !map.hasLayer(groups[location.type])) return false;
+      const marker = markerIndex.get(location.key);
+      return marker ? groups[location.type].hasLayer(marker) : false;
+    });
+    const refreshLocationIndex = () => {
+      renderMapLocationIndex(selectableLocations(), false);
+    };
+    const updateVisibleMarkerCount = (visibleCount = visibleMapLocations().length) => {
+      const count = $("[data-map-status]");
+      if (count) count.textContent = `${visibleCount} ${visibleCount === 1 ? "ponto visível" : "pontos visíveis"}`;
+    };
+    const fitVisibleMarkers = () => {
+      const visible = visibleMapLocations().map((location) => location.coords);
+      if (visible.length) map.fitBounds(visible, { padding: [32, 32], maxZoom: 11 });
+      updateVisibleMarkerCount(visible.length);
+    };
+    refreshMetroLineLayers();
+    fitVisibleMarkers();
+
+    const setMarkerVisibility = (key, isVisibleOnMap) => {
+      const marker = markerIndex.get(key);
+      const location = locations.find((item) => item.key === key);
+      if (!marker || !location) return;
+      const group = groups[location.type];
+      if (isVisibleOnMap) group.addLayer(marker);
+      else {
+        marker.closePopup();
+        group.removeLayer(marker);
+      }
+    };
+    const finishSelectionChange = () => {
+      refreshLocationIndex();
+      fitVisibleMarkers();
+    };
+    const refreshMetroStationMarkers = (stationIds) => {
+      [...new Set(stationIds.map(String))].forEach((stationId) => {
+        const key = `metro:${stationId}`;
+        const location = locations.find((item) => item.key === key);
+        if (location) setMarkerVisibility(key, isMetroStationSelected(location));
+      });
+    };
+    mapSelectionController = {
+      setLocationVisibility(key, isVisibleOnMap) {
+        setMarkerVisibility(key, isVisibleOnMap);
+        finishSelectionChange();
+      },
+      refreshMetroSelection(stationIds) {
+        refreshMetroStationMarkers(stationIds);
+        refreshMetroLineLayers();
+        updateVisibleMarkerCount();
+      },
+    };
 
     $$('[data-map-layer]').forEach((button) => {
       button.addEventListener("click", () => {
@@ -561,7 +929,15 @@
       fitVisibleMarkers();
     });
 
-    if (window.ResizeObserver) new ResizeObserver(() => map.invalidateSize()).observe(target);
+    const mapFrame = target.closest(".beijing-map-frame");
+    let resizeFrame = 0;
+    const invalidateMapSize = () => {
+      window.cancelAnimationFrame(resizeFrame);
+      resizeFrame = window.requestAnimationFrame(() => map.invalidateSize({ pan: false }));
+    };
+    if (window.ResizeObserver && mapFrame) new ResizeObserver(invalidateMapSize).observe(mapFrame);
+    else window.addEventListener("resize", invalidateMapSize, { passive: true });
+    invalidateMapSize();
 
     document.addEventListener("click", (event) => {
       const trigger = event.target.closest("[data-focus-marker]");
@@ -583,6 +959,12 @@
         marker.openPopup();
       }, 350);
     });
+  }
+
+  function isMapLocationSelected(location) {
+    if (location.type === "hotels") return !hiddenHotelMapKeys.has(location.key);
+    if (location.type === "metro") return isMetroStationSelected(location);
+    return true;
   }
 
   function buildLocations() {
@@ -611,10 +993,12 @@
     }));
     const metro = (guide.metroStations || []).map((item) => ({
       key: `metro:${item.id || slugify(item.name)}`,
+      id: item.id,
       type: "metro",
       name: item.name,
       subtitle: `Metrô · linhas ${(item.lines || []).join(", ")}`,
       coords: item.coords,
+      lines: item.lines || [],
     }));
     const airports = (guide.airports || []).map((item) => ({
       key: `airport:${item.id || slugify(item.code || item.name)}`,
@@ -629,10 +1013,11 @@
   function mapIcon(location) {
     const className = location.type === "stations" ? "station" : location.type === "metro" ? "metro" : location.type === "hotels" ? "hotel" : location.type === "airports" ? "airport" : "";
     const label = location.type === "attractions" ? location.number : location.type === "hotels" ? "H" : location.type === "metro" ? "M" : location.type === "stations" ? "站" : "✈";
+    const iconSize = location.type === "metro" ? 18 : 34;
     return L.divIcon({
       className: "",
       html: `<div class="beijing-div-icon ${className}"><span>${label}</span></div>`,
-      iconSize: [34, 34],
+      iconSize: [iconSize, iconSize],
     });
   }
 
@@ -648,7 +1033,7 @@
   function renderMapLocationIndex(locations, external) {
     const target = $("[data-map-location-index]");
     if (!target) return;
-    const labels = { attractions: "Atrações", hotels: "Hotéis da watchlist", metro: "Estações de metrô principais", stations: "Estações ferroviárias", airports: "Aeroportos" };
+    const labels = { attractions: "Atrações", hotels: "Hotéis da watchlist", stations: "Estações ferroviárias", airports: "Aeroportos" };
     target.innerHTML = Object.entries(labels).map(([type, label], groupIndex) => {
       const items = locations.filter((location) => location.type === type).map((location) => {
       const prefix = location.type === "attractions" ? String(location.number).padStart(2, "0") : location.type === "hotels" ? "H" : location.type === "metro" ? "M" : location.type === "stations" ? "站" : "✈";
