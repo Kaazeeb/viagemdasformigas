@@ -225,7 +225,6 @@ const destinations = [
         url: "https://www.bmy.com.cn/jingtai/bmyweb/ticketing.html",
       },
     ],
-    scores: { history: 5, food: 4, nature: 2, calm: 2, winter: 2 },
     coords: [34.3416, 108.9398],
   },
   {
@@ -451,7 +450,6 @@ const destinations = [
         url: "https://whc.unesco.org/en/list/1001/",
       },
     ],
-    scores: { history: 3, food: 5, nature: 3, calm: 4, winter: 1 },
     coords: [30.5728, 104.0668],
   },
   {
@@ -679,7 +677,6 @@ const destinations = [
         url: "https://visitguilin.org/things-to-do/guilin-attractions/li-river/",
       },
     ],
-    scores: { history: 2, food: 2, nature: 5, calm: 5, winter: 1 },
     coords: [24.7785, 110.4966],
   },
   {
@@ -905,7 +902,6 @@ const destinations = [
         url: "https://www.enghunan.gov.cn/hneng/Tourism/TourHunan/Zhangjiajie_1/TouristAttractions_12/index.html",
       },
     ],
-    scores: { history: 1, food: 2, nature: 5, calm: 2, winter: 2 },
     coords: [29.1171, 110.478],
   },
   {
@@ -1131,7 +1127,6 @@ const destinations = [
         url: "https://www.ehangzhou.gov.cn/2025-11/21/c_295693.htm",
       },
     ],
-    scores: { history: 3, food: 3, nature: 4, calm: 5, winter: 1 },
     coords: [30.2741, 120.1551],
   },
   {
@@ -1357,7 +1352,6 @@ const destinations = [
         url: "https://govt.chinadaily.com.cn/s/201907/01/WS5d1974c3498e5314096b6753/q-a-about-travelling-in-lijiang.html",
       },
     ],
-    scores: { history: 4, food: 2, nature: 4, calm: 4, winter: 2 },
     coords: [26.8721, 100.2299],
   },
   {
@@ -1586,7 +1580,6 @@ const destinations = [
         url: "https://whc.unesco.org/en/list/1002/",
       },
     ],
-    scores: { history: 2, food: 1, nature: 5, calm: 3, winter: 3 },
     coords: [30.1333, 118.1667],
   },
   {
@@ -1811,7 +1804,6 @@ const destinations = [
         url: "https://en.people.cn/n3/2026/0222/c90000-20427284.html",
       },
     ],
-    scores: { history: 3, food: 2, nature: 2, calm: 1, winter: 5 },
     coords: [45.8038, 126.535],
     seasonal: true,
   },
@@ -1842,22 +1834,6 @@ Object.entries(window.ROTA_CHINA_DEEP_DIVES || {}).forEach(
   },
 );
 
-const categoryLabels = {
-  history: "História",
-  food: "Gastronomia",
-  nature: "Natureza",
-  calm: "Tranquilo",
-  winter: "Inverno",
-};
-
-const vibeCopy = {
-  history: "Para mergulhar em camadas de história",
-  food: "Para deixar o paladar conduzir o roteiro",
-  nature: "Para voltar com a câmera cheia",
-  calm: "Para viajar em um ritmo mais leve",
-  winter: "Para transformar o frio no protagonista",
-};
-
 const LIGHTBOX_IMAGE_WIDTH = 1920;
 
 const state = {
@@ -1882,7 +1858,6 @@ const lightboxCaption = document.querySelector("[data-lightbox-caption]");
 const lightboxCredit = document.querySelector("[data-lightbox-credit]");
 const lightboxResolution = document.querySelector("[data-lightbox-resolution]");
 const lightboxOriginal = document.querySelector("[data-lightbox-original]");
-const matchResult = document.querySelector("[data-match-result]");
 const toast = document.querySelector("[data-toast]");
 let toastTimer;
 let lightboxTouchStart = null;
@@ -2133,33 +2108,6 @@ function renderCompare() {
   `;
   attachImageFallbacks(content);
   updateCounts();
-}
-
-function selectVibe(vibe) {
-  document.querySelectorAll("[data-vibe]").forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.vibe === vibe);
-    button.setAttribute("aria-pressed", String(button.dataset.vibe === vibe));
-  });
-
-  const matches = [...destinations]
-    .sort((a, b) => b.scores[vibe] - a.scores[vibe] || a.order - b.order)
-    .slice(0, 3);
-
-  matchResult.innerHTML = `
-    <p class="kicker">${vibeCopy[vibe]}</p>
-    <div class="match-list">
-      ${matches
-        .map(
-          (destination, index) => `
-            <button type="button" data-open-destination="${destination.id}">
-              <span><small>${String(index + 1).padStart(2, "0")}</small><br><strong>${destination.name}</strong></span>
-              <span aria-hidden="true">→</span>
-            </button>
-          `,
-        )
-        .join("")}
-    </div>
-  `;
 }
 
 function openDestination(id, updateHash = true) {
@@ -2672,8 +2620,6 @@ document.addEventListener("click", (event) => {
     toggleCompare(target.dataset.compareDestination);
   } else if (target.matches("[data-save-destination]")) {
     toggleSaved(target.dataset.saveDestination);
-  } else if (target.matches("[data-vibe]")) {
-    selectVibe(target.dataset.vibe);
   } else if (target.matches("[data-filter]")) {
     state.filter = target.dataset.filter;
     document.querySelectorAll("[data-filter]").forEach((button) => {

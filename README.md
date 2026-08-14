@@ -42,7 +42,7 @@ Depois, acesse `http://localhost:8080`.
 ## O que está incluído
 
 - Layout responsivo, com prioridade para celulares.
-- Oito guias completos, filtros e recomendação por estilo de viagem.
+- Oito guias completos e filtros por estilo de viagem.
 - Página dedicada a Pequim com 18 atrações, roteiro de cinco dias, mapa
   interativo, mapa do metrô, mapa dos 16 distritos, sete estações ferroviárias,
   dois aeroportos, dicas e oito hotéis para conferência no Trip.com.
