@@ -53,8 +53,7 @@ Depois, acesse `http://localhost:8080`.
 - Dezoito guias “Em profundidade” para os três principais pontos de Xi’an,
   Chengdu, Guilin/Yangshuo, Zhangjiajie, Lijiang e Huangshan, com contexto,
   experiência, roteiro e notas editoriais.
-- Favoritos e comparação de até três destinos, salvos no navegador.
-- Rota sugerida para uma primeira viagem.
+- Favoritos salvos no navegador.
 - Duzentas e quarenta e quatro fotografias licenciadas via Wikimedia Commons,
   incluindo 162 imagens em alta resolução na página de Pequim: exatamente nove
   para cada uma das 18 atrações.

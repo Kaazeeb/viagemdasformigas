@@ -1839,7 +1839,6 @@ const LIGHTBOX_IMAGE_WIDTH = 1920;
 const state = {
   filter: "all",
   savedOnly: false,
-  compare: readStorage("rotaChinaCompare"),
   saved: readStorage("rotaChinaSaved"),
   current: null,
   lightboxIndex: 0,
@@ -1920,7 +1919,6 @@ function lightboxImageSource(image) {
 }
 
 function cardMarkup(destination) {
-  const selected = state.compare.includes(destination.id);
   const saved = state.saved.includes(destination.id);
   const number = String(destination.order).padStart(2, "0");
   const pills = [destination.days, destination.best]
@@ -1958,13 +1956,6 @@ function cardMarkup(destination) {
         <div class="card-pills">${pills}</div>
         <div class="card-actions">
           <button class="card-open" type="button" data-open-destination="${destination.id}">Ver guia</button>
-          <button
-            class="compare-toggle ${selected ? "is-selected" : ""}"
-            type="button"
-            data-compare-destination="${destination.id}"
-            aria-pressed="${selected}"
-            ${!selected && state.compare.length >= 3 ? "disabled" : ""}
-          >${selected ? "✓ Comparando" : "+ Comparar"}</button>
         </div>
       </div>
     </article>
@@ -1982,7 +1973,6 @@ function renderDestinations() {
   grid.innerHTML = visible.map(cardMarkup).join("");
   emptyState.hidden = visible.length > 0;
   attachImageFallbacks(grid);
-  updateCounts();
 }
 
 function attachImageFallbacks(root = document) {
@@ -1990,7 +1980,7 @@ function attachImageFallbacks(root = document) {
     if (image.dataset.fallbackReady) return;
     image.dataset.fallbackReady = "true";
     image.addEventListener("error", () => {
-      const media = image.closest(".media, figure, .compare-card-media");
+      const media = image.closest(".media, figure");
       if (media) {
         media.classList.add("media", "is-fallback");
         if (!media.dataset.label) media.dataset.label = image.alt || "China";
@@ -2014,22 +2004,6 @@ function setHeroImages() {
   attachImageFallbacks(document);
 }
 
-function toggleCompare(id) {
-  if (state.compare.includes(id)) {
-    state.compare = state.compare.filter((item) => item !== id);
-  } else if (state.compare.length >= 3) {
-    showToast("Você pode comparar até três destinos.");
-    return;
-  } else {
-    state.compare.push(id);
-    showToast(`${destinationById(id).name} entrou na comparação.`);
-  }
-  writeStorage("rotaChinaCompare", state.compare);
-  renderDestinations();
-  renderCompare();
-  if (state.current === id) updateDialogActions();
-}
-
 function toggleSaved(id) {
   const wasSaved = state.saved.includes(id);
   state.saved = wasSaved
@@ -2043,9 +2017,6 @@ function toggleSaved(id) {
 }
 
 function updateCounts() {
-  document.querySelectorAll("[data-compare-count]").forEach((element) => {
-    element.textContent = state.compare.length;
-  });
   document.querySelectorAll("[data-saved-count]").forEach((element) => {
     element.textContent = state.saved.length;
   });
@@ -2055,58 +2026,6 @@ function updateSavedButtons() {
   document.querySelectorAll("[data-show-saved]").forEach((button) => {
     button.setAttribute("aria-pressed", String(state.savedOnly));
   });
-  updateCounts();
-}
-
-function renderCompare() {
-  const empty = document.querySelector("[data-compare-empty]");
-  const content = document.querySelector("[data-compare-content]");
-  const selected = state.compare.map(destinationById).filter(Boolean);
-
-  if (!selected.length) {
-    empty.hidden = false;
-    content.hidden = true;
-    content.innerHTML = "";
-    updateCounts();
-    return;
-  }
-
-  empty.hidden = true;
-  content.hidden = false;
-  content.innerHTML = `
-    <div class="compare-grid">
-      ${selected
-        .map(
-          (destination) => `
-            <article class="compare-card">
-              <div class="compare-card-media media" data-label="${escapeAttribute(destination.name)}">
-                ${imageMarkup(destination.images[0])}
-              </div>
-              <button
-                class="compare-remove"
-                type="button"
-                data-compare-destination="${destination.id}"
-                aria-label="Remover ${escapeAttribute(destination.name)} da comparação"
-              >×</button>
-              <div class="compare-card-body">
-                <h3>${destination.name}</h3>
-                <dl>
-                  <div><dt>Melhor para</dt><dd>${destination.ideal}</dd></div>
-                  <div><dt>Duração</dt><dd>${destination.days}</dd></div>
-                  <div><dt>Época</dt><dd>${destination.best}</dd></div>
-                  <div><dt>Ritmo</dt><dd>${destination.rhythm}</dd></div>
-                  <div><dt>Esforço</dt><dd>${destination.effort}</dd></div>
-                  <div><dt>Boa base</dt><dd>${destination.base}</dd></div>
-                </dl>
-                <button class="card-open" type="button" data-open-destination="${destination.id}">Abrir guia</button>
-              </div>
-            </article>
-          `,
-        )
-        .join("")}
-    </div>
-  `;
-  attachImageFallbacks(content);
   updateCounts();
 }
 
@@ -2384,11 +2303,6 @@ function openDestination(id, updateHash = true) {
           </section>
 
           <div class="dialog-cta-row">
-            <button
-              type="button"
-              data-dialog-compare
-              class="${state.compare.includes(destination.id) ? "is-selected" : ""}"
-            >${state.compare.includes(destination.id) ? "✓ Na comparação" : "+ Adicionar à comparação"}</button>
             <a href="${mapUrl}" target="_blank" rel="noopener noreferrer">Abrir no mapa ↗</a>
           </div>
         </aside>
@@ -2504,9 +2418,7 @@ function closeDestination(updateHash = true) {
 function updateDialogActions() {
   if (!state.current) return;
   const saved = state.saved.includes(state.current);
-  const compared = state.compare.includes(state.current);
   const saveButton = document.querySelector("[data-dialog-save]");
-  const compareButton = dialogContent.querySelector("[data-dialog-compare]");
 
   if (saveButton) {
     saveButton.classList.toggle("is-saved", saved);
@@ -2514,11 +2426,6 @@ function updateDialogActions() {
     saveButton.setAttribute("aria-label", saved ? "Remover destino dos favoritos" : "Salvar destino");
   }
 
-  if (compareButton) {
-    compareButton.classList.toggle("is-selected", compared);
-    compareButton.textContent = compared ? "✓ Na comparação" : "+ Adicionar à comparação";
-    compareButton.disabled = !compared && state.compare.length >= 3;
-  }
 }
 
 function loadVideo(id, button) {
@@ -2616,8 +2523,6 @@ document.addEventListener("click", (event) => {
   if (target.matches("[data-open-destination]")) {
     event.preventDefault();
     openDestination(target.dataset.openDestination);
-  } else if (target.matches("[data-compare-destination]")) {
-    toggleCompare(target.dataset.compareDestination);
   } else if (target.matches("[data-save-destination]")) {
     toggleSaved(target.dataset.saveDestination);
   } else if (target.matches("[data-filter]")) {
@@ -2652,8 +2557,6 @@ document.addEventListener("click", (event) => {
     toggleSaved(state.current);
   } else if (target.matches("[data-dialog-share]")) {
     shareDestination();
-  } else if (target.matches("[data-dialog-compare]")) {
-    toggleCompare(state.current);
   } else if (target.matches("[data-load-video]")) {
     loadVideo(target.dataset.loadVideo, target);
   }
@@ -2724,7 +2627,6 @@ window.addEventListener("popstate", () => {
 });
 
 renderDestinations();
-renderCompare();
 renderSources();
 setHeroImages();
 updateSavedButtons();
