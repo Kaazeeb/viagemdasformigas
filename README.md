@@ -42,7 +42,7 @@ Depois, acesse `http://localhost:8080`.
 ## O que está incluído
 
 - Layout responsivo, com prioridade para celulares.
-- Oito guias completos, filtros e recomendação por estilo de viagem.
+- Oito guias completos e filtros por estilo de viagem.
 - Página dedicada a Pequim com 18 atrações, roteiro de cinco dias, mapa
   interativo, mapa do metrô, mapa dos 16 distritos, sete estações ferroviárias,
   dois aeroportos, dicas e oito hotéis para conferência no Trip.com.
@@ -53,8 +53,7 @@ Depois, acesse `http://localhost:8080`.
 - Dezoito guias “Em profundidade” para os três principais pontos de Xi’an,
   Chengdu, Guilin/Yangshuo, Zhangjiajie, Lijiang e Huangshan, com contexto,
   experiência, roteiro e notas editoriais.
-- Favoritos e comparação de até três destinos, salvos no navegador.
-- Rota sugerida para uma primeira viagem.
+- Favoritos salvos no navegador.
 - Duzentas e quarenta e quatro fotografias licenciadas via Wikimedia Commons,
   incluindo 162 imagens em alta resolução na página de Pequim: exatamente nove
   para cada uma das 18 atrações.
