@@ -416,10 +416,21 @@
     target.innerHTML = (guide.hotels || []).map((hotel) => {
       const key = hotelMapKey(hotel);
       const isVisibleOnMap = !hiddenHotelMapKeys.has(key);
+      const verification = hotel.requestedStayVerification || {};
+      const reportedOffers = Array.isArray(hotel.confirmedOffers) ? hotel.confirmedOffers : [];
+      const featuredTwinOffer = reportedOffers.find((offer) => {
+        const description = `${offer.room || ""} ${offer.beds || ""}`.toLowerCase();
+        const hasTwoBeds = /twin|2-bed|duas camas|2 camas/.test(description);
+        const hasCrib = /com berço|with crib/.test(`${offer.room || ""} ${offer.extraBedOrCrib || ""}`.toLowerCase());
+        return hasTwoBeds && !hasCrib;
+      });
+      const publicCnyFloor = hotel.displayedFloor?.currency === "CNY" && Number.isFinite(hotel.displayedFloor?.amount)
+        ? hotel.displayedFloor.amount
+        : null;
       return `
       <article class="hotel-card${isVisibleOnMap ? "" : " is-map-hidden"}" data-hotel-card="${escapeAttr(key)}">
         <div class="hotel-card-toolbar">
-          <span class="hotel-status reference">Não confirmado para as datas</span>
+          <span class="hotel-status reference">${reportedOffers.length ? "Tarifa informada" : "Não confirmado para as datas"}</span>
           <label class="hotel-map-toggle">
             <input type="checkbox" role="switch" aria-label="Mostrar ${escapeAttr(hotel.name)} no mapa" data-hotel-map-toggle="${escapeAttr(key)}"${isVisibleOnMap ? " checked" : ""}>
             <span class="hotel-map-toggle-track" aria-hidden="true"></span>
@@ -429,17 +440,20 @@
         <h3>${escapeHtml(hotel.name)}</h3>
         <p class="hotel-area">${escapeHtml(hotel.area || hotel.district || "Pequim")} · ${escapeHtml(hotel.metro || hotel.access || "ver localização")}</p>
         <div class="hotel-price-row">
-          <strong>A confirmar</strong>
-          <span>filtro-alvo<br>até ¥500/noite</span>
+          <strong>${featuredTwinOffer ? `¥${escapeHtml(String(featuredTwinOffer.nightlyRateCny))}` : verification.cnyNightlyRate ? `¥${escapeHtml(String(verification.cnyNightlyRate))}` : reportedOffers.length ? "Ver opções" : publicCnyFloor ? `desde ¥${escapeHtml(String(publicCnyFloor))}` : "CNY não verificado"}</strong>
+          <span>${featuredTwinOffer ? "1 quarto / noite" : verification.cnyNightlyRate ? "2 quartos / noite" : reportedOffers.length ? "por quarto / noite" : publicCnyFloor ? "piso público / outra data" : "23–27 set. 2026"}<br>${featuredTwinOffer ? "2 camas · sem berço" : "alvo: até ¥500/noite"}</span>
         </div>
         <ul>
           <li>${escapeHtml(hotel.breakfast || "A propriedade oferece café; confirme se está incluído no quarto")}</li>
+          ${reportedOffers.map((offer) => `<li><strong>${escapeHtml(offer.room)} ¥${escapeHtml(String(offer.nightlyRateCny))}:</strong> ${escapeHtml(offer.beds)} · ${Number.isFinite(offer.breakfastsIncluded) ? `${escapeHtml(String(offer.breakfastsIncluded))} café(s) incluído(s)` : escapeHtml(offer.breakfastNote || "café a confirmar")}${offer.extraBedOrCrib ? ` · ${escapeHtml(offer.extraBedOrCrib)}` : ""}</li>`).join("")}
+          ${hotel.twinBedOption ? `<li><strong>Duas camas:</strong> ${escapeHtml(hotel.twinBedOption)}</li>` : ""}
+          ${hotel.childrenPolicy ? `<li><strong>Crianças:</strong> ${escapeHtml(hotel.childrenPolicy)}</li>` : ""}
           <li>${escapeHtml(hotel.reason || hotel.useCase || "Compare o tempo de metrô até as atrações")}</li>
           ${hotel.rating ? `<li>${escapeHtml(String(hotel.rating))}${hotel.reviews ? ` · ${escapeHtml(String(hotel.reviews))} avaliações` : ""}</li>` : ""}
         </ul>
         ${externalLink(hotel.liveUrl || hotel.url, "Ver tarifa ao vivo no Trip.com ↗", "hotel-link")}
         ${hotel.coords ? `<a class="hotel-map-link" href="#mapa" data-focus-marker="${escapeAttr(key)}"${isVisibleOnMap ? "" : " hidden"}>Localizar no mapa ↓</a>` : ""}
-        <small>Disponibilidade, tarifa em CNY, café incluído, impostos e cancelamento não foram expostos na consulta pública. Confira antes de reservar.</small>
+        <small>${escapeHtml(verification.reason || "Disponibilidade, tarifa em CNY, café incluído, impostos e cancelamento não foram expostos na consulta pública. Confira antes de reservar.")}</small>
       </article>`;
     }).join("");
 
