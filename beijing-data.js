@@ -3,6 +3,10 @@ window.BEIJING_GUIDE_READY = Promise.all([
     if (!response.ok) throw new Error("Não foi possível carregar as atrações de Pequim.");
     return response.json();
   }),
+  fetch("beijing-streets.json").then((response) => {
+    if (!response.ok) throw new Error("Não foi possível carregar as ruas de Pequim.");
+    return response.json();
+  }),
   fetch("beijing-logistics.json").then((response) => {
     if (!response.ok) throw new Error("Não foi possível carregar os dados de transporte e hotéis.");
     return response.json();
@@ -15,7 +19,7 @@ window.BEIJING_GUIDE_READY = Promise.all([
     if (!response.ok) throw new Error("Não foi possível carregar as linhas e estações de metrô.");
     return response.json();
   }),
-]).then(([attractions, logistics, media, metro]) => {
+]).then(([attractions, streets, logistics, media, metro]) => {
   const imagesByAttraction = media.imagesByAttraction || {};
   const imageKeys = {
     "forbidden-city": "cidade-proibida",
@@ -91,6 +95,7 @@ window.BEIJING_GUIDE_READY = Promise.all([
       ...attraction,
       images: imagesByAttraction[imageKeys[attraction.id]]?.images || [],
     })),
+    streets,
     referenceMaps: Object.values(media.referenceMaps || {}).map((item) => ({
       ...item,
       description: `${item.coverage || ""} ${item.title?.includes("metrô") ? "Use como referência e confirme extensões futuras no operador." : "Use para compreender a escala do município, não como mapa de navegação."}`.trim(),

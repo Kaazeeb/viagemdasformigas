@@ -1,0 +1,389 @@
+[
+  {
+    "id": "qianmen-street",
+    "name": "Rua Qianmen",
+    "chinese": "前门大街",
+    "category": "Histórica e comercial",
+    "coords": [39.8937104, 116.3919465],
+    "images": [
+      {
+        "file": "Beijing Qianmen Street - panoramio (2).jpg",
+        "credit": "The Erica Chang",
+        "license": "CC BY 3.0"
+      },
+      {
+        "file": "Qianmen street, Beijing, China - 北京，中国 (10226037583).jpg",
+        "credit": "Romain Pontida",
+        "license": "CC BY-SA 2.0"
+      },
+      {
+        "file": "Beijing Qianmen Street - panoramio.jpg",
+        "credit": "The Erica Chang",
+        "license": "CC BY 3.0"
+      }
+    ],
+    "summary": "A grande rua comercial do sul do Eixo Central reúne fachadas tradicionais, marcas centenárias, casas de chá, restaurantes e lojas de produtos chineses. O traçado monumental liga a região de Zhengyangmen ao caminho histórico em direção ao Templo do Céu.",
+    "why": "É a rua que melhor combina peso histórico, arquitetura e comércio em uma primeira viagem. Não substitui Nanjing Road como experiência de metrópole moderna, mas oferece algo mais característico de Pequim: a passagem entre o eixo imperial e os bairros comerciais da antiga cidade exterior.",
+    "highlights": [
+      "Fachadas e marcas tradicionais do comércio de Pequim",
+      "Vista de Zhengyangmen no extremo norte",
+      "Conexão direta com Dashilar e Xianyukou"
+    ],
+    "location": "Eixo Central, ao sul de Tiananmen, entre Zhengyangmen e Tianqiao",
+    "district": "Dongcheng",
+    "nearestMetro": "Qianmen, Linhas 2 e 8",
+    "admissionRmb": "Gratuita; compras e refeições à parte",
+    "hours": "A rua permanece acessível; cada loja e restaurante mantém horário próprio",
+    "duration": "1–2 horas; 2–3 horas com Dashilar",
+    "fit": "Encaixe após o Templo do Céu no dia 25 e continue pelas travessas de Dashilar. Os dois lugares formam uma única caminhada, não duas viagens separadas.",
+    "bestTime": "Fim da tarde até o começo da noite, quando as fachadas estão iluminadas e o comércio continua ativo.",
+    "officialSource": {
+      "label": "Governo de Pequim — ruas acessíveis por metrô",
+      "url": "https://english.beijing.gov.cn/latest/news/202606/t20260605_4686937.html"
+    }
+  },
+  {
+    "id": "dashilar",
+    "name": "Dashilar",
+    "chinese": "大栅栏",
+    "category": "Comércio tradicional",
+    "coords": [39.8944985, 116.390172],
+    "images": [
+      {
+        "file": "Dashala Overview 201005.jpg",
+        "credit": "WiNG",
+        "license": "CC BY-SA 3.0"
+      },
+      {
+        "file": "Xicheng, Beijing, China - panoramio (20).jpg",
+        "credit": "Fumihiko Ueno",
+        "license": "CC BY 3.0"
+      },
+      {
+        "file": "Gate of Dazhalan Area on Qianmen Street 2.JPG",
+        "credit": "そらみみ (Soramimi)",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "summary": "Uma rua curta e densa no antigo distrito comercial de Qianmen, conhecida por lojas históricas, comidas locais e passagens laterais que conservam a escala da cidade antiga. É menos monumental e mais íntima que a vizinha Rua Qianmen.",
+    "why": "Dashilar mostra como o comércio tradicional ocupava as ruas fora da cidade imperial. Marcas de chá, seda, condimentos e medicina chinesa dividem espaço com cafés e projetos contemporâneos instalados em edifícios antigos, criando uma leitura mais rica do bairro do que apenas caminhar por Qianmen.",
+    "highlights": [
+      "Lojas tradicionais de chá, seda e produtos locais",
+      "Travessas de Yangmeizhu Xiejie e Langfang Toutiao",
+      "Beijing Fun e edifícios comerciais renovados"
+    ],
+    "location": "A oeste da Rua Qianmen, no conjunto histórico de Dashilar",
+    "district": "Xicheng",
+    "nearestMetro": "Qianmen, Linhas 2 e 8; Zhushikou, Linhas 7 e 8",
+    "admissionRmb": "Gratuita; compras e refeições à parte",
+    "hours": "Área aberta; horários variam por estabelecimento",
+    "duration": "1–2 horas",
+    "fit": "Percorra logo depois de Qianmen no dia 25. Entre por Dashilar West Street e escolha uma ou duas travessas, evitando transformar a visita em uma sequência de lojas repetidas.",
+    "bestTime": "Fim da tarde e início da noite; durante o feriado, espere circulação intensa nos corredores principais.",
+    "officialSource": {
+      "label": "Governo de Pequim — ruas históricas do Eixo Central",
+      "url": "https://english.beijing.gov.cn/travellinginbeijing/hotroutes/202402/t20240206_3557928.html"
+    }
+  },
+  {
+    "id": "yandai-xiejie",
+    "name": "Yandai Xiejie",
+    "chinese": "烟袋斜街",
+    "category": "Rua histórica",
+    "coords": [39.9376501, 116.3886058],
+    "images": [
+      {
+        "file": "Yandai Xiejie 3.jpg",
+        "credit": "EditQ",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "烟袋斜街.jpg",
+        "credit": "EditQ",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "烟袋斜街 yan dai xie jie - panoramio.jpg",
+        "credit": "wanghongliu",
+        "license": "CC BY-SA 3.0"
+      }
+    ],
+    "summary": "A pequena Rua do Cachimbo Inclinado atravessa pouco mais de duzentos metros entre Di'anmen e Shichahai. Suas fachadas de inspiração Ming e Qing abrigam lanches, artesanato, lembranças e pequenas lojas.",
+    "why": "É a conexão mais natural entre as Torres do Tambor e do Sino e os lagos de Shichahai. A rua entrega a atmosfera comercial dos hutongs sem exigir um deslocamento próprio, e sua escala curta funciona bem para crianças e para um dia já cheio de visitas.",
+    "highlights": [
+      "Traçado diagonal histórico junto ao Eixo Central",
+      "Fachadas tradicionais, artesanato e pequenos lanches",
+      "Saída junto à Ponte Yinding e ao lago Houhai"
+    ],
+    "location": "Entre Di'anmen Outer Street e a Ponte Yinding, junto a Shichahai",
+    "district": "Xicheng",
+    "nearestMetro": "Shichahai, Linha 8",
+    "admissionRmb": "Gratuita",
+    "hours": "Rua aberta; lojas operam em horários próprios",
+    "duration": "30–60 minutos",
+    "fit": "Inclua no dia 27 entre as Torres do Tambor e do Sino e Shichahai. Ela funciona como parte do percurso, não como atração isolada.",
+    "bestTime": "Fim da manhã ou fim da tarde; os primeiros horários são melhores para observar a arquitetura com menos gente.",
+    "officialSource": {
+      "label": "Governo de Pequim — ruas culturais antigas",
+      "url": "https://english.beijing.gov.cn/travellinginbeijing/hotroutes/202402/t20240206_3557928.html"
+    }
+  },
+  {
+    "id": "nanluoguxiang",
+    "name": "Nanluoguxiang",
+    "chinese": "南锣鼓巷",
+    "category": "Hutong comercial",
+    "coords": [39.9371074, 116.3969048],
+    "images": [
+      {
+        "file": "2016-09-04 Beijing Nanluoguxiang anagoria 23.jpg",
+        "credit": "Anagoria",
+        "license": "CC BY 3.0"
+      },
+      {
+        "file": "2016-09-04 Beijing Nanluoguxiang anagoria 06.jpg",
+        "credit": "Anagoria",
+        "license": "CC BY 3.0"
+      },
+      {
+        "file": "2016-09-04 Beijing Nanluoguxiang anagoria 27.jpg",
+        "credit": "Anagoria",
+        "license": "CC BY 3.0"
+      }
+    ],
+    "summary": "Uma das ruas de hutongs mais conhecidas de Pequim, com quase oitocentos metros de lojas, cafés, comida e acessos a vielas residenciais. O desenho urbano em grelha remonta à capital da dinastia Yuan.",
+    "why": "Tem relevância histórica real e grande variedade comercial, mas também concentra multidões. Vale pela leitura da malha de hutongs e pelas ruas laterais; quem permanecer apenas no eixo comercial encontrará uma experiência mais turística que cotidiana.",
+    "highlights": [
+      "Malha urbana preservada desde a dinastia Yuan",
+      "Acessos a Mao'er Hutong e outras vielas laterais",
+      "Comércio, cafés e lanches em uma via pedonal longa"
+    ],
+    "location": "Entre Gulou East Street e Di'anmen East Street",
+    "district": "Dongcheng",
+    "nearestMetro": "Nanluoguxiang, Linhas 6 e 8",
+    "admissionRmb": "Gratuita",
+    "hours": "Rua aberta; estabelecimentos mantêm horários próprios",
+    "duration": "1–2 horas",
+    "fit": "Use como extensão opcional do dia 27. Entre por uma ponta, explore ao menos uma viela lateral e saia em direção às Torres do Tambor, sem precisar percorrer todas as lojas.",
+    "bestTime": "Antes de 10:00 para caminhar com mais calma; à noite, prefira se o objetivo principal for comer e ver movimento.",
+    "officialSource": {
+      "label": "Governo de Pequim — Nanluoguxiang",
+      "url": "https://english.beijing.gov.cn/specials/beijinglifeonthesubway/landmarksalongthesubwaylines/line6/202206/t20220624_2750389.html"
+    }
+  },
+  {
+    "id": "wangfujing-street",
+    "name": "Rua Wangfujing",
+    "chinese": "王府井大街",
+    "category": "Comercial moderna",
+    "coords": [39.9156422, 116.4048141],
+    "images": [
+      {
+        "file": "Wangfujing Street from Oriental Plaza 20251002155933.jpg",
+        "credit": "TurnOnTheNight",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "Wangfujing Street from north to south 20251002150439.jpg",
+        "credit": "TurnOnTheNight",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "2016-08-07 WangFuJing Fußgängerzone anagoria.jpg",
+        "credit": "Anagoria",
+        "license": "CC BY 3.0"
+      }
+    ],
+    "summary": "O calçadão comercial de maior projeção nacional em Pequim reúne lojas de departamento, centros comerciais, marcas internacionais e estabelecimentos tradicionais em um eixo central de grande movimento.",
+    "why": "É a comparação mais direta com Nanjing Road em Xangai, embora seja menor e menos espetacular. Vale para quem deseja observar o consumo urbano contemporâneo ou fazer compras; para compreender a identidade histórica de Pequim, Qianmen e Dashilar têm prioridade maior.",
+    "highlights": [
+      "Beijing Department Store e grandes centros comerciais",
+      "WF Central, Beijing apm e lojas de marcas internacionais",
+      "Proximidade da Cidade Proibida e de Donghuamen"
+    ],
+    "location": "Eixo norte–sul a leste da Cidade Proibida, entre Chang'an Avenue e Wusi Street",
+    "district": "Dongcheng",
+    "nearestMetro": "Wangfujing, Linha 1; Jinyu Hutong, Linha 8",
+    "admissionRmb": "Gratuita; compras à parte",
+    "hours": "Calçadão aberto; centros comerciais e lojas têm horários próprios",
+    "duration": "1–2 horas",
+    "fit": "Encaixe no fim da tarde ou à noite do dia 24, depois de uma pausa após o Palácio de Verão. É opcional e não deve pesar o primeiro dia.",
+    "bestTime": "Depois do pôr do sol, quando o calçadão e os centros comerciais estão iluminados.",
+    "officialSource": {
+      "label": "Governo de Pequim — distrito comercial de Wangfujing",
+      "url": "https://english.beijing.gov.cn/travellinginbeijing/commercialareas/202603/t20260320_4562382.html"
+    }
+  },
+  {
+    "id": "wudaoying-hutong",
+    "name": "Wudaoying Hutong",
+    "chinese": "五道营胡同",
+    "category": "Hutong contemporâneo",
+    "coords": [39.9469886, 116.4063623],
+    "images": [
+      {
+        "file": "Beijing hutong Wudaoying 3.jpg",
+        "credit": "Andrzej Otrębski",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "Beijing hutong Wudaoying 1.jpg",
+        "credit": "Andrzej Otrębski",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "Beijing hutong Wudaoying 2.jpg",
+        "credit": "Andrzej Otrębski",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "summary": "Uma viela histórica de escala tranquila, hoje ocupada por cafés, restaurantes pequenos, ateliês, artesanato e lojas criativas. Fica imediatamente a oeste do Templo Lama e perto de Guozijian.",
+    "why": "É uma pausa agradável depois dos templos do nordeste e oferece uma experiência comercial menos intensa que Nanluoguxiang. O principal valor é a conveniência: não exige desvio do roteiro do dia 27 e permite descansar entre edifícios baixos e pátios antigos.",
+    "highlights": [
+      "Cafés e restaurantes instalados em casas baixas",
+      "Ateliês, cerâmica e pequenas lojas criativas",
+      "Ligação fácil com Templo Lama e Guozijian"
+    ],
+    "location": "Entre Yonghegong Street e Andingmen Inner Street",
+    "district": "Dongcheng",
+    "nearestMetro": "Yonghegong Lama Temple, Linhas 2 e 5",
+    "admissionRmb": "Gratuita",
+    "hours": "Rua aberta; comércio funciona em horários próprios",
+    "duration": "45–90 minutos",
+    "fit": "Inclua como pausa para comer ou tomar café depois do Templo Lama e Guozijian no dia 27.",
+    "bestTime": "Meio da tarde até o começo da noite, quando cafés e lojas estão funcionando.",
+    "officialSource": {
+      "label": "Governo de Pequim — guia de hutongs",
+      "url": "https://english.beijing.gov.cn/beijinginfo/culture/202005/t20200515_1898145.html"
+    }
+  },
+  {
+    "id": "liulichang-street",
+    "name": "Rua Cultural Liulichang",
+    "chinese": "琉璃厂文化街",
+    "category": "Livros e antiguidades",
+    "coords": [39.8937965, 116.3778392],
+    "images": [
+      {
+        "file": "Liulichang East St during Changdian Temple Fair (20240210144753).jpg",
+        "credit": "N509FZ",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "Beijing-Liulichang Dongjie-02-gje.jpg",
+        "credit": "Gerd Eichmann",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "Yidege headquarters at Liulichang (20200827151452).jpg",
+        "credit": "N509FZ",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "summary": "A rua histórica dos estudiosos reúne livrarias, caligrafia, pinturas, antiguidades e as chamadas Quatro Joias do Estúdio: pincel, tinta, papel e tinteiro. Seu comércio cultural remonta ao período Qing.",
+    "why": "É a rua mais especializada da seleção e oferece uma dimensão intelectual pouco visível nos grandes monumentos. Tem prioridade menor para crianças pequenas, mas pode ser excelente para quem se interessa por livros antigos, artes gráficas, selos e caligrafia chinesa.",
+    "highlights": [
+      "Rongbaozhai e lojas históricas de materiais artísticos",
+      "Livros antigos, gravuras, selos e caligrafia",
+      "Fachadas tradicionais nas ruas leste e oeste"
+    ],
+    "location": "Liulichang East e West Streets, ao sul de Hepingmen",
+    "district": "Xicheng",
+    "nearestMetro": "Hepingmen, Linha 2",
+    "admissionRmb": "Gratuita; compras à parte",
+    "hours": "Rua aberta; confirme o horário de cada loja especializada",
+    "duration": "1–2 horas",
+    "fit": "Pode prolongar a caminhada de Dashilar no dia 25, mas apenas se houver interesse específico por caligrafia, livros ou antiguidades.",
+    "bestTime": "Durante o horário comercial, preferencialmente no meio da manhã ou da tarde.",
+    "officialSource": {
+      "label": "Governo de Pequim — Rua Cultural Liulichang",
+      "url": "https://english.beijing.gov.cn/travellinginbeijing/shopping/202006/t20200629_1934852.html"
+    }
+  },
+  {
+    "id": "sanlitun",
+    "name": "Sanlitun e Taikoo Li",
+    "chinese": "三里屯太古里",
+    "category": "Moda e vida noturna",
+    "coords": [39.9335514, 116.4481984],
+    "images": [
+      {
+        "file": "Taikoo Li Sanlitun South (20200808170437).jpg",
+        "credit": "N509FZ",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "Central square of Taikoo Li Sanlitun South (20200808171717).jpg",
+        "credit": "N509FZ",
+        "license": "CC BY-SA 4.0"
+      },
+      {
+        "file": "West Zone of Taikoo Li Sanlitun Beijing (cropped).jpg",
+        "credit": "Charlie fong",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
+    "summary": "O principal distrito de moda e vida noturna de Pequim combina centros comerciais ao ar livre, lojas-conceito, restaurantes, cafés e bares em torno de Sanlitun Road e do Estádio dos Trabalhadores.",
+    "why": "Mostra a face cosmopolita e contemporânea da capital, mas tem pouca relação com a Pequim histórica. É a melhor escolha moderna depois de Wangfujing para quem procura moda, gastronomia e movimento noturno, não uma parada essencial para uma primeira visita curta.",
+    "highlights": [
+      "Taikoo Li e lojas-conceito internacionais",
+      "Restaurantes, cafés e bares para o fim do dia",
+      "Arquitetura comercial aberta e público jovem"
+    ],
+    "location": "Sanlitun Road e entorno do Estádio dos Trabalhadores",
+    "district": "Chaoyang",
+    "nearestMetro": "Tuanjiehu, Linha 10; confirme a entrada mais conveniente no Baidu Maps",
+    "admissionRmb": "Gratuita; consumo à parte",
+    "hours": "Área aberta; horários variam por loja, restaurante e bar",
+    "duration": "2–3 horas",
+    "fit": "Use apenas para jantar no dia 26, depois de retornar de Mutianyu e descansar no Jialong. A saída é opcional e deve ser cortada se a Muralha atrasar ou cansar.",
+    "bestTime": "Fim da tarde e noite, quando lojas, restaurantes e bares estão mais ativos.",
+    "officialSource": {
+      "label": "Governo de Pequim — áreas comerciais",
+      "url": "https://english.beijing.gov.cn/travellinginbeijing/commercialareas/"
+    }
+  },
+  {
+    "id": "panjiayuan-market",
+    "name": "Mercado de Panjiayuan",
+    "chinese": "潘家园旧货市场",
+    "category": "Mercado de antiguidades",
+    "coords": [39.8739206, 116.4521884],
+    "images": [
+      {
+        "file": "Panjiayuan Market Beijing China.jpg",
+        "credit": "Ben Tilley",
+        "license": "CC BY-SA 3.0"
+      },
+      {
+        "file": "2016-09-10 Beijing Panjiayuan market 06 anagoria.jpg",
+        "credit": "Anagoria",
+        "license": "CC BY 3.0"
+      },
+      {
+        "file": "2016-09-10 Beijing Panjiayuan market 43 anagoria.jpg",
+        "credit": "Anagoria",
+        "license": "CC BY 3.0"
+      }
+    ],
+    "summary": "O grande mercado de pulgas e antiguidades reúne bancas de artesanato, objetos decorativos, livros, cartazes, pedras, mobiliário, lembranças e itens colecionáveis. A experiência está tanto na procura quanto na compra.",
+    "why": "É o mercado mais singular desta lista, mas exige interesse específico e um desvio para o sudeste. A procedência e a antiguidade dos objetos não devem ser presumidas; visite pelo ambiente, pela variedade e pelo ritual de garimpar, não como garantia de encontrar peças históricas autênticas.",
+    "highlights": [
+      "Área de bancas, artesanato e objetos colecionáveis",
+      "Cartazes, livros, pedras, cerâmica e decoração",
+      "Mercado noturno em datas específicas"
+    ],
+    "location": "18 Huaweili Road, junto ao Terceiro Anel Sudeste",
+    "district": "Chaoyang",
+    "nearestMetro": "Panjiayuan, Linha 10",
+    "admissionRmb": "Gratuita",
+    "hours": "Operação varia por setor; sessões noturnas especiais devem ser confirmadas no calendário oficial",
+    "duration": "1,5–3 horas",
+    "fit": "Só inclua se compras, artesanato ou mercados forem uma prioridade. O sábado costuma oferecer a experiência mais completa, mas compete diretamente com Mutianyu nesta viagem.",
+    "bestTime": "Manhã de fim de semana para maior variedade de bancas; confirme antecipadamente eventuais sessões noturnas.",
+    "officialSource": {
+      "label": "Governo de Pequim — Mercado de Panjiayuan",
+      "url": "https://english.beijing.gov.cn/specials/beijinglifeonthesubway/landmarksalongthesubwaylines/line10/202206/t20220624_2750413.html"
+    }
+  }
+]

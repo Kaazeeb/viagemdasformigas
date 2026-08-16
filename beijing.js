@@ -67,15 +67,24 @@
       return;
     }
 
+    guide = {
+      ...guide,
+      streets: (guide.streets || []).map(hydrateStreetImages),
+    };
+
     const attractions = guide.attractions || [];
+    const streets = guide.streets || [];
     const total = $("[data-attraction-total]");
     const photoTotals = $$('[data-photo-total]');
     if (total) total.textContent = String(attractions.length);
-    const photoCount = String(attractions.reduce((sum, attraction) => sum + (attraction.images?.length || 0), 0));
+    const photoCount = String(
+      [...attractions, ...streets].reduce((sum, item) => sum + (item.images?.length || 0), 0),
+    );
     photoTotals.forEach((item) => { item.textContent = photoCount; });
 
     renderHero();
     renderAttractions();
+    renderStreets();
     renderReferenceMaps();
     renderHotels();
     renderMetroDrawer();
@@ -86,20 +95,22 @@
     setupLightbox();
     await ensureLeaflet();
     setupMap();
-    openDeepLinkedAttraction();
+    window.addEventListener("hashchange", openDeepLinkedCard);
+    openDeepLinkedCard();
   }
 
   async function resolveGuide() {
     if (window.BEIJING_GUIDE) return window.BEIJING_GUIDE;
     if (window.BEIJING_GUIDE_READY) return window.BEIJING_GUIDE_READY;
 
-    const [attractions, logistics, media, metro] = await Promise.all([
+    const [attractions, streets, logistics, media, metro] = await Promise.all([
       fetch("beijing-attractions.json").then(checkResponse),
+      fetch("beijing-streets.json").then(checkResponse),
       fetch("beijing-logistics.json").then(checkResponse),
       fetch("beijing-media.json").then(checkResponse),
       fetch("beijing-metro.json").then(checkResponse),
     ]);
-    return mergeGuide(attractions, logistics, media, metro);
+    return mergeGuide(attractions, streets, logistics, media, metro);
   }
 
   function checkResponse(response) {
@@ -120,7 +131,7 @@
     });
   }
 
-  function mergeGuide(attractions, logistics, media, metro = {}) {
+  function mergeGuide(attractions, streets, logistics, media, metro = {}) {
     const byAttraction = media.imagesByAttraction || {};
     const imageKeys = {
       "forbidden-city": "cidade-proibida",
@@ -151,6 +162,7 @@
         ...item,
         images: byAttraction[imageKeys[item.id]]?.images || [],
       })),
+      streets,
       referenceMaps: Object.values(media.referenceMaps || {}),
       sources: [...(logistics.sources || []), ...(media.sources || []), ...(metro.sources || [])],
     };
@@ -169,7 +181,7 @@
   }
 
   function normalizeImage(image = {}) {
-    const thumb = image.thumb || image.src || image.url || image.preview || "";
+    const thumb = image.thumb || image.local || image.src || image.url || image.preview || "";
     return {
       file: image.file || "",
       local: image.local || "",
@@ -182,6 +194,24 @@
       credit: image.credit || image.author || "Ver página do arquivo",
       license: image.license || "Licença na página do arquivo",
     };
+  }
+
+  function hydrateStreetImages(street) {
+    const images = (street.images || []).map((image, index, collection) => {
+      const local = image.local || `assets/images/streets/${street.id}/${String(index + 1).padStart(2, "0")}.webp`;
+      const filePage = image.file
+        ? `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(image.file)}`
+        : local;
+      return {
+        ...image,
+        local,
+        thumb: image.thumb || local,
+        page: image.page || filePage,
+        caption: image.caption || `${street.name}: foto ${index + 1}.`,
+        alt: image.alt || `Vista de ${street.name} em Pequim, foto ${index + 1} de ${collection.length}.`,
+      };
+    });
+    return { ...street, images };
   }
 
   function lightboxImageSource(image) {
@@ -241,6 +271,95 @@
       const mediaButton = event.target.closest("[data-open-media]");
       if (mediaButton) openLightbox(Number(mediaButton.dataset.openMedia), mediaButton.dataset.mediaGroup);
     });
+  }
+
+  function renderStreets() {
+    const target = $("[data-beijing-streets]");
+    if (!target) return;
+    target.innerHTML = (guide.streets || []).map(renderStreetCard).join("");
+
+    target.addEventListener("click", (event) => {
+      const expandButton = event.target.closest("[data-attraction-expand]");
+      if (expandButton) toggleAttraction(expandButton);
+    });
+  }
+
+  function renderStreetCard(street, index) {
+    const images = street.images || [];
+    const group = `street-${street.id}`;
+    const streetMediaIndices = images.map(registerMedia).filter((mediaIndex) => mediaIndex >= 0);
+    const previewImages = images.slice(0, 3);
+    mediaGroups.set(group, streetMediaIndices);
+    const media = previewImages.length
+      ? previewImages.map((image, imageIndex) => renderAttractionImage(image, imageIndex, streetMediaIndices[imageIndex], group)).join("")
+      : `<div class="street-visual" aria-hidden="true">
+          <span>${escapeHtml(street.chinese?.slice(0, 1) || "街")}</span>
+          <small>${escapeHtml(street.chinese || "北京街巷")}</small>
+          <b>${String(index + 1).padStart(2, "0")}</b>
+        </div>`;
+    const source = street.officialSource || {};
+    return `
+      <article class="beijing-attraction-card beijing-street-card" id="rua-${escapeAttr(street.id)}">
+        <div class="attraction-media street-media photo-count-${previewImages.length}">${media}</div>
+        <div class="attraction-content">
+          <div class="attraction-topline">
+            <span class="attraction-number">Prioridade ${String(index + 1).padStart(2, "0")}</span>
+            <span class="attraction-category">${escapeHtml(street.category || "Rua de Pequim")}</span>
+          </div>
+          <h3>${escapeHtml(street.name)}</h3>
+          <p class="attraction-summary">${escapeHtml(street.summary)}</p>
+          <dl class="attraction-facts">
+            ${fact("Custo", street.admissionRmb)}
+            ${fact("Horário", street.hours)}
+            ${fact("Tempo", street.duration)}
+            ${fact("Distrito", street.district)}
+          </dl>
+          <div class="attraction-action-row">
+            <button class="attraction-expand" type="button" data-attraction-expand aria-expanded="false" aria-controls="detalhe-rua-${escapeAttr(street.id)}">
+              Guia completo <span aria-hidden="true">＋</span>
+            </button>
+            ${streetMediaIndices.length ? `
+              <button class="attraction-gallery-launch" type="button" data-open-media="${streetMediaIndices[0]}" data-media-group="${escapeAttr(group)}" aria-label="Abrir as ${streetMediaIndices.length} fotos de ${escapeAttr(street.name)}">
+                <b>${streetMediaIndices.length}</b> fotos <span aria-hidden="true">↗</span>
+              </button>` : ""}
+          </div>
+          <div class="attraction-detail" id="detalhe-rua-${escapeAttr(street.id)}" hidden>
+            <div class="attraction-detail-grid">
+              <section>
+                <h4>Por que vale a visita</h4>
+                <p>${escapeHtml(street.why)}</p>
+              </section>
+              <section>
+                <h4>Como encaixar</h4>
+                <p>${escapeHtml(street.fit)}</p>
+              </section>
+              <section>
+                <h4>Onde fica</h4>
+                <p>${escapeHtml(street.location)}. ${escapeHtml(street.nearestMetro)}</p>
+              </section>
+              <section>
+                <h4>Melhor momento</h4>
+                <p>${escapeHtml(street.bestTime)}</p>
+              </section>
+            </div>
+            ${images.length ? `
+              <div class="attraction-gallery-header">
+                <h4>Galeria da rua</h4>
+                <span>${images.length} fotos</span>
+              </div>
+              <div class="attraction-gallery-strip" role="group" aria-label="Fotos de ${escapeAttr(street.name)}">
+                ${images.map((image, imageIndex) => renderGalleryThumb(image, streetMediaIndices[imageIndex], group, imageIndex)).join("")}
+              </div>` : ""}
+            <ul class="attraction-notes">
+              ${(street.highlights || []).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+            </ul>
+            <div class="attraction-links">
+              ${source.url ? externalLink(source.url, `${source.label || "Fonte oficial"} ↗`) : ""}
+              <a href="#mapa" data-focus-marker="street:${escapeAttr(street.id)}">Localizar no mapa ↓</a>
+            </div>
+          </div>
+        </div>
+      </article>`;
   }
 
   function renderAttractionCard(attraction, index) {
@@ -361,7 +480,7 @@
       button.addEventListener("click", () => {
         const filter = button.dataset.beijingFilter;
         buttons.forEach((item) => item.classList.toggle("is-active", item === button));
-        $$(".beijing-attraction-card").forEach((card) => {
+        $$('[data-beijing-attractions] .beijing-attraction-card').forEach((card) => {
           const categories = card.dataset.categories.split(" ");
           card.hidden = filter !== "all" && !categories.includes(filter);
         });
@@ -369,8 +488,8 @@
     });
   }
 
-  function openDeepLinkedAttraction() {
-    if (!location.hash.startsWith("#atracao-")) return;
+  function openDeepLinkedCard() {
+    if (!location.hash.startsWith("#atracao-") && !location.hash.startsWith("#rua-")) return;
     const card = $(location.hash);
     const button = card && $("[data-attraction-expand]", card);
     if (button) toggleAttraction(button, true);
@@ -827,6 +946,7 @@
 
     const groups = {
       attractions: L.layerGroup().addTo(map),
+      streets: L.layerGroup().addTo(map),
       hotels: L.layerGroup().addTo(map),
       metro: L.layerGroup().addTo(map),
       stations: L.layerGroup().addTo(map),
@@ -991,6 +1111,15 @@
       subtitle: item.district,
       coords: item.coords,
     }));
+    const streets = (guide.streets || []).map((item, index) => ({
+      key: `street:${item.id}`,
+      id: item.id,
+      type: "streets",
+      number: index + 1,
+      name: item.name,
+      subtitle: `${item.category} · ${item.district}`,
+      coords: item.coords,
+    }));
     const stations = (guide.stations || []).map((item) => ({
       key: `station:${item.id || slugify(item.name)}`,
       type: "stations",
@@ -1021,12 +1150,12 @@
       subtitle: item.code || "Aeroporto",
       coords: item.coords,
     }));
-    return [...attractions, ...hotels, ...metro, ...stations, ...airports];
+    return [...attractions, ...streets, ...hotels, ...metro, ...stations, ...airports];
   }
 
   function mapIcon(location) {
-    const className = location.type === "stations" ? "station" : location.type === "metro" ? "metro" : location.type === "hotels" ? "hotel" : location.type === "airports" ? "airport" : "";
-    const label = location.type === "attractions" ? location.number : location.type === "hotels" ? "H" : location.type === "metro" ? "M" : location.type === "stations" ? "站" : "✈";
+    const className = location.type === "streets" ? "street" : location.type === "stations" ? "station" : location.type === "metro" ? "metro" : location.type === "hotels" ? "hotel" : location.type === "airports" ? "airport" : "";
+    const label = location.type === "attractions" ? location.number : location.type === "streets" ? "街" : location.type === "hotels" ? "H" : location.type === "metro" ? "M" : location.type === "stations" ? "站" : "✈";
     const iconSize = location.type === "metro" ? 18 : 34;
     return L.divIcon({
       className: "",
@@ -1036,21 +1165,23 @@
   }
 
   function mapPopup(location) {
-    const attractionLink = location.type === "attractions"
+    const cardLink = location.type === "attractions"
       ? `<a href="#atracao-${escapeAttr(location.id)}">Abrir ficha ↓</a>`
-      : "";
+      : location.type === "streets"
+        ? `<a href="#rua-${escapeAttr(location.id)}">Abrir ficha da rua ↓</a>`
+        : "";
     const [lat, lon] = location.coords;
     const externalLink = `<a href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=16/${lat}/${lon}" target="_blank" rel="noopener noreferrer">Abrir no OpenStreetMap ↗</a>`;
-    return `<div class="map-popup"><strong>${escapeHtml(location.name)}</strong><span>${escapeHtml(location.subtitle || "")}</span>${attractionLink}${externalLink}</div>`;
+    return `<div class="map-popup"><strong>${escapeHtml(location.name)}</strong><span>${escapeHtml(location.subtitle || "")}</span>${cardLink}${externalLink}</div>`;
   }
 
   function renderMapLocationIndex(locations, external) {
     const target = $("[data-map-location-index]");
     if (!target) return;
-    const labels = { attractions: "Atrações", hotels: "Hotéis da watchlist", stations: "Estações ferroviárias", airports: "Aeroportos" };
+    const labels = { attractions: "Atrações", streets: "Ruas e mercados", hotels: "Hotéis da watchlist", stations: "Estações ferroviárias", airports: "Aeroportos" };
     target.innerHTML = Object.entries(labels).map(([type, label], groupIndex) => {
       const items = locations.filter((location) => location.type === type).map((location) => {
-      const prefix = location.type === "attractions" ? String(location.number).padStart(2, "0") : location.type === "hotels" ? "H" : location.type === "metro" ? "M" : location.type === "stations" ? "站" : "✈";
+      const prefix = location.type === "attractions" ? String(location.number).padStart(2, "0") : location.type === "streets" ? `R${String(location.number).padStart(2, "0")}` : location.type === "hotels" ? "H" : location.type === "metro" ? "M" : location.type === "stations" ? "站" : "✈";
       if (external) {
         const [lat, lon] = location.coords;
         return `<a href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=15/${lat}/${lon}" target="_blank" rel="noopener noreferrer"><b>${prefix}</b> ${escapeHtml(location.name)}</a>`;
@@ -1068,6 +1199,9 @@
     (guide.attractions || []).forEach((item) => {
       if (item.officialSource?.url) sources.push(item.officialSource);
     });
+    (guide.streets || []).forEach((item) => {
+      if (item.officialSource?.url) sources.push(item.officialSource);
+    });
     (guide.sources || []).forEach((item) => {
       if (typeof item === "string") sources.push({ label: item, url: item });
       else if (item?.url) sources.push(item);
@@ -1080,6 +1214,7 @@
 
     const images = [];
     (guide.attractions || []).forEach((item) => images.push(...(item.images || [])));
+    (guide.streets || []).forEach((item) => images.push(...(item.images || [])));
     images.push(...(guide.referenceMaps || []));
     const uniqueImages = uniqueBy(images.map(normalizeImage), (item) => item.page);
     if (creditTarget) {

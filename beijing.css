@@ -495,6 +495,106 @@
   gap: 22px;
 }
 
+.beijing-streets {
+  background:
+    linear-gradient(135deg, rgba(105, 31, 29, 0.035), transparent 34%),
+    #eee7da;
+}
+
+.beijing-street-note {
+  display: flex;
+  gap: 12px;
+  margin: -4px 0 28px;
+  padding: 14px 16px;
+  border-left: 2px solid var(--bj-red);
+  color: #5b635d;
+  background: rgba(255, 253, 248, 0.68);
+}
+
+.beijing-street-note > span {
+  color: var(--bj-red);
+  font-family: var(--serif);
+  font-size: 22px;
+}
+
+.beijing-street-note p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.street-media {
+  position: relative;
+}
+
+.street-visual {
+  position: relative;
+  display: grid;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  overflow: hidden;
+  place-items: center;
+  color: #f2d6a5;
+  background:
+    linear-gradient(90deg, transparent 49.7%, rgba(239, 202, 142, 0.12) 50%, transparent 50.3%),
+    linear-gradient(rgba(239, 202, 142, 0.07) 1px, transparent 1px),
+    #5f1d1b;
+  background-size: auto, 100% 42px, auto;
+}
+
+.street-visual::before,
+.street-visual::after {
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  border: 1px solid rgba(239, 202, 142, 0.24);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.street-visual::before {
+  top: -47px;
+  left: -47px;
+}
+
+.street-visual::after {
+  right: -47px;
+  bottom: -47px;
+}
+
+.street-visual span {
+  font-family: var(--serif);
+  font-size: clamp(112px, 32vw, 220px);
+  line-height: 1;
+  text-shadow: 0 14px 36px rgba(24, 6, 5, 0.25);
+}
+
+.street-visual small,
+.street-visual b {
+  position: absolute;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.street-visual small {
+  bottom: 18px;
+  left: 18px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.street-visual b {
+  top: 18px;
+  right: 18px;
+  color: #efca8e;
+}
+
+.beijing-street-card .attraction-category {
+  max-width: 52%;
+  text-align: right;
+}
+
 .beijing-media-note {
   display: flex;
   gap: 12px;
@@ -966,6 +1066,10 @@
 
 .key-hotel {
   background: #6d3b78;
+}
+
+.key-street {
+  background: #0b6f78;
 }
 
 .key-metro {
@@ -1543,6 +1647,10 @@
 .beijing-div-icon.hotel {
   background: #6d3b78;
   border-radius: 5px 5px 5px 1px;
+}
+
+.beijing-div-icon.street {
+  background: #0b6f78;
 }
 
 .beijing-div-icon.metro {
@@ -2164,7 +2272,7 @@
   bottom: calc(10px + env(safe-area-inset-bottom));
   left: 10px;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   padding: 7px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 18px;
