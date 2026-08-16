@@ -5,122 +5,23 @@
       "checkIn": "2026-09-23",
       "checkOut": "2026-09-27",
       "nights": 4,
-      "rooms": 1,
-      "adults": 2,
-      "children": 0,
+      "rooms": 2,
+      "adults": 4,
+      "children": 2,
       "currency": "CNY",
       "maximumNightlyRoomRate": 500,
       "breakfastRequired": true
     },
-    "checkedAt": "2026-08-05T08:03:57Z",
-    "searchUrl": "https://www.trip.com/hotels/list?city=1&checkin=2026%2F09%2F23&checkout=2026%2F09%2F27&optionId=1&optionType=City&directSearch=true&adult=2&children=0&crn=1&curr=CNY",
-    "result": "Nenhum hotel pôde ser confirmado de forma auditável com disponibilidade nas datas pedidas, diária de até CNY 500, café da manhã incluído, impostos e política de cancelamento.",
+    "checkedAt": "2026-08-16T00:00:00Z",
+    "searchUrl": "https://www.trip.com/hotels/list?city=1&checkin=2026%2F09%2F23&checkout=2026%2F09%2F27&optionId=1&optionType=City&directSearch=true&adult=4&children=2&crn=2&curr=CNY",
+    "result": "Nenhum hotel pôde ser confirmado de forma auditável com disponibilidade nas datas pedidas, diária de até CNY 500, café da manhã incluído, impostos e política de cancelamento. As oito opções centrais adicionadas têm duas camas e política infantil expostas, mas não preço para a estadia.",
     "limitation": "As páginas públicas rastreáveis do Trip.com ignoraram as datas de 23 a 27 de setembro de 2026 e mostraram apenas preços-piso para uma janela móvel de aproximadamente sete dias em agosto. As opções de quarto apareceram como ‘Check availability’. Por isso, os valores HKD abaixo são somente pisos observados em outras datas, não cotações da estadia solicitada. A indicação de café mostra que o hotel oferece café da manhã, mas não prova que ele esteja incluído em uma tarifa elegível.",
-    "usePolicy": "Exibir os hotéis somente como lista de acompanhamento. Antes da reserva, abrir o link do Trip.com, reaplicar 23–27/09/2026, 1 quarto, 2 adultos, 0 crianças e confirmar moeda CNY, café incluído, total com impostos e cancelamento.",
+    "usePolicy": "Exibir os hotéis somente como lista de acompanhamento. Antes da reserva, abrir o link do Trip.com, reaplicar 23–27/09/2026, 2 quartos, 4 adultos, 2 crianças e confirmar moeda CNY, café incluído, total com impostos e cancelamento.",
     "holidayNotice": "A estadia coincide parcialmente com o feriado oficial chinês do Festival do Meio do Outono, de 25 a 27 de setembro de 2026; disponibilidade e tarifas podem mudar rapidamente."
   },
   "hotels": [
     {
-      "status": "watchlist_unconfirmed",
-      "tripHotelId": "608516",
-      "coordinates": { "lat": 39.96075, "lng": 116.45635 },
-      "name": "CitiGO Hotel Sanyuanqiao Beijing",
-      "district": "Chaoyang",
-      "area": "Sanyuanqiao / China International Exhibition Center",
-      "address": "Building 17, Courtyard A5, Shuguang Xili, Chaoyang District, Beijing 100028",
-      "nearestTransit": [
-        {
-          "name": "Sanyuanqiao",
-          "distanceMeters": 270,
-          "lines": ["10", "12", "Capital Airport Express"]
-        }
-      ],
-      "rating": {
-        "score": 9.6,
-        "scale": 10,
-        "reviewCount": 14491
-      },
-      "breakfastOffered": "Western and Chinese",
-      "publicPageOccupancy": {
-        "rooms": 1,
-        "adults": 2,
-        "children": 0
-      },
-      "displayedFloor": {
-        "amount": 209,
-        "currency": "HKD",
-        "dateWindow": "2026-08-06/2026-08-12",
-        "taxesIncluded": null,
-        "breakfastIncluded": null,
-        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
-      },
-      "requestedStayVerification": {
-        "available": null,
-        "cnyNightlyRate": null,
-        "atOrBelowCny500": null,
-        "breakfastIncludedInRate": null,
-        "taxesIncluded": null,
-        "cancellationPolicy": null,
-        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
-      },
-      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-608516/ibis-hotel-beijing-sanyuan-bridge/",
-      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=608516&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
-      "checkedAt": "2026-08-05T08:03:57Z"
-    },
-    {
-      "status": "watchlist_unconfirmed",
-      "tripHotelId": "134514068",
-      "coordinates": { "lat": 39.93965, "lng": 116.44610 },
-      "name": "Jingshang Hotel (Beijing Sanlitun Workers’ Stadium Metro)",
-      "district": "Chaoyang",
-      "area": "Sanlitun / Workers’ Stadium",
-      "address": "Building 1, Courtyard 26A, Dongzhimen Outer Street, Chaoyang District, Beijing",
-      "nearestTransit": [
-        {
-          "name": "Workers’ Stadium",
-          "distanceMeters": 950,
-          "lines": []
-        },
-        {
-          "name": "Dongzhimen",
-          "distanceMeters": 1000,
-          "lines": ["2", "13", "Capital Airport Express"]
-        }
-      ],
-      "rating": {
-        "score": 9.6,
-        "scale": 10,
-        "reviewCount": 352
-      },
-      "breakfastOffered": "Chinese",
-      "publicPageOccupancy": {
-        "rooms": 1,
-        "adults": 2,
-        "children": 0
-      },
-      "displayedFloor": {
-        "amount": 137,
-        "currency": "HKD",
-        "dateWindow": "2026-08-06/2026-08-12",
-        "taxesIncluded": null,
-        "breakfastIncluded": null,
-        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
-      },
-      "requestedStayVerification": {
-        "available": null,
-        "cnyNightlyRate": null,
-        "atOrBelowCny500": null,
-        "breakfastIncludedInRate": null,
-        "taxesIncluded": null,
-        "cancellationPolicy": null,
-        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
-      },
-      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-134514068/jingshang-hotel/",
-      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=134514068&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
-      "checkedAt": "2026-08-05T08:03:57Z"
-    },
-    {
-      "status": "watchlist_unconfirmed",
+      "status": "rate_reported",
       "tripHotelId": "118834872",
       "coordinates": { "lat": 39.89620, "lng": 116.32110 },
       "name": "Country Inn & Suites by Radisson, Beijing West Station North Square Hotel",
@@ -139,7 +40,22 @@
         "scale": 10,
         "reviewCount": 2182
       },
-      "breakfastOffered": "Chinese buffet",
+      "breakfastOffered": "Chinese buffet. Tarifa informada inclui 3 cafés para os 2 quartos; confirme os demais cafés necessários.",
+      "confirmedOffers": [
+        {
+          "room": "Twin",
+          "nightlyRateCny": 504,
+          "beds": "2 camas de solteiro de 1,2 m",
+          "breakfastsIncluded": 2,
+          "extraBedOrCrib": "Sem cama extra nem berço"
+        },
+        {
+          "room": "Double Bed",
+          "nightlyRateCny": 392,
+          "beds": "1 cama de casal de 1,5 m",
+          "breakfastsIncluded": 1
+        }
+      ],
       "publicPageOccupancy": {
         "rooms": 1,
         "adults": 2,
@@ -154,270 +70,199 @@
         "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
       },
       "requestedStayVerification": {
-        "available": null,
-        "cnyNightlyRate": null,
-        "atOrBelowCny500": null,
+        "available": true,
+        "cnyNightlyRate": 896,
+        "atOrBelowCny500": false,
         "breakfastIncludedInRate": null,
         "taxesIncluded": null,
         "cancellationPolicy": null,
-        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
+        "reason": "Tarifas informadas pelo viajante: ¥504 Twin + ¥392 Double Bed = ¥896/noite para 2 quartos. Incluem 3 cafés no total; impostos, cancelamento e café adicional precisam ser confirmados."
       },
       "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-118834872/country-inn-suites-by-radissonbeijing-west-station-north-square-hotel/",
-      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=118834872&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=118834872&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=4&children=2&crn=2&curr=CNY",
       "checkedAt": "2026-08-05T08:03:57Z"
     },
     {
-      "status": "watchlist_unconfirmed",
-      "tripHotelId": "429509",
-      "coordinates": { "lat": 39.91475, "lng": 116.36660 },
-      "name": "Le Joy Hotel",
+      "status": "rate_reported",
+      "tripHotelId": "1521344",
+      "coordinates": { "lat": 39.9247, "lng": 116.4346 },
+      "name": "Homeinn Plus Hotel (Beijing Chaoyangmen Subway Station)",
+      "district": "Dongcheng",
+      "area": "Chaoyangmen / Second Ring Road",
+      "address": "Building 1, No. 14 Courtyard, Cangnan Hutong, Chaoyangmen Inner North Xiao Street, Dongcheng District, Beijing 100010",
+      "nearestTransit": [{ "name": "Chaoyangmen", "distanceMeters": 570, "lines": ["2", "6"] }],
+      "rating": { "score": 9.6, "scale": 10, "reviewCount": 2022 },
+      "breakfastOffered": "Twin inclui café para duas pessoas. Para o quarto Double Bed, a inclusão de café não foi informada.",
+      "confirmedOffers": [
+        {
+          "room": "Twin",
+          "nightlyRateCny": 578,
+          "beds": "2 camas de solteiro",
+          "breakfastsIncluded": 2,
+          "extraBedOrCrib": "Sem berço"
+        },
+        {
+          "room": "Double Bed",
+          "nightlyRateCny": 499,
+          "beds": "1 cama de casal de 1,5 m",
+          "breakfastNote": "café a confirmar"
+        }
+      ],
+      "twinBedOption": "Guestroom (2 beds), 18 m², ou 2-bed Room com janela, 18–20 m²; ambas com 2 camas de solteiro.",
+      "childrenPolicy": "Crianças de 0 a 17 anos ficam grátis se não precisarem de cama extra. Não há berço nem cama extra.",
+      "requestedStayVerification": { "available": true, "cnyNightlyRate": 1077, "atOrBelowCny500": false, "breakfastIncludedInRate": null, "taxesIncluded": null, "cancellationPolicy": null, "reason": "Tarifas informadas pelo viajante: ¥578 Twin + ¥499 Double Bed = ¥1.077/noite para 2 quartos. Café para 2 pessoas confirmado somente no Twin; impostos, cancelamento e café do Double Bed precisam ser confirmados." },
+      "propertyUrl": "https://www.trip.com/hotels/beijing-hotel-detail-1521344/homeinn-plus-hotel/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=1521344&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=4&children=2&crn=2&curr=CNY",
+      "checkedAt": "2026-08-16T00:00:00Z"
+    },
+    {
+      "status": "rate_reported",
+      "tripHotelId": "482983",
+      "coordinates": { "lat": 39.8855, "lng": 116.3795 },
+      "name": "Qianmen Jianguo Hotel",
       "district": "Xicheng",
-      "area": "Xidan / Financial Street",
-      "address": "Xidan Joy City, 131B Xidan North Street, Xicheng District, Beijing 100032",
-      "nearestTransit": [
+      "area": "Qianmen / Hufangqiao",
+      "address": "No. 175 Yong'an Road, Xicheng District, Beijing 100050",
+      "nearestTransit": [{ "name": "Hufangqiao", "distanceMeters": 510, "lines": ["7"] }],
+      "rating": { "score": 9.2, "scale": 10, "reviewCount": 3161 },
+      "breakfastOffered": "Tarifa Twin de ¥598 inclui 2 cafés. As demais opções precisam ter a quantidade de cafés confirmada.",
+      "confirmedOffers": [
         {
-          "name": "Xidan",
-          "distanceMeters": 350,
-          "lines": ["1", "4"]
-        }
-      ],
-      "rating": {
-        "score": 9.5,
-        "scale": 10,
-        "reviewCount": 12150
-      },
-      "breakfastOffered": "Western and Chinese",
-      "publicPageOccupancy": {
-        "rooms": 1,
-        "adults": 2,
-        "children": 0
-      },
-      "displayedFloor": {
-        "amount": 348,
-        "currency": "HKD",
-        "dateWindow": "2026-08-06/2026-08-12",
-        "taxesIncluded": null,
-        "breakfastIncluded": null,
-        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
-      },
-      "requestedStayVerification": {
-        "available": null,
-        "cnyNightlyRate": null,
-        "atOrBelowCny500": null,
-        "breakfastIncludedInRate": null,
-        "taxesIncluded": null,
-        "cancellationPolicy": null,
-        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
-      },
-      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-429509/joy-city-hotel-and-apartment/",
-      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=429509&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
-      "checkedAt": "2026-08-05T08:03:57Z"
-    },
-    {
-      "status": "watchlist_unconfirmed",
-      "tripHotelId": "80920781",
-      "coordinates": { "lat": 40.07185, "lng": 116.58390 },
-      "name": "VOYAGE INTERNATIONAL HOTEL (Capital Airport New International Exhibition Store)",
-      "district": "Shunyi",
-      "area": "Tianzhu / Capital Airport",
-      "address": "No. 1 Fuqian 2nd Street, Tianzhu, Shunyi District, Beijing",
-      "nearestTransit": [
-        {
-          "name": "China International Exhibition Center",
-          "distanceMeters": 3400,
-          "lines": ["15"]
+          "room": "Twin sem berço",
+          "nightlyRateCny": 598,
+          "beds": "2 camas de solteiro de 1,1 m",
+          "breakfastsIncluded": 2,
+          "extraBedOrCrib": "Sem berço"
         },
         {
-          "name": "Capital Airport Terminal 2",
-          "distanceMeters": 3600,
-          "lines": ["Capital Airport Express"]
-        }
-      ],
-      "airportShuttle": "Free PEK airport shuttle advertised by the property",
-      "rating": {
-        "score": 9.8,
-        "scale": 10,
-        "reviewCount": 24714
-      },
-      "breakfastOffered": "Western, Chinese, Asian and vegetarian",
-      "publicPageOccupancy": {
-        "rooms": 1,
-        "adults": 2,
-        "children": 0
-      },
-      "displayedFloor": {
-        "amount": 303,
-        "currency": "HKD",
-        "dateWindow": "2026-08-03/2026-08-09",
-        "taxesIncluded": null,
-        "breakfastIncluded": null,
-        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
-      },
-      "requestedStayVerification": {
-        "available": null,
-        "cnyNightlyRate": null,
-        "atOrBelowCny500": null,
-        "breakfastIncludedInRate": null,
-        "taxesIncluded": null,
-        "cancellationPolicy": null,
-        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
-      },
-      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-80920781/voyage-international-hotel/",
-      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=80920781&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
-      "checkedAt": "2026-08-05T08:03:57Z"
-    },
-    {
-      "status": "watchlist_unconfirmed",
-      "tripHotelId": "113612942",
-      "coordinates": { "lat": 39.52490, "lng": 116.42780 },
-      "name": "Radisson Hotel Beijing Daxing Airport",
-      "district": "Daxing",
-      "area": "Beijing Daxing International Airport",
-      "address": "Building 4, Courtyard 2, Yuanjing West 2nd Road, Daxing District, Beijing",
-      "nearestTransit": [
-        {
-          "name": "Beijing Daxing International Airport",
-          "distanceMeters": 2000,
-          "lines": ["Daxing Airport Express", "Beijing–Xiong’an intercity railway"]
-        }
-      ],
-      "airportShuttle": "Free PKX airport shuttle advertised by the property",
-      "rating": {
-        "score": 9.6,
-        "scale": 10,
-        "reviewCount": 6050
-      },
-      "breakfastOffered": "Western, Chinese and vegetarian",
-      "publicPageOccupancy": {
-        "rooms": 1,
-        "adults": 2,
-        "children": 0
-      },
-      "displayedFloor": {
-        "amount": 265,
-        "currency": "HKD",
-        "dateWindow": "2026-08-06/2026-08-12",
-        "taxesIncluded": null,
-        "breakfastIncluded": null,
-        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
-      },
-      "requestedStayVerification": {
-        "available": null,
-        "cnyNightlyRate": null,
-        "atOrBelowCny500": null,
-        "breakfastIncludedInRate": null,
-        "taxesIncluded": null,
-        "cancellationPolicy": null,
-        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
-      },
-      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-113612942/radisson-hotel-beijing-daxing-airport/",
-      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=113612942&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
-      "checkedAt": "2026-08-05T08:03:57Z"
-    },
-    {
-      "status": "watchlist_unconfirmed",
-      "tripHotelId": "129929782",
-      "coordinates": { "lat": 39.82720, "lng": 116.14510 },
-      "name": "Orange Hotel (Beijing Garden Expo Park)",
-      "district": "Fengtai",
-      "area": "Garden Expo Park",
-      "address": "Building 4, Courtyard 3, Beimiao Village North, Dongheyan, Beigong Town, Fengtai District, Beijing",
-      "nearestTransit": [
-        {
-          "name": "Zhangguozhuang",
-          "distanceMeters": 3800,
-          "lines": ["14"]
+          "room": "Twin com berço",
+          "nightlyRateCny": 648,
+          "beds": "2 camas de solteiro de 1,1 m",
+          "breakfastNote": "café a confirmar",
+          "extraBedOrCrib": "Com berço"
         },
         {
-          "name": "Garden Expo Park",
-          "distanceMeters": 4600,
-          "lines": ["14"]
+          "room": "Cama individual",
+          "nightlyRateCny": 565,
+          "beds": "1 cama individual de 1,3 m",
+          "breakfastNote": "café incluído; quantidade a confirmar"
         }
       ],
-      "locationCaveat": "Pouco prático sem táxi ou carro por aplicativo.",
-      "rating": {
-        "score": 9.7,
-        "scale": 10,
-        "reviewCount": 205
-      },
-      "breakfastOffered": "Chinese",
-      "publicPageOccupancy": {
-        "rooms": 1,
-        "adults": 2,
-        "children": 0
-      },
-      "displayedFloor": {
-        "amount": 139,
-        "currency": "HKD",
-        "dateWindow": "2026-08-05/2026-08-11",
-        "taxesIncluded": null,
-        "breakfastIncluded": null,
-        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
-      },
-      "requestedStayVerification": {
-        "available": null,
-        "cnyNightlyRate": null,
-        "atOrBelowCny500": null,
-        "breakfastIncludedInRate": null,
-        "taxesIncluded": null,
-        "cancellationPolicy": null,
-        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
-      },
-      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-129929782/orange-hotel/",
-      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=129929782&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
-      "checkedAt": "2026-08-05T08:03:57Z"
+      "twinBedOption": "Standard e Business 2-bed Room (29 m²) e Standard Business Suite (54 m²), com 2 camas de solteiro.",
+      "childrenPolicy": "Crianças de 0 a 17 anos ficam grátis se não precisarem de cama extra; berço/cama extra dependem do tipo de quarto.",
+      "requestedStayVerification": { "available": true, "cnyNightlyRate": null, "atOrBelowCny500": null, "breakfastIncludedInRate": null, "taxesIncluded": null, "cancellationPolicy": null, "reason": "Três tarifas individuais informadas pelo viajante. Escolha a combinação de 2 quartos antes de calcular o total; impostos, cancelamento e cafés não especificados precisam ser confirmados." },
+      "propertyUrl": "https://www.trip.com/hotels/beijing-hotel-detail-482983/qianmen-jianguo-hotel/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=482983&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=4&children=2&crn=2&curr=CNY",
+      "checkedAt": "2026-08-16T00:00:00Z"
+    },
+    {
+      "status": "rate_reported",
+      "tripHotelId": "21148124",
+      "coordinates": { "lat": 39.9235, "lng": 116.4400 },
+      "name": "Jialong Hotel (Beijing Chaoyangmen)",
+      "district": "Dongcheng",
+      "area": "Chaoyangmen / Second Ring Road",
+      "address": "Building B, Courtyard 75, Chaonei Street, Dongcheng District, Beijing",
+      "nearestTransit": [{ "name": "Chaoyangmen", "distanceMeters": 100, "lines": ["2", "6"] }],
+      "rating": { "score": 9.1, "scale": 10, "reviewCount": 1614 },
+      "breakfastOffered": "A tarifa Double Bed inclui café para uma pessoa; a Twin inclui café para duas pessoas.",
+      "confirmedOffers": [
+        {
+          "room": "Double Bed",
+          "nightlyRateCny": 401,
+          "beds": "1 cama de casal",
+          "breakfastsIncluded": 1,
+          "extraBedOrCrib": "Sem berço · pagar no hotel"
+        },
+        {
+          "room": "Twin",
+          "nightlyRateCny": 479,
+          "beds": "2 camas de solteiro de 1,2 m",
+          "breakfastsIncluded": 2,
+          "extraBedOrCrib": "Sem berço · pré-pago online"
+        }
+      ],
+      "twinBedOption": "Garden View Standard Room ou Business Twin Room, ambas com 2 camas de solteiro de 1,2 m.",
+      "childrenPolicy": "Sem berço. Crianças de 0 a 16 anos ficam grátis se não precisarem de cama extra; confirme a regra para as duas crianças na reserva.",
+      "displayedFloor": { "amount": 509, "currency": "CNY", "dateWindow": "piso público, data não especificada", "taxesIncluded": null, "breakfastIncluded": false, "note": "Piso público de uma diária; não é cotação para 23–27/09/2026 nem para 2 quartos." },
+      "requestedStayVerification": { "available": true, "cnyNightlyRate": 880, "atOrBelowCny500": false, "breakfastIncludedInRate": true, "taxesIncluded": null, "cancellationPolicy": null, "reason": "Tarifas informadas pelo viajante: ¥401 Double Bed com 1 café, pagamento no hotel, + ¥479 Twin com 2 camas de 1,2 m e 2 cafés, pré-pago online. Para 2 quartos: ¥880/noite e 3 cafés; sem berço. Impostos e cancelamento precisam ser confirmados." },
+      "propertyUrl": "https://www.trip.com/hotels/beijing-hotel-detail-21148124/jialong-hotel-beijing-chaoyangmen/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=21148124&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=4&children=2&crn=2&curr=CNY",
+      "checkedAt": "2026-08-16T00:00:00Z"
+    },
+    {
+      "status": "rate_reported",
+      "tripHotelId": "1736536",
+      "coordinates": { "lat": 39.8988, "lng": 116.3738 },
+      "name": "Homeinn Hotel (Beijing Xuanwumen)",
+      "district": "Xicheng",
+      "area": "Xuanwumen / Xidan",
+      "address": "No. 71 Dongheyan Alley, Xicheng District, Beijing 100052",
+      "nearestTransit": [{ "name": "Xuanwumen", "distanceMeters": 120, "lines": ["2", "4"] }],
+      "rating": { "score": 9.1, "scale": 10, "reviewCount": 747 },
+      "breakfastOffered": "A tarifa Twin informada inclui café para duas pessoas.",
+      "confirmedOffers": [
+        {
+          "room": "Twin",
+          "nightlyRateCny": 485,
+          "beds": "2 camas de solteiro de 1,2 m",
+          "breakfastsIncluded": 2,
+          "extraBedOrCrib": "Sem berço"
+        }
+      ],
+      "twinBedOption": "2-bed Room e Peaceful Sleep Zero Pressure Twin Room, com 2 camas de solteiro.",
+      "childrenPolicy": "Sem berço. Crianças de 0 a 17 anos ficam grátis se não precisarem de cama extra; cama extra varia por quarto.",
+      "displayedFloor": { "amount": 520, "currency": "CNY", "dateWindow": "piso público, data não especificada", "taxesIncluded": null, "breakfastIncluded": false, "note": "Piso público de uma diária; não é cotação para 23–27/09/2026 nem para 2 quartos." },
+      "requestedStayVerification": { "available": true, "cnyNightlyRate": 970, "atOrBelowCny500": true, "breakfastIncludedInRate": true, "taxesIncluded": null, "cancellationPolicy": null, "reason": "Tarifa informada pelo viajante: ¥485/noite por quarto Twin, com 2 camas de 1,2 m, 2 cafés e sem berço. Para 2 quartos iguais: ¥970/noite; impostos e cancelamento precisam ser confirmados." },
+      "propertyUrl": "https://www.trip.com/hotels/beijing-hotel-detail-1736536/homeinn-hotel/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=1736536&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=4&children=2&crn=2&curr=CNY",
+      "checkedAt": "2026-08-16T00:00:00Z"
+    },
+    {
+      "status": "rate_reported",
+      "tripHotelId": "2612482",
+      "coordinates": { "lat": 39.9250, "lng": 116.4168 },
+      "name": "HanTing Hotel (Beijing Longfusi Dongsi Subway Station)",
+      "district": "Dongcheng",
+      "area": "Dongsi / Longfusi",
+      "address": "No. 537 Dongsi North Street, Dongcheng District, Beijing 100010",
+      "nearestTransit": [{ "name": "Dongsi", "distanceMeters": 140, "lines": ["5", "6"] }],
+      "rating": { "score": 9.0, "scale": 10, "reviewCount": 1835 },
+      "breakfastOffered": "A tarifa Twin informada inclui café para duas pessoas.",
+      "confirmedOffers": [
+        {
+          "room": "Twin",
+          "nightlyRateCny": 673,
+          "beds": "2 camas de solteiro de 1,2 m",
+          "breakfastsIncluded": 2,
+          "extraBedOrCrib": "Sem berço"
+        }
+      ],
+      "twinBedOption": "Twin Room A, com duas camas de solteiro.",
+      "childrenPolicy": "Sem berço. Crianças de 0 a 17 anos ficam grátis se não precisarem de cama extra; não há cama extra.",
+      "displayedFloor": { "amount": 452, "currency": "CNY", "dateWindow": "piso público, data não especificada", "taxesIncluded": null, "breakfastIncluded": false, "note": "Piso público de uma diária; não é cotação para 23–27/09/2026 nem para 2 quartos." },
+      "requestedStayVerification": { "available": true, "cnyNightlyRate": 1346, "atOrBelowCny500": false, "breakfastIncludedInRate": true, "taxesIncluded": null, "cancellationPolicy": null, "reason": "Tarifa informada pelo viajante: ¥673/noite por quarto Twin, com 2 camas de 1,2 m, 2 cafés e sem berço. Para 2 quartos iguais: ¥1.346/noite; impostos e cancelamento precisam ser confirmados." },
+      "propertyUrl": "https://www.trip.com/hotels/beijing-hotel-detail-2612482/hanting-hotel/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=2612482&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=4&children=2&crn=2&curr=CNY",
+      "checkedAt": "2026-08-16T00:00:00Z"
     },
     {
       "status": "watchlist_unconfirmed",
-      "tripHotelId": "5988569",
-      "coordinates": { "lat": 39.81220, "lng": 116.45580 },
-      "name": "GreenTree Alliance Hotel (Beijing Daxing District Yizhuang Jiugong Subway Station)",
-      "district": "Daxing",
-      "area": "Jiugong / Yizhuang",
-      "address": "North Gate of Lingxiu Shanzhuang, Jiutou Road, Jiugong, Daxing District, Beijing",
-      "nearestTransit": [
-        {
-          "name": "Jiugong",
-          "distanceMeters": 900,
-          "lines": ["Yizhuang"]
-        },
-        {
-          "name": "Yizhuangqiao",
-          "distanceMeters": 2500,
-          "lines": ["Yizhuang"]
-        }
-      ],
-      "rating": {
-        "score": 9.0,
-        "scale": 10,
-        "reviewCount": 244
-      },
-      "breakfastOffered": "Chinese buffet, 07:00–09:00",
-      "publicPageOccupancy": {
-        "rooms": 1,
-        "adults": 2,
-        "children": 0
-      },
-      "displayedFloor": {
-        "amount": 102,
-        "currency": "HKD",
-        "dateWindow": "2026-08-06/2026-08-12",
-        "taxesIncluded": null,
-        "breakfastIncluded": null,
-        "note": "Preço-piso público para outras datas; não é cotação para 23–27/09/2026."
-      },
-      "requestedStayVerification": {
-        "available": null,
-        "cnyNightlyRate": null,
-        "atOrBelowCny500": null,
-        "breakfastIncludedInRate": null,
-        "taxesIncluded": null,
-        "cancellationPolicy": null,
-        "reason": "Inventário dinâmico não ficou acessível e a página pública ignorou as datas solicitadas."
-      },
-      "propertyUrl": "https://hk.trip.com/hotels/beijing-hotel-detail-5988569/greentree-alliance-hotel/",
-      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=5988569&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=2&children=0&crn=1&curr=CNY",
-      "checkedAt": "2026-08-05T08:03:57Z"
+      "tripHotelId": "90808539",
+      "coordinates": { "lat": 39.8764, "lng": 116.4218 },
+      "name": "Xingyi Hotel (Beijing Temple of Heaven Dongmen Subway Station)",
+      "district": "Dongcheng",
+      "area": "Temple of Heaven / Tiantandongmen",
+      "address": "Building 1, No. 48A, Tiantan Dongli, Dongcheng District, Beijing",
+      "nearestTransit": [{ "name": "Tiantandongmen", "distanceMeters": 690, "lines": ["5"] }],
+      "rating": { "score": 9.4, "scale": 10, "reviewCount": 2391 },
+      "breakfastOffered": "Buffet chinês disponível; confirme se está incluído na tarifa.",
+      "twinBedOption": "2-bed Room; tamanho das camas precisa ser confirmado.",
+      "childrenPolicy": "Política infantil e disponibilidade de berço precisam ser confirmadas.",
+      "requestedStayVerification": { "available": null, "cnyNightlyRate": null, "atOrBelowCny500": null, "breakfastIncludedInRate": null, "taxesIncluded": null, "cancellationPolicy": null, "reason": "Candidata perto do Temple of Heaven e a cerca de 690 m do metrô Tiantandongmen. Confirme no Trip.com a tarifa em CNY, configuração Twin, café, crianças, berço e impostos para 2 quartos." },
+      "propertyUrl": "https://www.trip.com/hotels/beijing-hotel-detail-90808539/ni-hao-jiu-dian/",
+      "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=90808539&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=4&children=2&crn=2&curr=CNY",
+      "checkedAt": "2026-08-16T00:00:00Z"
     }
   ],
   "metroStations": [
@@ -643,7 +488,7 @@
     {
       "category": "hotels",
       "title": "Revalide toda a tarifa de hotel",
-      "body": "A lista de hotéis é somente uma watchlist. No Trip.com, confirme as datas 23–27/09/2026, CNY, 1 quarto para 2 adultos, café incluído, total com impostos e política de cancelamento. Não use o piso HKD de agosto como orçamento.",
+      "body": "A lista de hotéis é somente uma watchlist. No Trip.com, confirme as datas 23–27/09/2026, CNY, 2 quartos para 4 adultos e 2 crianças, café incluído, total com impostos e política de cancelamento. Não use o piso HKD de agosto como orçamento.",
       "sourceRefs": ["trip-search-requested-dates"]
     }
   ],
@@ -845,25 +690,9 @@
       "title": "Trip.com Beijing hotel search, requested dates and occupancy",
       "publisher": "Trip.com",
       "type": "commercial_dynamic",
-      "url": "https://www.trip.com/hotels/list?city=1&checkin=2026%2F09%2F23&checkout=2026%2F09%2F27&optionId=1&optionType=City&directSearch=true&adult=2&children=0&crn=1&curr=CNY",
-      "checkedAt": "2026-08-05T08:03:57Z",
+      "url": "https://www.trip.com/hotels/list?city=1&checkin=2026%2F09%2F23&checkout=2026%2F09%2F27&optionId=1&optionType=City&directSearch=true&adult=4&children=2&crn=2&curr=CNY",
+      "checkedAt": "2026-08-16T00:00:00Z",
       "caveat": "A página pública não preservou as datas no conteúdo rastreável e exibiu somente pisos para outras datas."
-    },
-    {
-      "id": "trip-hotel-608516",
-      "title": "CitiGO Hotel Sanyuanqiao Beijing",
-      "publisher": "Trip.com",
-      "type": "commercial_dynamic",
-      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-608516/ibis-hotel-beijing-sanyuan-bridge/",
-      "checkedAt": "2026-08-05T08:03:57Z"
-    },
-    {
-      "id": "trip-hotel-134514068",
-      "title": "Jingshang Hotel (Beijing Sanlitun Workers’ Stadium Metro)",
-      "publisher": "Trip.com",
-      "type": "commercial_dynamic",
-      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-134514068/jingshang-hotel/",
-      "checkedAt": "2026-08-05T08:03:57Z"
     },
     {
       "id": "trip-hotel-118834872",
@@ -874,44 +703,58 @@
       "checkedAt": "2026-08-05T08:03:57Z"
     },
     {
-      "id": "trip-hotel-429509",
-      "title": "Le Joy Hotel",
+      "id": "trip-hotel-1521344",
+      "title": "Homeinn Plus Hotel (Beijing Chaoyangmen Subway Station)",
       "publisher": "Trip.com",
       "type": "commercial_dynamic",
-      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-429509/joy-city-hotel-and-apartment/",
-      "checkedAt": "2026-08-05T08:03:57Z"
+      "url": "https://www.trip.com/hotels/beijing-hotel-detail-1521344/homeinn-plus-hotel/",
+      "checkedAt": "2026-08-16T00:00:00Z",
+      "caveat": "A página listou metrô, quartos com duas camas e política infantil; não exibiu a tarifa ou disponibilidade da estadia solicitada em CNY."
     },
     {
-      "id": "trip-hotel-80920781",
-      "title": "VOYAGE INTERNATIONAL HOTEL (Capital Airport New International Exhibition Store)",
+      "id": "trip-hotel-482983",
+      "title": "Qianmen Jianguo Hotel",
       "publisher": "Trip.com",
       "type": "commercial_dynamic",
-      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-80920781/voyage-international-hotel/",
-      "checkedAt": "2026-08-05T08:03:57Z"
+      "url": "https://www.trip.com/hotels/beijing-hotel-detail-482983/qianmen-jianguo-hotel/",
+      "checkedAt": "2026-08-16T00:00:00Z",
+      "caveat": "A página listou metrô, quartos com duas camas e política infantil; não exibiu a tarifa ou disponibilidade da estadia solicitada em CNY."
     },
     {
-      "id": "trip-hotel-113612942",
-      "title": "Radisson Hotel Beijing Daxing Airport",
-      "publisher": "Trip.com",
+      "id": "public-floor-jialong-chaoyangmen",
+      "title": "Jialong Hotel (Beijing Chaoyangmen)",
+      "publisher": "ChinaHoliday",
       "type": "commercial_dynamic",
-      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-113612942/radisson-hotel-beijing-daxing-airport/",
-      "checkedAt": "2026-08-05T08:03:57Z"
+      "url": "https://www.chinaholiday.com/cheap-hotels-beijing/jialong-hotel-beijing-chaoyangmen.html",
+      "checkedAt": "2026-08-16T00:00:00Z",
+      "caveat": "Piso público de ¥509 para data não especificada; não é tarifa para a estadia solicitada."
     },
     {
-      "id": "trip-hotel-129929782",
-      "title": "Orange Hotel (Beijing Garden Expo Park)",
-      "publisher": "Trip.com",
+      "id": "public-floor-homeinn-xuanwumen",
+      "title": "Homeinn Hotel (Beijing Xuanwumen)",
+      "publisher": "ChinaHoliday",
       "type": "commercial_dynamic",
-      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-129929782/orange-hotel/",
-      "checkedAt": "2026-08-05T08:03:57Z"
+      "url": "https://www.chinaholiday.com/cheap-hotels-beijing/home-inn-xuanwumen-beijing.html",
+      "checkedAt": "2026-08-16T00:00:00Z",
+      "caveat": "Piso público de ¥520 para data não especificada; não é tarifa para a estadia solicitada."
     },
     {
-      "id": "trip-hotel-5988569",
-      "title": "GreenTree Alliance Hotel (Beijing Daxing District Yizhuang Jiugong Subway Station)",
+      "id": "public-floor-hanting-longfusi-dongsi",
+      "title": "Hanting Hotel (Beijing Dongsi Subway Station)",
+      "publisher": "ChinaHoliday",
+      "type": "commercial_dynamic",
+      "url": "https://www.chinaholiday.com/cheap-hotels-beijing/hanting-express-beijing-dongsi.html",
+      "checkedAt": "2026-08-16T00:00:00Z",
+      "caveat": "Piso público de ¥452 para data não especificada; não é tarifa para a estadia solicitada."
+    },
+    {
+      "id": "trip-hotel-90808539",
+      "title": "Xingyi Hotel (Beijing Temple of Heaven Dongmen Subway Station)",
       "publisher": "Trip.com",
       "type": "commercial_dynamic",
-      "url": "https://hk.trip.com/hotels/beijing-hotel-detail-5988569/greentree-alliance-hotel/",
-      "checkedAt": "2026-08-05T08:03:57Z"
+      "url": "https://www.trip.com/hotels/beijing-hotel-detail-90808539/ni-hao-jiu-dian/",
+      "checkedAt": "2026-08-16T00:00:00Z",
+      "caveat": "A página pública lista a estação próxima e quarto 2-bed, mas não a tarifa ou disponibilidade da estadia solicitada em CNY."
     }
   ]
 }
