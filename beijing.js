@@ -532,7 +532,9 @@
     }
     if (searchLink && guide.hotelSearchUrl) searchLink.href = guide.hotelSearchUrl;
     if (!target) return;
-    target.innerHTML = (guide.hotels || []).map((hotel) => {
+    const hotels = [...(guide.hotels || [])].sort((a, b) => Number(b.status === "booking_confirmed") - Number(a.status === "booking_confirmed"));
+    target.innerHTML = hotels.map((hotel) => {
+      const isBooked = hotel.status === "booking_confirmed";
       const key = hotelMapKey(hotel);
       const isVisibleOnMap = !hiddenHotelMapKeys.has(key);
       const verification = hotel.requestedStayVerification || {};
@@ -549,7 +551,7 @@
       return `
       <article class="hotel-card${isVisibleOnMap ? "" : " is-map-hidden"}" data-hotel-card="${escapeAttr(key)}">
         <div class="hotel-card-toolbar">
-          <span class="hotel-status reference">${reportedOffers.length ? "Tarifa informada" : "Não confirmado para as datas"}</span>
+          <span class="hotel-status reference">${isBooked ? "Nossa hospedagem · reserva confirmada" : reportedOffers.length ? "Tarifa informada · pesquisa anterior" : "Pesquisa anterior · sem reserva"}</span>
           <label class="hotel-map-toggle">
             <input type="checkbox" role="switch" aria-label="Mostrar ${escapeAttr(hotel.name)} no mapa" data-hotel-map-toggle="${escapeAttr(key)}"${isVisibleOnMap ? " checked" : ""}>
             <span class="hotel-map-toggle-track" aria-hidden="true"></span>
@@ -559,18 +561,19 @@
         <h3>${escapeHtml(hotel.name)}</h3>
         <p class="hotel-area">${escapeHtml(hotel.area || hotel.district || "Pequim")} · ${escapeHtml(hotel.metro || hotel.access || "ver localização")}</p>
         <div class="hotel-price-row">
-          <strong>${featuredTwinOffer ? `¥${escapeHtml(String(featuredTwinOffer.nightlyRateCny))}` : verification.cnyNightlyRate ? `¥${escapeHtml(String(verification.cnyNightlyRate))}` : reportedOffers.length ? "Ver opções" : publicCnyFloor ? `desde ¥${escapeHtml(String(publicCnyFloor))}` : "CNY não verificado"}</strong>
-          <span>${featuredTwinOffer ? "1 quarto / noite" : verification.cnyNightlyRate ? "2 quartos / noite" : reportedOffers.length ? "por quarto / noite" : publicCnyFloor ? "piso público / outra data" : "23–27 set. 2026"}<br>${featuredTwinOffer ? "2 camas · sem berço" : "alvo: até ¥500/noite"}</span>
+          <strong>${isBooked ? "23–27 set. 2026" : featuredTwinOffer ? `¥${escapeHtml(String(featuredTwinOffer.nightlyRateCny))}` : verification.cnyNightlyRate ? `¥${escapeHtml(String(verification.cnyNightlyRate))}` : reportedOffers.length ? "Ver opções" : publicCnyFloor ? `desde ¥${escapeHtml(String(publicCnyFloor))}` : "CNY não verificado"}</strong>
+          <span>${isBooked ? "4 noites" : featuredTwinOffer ? "1 quarto / noite" : verification.cnyNightlyRate ? "2 quartos / noite" : reportedOffers.length ? "por quarto / noite" : publicCnyFloor ? "piso público / outra data" : "23–27 set. 2026"}<br>${isBooked ? "tarifa não informada" : featuredTwinOffer ? "2 camas · sem berço" : "alvo da pesquisa: até ¥500/noite"}</span>
         </div>
         <ul>
           <li>${escapeHtml(hotel.breakfast || "A propriedade oferece café; confirme se está incluído no quarto")}</li>
           ${reportedOffers.map((offer) => `<li><strong>${escapeHtml(offer.room)} ¥${escapeHtml(String(offer.nightlyRateCny))}:</strong> ${escapeHtml(offer.beds)} · ${Number.isFinite(offer.breakfastsIncluded) ? `${escapeHtml(String(offer.breakfastsIncluded))} café(s) incluído(s)` : escapeHtml(offer.breakfastNote || "café a confirmar")}${offer.extraBedOrCrib ? ` · ${escapeHtml(offer.extraBedOrCrib)}` : ""}</li>`).join("")}
           ${hotel.twinBedOption ? `<li><strong>Duas camas:</strong> ${escapeHtml(hotel.twinBedOption)}</li>` : ""}
           ${hotel.childrenPolicy ? `<li><strong>Crianças:</strong> ${escapeHtml(hotel.childrenPolicy)}</li>` : ""}
-          <li>${escapeHtml(hotel.reason || hotel.useCase || "Compare o tempo de metrô até as atrações")}</li>
+          <li>${escapeHtml(isBooked ? "Base do roteiro na região do Templo do Céu, próxima à estação Tiantandongmen da Linha 5." : hotel.reason || hotel.useCase || "Compare o tempo de metrô até as atrações")}</li>
+          ${isBooked && hotel.reservation ? `<li>${escapeHtml(hotel.reservation.arrivalNote)}</li><li>${escapeHtml(hotel.reservation.departureNote)}</li>` : ""}
           ${hotel.rating ? `<li>${escapeHtml(String(hotel.rating))}${hotel.reviews ? ` · ${escapeHtml(String(hotel.reviews))} avaliações` : ""}</li>` : ""}
         </ul>
-        ${externalLink(hotel.liveUrl || hotel.url, "Ver tarifa ao vivo no Trip.com ↗", "hotel-link")}
+        ${externalLink(hotel.liveUrl || hotel.url, isBooked ? "Ver hotel no Trip.com ↗" : "Ver tarifa ao vivo no Trip.com ↗", "hotel-link")}
         ${hotel.coords ? `<a class="hotel-map-link" href="#mapa" data-focus-marker="${escapeAttr(key)}"${isVisibleOnMap ? "" : " hidden"}>Localizar no mapa ↓</a>` : ""}
         <small>${escapeHtml(verification.reason || "Disponibilidade, tarifa em CNY, café incluído, impostos e cancelamento não foram expostos na consulta pública. Confira antes de reservar.")}</small>
       </article>`;
@@ -1131,7 +1134,7 @@
       key: `hotel:${item.id || slugify(item.name)}`,
       type: "hotels",
       name: item.name,
-      subtitle: `${item.area || item.district} · opção da watchlist`,
+      subtitle: `${item.area || item.district} · ${item.status === "booking_confirmed" ? "nossa hospedagem" : "pesquisa anterior"}`,
       coords: item.coords,
     }));
     const metro = (guide.metroStations || []).map((item) => ({
@@ -1178,7 +1181,7 @@
   function renderMapLocationIndex(locations, external) {
     const target = $("[data-map-location-index]");
     if (!target) return;
-    const labels = { attractions: "Atrações", streets: "Ruas e mercados", hotels: "Hotéis da watchlist", stations: "Estações ferroviárias", airports: "Aeroportos" };
+    const labels = { attractions: "Atrações", streets: "Ruas e mercados", hotels: "Hotéis", stations: "Estações ferroviárias", airports: "Aeroportos" };
     target.innerHTML = Object.entries(labels).map(([type, label], groupIndex) => {
       const items = locations.filter((location) => location.type === type).map((location) => {
       const prefix = location.type === "attractions" ? String(location.number).padStart(2, "0") : location.type === "streets" ? `R${String(location.number).padStart(2, "0")}` : location.type === "hotels" ? "H" : location.type === "metro" ? "M" : location.type === "stations" ? "站" : "✈";

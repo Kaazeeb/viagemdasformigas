@@ -1,6 +1,6 @@
 {
   "hotelMethod": {
-    "status": "no_confirmed_matches",
+    "status": "stay_confirmed_by_traveler",
     "requestedStay": {
       "checkIn": "2026-09-23",
       "checkOut": "2026-09-27",
@@ -14,9 +14,9 @@
     },
     "checkedAt": "2026-08-16T00:00:00Z",
     "searchUrl": "https://www.trip.com/hotels/list?city=1&checkin=2026%2F09%2F23&checkout=2026%2F09%2F27&optionId=1&optionType=City&directSearch=true&adult=4&children=2&crn=2&curr=CNY",
-    "result": "Nenhum hotel pôde ser confirmado de forma auditável com disponibilidade nas datas pedidas, diária de até CNY 500, café da manhã incluído, impostos e política de cancelamento. As oito opções centrais adicionadas têm duas camas e política infantil expostas, mas não preço para a estadia.",
+    "result": "O viajante confirmou a reserva do Xingyi Hotel (Beijing Temple of Heaven Dongmen Subway Station), de 23 a 27 de setembro de 2026, por quatro noites. Preço, categoria do quarto e inclusão de café não foram informados nesta confirmação. Os demais hotéis são referências da pesquisa anterior.",
     "limitation": "As páginas públicas rastreáveis do Trip.com ignoraram as datas de 23 a 27 de setembro de 2026 e mostraram apenas preços-piso para uma janela móvel de aproximadamente sete dias em agosto. As opções de quarto apareceram como ‘Check availability’. Por isso, os valores HKD abaixo são somente pisos observados em outras datas, não cotações da estadia solicitada. A indicação de café mostra que o hotel oferece café da manhã, mas não prova que ele esteja incluído em uma tarifa elegível.",
-    "usePolicy": "Exibir os hotéis somente como lista de acompanhamento. Antes da reserva, abrir o link do Trip.com, reaplicar 23–27/09/2026, 2 quartos, 4 adultos, 2 crianças e confirmar moeda CNY, café incluído, total com impostos e cancelamento.",
+    "usePolicy": "Destacar o Xingyi como hospedagem confirmada pelo viajante. Manter os demais hotéis como histórico da pesquisa, sem tratá-los como reservas. Valores antigos não representam o preço da reserva confirmada.",
     "holidayNotice": "A estadia coincide parcialmente com o feriado oficial chinês do Festival do Meio do Outono, de 25 a 27 de setembro de 2026; disponibilidade e tarifas podem mudar rapidamente."
   },
   "hotels": [
@@ -247,8 +247,16 @@
       "checkedAt": "2026-08-16T00:00:00Z"
     },
     {
-      "status": "watchlist_unconfirmed",
+      "status": "booking_confirmed",
       "tripHotelId": "90808539",
+      "reservation": {
+        "source": "Confirmação da reserva fornecida pelo viajante",
+        "checkIn": "2026-09-23",
+        "checkOut": "2026-09-27",
+        "nights": 4,
+        "arrivalNote": "Voo MU5125 chega a PEK T2 em 23/09 às 22h10; avisar o hotel sobre o check-in tardio.",
+        "departureNote": "Checkout na manhã de 27/09. Combinar a guarda das malas com o hotel durante os passeios e retirá-las à tarde, antes de seguir para PEK T2."
+      },
       "coordinates": { "lat": 39.8764, "lng": 116.4218 },
       "name": "Xingyi Hotel (Beijing Temple of Heaven Dongmen Subway Station)",
       "district": "Dongcheng",
@@ -259,7 +267,7 @@
       "breakfastOffered": "Buffet chinês disponível; confirme se está incluído na tarifa.",
       "twinBedOption": "2-bed Room; tamanho das camas precisa ser confirmado.",
       "childrenPolicy": "Política infantil e disponibilidade de berço precisam ser confirmadas.",
-      "requestedStayVerification": { "available": null, "cnyNightlyRate": null, "atOrBelowCny500": null, "breakfastIncludedInRate": null, "taxesIncluded": null, "cancellationPolicy": null, "reason": "Candidata perto do Temple of Heaven e a cerca de 690 m do metrô Tiantandongmen. Confirme no Trip.com a tarifa em CNY, configuração Twin, café, crianças, berço e impostos para 2 quartos." },
+      "requestedStayVerification": { "available": true, "cnyNightlyRate": null, "atOrBelowCny500": null, "breakfastIncludedInRate": null, "taxesIncluded": null, "cancellationPolicy": null, "reason": "Reserva de 23 a 27/09/2026 confirmada pelo viajante. A confirmação compartilhada não informa tarifa, categoria do quarto, café, impostos ou cancelamento; não usar preços de outras datas como valor desta reserva." },
       "propertyUrl": "https://www.trip.com/hotels/beijing-hotel-detail-90808539/ni-hao-jiu-dian/",
       "requestedDateUrl": "https://www.trip.com/hotels/detail/?hotelId=90808539&cityId=1&checkIn=2026-09-23&checkOut=2026-09-27&adult=4&children=2&crn=2&curr=CNY",
       "checkedAt": "2026-08-16T00:00:00Z"
@@ -488,7 +496,7 @@
     {
       "category": "hotels",
       "title": "Revalide toda a tarifa de hotel",
-      "body": "A lista de hotéis é somente uma watchlist. No Trip.com, confirme as datas 23–27/09/2026, CNY, 2 quartos para 4 adultos e 2 crianças, café incluído, total com impostos e política de cancelamento. Não use o piso HKD de agosto como orçamento.",
+      "body": "A hospedagem está confirmada no Xingyi de 23 a 27/09/2026. Conferir os detalhes do quarto e do café no comprovante, avisar a chegada tardia de 23/09 e combinar a guarda das malas após o checkout em 27/09. Os preços dos demais hotéis pertencem à pesquisa anterior.",
       "sourceRefs": ["trip-search-requested-dates"]
     }
   ],
