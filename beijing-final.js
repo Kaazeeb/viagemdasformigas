@@ -38,6 +38,14 @@
     return '<figure class="place-photo"><img src="' + safeURL(photo.src) + '" alt="' + escape(photo.alt || photo.caption) + '" loading="lazy" decoding="async"><figcaption>' + escape(photo.caption || photo.alt) + '<span class="photo-credit">Foto: ' + creditLink + license + "</span></figcaption></figure>";
   }
 
+  function mapHTML(map, title) {
+    const source = map.sourceLabel || "Fonte do mapa";
+    const sourceLink = map.sourceUrl ? '<a href="' + safeURL(map.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + escape(source) + '</a>' : (map.sourceLabel ? escape(source) : "");
+    const credits = [sourceLink, map.credit ? escape(map.credit) : ""].filter(Boolean).join(" · ");
+    const original = map.originalSrc || map.src;
+    return '<figure class="schematic"><button type="button" data-map="' + safeURL(map.src) + '" data-map-original="' + safeURL(original) + '" data-map-alt="' + escape(map.alt || "Mapa de " + title) + '" data-map-title="' + escape(title) + '" data-map-caption="' + escape(map.caption || "") + '" data-map-source-label="' + escape(map.sourceLabel || "") + '" data-map-source-url="' + safeURL(map.sourceUrl || "") + '" data-map-credit="' + escape(map.credit || "") + '" aria-label="Abrir mapa com zoom: ' + escape(title) + '"><img src="' + safeURL(map.src) + '" alt="' + escape(map.alt || "Mapa de " + title) + '" loading="lazy" decoding="async"><span class="zoom-label js-only" hidden><span aria-hidden="true">↗</span> Ver mapa em detalhe</span></button><figcaption><strong>' + escape(map.title || "Planta do local") + '</strong>' + escape(map.caption || "") + (credits ? '<span class="map-credit">' + credits + '</span>' : '') + '<a class="map-original-link" href="' + safeURL(original) + '" target="_blank" rel="noopener noreferrer">Abrir imagem original ↗</a></figcaption></figure>';
+  }
+
   function stepHTML(day, step, index, sources) {
     const id = stepID(day, step, index);
     const type = labels[step.type] ? step.type : "visit";
@@ -55,7 +63,7 @@
     if (list(step.instructions).length) html += '<ol class="instructions">' + step.instructions.map((instruction) => "<li>" + escape(instruction) + "</li>").join("") + "</ol>";
     if (list(step.alerts).length) html += '<aside class="alerts" aria-label="Atenção para esta etapa"><h4>Antes de chegar</h4><ul>' + step.alerts.map((alert) => "<li>" + escape(alert) + "</li>").join("") + "</ul></aside>";
     html += "</div>";
-    if (step.map && step.map.src) html += '<figure class="schematic"><button type="button" data-map="' + safeURL(step.map.src) + '" data-map-alt="' + escape(step.map.alt || step.title) + '" data-map-title="' + escape(step.title) + '" data-map-caption="' + escape(step.map.caption || "") + '" aria-label="Ampliar mapa: ' + escape(step.title) + '"><img src="' + safeURL(step.map.src) + '" alt="' + escape(step.map.alt || "Mapa esquemático: " + step.title) + '" loading="lazy" decoding="async"><span class="zoom-label js-only" hidden><span aria-hidden="true">↗</span> Ampliar percurso</span></button><figcaption><strong>Mapa do percurso · sem escala</strong>' + escape(step.map.caption || "Siga a numeração do esquema para conectar entrada, visita e saída.") + "</figcaption></figure>";
+    if (step.map && step.map.src) html += mapHTML(step.map, step.title);
     if (list(step.photos).length) html += '<div class="photo-grid' + (step.photos.length === 1 ? " single" : "") + '" aria-label="Fotos para reconhecer o local">' + step.photos.map(photoHTML).join("") + "</div>";
     html += '<div class="step-footer">';
     if (selectedSources.length) html += '<details class="step-sources"><summary>Fontes desta etapa (' + selectedSources.length + ")</summary><ul>" + selectedSources.map((source) => '<li><a href="' + safeURL(source.url) + '" target="_blank" rel="noopener noreferrer">' + escape(source.label) + "</a></li>").join("") + "</ul></details>";
@@ -194,6 +202,47 @@
     }
 
     const dialog = document.getElementById("map-dialog");
+    const mapImage = document.getElementById("map-dialog-image");
+    const mapViewport = document.getElementById("map-viewport");
+    const zoomOut = document.getElementById("map-zoom-out");
+    const zoomIn = document.getElementById("map-zoom-in");
+    const zoomValue = document.getElementById("map-zoom-value");
+    let mapZoom = 1;
+    const zoomLevels = [1, 1.5, 2, 3, 4, 6, 8, 12, 16, 24];
+
+    function setMapZoom(next, reset) {
+      const oldWidth = mapImage.getBoundingClientRect().width || mapViewport.clientWidth;
+      const centerX = (mapViewport.scrollLeft + mapViewport.clientWidth / 2) / oldWidth;
+      const centerY = (mapViewport.scrollTop + mapViewport.clientHeight / 2) / oldWidth;
+      mapZoom = Math.max(1, Math.min(24, next));
+      const width = Math.max(1, mapViewport.clientWidth - 24) * mapZoom;
+      mapImage.style.width = width + "px";
+      zoomValue.textContent = Math.round(mapZoom * 100) + "%";
+      zoomOut.disabled = mapZoom === 1;
+      zoomIn.disabled = mapZoom === 24;
+      if (reset) {
+        mapViewport.scrollTop = 0;
+        mapViewport.scrollLeft = 0;
+      } else {
+        mapViewport.scrollLeft = Math.max(0, centerX * width - mapViewport.clientWidth / 2);
+        mapViewport.scrollTop = Math.max(0, centerY * width - mapViewport.clientHeight / 2);
+      }
+    }
+
+    function changeMapZoom(direction) {
+      const index = zoomLevels.indexOf(mapZoom);
+      setMapZoom(zoomLevels[Math.max(0, Math.min(zoomLevels.length - 1, index + direction))]);
+    }
+
+    zoomOut.addEventListener("click", () => changeMapZoom(-1));
+    zoomIn.addEventListener("click", () => changeMapZoom(1));
+    document.getElementById("map-zoom-fit").addEventListener("click", () => setMapZoom(1, true));
+    window.addEventListener("resize", () => { if (dialog.open) setMapZoom(mapZoom); });
+    mapViewport.addEventListener("keydown", (event) => {
+      if (event.key === "+" || event.key === "=") { event.preventDefault(); changeMapZoom(1); }
+      if (event.key === "-") { event.preventDefault(); changeMapZoom(-1); }
+      if (event.key === "0") { event.preventDefault(); setMapZoom(1, true); }
+    });
     document.addEventListener("click", (event) => {
       const copy = event.target.closest("[data-copy]");
       if (copy) { copyText(copy); return; }
@@ -208,18 +257,33 @@
       const map = event.target.closest("[data-map]");
       if (map) {
         if (typeof dialog.showModal !== "function") {
-          window.open(map.dataset.map, "_blank", "noopener,noreferrer");
+          window.open(map.dataset.mapOriginal || map.dataset.map, "_blank", "noopener,noreferrer");
           return;
         }
         previousMapFocus = map;
         document.getElementById("map-dialog-title").textContent = map.dataset.mapTitle;
-        const image = document.getElementById("map-dialog-image");
-        image.src = map.dataset.map;
-        image.alt = map.dataset.mapAlt;
+        mapImage.src = map.dataset.map;
+        mapImage.alt = map.dataset.mapAlt;
         document.getElementById("map-dialog-caption").textContent = map.dataset.mapCaption;
+        document.getElementById("map-dialog-original").href = map.dataset.mapOriginal || map.dataset.map;
+        const mapSource = document.getElementById("map-dialog-source");
+        mapSource.replaceChildren();
+        if (map.dataset.mapSourceLabel || (map.dataset.mapSourceUrl && map.dataset.mapSourceUrl !== "#")) {
+          const source = document.createElement(map.dataset.mapSourceUrl !== "#" ? "a" : "span");
+          source.textContent = map.dataset.mapSourceLabel || "Fonte do mapa";
+          if (source.tagName === "A") {
+            source.href = map.dataset.mapSourceUrl;
+            source.target = "_blank";
+            source.rel = "noopener noreferrer";
+          }
+          mapSource.appendChild(source);
+        }
+        if (map.dataset.mapCredit) mapSource.appendChild(document.createTextNode((mapSource.childNodes.length ? " · " : "") + map.dataset.mapCredit));
+        mapSource.hidden = !mapSource.childNodes.length;
         savedOverflow = document.body.style.overflow;
         document.body.style.overflow = "hidden";
         dialog.showModal();
+        setMapZoom(1, true);
         document.getElementById("close-map").focus();
       }
     });

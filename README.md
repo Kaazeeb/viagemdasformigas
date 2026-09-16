@@ -46,7 +46,10 @@ A aba **Roteiro final**, em `beijing-final.html`, é o guia de execução de
 separada de exploração; seu cronograma antigo está identificado como referência.
 
 O guia final reúne 50 etapas, tempos de caminhada e transporte separados,
-estações e acessos, portões, sete mapas SVG próprios e fotos locais com créditos.
+estações e acessos, portões, nove plantas e mapas turísticos reais e fotos locais
+com créditos. Os mapas podem ser ampliados; suas legendas relacionam portões,
+caminhos e edifícios ao roteiro. As fontes estão em
+`assets/itinerary/maps/SOURCES.md`.
 Inclui seleção por dia, cópia dos nomes chineses, marcação de etapas no navegador
 e impressão dos quatro dias. As refeições continuam a definir.
 

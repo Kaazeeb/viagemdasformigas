@@ -30,7 +30,7 @@ window.BEIJING_FINAL = {
     },
     {
       "title": "Acessos e mapas",
-      "text": "A2 de Tiantandongmen, F de Yonghegong e E3 de Wangfujing são referências verificadas. Se um acesso estiver fechado, seguir a sinalização local. Os mapas próprios mostram a ordem da visita, sem escala e sem substituir as orientações de segurança."
+      "text": "A2 de Tiantandongmen, F de Yonghegong e E3 de Wangfujing são referências verificadas. As plantas turísticas e mapas oficiais mostram a disposição dos locais; as legendas indicam o trecho do nosso roteiro. Amplie para ler os nomes. Acessos e controles seguem a sinalização do dia."
     }
   ],
   "sources": [
@@ -255,9 +255,13 @@ window.BEIJING_FINAL = {
             }
           ],
           "map": {
-            "src": "assets/itinerary/maps/temple-heaven.svg",
-            "alt": "Entrar pelo sul, percorrer o eixo para norte e sair a leste, na direção do metrô.",
-            "caption": "Entrar pelo sul, percorrer o eixo para norte e sair a leste, na direção do metrô. Esquema de orientação, sem escala; siga a sinalização e as barreiras no local."
+            "title": "Templo do Céu · planta oficial",
+            "src": "assets/itinerary/maps/real/temple-heaven-official.jpg",
+            "alt": "Planta oficial bilíngue do Templo do Céu, com os portões Sul, Norte e Leste, caminhos, muros, jardins e monumentos.",
+            "caption": "Norte no alto. Entramos por South Gate / 南门, embaixo: Circular Mound Altar / 圜丘 → Imperial Vault of Heaven / 皇穹宇 e Echo Wall / 回音壁 → eixo Danbi para norte → Hall of Prayer for Good Harvests / 祈年殿. Dali, seguir à direita pelo Long Corridor / 长廊 até East Gate / 东门. O metrô Tiantandongmen fica fora desse portão; o acesso A2 não está desenhado.",
+            "sourceLabel": "Planta oficial · Templo do Céu",
+            "sourceUrl": "https://www.tiantanpark.cn/navigation_map.html",
+            "credit": "Parque do Templo do Céu / 天坛公园 · imagem original do site oficial."
           },
           "sources": [
             "heaven",
@@ -323,9 +327,13 @@ window.BEIJING_FINAL = {
             }
           ],
           "map": {
-            "src": "assets/itinerary/maps/lama-guozijian.svg",
-            "alt": "Subir pelo eixo de salões, voltar à saída sul e atravessar para Guozijian.",
-            "caption": "Subir pelo eixo de salões, voltar à saída sul e atravessar para Guozijian. Esquema de orientação, sem escala; siga a sinalização e as barreiras no local."
+            "title": "Templo Lama · planta oficial dos pátios e salões",
+            "src": "assets/itinerary/maps/real/lama-official.png",
+            "alt": "Desenho oficial em perspectiva do Templo Lama: portões ao sul, sucessão de pátios, telhados e salões numerados até o pavilhão Wanfuge ao norte.",
+            "caption": "Sul embaixo, norte no alto. Acompanhar os números da planta: 1 pórticos → 2 caminho imperial → 4 Portão Zhaotai / 昭泰门 → 11 Portão Yonghe / 雍和门 → 17 salão Yonghegong / 雍和宫 → 18 Yongyou / 永佑殿 → 21 Falun / 法轮殿 → 24 Wanfuge / 万福阁. Retornar pelos pátios ao acesso sul. Guozijian fica fora da planta, a oeste, atravessando a rua Yonghegong.",
+            "sourceLabel": "Planta e legenda oficiais · Yonghegong",
+            "sourceUrl": "https://www.yonghegong.cn/2016-12/26/content_39984666.htm",
+            "credit": "Yonghegong / 雍和宫 · planta original publicada no site oficial."
           },
           "sources": [
             "lama",
@@ -592,9 +600,13 @@ window.BEIJING_FINAL = {
             }
           ],
           "map": {
-            "src": "assets/itinerary/maps/forbidden-jingshan.svg",
-            "alt": "Chegada externa pelo leste, entrada ao sul, saída ao norte e travessia para Jingshan.",
-            "caption": "Chegada externa pelo leste, entrada ao sul, saída ao norte e travessia para Jingshan. Esquema de orientação, sem escala; siga a sinalização e as barreiras no local."
+            "title": "Cidade Proibida · planta oficial do palácio",
+            "src": "assets/itinerary/maps/real/forbidden-city-official.jpg",
+            "alt": "Planta oficial ilustrada da Cidade Proibida, com telhados, pátios, jardins, canais e portões. Wumen está embaixo e Shenwumen no alto.",
+            "caption": "Entrar por 午门 Wumen, ao sul, na parte inferior do palácio. Seguir pelo eixo central para norte: 太和殿 Taihe → 中和殿 Zhonghe → 保和殿 Baohe → setor dos palácios internos → 御花园 Jardim Imperial → 神武门 Shenwumen, no alto. Jingshan fica do outro lado da rua após essa saída e tem sua própria planta abaixo. As áreas abertas podem mudar; respeitar os desvios indicados no local.",
+            "sourceLabel": "Planta oficial · Museu do Palácio",
+            "sourceUrl": "https://www.dpm.org.cn/Visit.html",
+            "credit": "Museu do Palácio / 故宫博物院 · planta original das áreas de visita."
           },
           "sources": [
             "palace",
@@ -658,7 +670,16 @@ window.BEIJING_FINAL = {
           ],
           "sources": [
             "jingshan"
-          ]
+          ],
+          "map": {
+            "title": "Jingshan · planta dos caminhos e pavilhões",
+            "src": "assets/itinerary/maps/real/jingshan-visitor-map.png",
+            "alt": "Planta de Jingshan com portões Sul, Leste e Oeste, trilhas, escadarias e os cinco pavilhões na colina, incluindo Wanchun no centro.",
+            "caption": "Norte no alto. Entramos e saímos por 南门 Portão Sul, embaixo, em frente à saída da Cidade Proibida. Seguir os caminhos e escadas desenhados até 万春亭 Pavilhão Wanchun, no centro da colina; depois descer e voltar ao Sul. Os pontos verdes e as linhas vermelhas retas já fazem parte da imagem publicada: ligam referências visuais e não representam uma trilha reta atravessando a encosta.",
+            "sourceLabel": "Planta de Jingshan · Bendibao / Changyou Gongyuan",
+            "sourceUrl": "https://m.bj.bendibao.com/tour/341430.html",
+            "credit": "Publicada pelo Bendibao / 本地宝, com fonte indicada como 畅游公园 (Changyou Gongyuan). Marcações originais preservadas."
+          }
         },
         {
           "id": "25-lunch",
@@ -730,9 +751,13 @@ window.BEIJING_FINAL = {
             }
           ],
           "map": {
-            "src": "assets/itinerary/maps/qianmen.svg",
-            "alt": "Da praça, seguir ao sul por Zhengyangmen e entrar na Rua Qianmen; Dashilar fica a oeste.",
-            "caption": "Da praça, seguir ao sul por Zhengyangmen e entrar na Rua Qianmen; Dashilar fica a oeste. Esquema de orientação, sem escala; siga a sinalização e as barreiras no local."
+            "title": "Tian’anmen · praça, portões e passagens",
+            "src": "assets/itinerary/maps/real/tiananmen-visitor-map-original.jpg",
+            "alt": "Planta turística bilíngue de Tian’anmen: praça, Chang’an Avenue, portão Tian’anmen, monumento central, museus e Zhengyangmen ao sul.",
+            "caption": "Norte no alto. Chegamos pelo setor sul, próximo de 前门 Qianmen / 正阳门 Zhengyangmen, na parte inferior. Dentro da praça, seguimos para norte para ver o monumento 人民英雄纪念碑 e o portão 天安门 do outro lado da Chang’an Avenue; depois retornamos ao sul para Qianmen. Esta planta publicada em 2023 serve para orientação geográfica: entradas, passagens e controles em operação devem ser conferidos na sinalização do dia.",
+            "sourceLabel": "Bendibao · planta de referência publicada em 2023",
+            "sourceUrl": "https://m.bj.bendibao.com/news/340889.html",
+            "credit": "Imagem reproduzida pelo Bendibao / 本地宝; autoria original do desenho não identificada."
           },
           "sources": [
             "square-rules",
@@ -790,7 +815,16 @@ window.BEIJING_FINAL = {
           ],
           "sources": [
             "streets"
-          ]
+          ],
+          "map": {
+            "title": "Qianmen e Dashilar · ruas e fachadas de referência",
+            "src": "assets/itinerary/maps/real/qianmen-dashilar-bjd-official-original.jpg",
+            "alt": "Mapa ilustrado do bairro Qianmen–Dashilar, com ruas, quarteirões e fachadas. Qianmen segue ao sul e Dashilar se estende para oeste.",
+            "caption": "A região da praça fica acima do mapa. Caminhar para sul pela 前门大街 Rua Qianmen, no centro-direita; virar para oeste, à esquerda, na 大栅栏街 Rua Dashilar, e seguir até 煤市街 Meishi Street para organizar a saída. A linha vermelha e os 22 pontos pertencem ao circuito cultural da publicação: nosso passeio usa somente esse trecho de Qianmen e Dashilar. As fachadas ajudam a reconhecer os cruzamentos.",
+            "sourceLabel": "Mapa cultural de Qianmen–Dashilar · Beijing Daily",
+            "sourceUrl": "https://xinwen.bjd.com.cn/content/s676678dde4b000299badaf9c.html",
+            "credit": "Mapa divulgado pelo Beijing Daily / 北京日报 · imagem original da publicação."
+          }
         },
         {
           "id": "25-dashilar",
@@ -965,9 +999,13 @@ window.BEIJING_FINAL = {
             }
           ],
           "map": {
-            "src": "assets/itinerary/maps/mutianyu.svg",
-            "alt": "Centro de visitantes, shuttle e acessos distintos: cabine na torre 14; cadeirinha e tobogã na torre 6.",
-            "caption": "Centro de visitantes, shuttle e acessos distintos: cabine na torre 14; cadeirinha e tobogã na torre 6. Esquema de orientação, sem escala; siga a sinalização e as barreiras no local."
+            "title": "Mutianyu · mapa turístico oficial ilustrado",
+            "src": "assets/itinerary/maps/real/mutianyu-official-8.jpeg",
+            "alt": "Mapa oficial de Mutianyu com montanhas, muralha e torres numeradas, vila, centro de visitantes, shuttle, teleférico fechado e cadeirinha com tobogã.",
+            "caption": "Começamos na base, embaixo: 景区入口 entrada e 票务服务中心 centro de ingressos → estação inferior do shuttle → estação superior junto da vila. No alto, o teleférico fechado 缆车 chega perto da torre 14; à direita, a cadeirinha e o tobogã 施必得 ficam junto da torre 6. As torres 6 e 14 são acessos diferentes. O equipamento ainda precisa ser confirmado; combinar subida, encontro e descida antes de embarcar.",
+            "sourceLabel": "Mapa ilustrado · guia oficial de Mutianyu",
+            "sourceUrl": "https://en.mutianyugreatwall.com/pdf/guide",
+            "credit": "Mutianyu Great Wall / 慕田峪长城 · mapa original do guia oficial."
           },
           "sources": [
             "mutianyu",
@@ -1073,9 +1111,13 @@ window.BEIJING_FINAL = {
             }
           ],
           "map": {
-            "src": "assets/itinerary/maps/summer-palace.svg",
-            "alt": "Entrar e sair pelo Portão Leste; ir pelo Longo Corredor e voltar pela margem norte do lago.",
-            "caption": "Entrar e sair pelo Portão Leste; ir pelo Longo Corredor e voltar pela margem norte do lago. Esquema de orientação, sem escala; siga a sinalização e as barreiras no local."
+            "title": "Palácio de Verão · planta oficial do parque",
+            "src": "assets/itinerary/maps/real/summer-palace-official.jpg",
+            "alt": "Planta oficial bilíngue do Palácio de Verão, com o Lago Kunming, Colina da Longevidade, caminhos, edifícios, pontes e portões.",
+            "caption": "Nosso passeio fica no setor nordeste, no alto à direita. Entrar em East Palace Gate / 东宫门 → Renshou / 仁寿殿 → Leshou / 乐寿堂 → Long Corridor / 长廊, acompanhando a margem norte do Lago Kunming para oeste → Paiyun Gate / 排云门. Retornar pela margem norte e pelo setor dos pátios ao mesmo East Palace Gate, onde reencontramos o motorista. Não faremos a volta completa do lago.",
+            "sourceLabel": "Planta oficial · Palácio de Verão",
+            "sourceUrl": "https://summerpalace.net.cn/guide_map.html?_isa=1",
+            "credit": "Administração do Palácio de Verão / 颐和园 · imagem original do site oficial."
           },
           "sources": [
             "summer",
@@ -1192,9 +1234,13 @@ window.BEIJING_FINAL = {
             }
           ],
           "map": {
-            "src": "assets/itinerary/maps/old-town.svg",
-            "alt": "Caminhada do norte para sul: Sino, Tambor, Yandai, Ponte Yinding e trecho curto dos lagos.",
-            "caption": "Caminhada do norte para sul: Sino, Tambor, Yandai, Ponte Yinding e trecho curto dos lagos. Esquema de orientação, sem escala; siga a sinalização e as barreiras no local."
+            "title": "Torres, Yandai e Shichahai · mapa das ruas e lagos",
+            "src": "assets/itinerary/maps/real/shichahai-hutong-detailed-original.jpg",
+            "alt": "Mapa turístico bilíngue do centro histórico, com torres Sino e Tambor, Yandai Xiejie, Ponte Yinding, lagos Houhai e Qianhai e a malha de hutongs.",
+            "caption": "Usamos o setor superior esquerdo desta planta: 8 Bell Tower / 钟楼 → 7 Drum Tower / 鼓楼 → 9 Yandai Xiejie / 烟袋斜街 → 10 Yinding Bridge / 银锭桥. Dali, passeio curto pela margem de Houhai / 后海 e retorno para a margem leste de Qianhai / 前海, lago 12, rumo à Dianmen Outer Street. A linha colorida mostra um circuito maior, que não faremos. É um mapa histórico: usar ruas e marcos, sem assumir que os comércios indicados ainda existam.",
+            "sourceLabel": "WIKIBEIJING · mapa turístico de hutongs",
+            "sourceUrl": "https://es.maps-beijing.com/beijing-hutong-mapa",
+            "credit": "WIKIBEIJING · mapa turístico histórico reproduzido por Maps Beijing."
           },
           "sources": [
             "oldtown"
