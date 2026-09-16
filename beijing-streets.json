@@ -35,7 +35,7 @@
     "admissionRmb": "Gratuita; compras e refeições à parte",
     "hours": "A rua permanece acessível; cada loja e restaurante mantém horário próprio",
     "duration": "1–2 horas; 2–3 horas com Dashilar",
-    "fit": "Encaixe após o Templo do Céu no dia 25 e continue pelas travessas de Dashilar. Os dois lugares formam uma única caminhada, não duas viagens separadas.",
+    "fit": "Encaixe após a Praça Tian’anmen no dia 25 e continue pelas travessas de Dashilar. Os dois lugares formam uma única caminhada, não duas viagens separadas.",
     "bestTime": "Fim da tarde até o começo da noite, quando as fachadas estão iluminadas e o comércio continua ativo.",
     "officialSource": {
       "label": "Governo de Pequim — ruas acessíveis por metrô",
@@ -121,7 +121,7 @@
     "admissionRmb": "Gratuita",
     "hours": "Rua aberta; lojas operam em horários próprios",
     "duration": "30–60 minutos",
-    "fit": "Inclua no dia 27 entre as Torres do Tambor e do Sino e Shichahai. Ela funciona como parte do percurso, não como atração isolada.",
+    "fit": "Passagem no fim da tarde ou à noite do dia 26, entre as fotos externas das Torres do Tambor e do Sino e a Ponte Yinding, junto aos lagos de Shichahai. Ela faz parte da caminhada, não é uma visita isolada.",
     "bestTime": "Fim da manhã ou fim da tarde; os primeiros horários são melhores para observar a arquitetura com menos gente.",
     "officialSource": {
       "label": "Governo de Pequim — ruas culturais antigas",
@@ -164,7 +164,7 @@
     "admissionRmb": "Gratuita",
     "hours": "Rua aberta; estabelecimentos mantêm horários próprios",
     "duration": "1–2 horas",
-    "fit": "Use como extensão opcional do dia 27. Entre por uma ponta, explore ao menos uma viela lateral e saia em direção às Torres do Tambor, sem precisar percorrer todas as lojas.",
+    "fit": "Fora do roteiro fechado. O passeio pelos hutongs será uma caminhada curta na região das torres, Yandai Xiejie e Shichahai no dia 26; não acrescentar Nanluoguxiang ao dia 27, reservado aos templos e ao voo.",
     "bestTime": "Antes de 10:00 para caminhar com mais calma; à noite, prefira se o objetivo principal for comer e ver movimento.",
     "officialSource": {
       "label": "Governo de Pequim — Nanluoguxiang",
@@ -207,7 +207,7 @@
     "admissionRmb": "Gratuita; compras à parte",
     "hours": "Calçadão aberto; centros comerciais e lojas têm horários próprios",
     "duration": "1–2 horas",
-    "fit": "Encaixe no fim da tarde ou à noite do dia 24, depois de uma pausa após o Palácio de Verão. É opcional e não deve pesar o primeiro dia.",
+    "fit": "Passeio previsto para o fim da tarde ou à noite do dia 24, depois do Palácio de Verão e de uma pausa no Xingyi. Manter a caminhada leve; o restaurante do jantar será definido depois.",
     "bestTime": "Depois do pôr do sol, quando o calçadão e os centros comerciais estão iluminados.",
     "officialSource": {
       "label": "Governo de Pequim — distrito comercial de Wangfujing",
@@ -238,7 +238,7 @@
       }
     ],
     "summary": "Uma viela histórica de escala tranquila, hoje ocupada por cafés, restaurantes pequenos, ateliês, artesanato e lojas criativas. Fica imediatamente a oeste do Templo Lama e perto de Guozijian.",
-    "why": "É uma pausa agradável depois dos templos do nordeste e oferece uma experiência comercial menos intensa que Nanluoguxiang. O principal valor é a conveniência: não exige desvio do roteiro do dia 27 e permite descansar entre edifícios baixos e pátios antigos.",
+    "why": "É uma pausa agradável na região do Templo Lama e oferece uma experiência comercial menos intensa que Nanluoguxiang, entre edifícios baixos e pátios antigos. A proximidade é útil para uma passagem breve, mas não torna a rua uma parada necessária.",
     "highlights": [
       "Cafés e restaurantes instalados em casas baixas",
       "Ateliês, cerâmica e pequenas lojas criativas",
@@ -250,7 +250,7 @@
     "admissionRmb": "Gratuita",
     "hours": "Rua aberta; comércio funciona em horários próprios",
     "duration": "45–90 minutos",
-    "fit": "Inclua como pausa para comer ou tomar café depois do Templo Lama e Guozijian no dia 27.",
+    "fit": "Sem parada programada no roteiro fechado. Uma passagem breve só cabe se houver folga após Lama e Rua Guozijian no dia 27, preservando a tarde do Templo do Céu e o retorno ao hotel para as malas.",
     "bestTime": "Meio da tarde até o começo da noite, quando cafés e lojas estão funcionando.",
     "officialSource": {
       "label": "Governo de Pequim — guia de hutongs",
@@ -336,7 +336,7 @@
     "admissionRmb": "Gratuita; consumo à parte",
     "hours": "Área aberta; horários variam por loja, restaurante e bar",
     "duration": "2–3 horas",
-    "fit": "Use apenas para jantar no dia 26, depois de retornar de Mutianyu e descansar no Jialong. A saída é opcional e deve ser cortada se a Muralha atrasar ou cansar.",
+    "fit": "Fora do roteiro fechado. Após Mutianyu e a pausa no Xingyi, o passeio do dia 26 será pelas torres, Yandai Xiejie e Shichahai. Sanlitun fica como referência para outra ocasião.",
     "bestTime": "Fim da tarde e noite, quando lojas, restaurantes e bares estão mais ativos.",
     "officialSource": {
       "label": "Governo de Pequim — áreas comerciais",

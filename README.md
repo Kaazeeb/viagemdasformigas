@@ -39,6 +39,29 @@ python3 -m http.server 8080
 
 Depois, acesse `http://localhost:8080`.
 
+## Roteiro final de Pequim
+
+A aba **Roteiro final**, em `beijing-final.html`, é o guia de execução de
+24 a 27 de setembro de 2026. A página `beijing.html` continua sendo a área
+separada de exploração; seu cronograma antigo está identificado como referência.
+
+O guia final reúne 50 etapas, tempos de caminhada e transporte separados,
+estações e acessos, portões, nove plantas e mapas turísticos reais e fotos locais
+com créditos. Os mapas podem ser ampliados; suas legendas relacionam portões,
+caminhos e edifícios ao roteiro. As fontes estão em
+`assets/itinerary/maps/SOURCES.md`.
+Inclui seleção por dia, cópia dos nomes chineses, marcação de etapas no navegador
+e impressão dos quatro dias. As refeições continuam a definir.
+
+O conteúdo fica em `beijing-final-data.js`. Após editá-lo, execute
+`node scripts/render-beijing-final.cjs` para atualizar também o HTML estático,
+que permite ler todo o roteiro mesmo sem JavaScript. Não há dependências de
+build ou serviços externos para renderizar essa página; o servidor deve servir
+também os arquivos locais de fotos, CSS, JS e `assets/itinerary/maps/`.
+
+Fontes operacionais conferidas em 16/09/2026. Os horários são estimativas;
+reservas e equipamentos ainda pendentes aparecem explicitamente nas etapas.
+
 ## O que está incluído
 
 - Layout responsivo, com prioridade para celulares.
