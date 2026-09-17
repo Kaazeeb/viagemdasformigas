@@ -864,7 +864,7 @@ window.BEIJING_FINAL = {
             "title": "Qianmen e Dashilar · ruas e fachadas de referência",
             "src": "assets/itinerary/maps/real/qianmen-dashilar-bjd-official-original.jpg",
             "alt": "Mapa ilustrado do bairro Qianmen–Dashilar, com ruas, quarteirões e fachadas. Qianmen segue ao sul e Dashilar se estende para oeste.",
-            "caption": "A região da praça fica acima do mapa. Caminhar para sul pela 前门大街 Rua Qianmen, no centro-direita; virar para oeste, à esquerda, na 大栅栏街 Rua Dashilar, e seguir até 煤市街 Meishi Street para organizar a saída. A linha vermelha e os 22 pontos pertencem ao circuito cultural da publicação: nosso passeio usa somente esse trecho de Qianmen e Dashilar. As fachadas ajudam a reconhecer os cruzamentos.",
+            "caption": "A região da praça fica acima do mapa. Caminhar para sul pela 前门大街 Rua Qianmen, no centro-direita; virar à direita, para oeste, na 大栅栏街 Rua Dashilar, e seguir até 煤市街 Meishi Street para organizar a saída. A linha vermelha e os 22 pontos pertencem ao circuito cultural da publicação: nosso passeio usa somente esse trecho de Qianmen e Dashilar. As fachadas ajudam a reconhecer os cruzamentos.",
             "sourceLabel": "Mapa cultural de Qianmen–Dashilar · Beijing Daily",
             "sourceUrl": "https://xinwen.bjd.com.cn/content/s676678dde4b000299badaf9c.html",
             "credit": "Mapa divulgado pelo Beijing Daily / 北京日报 · imagem original da publicação."

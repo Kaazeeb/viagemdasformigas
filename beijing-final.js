@@ -21,29 +21,38 @@
   const icon = (type) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (icons[type] || icons.visit) + "</svg>";
   const copyButton = (value, label) => '<button type="button" class="copy-button js-only" data-copy="' + escape(value) + '" aria-label="' + escape(label || "Copiar nome em chinês") + '" hidden>' + copyIcon + '<span>Copiar</span></button>';
   const fact = (label, value) => value ? "<div><dt>" + escape(label) + "</dt><dd>" + escape(value) + "</dd></div>" : "";
+  const visuals = () => (typeof window !== "undefined" && window.BEIJING_FINAL_VISUALS) || {};
+  const dimensions = (item) => Number(item.width) > 0 && Number(item.height) > 0 ? ' width="' + Math.round(item.width) + '" height="' + Math.round(item.height) + '"' : "";
+  const reviewText = (data) => data.reviewNote || (data.updatedAt ? "Revisão de orientação em " + data.updatedAt + "." : "");
+
+  function imageLink(item, title, label) {
+    const original = item.originalSrc || item.src;
+    return '<a class="image-open" href="' + safeURL(original) + '" target="_blank" rel="noopener noreferrer" data-map="' + safeURL(item.src) + '" data-map-original="' + safeURL(original) + '" data-map-alt="' + escape(item.alt || title) + '" data-map-title="' + escape(title) + '" data-map-caption="' + escape(item.caption || "") + '" data-map-source-label="' + escape(item.sourceLabel || item.credit || "") + '" data-map-source-url="' + safeURL(item.sourceUrl || item.page || "") + '" data-map-credit="' + escape(item.sourceUrl ? item.credit || "" : "") + '" data-map-width="' + escape(item.width || "") + '" data-map-height="' + escape(item.height || "") + '" aria-label="' + escape(label + ": " + (item.alt || item.caption || title)) + '"><img src="' + safeURL(item.src) + '" alt="' + escape(item.alt || item.caption || title) + '"' + dimensions(item) + ' loading="lazy" decoding="async"><span class="zoom-label"><span aria-hidden="true">↗</span> ' + escape(label) + '</span></a>';
+  }
 
   function hotelHTML(data) {
     const hotel = data.hotel || {};
-    return '<p class="eyebrow">Nossa base · 23–27 setembro</p><h2>' + escape(hotel.name || "Xingyi Hotel") + '</h2><p class="hotel-zh" lang="zh-Hans">' + escape(hotel.zh) + '</p><p class="hotel-address" lang="zh-Hans">' + escape(hotel.address) + "</p>" + (hotel.notes ? '<p class="hotel-notes">' + escape(Array.isArray(hotel.notes) ? hotel.notes.join(" ") : hotel.notes) + "</p>" : "") + copyButton([hotel.zh, hotel.address].filter(Boolean).join("\n"), "Copiar nome e endereço do hotel em chinês");
+    const media = visuals().hotel || {};
+    const support = (media.map ? mapHTML(media.map, "Endereço do hotel") : "") + (list(media.photos).length ? '<div class="photo-grid single">' + media.photos.map((photo) => photoHTML(photo, "Fachada do hotel Xingyi")).join("") + '</div>' : "");
+    return '<p class="eyebrow">Nossa base · 23–27 setembro</p><h2>' + escape(hotel.name || "Xingyi Hotel") + '</h2><p class="hotel-zh" lang="zh-Hans">' + escape(hotel.zh) + '</p><p class="hotel-address" lang="zh-Hans">' + escape(hotel.address) + "</p>" + (hotel.notes ? '<p class="hotel-notes">' + escape(Array.isArray(hotel.notes) ? hotel.notes.join(" ") : hotel.notes) + "</p>" : "") + copyButton([hotel.zh, hotel.address].filter(Boolean).join("\n"), "Copiar nome e endereço do hotel em chinês") + (support ? '<details class="hotel-visuals"><summary>Ver fachada e cartão do endereço</summary>' + support + '</details>' : "");
   }
 
   function essentialsHTML(data) {
     return list(data.essentials).map((item) => "<article><h2>" + escape(item.title) + "</h2><p>" + escape(item.text) + "</p></article>").join("");
   }
 
-  function photoHTML(photo) {
+  function photoHTML(photo, title) {
     const credit = photo.credit ? escape(photo.credit) : "Ver autoria na fonte";
     const creditLink = photo.page ? '<a href="' + safeURL(photo.page) + '" target="_blank" rel="noopener noreferrer">' + credit + "</a>" : credit;
     const license = photo.license ? " · " + (photo.licenseUrl ? '<a href="' + safeURL(photo.licenseUrl) + '" target="_blank" rel="noopener noreferrer">' + escape(photo.license) + "</a>" : escape(photo.license)) : "";
-    return '<figure class="place-photo"><img src="' + safeURL(photo.src) + '" alt="' + escape(photo.alt || photo.caption) + '" loading="lazy" decoding="async"><figcaption>' + escape(photo.caption || photo.alt) + '<span class="photo-credit">Foto: ' + creditLink + license + "</span></figcaption></figure>";
+    return '<figure class="place-photo">' + imageLink(photo, title || photo.alt || photo.caption, "Ampliar foto") + '<figcaption>' + escape(photo.caption || photo.alt) + '<span class="photo-credit">Foto: ' + creditLink + license + "</span></figcaption></figure>";
   }
 
   function mapHTML(map, title) {
     const source = map.sourceLabel || "Fonte do mapa";
     const sourceLink = map.sourceUrl ? '<a href="' + safeURL(map.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + escape(source) + '</a>' : (map.sourceLabel ? escape(source) : "");
     const credits = [sourceLink, map.credit ? escape(map.credit) : ""].filter(Boolean).join(" · ");
-    const original = map.originalSrc || map.src;
-    return '<figure class="schematic"><button type="button" data-map="' + safeURL(map.src) + '" data-map-original="' + safeURL(original) + '" data-map-alt="' + escape(map.alt || "Mapa de " + title) + '" data-map-title="' + escape(title) + '" data-map-caption="' + escape(map.caption || "") + '" data-map-source-label="' + escape(map.sourceLabel || "") + '" data-map-source-url="' + safeURL(map.sourceUrl || "") + '" data-map-credit="' + escape(map.credit || "") + '" aria-label="Abrir mapa com zoom: ' + escape(title) + '"><img src="' + safeURL(map.src) + '" alt="' + escape(map.alt || "Mapa de " + title) + '" loading="lazy" decoding="async"><span class="zoom-label js-only" hidden><span aria-hidden="true">↗</span> Ver mapa em detalhe</span></button><figcaption><strong>' + escape(map.title || "Planta do local") + '</strong>' + escape(map.caption || "") + (credits ? '<span class="map-credit">' + credits + '</span>' : '') + '<a class="map-original-link" href="' + safeURL(original) + '" target="_blank" rel="noopener noreferrer">Abrir imagem original ↗</a></figcaption></figure>';
+    return '<figure class="schematic">' + imageLink(map, map.title || title, "Ampliar mapa ou esquema") + '<figcaption><strong>' + escape(map.title || "Planta do local") + '</strong>' + escape(map.caption || "") + (credits ? '<span class="map-credit">' + credits + '</span>' : '') + '</figcaption></figure>';
   }
 
   function stepHTML(day, step, index, sources) {
@@ -54,6 +63,10 @@
     const transport = step.transport ? Object.keys(transportLabels).map((key) => fact(transportLabels[key], step.transport[key])).join("") : "";
     const timing = fact("Chegada prevista", step.arrival) + fact("Permanência", step.duration) + fact("Próxima saída", step.leave);
     const gates = fact("Entrar por", step.entry) + fact("Sair por", step.exit);
+    const media = (visuals().steps || {})[step.id] || {};
+    const mainMap = media.map;
+    const referenceMap = media.referenceMap === false ? null : media.referenceMap || step.map;
+    const photos = Array.isArray(media.photos) ? media.photos : list(step.photos);
     let html = '<li class="timeline-item"><span class="timeline-marker" aria-hidden="true">' + String(index + 1).padStart(2, "0") + '</span><article class="step-card step-' + type + '" id="' + id + '" aria-labelledby="' + id + '-title"><div class="step-main"><div class="step-topline"><span class="step-kind">' + icon(type) + escape(labels[type]) + '</span><span class="step-time">' + escape(step.time) + '</span></div><h3 id="' + id + '-title">' + escape(step.title) + "</h3>";
     if (step.zh) html += '<div class="place-name"><p lang="zh-Hans">' + escape(step.zh) + "</p>" + copyButton(step.zh, "Copiar " + step.title + " em chinês") + "</div>";
     if (step.summary) html += '<p class="step-summary">' + escape(step.summary) + "</p>";
@@ -63,8 +76,9 @@
     if (list(step.instructions).length) html += '<ol class="instructions">' + step.instructions.map((instruction) => "<li>" + escape(instruction) + "</li>").join("") + "</ol>";
     if (list(step.alerts).length) html += '<aside class="alerts" aria-label="Atenção para esta etapa"><h4>Antes de chegar</h4><ul>' + step.alerts.map((alert) => "<li>" + escape(alert) + "</li>").join("") + "</ul></aside>";
     html += "</div>";
-    if (step.map && step.map.src) html += mapHTML(step.map, step.title);
-    if (list(step.photos).length) html += '<div class="photo-grid' + (step.photos.length === 1 ? " single" : "") + '" aria-label="Fotos para reconhecer o local">' + step.photos.map(photoHTML).join("") + "</div>";
+    if (mainMap && mainMap.src) html += '<div class="route-visual"><h4>Para se orientar</h4>' + mapHTML(mainMap, step.title) + '</div>';
+    if (photos.length) html += '<section class="recognition-photos" aria-label="Referências visuais de ' + escape(step.title) + '"><h4>Reconheça o lugar</h4><div class="photo-grid' + (photos.length === 1 ? " single" : "") + '">' + photos.map((photo) => photoHTML(photo, step.title)).join("") + '</div></section>';
+    if (referenceMap && referenceMap.src && (!mainMap || referenceMap.src !== mainMap.src)) html += '<details class="map-reference"><summary>' + escape(media.referenceTitle || "Consultar planta completa de referência") + '</summary>' + mapHTML(referenceMap, step.title) + '</details>';
     html += '<div class="step-footer">';
     if (selectedSources.length) html += '<details class="step-sources"><summary>Fontes desta etapa (' + selectedSources.length + ")</summary><ul>" + selectedSources.map((source) => '<li><a href="' + safeURL(source.url) + '" target="_blank" rel="noopener noreferrer">' + escape(source.label) + "</a></li>").join("") + "</ul></details>";
     else html += '<span class="step-sources">Horários aproximados · Pequim</span>';
@@ -84,23 +98,25 @@
   }
 
   // The same renderers generate the checked-in HTML, so the whole guide also works without JavaScript.
-  const renderers = { hotel: hotelHTML, essentials: essentialsHTML, days: daysHTML, sources: sourcesHTML };
+  const renderers = { hotel: hotelHTML, essentials: essentialsHTML, days: daysHTML, sources: sourcesHTML, review: (data) => escape(reviewText(data)) };
   if (typeof window !== "undefined") window.BEIJING_GUIDE_RENDER = renderers;
   if (typeof document === "undefined") return;
 
   function init() {
     const data = window.BEIJING_FINAL;
-    if (data && list(data.days).length) {
+    // Keep the reviewed static HTML if the visual selection fails to load.
+    if (data && list(data.days).length && window.BEIJING_FINAL_VISUALS) {
       document.getElementById("hotel-card").innerHTML = hotelHTML(data);
       document.getElementById("essentials").innerHTML = essentialsHTML(data);
       document.getElementById("guide-days").innerHTML = daysHTML(data);
       document.getElementById("guide-sources").innerHTML = sourcesHTML(data);
-      document.getElementById("updated-at").textContent = data.updatedAt ? "Informações conferidas em " + data.updatedAt + "." : "";
+      document.getElementById("updated-at").textContent = reviewText(data);
     }
 
     const daySections = Array.from(document.querySelectorAll("[data-day]"));
     if (!daySections.length) return;
     document.querySelectorAll(".js-only").forEach((node) => { node.hidden = false; });
+    document.querySelectorAll("a[data-map]").forEach((node) => node.setAttribute("aria-haspopup", "dialog"));
     const dayLinks = Array.from(document.querySelectorAll("[data-day-link]"));
     const allButton = document.getElementById("show-all");
     const status = document.getElementById("guide-status");
@@ -207,36 +223,62 @@
     const zoomOut = document.getElementById("map-zoom-out");
     const zoomIn = document.getElementById("map-zoom-in");
     const zoomValue = document.getElementById("map-zoom-value");
+    const loadStatus = document.getElementById("map-load-status");
+    let mapAspectRatio = 1;
     let mapZoom = 1;
     const zoomLevels = [1, 1.5, 2, 3, 4, 6, 8, 12, 16, 24];
 
     function setMapZoom(next, reset) {
-      const oldWidth = mapImage.getBoundingClientRect().width || mapViewport.clientWidth;
-      const centerX = (mapViewport.scrollLeft + mapViewport.clientWidth / 2) / oldWidth;
-      const centerY = (mapViewport.scrollTop + mapViewport.clientHeight / 2) / oldWidth;
+      const viewport = mapViewport.getBoundingClientRect();
+      const before = mapImage.getBoundingClientRect();
+      const centerX = Math.max(0, Math.min(1, (viewport.left + mapViewport.clientWidth / 2 - before.left) / (before.width || 1)));
+      const centerY = Math.max(0, Math.min(1, (viewport.top + mapViewport.clientHeight / 2 - before.top) / (before.height || 1)));
       mapZoom = Math.max(1, Math.min(24, next));
-      const width = Math.max(1, mapViewport.clientWidth - 24) * mapZoom;
+      const fitWidth = Math.max(1, Math.min(mapViewport.clientWidth - 24, (mapViewport.clientHeight - 24) * mapAspectRatio));
+      const width = fitWidth * mapZoom;
       mapImage.style.width = width + "px";
       zoomValue.textContent = Math.round(mapZoom * 100) + "%";
+      zoomValue.setAttribute("aria-label", "Ampliação: " + Math.round(mapZoom * 100) + "% do ajuste à tela");
       zoomOut.disabled = mapZoom === 1;
       zoomIn.disabled = mapZoom === 24;
       if (reset) {
         mapViewport.scrollTop = 0;
         mapViewport.scrollLeft = 0;
       } else {
-        mapViewport.scrollLeft = Math.max(0, centerX * width - mapViewport.clientWidth / 2);
-        mapViewport.scrollTop = Math.max(0, centerY * width - mapViewport.clientHeight / 2);
+        const after = mapImage.getBoundingClientRect();
+        mapViewport.scrollLeft += after.left + centerX * after.width - viewport.left - mapViewport.clientWidth / 2;
+        mapViewport.scrollTop += after.top + centerY * after.height - viewport.top - mapViewport.clientHeight / 2;
       }
     }
 
     function changeMapZoom(direction) {
-      const index = zoomLevels.indexOf(mapZoom);
-      setMapZoom(zoomLevels[Math.max(0, Math.min(zoomLevels.length - 1, index + direction))]);
+      const levels = direction > 0 ? zoomLevels : zoomLevels.slice().reverse();
+      setMapZoom(levels.find((level) => direction > 0 ? level > mapZoom + .001 : level < mapZoom - .001) || (direction > 0 ? 24 : 1));
     }
 
     zoomOut.addEventListener("click", () => changeMapZoom(-1));
     zoomIn.addEventListener("click", () => changeMapZoom(1));
     document.getElementById("map-zoom-fit").addEventListener("click", () => setMapZoom(1, true));
+    document.getElementById("map-zoom-width").addEventListener("click", () => {
+      const available = Math.max(1, mapViewport.clientWidth - 24);
+      const fitWidth = Math.max(1, Math.min(available, (mapViewport.clientHeight - 24) * mapAspectRatio));
+      setMapZoom(available / fitWidth, true);
+    });
+    mapImage.addEventListener("load", () => {
+      if (!dialog.open) return;
+      mapAspectRatio = mapImage.naturalWidth / mapImage.naturalHeight || 1;
+      mapImage.hidden = false;
+      loadStatus.hidden = true;
+      mapViewport.setAttribute("aria-busy", "false");
+      setMapZoom(mapZoom, true);
+    });
+    mapImage.addEventListener("error", () => {
+      if (!dialog.open) return;
+      mapImage.hidden = true;
+      loadStatus.textContent = "Não foi possível carregar esta imagem. Tente o link para abrir o arquivo ou escolha outra referência.";
+      loadStatus.hidden = false;
+      mapViewport.setAttribute("aria-busy", "false");
+    });
     window.addEventListener("resize", () => { if (dialog.open) setMapZoom(mapZoom); });
     mapViewport.addEventListener("keydown", (event) => {
       if (event.key === "+" || event.key === "=") { event.preventDefault(); changeMapZoom(1); }
@@ -256,14 +298,20 @@
       }
       const map = event.target.closest("[data-map]");
       if (map) {
+        if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         if (typeof dialog.showModal !== "function") {
-          window.open(map.dataset.mapOriginal || map.dataset.map, "_blank", "noopener,noreferrer");
+          if (map.tagName !== "A") window.open(map.dataset.mapOriginal || map.dataset.map, "_blank", "noopener,noreferrer");
           return;
         }
+        event.preventDefault();
         previousMapFocus = map;
         document.getElementById("map-dialog-title").textContent = map.dataset.mapTitle;
-        mapImage.src = map.dataset.map;
         mapImage.alt = map.dataset.mapAlt;
+        mapAspectRatio = Number(map.dataset.mapWidth) / Number(map.dataset.mapHeight) || 1;
+        mapImage.hidden = true;
+        loadStatus.textContent = "Carregando imagem em detalhe…";
+        loadStatus.hidden = false;
+        mapViewport.setAttribute("aria-busy", "true");
         document.getElementById("map-dialog-caption").textContent = map.dataset.mapCaption;
         document.getElementById("map-dialog-original").href = map.dataset.mapOriginal || map.dataset.map;
         const mapSource = document.getElementById("map-dialog-source");
@@ -284,6 +332,8 @@
         document.body.style.overflow = "hidden";
         dialog.showModal();
         setMapZoom(1, true);
+        // The list uses a light preview; the viewer must load the detailed file.
+        mapImage.src = map.dataset.mapOriginal || map.dataset.map;
         document.getElementById("close-map").focus();
       }
     });
@@ -295,6 +345,7 @@
     });
     dialog.addEventListener("close", () => {
       document.body.style.overflow = savedOverflow;
+      mapViewport.setAttribute("aria-busy", "false");
       if (previousMapFocus) previousMapFocus.focus({ preventScroll: true });
     });
 
