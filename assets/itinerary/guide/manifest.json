@@ -1,0 +1,2369 @@
+{
+  "version": 1,
+  "preparedAt": "2026-09-17",
+  "collectionCatalogSha256": "bb11ba93838e1ce583013dbbb81421e02b5d81aa315b6a8b914b518863dd0812",
+  "selectionSha256": "49d151324c9a5476c58794edaa52b6d50e554741605016184265edb80a40774a",
+  "resourceCount": 49,
+  "mapCount": 14,
+  "photoCount": 35,
+  "deliveredBytes": 17331290,
+  "resources": [
+    {
+      "id": "templo-do-ceu-v2",
+      "category": "editadas",
+      "type": "esquema-de-orientacao",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "editadas/acervo-inicial/templo-do-ceu-v2.png",
+      "sourceSha256": "4ac73c589579fcebc486b1e1cc7e2e88758d953a915ec607ecef517310ef81aa",
+      "sourceWidth": 1024,
+      "sourceHeight": 1536,
+      "sourcePage": "https://www.tiantanpark.cn/navigation_map.html",
+      "sourceImage": null,
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "templo-do-ceu-v1",
+        "24-heaven-mapa-temple-heaven-official"
+      ],
+      "sourceChanges": "Edição do piloto: substituir arquitetura inventada por símbolos abstratos e corrigir sequência.",
+      "sourceMethod": "image_gen integrado",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspeção visual integral: sete números únicos, nomes, norte para cima, saída à direita e Danbi como passagem longa/plana conferidos com planta oficial e roteiro. Rótulos e rodapé legíveis no tamanho original. Revisão por imagem, não OCR automatizado. Segunda revisão independente confirmou todos os sete nomes PT/ZH, números, sequência e orientação, sem outro erro material.",
+      "limitations": "Somente orientação da sequência. Sem escala, fachadas, trilhas exatas, desníveis ou acessibilidade; aberturas nos símbolos não representam portões reais. Não substitui planta oficial nem sinalização.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/templo-do-ceu-v2-preview.webp",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 121464,
+          "sha256": "41987e6363c308bbe73de12b28fb72f8d8178d725f2b9c231e71c5851611ca2f",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/templo-do-ceu-v2.png",
+          "width": 1024,
+          "height": 1536,
+          "bytes": 1617503,
+          "sha256": "4ac73c589579fcebc486b1e1cc7e2e88758d953a915ec607ecef517310ef81aa",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "ext24-lama-eixo-saloes-v2",
+      "category": "criadas",
+      "type": "esquema-espacial-svg-renderizado",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "criadas/dia-24/lama-eixo-saloes-v2.png",
+      "sourceSha256": "266a9f8ec24b2eba9b4070d23ad63ff1a6fd061d4c6a4db9ec4f9e4e77a7f07b",
+      "sourceWidth": 1200,
+      "sourceHeight": 1740,
+      "sourcePage": "https://www.yonghegong.cn/2016-12/26/content_39984666.htm",
+      "sourceImage": null,
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "dia24-lama-planta-bilingue",
+        "ext24-lama-yongyou-placa",
+        "ext24-lama-yongyou-fachada",
+        "ext24-lama-wanfuge",
+        "ext24-lama-zhaotai-turismo",
+        "ext24-lama-eixo-saloes-v1"
+      ],
+      "sourceChanges": "V2: Fontconfig absoluto torna caracteres chineses legíveis; em Wangfujing texto final passa de fachada e pátio para fachada externa.",
+      "sourceMethod": "SVG nativo determinístico; render rsvg-convert com fonte Noto Sans CJK SC. Nenhum raster alterado.",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspecionado com view_image por visuais_dia24 e revisão independente root. PT/chinês legíveis; sequência sul→norte 4 昭泰门, 11 雍和门, 17 雍和宫, 18 永佑殿, 21 法轮殿, 24 万福阁 conferida com legenda oficial. Norte para cima; nenhum trajeto lateral inventado.",
+      "limitations": "Não substitui planta oficial; blocos são símbolos, sem fachada fiel, portas, corredores laterais de retorno, escala ou acessibilidade. Retorno ao sul seguindo indicação local.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/ext24-lama-eixo-saloes-v2-preview.webp",
+          "width": 1069,
+          "height": 1550,
+          "bytes": 93840,
+          "sha256": "141429415940c63ac069b1b7cada4567c968184fe387d23c1cefc13f50a06753",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/ext24-lama-eixo-saloes-v2.png",
+          "width": 1200,
+          "height": 1740,
+          "bytes": 146387,
+          "sha256": "266a9f8ec24b2eba9b4070d23ad63ff1a6fd061d4c6a4db9ec4f9e4e77a7f07b",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "ext24-lama-guozijian-bairro-v2",
+      "category": "criadas",
+      "type": "esquema-espacial-svg-renderizado",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "criadas/dia-24/lama-guozijian-bairro-v2.png",
+      "sourceSha256": "94890f61d197268dc524c37f75f87023c77187cea1d7cebd5edc83342fb18064",
+      "sourceWidth": 1200,
+      "sourceHeight": 1580,
+      "sourcePage": "https://www.yonghegong.cn/2016-12/26/content_39984666.htm",
+      "sourceImage": null,
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "dia24-lama-guozijian-entorno",
+        "ext24-lama-saida-f",
+        "ext24-lama-guozijian-bairro-v1"
+      ],
+      "sourceChanges": "V2: Fontconfig absoluto torna caracteres chineses legíveis; em Wangfujing texto final passa de fachada e pátio para fachada externa.",
+      "sourceMethod": "SVG nativo determinístico; render rsvg-convert com fonte Noto Sans CJK SC. Nenhum raster alterado.",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspecionado com view_image por visuais_dia24 e revisão independente root. Norte para cima; F e Lama a leste da Yonghegong Dajie, Guozijian a oeste; Confúcio a leste da Academia Imperial e ambos ao norte da rua. Setas só de sentido geral; nenhuma linha cruza a avenida.",
+      "limitations": "Sem escala ou limites medidos. Não desenha travessia da avenida nem garante F operacional. Mapa antigo de bairro usado só para ruas, nunca para letras de saídas; foto F complementa essa parte.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/ext24-lama-guozijian-bairro-v2-preview.webp",
+          "width": 1100,
+          "height": 1448,
+          "bytes": 96982,
+          "sha256": "0e1d135e9129e6fe253949ddf4e057da3f374300cf1e337b965bd909336839b9",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/ext24-lama-guozijian-bairro-v2.png",
+          "width": 1200,
+          "height": 1580,
+          "bytes": 140307,
+          "sha256": "94890f61d197268dc524c37f75f87023c77187cea1d7cebd5edc83342fb18064",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "ext24-wangfujing-marcos-v2",
+      "category": "criadas",
+      "type": "esquema-espacial-svg-renderizado",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "criadas/dia-24/wangfujing-marcos-v2.png",
+      "sourceSha256": "7eb0d94e404262fb07a6395ef41ee7eb4d75921980a1600b9da04ac54297390f",
+      "sourceWidth": 1200,
+      "sourceHeight": 1710,
+      "sourcePage": "https://ditu.amap.com/place/B000A842O2",
+      "sourceImage": null,
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "dia24-wangfujing-e3",
+        "dia24-wangfujing-apm",
+        "dia24-wangfujing-dongtang",
+        "ext24-wangfujing-marcos-v1"
+      ],
+      "sourceChanges": "V2: Fontconfig absoluto torna caracteres chineses legíveis; em Wangfujing texto final passa de fachada e pátio para fachada externa.",
+      "sourceMethod": "SVG nativo determinístico; render rsvg-convert com fonte Noto Sans CJK SC. Nenhum raster alterado.",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspecionado com view_image por visuais_dia24 e revisão independente root. Norte para cima; E3/Gongmei ao sul de APM, APM ao sul de Jinyu, Dongtang ao norte. Chang’an ao sul, Dong’anmen para oeste e Jinyu para leste. PT/CJK e limites legíveis.",
+      "limitations": "Sem distância, calçada obrigatória, trajeto acessível, faixa de travessia ou ponto fixo de embarque. Não promete entrada na igreja ou no pátio. E3 reconhecida por foto de 2022 e texto descritivo, não confirmada operacional em 2026.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/ext24-wangfujing-marcos-v2-preview.webp",
+          "width": 1088,
+          "height": 1550,
+          "bytes": 94632,
+          "sha256": "e1ad67c48f113588e9d41058d8d5fd4017ab69d7fabe926474b2073adf64abba",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/ext24-wangfujing-marcos-v2.png",
+          "width": 1200,
+          "height": 1710,
+          "bytes": 151057,
+          "sha256": "7eb0d94e404262fb07a6395ef41ee7eb4d75921980a1600b9da04ac54297390f",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "ext25-cidade-proibida-eixo-v1",
+      "category": "editadas",
+      "type": "mapa-esquema",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "editadas/dia-25/cidade-proibida-eixo-v1.png",
+      "sourceSha256": "8e954dc0701b53b3b7d55aa8dd9c41aa2f5a9567ef038d560ba5a492452986cf",
+      "sourceWidth": 1670,
+      "sourceHeight": 2200,
+      "sourcePage": "https://www.dpm.org.cn/Visit.html",
+      "sourceImage": null,
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "25-palace-mapa-forbidden-city-official",
+        "ext25-donghuamen-fosso-isaac",
+        "ext25-donghuamen-passagem-fosso-tcg"
+      ],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": "SVG nativo com rsvg-convert; imagens-base embutidas intactas, sem IA e sem edição raster.",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image em 17/09/2026 após correções. Marcadores6 e 5 reposicionados nos telhados Baohedian/Zhonghedian; Taihemen e Taihedian separados. Inset corrigido para faixa entre muro e fosso; norte explícito e textos legíveis.",
+      "limitations": "Mapa espacial não atualiza áreas abertas. Obra de Taihemen anunciada em 31/07/2026 para 03/08, sem término. Seguir sinalização no dia.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/ext25-cidade-proibida-eixo-v1-preview.webp",
+          "width": 1100,
+          "height": 1449,
+          "bytes": 297410,
+          "sha256": "9cc02e5398fa758a4244ceaded4cd5ceefaa4cd7b02c67c8c68e082dc3870eb8",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/ext25-cidade-proibida-eixo-v1.png",
+          "width": 1670,
+          "height": 2200,
+          "bytes": 3151842,
+          "sha256": "8e954dc0701b53b3b7d55aa8dd9c41aa2f5a9567ef038d560ba5a492452986cf",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "ext25-jingshan-referencias-v1",
+      "category": "editadas",
+      "type": "mapa-esquema",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "editadas/dia-25/jingshan-referencias-v1.png",
+      "sourceSha256": "bd248c9dd2d481418d3362c6f3af012503f61e8b41ce84d1264e56764ce15b63",
+      "sourceWidth": 1550,
+      "sourceHeight": 1530,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Jingshanmap.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jingshanmap.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "dia25-jingshan-planta-limpa"
+      ],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": "SVG nativo com rsvg-convert; imagens-base embutidas intactas, sem IA e sem edição raster.",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image em 17/09/2026 após correções. Portões sul/leste, Qiwanglou e Wanchun conferidos sobre a fonte; textos chineses renderizados e ausência de linhas falsas confirmadas.",
+      "limitations": "Base antiga 600×634; caminhos originais preservados. Números não formam trilha nem atestam acessibilidade.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/ext25-jingshan-referencias-v1-preview.webp",
+          "width": 1100,
+          "height": 1086,
+          "bytes": 125070,
+          "sha256": "5fd7551570971346ba0fa3d9066d58c4a587e417986015833d05daa91e7cec78",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/ext25-jingshan-referencias-v1.png",
+          "width": 1550,
+          "height": 1530,
+          "bytes": 658843,
+          "sha256": "bd248c9dd2d481418d3362c6f3af012503f61e8b41ce84d1264e56764ce15b63",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "ext25-qianmen-dashilar-trecho-v1",
+      "category": "criadas",
+      "type": "mapa-esquema",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "criadas/dia-25/qianmen-dashilar-trecho-v1.png",
+      "sourceSha256": "4fb5b8e097ff598aa26aa46526203b62a861b7e3f84d0cecb62160140ebb70ee",
+      "sourceWidth": 1100,
+      "sourceHeight": 1510,
+      "sourcePage": "https://xinwen.bjd.com.cn/content/s676678dde4b000299badaf9c.html",
+      "sourceImage": null,
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "25-qianmen-mapa-qianmen-dashilar-bjd-official-original"
+      ],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": "SVG nativo com rsvg-convert; imagens-base embutidas intactas, sem IA e sem edição raster.",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image em 17/09/2026 após correções. Norte, duas torres, Qianmen East/West, Qianmen, Dashilar, Xianyukou e Meishi coerentes com planta BJD. Pailou corrigido para牌楼; circuito editorial removido por redesenho vetorial.",
+      "limitations": "Sem escala. Não desenha travessia ativa da praça, nem ponto autorizado de carro; o aplicativo define o local.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/ext25-qianmen-dashilar-trecho-v1-preview.webp",
+          "width": 1100,
+          "height": 1510,
+          "bytes": 97444,
+          "sha256": "33197c1b0e2bb4323c384c19d715dfcfdde313cbda341c1594e6a71615c3d3c8",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/ext25-qianmen-dashilar-trecho-v1.png",
+          "width": 1100,
+          "height": 1510,
+          "bytes": 151756,
+          "sha256": "4fb5b8e097ff598aa26aa46526203b62a861b7e3f84d0cecb62160140ebb70ee",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "ext2627-verao-setor-leste-anotado-v2-png",
+      "category": "editadas",
+      "type": "render-composicao-svg",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "editadas/dias-26-27/verao-setor-leste-anotado-v2.png",
+      "sourceSha256": "933eafb0f73f75884feca41d70f2036673a245f2fb41eefd4c26143bd91ff37a",
+      "sourceWidth": 1800,
+      "sourceHeight": 1400,
+      "sourcePage": "https://summerpalace.net.cn/guide_map.html?_isa=1",
+      "sourceImage": null,
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "26-summer-mapa-summer-palace-official"
+      ],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "PNG renderizado inspecionado; Renshoudian ganhou chamada com ponteiro para preservar o rótulo. Coordenadas e edifícios coincidem com original; texto legível e retorno a leste explícito.",
+      "limitations": "ViewBox amplia a região; raster integral está embutido e não foi editado. 5 indica região, pois portão exato não é rotulado. Linha escura é da base oficial, não nosso caminho. Sem indicação de portas/escadas.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/ext2627-verao-setor-leste-anotado-v2-png-preview.webp",
+          "width": 1100,
+          "height": 856,
+          "bytes": 149088,
+          "sha256": "e746f14d60ba5db1477d314e740f8663b43521fd2aa95f9324675e020bc5470f",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/ext2627-verao-setor-leste-anotado-v2-png.png",
+          "width": 1800,
+          "height": 1400,
+          "bytes": 1048884,
+          "sha256": "933eafb0f73f75884feca41d70f2036673a245f2fb41eefd4c26143bd91ff37a",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "ext2627-shichahai-posicoes-relativas-v1-png",
+      "category": "criadas",
+      "type": "render-composicao-svg",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "criadas/dias-26-27/shichahai-posicoes-relativas-v1.png",
+      "sourceSha256": "91f3bca605c1efa69d08f4e0d5c768079ac4ecea32edf323f21104271f5b2214",
+      "sourceWidth": 1800,
+      "sourceHeight": 1470,
+      "sourcePage": null,
+      "sourceImage": null,
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "torres-yandai-shichahai-mapa",
+        "shichahai-lagos-hutongs"
+      ],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspecionado depois de corrigir contraste de 钟楼, rótulos sobrepostos e posição do nome Qianhai dentro da água. Relações conferidas com mapas anteriores e fonte oficial que descreve Yinding como ponte norte–sul.",
+      "limitations": "Geometria simplificada sem escala; não representa calçadas, cruzamentos ou caminho contínuo. A2 apenas em nota, sem posição precisa. 150–200m é intenção do roteiro, não medida gráfica.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/ext2627-shichahai-posicoes-relativas-v1-png-preview.webp",
+          "width": 1100,
+          "height": 898,
+          "bytes": 90298,
+          "sha256": "4522b76fc9115037f49847b28ef2d744f9b0369318108fb55947d8b5c23ab737",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/ext2627-shichahai-posicoes-relativas-v1-png.png",
+          "width": 1800,
+          "height": 1470,
+          "bytes": 238976,
+          "sha256": "91f3bca605c1efa69d08f4e0d5c768079ac4ecea32edf323f21104271f5b2214",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "ext2627-mutianyu-equipamentos-fotograficos-v1-png",
+      "category": "criadas",
+      "type": "render-composicao-svg",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "criadas/dias-26-27/mutianyu-equipamentos-fotograficos-v1.png",
+      "sourceSha256": "7264556896e4a260bbfa53b975b22521351aa5e9720f921262ddcacc1d000530",
+      "sourceWidth": 1800,
+      "sourceHeight": 1360,
+      "sourcePage": "https://en.mutianyugreatwall.com/article/4DlCYuBZ75h",
+      "sourceImage": null,
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "mutianyu-cabine-fechada",
+        "ext2627-mutianyu-cadeirinha",
+        "ext2627-mutianyu-toboga",
+        "ext2627-mutianyu-acessos-mapa"
+      ],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Fotos completas, sem distorção/recorte, e textos legíveis. Confrontado com Notice to Visitors oficial e mapa/fotos ipacktravel. Nenhuma associação genérica Portão sul→cadeirinha foi mantida.",
+      "limitations": "Fotos mostram equipamentos, não torres; números e controles vêm de documentos. Sem autorização infantil, operação garantida ou ligação14–6 presumida.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/ext2627-mutianyu-equipamentos-fotograficos-v1-png-preview.webp",
+          "width": 1100,
+          "height": 831,
+          "bytes": 195982,
+          "sha256": "07b0ce034e1f568228fa0b408ac583555002a0cca0f937cce21313315318b40a",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/ext2627-mutianyu-equipamentos-fotograficos-v1-png.png",
+          "width": 1800,
+          "height": 1360,
+          "bytes": 1443713,
+          "sha256": "7264556896e4a260bbfa53b975b22521351aa5e9720f921262ddcacc1d000530",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "extlog-metro-dia24-linhas5-1",
+      "category": "criadas",
+      "type": "diagrama-de-conexoes",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "criadas/logistica/metro-dia24-linhas5-1.png",
+      "sourceSha256": "cdc28c891cfac23514488d49c537c323bd3c0394e6926591accd3a6fc0e30c87",
+      "sourceWidth": 1200,
+      "sourceHeight": 1660,
+      "sourcePage": "https://www.bjsubway.com/station/xltcx/?id=1",
+      "sourceImage": "",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "extlog-tiantandongmen-a2"
+      ],
+      "sourceChanges": "Criação de diagrama a partir do roteiro e das fontes indicadas; sem manipulação de fotografias.",
+      "sourceMethod": "Desenho original SVG + PNG; ferramentas/gerar-logistica.py",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "PNG inspecionado: nove estações/8 intervalos Tiantandongmen–Yonghegong; três intervalos até Dongdan; ligação linha1 de uma parada para oeste. Texto sem cortes. Revisão independente visuais_dias26_27: PNG aberto, chinês, sequência e limites conferidos; aprovado sem correção.",
+      "limitations": "Trecho parcial e sem escala. Não mostra corredores de transferência; saídas A2/F/E3 continuam sujeitas à operação.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/extlog-metro-dia24-linhas5-1-preview.webp",
+          "width": 1100,
+          "height": 1522,
+          "bytes": 125208,
+          "sha256": "1508500f5e7142cf694ca8917ff2490280b798734c1915909276782cca72f1e6",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/extlog-metro-dia24-linhas5-1.png",
+          "width": 1200,
+          "height": 1660,
+          "bytes": 187792,
+          "sha256": "cdc28c891cfac23514488d49c537c323bd3c0394e6926591accd3a6fc0e30c87",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "extlog-hotel-xingyi-cartao-endereco",
+      "category": "criadas",
+      "type": "cartao-bilingue",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "criadas/logistica/hotel-xingyi-cartao-endereco.png",
+      "sourceSha256": "4d8b9c55b70bb9fca0f5e7277718d5bc94791e1f91423b461633754f5ef61cea",
+      "sourceWidth": 1200,
+      "sourceHeight": 1000,
+      "sourcePage": "https://tw.trip.com/hotels/beijing-hotel-detail-90808539/ni-hao-jiu-dian/photo.html",
+      "sourceImage": "",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "extlog-xingyi-fachada"
+      ],
+      "sourceChanges": "Criação de diagrama a partir do roteiro e das fontes indicadas; sem manipulação de fotografias.",
+      "sourceMethod": "Desenho original SVG + PNG; ferramentas/gerar-logistica.py",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "PNG inspecionado: 星怡酒店（北京天坛东门地铁站店） e 北京市东城区天坛东里甲48号1号楼 coincidem com roteiro e cadastro. Frase chinesa e tradução conferidas. Revisão independente visuais_dias26_27: PNG aberto, chinês, sequência e limites conferidos; aprovado sem correção.",
+      "limitations": "Não define o ponto de embarque nem certifica caminho hotel–metrô. Dados devem corresponder à reserva do grupo.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/extlog-hotel-xingyi-cartao-endereco-preview.webp",
+          "width": 1100,
+          "height": 917,
+          "bytes": 69540,
+          "sha256": "bca122ece8cf0694ce02237923d7461d68a3a6f445ca1c79182865e5b6dfb261",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/extlog-hotel-xingyi-cartao-endereco.png",
+          "width": 1200,
+          "height": 1000,
+          "bytes": 94901,
+          "sha256": "4d8b9c55b70bb9fca0f5e7277718d5bc94791e1f91423b461633754f5ef61cea",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "extlog-pek-t2-fluxo-embarque",
+      "category": "criadas",
+      "type": "diagrama-de-sequencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "criadas/logistica/pek-t2-fluxo-embarque.png",
+      "sourceSha256": "1f23534a0d4c3e19c230c30aed05284802b53a98333d15e3150fa05b8489e7bc",
+      "sourceWidth": 1200,
+      "sourceHeight": 1310,
+      "sourcePage": "roteiro-base.json",
+      "sourceImage": "",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [
+        "extlog-pek-t2-espera-2026"
+      ],
+      "sourceChanges": "Criação de diagrama a partir do roteiro e das fontes indicadas; sem manipulação de fotografias.",
+      "sourceMethod": "Desenho original SVG + PNG; ferramentas/gerar-logistica.py",
+      "sourceStatus": "aprovada-complemento",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "PNG inspecionado: PEK/Capital/T2, Shanghai Hongqiao, quatro etapas e rótulos chineses corretos. Nenhum balcão ou portão fixado. Revisão independente visuais_dias26_27: PNG aberto, chinês, sequência e limites conferidos; aprovado sem correção.",
+      "limitations": "Baseado no roteiro confirmado, não em planta do terminal; voo/terminal/check-in/portão conferir na viagem. Não é comprovante de operação futura.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/extlog-pek-t2-fluxo-embarque-preview.webp",
+          "width": 1100,
+          "height": 1201,
+          "bytes": 91912,
+          "sha256": "57a625422dd18c90a2ad5318d162c1dabb83d1df3409c7a67a70746420464998",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/extlog-pek-t2-fluxo-embarque.png",
+          "width": 1200,
+          "height": 1310,
+          "bytes": 126204,
+          "sha256": "1f23534a0d4c3e19c230c30aed05284802b53a98333d15e3150fa05b8489e7bc",
+          "format": "PNG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "dia24-lama-planta-bilingue",
+      "category": "originais-online",
+      "type": "planta-esquematica-publicada",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/dia24-lama-planta-bilingue.jpg",
+      "sourceSha256": "8e9a53f61a8f16625112810ef937ef3041ffe9568564e18e5aa81a8d6ab9b83b",
+      "sourceWidth": 630,
+      "sourceHeight": 1770,
+      "sourcePage": "https://www.eastchinatrip.com/lama-temple-beijing-guide/",
+      "sourceImage": "https://www.eastchinatrip.com/wp-content/uploads/2.-%E9%9B%8D%E5%92%8C%E5%AE%AB%E5%9C%B0%E5%9B%BE.jpg",
+      "credit": "Publicada por East China Trip; desenho traz identificação Yonghegong Lama Temple; autoria original não confirmada",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspecionada com view_image; eixo sul–norte e nomes dos seis pontos principais conferidos contra a planta/legenda oficial do Yonghegong. Não foi validada como rota de circulação atual.",
+      "limitations": "Não é mapa operacional atual nem tem escala. Publicação por terceiro; autoria original do desenho não confirmada. Só 630 px de largura; nomes menores ainda precisam de zoom. Não indica retorno autorizado, saída F, Guozijian ou condições de acessibilidade.",
+      "deliveryOperation": "PNG/JPEG detalhado copiado byte a byte; preview WebP qualidade 92, até 1100×1550, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/maps/dia24-lama-planta-bilingue-preview.webp",
+          "width": 552,
+          "height": 1550,
+          "bytes": 132328,
+          "sha256": "d3c6fbfc705022254e21b7c4b765737be7cd3f9acecb4741827b6b3a75dde858",
+          "format": "WEBP"
+        },
+        {
+          "path": "assets/itinerary/guide/maps/dia24-lama-planta-bilingue.jpg",
+          "width": 630,
+          "height": 1770,
+          "bytes": 88739,
+          "sha256": "8e9a53f61a8f16625112810ef937ef3041ffe9568564e18e5aa81a8d6ab9b83b",
+          "format": "JPEG"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: preview WebP aberto individualmente com view_image; composição integral, nomes PT/CJK, números, norte e avisos preservados. Versão detalhada tem hash idêntico ao arquivo já aprovado no acervo."
+    },
+    {
+      "id": "extlog-xingyi-fachada",
+      "category": "originais-online",
+      "type": "foto-de-acesso",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/logistica/xingyi-fachada.webp",
+      "sourceSha256": "ea36618c71f4fc578240b25f7d36372f668f98a2f9b2b71aa83a88407a104ea2",
+      "sourceWidth": 500,
+      "sourceHeight": 400,
+      "sourcePage": "https://tw.trip.com/hotels/beijing-hotel-detail-90808539/ni-hao-jiu-dian/photo.html",
+      "sourceImage": "https://ak-d.tripcdn.com/images/1mc6f12000ckj4g588180_R_500_400_R5.webp",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Nenhuma. Bytes do download preservados.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Imagem aberta individualmente: placa 星怡酒店 legível, porta à direita e degraus visíveis. Corresponde ao nome do cadastro 90808539.",
+      "limitations": "500×400 px; nome confere, mas não comprova data da foto, número do imóvel ou acesso sem degraus.",
+      "deliveryOperation": "WebP já adequado à entrega: bytes preservados.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/extlog-xingyi-fachada.webp",
+          "width": 500,
+          "height": 400,
+          "bytes": 20150,
+          "sha256": "ea36618c71f4fc578240b25f7d36372f668f98a2f9b2b71aa83a88407a104ea2",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext24-ceu-sul-acesso-2024",
+      "category": "originais-online",
+      "type": "fotografia-de-referencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dia-24/ceu-sul-acesso-2024.jpg",
+      "sourceSha256": "fdbe9e35fa1025cac54aa37a7e9eb34214482053ac377867a42ca6a50922b289",
+      "sourceWidth": 2400,
+      "sourceHeight": 1600,
+      "sourcePage": "https://news.bjd.com.cn/2024/04/26/10757698.shtml",
+      "sourceImage": "https://img1.bjd.com.cn/2024/04/26/fe0a12e7730713fc3860a3fa93f024109c16fbfd.jpg",
+      "credit": "Beijing Daily / 北京日报",
+      "sourcePhotoDate": "2024-04-26 (publicação)",
+      "parentIds": [],
+      "sourceChanges": "Original público preservado, sem retoque ou recorte.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image por visuais_dia24. Portão vermelho de telhado verde, três aberturas e grande espaço de aproximação; fonte jornalística identifica portão Sul.",
+      "limitations": "Não comprova cancelas, acesso a veículos, bilheteria nem condições operacionais de 2026.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext24-ceu-sul-acesso-2024.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 232632,
+          "sha256": "bf9232bb537e1889d00b02f24a4f62a7dd315920ea6a8787b525171e211f4b39",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext24-ceu-danbi-norte",
+      "category": "originais-online",
+      "type": "fotografia-de-referencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dia-24/ceu-danbi-norte.jpg",
+      "sourceSha256": "fa409d7ce53ede46d6034bdd11b3949e1b544a74e201991c9da3a7365b37e666",
+      "sourceWidth": 1280,
+      "sourceHeight": 960,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:VM_Temple_of_Heaven_-_Danbi_Bridge_4581.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/c/c6/VM_Temple_of_Heaven_-_Danbi_Bridge_4581.jpg",
+      "credit": "Vmenkov / Wikimedia Commons",
+      "sourcePhotoDate": "2009-07-04",
+      "parentIds": [],
+      "sourceChanges": "Original público preservado, sem retoque ou recorte.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image por visuais_dia24. Pavimento largo e contínuo, alinhamento para norte e portão com telhado azul do conjunto ao fundo; sem a escadaria gigante do desenho reprovado.",
+      "limitations": "Foto de 2009 com névoa; não comprova rota sem degraus, circulação ou obras atuais.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext24-ceu-danbi-norte.webp",
+          "width": 1280,
+          "height": 960,
+          "bytes": 66726,
+          "sha256": "f4f8b9e68b08ad245246c928663b4533768abe22bf066c8f3f616efa4246a44e",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "extlog-tiantandongmen-a2",
+      "category": "originais-online",
+      "type": "foto-de-acesso",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/logistica/tiantandongmen-a2.jpg",
+      "sourceSha256": "7d60697a16b396abbb44b5043e90811508c6751ef0d59cb81f921e312d3bccce",
+      "sourceWidth": 4032,
+      "sourceHeight": 3024,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Exit_A2,_Tiantandongmen_Station,_Beijing_Subway.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Exit_A2%2C_Tiantandongmen_Station%2C_Beijing_Subway.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Nenhuma. Bytes do download preservados.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Fachada, nome bilíngue e linha 5 conferidos; metadados da página identificam A2.",
+      "limitations": "Foto de 12/01/2020; letra A2 aparece pequena no painel lateral. Não certifica abertura atual ou rota hotel–estação.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/extlog-tiantandongmen-a2.webp",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 201972,
+          "sha256": "552c9ef1250ce21c76743b5469f69719dddddf120f3acfe36049a2635ba11d34",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext24-lama-saida-f",
+      "category": "originais-online",
+      "type": "fotografia-de-referencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dia-24/lama-saida-f.jpg",
+      "sourceSha256": "39645909a4de317195a3ed01a9857650ef178d205b544b04a927a80fe7bdae9a",
+      "sourceWidth": 3912,
+      "sourceHeight": 2934,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Exit_F%2C_Yonghegong_Lama_Temple_Station%2C_Beijing_Subway.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Exit_F%2C_Yonghegong_Lama_Temple_Station%2C_Beijing_Subway.jpg",
+      "credit": "Wcr1993 / Wikimedia Commons",
+      "sourcePhotoDate": "2020-08-14",
+      "parentIds": [],
+      "sourceChanges": "Original público preservado, sem retoque ou recorte.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image por visuais_dia24. F e 雍和宫 legíveis no totem; escadas e pequena rampa lateral à vista.",
+      "limitations": "Fotografia de 2020; não comprova operação em 2026 nem todo o acesso sem degraus.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext24-lama-saida-f.webp",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 154238,
+          "sha256": "c325271fb24d51e3bdf735b222e5a47a9bbe20bbcf4bfdaae0000a4a9accb32a",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade. Também aberto individualmente em resolução original para conferir placas/nomes e ausência de perda relevante após codificação."
+    },
+    {
+      "id": "ext24-lama-zhaotai-turismo",
+      "category": "originais-online",
+      "type": "fotografia-de-referencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dia-24/lama-zhaotai-turismo.jpg",
+      "sourceSha256": "5214734caaa109469962fb97502f10984880c961faabcb4d0b24727d2ca48a42",
+      "sourceWidth": 1024,
+      "sourceHeight": 683,
+      "sourcePage": "https://english.visitbeijing.com.cn/article/4AKpNSjuGAG",
+      "sourceImage": "https://img-rs.visitbeijing.com.cn/imageDir/9d44fbce9fc49332191a24dbc24bb933u5.jpg",
+      "credit": "Sipa Photo / VisitBeijing",
+      "sourcePhotoDate": "2019-11-20 (EXIF de processamento; captura não confirmada)",
+      "parentIds": [],
+      "sourceChanges": "Original público preservado, sem retoque ou recorte.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image por visuais_dia24. Portal envidraçado vermelho, verde e amarelo, placa 昭泰门 legível, multidão entrando; mesma arquitetura do Zhaotai já presente no acervo.",
+      "limitations": "Página se intitula Yonghe Gate, mas a foto é Zhaotaimen: usar a identidade conferida na placa. Marca d’água preservada; foto não prova abertura atual.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext24-lama-zhaotai-turismo.webp",
+          "width": 1024,
+          "height": 683,
+          "bytes": 120236,
+          "sha256": "43e6d0a4aa70ccebbe66dffd38ad2e257f267427906f209947f80fa6d64aec81",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext24-lama-wanfuge",
+      "category": "originais-online",
+      "type": "fotografia-de-referencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dia-24/lama-wanfuge.jpg",
+      "sourceSha256": "c36c759c971a98c7be130d5070f6713e5810eefe744af071e7cf50d184670981",
+      "sourceWidth": 4031,
+      "sourceHeight": 2687,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Wanfuge_Pavillion_in_Yonghe_Temple.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Wanfuge_Pavillion_in_Yonghe_Temple.jpg",
+      "credit": "Charlie fong / Wikimedia Commons",
+      "sourcePhotoDate": "2022",
+      "parentIds": [],
+      "sourceChanges": "Original público preservado, sem retoque ou recorte.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image por visuais_dia24. Pavilhão de três níveis de telhado, fachada e pátio completos; placa 万福阁 identificável.",
+      "limitations": "Exterior não comprova visita/foto interna ou horários; não é mapa.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext24-lama-wanfuge.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 322024,
+          "sha256": "9878894a0d8c866cc3fa3a3b1bad83fbe32bb2e870e566dabdedd0bd1d4b7952",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "24-guozijian-foto-02",
+      "category": "originais-online",
+      "type": "foto",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/24-guozijian-foto-02.webp",
+      "sourceSha256": "a6df6c0af185fc3f2d04c02e479cbd700964243102c22b45c56b95e68946b9dd",
+      "sourceWidth": 1280,
+      "sourceHeight": 960,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Guozijian_Street_East_Entrance.jpg",
+      "sourceImage": null,
+      "credit": "PENG, Yanan (Neo-Jay) / Wikimedia Commons",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspeção visual da equipe; cruzamento com o roteiro-base em 16/09/2026.",
+      "limitations": "Sem mapa próprio. Foto reconhece um portal, mas falta ligação com saída sul do Lama e travessia da Yonghegong Dajie.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/24-guozijian-foto-02.webp",
+          "width": 1280,
+          "height": 960,
+          "bytes": 416196,
+          "sha256": "eb1aae77ba6dcef99066f13949f04e2b6e29b8ed989a11a14720cd948bfaba6a",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "dia24-wangfujing-e3",
+      "category": "originais-online",
+      "type": "foto-de-acesso",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/dia24-wangfujing-e3.jpg",
+      "sourceSha256": "2b32210f2b1cb04c2edcc01ecab0f730c9e1329489aa57dc0e42f015b035fdc3",
+      "sourceWidth": 4032,
+      "sourceHeight": 2688,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Exit_E3_of_Wangfujing_Station_(20220105183233).jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Exit_E3_of_Wangfujing_Station_%2820220105183233%29.jpg",
+      "credit": "N509FZ / Wikimedia Commons",
+      "sourcePhotoDate": "2022-01-05",
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspecionada com view_image; E3, 王府井, linhas 1 e 8 legíveis na própria foto.",
+      "limitations": "Foto de 2022 não garante operação atual. Mostra degraus no patamar e escada rolante; não comprova percurso sem degraus para carrinho, elevador nem sentido de funcionamento da escada rolante. Não deve receber seta de caminhada inferida pela perspectiva.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/dia24-wangfujing-e3.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 285544,
+          "sha256": "7d26eedc0c2ef3371e2ec1278bbf425f05d71062565b3c8d034c557ccc3296ff",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade. Também aberto individualmente em resolução original para conferir placas/nomes e ausência de perda relevante após codificação."
+    },
+    {
+      "id": "dia24-wangfujing-apm",
+      "category": "originais-online",
+      "type": "foto-de-reconhecimento",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/dia24-wangfujing-apm.jpg",
+      "sourceSha256": "428ac71a7543303a3c767cc77a09dd83bbdabd8dd135353e26ce39fe1a9290b1",
+      "sourceWidth": 3997,
+      "sourceHeight": 2665,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Beijing_apm_(20211226162707).jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/7/72/Beijing_apm_%2820211226162707%29.jpg",
+      "credit": "N509FZ / Wikimedia Commons",
+      "sourcePhotoDate": "2021-12-26",
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspecionada com view_image; placa APM na fachada e Jinyu Hutong 金鱼胡同 na esquina legíveis.",
+      "limitations": "Foto de 2021. Publicidade, lojas e arranjo viário podem ter mudado. Não usar como comprovação de ponto permitido de embarque após jantar.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/dia24-wangfujing-apm.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 250150,
+          "sha256": "b7210372a75ddb53734a0999e0eb4709238ff0d6996970788ec8e070b4fe4d8e",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "dia24-wangfujing-dongtang",
+      "category": "originais-online",
+      "type": "foto-de-reconhecimento",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/dia24-wangfujing-dongtang.jpg",
+      "sourceSha256": "dcd879207d03a4db8967a9d5f575e2a6a7f48f4725d4ccdfaba113ecda047b8a",
+      "sourceWidth": 3024,
+      "sourceHeight": 4032,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:St_Joseph_(east_cathedral)_Wangfujing_IMG_4974.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/b/ba/St_Joseph_%28east_cathedral%29_Wangfujing_IMG_4974.jpg",
+      "credit": "Bjoertvedt / Wikimedia Commons",
+      "sourcePhotoDate": "2017-07-12",
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspecionada com view_image; portal, fachada, três torres e pátio reconhecíveis; corresponde à igreja identificada na fonte.",
+      "limitations": "Foto diurna de 2017, com igreja parcialmente encoberta pelo portal. Não comprova horários, abertura de grades ou acesso interno; o roteiro prevê fachada. Uma foto ampla ao entardecer seria uma melhoria adicional, não indispensável.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/dia24-wangfujing-dongtang.webp",
+          "width": 1200,
+          "height": 1600,
+          "bytes": 321224,
+          "sha256": "023328a732f750381c18249ae82a3dea65c7a23124ebcbfecc67d693929c40ab",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext25-donghuamen-exterior-tcg",
+      "category": "originais-online",
+      "type": "foto-referencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dia-25/donghuamen-exterior-tcg.jpg",
+      "sourceSha256": "473700bdc161e0d6e79c9e612a882fbed6c83985f643f63b57dfec94c0a284bc",
+      "sourceWidth": 900,
+      "sourceHeight": 450,
+      "sourcePage": "https://www.travelchinaguide.com/attraction/beijing/forbidden-city/east-prosperity-gate.htm",
+      "sourceImage": "https://www.travelchinaguide.com/images/photogallery/2025/donghuamen-forbidden-city.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image em 17/09/2026. Placa 东华门 legível, três vãos e fachada externa confirmados; carros não equivalem a desembarque autorizado.",
+      "limitations": "900×450; carros e pessoas ocultam parte da base. Fotografia sem comprovação de circulação, regras ou barreiras atuais. Preservada sem edição.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext25-donghuamen-exterior-tcg.webp",
+          "width": 900,
+          "height": 450,
+          "bytes": 145796,
+          "sha256": "a184a324da3ffffd6c5191b20019fe12a0e35088a1d3806e32593866fe079630",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "25-palace-foto-04-meridian-gate",
+      "category": "originais-online",
+      "type": "foto",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/25-palace-foto-04-meridian-gate.webp",
+      "sourceSha256": "5b2d49925e96c8d4b84b9eb7581cd16bb9d91ca33cfddef6fccb34c374abdba6",
+      "sourceWidth": 1280,
+      "sourceHeight": 960,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gfp-beijing-entrance-into-the-forbidden-city.jpg",
+      "sourceImage": null,
+      "credit": "Yinan Chen / Wikimedia Commons",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspeção visual da equipe; cruzamento com o roteiro-base em 16/09/2026.",
+      "limitations": "Planta detalhada sem nosso eixo destacado e rótulos em chinês. Aviso de 31/07/2026 fecha Taihemen desde 03/08, sem data de fim: não certificar passagem por ele.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/25-palace-foto-04-meridian-gate.webp",
+          "width": 1280,
+          "height": 960,
+          "bytes": 205466,
+          "sha256": "ce2ed28f01dc0e25ce4e4acc5f09156dafd374847c10d940d865968b86d6aac7",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "dia25-shenwumen-fachada",
+      "category": "originais-online",
+      "type": "foto-reconhecimento",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/dia25-shenwumen-fachada.jpg",
+      "sourceSha256": "c6f4bb48a8e3459820f31e6643e8173d85827ba43efdd78972f1cac12a8876de",
+      "sourceWidth": 2304,
+      "sourceHeight": 1728,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Forbidden_City_Beijing_Shenwumen_Gate.JPG",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Forbidden_City_Beijing_Shenwumen_Gate.JPG",
+      "credit": "Kallgan / Wikimedia Commons",
+      "sourcePhotoDate": "2006-06-09",
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Conferida integralmente: placa de Shenwumen no alto e Museu do Palácio embaixo. Não confundir com Wumen.",
+      "limitations": "Foto antiga; somente arquitetura. Não representa configuração de filas, barreiras, pavimento ou tráfego atual. Mostra o portão visto pelo lado externo, depois de sair.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/dia25-shenwumen-fachada.webp",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 165188,
+          "sha256": "1e6b31c02ad745a552a85984c63e666ce8a5d2dedb69e6abe449d433f4c6a36f",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "dia25-jingshan-portao-sul",
+      "category": "originais-online",
+      "type": "foto-reconhecimento",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/dia25-jingshan-portao-sul.jpg",
+      "sourceSha256": "76f2fbe648bfc841bc30ff9d6ca2ba31db9338f87f3311a5c25554874b9c3ffe",
+      "sourceWidth": 4194,
+      "sourceHeight": 2040,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Jingshan_Park_from_north_gate_of_Forbidden_City.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/93/Jingshan_Park_from_north_gate_of_Forbidden_City.jpg",
+      "credit": "Daniel Case / Wikimedia Commons",
+      "sourcePhotoDate": "2014-03-30",
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Conferida integralmente: portão em primeiro plano, Wanchun maior ao centro, pavilhões laterais na colina.",
+      "limitations": "Não usar posições das barreiras ou das pessoas para desenhar travessia atual; a foto tem 12 anos. Caminhos de subida não aparecem sob as árvores.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/dia25-jingshan-portao-sul.webp",
+          "width": 1600,
+          "height": 778,
+          "bytes": 200196,
+          "sha256": "86b0b2954cdee83344a99ac7671e8262436eb74680c0df7ae60e03dc66b85555",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext25-jingshan-wanchun-peggy",
+      "category": "originais-online",
+      "type": "foto-referencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dia-25/jingshan-wanchun-peggy.jpg",
+      "sourceSha256": "485fd66894608361ca549fbbc6ceae1441d5f6b62115ed2101511e0478d3cd52",
+      "sourceWidth": 612,
+      "sourceHeight": 459,
+      "sourcePage": "https://www.peggysphotos.com/day-6-beijing-bei-hai-and-jingshan-parks/",
+      "sourceImage": "https://www.peggysphotos.com/wp-content/uploads/2011/08/DSCN2232.JPGjpg.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image em 17/09/2026. Pavilhão de três níveis no cume e lances de escada entre rochas bem visíveis; prova visual de desnível, não de acessibilidade.",
+      "limitations": "Foto histórica de inverno; direção específica da escadaria não fixada. Não copiar a linha central como nosso caminho garantido. Fotografia sem comprovação de circulação, regras ou barreiras atuais. Preservada sem edição.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext25-jingshan-wanchun-peggy.webp",
+          "width": 612,
+          "height": 459,
+          "bytes": 51714,
+          "sha256": "d46c5a3b2c42dee9f2b19bc37e5a3f418a2c246b6e2b261d8ddd7f2b426d8b7a",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "25-jingshan-foto-curated-01",
+      "category": "originais-online",
+      "type": "foto",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/25-jingshan-foto-curated-01.webp",
+      "sourceSha256": "5c70b2a9b7389b7dd022c65f768b5d5e329231ce165bc3c6299f8c37e5cd9a35",
+      "sourceWidth": 1280,
+      "sourceHeight": 853,
+      "sourcePage": "https://commons.wikimedia.org/wiki?curid=152097014",
+      "sourceImage": null,
+      "credit": "Han Zheng / Wikimedia Commons",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspeção visual da equipe; cruzamento com o roteiro-base em 16/09/2026.",
+      "limitations": "As retas vermelhas/bolinhas verdes da planta são marcações editoriais, não trilhas. Há planta limpa complementar, mas também pequena e antiga.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/25-jingshan-foto-curated-01.webp",
+          "width": 1280,
+          "height": 853,
+          "bytes": 216362,
+          "sha256": "b05249fdb8ebd8b3feb14af03b1fd56dab8aebe57a11d9b429078cdb1d2e7396",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext25-tiananmen-monumento-tcg",
+      "category": "originais-online",
+      "type": "foto-referencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dia-25/tiananmen-monumento-tcg.jpg",
+      "sourceSha256": "869547924710561404cd0b41cff329fda26e01f4e0317ec355e30f7d4f74a9b8",
+      "sourceWidth": 900,
+      "sourceHeight": 450,
+      "sourcePage": "https://www.travelchinaguide.com/attraction/beijing/tianan.htm",
+      "sourceImage": "https://www.travelchinaguide.com/images/photogallery/0026500/tiananmen%2010026261tm.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image em 17/09/2026. Monumento em primeiro plano e memorial atrás; identifica marcos centrais da praça e a grande escala do piso.",
+      "limitations": "Sem trajetória de pedestres; não extrair corredores ou regras das barreiras fotografadas. Fotografia sem comprovação de circulação, regras ou barreiras atuais. Preservada sem edição.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext25-tiananmen-monumento-tcg.webp",
+          "width": 900,
+          "height": 450,
+          "bytes": 45024,
+          "sha256": "199278ed12f1153f107f5fe33df9c2b181aeeb46d833a6f43edb58c0835232c5",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "dia25-qianmen-pailou",
+      "category": "originais-online",
+      "type": "foto-reconhecimento",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/dia25-qianmen-pailou.jpg",
+      "sourceSha256": "2000e29c78e50f1df10ad1a1cef9ec41dc64dbce66915bc3a834862773c0af49",
+      "sourceWidth": 3264,
+      "sourceHeight": 2448,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gate_of_Qianmen_Street_and_watchtower_of_Zhengyangmen_Gate.JPG",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Gate_of_Qianmen_Street_and_watchtower_of_Zhengyangmen_Gate.JPG",
+      "credit": "Soramimi / Wikimedia Commons",
+      "sourcePhotoDate": "2015-08-29",
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Conferida integralmente: pailou colorido, Zhengyangmen ao fundo e trilhos na rua ampla.",
+      "limitations": "Foto olhando para norte, de dentro da Qianmen. O passeio segue para sul, no sentido oposto ao enquadramento. Não usar GPS/heading embutidos como prova da direção; arquitetura estabelece o norte. Não comprova circulação atual.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/dia25-qianmen-pailou.webp",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 259532,
+          "sha256": "21502a7dec2a52870d9498c69dbea5cccc12e21e373a586b9dc4bba0b1f2bbaa",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "dia25-dashilar-entroncamento",
+      "category": "originais-online",
+      "type": "foto-reconhecimento",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/dia25-dashilar-entroncamento.jpg",
+      "sourceSha256": "b2012b5d271a2761c71bcf955e0a158d67f0967bcc9295d53d354b8a96fdd2be",
+      "sourceWidth": 3264,
+      "sourceHeight": 2448,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Gate_of_Dazhalan_Area_on_Qianmen_Street_2.JPG",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Gate_of_Dazhalan_Area_on_Qianmen_Street_2.JPG",
+      "credit": "Soramimi / Wikimedia Commons; metadados do acervo beijing-streets.json",
+      "sourcePhotoDate": "2015-08-29",
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Conferida integralmente: letreiro 大栅栏 no alto, 鲜鱼口 ao fundo. Contraste escuro nas fachadas; letreiro principal legível.",
+      "limitations": "O enquadramento olha de Dashilar para Qianmen/Xianyukou, portanto para leste, contrário à caminhada prevista para oeste. O nome do arquivo não define a direção. Página individual não foi recuperada pelo web; categoria Commons e acervo confirmam título/autor. Usar apenas como marco visual.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/dia25-dashilar-entroncamento.webp",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 179134,
+          "sha256": "b376ddddebeee7307ff4ec8190591475c887c6345ccfdbfb9e58a78c312a5565",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext25-meishi-ponto-onibus",
+      "category": "originais-online",
+      "type": "foto-referencia",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dia-25/meishi-ponto-onibus.jpg",
+      "sourceSha256": "ca43c78c96dee4e0d6a9ca4fafb283027bf692aa6940d2d85cdbb31e9a2d561e",
+      "sourceWidth": 4032,
+      "sourceHeight": 2688,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Meishijie_Nankou_Bus_Stop_(20210409132657).jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Meishijie_Nankou_Bus_Stop_%2820210409132657%29.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Inspeção individual com view_image em 17/09/2026. Placa da parada 煤市街南口, numeração66 e barreira de calçada visíveis; uso restrito à referência de rua e nome.",
+      "limitations": "Registro de 09/04/2021, parada Meishijie Nankou no extremo sul; NÃO é nosso ponto de retirada no encontro com Dashilar. Fotografia sem comprovação de circulação, regras ou barreiras atuais. Preservada sem edição.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext25-meishi-ponto-onibus.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 420568,
+          "sha256": "1719ed6cf92db0c3f36ed8a0a2365938273f66f76a8ee0ff0513de157957c415",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade. Também aberto individualmente em resolução original para conferir placas/nomes e ausência de perda relevante após codificação."
+    },
+    {
+      "id": "ext2627-mutianyu-bilheteria",
+      "category": "originais-online",
+      "type": "foto-acesso",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/mutianyu-bilheteria.jpg",
+      "sourceSha256": "25bc93f6cd68ab507d04f8f3615f94b47af6b11a84f670143077c486ef637c4a",
+      "sourceWidth": 750,
+      "sourceHeight": 545,
+      "sourcePage": "https://blog.ipacktravel.com/wp/beijing-see-mutianyu-great-wall/",
+      "sourceImage": "https://blog.ipacktravel.com/wp/wp-content/uploads/2026/01/Mutianyu-TicketOffice2.jpeg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Fachada principal identificada por Mutianyu; enquadramento mostra área externa.",
+      "limitations": "Foto de novembro de 2025; guichê específico e modo de validação não são demonstrados.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-mutianyu-bilheteria.webp",
+          "width": 750,
+          "height": 545,
+          "bytes": 45012,
+          "sha256": "74883a26fb624bc796b94796ce03239bee3f4519696708ced69a10edcddf97d6",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext2627-mutianyu-shuttle",
+      "category": "originais-online",
+      "type": "foto-transporte",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/mutianyu-shuttle.jpg",
+      "sourceSha256": "84a389e46c296e802a765e4302afe32f6559dbb43438d739e0e192b65e4fed02",
+      "sourceWidth": 750,
+      "sourceHeight": 545,
+      "sourcePage": "https://blog.ipacktravel.com/wp/beijing-see-mutianyu-great-wall/",
+      "sourceImage": "https://blog.ipacktravel.com/wp/wp-content/uploads/2026/01/Mutianyu-ShuttleBus.jpeg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Ônibus identificados com pintura Mutianyu junto à plataforma.",
+      "limitations": "Foto de novembro de 2025; não prova frequência, fila, parada exata do grupo ou tipo de veículo futuro.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-mutianyu-shuttle.webp",
+          "width": 750,
+          "height": 545,
+          "bytes": 75228,
+          "sha256": "72709a64989d452e8248d2d40c0610b86e30405bcca4536e00fb8a8202193491",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "26-wall-foto-curated-01",
+      "category": "originais-online",
+      "type": "foto",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/26-wall-foto-curated-01.webp",
+      "sourceSha256": "cb78d489b275a56429245657880024330dcd06fe5f542438f3d8534168d49b36",
+      "sourceWidth": 1280,
+      "sourceHeight": 960,
+      "sourcePage": "https://commons.wikimedia.org/wiki?curid=77292348",
+      "sourceImage": null,
+      "credit": "David290 / Wikimedia Commons",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspeção visual da equipe; cruzamento com o roteiro-base em 16/09/2026.",
+      "limitations": "Mapa oficial muito denso. Destacar shuttle, controles e regiões das torres 14/6. O equipamento familiar segue pendente; não unir as torres como transferência rápida.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/26-wall-foto-curated-01.webp",
+          "width": 1280,
+          "height": 960,
+          "bytes": 403828,
+          "sha256": "4b1f71a00de7f034aa74cc23fd75290bd9c13f4e8f32092aadaa88e5e023fce0",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext2627-verao-portao-leste",
+      "category": "originais-online",
+      "type": "foto-acesso",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/verao-portao-leste.jpg",
+      "sourceSha256": "e41533cdd7da0d3347b85034c0250ebb482c4ca7047e8418da630c0398e908e6",
+      "sourceWidth": 900,
+      "sourceHeight": 450,
+      "sourcePage": "https://www.travelchinaguide.com/attraction/beijing/summer/east_gate.htm",
+      "sourceImage": "https://www.travelchinaguide.com/images/photogallery/2025/summer-palace-east-gate.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Fachada com placa 颐和园, leões e área frontal; conferida com página específica do East Gate.",
+      "limitations": "Não identifica ponto de estacionamento/embarque permitido, horários ou fila futura.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-verao-portao-leste.webp",
+          "width": 900,
+          "height": 450,
+          "bytes": 139416,
+          "sha256": "884dc0f34e02c653e7ce019cafa861f06f812438848f047690476e4c5b14e053",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade. Também aberto individualmente em resolução original para conferir placas/nomes e ausência de perda relevante após codificação."
+    },
+    {
+      "id": "ext2627-verao-renshoudian",
+      "category": "originais-online",
+      "type": "foto-marco",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/verao-renshoudian.jpg",
+      "sourceSha256": "29fa0cc2dfcc99eff61687f924930be0a53624a779e75732b7f3b2d68756f774",
+      "sourceWidth": 900,
+      "sourceHeight": 450,
+      "sourcePage": "https://www.travelchinaguide.com/attraction/beijing/summer/renshou.htm",
+      "sourceImage": "https://www.travelchinaguide.com/images/photogallery/2025/benevolence-longevity-hall-summer-palace.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Fachada e pátio compatíveis com seção Hall of Benevolence and Longevity da fonte.",
+      "limitations": "Foto do salão, não da Renshou Gate da placa local anterior. Não indica acesso interior incluído.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-verao-renshoudian.webp",
+          "width": 900,
+          "height": 450,
+          "bytes": 143016,
+          "sha256": "5f11c66499520fff56e6e679d5466599670bb43a901330aea8c1a959cbec9fb5",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade. Também aberto individualmente em resolução original para conferir placas/nomes e ausência de perda relevante após codificação."
+    },
+    {
+      "id": "ext2627-verao-paiyunmen",
+      "category": "originais-online",
+      "type": "foto-marco",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/verao-paiyunmen.jpg",
+      "sourceSha256": "bdf76988b8fe52214b79553413643885777106aad925e73d7a7cd7c645331fe4",
+      "sourceWidth": 900,
+      "sourceHeight": 450,
+      "sourcePage": "https://www.travelchinaguide.com/attraction/beijing/summer/cloud.htm",
+      "sourceImage": "https://www.travelchinaguide.com/images/photogallery/2012/0806164858.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Portão de telhado amarelo, placa central e pátio verificados; associação feita pela seção e legenda, não só pelo nome da URL.",
+      "limitations": "Página contém também Paiyundian; esta foto está na seção Gate of Dispelling Clouds, apesar do alt genérico Hall. Não confundir portão e salão nem supor visita interna.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-verao-paiyunmen.webp",
+          "width": 900,
+          "height": 450,
+          "bytes": 100164,
+          "sha256": "25f00001dc0774ae623e8fc0d38ab6f72c4513b4525825bca349fbd0512c620c",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade. Também aberto individualmente em resolução original para conferir placas/nomes e ausência de perda relevante após codificação."
+    },
+    {
+      "id": "ext2627-sino-fachada-praca",
+      "category": "originais-online",
+      "type": "foto-marco",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/sino-fachada-praca.jpg",
+      "sourceSha256": "9f761e5000561fbe1da7e243451fe19e922c982bce78034e4981718fa72e0ca4",
+      "sourceWidth": 1024,
+      "sourceHeight": 768,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Beijingbelltower1.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/9/95/Beijingbelltower1.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Fachada principal desimpedida, praça em primeiro plano; arquitetura claramente diferente do Tambor vermelho.",
+      "limitations": "Imagem antiga: EXIF07/12/2005, publicação Flickr2007. Ônibus e riquixás não representam operação atual.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-sino-fachada-praca.webp",
+          "width": 1024,
+          "height": 768,
+          "bytes": 80056,
+          "sha256": "82aefcb1d9e0695cfbde948dc24355cd5c6b6a252a89539861c5aee026055d43",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext2627-tambor-fachada-sul",
+      "category": "originais-online",
+      "type": "foto-marco",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/tambor-fachada-sul.jpg",
+      "sourceSha256": "a91bd29fd0f0bad6dcde20e6d75b47d2505667d79fdc8fb5bb9419d0a4558f61",
+      "sourceWidth": 1200,
+      "sourceHeight": 889,
+      "sourcePage": "https://imaginoso.com/china/beijing/beijing-drum-tower-south-elevation",
+      "sourceImage": "https://imaginoso.com/files/china/beijing/2512-beijing-drum-tower-south-elevation-5205.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Fachada vermelha inteira, base e rua em primeiro plano; vista ao nível do passeio.",
+      "limitations": "Não documenta todo o contorno entre fachadas norte e sul; sem travessia ou faixa prescrita.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-tambor-fachada-sul.webp",
+          "width": 1200,
+          "height": 889,
+          "bytes": 169444,
+          "sha256": "c3a12cfcf1867b7a991227bb5241e83a26bd164650b0ac3404601d2085ee3be7",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "27-yandai-foto-05",
+      "category": "originais-online",
+      "type": "foto",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/acervo-inicial/27-yandai-foto-05.webp",
+      "sourceSha256": "559365c3cfb4ca34405ac0cc1547ab74427bddef1da74782e22129eb9011daaf",
+      "sourceWidth": 960,
+      "sourceHeight": 1280,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:%E7%83%9F%E8%A2%8B%E6%96%9C%E8%A1%97.jpg",
+      "sourceImage": null,
+      "credit": "EditQ / Wikimedia Commons",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-16",
+      "sourceReview": "Inspeção visual da equipe; cruzamento com o roteiro-base em 16/09/2026.",
+      "limitations": "Foto útil da rua. Falta representar a ligação entre fachada sul do Tambor, entrada leste de Yandai e Ponte Yinding.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/27-yandai-foto-05.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 310576,
+          "sha256": "c125d162850e288646277a297ceee7ef1b5170ba9b8ef3fe9591480c7567afc6",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext2627-yinding-ponte",
+      "category": "originais-online",
+      "type": "foto-marco",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/yinding-ponte.jpg",
+      "sourceSha256": "b749c5a0b1a940100dd05eb4dd829222c5c75f2a48357dd524f7c8045617c5d2",
+      "sourceWidth": 618,
+      "sourceHeight": 448,
+      "sourcePage": "https://www.tour-beijing.com/hutong/highlight_one_day_tour.php",
+      "sourceImage": "https://www.tour-beijing.com/photos/600_400/yingding.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Arco de pedra, balaustrada e inscrição da ponte visíveis. Enquadramento exterior lateral.",
+      "limitations": "Foto antiga 618×448; não mostra detalhadamente os acessos, todos os degraus ou alternativa para carrinho.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-yinding-ponte.webp",
+          "width": 618,
+          "height": 448,
+          "bytes": 46734,
+          "sha256": "6f60301720bc5d8fd21d38ae6b2e2a425c429196f19ac13b4224b5942c668fd2",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext2627-yaer-placa",
+      "category": "originais-online",
+      "type": "foto-placa",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/yaer-placa.jpg",
+      "sourceSha256": "9024450f817df1e8e29267f22832e1d57f33fbc0cac295b5085d271094ad0b4e",
+      "sourceWidth": 1024,
+      "sourceHeight": 683,
+      "sourcePage": "https://www.visitbeijing.com.cn/article/49WipgMQb47",
+      "sourceImage": "https://img-rs.huanqiucdn.cn/dp/api/files/imageDir/b4acac61ff1672bf1be4a5ff8398efc2.png",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Placa vermelha legível com 鸦儿胡同 e YAOR HUTONG; original não foi corrigido ou alterado.",
+      "limitations": "Na placa está YAOR HUTONG; conservar a grafia fotografada. Não estabelece a extremidade exata junto à ponte. URL .png entrega JPEG; arquivo local usa extensão .jpg.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-yaer-placa.webp",
+          "width": 1024,
+          "height": 683,
+          "bytes": 59066,
+          "sha256": "01d551703d7b712912a42e2501a74211d8d2e208d6206db6cf4ae8f0acf5549f",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext2627-qianhai-margem-nordeste",
+      "category": "originais-online",
+      "type": "foto-percurso",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/qianhai-margem-nordeste.jpg",
+      "sourceSha256": "93826e2a23795db58f4f9db3d3aa4ee663f01865e65fcfeceb2f57a6e30c1825",
+      "sourceWidth": 3264,
+      "sourceHeight": 2448,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Qianhai_Lake_near_Yindingqiao_Bridge_20160822-2.jpg",
+      "sourceImage": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Qianhai_Lake_near_Yindingqiao_Bridge_20160822-2.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Lago e barcos vistos do nordeste; metadados da fonte indicam posição 39.937214,116.388108 e direção193°.",
+      "limitations": "Foto de 22/08/2016, não detalhe do pavimento da margem. Não comprova continuidade acessível do passeio.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-qianhai-margem-nordeste.webp",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 138486,
+          "sha256": "30cf723d573bf64917354a03a2625781b3d5590df1391f9ccfffedf628b1b28a",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    },
+    {
+      "id": "ext2627-shichahai-a2-placa",
+      "category": "originais-online",
+      "type": "foto-placa",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/dias-26-27/shichahai-a2-placa.jpg",
+      "sourceSha256": "a19dab6ed49eb640fffea09e7cab6a7c6d6b0d6f131bd40fc35b80ee008018ce",
+      "sourceWidth": 1920,
+      "sourceHeight": 1440,
+      "sourcePage": "https://touch.travel.qunar.com/comment/10162682216",
+      "sourceImage": "https://youimg1.c-ctrip.com/target/10051c000001dl6dfD423.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Consultar manifesto e relatório da frente.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Nome, linha8 e A2 西北口 legíveis na fachada e no totem.",
+      "limitations": "Foto noturna anterior à viagem. Não autoriza embarque de carro junto da porta, nem comprova operação atual do acesso.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/ext2627-shichahai-a2-placa.webp",
+          "width": 1600,
+          "height": 1200,
+          "bytes": 102224,
+          "sha256": "d5baa8ff6cac7ca5abd9c856f3981a24cba935f4a527d6001d5e53752b1406e5",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade. Também aberto individualmente em resolução original para conferir placas/nomes e ausência de perda relevante após codificação."
+    },
+    {
+      "id": "extlog-pek-t2-espera-2026",
+      "category": "originais-online",
+      "type": "foto-de-reconhecimento",
+      "sourceCollection": "recursos-visuais-pequim-2026-09-16",
+      "sourceFile": "originais-online/logistica/pek-t2-espera-2026.jpg",
+      "sourceSha256": "2ee05e24855456f1c9155499a2f74d4fd2908f1e19204c38e57aef9e721a7cfd",
+      "sourceWidth": 3840,
+      "sourceHeight": 2560,
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T2_Waiting_20260904.jpg",
+      "sourceImage": "https://upload.wikimedia.org/wikipedia/commons/4/46/Beijing_Capital_International_Airport_T2_Waiting_20260904.jpg",
+      "credit": "",
+      "sourcePhotoDate": null,
+      "parentIds": [],
+      "sourceChanges": "Nenhuma. Bytes do download preservados.",
+      "sourceMethod": null,
+      "sourceStatus": "aprovada-referencia",
+      "sourceReviewedAt": "2026-09-17",
+      "sourceReview": "Conferidos assentos, portão 23 e placas de orientação; a página identifica salão doméstico. Útil apenas para reconhecimento.",
+      "limitations": "Foto de 04/09/2026; o portão 23 visível não é atribuição do voo do grupo. Não há mapa de percurso nesta foto.",
+      "deliveryOperation": "Conversão técnica WebP qualidade 80, até 1600 px no lado maior, orientação EXIF aplicada, proporção integral, sem corte ou retoque.",
+      "files": [
+        {
+          "path": "assets/itinerary/guide/photos/extlog-pek-t2-espera-2026.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 209866,
+          "sha256": "1894ceb1faec40c7c33a7743474020208f2d2afc65f0a2ce3d037ec136aba074",
+          "format": "WEBP"
+        }
+      ],
+      "deliveryReview": "17/09/2026 · agente integrar_acervo: WebP revisto em prancha de 6 imagens; identidade, enquadramento integral e contraste preservados. Legenda limita a foto ao reconhecimento e não certifica operação/acessibilidade."
+    }
+  ],
+  "ancestorMetadataOnly": [
+    {
+      "id": "templo-do-ceu-v1",
+      "arquivo": "criadas/acervo-inicial/templo-do-ceu-v1.png",
+      "categoria": "criadas",
+      "tipo": "esquema-de-orientacao",
+      "source_page": "https://www.tiantanpark.cn/navigation_map.html",
+      "source_image": null,
+      "credito": null,
+      "sha256": "7626468f9df8d8993f028ffbf962bc877b0d14ffc861c24cd60669acf0508307",
+      "dimensoes": {
+        "largura": 1024,
+        "altura": 1536
+      },
+      "origem_ids": [],
+      "status": "reprovada",
+      "alteracoes": "Desenho próprio; consultar especificação, script ou prompt associado.",
+      "verificacao_visual": "Inspeção visual integral em 16/09/2026 identificou erro e motivou edição v2.",
+      "limites": "REPROVADA: Ponte Danbi desenhada como grande escadaria; fachadas genéricas não comprovadas. Não usar no guia."
+    },
+    {
+      "id": "24-heaven-mapa-temple-heaven-official",
+      "arquivo": "originais-online/acervo-inicial/24-heaven-mapa-temple-heaven-official.jpg",
+      "categoria": "originais-online",
+      "tipo": "mapa",
+      "source_page": "https://www.tiantanpark.cn/navigation_map.html",
+      "source_image": null,
+      "credito": "Parque do Templo do Céu / 天坛公园 · imagem original do site oficial.",
+      "sha256": "036a2a1a9f58b53b0fde67a1f17bd86dac91c10ab9517d9f7612afa1b883c821",
+      "dimensoes": {
+        "largura": 1400,
+        "altura": 1074
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspeção visual da equipe; cruzamento com o roteiro-base em 16/09/2026.",
+      "limites": "Boa base bilíngue. Falta destacar nosso percurso sul→norte→leste; distinguir East Heavenly Gate interno do East Gate externo. A2 não está representado."
+    },
+    {
+      "id": "dia24-lama-planta-bilingue",
+      "arquivo": "originais-online/acervo-inicial/dia24-lama-planta-bilingue.jpg",
+      "categoria": "originais-online",
+      "tipo": "planta-esquematica-publicada",
+      "source_page": "https://www.eastchinatrip.com/lama-temple-beijing-guide/",
+      "source_image": "https://www.eastchinatrip.com/wp-content/uploads/2.-%E9%9B%8D%E5%92%8C%E5%AE%AB%E5%9C%B0%E5%9B%BE.jpg",
+      "credito": "Publicada por East China Trip; desenho traz identificação Yonghegong Lama Temple; autoria original não confirmada",
+      "sha256": "8e9a53f61a8f16625112810ef937ef3041ffe9568564e18e5aa81a8d6ab9b83b",
+      "dimensoes": {
+        "largura": 630,
+        "altura": 1770
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspecionada com view_image; eixo sul–norte e nomes dos seis pontos principais conferidos contra a planta/legenda oficial do Yonghegong. Não foi validada como rota de circulação atual.",
+      "limites": "Não é mapa operacional atual nem tem escala. Publicação por terceiro; autoria original do desenho não confirmada. Só 630 px de largura; nomes menores ainda precisam de zoom. Não indica retorno autorizado, saída F, Guozijian ou condições de acessibilidade."
+    },
+    {
+      "id": "ext24-lama-yongyou-placa",
+      "arquivo": "originais-online/dia-24/lama-yongyou-placa.jpg",
+      "categoria": "originais-online",
+      "tipo": "fotografia-de-referencia",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Yongyou_Hall%2C_Yonghe_Temple%2C_Dongcheng_District%2C_Beijing_(202511011616).jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Yongyou_Hall%2C_Yonghe_Temple%2C_Dongcheng_District%2C_Beijing_%28202511011616%29.jpg",
+      "credito": "MiiCii / Wikimedia Commons",
+      "sha256": "cf60f470581fdb617bbd1aebe77807eaadec2fa7beb88b161a2c25a910a0e550",
+      "dimensoes": {
+        "largura": 1280,
+        "altura": 1700
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Original público preservado, sem retoque ou recorte.",
+      "verificacao_visual": "Inspeção individual com view_image por visuais_dia24. Placa azul e dourada legível em chinês e outras escritas; corresponde a Yongyou, número 18 da planta.",
+      "limites": "Recorte da placa, sem percurso, edifício completo ou prova de abertura atual."
+    },
+    {
+      "id": "ext24-lama-yongyou-fachada",
+      "arquivo": "originais-online/dia-24/lama-yongyou-fachada.jpg",
+      "categoria": "originais-online",
+      "tipo": "fotografia-de-referencia",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Yongyou_Hall%2C_Yonghe_Temple_1.jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Yongyou_Hall%2C_Yonghe_Temple_1.jpg",
+      "credito": "Wikimedia Commons; detalhes de autoria na página do arquivo",
+      "sha256": "9ab87b44424bb87052290b4315ab4787b3c6e0a9e7f9351accdb1a875984b48e",
+      "dimensoes": {
+        "largura": 4000,
+        "altura": 3000
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Original público preservado, sem retoque ou recorte.",
+      "verificacao_visual": "Inspeção individual com view_image por visuais_dia24. Fachada vermelha, telhado amarelo e acesso com degraus; placa Yongyou corresponde ao detalhe.",
+      "limites": "Foto não informa circulação em cada porta, obras, horários nem permissão para fotografar interior."
+    },
+    {
+      "id": "ext24-lama-wanfuge",
+      "arquivo": "originais-online/dia-24/lama-wanfuge.jpg",
+      "categoria": "originais-online",
+      "tipo": "fotografia-de-referencia",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Wanfuge_Pavillion_in_Yonghe_Temple.jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Wanfuge_Pavillion_in_Yonghe_Temple.jpg",
+      "credito": "Charlie fong / Wikimedia Commons",
+      "sha256": "c36c759c971a98c7be130d5070f6713e5810eefe744af071e7cf50d184670981",
+      "dimensoes": {
+        "largura": 4031,
+        "altura": 2687
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Original público preservado, sem retoque ou recorte.",
+      "verificacao_visual": "Inspeção individual com view_image por visuais_dia24. Pavilhão de três níveis de telhado, fachada e pátio completos; placa 万福阁 identificável.",
+      "limites": "Exterior não comprova visita/foto interna ou horários; não é mapa."
+    },
+    {
+      "id": "ext24-lama-zhaotai-turismo",
+      "arquivo": "originais-online/dia-24/lama-zhaotai-turismo.jpg",
+      "categoria": "originais-online",
+      "tipo": "fotografia-de-referencia",
+      "source_page": "https://english.visitbeijing.com.cn/article/4AKpNSjuGAG",
+      "source_image": "https://img-rs.visitbeijing.com.cn/imageDir/9d44fbce9fc49332191a24dbc24bb933u5.jpg",
+      "credito": "Sipa Photo / VisitBeijing",
+      "sha256": "5214734caaa109469962fb97502f10984880c961faabcb4d0b24727d2ca48a42",
+      "dimensoes": {
+        "largura": 1024,
+        "altura": 683
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Original público preservado, sem retoque ou recorte.",
+      "verificacao_visual": "Inspeção individual com view_image por visuais_dia24. Portal envidraçado vermelho, verde e amarelo, placa 昭泰门 legível, multidão entrando; mesma arquitetura do Zhaotai já presente no acervo.",
+      "limites": "Página se intitula Yonghe Gate, mas a foto é Zhaotaimen: usar a identidade conferida na placa. Marca d’água preservada; foto não prova abertura atual."
+    },
+    {
+      "id": "ext24-lama-eixo-saloes-v1",
+      "arquivo": "criadas/dia-24/lama-eixo-saloes-v1.png",
+      "categoria": "criadas",
+      "tipo": "esquema-espacial-svg-renderizado",
+      "source_page": "https://www.yonghegong.cn/2016-12/26/content_39984666.htm",
+      "source_image": null,
+      "credito": null,
+      "sha256": "bfd31b5379eb45336cc9edd81f53b5bd09dd201db63e70fbe5ddda521f9e3299",
+      "dimensoes": {
+        "largura": 1200,
+        "altura": 1740
+      },
+      "origem_ids": [
+        "dia24-lama-planta-bilingue",
+        "ext24-lama-yongyou-placa",
+        "ext24-lama-yongyou-fachada",
+        "ext24-lama-wanfuge",
+        "ext24-lama-zhaotai-turismo"
+      ],
+      "status": "reprovada",
+      "alteracoes": "V1: desenho nativo inicial; reprovação tipográfica.",
+      "verificacao_visual": "Inspecionado com view_image: glifos CJK renderizados como caixas/hexadecimais por Fontconfig relativo incorreto. Reprovado; não usar.",
+      "limites": "Não substitui planta oficial; blocos são símbolos, sem fachada fiel, portas, corredores laterais de retorno, escala ou acessibilidade. Retorno ao sul seguindo indicação local."
+    },
+    {
+      "id": "dia24-lama-guozijian-entorno",
+      "arquivo": "originais-online/acervo-inicial/dia24-lama-guozijian-entorno.webp",
+      "categoria": "originais-online",
+      "tipo": "mapa-de-bairro-publicado",
+      "source_page": "https://ruqintravel.com/china-destination-guides/wudaoying-hutong/",
+      "source_image": "https://ruqintravel.com/wp-content/uploads/2024/11/Beijing-Wudaoying-Map-1.webp",
+      "credito": "Google Maps, reprodução/anotações Ruqin China Travel",
+      "sha256": "fce9a75f1a4b39d6f7ef143ccc346b4b0919616f30fa035e5214a49accd61a62",
+      "dimensoes": {
+        "largura": 900,
+        "altura": 739
+      },
+      "origem_ids": [],
+      "status": "pendente",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspecionada com view_image; relação geral entre ruas e conjuntos coerente com o roteiro e descrição oficial do bairro. Saídas de metrô não aprovadas.",
+      "limites": "Não publicar como orientação final: marcações de saídas A/B/C sem F, recorte corta o acesso sul do Lama na borda inferior e não mostra travessias. Rótulos de templos sobrepostos. A base é Google reproduzida por terceiro e não comprova circulação atual."
+    },
+    {
+      "id": "ext24-lama-saida-f",
+      "arquivo": "originais-online/dia-24/lama-saida-f.jpg",
+      "categoria": "originais-online",
+      "tipo": "fotografia-de-referencia",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Exit_F%2C_Yonghegong_Lama_Temple_Station%2C_Beijing_Subway.jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Exit_F%2C_Yonghegong_Lama_Temple_Station%2C_Beijing_Subway.jpg",
+      "credito": "Wcr1993 / Wikimedia Commons",
+      "sha256": "39645909a4de317195a3ed01a9857650ef178d205b544b04a927a80fe7bdae9a",
+      "dimensoes": {
+        "largura": 3912,
+        "altura": 2934
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Original público preservado, sem retoque ou recorte.",
+      "verificacao_visual": "Inspeção individual com view_image por visuais_dia24. F e 雍和宫 legíveis no totem; escadas e pequena rampa lateral à vista.",
+      "limites": "Fotografia de 2020; não comprova operação em 2026 nem todo o acesso sem degraus."
+    },
+    {
+      "id": "ext24-lama-guozijian-bairro-v1",
+      "arquivo": "criadas/dia-24/lama-guozijian-bairro-v1.png",
+      "categoria": "criadas",
+      "tipo": "esquema-espacial-svg-renderizado",
+      "source_page": "https://www.yonghegong.cn/2016-12/26/content_39984666.htm",
+      "source_image": null,
+      "credito": null,
+      "sha256": "d78d9e2906d0cc6b5e181e70470704c1f7b5432954817c6940b737e18a1c1e49",
+      "dimensoes": {
+        "largura": 1200,
+        "altura": 1580
+      },
+      "origem_ids": [
+        "dia24-lama-guozijian-entorno",
+        "ext24-lama-saida-f"
+      ],
+      "status": "reprovada",
+      "alteracoes": "V1: desenho nativo inicial; reprovação tipográfica.",
+      "verificacao_visual": "Inspecionado com view_image: glifos CJK renderizados como caixas/hexadecimais por Fontconfig relativo incorreto. Reprovado; não usar.",
+      "limites": "Sem escala ou limites medidos. Não desenha travessia da avenida nem garante F operacional. Mapa antigo de bairro usado só para ruas, nunca para letras de saídas; foto F complementa essa parte."
+    },
+    {
+      "id": "dia24-wangfujing-e3",
+      "arquivo": "originais-online/acervo-inicial/dia24-wangfujing-e3.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-de-acesso",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Exit_E3_of_Wangfujing_Station_(20220105183233).jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Exit_E3_of_Wangfujing_Station_%2820220105183233%29.jpg",
+      "credito": "N509FZ / Wikimedia Commons",
+      "sha256": "2b32210f2b1cb04c2edcc01ecab0f730c9e1329489aa57dc0e42f015b035fdc3",
+      "dimensoes": {
+        "largura": 4032,
+        "altura": 2688
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspecionada com view_image; E3, 王府井, linhas 1 e 8 legíveis na própria foto.",
+      "limites": "Foto de 2022 não garante operação atual. Mostra degraus no patamar e escada rolante; não comprova percurso sem degraus para carrinho, elevador nem sentido de funcionamento da escada rolante. Não deve receber seta de caminhada inferida pela perspectiva."
+    },
+    {
+      "id": "dia24-wangfujing-apm",
+      "arquivo": "originais-online/acervo-inicial/dia24-wangfujing-apm.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-de-reconhecimento",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Beijing_apm_(20211226162707).jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Beijing_apm_%2820211226162707%29.jpg",
+      "credito": "N509FZ / Wikimedia Commons",
+      "sha256": "428ac71a7543303a3c767cc77a09dd83bbdabd8dd135353e26ce39fe1a9290b1",
+      "dimensoes": {
+        "largura": 3997,
+        "altura": 2665
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspecionada com view_image; placa APM na fachada e Jinyu Hutong 金鱼胡同 na esquina legíveis.",
+      "limites": "Foto de 2021. Publicidade, lojas e arranjo viário podem ter mudado. Não usar como comprovação de ponto permitido de embarque após jantar."
+    },
+    {
+      "id": "dia24-wangfujing-dongtang",
+      "arquivo": "originais-online/acervo-inicial/dia24-wangfujing-dongtang.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-de-reconhecimento",
+      "source_page": "https://commons.wikimedia.org/wiki/File:St_Joseph_(east_cathedral)_Wangfujing_IMG_4974.jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/b/ba/St_Joseph_%28east_cathedral%29_Wangfujing_IMG_4974.jpg",
+      "credito": "Bjoertvedt / Wikimedia Commons",
+      "sha256": "dcd879207d03a4db8967a9d5f575e2a6a7f48f4725d4ccdfaba113ecda047b8a",
+      "dimensoes": {
+        "largura": 3024,
+        "altura": 4032
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspecionada com view_image; portal, fachada, três torres e pátio reconhecíveis; corresponde à igreja identificada na fonte.",
+      "limites": "Foto diurna de 2017, com igreja parcialmente encoberta pelo portal. Não comprova horários, abertura de grades ou acesso interno; o roteiro prevê fachada. Uma foto ampla ao entardecer seria uma melhoria adicional, não indispensável."
+    },
+    {
+      "id": "ext24-wangfujing-marcos-v1",
+      "arquivo": "criadas/dia-24/wangfujing-marcos-v1.png",
+      "categoria": "criadas",
+      "tipo": "esquema-espacial-svg-renderizado",
+      "source_page": "https://ditu.amap.com/place/B000A842O2",
+      "source_image": null,
+      "credito": null,
+      "sha256": "666540fc6a8afddb1a12db09eb9ad149eee9260d5f6edda581aabbc5f71e7051",
+      "dimensoes": {
+        "largura": 1200,
+        "altura": 1710
+      },
+      "origem_ids": [
+        "dia24-wangfujing-e3",
+        "dia24-wangfujing-apm",
+        "dia24-wangfujing-dongtang"
+      ],
+      "status": "reprovada",
+      "alteracoes": "V1: desenho nativo inicial; reprovação tipográfica.",
+      "verificacao_visual": "Inspecionado com view_image: glifos CJK renderizados como caixas/hexadecimais por Fontconfig relativo incorreto. Reprovado; não usar.",
+      "limites": "Sem distância, calçada obrigatória, trajeto acessível, faixa de travessia ou ponto fixo de embarque. Não promete entrada na igreja ou no pátio. E3 reconhecida por foto de 2022 e texto descritivo, não confirmada operacional em 2026."
+    },
+    {
+      "id": "25-palace-mapa-forbidden-city-official",
+      "arquivo": "originais-online/acervo-inicial/25-palace-mapa-forbidden-city-official.jpg",
+      "categoria": "originais-online",
+      "tipo": "mapa",
+      "source_page": "https://www.dpm.org.cn/Visit.html",
+      "source_image": null,
+      "credito": "Museu do Palácio / 故宫博物院 · planta original das áreas de visita.",
+      "sha256": "e3c8a08d63b4f254657b668022cab24eb5eedfce421052f1a73f291163864796",
+      "dimensoes": {
+        "largura": 1536,
+        "altura": 2638
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspeção visual da equipe; cruzamento com o roteiro-base em 16/09/2026.",
+      "limites": "Planta detalhada sem nosso eixo destacado e rótulos em chinês. Aviso de 31/07/2026 fecha Taihemen desde 03/08, sem data de fim: não certificar passagem por ele."
+    },
+    {
+      "id": "ext25-donghuamen-fosso-isaac",
+      "arquivo": "originais-online/dia-25/donghuamen-fosso-isaac.png",
+      "categoria": "originais-online",
+      "tipo": "foto-referencia",
+      "source_page": "https://isaac-tang.com/2024/10/26/tips-on-how-to-visit-the-forbidden-city-palace-museum-on-your-own/",
+      "source_image": "https://isaac-tang.com/wp-content/uploads/2024/10/image-1.png",
+      "credito": null,
+      "sha256": "b9098f2815d22544eda40e943942b384c89bc429171b59e4024371d9d4170b54",
+      "dimensoes": {
+        "largura": 2000,
+        "altura": 1500
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Consultar manifesto e relatório da frente.",
+      "verificacao_visual": "Inspeção individual com view_image em 17/09/2026. Foto orientada ao sul a partir de Donghuamen Avenue; muralha à direita, fosso em primeiro plano e faixa pedonal entre ambos.",
+      "limites": "Relato publicado em 26/10/2024; paisagem de outono. Fotografia sem comprovação de circulação, regras ou barreiras atuais. Preservada sem edição."
+    },
+    {
+      "id": "ext25-donghuamen-passagem-fosso-tcg",
+      "arquivo": "originais-online/dia-25/donghuamen-passagem-fosso-tcg.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-referencia",
+      "source_page": "https://www.travelchinaguide.com/attraction/beijing/forbidden-city/east-prosperity-gate.htm",
+      "source_image": "https://www.travelchinaguide.com/images/photogallery/2025/east-prosperity-gate-shortcut.jpg",
+      "credito": null,
+      "sha256": "8d87b4fb846189dcec4c439e9c9e172512f816d800bd3408152bf0c856c2ba75",
+      "dimensoes": {
+        "largura": 420,
+        "altura": 588
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Consultar manifesto e relatório da frente.",
+      "verificacao_visual": "Inspeção individual com view_image em 17/09/2026. Muro cinza à direita, torre superior, árvores à esquerda e pessoas no caminho; corresponde ao caminho descrito na fonte.",
+      "limites": "420×588; campo estreito, fosso fora do quadro; não cobre todo o contorno. Fotografia sem comprovação de circulação, regras ou barreiras atuais. Preservada sem edição."
+    },
+    {
+      "id": "dia25-jingshan-planta-limpa",
+      "arquivo": "originais-online/acervo-inicial/dia25-jingshan-planta-limpa.jpg",
+      "categoria": "originais-online",
+      "tipo": "planta",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jingshanmap.jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Jingshanmap.jpg",
+      "credito": null,
+      "sha256": "f262751058a0880acdbe71cc19a64df8f018efeecb7423134adc330b28b328f3",
+      "dimensoes": {
+        "largura": 600,
+        "altura": 634
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Conferida integralmente via view_image: três portões principais, pavilhão Wanchun, caminhos curvos e escadas representadas; nenhuma linha editorial vermelha.",
+      "limites": "Baixa resolução e idade não documentada na página recuperável; EXIF de 2009. Não substitui planta operacional atual nem permite certificar acessibilidade. Boa para comparar geometria; insuficiente como mapa final de celular."
+    },
+    {
+      "id": "25-qianmen-mapa-qianmen-dashilar-bjd-official-original",
+      "arquivo": "originais-online/acervo-inicial/25-qianmen-mapa-qianmen-dashilar-bjd-official-original.jpg",
+      "categoria": "originais-online",
+      "tipo": "mapa",
+      "source_page": "https://xinwen.bjd.com.cn/content/s676678dde4b000299badaf9c.html",
+      "source_image": null,
+      "credito": "Mapa divulgado pelo Beijing Daily / 北京日报 · imagem original da publicação.",
+      "sha256": "52b37ade1d1467bf02a52c8b8455aa3958f6512b44ed2d75f3e9ee535ade8ec5",
+      "dimensoes": {
+        "largura": 6580,
+        "altura": 4995
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspeção visual da equipe; cruzamento com o roteiro-base em 16/09/2026.",
+      "limites": "Mapa mostra circuito editorial de 22 pontos, maior que nosso trecho. Foto atual tem fortes semelhanças com Dashilar; identidade geográfica precisa de revisão."
+    },
+    {
+      "id": "26-summer-mapa-summer-palace-official",
+      "arquivo": "originais-online/acervo-inicial/26-summer-mapa-summer-palace-official.jpg",
+      "categoria": "originais-online",
+      "tipo": "mapa",
+      "source_page": "https://summerpalace.net.cn/guide_map.html?_isa=1",
+      "source_image": null,
+      "credito": "Administração do Palácio de Verão / 颐和园 · imagem original do site oficial.",
+      "sha256": "401a0ca0a74613bd3047f79e0204142c50e96a2016aa328459460d9a4c72f144",
+      "dimensoes": {
+        "largura": 6805,
+        "altura": 6841
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspeção visual da equipe; cruzamento com o roteiro-base em 16/09/2026.",
+      "limites": "Mapa de alta resolução cobre todo o parque; nosso passeio ocupa só setor leste/margem norte. Precisa detalhe desse setor e retorno ao mesmo portão."
+    },
+    {
+      "id": "torres-yandai-shichahai-mapa",
+      "arquivo": "originais-online/acervo-inicial/torres-yandai-shichahai-mapa.jpg",
+      "categoria": "originais-online",
+      "tipo": "mapa-esquematico",
+      "source_page": "https://www.zhangjiajieholiday.com/City_Tours/Beijing-Guide/701.html",
+      "source_image": "https://www.zhangjiajieholiday.com/uploadfile/2017/0819/20170819043135551.jpg",
+      "credito": null,
+      "sha256": "80c2a75353b910b0f340444df0b9f155dc5b41fbf1d98503ca6c7809378f7632",
+      "dimensoes": {
+        "largura": 655,
+        "altura": 622
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspecionado com view_image em 2026-09-16. Confirmada consistência relativa das torres, via Di’anmen Outer, Yandai e ponte entre lagos com mapa do site e fontes oficiais. Ausência do metrô Shichahai registrada como limitação.",
+      "limites": "Baixa resolução e mapa antigo. Não mostra Ya’er, estação Shichahai da linha 8 ou A2. A infraestrutura de metrô exibida é incompleta. Não serve como mapa de transporte atualizado, medida de distâncias ou instrução de embarque."
+    },
+    {
+      "id": "shichahai-lagos-hutongs",
+      "arquivo": "originais-online/acervo-inicial/shichahai-lagos-hutongs.jpg",
+      "categoria": "originais-online",
+      "tipo": "mapa-detalhado",
+      "source_page": "https://chinagotrip.com/destinations/beijing/attractions/shichahai",
+      "source_image": "https://images.chinagotrip.com/shichahai_route_01.jpg",
+      "credito": null,
+      "sha256": "65245672bf0a755a5bb7487be41321178a99eda635a93e27a71f72cb0ced35de",
+      "dimensoes": {
+        "largura": 1080,
+        "altura": 1440
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspecionado com view_image em 2026-09-16. Norte para cima, Sino acima do Tambor, Qianhai ao sul e Houhai a oeste/noroeste coerentes com mapa do site e referências oficiais. Ya’er corre pela faixa ao norte de Houhai. Não aprovado o circuito vermelho para nosso passeio.",
+      "limites": "A linha vermelha propõe 3–4 horas e contorna áreas além do roteiro, incluindo Xihai e margem oeste de Qianhai. Yinding não aparece claramente rotulada; Jinding Bridge ao sul é outra ponte e não pode ser usada como substituta. Sem acesso A2; procedência/data do desenho não estabelecidas. Não validado o traçado impresso como caminho atual."
+    },
+    {
+      "id": "mutianyu-cabine-fechada",
+      "arquivo": "originais-online/acervo-inicial/mutianyu-cabine-fechada.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-equipamento",
+      "source_page": "https://www.travelchinaguide.com/mutianyu-great-wall-toboggan-cable-car.htm",
+      "source_image": "https://www.travelchinaguide.com/images/photogallery/2019/mutianyu-cable-car.jpg",
+      "credito": null,
+      "sha256": "d50e91c8f4d5b43dd1f974eba57889d699328e75505f2c4d874b84fc69129ab7",
+      "dimensoes": {
+        "largura": 588,
+        "altura": 420
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Sem alteração do download; nome/extensão normalizados conforme formato real.",
+      "verificacao_visual": "Inspecionado com view_image em 2026-09-16. Cabine fechada vermelha, cabos e muralha ao fundo correspondem ao assunto identificado na página.",
+      "limites": "Foto pequena, anterior à viagem, sem acesso/estação e sem número da torre visível. Não confirma modelo, disponibilidade ou condições do equipamento no dia."
+    },
+    {
+      "id": "ext2627-mutianyu-cadeirinha",
+      "arquivo": "originais-online/dias-26-27/mutianyu-cadeirinha.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-equipamento",
+      "source_page": "https://www.travelchinaguide.com/mutianyu-great-wall-toboggan-cable-car.htm",
+      "source_image": "https://www.travelchinaguide.com/images/photogallery/2019/mutianyu-chairlift.jpg",
+      "credito": null,
+      "sha256": "5a851622a9e91cb94a5df8da125d33d5a6776064b094043317060283d9508ef8",
+      "dimensoes": {
+        "largura": 588,
+        "altura": 420
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Consultar manifesto e relatório da frente.",
+      "verificacao_visual": "Assentos abertos e barra frontal visíveis; contraste inequívoco com cabine fechada.",
+      "limites": "Foto pequena, torre e bilheteria não identificáveis. Sem aprovação infantil."
+    },
+    {
+      "id": "ext2627-mutianyu-toboga",
+      "arquivo": "originais-online/dias-26-27/mutianyu-toboga.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-equipamento",
+      "source_page": "https://www.travelchinaguide.com/mutianyu-great-wall-toboggan-cable-car.htm",
+      "source_image": "https://www.travelchinaguide.com/images/photogallery/2019/mutianyu-toboggan.jpg",
+      "credito": null,
+      "sha256": "6df2e6757fd90f224523ae983695cf9e2ae2b1609b9492c6c48f46845666046d",
+      "dimensoes": {
+        "largura": 588,
+        "altura": 420
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Consultar manifesto e relatório da frente.",
+      "verificacao_visual": "Trilho metálico aberto e carrinhos visíveis; equipamentos não confundidos com teleférico.",
+      "limites": "588×420; placa de condições ilegível. A foto não autoriza uso infantil nem prova operação atual."
+    },
+    {
+      "id": "ext2627-mutianyu-acessos-mapa",
+      "arquivo": "originais-online/dias-26-27/mutianyu-acessos-mapa.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-mapa",
+      "source_page": "https://blog.ipacktravel.com/wp/beijing-see-mutianyu-great-wall/",
+      "source_image": "https://blog.ipacktravel.com/wp/wp-content/uploads/2026/01/Mutianyu-MiddleSegment.jpeg",
+      "credito": null,
+      "sha256": "3e571d6e3ab66dce4d99b583a79fd41da06ea4d24fa4251363110dfabbf1898f",
+      "dimensoes": {
+        "largura": 971,
+        "altura": 728
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Consultar manifesto e relatório da frente.",
+      "verificacao_visual": "Números e equipamentos no mapa conferidos; 南检票口 e 滑道下站 aparecem em posições distintas.",
+      "limites": "Círculos são do publicador. Confrontar controle sul de trilhas com controle específico de Slide Ticket Gate; sem prescrever caminhada14→6."
+    },
+    {
+      "id": "extlog-tiantandongmen-a2",
+      "arquivo": "originais-online/logistica/tiantandongmen-a2.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-de-acesso",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Exit_A2,_Tiantandongmen_Station,_Beijing_Subway.jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Exit_A2%2C_Tiantandongmen_Station%2C_Beijing_Subway.jpg",
+      "credito": null,
+      "sha256": "7d60697a16b396abbb44b5043e90811508c6751ef0d59cb81f921e312d3bccce",
+      "dimensoes": {
+        "largura": 4032,
+        "altura": 3024
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Nenhuma. Bytes do download preservados.",
+      "verificacao_visual": "Fachada, nome bilíngue e linha 5 conferidos; metadados da página identificam A2.",
+      "limites": "Foto de 12/01/2020; letra A2 aparece pequena no painel lateral. Não certifica abertura atual ou rota hotel–estação."
+    },
+    {
+      "id": "extlog-xingyi-fachada",
+      "arquivo": "originais-online/logistica/xingyi-fachada.webp",
+      "categoria": "originais-online",
+      "tipo": "foto-de-acesso",
+      "source_page": "https://tw.trip.com/hotels/beijing-hotel-detail-90808539/ni-hao-jiu-dian/photo.html",
+      "source_image": "https://ak-d.tripcdn.com/images/1mc6f12000ckj4g588180_R_500_400_R5.webp",
+      "credito": null,
+      "sha256": "ea36618c71f4fc578240b25f7d36372f668f98a2f9b2b71aa83a88407a104ea2",
+      "dimensoes": {
+        "largura": 500,
+        "altura": 400
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Nenhuma. Bytes do download preservados.",
+      "verificacao_visual": "Imagem aberta individualmente: placa 星怡酒店 legível, porta à direita e degraus visíveis. Corresponde ao nome do cadastro 90808539.",
+      "limites": "500×400 px; nome confere, mas não comprova data da foto, número do imóvel ou acesso sem degraus."
+    },
+    {
+      "id": "extlog-pek-t2-espera-2026",
+      "arquivo": "originais-online/logistica/pek-t2-espera-2026.jpg",
+      "categoria": "originais-online",
+      "tipo": "foto-de-reconhecimento",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Beijing_Capital_International_Airport_T2_Waiting_20260904.jpg",
+      "source_image": "https://upload.wikimedia.org/wikipedia/commons/4/46/Beijing_Capital_International_Airport_T2_Waiting_20260904.jpg",
+      "credito": null,
+      "sha256": "2ee05e24855456f1c9155499a2f74d4fd2908f1e19204c38e57aef9e721a7cfd",
+      "dimensoes": {
+        "largura": 3840,
+        "altura": 2560
+      },
+      "origem_ids": [],
+      "status": "aprovada-referencia",
+      "alteracoes": "Nenhuma. Bytes do download preservados.",
+      "verificacao_visual": "Conferidos assentos, portão 23 e placas de orientação; a página identifica salão doméstico. Útil apenas para reconhecimento.",
+      "limites": "Foto de 04/09/2026; o portão 23 visível não é atribuição do voo do grupo. Não há mapa de percurso nesta foto."
+    }
+  ]
+}
