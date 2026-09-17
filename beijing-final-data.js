@@ -1,11 +1,11 @@
-/* Roteiro operacional. Tempos estimados; fontes verificadas em 16/09/2026. */
+/* Roteiro operacional. Tempos estimados; base geral 16/09/2026, orientação visual e acessos revistos em 17/09/2026. */
 window.BEIJING_FINAL = {
-  "updatedAt": "16/09/2026",
+  "updatedAt": "17/09/2026",
   "hotel": {
     "name": "Xingyi Hotel · Temple of Heaven Dongmen",
     "zh": "星怡酒店（北京天坛东门地铁站店）",
     "address": "北京市东城区天坛东里甲48号1号楼",
-    "notes": "Estadia confirmada: 23–27/09/2026. Referência de metrô: Tiantandongmen 天坛东门, linha 5. Reservar 12–18 min a pé usando o acesso A2, conhecido junto do parque; o caminho exato desde a porta do hotel deve ser mostrado pela recepção."
+    "notes": "Estadia confirmada: 23–27/09/2026. Metrô de referência: Tiantandongmen 天坛东门, linha 5. A2 fica junto do Portão Leste do parque; os 12–18 min a pé são uma margem de planejamento, sem trajeto porta a porta medido. Na chegada ao hotel, pedir à recepção que marque o caminho de pedestres e as travessias até o acesso adequado ao carrinho; salvar esse percurso no celular."
   },
   "essentials": [
     {
@@ -30,7 +30,11 @@ window.BEIJING_FINAL = {
     },
     {
       "title": "Acessos e mapas",
-      "text": "A2 de Tiantandongmen, F de Yonghegong e E3 de Wangfujing são referências verificadas. As plantas turísticas e mapas oficiais mostram a disposição dos locais; as legendas indicam o trecho do nosso roteiro. Amplie para ler os nomes. Acessos e controles seguem a sinalização do dia."
+      "text": "A2 de Tiantandongmen, F de Yonghegong e E3 de Wangfujing têm referências visuais; funcionamento e ajuda com carrinho precisam ser conferidos na estação. Procurar letra e número completos, não somente o ponto cardeal. Mapas mostram marcos e relações espaciais; seguir placas e controles locais nos trechos sem caminho comprovado."
+    },
+    {
+      "title": "Três confirmações antes dos passeios",
+      "text": "Dia 24: caminho hotel–metrô e assistência ao carrinho. Dia 25: ingresso da Cidade Proibida, circulação junto a Taihemen e requisito de reserva da praça à tarde. Dia 26: equipamento de ida/volta, condições para cada criança e alternativa se o tobogã não operar. As ações estão detalhadas nas etapas."
     }
   ],
   "sources": [
@@ -56,8 +60,8 @@ window.BEIJING_FINAL = {
     },
     {
       "id": "heaven-metro",
-      "label": "Amap: acesso A2 de Tiantandongmen",
-      "url": "https://ditu.amap.com/place/B000A7XXAY"
+      "label": "Turismo de Pequim: A2 e aproximação ao Portão Leste",
+      "url": "https://www.visitbeijing.com.cn/article/4EcZoRw0IAy"
     },
     {
       "id": "lama",
@@ -71,8 +75,8 @@ window.BEIJING_FINAL = {
     },
     {
       "id": "lama-metro",
-      "label": "Amap: Yonghegong, saída F",
-      "url": "https://ditu.amap.com/place/B000A7BGMG"
+      "label": "Metrô oficial: acessos E/F e plataformas de Yonghegong",
+      "url": "https://www.bjsubway.com/station/wzass/"
     },
     {
       "id": "guozijian",
@@ -81,8 +85,8 @@ window.BEIJING_FINAL = {
     },
     {
       "id": "wangfujing-metro",
-      "label": "Amap: Wangfujing, saída E3",
-      "url": "https://ditu.amap.com/place/B000A1848A"
+      "label": "Beijing Daily: identificar E3 entre as saídas de Wangfujing",
+      "url": "https://news.bjd.com.cn/2023/10/20/10597583.shtml"
     },
     {
       "id": "palace",
@@ -173,6 +177,31 @@ window.BEIJING_FINAL = {
       "id": "yaer",
       "label": "Xicheng: acesso à Ya’er Hutong, junto a Shichahai",
       "url": "https://www.bjxch.gov.cn/zt/xchyn/xxxq/pnidpv962449.html"
+    },
+    {
+      "id": "metro-accessibility",
+      "label": "Metrô oficial: plataformas, elevadores e assistência",
+      "url": "https://www.bjsubway.com/station/wzass/"
+    },
+    {
+      "id": "heaven-a2-steps",
+      "label": "Inspeção no local: escadas do acesso A2 (dezembro de 2025)",
+      "url": "https://m.bjnews.com.cn/detail/1764761800129044.html"
+    },
+    {
+      "id": "palace-moat",
+      "label": "Turismo de Pequim: passagem entre muralha e fosso",
+      "url": "https://www.visitbeijing.com.cn/article/47QpMLzfk76"
+    },
+    {
+      "id": "palace-taihemen-works",
+      "label": "Museu do Palácio: obras no portão Taihemen desde 03/08/2026",
+      "url": "https://www.dpm.org.cn/announce_detail/379422.html"
+    },
+    {
+      "id": "square-notice-2025",
+      "label": "Tian’anmen: aviso de reserva, faixa e entrada (22/09/2025)",
+      "url": "https://tamgw.beijing.gov.cn/zhengwugongkai/tzgg/202509/t20250922_4207260.html"
     }
   ],
   "days": [
@@ -220,7 +249,7 @@ window.BEIJING_FINAL = {
             "08:20–08:40 — seguir ao norte para a Abóbada Imperial 皇穹宇 e o Muro do Eco 回音壁. O eco depende do ruído; não reservar uma fila longa para testá-lo.",
             "08:40–09:00 — continuar para norte pela Ponte Danbi 丹陛桥, a larga passagem elevada que liga os conjuntos.",
             "09:00–09:40 — Pavilhão das Orações pelas Boas Colheitas 祈年殿: pátio, fachada circular azul e fotos. Pausa curta com as crianças.",
-            "09:40–10:10 — sair do conjunto pelo lado leste, percorrer o Longo Corredor 长廊 e seguir placas 东门. Este trecho já inclui a caminhada de saída."
+            "09:40–10:10 — sair do conjunto pelo lado leste, percorrer o Longo Corredor 长廊 e seguir placas 东门 até o Portão Leste externo do parque. O pórtico interno East Heavenly Gate não é a saída para a rua. Este trecho já inclui a caminhada de saída."
           ],
           "zh": "天坛公园",
           "summary": "Complexo de cerimônias imperiais. O edifício circular de telhado azul é a principal referência visual.",
@@ -228,7 +257,7 @@ window.BEIJING_FINAL = {
           "leave": "10:10",
           "duration": "2h10, incluindo pausas e caminhada interna",
           "entry": "南门 · Portão Sul",
-          "exit": "东门 · Portão Leste, junto do metrô A2",
+          "exit": "东门 · Portão Leste externo; depois localizar Tiantandongmen A2",
           "alerts": [
             "Ingresso combinado 联票: ¥34 por adulto em setembro; o bilhete simples do parque não inclui os três monumentos. Ingresso ainda a emitir.",
             "Parque: 06:00–22:00. Monumentos: 08:00–18:00, último acesso 17:30. Levar passaporte original e comprovante/QR da compra.",
@@ -275,10 +304,10 @@ window.BEIJING_FINAL = {
           "time": "10:10–10:55",
           "title": "Templo do Céu → Templo Lama",
           "instructions": [
-            "Entrar em Tiantandongmen 天坛东门 pelo acesso A2, lado noroeste, junto do Portão Leste do parque.",
+            "Ao sair do Portão Leste externo, localizar Tiantandongmen 天坛东门 A2, no lado noroeste da estação. Conferir a placa A2 e o acesso disponível antes de descer.",
             "Pegar a linha 5 para norte, sentido Tiantongyuan North 天通苑北.",
             "Passar por Ciqikou → Chongwenmen → Dongdan → Dengshikou → Dongsi → Zhangzizhonglu → Beixinqiao. Descer na 8ª parada: Yonghegong 雍和宫.",
-            "Usar a saída F (sudeste). Caminhar para sul pela Yonghegong Dajie até o átrio e a entrada do templo."
+            "Em Yonghegong, seguir as placas para F (sudeste). Já na rua, caminhar para sul pela Yonghegong Dajie até o átrio e a entrada do templo. Se F estiver fechado, pedir ao funcionário o acesso alternativo e a orientação para 雍和宫入口."
           ],
           "transport": {
             "walkBefore": "1–3 min do Portão Leste ao acesso A2",
@@ -290,7 +319,12 @@ window.BEIJING_FINAL = {
           "zh": "雍和宫地铁站 F口",
           "sources": [
             "heaven-metro",
-            "lama-metro"
+            "lama-metro",
+            "metro-accessibility",
+            "heaven-a2-steps"
+          ],
+          "alerts": [
+            "Com carrinho: A2 tem trechos de escada documentados. A tabela do metrô lista plataformas elevatórias em Tiantandongmen B/C e Yonghegong E/F, sem elevador de rua nessas estações. Pedir assistência antes da escada e confirmar o caminho indicado; plataforma não significa uso livre nem funcionamento garantido."
           ]
         },
         {
@@ -301,7 +335,7 @@ window.BEIJING_FINAL = {
           "instructions": [
             "Começar pelos portais ao sul; seguir o eixo de pátios: Zhaotaimen 昭泰门 → Yonghemen 雍和门 → salão Yonghegong 雍和宫殿.",
             "Continuar por Yongyoudian 永佑殿 e Falundian 法轮殿 até Wanfuge 万福阁, o pavilhão do grande Buda Maitreya.",
-            "Voltar pelo corredor lateral para a saída ao sul. A visita termina na mesma região da entrada; não seguir procurando uma saída turística ao norte."
+            "Retornar ao acesso sul pelos pátios e passagens liberados, seguindo as placas de saída 出口. O desenho identifica a sequência de salões; não fixa um corredor lateral disponível nem uma saída turística ao norte."
           ],
           "zh": "雍和宫",
           "summary": "Templo budista tibetano em atividade, com pátios, incenso e o grande Maitreya no último pavilhão.",
@@ -346,7 +380,7 @@ window.BEIJING_FINAL = {
           "time": "12:05–12:15",
           "title": "Lama → Rua Guozijian",
           "instructions": [
-            "Ao sair pelo sul do templo, alcançar a travessia de Yonghegong Dajie.",
+            "Ao sair pelo sul do templo, localizar uma travessia permitida de Yonghegong Dajie; a planta de bairro não marca uma faixa ou semáforo exatos.",
             "Atravessar onde permitido e entrar para oeste na Guozijian Jie 国子监街, reconhecível pelos portais tradicionais."
           ],
           "transport": {
@@ -412,10 +446,10 @@ window.BEIJING_FINAL = {
           "time": "13:40–14:35",
           "title": "Guozijian → hotel",
           "instructions": [
-            "Voltar para leste pela Guozijian Jie, alcançar Yonghegong Dajie e caminhar para norte até a entrada F da estação Yonghegong 雍和宫.",
+            "Voltar para leste pela Guozijian Jie, cruzar Yonghegong Dajie onde permitido e seguir para norte até Yonghegong 雍和宫 F, ou o acesso alternativo indicado pela equipe da estação.",
             "Linha 5 para sul, sentido Songjiazhuang 宋家庄. Descer após 8 paradas em Tiantandongmen 天坛东门; não há baldeação.",
-            "Usar A2 como referência verificada junto ao Portão Leste do parque. Caminhar para a região de Tiantan Dongli e o endereço do hotel: 北京市东城区天坛东里甲48号1号楼.",
-            "O acesso A2 é uma referência conhecida, não uma afirmação de que seja o mais próximo da porta do hotel. Confirmar na recepção o caminho de pedestres para esse endereço."
+            "Em Tiantandongmen, usar o acesso combinado com a recepção. A2 continua sendo a referência junto do Portão Leste; seguir o percurso salvo até 北京市东城区天坛东里甲48号1号楼.",
+            "Se o acesso combinado estiver indisponível, mostrar o endereço à equipe da estação e pedir a saída e o trajeto de pedestres adequados ao carrinho. O intervalo de 12–18 min precisa ser ajustado ao caminho realmente usado."
           ],
           "transport": {
             "walkBefore": "10–15 min até Yonghegong F",
@@ -427,7 +461,8 @@ window.BEIJING_FINAL = {
           "zh": "星怡酒店（北京天坛东门地铁站店）",
           "sources": [
             "heaven-metro",
-            "lama-metro"
+            "lama-metro",
+            "metro-accessibility"
           ]
         },
         {
@@ -446,10 +481,10 @@ window.BEIJING_FINAL = {
           "time": "17:00–17:50",
           "title": "Hotel → Wangfujing",
           "instructions": [
-            "Caminhar à estação Tiantandongmen 天坛东门, acesso A2 junto ao Portão Leste do parque.",
+            "Seguir o caminho hotel–Tiantandongmen 天坛东门 confirmado com a recepção. A2 é a referência junto ao Portão Leste; pedir ajuda ao funcionário caso o carrinho exija outro acesso.",
             "Linha 5 para norte, sentido Tiantongyuan North 天通苑北. Descer em Dongdan 东单, 3 paradas: Ciqikou, Chongwenmen, Dongdan.",
             "Seguir as placas de transferência para a linha 1. Pegar o sentido oeste: a próxima estação deve ser Wangfujing 王府井. Descer após 1 parada.",
-            "Usar a saída E3, lado nordeste, e caminhar para norte até a rua comercial de Wangfujing."
+            "Em Wangfujing, seguir a indicação completa E3 até a saída junto de Gongmei 工美大厦. Há várias saídas chamadas “nordeste”; a letra e o número distinguem a chegada planejada. Na rua, seguir para norte rumo ao APM."
           ],
           "transport": {
             "walkBefore": "12–18 min até Tiantandongmen A2",
@@ -461,7 +496,11 @@ window.BEIJING_FINAL = {
           "zh": "王府井地铁站 E3口",
           "sources": [
             "wangfujing-metro",
-            "heaven-metro"
+            "heaven-metro",
+            "metro-accessibility"
+          ],
+          "alerts": [
+            "Em Dongdan, conferir as placas da linha 1 e a próxima estação 王府井 antes de embarcar. Para o carrinho, pedir a rota de transferência e saída à equipe; não foi comprovado um trajeto contínuo sem degraus até E3."
           ]
         },
         {
@@ -547,8 +586,8 @@ window.BEIJING_FINAL = {
           "title": "Hotel → entrada da Cidade Proibida",
           "instructions": [
             "Pedir o carro para o cruzamento 东华门大街与北池子大街交叉口 — Donghuamen Dajie com Beichizi Dajie. Descer onde o motorista e a segurança permitirem.",
-            "Caminhar para oeste pela Donghuamen Dajie até o lado oriental do fosso. Seguir para sul pela passagem externa 东筒子河路 e contornar até 午门 Wumen.",
-            "Donghuamen é referência de chegada externa; a entrada de visitantes é Wumen, o Portão Meridiano, ao sul.",
+            "Caminhar para oeste pela Donghuamen Dajie até a aproximação de Donghuamen. Alcançar a passagem externa entre a muralha e o fosso, seguir para sul pela 东筒子河路 e contornar até 午门 Wumen. No trecho oriental rumo ao sul, a muralha fica à direita e a água à esquerda.",
+            "Donghuamen é referência de chegada e uma saída do museu; nossa entrada é Wumen, ao sul. Seguir os controles e a passagem aberta no dia; não continuar na margem oposta do fosso supondo que seja o mesmo caminho.",
             "Estar na área de ingresso por volta de 07:45–08:00. Passar pelas filas de segurança e validação para entrar na abertura, 08:30. A praça Tian’anmen será visitada à tarde."
           ],
           "transport": {
@@ -561,7 +600,8 @@ window.BEIJING_FINAL = {
           "zh": "东华门大街与北池子大街交叉口",
           "sources": [
             "palace",
-            "palace-east"
+            "palace-east",
+            "palace-moat"
           ]
         },
         {
@@ -570,7 +610,7 @@ window.BEIJING_FINAL = {
           "time": "08:30–11:00",
           "title": "Cidade Proibida",
           "instructions": [
-            "08:30–09:20 — Wumen 午门 → pontes do Rio de Água Dourada → Portão da Harmonia Suprema → pátio e Salão da Harmonia Suprema 太和殿.",
+            "08:30–09:20 — entrar por Wumen 午门 e alcançar as pontes do Rio de Água Dourada. O portão Taihemen 太和门 tem aviso de obras desde 03/08/2026; seguir a circulação indicada pela equipe para chegar ao setor do Salão da Harmonia Suprema 太和殿, conforme abertura no dia.",
             "09:20–09:50 — continuar pelo eixo central: Zhonghedian 中和殿 e Baohedian 保和殿. Ver pátios e fachadas, sem adicionar galerias laterais.",
             "09:50–10:25 — seguir ao conjunto dos palácios internos: Qianqinggong 乾清宫, Jiaotaidian 交泰殿 e Kunninggong 坤宁宫, pelos espaços abertos à visita naquele dia.",
             "10:25–11:00 — Jardim Imperial 御花园, pequena pausa e saída pelo Portão Norte Shenwumen 神武门.",
@@ -586,7 +626,8 @@ window.BEIJING_FINAL = {
           "alerts": [
             "Reserva da manhã ainda a fazer. Para 25/09, a venda abre em 18/09 às 20:00, horário de Pequim. A disponibilidade pode acabar rapidamente; não contar com bilheteria no dia.",
             "Usar a bilheteria oficial. Adulto em setembro: ¥60. Cadastrar os visitantes conforme as regras da reserva e levar o documento original informado, inclusive das crianças.",
-            "Abre 08:30; última entrada 16:00; fecha 17:00. Obras ou conservação podem fechar salões: manter o eixo pelos pátios liberados."
+            "Abre 08:30; última entrada 16:00; fecha 17:00. Obras ou conservação podem fechar salões: manter o eixo pelos pátios liberados.",
+            "Taihemen 太和门 é o portão; Taihedian 太和殿 é o salão. O aviso de 31/07/2026 não informa fim das obras nem desvio. Conferir o aviso mais recente antes da visita e perguntar ao funcionário por 太和殿 / 神武门; a sequência de marcos não promete atravessar Taihemen."
           ],
           "photos": [
             {
@@ -612,7 +653,8 @@ window.BEIJING_FINAL = {
             "palace",
             "palace-rules",
             "palace-book",
-            "palace-layout"
+            "palace-layout",
+            "palace-taihemen-works"
           ]
         },
         {
@@ -642,9 +684,9 @@ window.BEIJING_FINAL = {
           "time": "11:15–12:05",
           "title": "Parque Jingshan",
           "instructions": [
-            "Entrar pelo Portão Sul e seguir a trilha sinalizada até o pavilhão central Wanchunting 万春亭.",
+            "No Portão Sul, fotografar a planta local e localizar a indicação 万春亭 Wanchunting, no topo da colina. Escolher a subida sinalizada no local; as referências do guia não determinam uma trilha ou um atalho pela encosta.",
             "Subir as escadas sem pressa; no mirante, fotografar a Cidade Proibida vista de cima.",
-            "Descer e voltar ao Portão Sul. O ponto de encontro para o próximo carro será numa via permitida nas proximidades; não há acesso de veículo ao mirante."
+            "Descer pela rota sinalizada e retornar ao Portão Sul 南门. O carro será combinado numa via permitida próxima; confirmar o ponto no aplicativo depois do almoço."
           ],
           "zh": "景山公园",
           "summary": "Colina panorâmica diante da saída norte do palácio, com a vista do conjunto de telhados imperiais.",
@@ -655,7 +697,7 @@ window.BEIJING_FINAL = {
           "exit": "南门 · Portão Sul",
           "alerts": [
             "Ingresso do parque necessário. Horário de setembro: 06:00–21:00; última entrada 20:30.",
-            "O mirante exige escadas. Carrinho fica no nível inferior com um adulto; usar carregador para o bebê se subir. Não há subida garantida com carrinho."
+            "O mirante exige escadas. Com carrinho, combinar um adulto no nível inferior e um ponto de reencontro antes da subida; usar carregador para o bebê se subir. Se a subida não for adequada ao grupo, manter a parada nos jardins baixos dentro da mesma janela."
           ],
           "photos": [
             {
@@ -697,10 +739,10 @@ window.BEIJING_FINAL = {
           "time": "13:05–14:30",
           "title": "Jingshan → Praça Tian’anmen",
           "instructions": [
-            "Após o almoço, ir ao ponto permitido informado pelo aplicativo, fora do parque. Pedir destino 前门东大街 — Qianmen East Street, acesso à região sul da praça.",
+            "Após o almoço, ir ao ponto de embarque confirmado no aplicativo, fora do parque. Usar 前门东大街 Qianmen East Street como referência de aproximação ao setor sul da praça e conferir com o motorista o local permitido compatível com a entrada indicada na reserva/orientação oficial.",
             "O carro não deve ser direcionado ao meio da praça nem se presume parada livre na Avenida Chang’an.",
             "Do desembarque, seguir as placas 天安门广场 e os corredores de pedestres para o controle de segurança. Usar o acesso aberto indicado pelos agentes e pela reserva.",
-            "Apresentar passaportes e comprovante da reserva da Cidade Proibida do mesmo dia; deixar o QR acessível antes de entrar na fila."
+            "Deixar acessíveis os passaportes e os comprovantes válidos para a visita: ingresso da Cidade Proibida e a reserva da praça, caso exigida. Resolver a regra de reserva antes de sair; a foto ou planta da praça não substitui a validação no controle."
           ],
           "transport": {
             "walkBefore": "5–10 min até o embarque permitido",
@@ -715,7 +757,8 @@ window.BEIJING_FINAL = {
           ],
           "sources": [
             "square-rules",
-            "square-book"
+            "square-book",
+            "square-notice-2025"
           ]
         },
         {
@@ -736,7 +779,7 @@ window.BEIJING_FINAL = {
           "entry": "Controle de pedestres aberto na região sul, conforme orientação no dia",
           "exit": "Sul, junto de Zhengyangmen, para Qianmen",
           "alerts": [
-            "Praça gratuita, com reserva/controle de identidade. A regra oficial dispensa reserva separada para quem tem reserva válida da Cidade Proibida no mesmo dia; levar o comprovante. Conferir essa regra no portal 2026 antes da visita.",
+            "Antes de 25/09: no portal oficial, confirmar se o ingresso da Cidade Proibida daquele dia vale para entrar na praça à tarde. A regra de 2021 admite reserva vinculada, mas o aviso de 22/09/2025 pede reserva prévia com faixa e entrada. Sem confirmação explícita da dispensa para nossa visita, emitir a reserva gratuita da tarde e guardar o comprovante. Não consta reserva concluída.",
             "O passeio não inclui Mausoléu, Museu Nacional, subida ao Portão Tian’anmen nem espera pelo arriamento da bandeira."
           ],
           "photos": [
@@ -761,7 +804,8 @@ window.BEIJING_FINAL = {
           },
           "sources": [
             "square-rules",
-            "square-book"
+            "square-book",
+            "square-notice-2025"
           ]
         },
         {
@@ -788,9 +832,9 @@ window.BEIJING_FINAL = {
           "time": "15:40–16:20",
           "title": "Rua Qianmen",
           "instructions": [
-            "Começar no extremo norte, com Zhengyangmen atrás de vocês; caminhar para sul pela rua de pedestres.",
+            "Começar no extremo norte, com as torres de Zhengyangmen e o pailou atrás do grupo, e caminhar para sul pela avenida de pedestres. A via larga e os trilhos ajudam a reconhecer Qianmen.",
             "Observar as fachadas, placas e lojas tradicionais. O passeio é a pé; não depende de passeio no bonde.",
-            "Na ligação com 大栅栏商业街, virar à direita, para oeste, e entrar em Dashilar."
+            "No cruzamento, conferir a placa 大栅栏商业街 e virar à direita, para oeste, entrando em Dashilar. 鲜鱼口 Xianyukou fica para leste, do outro lado de Qianmen, e não é o trecho escolhido."
           ],
           "zh": "前门大街",
           "summary": "Rua comercial monumental do antigo centro, conectada diretamente à praça.",
@@ -942,9 +986,9 @@ window.BEIJING_FINAL = {
           "title": "Centro de visitantes → muralha",
           "instructions": [
             "Validar/comprar o ingresso do parque e o bilhete do shuttle. Entrar na fila do transporte interno para a base da encosta.",
-            "Antes de comprar a subida, confirmar com o operador o bilhete e a descida desejada de tobogã, incluindo as regras para cada adulto e criança.",
-            "O portão norte 北检票口 leva à cabine fechada, que chega perto da torre 14. O portão sul 南检票口 atende à cadeirinha aberta e ao tobogã, perto da torre 6.",
-            "Seguir apenas o acesso correspondente ao bilhete confirmado. Os dois equipamentos não chegam ao mesmo ponto da muralha. Guardar os comprovantes para a descida."
+            "Antes de comprar a subida, confirmar o equipamento, os dois trajetos e as condições do operador para cada pessoa. Informar idade e altura das duas crianças; a possibilidade de tobogã precisa incluir uma alternativa de descida se alguém não puder usá-lo.",
+            "Cabine fechada 缆车: controle norte 北检票口, chegada perto da torre 14. Cadeirinha aberta 索道 e tobogã 滑道: procurar o controle específico do bilhete (“Slide Ticket Gate”) e as placas 施必得索道滑道, no setor sul, para a região das torres 5–6. 南检票口 também designa o controle sul das trilhas; não basta seguir apenas “Portão Sul”.",
+            "Seguir o controle do equipamento comprado e guardar os bilhetes. Cabine fechada e cadeirinha/tobogã têm operadores e bilhetes diferentes; um bilhete de ida e volta da cabine não cobre a descida no tobogã."
           ],
           "transport": {
             "walkBefore": "10–15 min pela área comercial até o shuttle",
@@ -956,7 +1000,8 @@ window.BEIJING_FINAL = {
           "zh": "慕田峪长城",
           "alerts": [
             "Parque e cabine fechada abrem às 07:30. Não foi confirmado o mesmo horário para cadeirinha/tobogã.",
-            "Pendente operacional: equipamento, bilhete e elegibilidade das crianças. O guia não presume que o bebê ou a criança de 4 anos possam usar o tobogã."
+            "Ainda a confirmar: idade/altura aceitas, acompanhamento, horário e alternativa de descida para as crianças. A regra tarifária de 1,20 m para shuttle/cabine não autoriza uso de cadeirinha ou tobogã. A pesquisa oficial não resolveu a elegibilidade do bebê nem da criança de 4 anos.",
+            "Concluir a escolha com o operador e o motorista antes da visita. Se tobogã ou cadeirinha não forem adequados ao grupo, confirmar a opção de cabine fechada ida e volta para todos e o respectivo bilhete; não improvisar a ligação entre as torres 14 e 6."
           ],
           "sources": [
             "mutianyu",
@@ -972,7 +1017,7 @@ window.BEIJING_FINAL = {
             "Ao desembarcar, identificar o número da torre, fotografar a sinalização e localizar o acesso de descida comprado.",
             "Percorrer as torres próximas ao desembarque, com fotos e pausas. A janela de duas horas é de visita total, não uma estimativa de duas horas para caminhar 1,3 km.",
             "Manter a caminhada em um trecho curto; não programar a subida íngreme até a torre 20.",
-            "Às 10:15, começar a voltar para o acesso da descida. Se a descida confirmada for o tobogã, terminar na região da torre 6; a cabine fechada desce pela região da torre 14.",
+            "Às 10:15, começar a voltar ao acesso de descida comprado. Tobogã/cadeirinha ficam na região das torres 5–6; a cabine fechada fica perto da 14. Não confundir número da torre com controle de ingresso na base.",
             "Não começar pela torre 14 supondo que o tobogã esteja ao lado: entre as torres 14 e 6 existe um trecho real de muralha com degraus, a considerar antes de embarcar."
           ],
           "zh": "慕田峪长城",
@@ -980,7 +1025,7 @@ window.BEIJING_FINAL = {
           "arrival": "Aproximadamente 08:30",
           "leave": "10:30",
           "duration": "Cerca de 2h na muralha, incluindo fotos e pausas",
-          "entry": "Torre do equipamento confirmado: 14 ou 6",
+          "entry": "Torre do equipamento confirmado: região da 14 ou das 5–6",
           "exit": "Acesso de descida correspondente ao bilhete confirmado",
           "alerts": [
             "Ingresso do parque, shuttle e equipamento são itens separados; não consta compra concluída.",
@@ -1018,7 +1063,7 @@ window.BEIJING_FINAL = {
           "time": "10:30–11:30",
           "title": "Muralha → reencontro com motorista",
           "instructions": [
-            "Descer no equipamento previamente confirmado; manter os bilhetes à mão.",
+            "Descer pelo equipamento e bilhete combinados antes da subida. Se o operador suspender o tobogã, seguir a alternativa acordada para cada adulto e criança; confirmar qualquer troca de bilhete com a equipe antes de entrar na fila.",
             "Voltar à parada do shuttle e embarcar para o centro de visitantes inferior.",
             "Avisar o motorista e encontrá-lo no ponto fotografado pela manhã. Banheiro e água antes de seguir viagem."
           ],
@@ -1071,10 +1116,10 @@ window.BEIJING_FINAL = {
           "time": "14:00–16:30",
           "title": "Palácio de Verão",
           "instructions": [
-            "14:00–14:25 — entrar por Donggongmen 东宫门, Portão Leste; visitar o pátio do Renshoudian 仁寿殿 e seguir em direção ao lago.",
+            "14:00–14:25 — entrar por Donggongmen 东宫门, Portão Leste; alcançar o pátio de Renshoudian 仁寿殿 e seguir em direção ao lago. Renshoumen 仁寿门 é o portão desse conjunto, distinto do salão.",
             "14:25–14:50 — passar pela região de Leshoutang 乐寿堂, entre os pátios e a margem norte do Lago Kunming.",
-            "14:50–15:30 — seguir para oeste pelo Longo Corredor 长廊 até a região de Paiyunmen 排云门. Fotografar as pinturas do corredor e a vista do Pavilhão do Incenso Budista na encosta.",
-            "15:30–16:10 — retornar para leste pela margem do lago, com uma pausa curta e fotos; reencontrar o setor de Renshoudian.",
+            "14:50–15:30 — seguir para oeste pelo Longo Corredor 长廊 até a região de Paiyunmen 排云门. Na planta local, distinguir o portão 排云门 do salão 排云殿 e confirmar ali o ponto de retorno. Fotografar as pinturas e a vista do Pavilhão do Incenso Budista, sem subir a encosta.",
+            "15:30–16:10 — retornar para leste pelos caminhos abertos junto da margem norte, com pausa curta e fotos; reencontrar o setor de Renshoudian. Se houver trecho interrompido na margem, usar a volta sinalizada pelo corredor e pelos pátios.",
             "16:10–16:30 — alcançar o Portão Leste, sair e caminhar ao ponto combinado com o motorista. O retorno pela mesma margem é intencional.",
             "O percurso inclui lago, pátios e Longo Corredor. Não depende de barco, subida da colina ou acesso a setores extras pagos."
           ],
@@ -1344,7 +1389,7 @@ window.BEIJING_FINAL = {
           "title": "Yandai → Ponte Yinding",
           "instructions": [
             "Na saída sudoeste de Yandai, seguir as placas 银锭桥 para a pequena ponte junto à água.",
-            "Atenção ao fluxo de pedestres e degraus; manter o carrinho junto ao grupo."
+            "Antes dos degraus, observar a passagem e combinar como manter o grupo junto. A sequência completa de desníveis até Ya’er ainda não está documentada; seguir a orientação local para o carrinho."
           ],
           "transport": {
             "walkBefore": "3–5 min a pé",
@@ -1396,8 +1441,8 @@ window.BEIJING_FINAL = {
           "time": "11:25–12:30",
           "title": "Shichahai · lagos e hutongs",
           "instructions": [
-            "Junto do lado norte da Ponte Yinding, localizar a placa 鸦儿胡同 (Ya’er Hutong). Entrar aproximadamente 150–200 m pela viela pública, observar as fachadas e voltar pelo mesmo caminho até a ponte; não entrar nos pátios residenciais.",
-            "Fazer uma breve pausa na margem de Houhai junto à ponte. Depois seguir pela margem leste/nordeste de Qianhai, aproximando-se de Di’anmen Outer Street.",
+            "Pelo lado norte da Ponte Yinding, procurar 鸦儿胡同 (Ya’er Hutong); os caracteres ajudam a reconhecer placas com transliterações diferentes. Planejar um trecho curto, até aproximadamente 150–200 m, e voltar pelo mesmo caminho. Confirmar entrada e piso no local, mantendo-se na viela pública e fora dos pátios residenciais.",
+            "Fazer uma breve pausa na margem de Houhai junto à ponte. Depois procurar a ligação sinalizada para a margem leste/nordeste de Qianhai e Di’anmen Outer Street. As imagens situam os lados do lago, mas não comprovam uma calçada contínua sem degraus; se houver barreira, retornar à rua pública pelo acesso usado.",
             "Manter o circuito compacto: não contornar todo Houhai e não seguir até Xihai. Reservar parte do tempo para sentar e observar o lago.",
             "O almoço fica na região de Shichahai; depois, terminar a caminhada na via principal para embarcar ao hotel."
           ],
@@ -1444,8 +1489,8 @@ window.BEIJING_FINAL = {
           "time": "13:30–14:30",
           "title": "Shichahai → hotel para retirar malas",
           "instructions": [
-            "Caminhar à 地安门外大街 Di’anmen Outer Street. Usar a região da estação 什刹海 Shichahai, acesso A2, como referência de encontro.",
-            "O acesso A2 serve apenas como referência visual de rua neste trecho; não vamos entrar no metrô.",
+            "Caminhar à 地安门外大街 Di’anmen Outer Street e conferir o ponto permitido no aplicativo. A fachada 什刹海 Shichahai A2 / 西北口 pode ajudar no reconhecimento da região, mas o embarque só ocorre no local confirmado com o motorista.",
+            "A2 é uma referência visual de rua; não vamos entrar no metrô e não há ponto de táxi confirmado na porta dessa saída.",
             "Pedir o carro no ponto autorizado pelo aplicativo e voltar ao Xingyi, no endereço 北京市东城区天坛东里甲48号1号楼."
           ],
           "transport": {
@@ -1519,5 +1564,6 @@ window.BEIJING_FINAL = {
         }
       ]
     }
-  ]
+  ],
+  "reviewNote": "Orientação visual e acessos revisados em 17/09/2026. Reservas, voos e demais preços/horários mantêm a base de 16/09/2026; esta revisão não confirma compras nem disponibilidade no dia."
 };
