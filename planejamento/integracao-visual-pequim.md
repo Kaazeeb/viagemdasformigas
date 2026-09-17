@@ -16,6 +16,7 @@ O conteúdo renderizado contém 61 ocorrências de imagens, correspondentes a 56
 | Hotel | Fachada identificada e cartão de endereço chinês no próprio cartão do hotel. |
 | Legibilidade | Fotos integrais, sem recorte automático de fachadas; legendas maiores no celular; prévias locais com dimensão declarada. |
 | Ampliação | Fotos e mapas abrem pelo mesmo controle; imagem detalhada, ajuste integral, ajuste à largura, ampliação e rolagem. |
+| Barra de rolagem | `scrollbar-gutter: stable` reserva espaço no visualizador para a barra não reduzir a área depois do cálculo de “Largura”. Ajuste final deixado para teste visual do usuário. |
 | Falha de imagem | Estado de carregamento e mensagem de erro com link direto para o arquivo. |
 | Navegação por teclado | Controles nomeados, foco no modal, fundo inerte e retorno ao elemento que abriu a imagem. |
 | Celular | Grade do título/hotel corrigida para evitar corte horizontal em telas estreitas. |
@@ -33,9 +34,19 @@ A revisão cruzada do HTML confirmou ausência de recursos pendentes/reprovados,
 
 ## Validação técnica
 
-Os resultados e capturas do navegador ficam em `apoio/recursos-visuais-pequim-2026-09-16/validacao/integracao-pagina/`. Os ensaios usam arquivos locais, sem servidor, com requisições HTTP/HTTPS bloqueadas. Os relatórios distinguem a base anterior, a integração atual e a cópia offline.
+**Por solicitação do usuário, a validação final foi concluída apenas no shell. O teste visual da versão entregue fica com o usuário.** Nenhum navegador ou servidor foi mantido em execução.
 
-A conferência de integridade cobre hashes, formatos, dimensões, aprovações e referências dos 63 arquivos selecionados. A geração estática deve permanecer reproduzível: executar `node scripts/render-beijing-final.cjs` e conferir que uma segunda execução não muda o HTML. A sintaxe do JavaScript e `git diff --check` também são verificados.
+Passaram:
+
+- Sintaxe dos seis arquivos JavaScript: dados, seleção, interface, renderizador, empacotador e verificador.
+- Sete grupos de verificações em `node scripts/validate-beijing-final.cjs`: quatro dias/50 etapas/fontes; equivalência do HTML estático; IDs e links locais; 61 imagens com texto alternativo e ampliação por links; seleção aprovada e cobertura; preservação do HTML quando dados/seleção falham; delimitadores do CSS.
+- Integridade dos 63 arquivos selecionados: hashes, formatos, dimensões, aprovações e referências, com `assets/itinerary/guide/verify.py`.
+- Nova geração do HTML sem diferenças, e `git diff --check` sem problemas.
+- Pacote offline: 76 hashes, 255 referências locais do HTML, correspondência dos scripts/estilo com a worktree e integridade dos 77 arquivos no ZIP.
+
+O teste de falha parcial usa VM e um documento mínimo para verificar que a inicialização não substitui o HTML. Não simula a interação dos controles. A checagem de CSS confere delimitadores; não mede layout.
+
+Antes da interrupção dos testes no navegador, foi preservado um ensaio com **183/186 verificações aprovadas**, em 360, 390 e 1280 px, com/sem JavaScript. As três falhas eram o mesmo excesso horizontal de 15 px no controle “Largura” no desktop. O CSS foi ajustado depois; **não houve nova execução para certificar a correção visual**. As capturas e relatórios históricos ficam em `apoio/recursos-visuais-pequim-2026-09-16/validacao/integracao-pagina/`; o cenário adicional de falha do script não foi executado no navegador. Esse ensaio anterior não é aprovação integral da versão final.
 
 ## Entrega offline
 
@@ -46,7 +57,7 @@ node scripts/render-beijing-final.cjs
 node scripts/package-beijing-final.cjs /caminho/externo/pequim-offline
 ```
 
-O destino deve estar vazio e fora da worktree. O pacote contém README e manifesto SHA-256. Na entrega local, abrir `apoio/recursos-visuais-pequim-2026-09-16/entrega/pequim-offline/beijing-final.html`. Manter a pasta inteira junta; extrair o ZIP antes de abrir.
+O destino deve estar vazio e fora da worktree. O pacote entregue contém 77 arquivos, README e manifesto SHA-256, somando 33.620.698 bytes. O ZIP ocupa 32.378.578 bytes. Na entrega local, abrir `apoio/recursos-visuais-pequim-2026-09-16/entrega/pequim-offline/beijing-final.html`; a versão compactada fica em `entrega/pequim-offline.zip`. Manter a pasta inteira junta; extrair o ZIP antes de abrir.
 
 Ler o roteiro e ampliar as imagens incluídas não requer rede. Reservas, fontes externas e aplicativos de transporte continuam precisando de internet. A abertura de HTML local varia entre telefones; esta entrega não configura cache automático do site publicado e não equivale a um teste em iPhone/Android físico.
 

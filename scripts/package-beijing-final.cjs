@@ -176,7 +176,7 @@ function packageGuide(options) {
     `Mantenha esta pasta inteira junta, incluindo assets e os arquivos CSS/JS. Se receber um ZIP, extraia todos os arquivos antes de abrir a página.\n\n` +
     `As fontes externas, reservas, aplicativos de transporte, mapas online e informações atualizadas precisam de internet. Este pacote não confirma disponibilidade de ingressos, acessos ou voos.\n\n` +
     `Alguns telefones restringem HTML/JavaScript local ou abrem o arquivo apenas em pré-visualização. Abra em um navegador compatível e teste navegação/zoom antes da viagem; a impressão do roteiro é uma alternativa de leitura.\n\n` +
-    `As imagens originais em maior resolução acompanham o pacote para ampliar os detalhes. Os links para outros guias do site foram removidos; dias, âncoras internas e fontes externas foram preservados.\n\n` +
+    `As versões detalhadas dos mapas acompanham o pacote para ampliar os detalhes. As fotos usam as versões otimizadas da página. Os links para outros guias do site foram removidos; dias, âncoras internas e fontes externas foram preservados.\n\n` +
     `manifesto-offline.json lista os arquivos e SHA-256 para conferir a cópia. As marcações de etapas dependem do armazenamento permitido pelo navegador e não são sincronizadas com outros aparelhos.\n`;
   files.set("README.md", Buffer.from(readme, "utf8"));
   const manifest = {

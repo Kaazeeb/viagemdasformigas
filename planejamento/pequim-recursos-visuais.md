@@ -18,6 +18,7 @@ As instruções de acesso e suas fontes também foram corrigidas. O [registro de
 - [Manifesto da entrega](../assets/itinerary/guide/manifest.json): categoria de origem, fonte, arquivos de origem, alterações, hashes, dimensões e revisão.
 - [Fontes das 49 peças](../assets/itinerary/guide/SOURCES.md) e [revisão visual](../assets/itinerary/guide/REVIEW.md).
 - `node scripts/render-beijing-final.cjs`: sincroniza os blocos estáticos do HTML com dados, seleção e renderizadores.
+- `node scripts/validate-beijing-final.cjs`: verifica conteúdo, arquivos, links e falhas parciais pelo shell, sem navegador ou servidor.
 - `python3 assets/itinerary/guide/verify.py`: verifica integridade, aprovação e correspondência das imagens; exige Pillow com WebP.
 
 Os arquivos detalhados dos 14 mapas preservam exatamente os bytes aprovados no acervo. As fotografias foram codificadas para entrega, sem cortes ou retoques, e reinspecionadas. As peças originais online, composições e criações continuam identificadas separadamente no manifesto.

@@ -96,6 +96,7 @@
 .hotel-visuals .schematic img{max-height:400px}
 .hotel-visuals .photo-grid{max-width:none}
 .hotel-visuals .map-credit,.hotel-visuals .photo-credit{color:var(--muted)}
+.map-viewport{scrollbar-gutter:stable}
 .map-viewport img{margin-inline:auto}
 .intro>*{min-width:0}
 @media(max-width:760px){.intro{grid-template-columns:minmax(0,1fr)}.intro h1 br{display:block}.intro h1 em{white-space:normal}.hotel-card{overflow-wrap:anywhere}}
