@@ -37,23 +37,6 @@ window.BEIJING_FINAL_VISUALS = {
   },
   "steps": {
     "24-heaven": {
-      "map": {
-        "assetId": "templo-do-ceu-v2",
-        "src": "assets/itinerary/guide/maps/templo-do-ceu-v2-preview.webp",
-        "originalSrc": "assets/itinerary/guide/maps/templo-do-ceu-v2.png",
-        "width": 1024,
-        "height": 1536,
-        "originalWidth": 1024,
-        "originalHeight": 1536,
-        "credit": "Diagrama/composição do roteiro.",
-        "page": "https://www.tiantanpark.cn/navigation_map.html",
-        "title": "Templo do Céu · nosso percurso",
-        "alt": "Templo do Céu · nosso percurso. Sul → eixo central → saída leste. Os sete números mostram a ordem da visita; os símbolos não representam fachadas, escadas nem caminhos exatos.",
-        "caption": "Sul → eixo central → saída leste. Os sete números mostram a ordem da visita; os símbolos não representam fachadas, escadas nem caminhos exatos.",
-        "sourceLabel": "Composição anotada · fonte da base",
-        "sourceUrl": "https://www.tiantanpark.cn/navigation_map.html",
-        "kind": "Esquema da sequência, sem escala"
-      },
       "photos": [
         {
           "assetId": "ext24-ceu-sul-acesso-2024",
@@ -131,23 +114,6 @@ window.BEIJING_FINAL_VISUALS = {
       ]
     },
     "24-lama": {
-      "map": {
-        "assetId": "ext24-lama-eixo-saloes-v2",
-        "src": "assets/itinerary/guide/maps/ext24-lama-eixo-saloes-v2-preview.webp",
-        "originalSrc": "assets/itinerary/guide/maps/ext24-lama-eixo-saloes-v2.png",
-        "width": 1069,
-        "height": 1550,
-        "originalWidth": 1200,
-        "originalHeight": 1740,
-        "credit": "Diagrama/composição do roteiro.",
-        "page": "https://www.yonghegong.cn/2016-12/26/content_39984666.htm",
-        "title": "Templo Lama · salões do eixo central",
-        "alt": "Templo Lama · salões do eixo central. Subir pelo eixo até Wanfuge e retornar ao sul conforme a sinalização. Números correspondem à planta oficial; blocos representam salões, sem escala ou corredores laterais.",
-        "caption": "Subir pelo eixo até Wanfuge e retornar ao sul conforme a sinalização. Números correspondem à planta oficial; blocos representam salões, sem escala ou corredores laterais.",
-        "sourceLabel": "Esquema próprio · referências consultadas",
-        "sourceUrl": "https://www.yonghegong.cn/2016-12/26/content_39984666.htm",
-        "kind": "Esquema dos salões, sem escala"
-      },
       "referenceMap": {
         "assetId": "dia24-lama-planta-bilingue",
         "src": "assets/itinerary/guide/maps/dia24-lama-planta-bilingue-preview.webp",
@@ -400,21 +366,21 @@ window.BEIJING_FINAL_VISUALS = {
     },
     "25-jingshan": {
       "map": {
-        "assetId": "ext25-jingshan-referencias-v1",
-        "src": "assets/itinerary/guide/maps/ext25-jingshan-referencias-v1-preview.webp",
-        "originalSrc": "assets/itinerary/guide/maps/ext25-jingshan-referencias-v1.png",
-        "width": 1100,
-        "height": 1086,
-        "originalWidth": 1550,
-        "originalHeight": 1530,
-        "credit": "Diagrama/composição do roteiro.",
-        "page": "https://commons.wikimedia.org/wiki/File:Jingshanmap.jpg",
-        "title": "Jingshan · portão sul e mirante",
-        "alt": "Jingshan · portão sul e mirante. Entrar e sair pelo portão sul. Localizar Wanchun no centro da colina e usar os caminhos sinalizados. Os números identificam marcos; não formam uma trilha nem garantem acesso sem escadas.",
-        "caption": "Entrar e sair pelo portão sul. Localizar Wanchun no centro da colina e usar os caminhos sinalizados. Os números identificam marcos; não formam uma trilha nem garantem acesso sem escadas.",
-        "sourceLabel": "Composição anotada · fonte da base",
+        "assetId": "dia25-jingshan-planta-limpa",
+        "src": "assets/itinerary/guide/maps/jingshan-planta-sem-anotacoes.jpg",
+        "originalSrc": "assets/itinerary/guide/maps/jingshan-planta-sem-anotacoes.jpg",
+        "width": 600,
+        "height": 634,
+        "credit": "Planta publicada no Wikimedia Commons; autoria disponível na fonte.",
+        "title": "Jingshan · planta dos caminhos e edifícios",
+        "alt": "Planta de Jingshan com caminhos da colina, edifícios e limites dos recintos, sem setas ou marcadores acrescentados ao original.",
+        "caption": "O norte está no alto. O passeio entra pelo lado sul, sobe ao mirante Wanchun 万春亭 e retorna ao sul. A planta conserva os caminhos e recintos; conferir as passagens abertas na sinalização. Imagem antiga e de resolução limitada.",
+        "sourceLabel": "Planta de Jingshan · imagem sem anotações adicionais",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jingshanmap.jpg",
-        "kind": "Planta de referência com anotações"
+        "kind": "Planta do local",
+        "page": "https://commons.wikimedia.org/wiki/File:Jingshanmap.jpg",
+        "originalWidth": 600,
+        "originalHeight": 634
       },
       "referenceMap": false,
       "photos": [

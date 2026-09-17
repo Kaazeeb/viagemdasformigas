@@ -64,8 +64,9 @@
     const timing = fact("Chegada prevista", step.arrival) + fact("Permanência", step.duration) + fact("Próxima saída", step.leave);
     const gates = fact("Entrar por", step.entry) + fact("Sair por", step.exit);
     const media = (visuals().steps || {})[step.id] || {};
-    const mainMap = media.map;
-    const referenceMap = media.referenceMap === false ? null : media.referenceMap || step.map;
+    const siteMap = media.referenceMap === false ? null : media.referenceMap || step.map;
+    const mainMap = siteMap || media.map;
+    const detailMap = siteMap && media.map && media.map.src !== siteMap.src ? media.map : null;
     const photos = Array.isArray(media.photos) ? media.photos : list(step.photos);
     let html = '<li class="timeline-item"><span class="timeline-marker" aria-hidden="true">' + String(index + 1).padStart(2, "0") + '</span><article class="step-card step-' + type + '" id="' + id + '" aria-labelledby="' + id + '-title"><div class="step-main"><div class="step-topline"><span class="step-kind">' + icon(type) + escape(labels[type]) + '</span><span class="step-time">' + escape(step.time) + '</span></div><h3 id="' + id + '-title">' + escape(step.title) + "</h3>";
     if (step.zh) html += '<div class="place-name"><p lang="zh-Hans">' + escape(step.zh) + "</p>" + copyButton(step.zh, "Copiar " + step.title + " em chinês") + "</div>";
@@ -76,9 +77,9 @@
     if (list(step.instructions).length) html += '<ol class="instructions">' + step.instructions.map((instruction) => "<li>" + escape(instruction) + "</li>").join("") + "</ol>";
     if (list(step.alerts).length) html += '<aside class="alerts" aria-label="Atenção para esta etapa"><h4>Antes de chegar</h4><ul>' + step.alerts.map((alert) => "<li>" + escape(alert) + "</li>").join("") + "</ul></aside>";
     html += "</div>";
-    if (mainMap && mainMap.src) html += '<div class="route-visual"><h4>Para se orientar</h4>' + mapHTML(mainMap, step.title) + '</div>';
+    if (mainMap && mainMap.src) html += '<div class="route-visual"><h4>' + (siteMap || mainMap.kind === "Planta do local" ? "Mapa do local" : "Para se orientar") + '</h4>' + mapHTML(mainMap, step.title) + '</div>';
+    if (detailMap) html += '<details class="map-reference"><summary>Ver complemento: ' + escape(detailMap.title || "detalhe do passeio") + '</summary>' + mapHTML(detailMap, step.title) + '</details>';
     if (photos.length) html += '<section class="recognition-photos" aria-label="Referências visuais de ' + escape(step.title) + '"><h4>Reconheça o lugar</h4><div class="photo-grid' + (photos.length === 1 ? " single" : "") + '">' + photos.map((photo) => photoHTML(photo, step.title)).join("") + '</div></section>';
-    if (referenceMap && referenceMap.src && (!mainMap || referenceMap.src !== mainMap.src)) html += '<details class="map-reference"><summary>' + escape(media.referenceTitle || "Consultar planta completa de referência") + '</summary>' + mapHTML(referenceMap, step.title) + '</details>';
     html += '<div class="step-footer">';
     if (selectedSources.length) html += '<details class="step-sources"><summary>Fontes desta etapa (' + selectedSources.length + ")</summary><ul>" + selectedSources.map((source) => '<li><a href="' + safeURL(source.url) + '" target="_blank" rel="noopener noreferrer">' + escape(source.label) + "</a></li>").join("") + "</ul></details>";
     else html += '<span class="step-sources">Horários aproximados · Pequim</span>';
