@@ -8,7 +8,21 @@ window.RESTAURANTES_PILOTO = {
     "area": "Guozijian · Yonghegong",
     "before": "Passeio pela Rua Guozijian",
     "after": "Retorno ao hotel",
-    "notes": "Piloto com seis candidatos; critérios e restaurantes ainda em definição."
+    "notes": "Referência do roteiro; a seleção é da região e pode ser usada em outros dias."
+  },
+  "region": {
+    "id": "guozijian-yonghegong",
+    "name": "Guozijian · Templo de Confúcio · Templo Lama",
+    "description": "Opções na região de Guozijian, Yonghegong, Andingmen e Beixinqiao. Compare a localização da filial; o dia do roteiro é apenas uma referência."
+  },
+  "group": {
+    "adults": 3,
+    "childrenAgesMonths": [
+      48,
+      18
+    ],
+    "budgetPerAdultCny": 130,
+    "preferencesNote": "Prioridade para bovino, frango, porco e pato; peixe e frutos do mar não são preferência. Para as crianças, procurar arroz, macarrão e carnes simples, com preparo sem pimenta a confirmar. Maioria abaixo de ¥130 por pessoa; algumas alternativas para variar."
   },
   "updatedAt": "2026-09-20",
   "restaurants": [
@@ -8627,6 +8641,40 @@ window.RESTAURANTES_PILOTO = {
             "note": "URLs úteis presentes na captura: capa, pratos, ofertas, menus e avaliações; ícones, avatares e publicidade externa excluídos."
           }
         }
+      },
+      "regionIds": [
+        "guozijian-yonghegong"
+      ],
+      "family": {
+        "role": "principal",
+        "summary": "Candidato econômico para os três adultos e as duas crianças: tortas de porco ou bovino, mingau e macarrão aparecem no catálogo. O principal ponto a conferir é o espaço para cinco pessoas e carrinho.",
+        "childrenDishes": [
+          {
+            "dishId": "xiaoli-dish-14ffc4d506",
+            "note": "Porco e cebolinha estão explícitos no nome. Perguntar se o recheio leva pimenta e pedir molhos à parte; não há confirmação de uma versão infantil."
+          },
+          {
+            "dishId": "xiaoli-dish-5c18b084e7",
+            "note": "Alternativa de carne bovina para dividir. Confirmar temperos do recheio, tamanho e quantidade da porção."
+          },
+          {
+            "dishId": "xiaoli-dish-8051fcbe08",
+            "note": "Mingau de painço listado e fotografado: candidato a acompanhamento simples. A composição completa e a disponibilidade no almoço não foram confirmadas."
+          },
+          {
+            "dishId": "xiaoli-dish-9548d9bc8d",
+            "note": "Opção real de macarrão de arroz. Antes de escolher para as crianças, confirmar se o caldo pode vir sem pimenta e quais carnes ou complementos inclui."
+          },
+          {
+            "dishId": "xiaoli-dish-99fcbaa141",
+            "note": "O nome identifica ovo e tomate. Confirmar a base do caldo e pedir sem pimenta; não tratar o nome curto como lista completa de ingredientes."
+          }
+        ],
+        "cautions": [
+          "As prévias de avaliações descrevem salão pequeno; mesa para o grupo, espaço para carrinho e cadeira infantil não estão confirmados.",
+          "Macarrão agripicante e bolinhos de peixe também aparecem no catálogo: não são as opções infantis selecionadas aqui.",
+          "O gasto médio da ficha é individual, não uma cotação para três adultos e duas crianças; definir quantas tortas e acompanhamentos compartilhar."
+        ]
       }
     },
     {
@@ -20938,6 +20986,40 @@ window.RESTAURANTES_PILOTO = {
             "note": "URLs úteis presentes na captura: capa, pratos, ofertas, menus e avaliações; ícones, avatares e publicidade externa excluídos."
           }
         }
+      },
+      "regionIds": [
+        "guozijian-yonghegong"
+      ],
+      "family": {
+        "role": "principal",
+        "summary": "Uma das combinações mais práticas do piloto: arroz branco, dumplings bovinos ou de porco e pratos de carne para compartilhar. A ficha indica cadeira infantil e mesas grandes, ainda sem confirmação de disponibilidade.",
+        "childrenDishes": [
+          {
+            "dishId": "xianlaoman-dish-b18a34fbdf",
+            "note": "Arroz branco explicitamente listado no catálogo, com foto e preço: uma base simples para acompanhar a carne escolhida."
+          },
+          {
+            "dishId": "xianlaoman-dish-72ffdb5d9f",
+            "note": "O recheio nominal é bovino com cebolinha. Confirmar ingredientes e pimenta do recheio; pedir o molho de pimenta separado."
+          },
+          {
+            "dishId": "xianlaoman-dish-e62dd1bc03",
+            "note": "Alternativa de porco com folhas de funcho. O funcho tem sabor próprio; confirmar aceitação, temperos e quantidade antes de pedir para todos."
+          },
+          {
+            "dishId": "xianlaoman-dish-c75a3105b4",
+            "note": "Almôndega de porco identificada também no cardápio fotografado, que cobra por unidade. Confirmar se o molho pode vir sem pimenta."
+          },
+          {
+            "dishId": "xianlaoman-dish-d2ca70a5f5",
+            "note": "Filé de frango agridoce aparece no catálogo com foto e preço. Agridoce não comprova ausência de pimenta; confirmar o molho antes de combinar com o arroz."
+          }
+        ],
+        "cautions": [
+          "Evitar selecionar recheios 'três sabores' só pelo nome: há dumplings com camarão e outras especialidades do mar nesta filial.",
+          "Arroz e carnes permitem compor um pedido para o grupo sem depender de todos comerem o mesmo recheio; quantidades e unidades dos dumplings precisam ser conferidas.",
+          "Cadeira infantil e mesas grandes são etiquetas da ficha, não reserva nem garantia de disponibilidade."
+        ]
       }
     },
     {
@@ -31321,6 +31403,36 @@ window.RESTAURANTES_PILOTO = {
             "note": "URLs úteis presentes na captura: capa, pratos, ofertas, menus e avaliações; ícones, avatares e publicidade externa excluídos."
           }
         }
+      },
+      "regionIds": [
+        "guozijian-yonghegong"
+      ],
+      "family": {
+        "role": "principal",
+        "summary": "Alternativa econômica de bolinhos no vapor: embora o cordeiro seja um destaque, há shaomai de carne bovina e sopa de tomate com ovo. O catálogo também traz macarrão; confirmar o molho para as crianças.",
+        "childrenDishes": [
+          {
+            "dishId": "laoma-dish-1d325513fb",
+            "note": "Bovino e tomate estão explícitos no nome. Confirmar a versão no vapor e os temperos do recheio; deixar o molho de pimenta separado."
+          },
+          {
+            "dishId": "laoma-dish-da9bfb9d03",
+            "note": "Outra opção bovina, com cebolinha. Confirmar preparo e número de bolinhos correspondente ao preço mostrado."
+          },
+          {
+            "dishId": "laoma-dish-cc9d4eee34",
+            "note": "Sopa de tomate e ovo realmente listada, com foto e preço. Confirmar caldo e temperos para acompanhar os bolinhos."
+          },
+          {
+            "dishId": "laoma-dish-ab9c64075a",
+            "note": "Há macarrão com molho zhajiang no catálogo. A carne e os temperos do molho não estão discriminados; só considerar para as crianças se confirmarem uma preparação sem pimenta, com molho à parte."
+          }
+        ],
+        "cautions": [
+          "A filial mudou de endereço: usar Andingmen Inner Street, 291-1, e não o antigo número 112.",
+          "Cordeiro e miúdos aparecem com frequência, mas não são necessários para o pedido bovino selecionado. Não confundir macarrão zhajiang com a opção de miúdos de cordeiro.",
+          "A ficha indica cadeira infantil; disponibilidade, mesa para cinco pessoas e acesso com carrinho ainda não confirmados."
+        ]
       }
     },
     {
@@ -42011,6 +42123,40 @@ window.RESTAURANTES_PILOTO = {
             "note": "URLs úteis presentes na captura: capa, pratos, ofertas, menus e avaliações; ícones, avatares e publicidade externa excluídos."
           }
         }
+      },
+      "regionIds": [
+        "guozijian-yonghegong"
+      ],
+      "family": {
+        "role": "variacao",
+        "summary": "Variação cantonesa com arroz, porco assado, frango no vapor e mingau. É possível montar um pedido sem escolher os destaques de frutos do mar, mas caldos, recheios e molhos precisam de atenção.",
+        "childrenDishes": [
+          {
+            "dishId": "jindingxuan-dish-5cfa4b962c",
+            "note": "Arroz com dois assados está documentado. O nome não especifica quais carnes: confirmar a dupla disponível e se os molhos podem vir separados."
+          },
+          {
+            "dishId": "jindingxuan-dish-ebcd677a0c",
+            "note": "Char siu, porco assado ao estilo cantonês, com foto e preço no catálogo. Confirmar ingredientes e pimenta do molho; não é uma carne sem tempero."
+          },
+          {
+            "dishId": "jindingxuan-dish-f3f31398de",
+            "note": "Mingau de painço com abóbora é a opção de composição nominal mais simples entre estas sugestões. Confirmar os complementos e a disponibilidade."
+          },
+          {
+            "dishId": "jindingxuan-dish-95558b1129",
+            "note": "Frango no vapor identificado com jujuba e raiz de dangshen. Não é frango simples sem outros ingredientes; confirmar caldo, temperos e se combina com o gosto da família."
+          },
+          {
+            "dishId": "jindingxuan-dish-5983116077",
+            "note": "Repolho, ovo e macarrão transparente estão explícitos no nome. Confirmar se o preparo pode ser sem pimenta e se usa molho de ostra ou outro ingrediente do mar."
+          }
+        ],
+        "cautions": [
+          "Não usar 'dim sum' ou 'no vapor' como garantia de ausência de frutos do mar: há muitos pratos com camarão e outros ingredientes marinhos.",
+          "A almôndega cabeça-de-leão desta filial contém carne de caranguejo no próprio nome; não é equivalente à de porco selecionada no Xianlaoman.",
+          "As prévias de avaliações incluem críticas de qualidade e atendimento. Mesas grandes são indicadas, mas cadeira infantil e rapidez do serviço não estão confirmadas."
+        ]
       }
     },
     {
@@ -62059,6 +62205,36 @@ window.RESTAURANTES_PILOTO = {
             "note": "URLs úteis presentes na captura: capa, pratos, ofertas, menus e avaliações; ícones, avatares e publicidade externa excluídos."
           }
         }
+      },
+      "regionIds": [
+        "guozijian-yonghegong"
+      ],
+      "family": {
+        "role": "variacao",
+        "summary": "Opção para variar com pizza, massa e sopa de abóbora. Não atende à preferência por carne animal, mas traz formatos familiares para as crianças e fica no eixo de Wudaoying/Yonghegong.",
+        "childrenDishes": [
+          {
+            "dishId": "veggie-table-dish-01184dc5c2",
+            "note": "Pizza margherita com foto e preço no catálogo. Confirmar tamanho, ingredientes e ausência de pimenta; há registros de nomes parecidos com preços diferentes."
+          },
+          {
+            "dishId": "veggie-table-dish-5a662c65b9",
+            "note": "Sopa cremosa de abóbora nominalmente simples. Confirmar ingredientes, temperos e se a porção funciona como acompanhamento."
+          },
+          {
+            "dishId": "veggie-table-dish-778ca70cdc",
+            "note": "Massa integral com tomate e vegetais aparece com foto e preço. Perguntar se pode ser preparada sem pimenta e com molho à parte."
+          },
+          {
+            "dishId": "veggie-table-dish-c5553b54cf",
+            "note": "Alternativa de arroz cremoso com cogumelos e trufa negra. Tem sabor mais marcante; confirmar molho e temperos antes de escolher para as crianças."
+          }
+        ],
+        "cautions": [
+          "Tratar como variação vegetariana, não como opção de carne bovina, frango ou porco. Menções a 'carne vegetal' não atendem à mesma preferência.",
+          "Curry e pimenta aparecem em outros pratos; a classificação vegetariana não significa comida sem pimenta.",
+          "A ficha indica cadeira infantil e mesa grande; disponibilidade para o grupo não está confirmada."
+        ]
       }
     },
     {
@@ -75424,6 +75600,36 @@ window.RESTAURANTES_PILOTO = {
             "note": "URLs úteis presentes na captura: capa, pratos, ofertas, menus e avaliações; ícones, avatares e publicidade externa excluídos."
           }
         }
+      },
+      "regionIds": [
+        "guozijian-yonghegong"
+      ],
+      "family": {
+        "role": "especial",
+        "summary": "Exceção de orçamento para uma refeição com mais tempo em um pátio tradicional: há macarrão bovino, carne com tofu e frango para compartilhar. O gasto médio observado supera a preferência de ¥130 por pessoa.",
+        "childrenDishes": [
+          {
+            "dishId": "yuezhen-dish-ac36ee9563",
+            "note": "Macarrão com carne bovina da casa, documentado com foto e preço. Confirmar se o caldo pode vir sem pimenta e quais complementos acompanham."
+          },
+          {
+            "dishId": "yuezhen-dish-a381ec6231",
+            "note": "Carne bovina guisada com tofu é uma possibilidade para dividir. Confirmar ingredientes do caldo, pimenta, tamanho da porção e disponibilidade de acompanhamento simples."
+          },
+          {
+            "dishId": "yuezhen-dish-647e1121f2",
+            "note": "Asas de frango assadas são uma alternativa de carne preferida pela família. O tempero Jinlan não foi discriminado; confirmar molho, pimenta e porção."
+          },
+          {
+            "dishId": "yuezhen-dish-4ad216f476",
+            "note": "Frango de pele crocante com gengibre, identificado no catálogo. O gengibre tem sabor marcante; perguntar se o molho pode ser servido separado e confirmar outros temperos."
+          }
+        ],
+        "cautions": [
+          "É uma exceção mais cara, não uma recomendação dentro do teto usual. Definir os pratos compartilhados antes de estimar o total para a família.",
+          "Cozinha halal não exclui peixe ou frutos do mar: vários pratos de arroz levam ingredientes marinhos; não foi confirmada uma opção de arroz branco no catálogo coletado.",
+          "Um relato isolado de comida suave não confirma preparo sem pimenta. Também faltam confirmação de cadeira infantil, acesso sem escadas ao salão e disponibilidade para cinco pessoas."
+        ]
       }
     }
   ]

@@ -6,6 +6,7 @@
   const STORAGE_KEY = `restaurantes-pequim:choices:${MEAL_ID}:v1`;
   const STATUSES = Object.freeze({ pending: 'A avaliar', interested: 'Interessante', finalist: 'Finalista', discarded: 'Descartar' });
   const FILTERS = Object.freeze({ all: 'Todas', interested: 'Interessantes', finalist: 'Finalistas', discarded: 'Descartadas', pending: 'A avaliar' });
+  const FAMILY_ROLES = Object.freeze({ principal: 'Principal', variacao: 'Para variar', especial: 'Especial' });
   const GROUPS = Object.freeze({ listing: 'IMAGENS DA FICHA', dish: 'FOTOS DE PRATOS', menu: 'CARDÁPIOS', review: 'FOTOS DE AVALIAÇÕES', package: 'IMAGENS DE PACOTES' });
   const numberFormat = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 2 });
   const decimalFormat = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
@@ -48,6 +49,15 @@
   function readable(value) { return Array.isArray(value) ? value.map(item => typeof item === 'string' ? item : text(item?.text, text(item?.label))).filter(Boolean).join(' · ') : text(value); }
   function decision(id) { return decisions[id] || { status: 'pending', notes: '', updatedAt: null }; }
   function rich(restaurant) { return restaurant.rich && typeof restaurant.rich === 'object' ? restaurant.rich : {}; }
+  function family(restaurant) { return restaurant.family && typeof restaurant.family === 'object' ? restaurant.family : {}; }
+  function familyRole(restaurant) { return FAMILY_ROLES[family(restaurant).role] || 'Perfil ainda não avaliado'; }
+  function budgetLimit() { return finite(dataset.group?.budgetPerAdultCny) && dataset.group.budgetPerAdultCny > 0 ? dataset.group.budgetPerAdultCny : 130; }
+  function budgetLabel(restaurant) { return finite(restaurant.priceCny) ? (restaurant.priceCny <= budgetLimit() ? `Média até ${money(budgetLimit())}` : 'Acima da referência') : 'Gasto não confirmado'; }
+  function ageLabel(months) {
+    if (!finite(months) || months < 0) return 'idade não informada';
+    const years = Math.floor(months / 12), remainder = months % 12;
+    return [years ? `${years} ${years === 1 ? 'ano' : 'anos'}` : '', remainder ? `${remainder} ${remainder === 1 ? 'mês' : 'meses'}` : ''].filter(Boolean).join(' e ') || 'menos de 1 mês';
+  }
   function packageDetailed(item) { return item?.status === 'details'; }
   function dateLabel(value) {
     const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(text(value));
@@ -137,7 +147,7 @@
   function validatePayload(payload) {
     if (!payload || typeof payload !== 'object' || Array.isArray(payload)) throw new Error('Escolha um arquivo JSON exportado por esta página.');
     if (payload.schemaVersion !== SCHEMA_VERSION) throw new Error('A versão deste arquivo não é compatível.');
-    if (payload.mealId !== MEAL_ID) throw new Error('Este arquivo é de outra refeição. Escolha a seleção do almoço de 24/09.');
+    if (payload.mealId !== MEAL_ID) throw new Error('Este arquivo pertence a outra seleção. Use as escolhas de Guozijian ou do piloto original de 24/09.');
     if (!payload.decisions || typeof payload.decisions !== 'object' || Array.isArray(payload.decisions)) throw new Error('O arquivo não contém uma seleção válida.');
     const entries = Object.entries(payload.decisions);
     if (!entries.length) throw new Error('O arquivo não contém escolhas para importar.');
@@ -174,8 +184,11 @@
     const row = element('tr', 'restaurant-row'); row.dataset.id = restaurant.id;
     const nameCell = element('td'); const button = element('button', 'restaurant-open', restaurant.name); button.type = 'button';
     button.setAttribute('aria-controls', 'restaurant-detail'); button.append(element('span', 'table-name-zh', restaurant.nameZh)); button.lastElementChild.lang = 'zh-Hans';
-    button.addEventListener('click', () => selectRestaurant(restaurant.id, true)); nameCell.append(button); row.append(nameCell);
-    row.append(element('td', 'table-number', finite(restaurant.rating) ? `${decimalFormat.format(restaurant.rating)} / 5` : '—'), element('td', 'table-number', money(restaurant.priceCny, '—')));
+    button.addEventListener('click', () => selectRestaurant(restaurant.id, true)); nameCell.append(button);
+    const role = element('span', 'family-role', familyRole(restaurant)); role.dataset.role = text(family(restaurant).role); nameCell.append(role); row.append(nameCell);
+    const priceCell = element('td', 'table-number', money(restaurant.priceCny, '—'));
+    const budget = element('small', 'budget-label', budgetLabel(restaurant)); budget.dataset.over = String(finite(restaurant.priceCny) && restaurant.priceCny > budgetLimit()); priceCell.append(budget);
+    row.append(element('td', 'table-number', finite(restaurant.rating) ? `${decimalFormat.format(restaurant.rating)} / 5` : '—'), priceCell);
     for (const key of ['packages', 'dishes', 'menus', 'reviews']) {
       const values = key === 'dishes' && !rich(restaurant).dishes ? list(restaurant.dishes) : list(rich(restaurant)[key]);
       const cell = element('td', 'table-number', values.length ? numberFormat.format(values.length) : 'Não coletado');
@@ -215,6 +228,29 @@
     notes.addEventListener('change', persist); label.append(notes); controls.append(label); parent.append(controls);
   }
 
+  function renderFamily(parent, restaurant) {
+    const profile = family(restaurant); const container = section(parent, restaurant, 'family', 'Para nossa família');
+    const context = element('p', 'family-context'); context.append(element('strong', '', familyRole(restaurant)), document.createTextNode(` · ${budgetLabel(restaurant)}`)); container.append(context);
+    paragraph(container, text(profile.summary, 'Compatibilidade com as preferências da família ainda não avaliada.'));
+    const catalog = new Map(list(rich(restaurant).dishes).map(dish => [dish.id, dish]));
+    const suggestions = list(profile.childrenDishes).filter(item => item && catalog.has(item.dishId));
+    if (suggestions.length) {
+      container.append(element('h4', '', 'Pratos para considerar para as crianças'));
+      paragraph(container, 'Seleção editorial do catálogo. Confirmar preparo sem pimenta, ingredientes e porção antes de pedir; o nome do prato não garante isso.', 'muted');
+      const grid = element('div', 'family-dishes');
+      for (const suggestion of suggestions) {
+        const dish = catalog.get(suggestion.dishId); const card = element('article', 'family-dish'); card.dataset.dishId = dish.id;
+        photoGrid(card, restaurant, 'dish', dish.photos, 'family-dish-photo');
+        const content = element('div', 'family-dish-copy'); content.append(element('h4', '', text(dish.name, text(dish.nameZh, 'Prato sem nome'))));
+        if (text(dish.nameZh) && text(dish.name)) paragraph(content, dish.nameZh, 'item-title-zh', 'zh-Hans');
+        paragraph(content, dishPrice(dish), 'family-dish-price'); paragraph(content, suggestion.note, 'family-dish-note');
+        sourceLink(content, dish.sourceUrl, 'Fonte do prato'); card.append(content); grid.append(card);
+      }
+      container.append(grid);
+    } else paragraph(container, 'Ainda não há pratos do catálogo selecionados para as crianças. Isso não confirma nem exclui opções adequadas.', 'coverage-note');
+    if (list(profile.cautions).length) { container.append(element('h4', '', 'Conferir antes de escolher')); textList(container, profile.cautions); }
+  }
+
   function renderPackages(parent, restaurant) {
     const packages = list(rich(restaurant).packages); const container = section(parent, restaurant, 'packages', 'Pacotes e cupons', packages.length); coverage(container, restaurant, 'packages', packages.length);
     const grid = element('div', 'data-grid packages-grid');
@@ -240,6 +276,7 @@
       const check = item.visitDateCheck || {}; const status = text(check.status, 'unknown');
       const defaultLabels = { unknown: 'Uso em 24/09/2026: não confirmado.', weekday_only: 'A quinta-feira está entre os dias indicados; validade para 24/09 ainda não confirmada.', excluded: 'As regras observadas excluem o uso em 24/09/2026.', rules_match: 'As regras observadas são compatíveis com 24/09/2026.' };
       const availability = element('div', 'availability'); availability.dataset.status = status;
+      paragraph(availability, 'Conferência para a data de referência do roteiro; para outro dia, use as regras acima.', 'muted');
       availability.append(element('strong', '', text(check.label, defaultLabels[status] || defaultLabels.unknown))); textList(availability, check.reasons);
       if (status === 'weekday_only' || status === 'rules_match') paragraph(availability, 'Isso não confirma estoque, compra ou reserva. Conferir validade, exceções e horário do almoço.', 'muted');
       card.append(availability);
@@ -425,7 +462,7 @@
     if (list(shop.features).length) { container.append(element('h4', '', 'Características informadas na ficha')); textList(container, shop.features.map(value => typeof value === 'string' ? value : text(value.text, text(value.label)))); }
     paragraph(container, shop.featuresNote, 'muted'); original(container, list(shop.featuresZh).join(' · '), 'Características em chinês');
     if (list(shop.rankings).length) { container.append(element('h4', '', 'Rankings informados')); textList(container, shop.rankings.map(value => typeof value === 'string' ? value : text(value.text, text(value.label)))); }
-    container.append(element('h4', '', 'Análise editorial — ainda sem critérios finais')); paragraph(container, restaurant.summary); paragraph(container, restaurant.routeNote);
+    container.append(element('h4', '', 'Análise editorial')); paragraph(container, restaurant.summary); paragraph(container, restaurant.routeNote);
     const columns = element('div', 'analysis-columns');
     for (const [heading, values] of [['Pontos para comparar', restaurant.pros], ['Ressalvas / conferir', restaurant.cautions]]) {
       if (!list(values).length) continue; const column = element('div'); column.append(element('h4', '', heading)); textList(column, values); columns.append(column);
@@ -449,13 +486,13 @@
     const sources = element('div', 'source-line'); sourceLink(sources, restaurant.sourceUrl, 'Dianping'); sources.append(element('span', '', `Consultado em ${dateLabel(restaurant.collectedAt) || 'data não informada'}`)); identity.append(sources); header.append(identity); article.append(header);
     createDecisionControls(article, restaurant);
     const nav = element('nav', 'section-nav'); nav.setAttribute('aria-label', `Seções de ${restaurant.name}`);
-    for (const [key, label] of [['dishes', 'Pratos'], ['packages', 'Pacotes'], ['menus', 'Cardápios'], ['reviews', 'Avaliações e fotos'], ['photos', 'Imagens da ficha'], ['info', 'Filial / análise']]) {
+    for (const [key, label] of [['family', 'Nossa família'], ['dishes', 'Pratos'], ['packages', 'Pacotes'], ['menus', 'Cardápios'], ['reviews', 'Avaliações e fotos'], ['photos', 'Imagens da ficha'], ['info', 'Filial / análise']]) {
       const values = key === 'dishes' && !rich(restaurant).dishes ? list(restaurant.dishes) : list(rich(restaurant)[key]);
       const count = key === 'photos' ? loosePhotos(restaurant, 'listing').length : values.length;
-      const link = element('a', '', `${label}${key === 'info' ? '' : ` (${count})`}`); link.href = `#${id}-${key}`; nav.append(link);
+      const link = element('a', '', `${label}${['info', 'family'].includes(key) ? '' : ` (${count})`}`); link.href = `#${id}-${key}`; nav.append(link);
     }
     const compare = element('a', 'back-to-comparison', '↑ Comparar restaurantes'); compare.href = '#restaurantes'; nav.append(compare); article.append(nav);
-    renderDishes(article, restaurant); renderPackages(article, restaurant); renderMenus(article, restaurant); renderReviews(article, restaurant); renderListing(article, restaurant); renderInfo(article, restaurant);
+    renderFamily(article, restaurant); renderDishes(article, restaurant); renderPackages(article, restaurant); renderMenus(article, restaurant); renderReviews(article, restaurant); renderListing(article, restaurant); renderInfo(article, restaurant);
     parent.append(article); parent.hidden = false;
     if (focus) { parent.focus({ preventScroll: true }); parent.scrollIntoView({ block: 'start' }); }
   }
@@ -481,7 +518,7 @@
     }
   }
   function applyFilters() {
-    const query = normalized($('#search').value.trim()); const mode = $('#sort').value; const sorted = [...dataset.restaurants];
+    const query = normalized($('#search').value.trim()); const mode = $('#sort').value; const profile = $('#family-filter').value; const sorted = [...dataset.restaurants];
     if (mode === 'price') sorted.sort((a, b) => (finite(a.priceCny) ? a.priceCny : Infinity) - (finite(b.priceCny) ? b.priceCny : Infinity));
     if (mode === 'rating') sorted.sort((a, b) => (finite(b.rating) ? b.rating : -Infinity) - (finite(a.rating) ? a.rating : -Infinity));
     let count = 0; const grid = $('#restaurant-grid');
@@ -489,7 +526,8 @@
       const contents = list(rich(restaurant).packages).flatMap(item => list(item.contents));
       const menuItems = list(rich(restaurant).menus).flatMap(menu => list(menu.items));
       const searchable = normalized([restaurant.name, restaurant.nameZh, restaurant.cuisine, restaurant.area, ...list(restaurant.dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).packages).map(item => `${item.title || ''} ${item.titleZh || ''}`), ...contents.map(item => `${item.name || ''} ${item.nameZh || ''}`), ...menuItems.map(item => `${item.name || ''} ${item.nameZh || ''}`)].filter(Boolean).join(' '));
-      const row = rows.get(restaurant.id); const visible = (activeFilter === 'all' || decision(restaurant.id).status === activeFilter) && (!query || searchable.includes(query)); row.hidden = !visible; if (visible) count++;
+      const profileMatches = profile === 'all' || family(restaurant).role === profile || (profile === 'within-budget' && finite(restaurant.priceCny) && restaurant.priceCny <= budgetLimit()) || (profile === 'over-budget' && finite(restaurant.priceCny) && restaurant.priceCny > budgetLimit());
+      const row = rows.get(restaurant.id); const visible = profileMatches && (activeFilter === 'all' || decision(restaurant.id).status === activeFilter) && (!query || searchable.includes(query)); row.hidden = !visible; if (visible) count++;
       if (grid.children[index] !== row) grid.insertBefore(row, grid.children[index] || null);
     }
     $('#results-count').textContent = `${count} de ${knownIds.size} restaurantes${query ? ' · busca aplicada' : ''}. Clique no nome para abrir a ficha abaixo.`;
@@ -518,7 +556,7 @@
     persist();
     try {
       const blob = new Blob([JSON.stringify(snapshot(), null, 2) + '\n'], { type: 'application/json;charset=utf-8' }); const url = URL.createObjectURL(blob); const link = element('a'); link.href = url;
-      link.download = `escolhas-almoco-2026-09-24-${new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19)}.json`; link.hidden = true; document.body.append(link); link.click(); link.remove();
+      link.download = `escolhas-guozijian-${new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19)}.json`; link.hidden = true; document.body.append(link); link.click(); link.remove();
       setTimeout(() => URL.revokeObjectURL(url), 60000); showToast('Arquivo de escolhas preparado para download.');
     } catch { showToast('Não foi possível preparar o arquivo. Tente exportar novamente.', true); }
   }
@@ -541,11 +579,21 @@
       } knownIds.add(restaurant.id);
     }
     for (const key of ['time', 'area', 'before', 'after']) if (text(dataset.meal[key])) $(`#meal-${key}`).textContent = dataset.meal[key];
+    if (text(dataset.region?.name)) { $('#region-title').textContent = dataset.region.name; document.title = `Restaurantes · ${dataset.region.name} — Rota China`; }
+    if (text(dataset.region?.description)) $('#region-description').textContent = dataset.region.description;
+    if (dataset.group && finite(dataset.group.adults)) {
+      const ages = list(dataset.group.childrenAgesMonths); const adults = dataset.group.adults;
+      $('#group-summary').textContent = `${adults} ${adults === 1 ? 'adulto' : 'adultos'} · ${ages.length} ${ages.length === 1 ? 'criança' : 'crianças'}${ages.length ? `: ${ages.map(ageLabel).join(' / ')}` : ''}`;
+    }
+    if (text(dataset.group?.preferencesNote)) $('#group-preferences').textContent = dataset.group.preferencesNote;
+    $('#group-budget').textContent = `Maioria das opções com média até ${money(budgetLimit())} por pessoa; exceções identificadas. A média não é uma estimativa do total da família.`;
+    $('#family-filter option[value="within-budget"]').textContent = `Média até ${money(budgetLimit())}`;
+    $('#family-filter option[value="over-budget"]').textContent = `Média acima de ${money(budgetLimit())}`;
     $('#updated-at').textContent = `Pesquisa de ${dateLabel(dataset.updatedAt) || 'data não informada'}`; restore(); createFilters();
     for (const restaurant of dataset.restaurants) $('#restaurant-grid').append(createRow(restaurant));
     updateCounters(); showCollectionCoverage(); applyFilters(); selectRestaurant(dataset.restaurants[0].id);
-    $('#search').addEventListener('input', applyFilters); $('#sort').addEventListener('change', applyFilters);
-    $('#reset-filters').addEventListener('click', () => { activeFilter = 'all'; $('#search').value = ''; $('#status-filters input[value="all"]').checked = true; applyFilters(); $('#status-filters input[value="all"]').focus(); });
+    $('#search').addEventListener('input', applyFilters); $('#sort').addEventListener('change', applyFilters); $('#family-filter').addEventListener('change', applyFilters);
+    $('#reset-filters').addEventListener('click', () => { activeFilter = 'all'; $('#search').value = ''; $('#family-filter').value = 'all'; $('#status-filters input[value="all"]').checked = true; applyFilters(); $('#status-filters input[value="all"]').focus(); });
     $('#export-button').addEventListener('click', exportChoices); $('#import-button').addEventListener('click', () => { $('#import-file').value = ''; $('#import-file').click(); }); $('#import-file').addEventListener('change', event => readImport(event.target.files[0]));
     $('#cancel-import').addEventListener('click', () => { pendingImport = null; $('#import-dialog').close(); }); $('#import-dialog').addEventListener('cancel', () => { pendingImport = null; });
     $('#import-dialog').addEventListener('close', () => { pendingImport = null; $('#import-button').focus({ preventScroll: true }); });
