@@ -2,6 +2,8 @@
 (() => {
   'use strict';
   const SCHEMA_VERSION = 1;
+  const DISH_PAGE_SIZE = 60;
+  // ID e chave históricos preservados para importar as escolhas do piloto original.
   const MEAL_ID = '2026-09-24-almoco';
   const STORAGE_KEY = `restaurantes-pequim:choices:${MEAL_ID}:v1`;
   const STATUSES = Object.freeze({ pending: 'A avaliar', interested: 'Interessante', finalist: 'Finalista', discarded: 'Descartar' });
@@ -17,6 +19,8 @@
   const rows = new Map();
   const decisions = Object.create(null);
   const dishViews = new Map();
+  const regions = new Map();
+  let activeRegionId = null;
   let activeFilter = 'all';
   let activeRestaurantId = null;
   let saveTimer;
@@ -53,6 +57,12 @@
   function familyRole(restaurant) { return FAMILY_ROLES[family(restaurant).role] || 'Perfil ainda não avaliado'; }
   function budgetLimit() { return finite(dataset.group?.budgetPerAdultCny) && dataset.group.budgetPerAdultCny > 0 ? dataset.group.budgetPerAdultCny : 130; }
   function budgetLabel(restaurant) { return finite(restaurant.priceCny) ? (restaurant.priceCny <= budgetLimit() ? `Média até ${money(budgetLimit())}` : 'Acima da referência') : 'Gasto não confirmado'; }
+  function referenceRegionId() { return text(dataset.meal?.regionId, text(dataset.region?.id, 'guozijian-yonghegong')); }
+  function belongsToRegion(restaurant, regionId = activeRegionId) {
+    const ids = list(restaurant.regionIds);
+    return ids.length ? ids.includes(regionId) : regionId === referenceRegionId();
+  }
+  function regionalRestaurants() { return dataset.restaurants.filter(restaurant => belongsToRegion(restaurant)); }
   function ageLabel(months) {
     if (!finite(months) || months < 0) return 'idade não informada';
     const years = Math.floor(months / 12), remainder = months % 12;
@@ -147,13 +157,13 @@
   function validatePayload(payload) {
     if (!payload || typeof payload !== 'object' || Array.isArray(payload)) throw new Error('Escolha um arquivo JSON exportado por esta página.');
     if (payload.schemaVersion !== SCHEMA_VERSION) throw new Error('A versão deste arquivo não é compatível.');
-    if (payload.mealId !== MEAL_ID) throw new Error('Este arquivo pertence a outra seleção. Use as escolhas de Guozijian ou do piloto original de 24/09.');
+    if (payload.mealId !== MEAL_ID) throw new Error('Este arquivo pertence a outra seleção. Use as escolhas dos restaurantes de Pequim ou do piloto original de 24/09.');
     if (!payload.decisions || typeof payload.decisions !== 'object' || Array.isArray(payload.decisions)) throw new Error('O arquivo não contém uma seleção válida.');
     const entries = Object.entries(payload.decisions);
     if (!entries.length) throw new Error('O arquivo não contém escolhas para importar.');
     const cleaned = Object.create(null);
     for (const [id, value] of entries) {
-      if (!knownIds.has(id)) throw new Error('O arquivo inclui um restaurante que não pertence a este piloto.');
+      if (!knownIds.has(id)) throw new Error('O arquivo inclui um restaurante que não pertence a esta seleção.');
       if (!value || typeof value !== 'object' || Array.isArray(value) || !Object.hasOwn(STATUSES, value.status)) throw new Error('Uma das escolhas tem uma classificação inválida.');
       if (typeof value.notes !== 'string' || value.notes.length > 5000) throw new Error('Uma das observações está ausente ou excede 5.000 caracteres.');
       if (value.updatedAt != null && (typeof value.updatedAt !== 'string' || !Number.isFinite(Date.parse(value.updatedAt)))) throw new Error('Uma das escolhas tem uma data inválida.');
@@ -273,11 +283,14 @@
         branch.append(element('strong', '', 'Aplicação à filial: '), document.createTextNode(item.branchCheck)); card.append(branch);
       }
       original(card, item.applicableMerchantsZh, 'Filiais aplicáveis no texto original');
-      const check = item.visitDateCheck || {}; const status = text(check.status, 'unknown');
+      const hasReferenceDate = activeRegionId === referenceRegionId();
+      const check = hasReferenceDate ? item.visitDateCheck || {} : {}; const status = text(check.status, 'unknown');
       const defaultLabels = { unknown: 'Uso em 24/09/2026: não confirmado.', weekday_only: 'A quinta-feira está entre os dias indicados; validade para 24/09 ainda não confirmada.', excluded: 'As regras observadas excluem o uso em 24/09/2026.', rules_match: 'As regras observadas são compatíveis com 24/09/2026.' };
       const availability = element('div', 'availability'); availability.dataset.status = status;
-      paragraph(availability, 'Conferência para a data de referência do roteiro; para outro dia, use as regras acima.', 'muted');
-      availability.append(element('strong', '', text(check.label, defaultLabels[status] || defaultLabels.unknown))); textList(availability, check.reasons);
+      if (hasReferenceDate) {
+        paragraph(availability, 'Conferência para a data de referência do roteiro; para outro dia, use as regras acima.', 'muted');
+        availability.append(element('strong', '', text(check.label, defaultLabels[status] || defaultLabels.unknown))); textList(availability, check.reasons);
+      } else paragraph(availability, 'Uso na visita: data não definida nesta seleção regional. Confira dias, horários, validade e filial nas regras acima.');
       if (status === 'weekday_only' || status === 'rules_match') paragraph(availability, 'Isso não confirma estoque, compra ou reserva. Conferir validade, exceções e horário do almoço.', 'muted');
       card.append(availability);
       card.append(element('h4', '', isVoucher ? 'Crédito e itens informados' : 'Composição e escolhas do pacote'));
@@ -328,7 +341,7 @@
     const completeness = collected?.status === 'catalog_complete' ? 'Catálogo coletado' : 'Coleta parcial / completude não confirmada';
     provenance.append(element('summary', '', `${completeness}: ${totalLabel} · limites da coleta`)); coverage(provenance, restaurant, 'dishes', dishes.length); container.append(provenance);
     paragraph(container, 'Preços exibidos no Dianping na coleta; não são orçamento atualizado. Unidade e tamanho só aparecem quando confirmados na fonte.', 'muted dish-price-note');
-    const state = dishViews.get(restaurant.id) || { query: '', withPrice: false, withPhoto: false, sort: 'source' };
+    const state = dishViews.get(restaurant.id) || { query: '', withPrice: false, withPhoto: false, sort: 'source', visibleLimit: DISH_PAGE_SIZE };
     dishViews.set(restaurant.id, state);
     const controls = element('div', 'dish-toolbar');
     const searchLabel = element('label', 'dish-search-label', 'Buscar nesta filial');
@@ -339,14 +352,20 @@
     for (const [value, label] of [['source', 'Ordem do Dianping'], ['recommendations', 'Mais recomendados'], ['price', 'Menor preço'], ['price-desc', 'Maior preço']]) { const option = element('option', '', label); option.value = value; sort.append(option); }
     sort.value = state.sort; sortLabel.append(sort); controls.append(sortLabel);
     const reset = element('button', 'dish-reset', 'Limpar'); reset.type = 'button'; controls.append(reset); container.append(controls);
-    const results = element('p', 'dish-results'); results.setAttribute('role', 'status'); results.setAttribute('aria-live', 'polite'); container.append(results);
-    const grid = element('div', 'data-grid dishes-grid');
-    const entries = [];
-    for (const dish of dishes) {
+    const results = element('p', 'dish-results'); results.id = `${restaurant.id}-dish-results`; results.setAttribute('role', 'status'); results.setAttribute('aria-live', 'polite'); container.append(results);
+    const grid = element('div', 'data-grid dishes-grid'); grid.id = `${restaurant.id}-dish-grid`;
+    // Indexar o catálogo inteiro é barato; criar cartões, imagens e listeners não.
+    // Nenhum nó de prato é criado antes de ele entrar na página exibida.
+    const entries = dishes.map((dish, index) => ({ dish, index, hasPhoto: list(dish.photos).some(safePhoto),
+      searchable: normalized([dish.name, dish.nameZh, dish.description, dish.note].filter(Boolean).join(' ')) }));
+    function createDishCard(dish) {
       const card = element('article', 'data-item dish-item'); card.dataset.id = text(dish.id);
       const photos = uniquePhotos(dish.photos);
       photoGrid(card, restaurant, 'dish', photos, 'dish-photos');
-      if (!photos.length) paragraph(card, 'Sem foto real na coleta', 'dish-no-photo');
+      if (!photos.length) {
+        const unavailable = list(dish.photos).find(photo => photo.downloadStatus === 'source_unavailable');
+        paragraph(card, unavailable ? `Foto indisponível na fonte (HTTP ${unavailable.downloadHttpStatus}); referência preservada.` : 'Sem foto real na coleta', 'dish-no-photo');
+      }
       card.append(element('h4', '', text(dish.name, text(dish.nameZh, 'Prato sem nome'))));
       if (text(dish.nameZh) && text(dish.name)) paragraph(card, dish.nameZh, 'item-title-zh', 'zh-Hans');
       const facts = element('dl', 'item-facts'); fact(facts, 'Preço', dishPrice(dish));
@@ -361,34 +380,51 @@
         if (finite(dish.photoTotalShown)) paragraph(evidence, `Fotos locais: ${photos.length} · indicadas na fonte: ${numberFormat.format(dish.photoTotalShown)}.`, 'muted dish-photo-coverage');
         paragraph(evidence, dish.priceEvidenceNote, 'muted dish-price-evidence'); card.append(evidence);
       }
-      sourceLink(card, dish.sourceUrl); grid.append(card);
-      entries.push({ dish, card, index: entries.length, hasPhoto: photos.length > 0, searchable: normalized([dish.name, dish.nameZh, dish.description, dish.note].filter(Boolean).join(' ')) });
+      sourceLink(card, dish.sourceUrl); return card;
     }
     container.append(grid);
+    const pagination = element('div', 'dish-pagination');
+    const more = element('button', 'dish-show-more'); more.type = 'button'; more.setAttribute('aria-controls', grid.id);
+    const pageStatus = element('p', 'dish-page-status'); pagination.append(more, pageStatus); container.append(pagination);
     const empty = element('p', 'dish-empty', 'Nenhum prato corresponde aos filtros desta filial. Use “Limpar” para exibir o catálogo coletado.'); container.append(empty);
-    function applyDishFilters() {
+    let matching = [], rendered = 0, priced = 0, photographed = 0;
+    function renderDishPage(focusNew = false) {
+      const end = Math.min(state.visibleLimit, matching.length);
+      let firstNew;
+      while (rendered < end) {
+        const card = createDishCard(matching[rendered++].dish);
+        firstNew ||= card; grid.append(card);
+      }
+      const remaining = matching.length - rendered;
+      more.hidden = remaining === 0;
+      const nextCount = Math.min(DISH_PAGE_SIZE, remaining);
+      more.textContent = `Mostrar mais ${nextCount} ${nextCount === 1 ? 'prato' : 'pratos'} (${numberFormat.format(remaining)} restantes)`;
+      pageStatus.textContent = `${numberFormat.format(rendered)} de ${numberFormat.format(matching.length)} resultados exibidos.`;
+      pagination.hidden = matching.length <= DISH_PAGE_SIZE;
+      results.textContent = `Exibindo ${numberFormat.format(rendered)} de ${numberFormat.format(matching.length)} resultados · catálogo: ${numberFormat.format(dishes.length)} pratos · nos resultados: ${numberFormat.format(priced)} com preço e ${numberFormat.format(photographed)} com foto${state.sort.startsWith('price') ? ' · valores exibidos, sem equivalência de porções' : ''}`;
+      if (focusNew && firstNew) { firstNew.tabIndex = -1; firstNew.focus({ preventScroll: true }); }
+    }
+    function applyDishFilters(resetPage = true) {
       state.query = search.value; state.withPrice = priceFilter.checked; state.withPhoto = photoFilter.checked; state.sort = sort.value;
-      const query = normalized(state.query.trim()); const ordered = [...entries];
-      if (state.sort === 'recommendations') ordered.sort((a, b) => (finite(b.dish.recommendations) ? b.dish.recommendations : -1) - (finite(a.dish.recommendations) ? a.dish.recommendations : -1) || a.index - b.index);
-      if (state.sort === 'price' || state.sort === 'price-desc') ordered.sort((a, b) => {
+      if (resetPage) state.visibleLimit = DISH_PAGE_SIZE;
+      const query = normalized(state.query.trim());
+      matching = entries.filter(entry => (!query || entry.searchable.includes(query)) && (!state.withPrice || finite(entry.dish.priceCny)) && (!state.withPhoto || entry.hasPhoto));
+      if (state.sort === 'recommendations') matching.sort((a, b) => (finite(b.dish.recommendations) ? b.dish.recommendations : -1) - (finite(a.dish.recommendations) ? a.dish.recommendations : -1) || a.index - b.index);
+      if (state.sort === 'price' || state.sort === 'price-desc') matching.sort((a, b) => {
         const aPrice = finite(a.dish.priceCny), bPrice = finite(b.dish.priceCny);
         if (aPrice !== bPrice) return aPrice ? -1 : 1;
         return aPrice ? (state.sort === 'price' ? a.dish.priceCny - b.dish.priceCny : b.dish.priceCny - a.dish.priceCny) || a.index - b.index : a.index - b.index;
       });
-      let visible = 0, priced = 0, photographed = 0;
-      for (const [position, entry] of ordered.entries()) {
-        const show = (!query || entry.searchable.includes(query)) && (!state.withPrice || finite(entry.dish.priceCny)) && (!state.withPhoto || entry.hasPhoto);
-        entry.card.hidden = !show;
-        if (show) { visible++; if (finite(entry.dish.priceCny)) priced++; if (entry.hasPhoto) photographed++; }
-        if (grid.children[position] !== entry.card) grid.insertBefore(entry.card, grid.children[position] || null);
-      }
-      results.textContent = `${visible} de ${dishes.length} pratos · ${priced} com preço · ${photographed} com foto${state.sort.startsWith('price') ? ' · valores exibidos, sem equivalência de porções' : ''}`;
-      empty.hidden = visible > 0; reset.disabled = !state.query && !state.withPrice && !state.withPhoto && state.sort === 'source';
+      priced = matching.filter(entry => finite(entry.dish.priceCny)).length;
+      photographed = matching.filter(entry => entry.hasPhoto).length;
+      grid.replaceChildren(); rendered = 0; renderDishPage();
+      empty.hidden = matching.length > 0; reset.disabled = !state.query && !state.withPrice && !state.withPhoto && state.sort === 'source';
     }
     search.addEventListener('input', applyDishFilters);
     for (const control of [priceFilter, photoFilter, sort]) control.addEventListener('change', applyDishFilters);
     reset.addEventListener('click', () => { search.value = ''; priceFilter.checked = false; photoFilter.checked = false; sort.value = 'source'; applyDishFilters(); search.focus({ preventScroll: true }); });
-    applyDishFilters();
+    more.addEventListener('click', () => { state.visibleLimit += DISH_PAGE_SIZE; renderDishPage(true); });
+    applyDishFilters(false);
     const attached = new Set(dishes.flatMap(item => list(item.photos)).map(photo => photo.src));
     const extras = loosePhotos(restaurant, 'dish').filter(photo => !attached.has(photo.src));
     if (extras.length) { container.append(element('h4', '', 'Outras imagens da seção de pratos')); photoGrid(container, restaurant, 'dish', extras); }
@@ -469,7 +505,7 @@
     } container.append(columns); paragraph(container, restaurant.sourceNotes, 'muted'); sourceLink(container, restaurant.sourceUrl, 'Abrir ficha no Dianping');
   }
   function selectRestaurant(id, focus = false) {
-    const restaurant = dataset.restaurants.find(item => item.id === id); if (!restaurant) return;
+    const restaurant = dataset.restaurants.find(item => item.id === id); if (!restaurant || !belongsToRegion(restaurant) || rows.get(id)?.hidden) return;
     if (saveTimer) persist(); activeRestaurantId = id; for (const knownId of knownIds) syncRow(knownId);
     const parent = $('#restaurant-detail'); parent.replaceChildren(); parent.dataset.id = id;
     const article = element('article', 'restaurant-card'); article.id = `restaurante-${id}`; article.dataset.id = id;
@@ -498,18 +534,56 @@
   }
 
   function updateCounters() {
-    const totals = { pending: 0, interested: 0, finalist: 0, discarded: 0 }; for (const id of knownIds) totals[decision(id).status]++;
-    for (const input of $$('#status-filters input')) $('.filter-count', input.parentElement).textContent = String(input.value === 'all' ? knownIds.size : totals[input.value]);
+    const restaurants = regionalRestaurants();
+    const totals = { pending: 0, interested: 0, finalist: 0, discarded: 0 }; for (const restaurant of restaurants) totals[decision(restaurant.id).status]++;
+    for (const input of $$('#status-filters input')) $('.filter-count', input.parentElement).textContent = String(input.value === 'all' ? restaurants.length : totals[input.value]);
     $('#selection-summary').textContent = `${totals.finalist} finalistas · ${totals.interested} interessantes · ${totals.pending} a avaliar`;
   }
   function showCollectionCoverage() {
-    const packages = dataset.restaurants.flatMap(restaurant => list(rich(restaurant).packages));
+    const restaurants = regionalRestaurants();
+    const packages = restaurants.flatMap(restaurant => list(rich(restaurant).packages));
     const detailed = packages.filter(packageDetailed).length;
-    const menus = dataset.restaurants.flatMap(restaurant => list(rich(restaurant).menus));
+    const menus = restaurants.flatMap(restaurant => list(rich(restaurant).menus));
     const menuEntries = menus.reduce((total, menu) => total + list(menu.items).length, 0);
     const packageText = `Ofertas: ${packages.length} identificadas · ${detailed} detalhadas · ${packages.length - detailed} com detalhes pendentes.`;
     const menuText = menus.length ? `Cardápios: material parcial${menuEntries ? `; ${menuEntries} entradas transcritas, não pratos únicos` : ''}. Coleção completa não confirmada.` : 'Cardápios ainda não coletados.';
-    $('#collection-coverage').textContent = `${packageText} ${menuText}`;
+    $('#collection-coverage').textContent = `${restaurants.length} opções nesta região. ${packageText} ${menuText}`;
+  }
+  function createRegionNavigation() {
+    const fallback = dataset.region || { id: referenceRegionId(), name: 'Guozijian · Templos de Confúcio e Lama' };
+    const entries = list(dataset.regions).length ? dataset.regions : [fallback];
+    for (const region of entries) {
+      if (!region || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(region.id) || regions.has(region.id)) continue;
+      regions.set(region.id, region);
+      const count = dataset.restaurants.filter(restaurant => belongsToRegion(restaurant, region.id)).length;
+      const button = element('button', 'region-button', `${text(region.name, region.id)} (${count})`);
+      button.type = 'button'; button.dataset.region = region.id; button.setAttribute('aria-pressed', 'false');
+      button.addEventListener('click', () => changeRegion(region.id, true)); $('#region-navigation').append(button);
+    }
+    const requested = new URLSearchParams(window.location.search).get('regiao');
+    activeRegionId = regions.has(requested) ? requested : regions.keys().next().value;
+  }
+  function changeRegion(id, updateAddress = false) {
+    const region = regions.get(id); if (!region) return;
+    const changed = activeRegionId !== id;
+    if (saveTimer) persist();
+    activeRegionId = id;
+    $('#region-title').textContent = text(region.name, 'Restaurantes de Pequim');
+    $('#region-description').textContent = text(region.description, 'Compare os restaurantes desta região, independentemente do dia do passeio.');
+    $('#route-reference').hidden = id !== referenceRegionId();
+    for (const button of $$('#region-navigation button')) button.setAttribute('aria-pressed', String(button.dataset.region === id));
+    if (updateAddress) {
+      try {
+        const address = new URL(window.location.href); address.searchParams.set('regiao', id); address.hash = '';
+        window.history.replaceState(null, '', address.href);
+      } catch { /* A troca de região também funciona quando file:// restringe o histórico. */ }
+    }
+    updateCounters(); showCollectionCoverage(); applyFilters();
+    const first = [...$('#restaurant-grid').children].find(row => !row.hidden);
+    if (activeRestaurantId) {
+      // Atualiza contexto dos pacotes quando uma filial pertence a duas regiões.
+      if (changed) selectRestaurant(activeRestaurantId);
+    } else if (first) selectRestaurant(first.dataset.id);
   }
   function createFilters() {
     for (const [value, label] of Object.entries(FILTERS)) {
@@ -527,12 +601,17 @@
       const menuItems = list(rich(restaurant).menus).flatMap(menu => list(menu.items));
       const searchable = normalized([restaurant.name, restaurant.nameZh, restaurant.cuisine, restaurant.area, ...list(restaurant.dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).packages).map(item => `${item.title || ''} ${item.titleZh || ''}`), ...contents.map(item => `${item.name || ''} ${item.nameZh || ''}`), ...menuItems.map(item => `${item.name || ''} ${item.nameZh || ''}`)].filter(Boolean).join(' '));
       const profileMatches = profile === 'all' || family(restaurant).role === profile || (profile === 'within-budget' && finite(restaurant.priceCny) && restaurant.priceCny <= budgetLimit()) || (profile === 'over-budget' && finite(restaurant.priceCny) && restaurant.priceCny > budgetLimit());
-      const row = rows.get(restaurant.id); const visible = profileMatches && (activeFilter === 'all' || decision(restaurant.id).status === activeFilter) && (!query || searchable.includes(query)); row.hidden = !visible; if (visible) count++;
+      const row = rows.get(restaurant.id); const visible = belongsToRegion(restaurant) && profileMatches && (activeFilter === 'all' || decision(restaurant.id).status === activeFilter) && (!query || searchable.includes(query)); row.hidden = !visible; if (visible) count++;
       if (grid.children[index] !== row) grid.insertBefore(row, grid.children[index] || null);
     }
-    $('#results-count').textContent = `${count} de ${knownIds.size} restaurantes${query ? ' · busca aplicada' : ''}. Clique no nome para abrir a ficha abaixo.`;
+    $('#results-count').textContent = `${count} de ${regionalRestaurants().length} restaurantes nesta região${query ? ' · busca aplicada' : ''}. Clique no nome para abrir a ficha abaixo.`;
     $('#empty-state').hidden = count > 0;
-    // Filtering only the comparison table keeps the current notes and reading position intact.
+    // A ficha aberta nunca deve contradizer a região ou os filtros visíveis.
+    if (activeRestaurantId && rows.get(activeRestaurantId)?.hidden) {
+      if (saveTimer) persist();
+      const previousId = activeRestaurantId; activeRestaurantId = null; syncRow(previousId);
+      const detail = $('#restaurant-detail'); detail.replaceChildren(); detail.hidden = true; delete detail.dataset.id;
+    }
   }
 
   function openGallery(restaurant, group, values, index, trigger) {
@@ -556,8 +635,8 @@
     persist();
     try {
       const blob = new Blob([JSON.stringify(snapshot(), null, 2) + '\n'], { type: 'application/json;charset=utf-8' }); const url = URL.createObjectURL(blob); const link = element('a'); link.href = url;
-      link.download = `escolhas-guozijian-${new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19)}.json`; link.hidden = true; document.body.append(link); link.click(); link.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 60000); showToast('Arquivo de escolhas preparado para download.');
+      link.download = `escolhas-restaurantes-pequim-${new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19)}.json`; link.hidden = true; document.body.append(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 60000); showToast(`Arquivo preparado com os ${knownIds.size} restaurantes de todas as regiões.`);
     } catch { showToast('Não foi possível preparar o arquivo. Tente exportar novamente.', true); }
   }
   async function readImport(file) {
@@ -579,8 +658,6 @@
       } knownIds.add(restaurant.id);
     }
     for (const key of ['time', 'area', 'before', 'after']) if (text(dataset.meal[key])) $(`#meal-${key}`).textContent = dataset.meal[key];
-    if (text(dataset.region?.name)) { $('#region-title').textContent = dataset.region.name; document.title = `Restaurantes · ${dataset.region.name} — Rota China`; }
-    if (text(dataset.region?.description)) $('#region-description').textContent = dataset.region.description;
     if (dataset.group && finite(dataset.group.adults)) {
       const ages = list(dataset.group.childrenAgesMonths); const adults = dataset.group.adults;
       $('#group-summary').textContent = `${adults} ${adults === 1 ? 'adulto' : 'adultos'} · ${ages.length} ${ages.length === 1 ? 'criança' : 'crianças'}${ages.length ? `: ${ages.map(ageLabel).join(' / ')}` : ''}`;
@@ -589,9 +666,9 @@
     $('#group-budget').textContent = `Maioria das opções com média até ${money(budgetLimit())} por pessoa; exceções identificadas. A média não é uma estimativa do total da família.`;
     $('#family-filter option[value="within-budget"]').textContent = `Média até ${money(budgetLimit())}`;
     $('#family-filter option[value="over-budget"]').textContent = `Média acima de ${money(budgetLimit())}`;
-    $('#updated-at').textContent = `Pesquisa de ${dateLabel(dataset.updatedAt) || 'data não informada'}`; restore(); createFilters();
+    $('#updated-at').textContent = `Pesquisa de ${dateLabel(dataset.updatedAt) || 'data não informada'}`; restore(); createFilters(); createRegionNavigation();
     for (const restaurant of dataset.restaurants) $('#restaurant-grid').append(createRow(restaurant));
-    updateCounters(); showCollectionCoverage(); applyFilters(); selectRestaurant(dataset.restaurants[0].id);
+    changeRegion(activeRegionId);
     $('#search').addEventListener('input', applyFilters); $('#sort').addEventListener('change', applyFilters); $('#family-filter').addEventListener('change', applyFilters);
     $('#reset-filters').addEventListener('click', () => { activeFilter = 'all'; $('#search').value = ''; $('#family-filter').value = 'all'; $('#status-filters input[value="all"]').checked = true; applyFilters(); $('#status-filters input[value="all"]').focus(); });
     $('#export-button').addEventListener('click', exportChoices); $('#import-button').addEventListener('click', () => { $('#import-file').value = ''; $('#import-file').click(); }); $('#import-file').addEventListener('change', event => readImport(event.target.files[0]));

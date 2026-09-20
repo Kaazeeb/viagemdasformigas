@@ -64,15 +64,22 @@ reservas e equipamentos ainda pendentes aparecem explicitamente nas etapas.
 
 ## Restaurantes
 
-A aba **Restaurantes**, em `restaurantes/index.html`, integra o piloto do almoço
-de 24/09/2026. Está ligada à navegação e à etapa desse almoço no roteiro final,
-que continua com restaurante a definir.
+A aba **Restaurantes**, em `restaurantes/index.html`, reúne 60 opções: dez em
+Guozijian, dez em cada um dos setores leste e norte do Palácio de Verão, dez em
+Dashilar, dez em Qianmen e dez em Wangfujing. A seleção é por região, não por dia.
+O almoço de 24/09/2026 continua ligado à seção de Guozijian, sem restaurante definido.
 
-São seis catálogos completos de recomendações: 1.097 registros traduzidos,
-751 preços e 877 imagens locais referenciadas. Busca por prato, filtros de preço
-e foto, ordenação e escolhas pessoais continuam disponíveis. Pacotes e cardápios
-têm cobertura parcial, explicitada nas fichas: quatro ofertas detalhadas e
-dezesseis prévias não totalmente verificadas.
+As fichas consideram três adultos e crianças de quatro anos e dezoito meses,
+com sugestões de pratos e ressalvas sobre pimenta, ingredientes e orçamento.
+Pratos, preços e fotos observados, menus transcritos, ofertas e avaliações
+traduzidas ficam disponíveis offline. Cobertura e lacunas aparecem na própria
+ficha: menus não são necessariamente atuais/completos, parte dos nomes permanece
+em chinês e apenas quatro ofertas tiveram regras detalhadas recuperadas.
+Os demais pacotes mantêm as prévias e avisos de validade não confirmada.
+
+Busca por prato, filtros de preço/foto e ordenação usam o catálogo inteiro da
+filial. Apenas 60 cartões são montados por vez; “Mostrar mais” continua a lista.
+Escolhas pessoais são separadas por restaurante e a exportação inclui todas as regiões.
 
 A página é independente, sem iframe nem bibliotecas novas. Não carrega o catálogo
 ao visitar as outras abas. Escolhas anteriores do piloto podem ser importadas
