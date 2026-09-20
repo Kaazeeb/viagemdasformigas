@@ -8,7 +8,7 @@ const path = require("node:path");
 const vm = require("node:vm");
 const root = path.resolve(__dirname, "..");
 const context = vm.createContext({ window: {} });
-for (const file of ["beijing-final-data.js", "beijing-final.js"]) {
+for (const file of ["beijing-final-data.js", "beijing-final-visuals.js", "beijing-final.js"]) {
   vm.runInContext(fs.readFileSync(path.join(root, file), "utf8"), context, { filename: file });
 }
 const data = context.window.BEIJING_FINAL;
@@ -21,7 +21,6 @@ for (const [block, key] of [["HOTEL", "hotel"], ["ESSENTIALS", "essentials"], ["
   if (!pattern.test(html)) throw new Error(`Missing ${block} HTML markers`);
   html = html.replace(pattern, (_, start, end) => `${start}\n${render[key](data)}\n${end}`);
 }
-const date = String(data.updatedAt || "").replace(/[&<>"']/g, character => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[character]));
-html = html.replace(/(<p class="updated-at" id="updated-at">)[\s\S]*?(<\/p>)/, (_, start, end) => `${start}Informações conferidas em ${date}.${end}`);
+html = html.replace(/(<p class="updated-at" id="updated-at">)[\s\S]*?(<\/p>)/, (_, start, end) => `${start}${render.review(data)}${end}`);
 fs.writeFileSync(target, html);
 console.log(`Rendered ${data.days.length} days / ${data.days.reduce((sum, day) => sum + day.steps.length, 0)} steps into beijing-final.html`);
