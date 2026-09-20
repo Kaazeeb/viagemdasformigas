@@ -1,0 +1,10 @@
+/* Navegação do site, separada do runtime sincronizado do piloto. */
+.trip-navigation{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;padding-block:12px 2px}
+.trip-navigation a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid transparent;border-radius:5px;text-decoration:none;font-size:13px;font-weight:600;color:#225844}
+.trip-navigation a:hover{background:#e7efe8}
+.trip-navigation a[aria-current="page"]{background:#e7efe8;border-color:#aac0b2;color:#143f2d}
+.trip-navigation+.site-header{padding-top:12px}
+.site-context{display:flex;flex-wrap:wrap;gap:4px 20px;margin:3px 0 12px;font-size:12px;color:#52635c}
+.site-context a{padding-block:5px}.site-context span{align-self:center}
+@media(max-width:390px){.trip-navigation{gap:2px}.trip-navigation a{padding-inline:9px}}
+@media print{.trip-navigation,.site-context{display:none}}

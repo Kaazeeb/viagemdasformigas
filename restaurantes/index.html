@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Seleção de restaurantes para o almoço de 24/09 em Pequim: pratos, preços, fotos, pacotes e escolhas pessoais.">
+  <meta name="theme-color" content="#17221d">
+  <title>Restaurantes de Pequim — Rota China</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="dados/restaurantes.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#restaurant-detail">Pular para a ficha selecionada</a>
+  <nav class="trip-navigation page-width" aria-label="Guias da viagem">
+    <a href="../index.html">Rota China</a>
+    <a href="../beijing.html">Explorar Pequim</a>
+    <a href="../beijing-final.html">Roteiro final</a>
+    <a href="index.html" aria-current="page">Restaurantes</a>
+  </nav>
+  <header class="page-width site-header">
+    <div><h1>Almoço · 24/09/2026</h1><p><span id="meal-time">12:45–13:40</span> · <span id="meal-area">Guozijian · Yonghegong</span></p></div>
+    <div class="file-actions">
+      <button id="import-button" type="button">Importar escolhas</button>
+      <button id="export-button" type="button">Exportar escolhas</button>
+      <input id="import-file" class="visually-hidden" type="file" accept="application/json,.json" tabindex="-1" aria-label="Arquivo de escolhas para importar">
+    </div>
+  </header>
+  <main class="page-width">
+    <div class="context-line"><p>Antes: <span id="meal-before">Rua Guozijian</span>. Depois: <span id="meal-after">retorno ao hotel</span>.</p><p id="save-status" role="status" aria-live="polite"><span id="save-message">Escolhas salvas neste navegador; exporte para guardar ou enviar.</span></p></div>
+    <p class="site-context"><a href="../beijing-final.html#etapa-24-24-lunch">Ver este almoço no roteiro</a><span>Veio da cópia offline? Use Importar escolhas para trazer seu JSON.</span></p>
+    <section id="restaurantes" aria-labelledby="comparison-title">
+      <div class="section-heading"><h2 id="comparison-title">Comparar restaurantes</h2><p id="selection-summary" aria-live="polite"></p></div>
+      <p id="collection-coverage" class="coverage-note" aria-label="Cobertura da coleta"></p>
+      <div class="toolbar">
+        <fieldset class="status-filters"><legend class="visually-hidden">Filtrar por escolha</legend><div id="status-filters"></div></fieldset>
+        <label>Buscar <input id="search" type="search" placeholder="Restaurante ou prato" autocomplete="off"></label>
+        <label>Ordenar <select id="sort"><option value="original">Ordem inicial</option><option value="price">Menor gasto por pessoa</option><option value="rating">Maior nota</option></select></label>
+      </div>
+      <p id="results-count" role="status"></p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela de comparação; role horizontalmente em telas pequenas">
+        <table class="comparison-table"><thead><tr><th scope="col">Restaurante / filial</th><th scope="col">Nota</th><th scope="col">¥ / pessoa</th><th scope="col">Pacotes</th><th scope="col">Pratos</th><th scope="col">Menus</th><th scope="col">Avaliações lidas</th><th scope="col">Sua escolha</th></tr></thead><tbody id="restaurant-grid"></tbody></table>
+      </div>
+      <p class="muted">Contagens são do material coletado. Gasto por pessoa é a média informada na ficha, não o preço de um pacote.</p>
+      <div id="empty-state" hidden><p>Nenhum restaurante corresponde aos filtros.</p><button id="reset-filters" type="button">Limpar filtros</button></div>
+      <noscript><p class="notice">Ative o JavaScript para ler as fichas e salvar suas escolhas.</p></noscript>
+    </section>
+    <section id="restaurant-detail" class="restaurant-detail" aria-label="Ficha do restaurante selecionado" tabindex="-1"></section>
+  </main>
+  <footer class="page-width"><p id="updated-at"></p><p>Dados observados e análise editorial identificados em cada ficha. Sem reserva ou compra realizada.</p></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="photo-dialog" class="photo-dialog" aria-labelledby="photo-title">
+    <div class="dialog-heading"><div><p id="photo-group-title"></p><h2 id="photo-title"></h2></div><button id="close-photo" type="button" aria-label="Fechar foto">Fechar</button></div>
+    <div class="photo-controls"><button id="previous-photo" type="button">← Anterior</button><button id="photo-zoom" type="button" aria-pressed="false">Tamanho original</button><button id="next-photo" type="button">Próxima →</button></div>
+    <div class="photo-stage"><img id="large-photo" alt=""></div>
+    <div class="photo-caption"><p id="photo-caption"></p><a id="photo-local" target="_blank" rel="noopener">Abrir imagem em nova aba</a><a id="photo-source" target="_blank" rel="noopener noreferrer">Fonte online</a></div>
+  </dialog>
+  <dialog id="import-dialog" class="import-dialog" aria-labelledby="import-title" aria-describedby="import-description">
+    <h2 id="import-title">Importar escolhas</h2><p id="import-description"></p><p>As escolhas do arquivo substituem as atuais para os mesmos restaurantes. As demais são preservadas.</p><div class="dialog-actions"><button id="cancel-import" type="button">Cancelar</button><button id="confirm-import" type="button">Mesclar escolhas</button></div>
+  </dialog>
+</body>
+</html>

@@ -750,6 +750,10 @@ window.BEIJING_FINAL = {
           "type": "meal",
           "time": "12:45–13:40",
           "title": "Almoço em Guozijian — restaurante a definir",
+          "relatedGuide": {
+            "href": "restaurantes/index.html",
+            "label": "Comparar restaurantes para este almoço"
+          },
           "instructions": [
             "Almoçar na região da Rua Guozijian antes de voltar ao hotel; restaurante a definir, com opções sem frutos do mar e sem pimenta para as crianças.",
             "O bloco inclui sentar, alimentar as crianças e uma pausa. Não há estabelecimento reservado."

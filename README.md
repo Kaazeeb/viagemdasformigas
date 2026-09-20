@@ -62,6 +62,26 @@ também os arquivos locais de fotos, CSS, JS e `assets/itinerary/maps/`.
 Fontes operacionais conferidas em 16/09/2026. Os horários são estimativas;
 reservas e equipamentos ainda pendentes aparecem explicitamente nas etapas.
 
+## Restaurantes
+
+A aba **Restaurantes**, em `restaurantes/index.html`, integra o piloto do almoço
+de 24/09/2026. Está ligada à navegação e à etapa desse almoço no roteiro final,
+que continua com restaurante a definir.
+
+São seis catálogos completos de recomendações: 1.097 registros traduzidos,
+751 preços e 877 imagens locais referenciadas. Busca por prato, filtros de preço
+e foto, ordenação e escolhas pessoais continuam disponíveis. Pacotes e cardápios
+têm cobertura parcial, explicitada nas fichas: quatro ofertas detalhadas e
+dezesseis prévias não totalmente verificadas.
+
+A página é independente, sem iframe nem bibliotecas novas. Não carrega o catálogo
+ao visitar as outras abas. Escolhas anteriores do piloto podem ser importadas
+por JSON; o armazenamento de `file://` não é transferido automaticamente ao site.
+O site contém somente a interface, os dados publicados e as imagens utilizadas.
+Coletores, scripts de atualização, testes e evidências ficam fora do repositório,
+em `apoio/restaurantes-pequim/`; as instruções de manutenção estão no README dessa
+pasta auxiliar. HTML, CSS e JS da interface são mantidos apenas neste repositório.
+
 ## O que está incluído
 
 - Layout responsivo, com prioridade para celulares.

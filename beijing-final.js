@@ -83,6 +83,10 @@
     html += admissionHTML(step.admission);
     if (transport) html += '<dl class="transport-breakdown">' + transport + "</dl>";
     if (list(step.instructions).length) html += '<ol class="instructions">' + step.instructions.map((instruction) => "<li>" + escape(instruction) + "</li>").join("") + "</ol>";
+    const relatedGuide = step.relatedGuide;
+    if (relatedGuide && typeof relatedGuide.href === "string" && /^(?:[a-z0-9_-]+\/)*[a-z0-9_-]+\.html(?:#[a-z0-9_-]+)?$/i.test(relatedGuide.href) && typeof relatedGuide.label === "string" && relatedGuide.label.trim()) {
+      html += '<p class="related-guide"><a href="' + escape(relatedGuide.href) + '">' + escape(relatedGuide.label) + "</a></p>";
+    }
     if (list(step.alerts).length) html += '<aside class="alerts" aria-label="Atenção para esta etapa"><h4>Antes de chegar</h4><ul>' + step.alerts.map((alert) => "<li>" + escape(alert) + "</li>").join("") + "</ul></aside>";
     html += "</div>";
     if (mainMap && mainMap.src) html += '<div class="route-visual"><h4>' + (siteMap || mainMap.kind === "Planta do local" ? "Mapa do local" : "Para se orientar") + '</h4>' + mapHTML(mainMap, step.title) + '</div>';
