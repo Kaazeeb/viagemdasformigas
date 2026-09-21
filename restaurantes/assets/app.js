@@ -16,6 +16,7 @@
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const dataset = window.RESTAURANTES_PILOTO;
   const knownIds = new Set();
+  const excludedIds = new Set(list(dataset?.excludedRestaurantIds).filter(id => typeof id === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)));
   const rows = new Map();
   const decisions = Object.create(null);
   const dishViews = new Map();
@@ -26,6 +27,7 @@
   let saveTimer;
   let toastTimer;
   let pendingImport = null;
+  let pendingImportExcludedCount = 0;
   let activeGallery = null;
   let photoReturnFocus = null;
   let storageAvailable = true;
@@ -56,7 +58,29 @@
   function family(restaurant) { return restaurant.family && typeof restaurant.family === 'object' ? restaurant.family : {}; }
   function familyRole(restaurant) { return FAMILY_ROLES[family(restaurant).role] || 'Perfil ainda não avaliado'; }
   function budgetLimit() { return finite(dataset.group?.budgetPerAdultCny) && dataset.group.budgetPerAdultCny > 0 ? dataset.group.budgetPerAdultCny : 130; }
-  function budgetLabel(restaurant) { return finite(restaurant.priceCny) ? (restaurant.priceCny <= budgetLimit() ? `Média até ${money(budgetLimit())}` : 'Acima da referência') : 'Gasto não confirmado'; }
+  function internationalReferenceBudget() { const value = dataset.group?.internationalReferenceBudgetCny; return finite(value) && value > 0 ? value : 200; }
+  function internationalMaximumBudget() { const value = dataset.group?.internationalMaximumAverageCny; return finite(value) && value >= internationalReferenceBudget() ? value : Math.max(250, internationalReferenceBudget()); }
+  function internationalOption(restaurant) {
+    return restaurant.mealStyle === 'international' && finite(restaurant.priceCny) && restaurant.priceCny > 0
+      && (restaurant.priceCny <= internationalReferenceBudget() || (restaurant.budgetException === true && restaurant.priceCny <= internationalMaximumBudget()));
+  }
+  function budgetLabel(restaurant) {
+    if (!finite(restaurant.priceCny) || restaurant.priceCny <= 0) return 'Gasto não confirmado';
+    if (restaurant.mealStyle === 'international') {
+      if (restaurant.priceCny <= internationalReferenceBudget()) return `Internacional · média até ${money(internationalReferenceBudget())}`;
+      if (restaurant.budgetException === true) return `Exceção internacional · média ${money(restaurant.priceCny)}, acima de ${money(internationalReferenceBudget())}`;
+      return `Acima da referência internacional de ${money(internationalReferenceBudget())}`;
+    }
+    return restaurant.priceCny <= budgetLimit() ? `Média até ${money(budgetLimit())}` : 'Acima da referência';
+  }
+  function matchesProfile(restaurant, profile) {
+    if (profile === 'all') return true;
+    if (profile === 'international') return internationalOption(restaurant);
+    if (profile === 'yunnan') return restaurant.mealStyle === 'yunnan' || /yunnan|云南/.test(normalized(text(restaurant.cuisine)));
+    if (profile === 'within-budget') return finite(restaurant.priceCny) && restaurant.priceCny > 0 && restaurant.priceCny <= budgetLimit();
+    if (profile === 'over-budget') return finite(restaurant.priceCny) && restaurant.priceCny > budgetLimit();
+    return Object.hasOwn(FAMILY_ROLES, profile) && family(restaurant).role === profile;
+  }
   function referenceRegionId() { return text(dataset.meal?.regionId, text(dataset.region?.id, 'guozijian-yonghegong')); }
   function belongsToRegion(restaurant, regionId = activeRegionId) {
     const ids = list(restaurant.regionIds);
@@ -163,7 +187,10 @@
     if (!entries.length) throw new Error('O arquivo não contém escolhas para importar.');
     const cleaned = Object.create(null);
     for (const [id, value] of entries) {
-      if (!knownIds.has(id)) throw new Error('O arquivo inclui um restaurante que não pertence a esta seleção.');
+      if (!knownIds.has(id)) {
+        if (excludedIds.has(id)) continue;
+        throw new Error('O arquivo inclui um restaurante que não pertence a esta seleção.');
+      }
       if (!value || typeof value !== 'object' || Array.isArray(value) || !Object.hasOwn(STATUSES, value.status)) throw new Error('Uma das escolhas tem uma classificação inválida.');
       if (typeof value.notes !== 'string' || value.notes.length > 5000) throw new Error('Uma das observações está ausente ou excede 5.000 caracteres.');
       if (value.updatedAt != null && (typeof value.updatedAt !== 'string' || !Number.isFinite(Date.parse(value.updatedAt)))) throw new Error('Uma das escolhas tem uma data inválida.');
@@ -171,6 +198,8 @@
     }
     return cleaned;
   }
+  function excludedChoicesCount(payload) { return Object.keys(payload.decisions).filter(id => excludedIds.has(id) && !knownIds.has(id)).length; }
+  function excludedChoicesNotice(count) { return count ? ` ${count} ${count === 1 ? 'escolha de restaurante retirado foi ignorada' : 'escolhas de restaurantes retirados foram ignoradas'}; as opções mantidas foram preservadas.` : ''; }
   function snapshot() {
     const values = Object.create(null); for (const id of knownIds) values[id] = { ...decision(id) };
     return { schemaVersion: SCHEMA_VERSION, mealId: MEAL_ID, exportedAt: new Date().toISOString(), decisions: values };
@@ -185,7 +214,10 @@
   function restore() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) { Object.assign(decisions, validatePayload(JSON.parse(saved))); saveMessage('Escolhas anteriores recuperadas. Exporte para guardar ou enviar.'); }
+      if (saved) {
+        const payload = JSON.parse(saved); Object.assign(decisions, validatePayload(payload));
+        saveMessage(`Escolhas anteriores recuperadas.${excludedChoicesNotice(excludedChoicesCount(payload))} Exporte para guardar ou enviar.`);
+      }
       const probe = `${STORAGE_KEY}:check`; localStorage.setItem(probe, '1'); localStorage.removeItem(probe);
     } catch { storageAvailable = false; saveMessage('Salvamento no navegador indisponível. Exporte suas escolhas antes de fechar.', true); }
   }
@@ -197,7 +229,7 @@
     button.addEventListener('click', () => selectRestaurant(restaurant.id, true)); nameCell.append(button);
     const role = element('span', 'family-role', familyRole(restaurant)); role.dataset.role = text(family(restaurant).role); nameCell.append(role); row.append(nameCell);
     const priceCell = element('td', 'table-number', money(restaurant.priceCny, '—'));
-    const budget = element('small', 'budget-label', budgetLabel(restaurant)); budget.dataset.over = String(finite(restaurant.priceCny) && restaurant.priceCny > budgetLimit()); priceCell.append(budget);
+    const budget = element('small', 'budget-label', budgetLabel(restaurant)); budget.dataset.over = String(finite(restaurant.priceCny) && restaurant.priceCny > (restaurant.mealStyle === 'international' ? internationalReferenceBudget() : budgetLimit())); priceCell.append(budget);
     row.append(element('td', 'table-number', finite(restaurant.rating) ? `${decimalFormat.format(restaurant.rating)} / 5` : '—'), priceCell);
     for (const key of ['packages', 'dishes', 'menus', 'reviews']) {
       const values = key === 'dishes' && !rich(restaurant).dishes ? list(restaurant.dishes) : list(rich(restaurant)[key]);
@@ -600,7 +632,7 @@
       const contents = list(rich(restaurant).packages).flatMap(item => list(item.contents));
       const menuItems = list(rich(restaurant).menus).flatMap(menu => list(menu.items));
       const searchable = normalized([restaurant.name, restaurant.nameZh, restaurant.cuisine, restaurant.area, ...list(restaurant.dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).packages).map(item => `${item.title || ''} ${item.titleZh || ''}`), ...contents.map(item => `${item.name || ''} ${item.nameZh || ''}`), ...menuItems.map(item => `${item.name || ''} ${item.nameZh || ''}`)].filter(Boolean).join(' '));
-      const profileMatches = profile === 'all' || family(restaurant).role === profile || (profile === 'western' && restaurant.mealStyle === 'western' && finite(restaurant.priceCny) && restaurant.priceCny <= 200) || (profile === 'within-budget' && finite(restaurant.priceCny) && restaurant.priceCny <= budgetLimit()) || (profile === 'over-budget' && finite(restaurant.priceCny) && restaurant.priceCny > budgetLimit());
+      const profileMatches = matchesProfile(restaurant, profile);
       const row = rows.get(restaurant.id); const visible = belongsToRegion(restaurant) && profileMatches && (activeFilter === 'all' || decision(restaurant.id).status === activeFilter) && (!query || searchable.includes(query)); row.hidden = !visible; if (visible) count++;
       if (grid.children[index] !== row) grid.insertBefore(row, grid.children[index] || null);
     }
@@ -644,9 +676,11 @@
     try {
       let payload; try { payload = JSON.parse(await file.text()); } catch { throw new Error('Não foi possível ler o JSON.'); }
       pendingImport = validatePayload(payload); const total = Object.keys(pendingImport).length;
-      $('#import-description').textContent = `O arquivo contém escolhas para ${total} ${total === 1 ? 'restaurante' : 'restaurantes'}.`;
+      pendingImportExcludedCount = excludedChoicesCount(payload);
+      if (!total) throw new Error(`O arquivo não contém escolhas para restaurantes da seleção atual.${excludedChoicesNotice(pendingImportExcludedCount)}`);
+      $('#import-description').textContent = `O arquivo contém escolhas para ${total} ${total === 1 ? 'restaurante atual' : 'restaurantes atuais'}.${excludedChoicesNotice(pendingImportExcludedCount)}`;
       $('#import-dialog').showModal(); $('#cancel-import').focus();
-    } catch (error) { pendingImport = null; showToast(error.message, true); }
+    } catch (error) { pendingImport = null; pendingImportExcludedCount = 0; showToast(error.message, true); }
   }
   function init() {
     if (!dataset || dataset.schemaVersion !== SCHEMA_VERSION || dataset.meal?.id !== MEAL_ID || !Array.isArray(dataset.restaurants) || !dataset.restaurants.length) {
@@ -663,7 +697,8 @@
       $('#group-summary').textContent = `${adults} ${adults === 1 ? 'adulto' : 'adultos'} · ${ages.length} ${ages.length === 1 ? 'criança' : 'crianças'}${ages.length ? `: ${ages.map(ageLabel).join(' / ')}` : ''}`;
     }
     if (text(dataset.group?.preferencesNote)) $('#group-preferences').textContent = dataset.group.preferencesNote;
-    $('#group-budget').textContent = `Maioria das opções com média até ${money(budgetLimit())} por pessoa; seleção western até ¥200. A média não é um teto garantido da conta nem uma estimativa do total da família.`;
+    $('#group-budget').textContent = `Maioria das opções com média até ${money(budgetLimit())} por pessoa. Internacionais: referência de ${money(internationalReferenceBudget())}, com exceções identificadas até ${money(internationalMaximumBudget())}. A média não é um teto garantido da conta nem uma estimativa do total da família.`;
+    $('#family-filter option[value="international"]').textContent = `Internacionais · referência ${money(internationalReferenceBudget())} + exceções`;
     $('#family-filter option[value="within-budget"]').textContent = `Média até ${money(budgetLimit())}`;
     $('#family-filter option[value="over-budget"]').textContent = `Média acima de ${money(budgetLimit())}`;
     $('#updated-at').textContent = `Pesquisa de ${dateLabel(dataset.updatedAt) || 'data não informada'}`; restore(); createFilters(); createRegionNavigation();
@@ -672,11 +707,12 @@
     $('#search').addEventListener('input', applyFilters); $('#sort').addEventListener('change', applyFilters); $('#family-filter').addEventListener('change', applyFilters);
     $('#reset-filters').addEventListener('click', () => { activeFilter = 'all'; $('#search').value = ''; $('#family-filter').value = 'all'; $('#status-filters input[value="all"]').checked = true; applyFilters(); $('#status-filters input[value="all"]').focus(); });
     $('#export-button').addEventListener('click', exportChoices); $('#import-button').addEventListener('click', () => { $('#import-file').value = ''; $('#import-file').click(); }); $('#import-file').addEventListener('change', event => readImport(event.target.files[0]));
-    $('#cancel-import').addEventListener('click', () => { pendingImport = null; $('#import-dialog').close(); }); $('#import-dialog').addEventListener('cancel', () => { pendingImport = null; });
-    $('#import-dialog').addEventListener('close', () => { pendingImport = null; $('#import-button').focus({ preventScroll: true }); });
+    $('#cancel-import').addEventListener('click', () => { pendingImport = null; pendingImportExcludedCount = 0; $('#import-dialog').close(); }); $('#import-dialog').addEventListener('cancel', () => { pendingImport = null; pendingImportExcludedCount = 0; });
+    $('#import-dialog').addEventListener('close', () => { pendingImport = null; pendingImportExcludedCount = 0; $('#import-button').focus({ preventScroll: true }); });
     $('#confirm-import').addEventListener('click', () => {
       if (!pendingImport) return; Object.assign(decisions, pendingImport); for (const id of Object.keys(pendingImport)) syncRow(id);
-      pendingImport = null; updateCounters(); applyFilters(); persist(); selectRestaurant(activeRestaurantId); $('#import-dialog').close(); showToast('Escolhas importadas. Restaurantes ausentes no arquivo foram preservados.');
+      const excludedNotice = excludedChoicesNotice(pendingImportExcludedCount);
+      pendingImport = null; pendingImportExcludedCount = 0; updateCounters(); applyFilters(); persist(); selectRestaurant(activeRestaurantId); $('#import-dialog').close(); showToast(`Escolhas importadas. Restaurantes ausentes no arquivo foram preservados.${excludedNotice}`);
     });
     $('#close-photo').addEventListener('click', () => $('#photo-dialog').close());
     $('#photo-dialog').addEventListener('close', () => { activeGallery = null; if (photoReturnFocus?.isConnected) photoReturnFocus.focus({ preventScroll: true }); photoReturnFocus = null; });

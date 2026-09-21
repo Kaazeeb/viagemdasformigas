@@ -64,16 +64,24 @@ reservas e equipamentos ainda pendentes aparecem explicitamente nas etapas.
 
 ## Restaurantes
 
-A aba **Restaurantes**, em `restaurantes/index.html`, reúne 97 restaurantes
-distintos nas nove regiões. As 85 opções anteriores foram preservadas e receberam
-12 novas alternativas western. O filtro **Western · até ¥200** oferece 17 fichas:
-três em Guozijian e no Palácio de Verão norte; duas em Dashilar, Qianmen,
-Wangfujing, Yandai/Shichahai, Nanluoguxiang e perto do hotel; uma no Palácio de
-Verão leste, onde não foi possível confirmar uma segunda opção nesta rodada.
-Dashilar e Qianmen compartilham as mesmas duas filiais na divisa, sem duplicar
-fichas nem escolhas. O limite western usa o gasto médio observado, não garante
-que qualquer pedido caiba em ¥200 por pessoa; combos e cortes mais caros são
-identificados nas fichas.
+A aba **Restaurantes**, em `restaurantes/index.html`, reúne 99 restaurantes
+distintos em dez grupos geográficos. A revisão retirou sete redes de fast-food
+ou similares (Pizza Hut, KFC, McDonald's, Big Pizza, Saizeriya e Yoshinoya),
+preservou as outras 90 fichas e adicionou nove restaurantes.
+
+O filtro **Internacionais** tem 16 opções, incluindo os novos Raj e Dastaan
+(indianos), Alameen (árabe), Traktir e Moscow (russos). A referência continua
+¥200 por pessoa; exceções moderadas podem chegar a ¥250 de média observada e
+recebem aviso. O Moscow, média ¥225, exige atenção especial a taxas de serviço
+e menus de banquete muito acima do orçamento. Média não é teto garantido da conta.
+
+O filtro **Yunnan** inclui Little Yunnan, Hani Gejiu e In & Out, além da Yun'er
+já cadastrada. Jinyang Baiguang acrescenta cozinha de Shanxi. A seleção não força
+restaurantes internacionais em cada região: lugares fora dos passeios ficam em
+**Outras regiões · Vale o desvio**, com endereço e deslocamento explícitos.
+Beiping Garden Beijing Fang continua compartilhado por Dashilar/Qianmen,
+sem duplicar ficha ou escolhas. Dados e fotos das opções retiradas ficam em apoio
+e no histórico Git; exclusão por preferência não significa restaurante fechado.
 A seleção é por região, não por dia. Desvios para ruas adjacentes são indicados
 nas fichas; proximidade regional não significa estar na porta da atração ou do hotel.
 O almoço de 24/09/2026 continua ligado à seção de Guozijian, sem restaurante definido.
@@ -99,6 +107,12 @@ da primeira página válida da Barblu complementam as prévias, sem reduzir seus
 20 registros. Os demais catálogos novos não foram paginados. Nem todos os locais
 expuseram avaliações ou menus, e a validade dos novos pacotes continua não confirmada.
 
+As nove fichas da revisão internacional/regional tiveram captura direta, com
+pratos sugeridos, fotos, ofertas expostas, avaliações e menus disponíveis. Seus
+catálogos completos e regras de pacotes foram adiados por causa dos bloqueios
+anteriores desses recursos. O aviso diferencia adiamento de bloqueio individual:
+não foi atribuída uma resposta 403 a uma filial não consultada.
+
 Busca por prato, filtros de preço/foto e ordenação usam todo o catálogo coletado
 da filial. Apenas 60 cartões são montados por vez; “Mostrar mais” continua a lista.
 Escolhas pessoais são separadas por restaurante e a exportação inclui todas as regiões.
@@ -113,17 +127,21 @@ pasta auxiliar. HTML, CSS e JS da interface são mantidos apenas neste repositó
 
 ## Provar em Pequim
 
-A aba `comidas/index.html` tem 30 itens: 15 comidas, nove doces e seis bebidas,
+A aba `comidas/index.html` tem 30 itens: 17 comidas, oito doces e cinco bebidas sem álcool,
 com uma foto real por item, nome em chinês, pinyin, referências de onde procurar
-e notas sobre ingredientes/pimenta. Inclui pato de Pequim, churrasco e os
-bolinhos de carne associados a Niujie. Especialidades de outras regiões populares
+e notas sobre ingredientes/pimenta. Inclui pato de Pequim, churrasco na chapa,
+bolinhos de carne de Niujie, lurou huoshao, niurou li, doufunao, chao geda,
+zha guanchang e jiaoquan. Dalian huoshao e tanghuoshao foram mantidos sem duplicar.
+Chuanr, jiaozi, baozi, macarrão em caldo bovino, tanghulu e cerveja foram retirados
+conforme a preferência da família; os outros 24 IDs e conteúdos foram preservados.
+Especialidades de outras regiões populares
 em Pequim são identificadas, sem apresentá-las como originárias da cidade.
 
 O checklist registra o que já foi provado, com busca, filtros e progresso.
 As marcações ficam neste navegador; exportação/importação JSON permite guardar
 backup ou trocar de aparelho. Funciona por `file://`, sem servidor, internet ou
 dependência do catálogo de restaurantes. Links de fontes precisam de internet.
-As 30 fotos somam cerca de 298 KB; são referências visuais dos pratos, não garantia
+As 30 fotos somam cerca de 333 KB; são referências visuais dos pratos, não garantia
 de apresentação em qualquer restaurante. Proveniência, pesquisa e testes ficam
 em `apoio/comidas-pequim/`, fora do repositório do site.
 
