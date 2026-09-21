@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17221d">
+  <meta name="description" content="Checklist de comidas, bebidas e doces para provar em Pequim, com nomes em chinês, fotos e dicas para a família.">
+  <title>Provar em Pequim — Rota China</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="dados.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o checklist</a>
+  <nav class="trip-navigation page-width" aria-label="Guias da viagem">
+    <a href="../index.html">Rota China</a>
+    <a href="../beijing.html">Explorar Pequim</a>
+    <a href="../beijing-final.html">Roteiro final</a>
+    <a href="../restaurantes/index.html">Restaurantes</a>
+    <a href="index.html" aria-current="page">Provar em Pequim</a>
+  </nav>
+  <header class="page-width page-header">
+    <div><h1>Provar em Pequim</h1><p>Comidas, bebidas e doces. Marque o que a família já provou.</p></div>
+    <div class="file-actions">
+      <button id="export-choices" type="button">Exportar checklist</button>
+      <button id="import-choices" type="button">Importar checklist</button>
+      <input id="import-file" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+  <main id="conteudo" class="page-width" tabindex="-1">
+    <section class="checklist-tools" aria-label="Progresso e filtros">
+      <div class="progress-row"><p id="progress-label" role="status" aria-live="polite">Carregando checklist…</p><progress id="progress" value="0" max="30" aria-labelledby="progress-label"></progress></div>
+      <div class="filters">
+        <label class="search-label" for="search">Buscar<input id="search" type="search" autocomplete="off" placeholder="Nome, nome chinês ou lugar"></label>
+        <label for="category">Categoria<select id="category"><option value="all">Todas</option><option value="comida">Comidas</option><option value="bebida">Bebidas</option><option value="doce">Doces</option></select></label>
+        <label for="status-filter">Checklist<select id="status-filter"><option value="all">Todos</option><option value="pending">Falta provar</option><option value="tried">Já provados</option></select></label>
+      </div>
+      <p id="results-count" class="muted" role="status" aria-live="polite"></p>
+      <p class="storage-note">As marcações ficam neste navegador. Exporte o checklist para levar a outro aparelho ou guardar uma cópia.</p>
+      <p id="feedback" class="feedback" role="status" aria-live="polite" hidden></p>
+    </section>
+    <div id="empty-state" hidden><p>Nenhum item corresponde aos filtros.</p><button id="clear-filters" type="button">Limpar filtros</button></div>
+    <section id="food-list" class="food-grid" aria-label="Checklist de sabores de Pequim"></section>
+    <noscript><p>Ative o JavaScript para consultar os itens e marcar o que já provou.</p></noscript>
+  </main>
+  <footer class="page-width"><p id="updated-at"></p><p>Os locais são referências para procurar cada item, não garantia de estoque ou de cardápio. Confira ingredientes e pimenta ao pedir.</p></footer>
+</body>
+</html>

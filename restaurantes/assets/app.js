@@ -600,7 +600,7 @@
       const contents = list(rich(restaurant).packages).flatMap(item => list(item.contents));
       const menuItems = list(rich(restaurant).menus).flatMap(menu => list(menu.items));
       const searchable = normalized([restaurant.name, restaurant.nameZh, restaurant.cuisine, restaurant.area, ...list(restaurant.dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).packages).map(item => `${item.title || ''} ${item.titleZh || ''}`), ...contents.map(item => `${item.name || ''} ${item.nameZh || ''}`), ...menuItems.map(item => `${item.name || ''} ${item.nameZh || ''}`)].filter(Boolean).join(' '));
-      const profileMatches = profile === 'all' || family(restaurant).role === profile || (profile === 'within-budget' && finite(restaurant.priceCny) && restaurant.priceCny <= budgetLimit()) || (profile === 'over-budget' && finite(restaurant.priceCny) && restaurant.priceCny > budgetLimit());
+      const profileMatches = profile === 'all' || family(restaurant).role === profile || (profile === 'western' && restaurant.mealStyle === 'western' && finite(restaurant.priceCny) && restaurant.priceCny <= 200) || (profile === 'within-budget' && finite(restaurant.priceCny) && restaurant.priceCny <= budgetLimit()) || (profile === 'over-budget' && finite(restaurant.priceCny) && restaurant.priceCny > budgetLimit());
       const row = rows.get(restaurant.id); const visible = belongsToRegion(restaurant) && profileMatches && (activeFilter === 'all' || decision(restaurant.id).status === activeFilter) && (!query || searchable.includes(query)); row.hidden = !visible; if (visible) count++;
       if (grid.children[index] !== row) grid.insertBefore(row, grid.children[index] || null);
     }
@@ -663,7 +663,7 @@
       $('#group-summary').textContent = `${adults} ${adults === 1 ? 'adulto' : 'adultos'} · ${ages.length} ${ages.length === 1 ? 'criança' : 'crianças'}${ages.length ? `: ${ages.map(ageLabel).join(' / ')}` : ''}`;
     }
     if (text(dataset.group?.preferencesNote)) $('#group-preferences').textContent = dataset.group.preferencesNote;
-    $('#group-budget').textContent = `Maioria das opções com média até ${money(budgetLimit())} por pessoa; exceções identificadas. A média não é uma estimativa do total da família.`;
+    $('#group-budget').textContent = `Maioria das opções com média até ${money(budgetLimit())} por pessoa; seleção western até ¥200. A média não é um teto garantido da conta nem uma estimativa do total da família.`;
     $('#family-filter option[value="within-budget"]').textContent = `Média até ${money(budgetLimit())}`;
     $('#family-filter option[value="over-budget"]').textContent = `Média acima de ${money(budgetLimit())}`;
     $('#updated-at').textContent = `Pesquisa de ${dateLabel(dataset.updatedAt) || 'data não informada'}`; restore(); createFilters(); createRegionNavigation();

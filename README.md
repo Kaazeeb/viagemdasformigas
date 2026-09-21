@@ -64,10 +64,16 @@ reservas e equipamentos ainda pendentes aparecem explicitamente nas etapas.
 
 ## Restaurantes
 
-A aba **Restaurantes**, em `restaurantes/index.html`, reúne 85 opções: dez em
-Guozijian, dez em cada um dos setores leste e norte do Palácio de Verão, dez em
-Dashilar, dez em Qianmen, dez em Wangfujing, dez em Yandai/Shichahai, dez em
-Nanluoguxiang e cinco no entorno do hotel Xingyi (Tiantan Dongmen).
+A aba **Restaurantes**, em `restaurantes/index.html`, reúne 97 restaurantes
+distintos nas nove regiões. As 85 opções anteriores foram preservadas e receberam
+12 novas alternativas western. O filtro **Western · até ¥200** oferece 17 fichas:
+três em Guozijian e no Palácio de Verão norte; duas em Dashilar, Qianmen,
+Wangfujing, Yandai/Shichahai, Nanluoguxiang e perto do hotel; uma no Palácio de
+Verão leste, onde não foi possível confirmar uma segunda opção nesta rodada.
+Dashilar e Qianmen compartilham as mesmas duas filiais na divisa, sem duplicar
+fichas nem escolhas. O limite western usa o gasto médio observado, não garante
+que qualquer pedido caiba em ¥200 por pessoa; combos e cortes mais caros são
+identificados nas fichas.
 A seleção é por região, não por dia. Desvios para ruas adjacentes são indicados
 nas fichas; proximidade regional não significa estar na porta da atração ou do hotel.
 O almoço de 24/09/2026 continua ligado à seção de Guozijian, sem restaurante definido.
@@ -80,10 +86,18 @@ ficha: menus não são necessariamente atuais/completos, parte dos nomes permane
 em chinês e apenas quatro ofertas tiveram regras detalhadas recuperadas.
 Os demais pacotes mantêm as prévias e avisos de validade não confirmada.
 
-Na ampliação de 21/09, as 25 fichas foram capturadas, mas a paginação de pratos
+Na primeira ampliação de 21/09, as 25 fichas foram capturadas, mas a paginação de pratos
 recebeu HTTP 403 e foi interrompida. Há três novos catálogos completos e dois
 parciais; nas outras vinte fichas permanecem as prévias e os menus fotografados.
 O aviso de cobertura distingue catálogo não consultado de ausência de pratos.
+
+Na rodada western, foram acrescentados 240 registros de prévias de pratos,
+31 imagens de menus inspecionadas, 31 ocorrências de ofertas e 30 prévias de
+avaliações traduzidas. A API voltou a responder HTTP403 na paginação da Barblu
+e no detalhe de um pacote da Pebbles; os recursos foram interrompidos. Dez preços
+da primeira página válida da Barblu complementam as prévias, sem reduzir seus
+20 registros. Os demais catálogos novos não foram paginados. Nem todos os locais
+expuseram avaliações ou menus, e a validade dos novos pacotes continua não confirmada.
 
 Busca por prato, filtros de preço/foto e ordenação usam todo o catálogo coletado
 da filial. Apenas 60 cartões são montados por vez; “Mostrar mais” continua a lista.
@@ -96,6 +110,22 @@ O site contém somente a interface, os dados publicados e as imagens utilizadas.
 Coletores, scripts de atualização, testes e evidências ficam fora do repositório,
 em `apoio/restaurantes-pequim/`; as instruções de manutenção estão no README dessa
 pasta auxiliar. HTML, CSS e JS da interface são mantidos apenas neste repositório.
+
+## Provar em Pequim
+
+A aba `comidas/index.html` tem 30 itens: 15 comidas, nove doces e seis bebidas,
+com uma foto real por item, nome em chinês, pinyin, referências de onde procurar
+e notas sobre ingredientes/pimenta. Inclui pato de Pequim, churrasco e os
+bolinhos de carne associados a Niujie. Especialidades de outras regiões populares
+em Pequim são identificadas, sem apresentá-las como originárias da cidade.
+
+O checklist registra o que já foi provado, com busca, filtros e progresso.
+As marcações ficam neste navegador; exportação/importação JSON permite guardar
+backup ou trocar de aparelho. Funciona por `file://`, sem servidor, internet ou
+dependência do catálogo de restaurantes. Links de fontes precisam de internet.
+As 30 fotos somam cerca de 298 KB; são referências visuais dos pratos, não garantia
+de apresentação em qualquer restaurante. Proveniência, pesquisa e testes ficam
+em `apoio/comidas-pequim/`, fora do repositório do site.
 
 ## O que está incluído
 
