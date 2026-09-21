@@ -64,9 +64,12 @@ reservas e equipamentos ainda pendentes aparecem explicitamente nas etapas.
 
 ## Restaurantes
 
-A aba **Restaurantes**, em `restaurantes/index.html`, reúne 60 opções: dez em
+A aba **Restaurantes**, em `restaurantes/index.html`, reúne 85 opções: dez em
 Guozijian, dez em cada um dos setores leste e norte do Palácio de Verão, dez em
-Dashilar, dez em Qianmen e dez em Wangfujing. A seleção é por região, não por dia.
+Dashilar, dez em Qianmen, dez em Wangfujing, dez em Yandai/Shichahai, dez em
+Nanluoguxiang e cinco no entorno do hotel Xingyi (Tiantan Dongmen).
+A seleção é por região, não por dia. Desvios para ruas adjacentes são indicados
+nas fichas; proximidade regional não significa estar na porta da atração ou do hotel.
 O almoço de 24/09/2026 continua ligado à seção de Guozijian, sem restaurante definido.
 
 As fichas consideram três adultos e crianças de quatro anos e dezoito meses,
@@ -77,8 +80,13 @@ ficha: menus não são necessariamente atuais/completos, parte dos nomes permane
 em chinês e apenas quatro ofertas tiveram regras detalhadas recuperadas.
 Os demais pacotes mantêm as prévias e avisos de validade não confirmada.
 
-Busca por prato, filtros de preço/foto e ordenação usam o catálogo inteiro da
-filial. Apenas 60 cartões são montados por vez; “Mostrar mais” continua a lista.
+Na ampliação de 21/09, as 25 fichas foram capturadas, mas a paginação de pratos
+recebeu HTTP 403 e foi interrompida. Há três novos catálogos completos e dois
+parciais; nas outras vinte fichas permanecem as prévias e os menus fotografados.
+O aviso de cobertura distingue catálogo não consultado de ausência de pratos.
+
+Busca por prato, filtros de preço/foto e ordenação usam todo o catálogo coletado
+da filial. Apenas 60 cartões são montados por vez; “Mostrar mais” continua a lista.
 Escolhas pessoais são separadas por restaurante e a exportação inclui todas as regiões.
 
 A página é independente, sem iframe nem bibliotecas novas. Não carrega o catálogo
