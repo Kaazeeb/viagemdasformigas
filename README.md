@@ -119,6 +119,25 @@ de pacotes não foram reconsultados após o bloqueio recente; a composição con
 parcial. As outras 79 fichas, incluindo as 20 do primeiro bloco, não mudaram.
 Total: 40 restaurantes revisados, 647 preços adicionais; nova pausa após o bloco.
 
+Encerramento da revisão de 22/09: as 59 fichas restantes também foram auditadas,
+cobrindo todas as 99 selecionadas. Nesta etapa entraram 79 preços digitais e 18
+referências fotográficas separadas. Das 26 consultas de catálogo, 25 responderam
+normalmente e Duyichu Qianmen retornou 403; as outras 33 não foram reconsultadas,
+mas seus catálogos já salvos, cardápios e ofertas foram revisados. O diagnóstico
+de cada ficha distingue atualização direta, bloqueio e revisão de dados salvos.
+Isso não representa rechecagem integral de todos os pratos nem preços completos:
+8.419 lacunas anteriores dos catálogos completos já eram preços não fornecidos
+pela fonte, e a revisão preserva essas ausências em vez de estimar valores.
+
+As 154 ofertas restantes têm revisão por filial, inclusive nove IDs de ofertas
+compartilhados por mais de uma filial. Dos 150 resumos, 63 têm 80 menções explícitas
+a itens; os quatro pacotes detalhados foram preservados. Corrigidas três ofertas
+classificadas como vale por falta de correspondência na base. Menções parciais
+antigas deixam de aparecer sob o título de composição completa. A composição
+completa dos demais pacotes e sua validade na viagem continuam pendentes.
+Total das três etapas: 726 preços digitais adicionais e 35 referências fotográficas,
+com origem e ressalvas; sem alteração de IDs de pratos, fotos ou escolhas pessoais.
+
 Na primeira ampliação de 21/09, as 25 fichas foram capturadas, mas a paginação de pratos
 recebeu HTTP 403 e foi interrompida. Há três novos catálogos completos e dois
 parciais; nas outras vinte fichas permanecem as prévias e os menus fotografados.

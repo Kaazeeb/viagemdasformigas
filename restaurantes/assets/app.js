@@ -157,6 +157,8 @@
         const weight = finite(observation.weightGrams) ? ` · ${numberFormat.format(observation.weightGrams)} g` : '';
         paragraph(box, `Referência na foto: ${money(observation.amountCny)}${unit ? ` / ${unit}` : ' · porção não informada'}${weight}`, 'item-price');
       }
+      const requiredNote = text(reference.requiredDisplayNote);
+      for (const note of new Set(observations.map(item => text(item.notes)).filter(note => note && !requiredNote.includes(note)))) paragraph(box, note, 'muted menu-price-restriction');
       const dates = [...new Set([reference.photoTimestampDate, ...observations.map(item => item.photoTimestampDate)].filter(value => text(value)))];
       for (const date of dates) paragraph(box, `Data visível na foto: ${dateLabel(date)}.`, 'muted');
       const photos = uniquePhotos(observations.map(item => ({src: text(item.localPhotoPath).replace(/^restaurantes\//, ''),
@@ -357,6 +359,45 @@
       if (text(condition.original) && text(condition.text)) original(parent, condition.original);
     }
   }
+  function packageSummaryContents(item) {
+    const mentions = list(item.listingContents);
+    const byName = new Map(mentions.map(entry => [text(entry.nameZh), entry]));
+    const legacy = list(item.contents).map(entry => {
+      const name = text(entry.nameZh);
+      const choice = /^(.*)[（(](\d+)\s*选\s*(\d+)[）)]$/.exec(name);
+      if (choice && byName.has(choice[1])) return { ...entry, nameZh: choice[1], quantityZh: text(entry.quantityZh, `${choice[2]}选${choice[3]}`) };
+      const parts = name.split('/');
+      // A barra é apenas uma menção agrupada: não distribuir porções ou inferir escolha.
+      if (parts.length > 1 && !entry.quantity && !finite(entry.priceCny) && parts.every(part => byName.has(part))) {
+        return { ...entry, nameZh: parts[0], name: byName.get(parts[0]).name,
+          note: [text(entry.note), `Agrupamento no resumo: ${text(entry.name, name)}.`].filter(Boolean).join(' ') };
+      }
+      return entry;
+    });
+    const merged = new Map();
+    for (const entry of [...legacy, ...mentions]) {
+      const key = text(entry.nameZh, text(entry.name));
+      if (!key) continue;
+      const previous = merged.get(key);
+      if (!previous) { merged.set(key, { ...entry }); continue; }
+      const hasQuantity = value => value !== null && value !== undefined && value !== '';
+      if (hasQuantity(previous.quantity) && hasQuantity(entry.quantity) && String(previous.quantity) !== String(entry.quantity)) {
+        const warning = 'Quantidades diferentes nas prévias; confirmar qual se aplica, sem somar os valores.';
+        merged.set(key, { ...previous, note: [text(previous.note), warning].filter(Boolean).join(' ') });
+        merged.set(`${key}\u0000${merged.size}`, { ...entry, note: [text(entry.note), warning].filter(Boolean).join(' ') });
+        continue;
+      }
+      const result = { ...previous };
+      for (const [field, value] of Object.entries(entry)) {
+        if (value === null || value === undefined || value === '') continue;
+        if (typeof value === 'string' && text(previous[field]).length > value.length) continue;
+        result[field] = value;
+      }
+      for (const field of ['note', 'choiceRule']) result[field] = [...new Set([text(previous[field]), text(entry[field])].filter(Boolean))].join(' ');
+      merged.set(key, result);
+    }
+    return [...merged.values()];
+  }
   function renderPackages(parent, restaurant) {
     const packages = list(rich(restaurant).packages); const container = section(parent, restaurant, 'packages', 'Pacotes e cupons', packages.length); coverage(container, restaurant, 'packages', packages.length);
     const grid = element('div', 'data-grid packages-grid');
@@ -390,14 +431,14 @@
       if (status === 'weekday_only' || status === 'rules_match') paragraph(availability, 'Isso não confirma estoque, compra ou reserva. Conferir validade, exceções e horário do almoço.', 'muted');
       card.append(availability);
       const detailed = packageDetailed(item);
-      const listingItems = isVoucher || detailed ? [] : list(item.listingContents);
+      const listingItems = isVoucher || detailed ? [] : packageSummaryContents(item);
       if (listingItems.length) {
         const listing = element('section', 'package-listing-contents');
         listing.append(element('h4', '', 'Itens mencionados na oferta'));
         paragraph(listing, text(item.listingContentsNote, 'Nomes citados na prévia; não representam a composição completa do pacote.'), 'coverage-note');
         packageContents(listing, listingItems); card.append(listing);
       }
-      if (list(item.contents).length) {
+      if ((detailed || isVoucher) && list(item.contents).length) {
         card.append(element('h4', '', isVoucher ? 'Crédito e itens informados' : 'Composição e escolhas do pacote'));
         paragraph(card, item.contentsNote, 'coverage-note'); packageContents(card, item.contents);
       } else if (isVoucher) {
