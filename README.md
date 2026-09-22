@@ -117,6 +117,18 @@ Busca por prato, filtros de preço/foto e ordenação usam todo o catálogo cole
 da filial. Apenas 60 cartões são montados por vez; “Mostrar mais” continua a lista.
 Escolhas pessoais são separadas por restaurante e a exportação inclui todas as regiões.
 
+O carregamento é sob demanda: `dados/restaurantes.js` contém somente o índice
+de comparação/busca (cerca de 1,16 MB, antes 44,72 MB de dados integrais).
+Pratos, menus, avaliações e demais informações ficam em 99 arquivos individuais
+em `dados/fichas/`, carregados apenas ao clicar no nome do restaurante e
+reutilizados na mesma sessão. A mediana por ficha é cerca de 241 KB; o maior
+catálogo ocupa 3,41 MB. Nenhum conteúdo foi removido. Busca por prato, filtros,
+contagens e escolhas não precisam baixar os catálogos. Falhas permitem nova
+tentativa, sem trocar a ficha quando uma resposta antiga chega atrasada.
+Para abrir offline no Windows, copie a pasta completa, incluindo `dados/fichas/`
+e `imagens/`; não é necessário servidor. Visitar o site online, por si só, não
+baixa todos os arquivos para uso offline posterior.
+
 A página é independente, sem iframe nem bibliotecas novas. Não carrega o catálogo
 ao visitar as outras abas. Escolhas anteriores do piloto podem ser importadas
 por JSON; o armazenamento de `file://` não é transferido automaticamente ao site.

@@ -1,4 +1,4 @@
-/* Fichas offline: nenhuma biblioteca, requisição ou dependência externa. */
+/* Índice leve e fichas sob demanda; sem bibliotecas ou serviços externos. */
 (() => {
   'use strict';
   const SCHEMA_VERSION = 1;
@@ -15,6 +15,9 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const dataset = window.RESTAURANTES_PILOTO;
+  const onDemand = dataset?.loadingMode === 'on-demand-v1';
+  let detailLoader = null;
+  let selectionVersion = 0;
   const knownIds = new Set();
   const excludedIds = new Set(list(dataset?.excludedRestaurantIds).filter(id => typeof id === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)));
   const rows = new Map();
@@ -55,6 +58,13 @@
   function readable(value) { return Array.isArray(value) ? value.map(item => typeof item === 'string' ? item : text(item?.text, text(item?.label))).filter(Boolean).join(' · ') : text(value); }
   function decision(id) { return decisions[id] || { status: 'pending', notes: '', updatedAt: null }; }
   function rich(restaurant) { return restaurant.rich && typeof restaurant.rich === 'object' ? restaurant.rich : {}; }
+  function collectedCount(restaurant, key) {
+    const summary = restaurant.summaryCounts?.[key];
+    if (Number.isInteger(summary) && summary >= 0) return summary;
+    if (key === 'packagesDetailed') return list(rich(restaurant).packages).filter(packageDetailed).length;
+    if (key === 'menuEntries') return list(rich(restaurant).menus).reduce((total, menu) => total + list(menu.items).length, 0);
+    return (key === 'dishes' && !rich(restaurant).dishes ? list(restaurant.dishes) : list(rich(restaurant)[key])).length;
+  }
   function family(restaurant) { return restaurant.family && typeof restaurant.family === 'object' ? restaurant.family : {}; }
   function familyRole(restaurant) { return FAMILY_ROLES[family(restaurant).role] || 'Perfil ainda não avaliado'; }
   function budgetLimit() { return finite(dataset.group?.budgetPerAdultCny) && dataset.group.budgetPerAdultCny > 0 ? dataset.group.budgetPerAdultCny : 130; }
@@ -232,13 +242,13 @@
     const budget = element('small', 'budget-label', budgetLabel(restaurant)); budget.dataset.over = String(finite(restaurant.priceCny) && restaurant.priceCny > (restaurant.mealStyle === 'international' ? internationalReferenceBudget() : budgetLimit())); priceCell.append(budget);
     row.append(element('td', 'table-number', finite(restaurant.rating) ? `${decimalFormat.format(restaurant.rating)} / 5` : '—'), priceCell);
     for (const key of ['packages', 'dishes', 'menus', 'reviews']) {
-      const values = key === 'dishes' && !rich(restaurant).dishes ? list(restaurant.dishes) : list(rich(restaurant)[key]);
-      const cell = element('td', 'table-number', values.length ? numberFormat.format(values.length) : 'Não coletado');
-      if (key === 'packages' && values.length) {
-        const detailed = values.filter(packageDetailed).length;
-        cell.textContent = `${values.length} ${values.length === 1 ? 'identificada' : 'identificadas'}`; cell.append(element('br'), element('small', '', `${detailed} ${detailed === 1 ? 'detalhada' : 'detalhadas'}`));
+      const count = collectedCount(restaurant, key);
+      const cell = element('td', 'table-number', count ? numberFormat.format(count) : 'Não coletado');
+      if (key === 'packages' && count) {
+        const detailed = collectedCount(restaurant, 'packagesDetailed');
+        cell.textContent = `${count} ${count === 1 ? 'identificada' : 'identificadas'}`; cell.append(element('br'), element('small', '', `${detailed} ${detailed === 1 ? 'detalhada' : 'detalhadas'}`));
       }
-      cell.title = text(rich(restaurant).coverage?.[key]?.note, 'Quantidade de itens coletados, não o total oferecido pelo restaurante.'); row.append(cell);
+      cell.title = text(restaurant.collectionNotes?.[key], text(rich(restaurant).coverage?.[key]?.note, 'Quantidade de itens coletados, não o total oferecido pelo restaurante.')); row.append(cell);
     }
     row.append(element('td', 'row-status')); rows.set(restaurant.id, row); syncRow(restaurant.id); return row;
   }
@@ -536,10 +546,50 @@
       if (!list(values).length) continue; const column = element('div'); column.append(element('h4', '', heading)); textList(column, values); columns.append(column);
     } container.append(columns); paragraph(container, restaurant.sourceNotes, 'muted'); sourceLink(container, restaurant.sourceUrl, 'Abrir ficha no Dianping');
   }
+  function focusDetail(parent, focus) {
+    if (focus) { parent.focus({ preventScroll: true }); parent.scrollIntoView({ block: 'start' }); }
+  }
+  function clearSelection() {
+    selectionVersion++;
+    const previousId = activeRestaurantId; activeRestaurantId = null;
+    if (previousId) syncRow(previousId);
+    const parent = $('#restaurant-detail'); parent.replaceChildren(); delete parent.dataset.id;
+    parent.dataset.state = 'idle'; parent.setAttribute('aria-busy', 'false'); parent.hidden = !onDemand;
+    if (onDemand) parent.append(element('p', 'coverage-note', 'Clique no nome de um restaurante para carregar sua ficha completa.'));
+  }
+  function showDetailState(restaurant, state, message, focus = false) {
+    const parent = $('#restaurant-detail'); parent.replaceChildren(); parent.dataset.id = restaurant.id;
+    parent.dataset.state = state; parent.hidden = false; parent.setAttribute('aria-busy', String(state === 'loading'));
+    parent.append(element('h2', '', restaurant.name));
+    const status = element('p', 'coverage-note', message); status.setAttribute('role', state === 'error' ? 'alert' : 'status'); parent.append(status);
+    if (state === 'error') {
+      const retry = element('button', 'detail-retry', 'Tentar novamente'); retry.type = 'button';
+      retry.addEventListener('click', () => selectRestaurant(restaurant.id, true)); parent.append(retry);
+    }
+    focusDetail(parent, focus);
+  }
   function selectRestaurant(id, focus = false) {
-    const restaurant = dataset.restaurants.find(item => item.id === id); if (!restaurant || !belongsToRegion(restaurant) || rows.get(id)?.hidden) return;
-    if (saveTimer) persist(); activeRestaurantId = id; for (const knownId of knownIds) syncRow(knownId);
+    const summary = dataset.restaurants.find(item => item.id === id); if (!summary || !belongsToRegion(summary) || rows.get(id)?.hidden) return;
+    const cached = onDemand ? detailLoader.peek(id) : summary;
+    // Importações e atualizações internas nunca iniciam/repetem downloads.
+    if (onDemand && !focus && !cached) return;
+    if (saveTimer) persist(); activeRestaurantId = id; const version = ++selectionVersion;
+    for (const knownId of knownIds) syncRow(knownId);
+    if (cached) { renderRestaurant(cached, focus); return; }
+    showDetailState(summary, 'loading', 'Carregando pratos, preços, pacotes, menus e avaliações desta filial…', focus);
+    return detailLoader.load(id).then(restaurant => {
+      if (version !== selectionVersion || activeRestaurantId !== id || !belongsToRegion(summary) || rows.get(id)?.hidden) return;
+      // O foco já foi movido pelo clique; não roubar a posição após a espera.
+      renderRestaurant(restaurant);
+    }).catch(error => {
+      if (version !== selectionVersion || activeRestaurantId !== id || !belongsToRegion(summary) || rows.get(id)?.hidden) return;
+      showDetailState(summary, 'error', text(error?.message, 'Não foi possível carregar a ficha. Tente novamente.'));
+    });
+  }
+  function renderRestaurant(restaurant, focus = false) {
+    const id = restaurant.id;
     const parent = $('#restaurant-detail'); parent.replaceChildren(); parent.dataset.id = id;
+    parent.dataset.state = 'ready'; parent.setAttribute('aria-busy', 'false');
     const article = element('article', 'restaurant-card'); article.id = `restaurante-${id}`; article.dataset.id = id;
     const header = element('div', 'detail-heading'); const listing = loosePhotos(restaurant, 'listing');
     if (listing.length) {
@@ -562,7 +612,7 @@
     const compare = element('a', 'back-to-comparison', '↑ Comparar restaurantes'); compare.href = '#restaurantes'; nav.append(compare); article.append(nav);
     renderFamily(article, restaurant); renderDishes(article, restaurant); renderPackages(article, restaurant); renderMenus(article, restaurant); renderReviews(article, restaurant); renderListing(article, restaurant); renderInfo(article, restaurant);
     parent.append(article); parent.hidden = false;
-    if (focus) { parent.focus({ preventScroll: true }); parent.scrollIntoView({ block: 'start' }); }
+    focusDetail(parent, focus);
   }
 
   function updateCounters() {
@@ -573,12 +623,10 @@
   }
   function showCollectionCoverage() {
     const restaurants = regionalRestaurants();
-    const packages = restaurants.flatMap(restaurant => list(rich(restaurant).packages));
-    const detailed = packages.filter(packageDetailed).length;
-    const menus = restaurants.flatMap(restaurant => list(rich(restaurant).menus));
-    const menuEntries = menus.reduce((total, menu) => total + list(menu.items).length, 0);
-    const packageText = `Ofertas: ${packages.length} identificadas · ${detailed} detalhadas · ${packages.length - detailed} com detalhes pendentes.`;
-    const menuText = menus.length ? `Cardápios: material parcial${menuEntries ? `; ${menuEntries} entradas transcritas, não pratos únicos` : ''}. Coleção completa não confirmada.` : 'Cardápios ainda não coletados.';
+    const total = key => restaurants.reduce((sum, restaurant) => sum + collectedCount(restaurant, key), 0);
+    const packages = total('packages'), detailed = total('packagesDetailed'), menus = total('menus'), menuEntries = total('menuEntries');
+    const packageText = `Ofertas: ${packages} identificadas · ${detailed} detalhadas · ${packages - detailed} com detalhes pendentes.`;
+    const menuText = menus ? `Cardápios: material parcial${menuEntries ? `; ${menuEntries} entradas transcritas, não pratos únicos` : ''}. Coleção completa não confirmada.` : 'Cardápios ainda não coletados.';
     $('#collection-coverage').textContent = `${restaurants.length} opções nesta região. ${packageText} ${menuText}`;
   }
   function createRegionNavigation() {
@@ -599,6 +647,7 @@
     const region = regions.get(id); if (!region) return;
     const changed = activeRegionId !== id;
     if (saveTimer) persist();
+    if (onDemand && (changed || !activeRestaurantId)) clearSelection();
     activeRegionId = id;
     $('#region-title').textContent = text(region.name, 'Restaurantes de Pequim');
     $('#region-description').textContent = text(region.description, 'Compare os restaurantes desta região, independentemente do dia do passeio.');
@@ -611,6 +660,7 @@
       } catch { /* A troca de região também funciona quando file:// restringe o histórico. */ }
     }
     updateCounters(); showCollectionCoverage(); applyFilters();
+    if (onDemand) return;
     const first = [...$('#restaurant-grid').children].find(row => !row.hidden);
     if (activeRestaurantId) {
       // Atualiza contexto dos pacotes quando uma filial pertence a duas regiões.
@@ -631,7 +681,7 @@
     for (const [index, restaurant] of sorted.entries()) {
       const contents = list(rich(restaurant).packages).flatMap(item => list(item.contents));
       const menuItems = list(rich(restaurant).menus).flatMap(menu => list(menu.items));
-      const searchable = normalized([restaurant.name, restaurant.nameZh, restaurant.cuisine, restaurant.area, ...list(restaurant.dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).packages).map(item => `${item.title || ''} ${item.titleZh || ''}`), ...contents.map(item => `${item.name || ''} ${item.nameZh || ''}`), ...menuItems.map(item => `${item.name || ''} ${item.nameZh || ''}`)].filter(Boolean).join(' '));
+      const searchable = typeof restaurant.searchText === 'string' ? restaurant.searchText : normalized([restaurant.name, restaurant.nameZh, restaurant.cuisine, restaurant.area, ...list(restaurant.dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).packages).map(item => `${item.title || ''} ${item.titleZh || ''}`), ...contents.map(item => `${item.name || ''} ${item.nameZh || ''}`), ...menuItems.map(item => `${item.name || ''} ${item.nameZh || ''}`)].filter(Boolean).join(' '));
       const profileMatches = matchesProfile(restaurant, profile);
       const row = rows.get(restaurant.id); const visible = belongsToRegion(restaurant) && profileMatches && (activeFilter === 'all' || decision(restaurant.id).status === activeFilter) && (!query || searchable.includes(query)); row.hidden = !visible; if (visible) count++;
       if (grid.children[index] !== row) grid.insertBefore(row, grid.children[index] || null);
@@ -641,8 +691,7 @@
     // A ficha aberta nunca deve contradizer a região ou os filtros visíveis.
     if (activeRestaurantId && rows.get(activeRestaurantId)?.hidden) {
       if (saveTimer) persist();
-      const previousId = activeRestaurantId; activeRestaurantId = null; syncRow(previousId);
-      const detail = $('#restaurant-detail'); detail.replaceChildren(); detail.hidden = true; delete detail.dataset.id;
+      clearSelection();
     }
   }
 
@@ -690,6 +739,15 @@
       if (!restaurant || typeof restaurant.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(restaurant.id) || knownIds.has(restaurant.id)) {
         $('#restaurant-detail').append(element('p', 'notice', 'Identificação inválida ou repetida nas fichas.')); $('#import-button').disabled = true; $('#export-button').disabled = true; return;
       } knownIds.add(restaurant.id);
+    }
+    if (onDemand) {
+      try {
+        if (typeof window.RESTAURANTES_CARREGADOR?.create !== 'function') throw new Error('Carregador de fichas indisponível. Atualize a página ou confira se a pasta assets foi copiada por completo.');
+        detailLoader = window.RESTAURANTES_CARREGADOR.create(dataset);
+      } catch (error) {
+        $('#restaurant-detail').append(element('p', 'notice', text(error?.message, 'Não foi possível iniciar o carregador de fichas.')));
+        $('#import-button').disabled = true; $('#export-button').disabled = true; return;
+      }
     }
     for (const key of ['time', 'area', 'before', 'after']) if (text(dataset.meal[key])) $(`#meal-${key}`).textContent = dataset.meal[key];
     if (dataset.group && finite(dataset.group.adults)) {
