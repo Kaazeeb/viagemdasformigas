@@ -107,6 +107,18 @@ Seis títulos foram traduzidos. A sonda de detalhes retornou 403: nenhuma compos
 completa nova nem validade de pacote foi confirmada. Os quatro detalhes anteriores
 permanecem preservados. A revisão parou após estas 20 filiais.
 
+Segundo bloco de 22/09: outras 20 filiais, sem repetir as anteriores, com 360
+preços adicionais (50 → 410 entre 419 pratos; nove ainda sem preço digital).
+Uma referência de cardápio fotografado complementa uma dessas lacunas, sem
+substituir o preço digital. Todos os 20 catálogos responderam, consultando até
+três páginas por filial e preservando os catálogos e fotos já cadastrados.
+Foram revisadas 59 ofertas: 22 vales-consumo e 37 outras promoções, com 26
+menções a itens em 20 ofertas. Corrigidos três vales homônimos que herdavam ID e
+horário de outro vale: agora associados pelo ID real da oferta. Detalhes completos
+de pacotes não foram reconsultados após o bloqueio recente; a composição continua
+parcial. As outras 79 fichas, incluindo as 20 do primeiro bloco, não mudaram.
+Total: 40 restaurantes revisados, 647 preços adicionais; nova pausa após o bloco.
+
 Na primeira ampliação de 21/09, as 25 fichas foram capturadas, mas a paginação de pratos
 recebeu HTTP 403 e foi interrompida. Há três novos catálogos completos e dois
 parciais; nas outras vinte fichas permanecem as prévias e os menus fotografados.
