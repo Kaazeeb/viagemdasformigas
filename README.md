@@ -138,6 +138,16 @@ completa dos demais pacotes e sua validade na viagem continuam pendentes.
 Total das três etapas: 726 preços digitais adicionais e 35 referências fotográficas,
 com origem e ressalvas; sem alteração de IDs de pratos, fotos ou escolhas pessoais.
 
+Reconsulta de ofertas em 22/09: a regra passou a ser três tentativas totais por
+URL e parada após três URLs distintas esgotadas. A execução consultou os pacotes
+840611504 (Raj Houhai), 1409950786 (Dastaan) e 1479279692 (Xiao Dadong): todos
+retornaram HTTP 403 nas três tentativas. Foram nove recusas em cerca de 13 segundos,
+com três abas e inícios espaçados em 1,5 s; as 247 URLs seguintes não foram abertas.
+Nenhuma composição ou regra nova foi recuperada. Só o aviso dessas três ofertas
+foi atualizado; os quatro detalhes completos e todos os pratos, preços, fotos,
+menus e avaliações anteriores foram preservados. Capturas e ferramentas continuam
+em `apoio/restaurantes-pequim/revisoes/ofertas-retry-2026-09-22/` e `coleta/`.
+
 Na primeira ampliação de 21/09, as 25 fichas foram capturadas, mas a paginação de pratos
 recebeu HTTP 403 e foi interrompida. Há três novos catálogos completos e dois
 parciais; nas outras vinte fichas permanecem as prévias e os menus fotografados.
