@@ -40,10 +40,12 @@
       <p id="collection-coverage" class="coverage-note" aria-label="Cobertura da coleta"></p>
       <div class="toolbar">
         <fieldset class="status-filters"><legend class="visually-hidden">Filtrar por escolha</legend><div id="status-filters"></div></fieldset>
-        <label>Buscar <input id="search" type="search" placeholder="Restaurante ou prato" autocomplete="off"></label>
+        <label>Buscar em <select id="search-scope"><option value="region">Restaurantes nesta região</option><option value="dishes-global">Pratos · todas as regiões</option></select></label>
+        <label><span id="search-label">Buscar</span> <input id="search" type="search" placeholder="Restaurante ou prato" autocomplete="off" aria-describedby="search-help"></label>
         <label>Perfil <select id="family-filter"><option value="all">Todas as opções</option><option value="principal">Principais</option><option value="variacao">Para variar</option><option value="especial">Especiais</option><option value="international">Internacionais · referência ¥200 + exceções</option><option value="yunnan">Yunnan</option><option value="within-budget">Média até ¥130</option><option value="over-budget">Média acima de ¥130</option></select></label>
         <label>Ordenar <select id="sort"><option value="original">Ordem inicial</option><option value="price">Menor gasto por pessoa</option><option value="rating">Maior nota</option></select></label>
       </div>
+      <p id="search-help" class="muted" hidden>Busca nos pratos coletados de todas as regiões. Os filtros de perfil e escolha continuam ativos. Abra uma ficha para ver os pratos encontrados, preços e fotos.</p>
       <p id="results-count" role="status"></p>
       <div class="table-scroll" tabindex="0" role="region" aria-label="Tabela de comparação; role horizontalmente em telas pequenas">
         <table class="comparison-table"><thead><tr><th scope="col">Restaurante / filial</th><th scope="col">Nota</th><th scope="col">¥ / pessoa</th><th scope="col">Pacotes</th><th scope="col">Pratos</th><th scope="col">Menus</th><th scope="col">Avaliações lidas</th><th scope="col">Sua escolha</th></tr></thead><tbody id="restaurant-grid"></tbody></table>

@@ -64,10 +64,22 @@ reservas e equipamentos ainda pendentes aparecem explicitamente nas etapas.
 
 ## Restaurantes
 
-A aba **Restaurantes**, em `restaurantes/index.html`, reúne 99 restaurantes
-distintos em dez grupos geográficos. A revisão retirou sete redes de fast-food
+A aba **Restaurantes**, em `restaurantes/index.html`, reúne 109 opções
+distintas em onze grupos geográficos, incluindo dez em **Niujie**.
+A revisão anterior retirou sete redes de fast-food
 ou similares (Pizza Hut, KFC, McDonald's, Big Pizza, Saizeriya e Yoshinoya),
 preservou as outras 90 fichas e adicionou nove restaurantes.
+
+Niujie acrescenta Jubaoyuan, Turpan, Hongji, Xiangyunxuan, Laochengyi,
+Xingyuelou, Baoyu, Silu Yilan e duas paradas de doces: Baiji e Nailaowei.
+As dez fichas e seus catálogos foram capturados diretamente: 2.232 registros
+de pratos, com 1.224 preços digitais, além de fotos, prévias de avaliações,
+ofertas e cardápios disponíveis. Catálogo completo significa que a paginação
+terminou no total anunciado, não que todos os pratos tenham preço ou tradução.
+As 99 fichas anteriores permanecem integralmente preservadas.
+Uma candidata com aviso de loja fechada foi substituída; não se presume
+fechamento definitivo. Menus fotografados podem ser antigos, e fotos com
+identidade divergente ficam sinalizadas sem atribuir seus preços à filial.
 
 O filtro **Internacionais** tem 16 opções, incluindo os novos Raj e Dastaan
 (indianos), Alameen (árabe), Traktir e Moscow (russos). A referência continua
@@ -167,16 +179,24 @@ catálogos completos e regras de pacotes foram adiados por causa dos bloqueios
 anteriores desses recursos. O aviso diferencia adiamento de bloqueio individual:
 não foi atribuída uma resposta 403 a uma filial não consultada.
 
+Para procurar um prato em qualquer região, selecione **Buscar em → Pratos ·
+todas as regiões** e digite seu nome em português ou chinês. A tabela mostra
+os restaurantes encontrados e suas regiões; abrir uma ficha já filtra seus
+pratos pelo termo pesquisado. Os filtros de perfil e escolha continuam ativos.
+A busca cobre os nomes coletados, sem inferir ingredientes nem traduzir os
+nomes ainda pendentes. Clicar numa região retorna ao modo regional.
+
 Busca por prato, filtros de preço/foto e ordenação usam todo o catálogo coletado
 da filial. Apenas 60 cartões são montados por vez; “Mostrar mais” continua a lista.
 Escolhas pessoais são separadas por restaurante e a exportação inclui todas as regiões.
 
 O carregamento é sob demanda: `dados/restaurantes.js` contém somente o índice
-de comparação/busca (cerca de 1,16 MB, antes 44,72 MB de dados integrais).
-Pratos, menus, avaliações e demais informações ficam em 99 arquivos individuais
+de comparação/busca (cerca de 1,94 MB, incluindo os nomes para busca global,
+contra 51 MB do conjunto integral atual, sem fotos).
+Pratos, menus, avaliações e demais informações ficam em 109 arquivos individuais
 em `dados/fichas/`, carregados apenas ao clicar no nome do restaurante e
-reutilizados na mesma sessão. A mediana por ficha é cerca de 241 KB; o maior
-catálogo ocupa 3,41 MB. Nenhum conteúdo foi removido. Busca por prato, filtros,
+reutilizados na mesma sessão. A mediana por ficha é cerca de 264 KB; o maior
+catálogo ocupa 3,42 MB. Nenhum conteúdo foi removido. Busca por prato, filtros,
 contagens e escolhas não precisam baixar os catálogos. Falhas permitem nova
 tentativa, sem trocar a ficha quando uma resposta antiga chega atrasada.
 Para abrir offline no Windows, copie a pasta completa, incluindo `dados/fichas/`

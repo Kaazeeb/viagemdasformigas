@@ -97,6 +97,34 @@
     return ids.length ? ids.includes(regionId) : regionId === referenceRegionId();
   }
   function regionalRestaurants() { return dataset.restaurants.filter(restaurant => belongsToRegion(restaurant)); }
+  function globalDishSearch() { return $('#search-scope')?.value === 'dishes-global'; }
+  function inSearchScope(restaurant) { return globalDishSearch() || belongsToRegion(restaurant); }
+  function scopedRestaurants() { return globalDishSearch() ? dataset.restaurants : regionalRestaurants(); }
+  function dishSearchText(restaurant) {
+    if (typeof restaurant.dishSearchText === 'string') return restaurant.dishSearchText;
+    const dishes = Array.isArray(rich(restaurant).dishes) ? rich(restaurant).dishes : list(restaurant.dishes);
+    return [...new Set(dishes.flatMap(dish => [dish.name, dish.nameZh]).filter(value => text(value)).map(value => normalized(value.trim())))].join('\n');
+  }
+  function restaurantRegions(restaurant) {
+    const ids = list(restaurant.regionIds).length ? restaurant.regionIds : [referenceRegionId()];
+    return ids.map(id => text(regions.get(id)?.name, id)).join(' · ');
+  }
+  function updateSearchContext() {
+    const global = globalDishSearch();
+    const region = regions.get(activeRegionId);
+    $('#region-title').textContent = global ? 'Pratos em todas as regiões' : text(region?.name, 'Restaurantes de Pequim');
+    $('#region-description').textContent = global ? 'Encontre restaurantes pelo nome do prato, em português ou chinês.' : text(region?.description, 'Compare os restaurantes desta região, independentemente do dia do passeio.');
+    $('#search').placeholder = global ? 'Prato em português ou chinês' : 'Restaurante ou prato';
+    $('#search-label').textContent = global ? 'Prato' : 'Buscar';
+    $('#search-help').hidden = !global;
+    $('#route-reference').hidden = global || activeRegionId !== referenceRegionId();
+    for (const button of $$('#region-navigation button')) button.setAttribute('aria-pressed', String(!global && button.dataset.region === activeRegionId));
+    for (const restaurant of dataset.restaurants) {
+      const label = $('.table-region', rows.get(restaurant.id));
+      if (label) label.hidden = !global;
+    }
+    updateCounters(); showCollectionCoverage();
+  }
   function ageLabel(months) {
     if (!finite(months) || months < 0) return 'idade não informada';
     const years = Math.floor(months / 12), remainder = months % 12;
@@ -262,6 +290,7 @@
     const nameCell = element('td'); const button = element('button', 'restaurant-open', restaurant.name); button.type = 'button';
     button.setAttribute('aria-controls', 'restaurant-detail'); button.append(element('span', 'table-name-zh', restaurant.nameZh)); button.lastElementChild.lang = 'zh-Hans';
     button.addEventListener('click', () => selectRestaurant(restaurant.id, true)); nameCell.append(button);
+    const region = element('small', 'table-region', restaurantRegions(restaurant)); region.hidden = true; nameCell.append(region);
     const role = element('span', 'family-role', familyRole(restaurant)); role.dataset.role = text(family(restaurant).role); nameCell.append(role); row.append(nameCell);
     const priceCell = element('td', 'table-number', money(restaurant.priceCny, '—'));
     const budget = element('small', 'budget-label', budgetLabel(restaurant)); budget.dataset.over = String(finite(restaurant.priceCny) && restaurant.priceCny > (restaurant.mealStyle === 'international' ? internationalReferenceBudget() : budgetLimit())); priceCell.append(budget);
@@ -420,7 +449,7 @@
         branch.append(element('strong', '', 'Aplicação à filial: '), document.createTextNode(item.branchCheck)); card.append(branch);
       }
       original(card, item.applicableMerchantsZh, 'Filiais aplicáveis no texto original');
-      const hasReferenceDate = activeRegionId === referenceRegionId();
+      const hasReferenceDate = !globalDishSearch() && activeRegionId === referenceRegionId();
       const check = hasReferenceDate ? item.visitDateCheck || {} : {}; const status = text(check.status, 'unknown');
       const defaultLabels = { unknown: 'Uso em 24/09/2026: não confirmado.', weekday_only: 'A quinta-feira está entre os dias indicados; validade para 24/09 ainda não confirmada.', excluded: 'As regras observadas excluem o uso em 24/09/2026.', rules_match: 'As regras observadas são compatíveis com 24/09/2026.' };
       const availability = element('div', 'availability'); availability.dataset.status = status;
@@ -658,20 +687,23 @@
     focusDetail(parent, focus);
   }
   function selectRestaurant(id, focus = false) {
-    const summary = dataset.restaurants.find(item => item.id === id); if (!summary || !belongsToRegion(summary) || rows.get(id)?.hidden) return;
+    const summary = dataset.restaurants.find(item => item.id === id); if (!summary || !inSearchScope(summary) || rows.get(id)?.hidden) return;
     const cached = onDemand ? detailLoader.peek(id) : summary;
     // Importações e atualizações internas nunca iniciam/repetem downloads.
     if (onDemand && !focus && !cached) return;
+    if (focus && globalDishSearch()) {
+      dishViews.set(id, { query: $('#search').value.trim(), withPrice: false, withPhoto: false, sort: 'source', visibleLimit: DISH_PAGE_SIZE });
+    }
     if (saveTimer) persist(); activeRestaurantId = id; const version = ++selectionVersion;
     for (const knownId of knownIds) syncRow(knownId);
     if (cached) { renderRestaurant(cached, focus); return; }
     showDetailState(summary, 'loading', 'Carregando pratos, preços, pacotes, menus e avaliações desta filial…', focus);
     return detailLoader.load(id).then(restaurant => {
-      if (version !== selectionVersion || activeRestaurantId !== id || !belongsToRegion(summary) || rows.get(id)?.hidden) return;
+      if (version !== selectionVersion || activeRestaurantId !== id || !inSearchScope(summary) || rows.get(id)?.hidden) return;
       // O foco já foi movido pelo clique; não roubar a posição após a espera.
       renderRestaurant(restaurant);
     }).catch(error => {
-      if (version !== selectionVersion || activeRestaurantId !== id || !belongsToRegion(summary) || rows.get(id)?.hidden) return;
+      if (version !== selectionVersion || activeRestaurantId !== id || !inSearchScope(summary) || rows.get(id)?.hidden) return;
       showDetailState(summary, 'error', text(error?.message, 'Não foi possível carregar a ficha. Tente novamente.'));
     });
   }
@@ -687,6 +719,7 @@
       cover.append(img, element('span', 'cover-label', 'Capa original · ampliar')); cover.addEventListener('click', event => openGallery(restaurant, 'listing', listing, 0, event.currentTarget)); header.append(cover);
     }
     const identity = element('div', 'detail-identity'); identity.append(element('h2', '', restaurant.name)); paragraph(identity, restaurant.nameZh, 'restaurant-name-zh', 'zh-Hans');
+    if (globalDishSearch()) paragraph(identity, restaurantRegions(restaurant), 'item-meta detail-region');
     paragraph(identity, `${finite(restaurant.rating) ? `${decimalFormat.format(restaurant.rating)} / 5` : 'Nota não informada'} · ${finite(restaurant.reviewCount) ? `${numberFormat.format(restaurant.reviewCount)} avaliações na fonte` : 'Total de avaliações não informado'} · ${money(restaurant.priceCny)} / pessoa`);
     paragraph(identity, text(rich(restaurant).shop?.openingHours, text(restaurant.hoursText)), 'item-meta');
     paragraph(identity, restaurant.addressZh, 'item-meta', 'zh-Hans');
@@ -699,24 +732,28 @@
       const link = element('a', '', `${label}${['info', 'family'].includes(key) ? '' : ` (${count})`}`); link.href = `#${id}-${key}`; nav.append(link);
     }
     const compare = element('a', 'back-to-comparison', '↑ Comparar restaurantes'); compare.href = '#restaurantes'; nav.append(compare); article.append(nav);
-    renderFamily(article, restaurant); renderDishes(article, restaurant); renderPackages(article, restaurant); renderMenus(article, restaurant); renderReviews(article, restaurant); renderListing(article, restaurant); renderInfo(article, restaurant);
+    // Na busca global, os pratos filtrados ficam antes da análise familiar.
+    // A ficha continua sendo carregada somente após o clique nesta filial.
+    if (globalDishSearch()) { renderDishes(article, restaurant); renderFamily(article, restaurant); }
+    else { renderFamily(article, restaurant); renderDishes(article, restaurant); }
+    renderPackages(article, restaurant); renderMenus(article, restaurant); renderReviews(article, restaurant); renderListing(article, restaurant); renderInfo(article, restaurant);
     parent.append(article); parent.hidden = false;
     focusDetail(parent, focus);
   }
 
   function updateCounters() {
-    const restaurants = regionalRestaurants();
+    const restaurants = scopedRestaurants();
     const totals = { pending: 0, interested: 0, finalist: 0, discarded: 0 }; for (const restaurant of restaurants) totals[decision(restaurant.id).status]++;
     for (const input of $$('#status-filters input')) $('.filter-count', input.parentElement).textContent = String(input.value === 'all' ? restaurants.length : totals[input.value]);
     $('#selection-summary').textContent = `${totals.finalist} finalistas · ${totals.interested} interessantes · ${totals.pending} a avaliar`;
   }
   function showCollectionCoverage() {
-    const restaurants = regionalRestaurants();
+    const restaurants = scopedRestaurants();
     const total = key => restaurants.reduce((sum, restaurant) => sum + collectedCount(restaurant, key), 0);
     const packages = total('packages'), detailed = total('packagesDetailed'), menus = total('menus'), menuEntries = total('menuEntries');
     const packageText = `Ofertas: ${packages} identificadas · ${detailed} detalhadas · ${packages - detailed} com detalhes pendentes.`;
     const menuText = menus ? `Cardápios: material parcial${menuEntries ? `; ${menuEntries} entradas transcritas, não pratos únicos` : ''}. Coleção completa não confirmada.` : 'Cardápios ainda não coletados.';
-    $('#collection-coverage').textContent = `${restaurants.length} opções nesta região. ${packageText} ${menuText}`;
+    $('#collection-coverage').textContent = `${restaurants.length} opções ${globalDishSearch() ? 'em todas as regiões' : 'nesta região'}. ${packageText} ${menuText}`;
   }
   function createRegionNavigation() {
     const fallback = dataset.region || { id: referenceRegionId(), name: 'Guozijian · Templos de Confúcio e Lama' };
@@ -734,21 +771,19 @@
   }
   function changeRegion(id, updateAddress = false) {
     const region = regions.get(id); if (!region) return;
-    const changed = activeRegionId !== id;
+    const changed = activeRegionId !== id || globalDishSearch();
+    $('#search-scope').value = 'region';
     if (saveTimer) persist();
     if (onDemand && (changed || !activeRestaurantId)) clearSelection();
     activeRegionId = id;
-    $('#region-title').textContent = text(region.name, 'Restaurantes de Pequim');
-    $('#region-description').textContent = text(region.description, 'Compare os restaurantes desta região, independentemente do dia do passeio.');
-    $('#route-reference').hidden = id !== referenceRegionId();
-    for (const button of $$('#region-navigation button')) button.setAttribute('aria-pressed', String(button.dataset.region === id));
+    updateSearchContext();
     if (updateAddress) {
       try {
         const address = new URL(window.location.href); address.searchParams.set('regiao', id); address.hash = '';
         window.history.replaceState(null, '', address.href);
       } catch { /* A troca de região também funciona quando file:// restringe o histórico. */ }
     }
-    updateCounters(); showCollectionCoverage(); applyFilters();
+    applyFilters();
     if (onDemand) return;
     const first = [...$('#restaurant-grid').children].find(row => !row.hidden);
     if (activeRestaurantId) {
@@ -763,19 +798,19 @@
     }
   }
   function applyFilters() {
-    const query = normalized($('#search').value.trim()); const mode = $('#sort').value; const profile = $('#family-filter').value; const sorted = [...dataset.restaurants];
+    const global = globalDishSearch(); const query = normalized($('#search').value.trim()); const mode = $('#sort').value; const profile = $('#family-filter').value; const sorted = [...dataset.restaurants];
     if (mode === 'price') sorted.sort((a, b) => (finite(a.priceCny) ? a.priceCny : Infinity) - (finite(b.priceCny) ? b.priceCny : Infinity));
     if (mode === 'rating') sorted.sort((a, b) => (finite(b.rating) ? b.rating : -Infinity) - (finite(a.rating) ? a.rating : -Infinity));
     let count = 0; const grid = $('#restaurant-grid');
     for (const [index, restaurant] of sorted.entries()) {
       const contents = list(rich(restaurant).packages).flatMap(item => [...list(item.contents), ...list(item.listingContents)]);
       const menuItems = list(rich(restaurant).menus).flatMap(menu => list(menu.items));
-      const searchable = typeof restaurant.searchText === 'string' ? restaurant.searchText : normalized([restaurant.name, restaurant.nameZh, restaurant.cuisine, restaurant.area, ...list(restaurant.dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).packages).map(item => `${item.title || ''} ${item.titleZh || ''}`), ...contents.map(item => `${item.name || ''} ${item.nameZh || ''}`), ...menuItems.map(item => `${item.name || ''} ${item.nameZh || ''}`)].filter(Boolean).join(' '));
+      const searchable = global ? dishSearchText(restaurant) : typeof restaurant.searchText === 'string' ? restaurant.searchText : normalized([restaurant.name, restaurant.nameZh, restaurant.cuisine, restaurant.area, ...list(restaurant.dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).packages).map(item => `${item.title || ''} ${item.titleZh || ''}`), ...contents.map(item => `${item.name || ''} ${item.nameZh || ''}`), ...menuItems.map(item => `${item.name || ''} ${item.nameZh || ''}`)].filter(Boolean).join(' '));
       const profileMatches = matchesProfile(restaurant, profile);
-      const row = rows.get(restaurant.id); const visible = belongsToRegion(restaurant) && profileMatches && (activeFilter === 'all' || decision(restaurant.id).status === activeFilter) && (!query || searchable.includes(query)); row.hidden = !visible; if (visible) count++;
+      const row = rows.get(restaurant.id); const visible = inSearchScope(restaurant) && profileMatches && (activeFilter === 'all' || decision(restaurant.id).status === activeFilter) && (!query || searchable.includes(query)); row.hidden = !visible; if (visible) count++;
       if (grid.children[index] !== row) grid.insertBefore(row, grid.children[index] || null);
     }
-    $('#results-count').textContent = `${count} de ${regionalRestaurants().length} restaurantes nesta região${query ? ' · busca aplicada' : ''}. Clique no nome para abrir a ficha abaixo.`;
+    $('#results-count').textContent = `${count} de ${scopedRestaurants().length} restaurantes ${global ? 'em todas as regiões' : 'nesta região'}${query ? ` · ${global ? 'busca por prato no catálogo coletado' : 'busca aplicada'}` : ''}. Clique no nome para abrir ${global && query ? 'os pratos encontrados na ficha' : 'a ficha'} abaixo.`;
     $('#empty-state').hidden = count > 0;
     // A ficha aberta nunca deve contradizer a região ou os filtros visíveis.
     if (activeRestaurantId && rows.get(activeRestaurantId)?.hidden) {
@@ -851,7 +886,9 @@
     $('#updated-at').textContent = `Pesquisa de ${dateLabel(dataset.updatedAt) || 'data não informada'}`; restore(); createFilters(); createRegionNavigation();
     for (const restaurant of dataset.restaurants) $('#restaurant-grid').append(createRow(restaurant));
     changeRegion(activeRegionId);
-    $('#search').addEventListener('input', applyFilters); $('#sort').addEventListener('change', applyFilters); $('#family-filter').addEventListener('change', applyFilters);
+    $('#search').addEventListener('input', () => { if (globalDishSearch() && activeRestaurantId) { if (saveTimer) persist(); clearSelection(); } applyFilters(); });
+    $('#sort').addEventListener('change', applyFilters); $('#family-filter').addEventListener('change', applyFilters);
+    $('#search-scope').addEventListener('change', () => { if (saveTimer) persist(); clearSelection(); updateSearchContext(); applyFilters(); });
     $('#reset-filters').addEventListener('click', () => { activeFilter = 'all'; $('#search').value = ''; $('#family-filter').value = 'all'; $('#status-filters input[value="all"]').checked = true; applyFilters(); $('#status-filters input[value="all"]').focus(); });
     $('#export-button').addEventListener('click', exportChoices); $('#import-button').addEventListener('click', () => { $('#import-file').value = ''; $('#import-file').click(); }); $('#import-file').addEventListener('change', event => readImport(event.target.files[0]));
     $('#cancel-import').addEventListener('click', () => { pendingImport = null; pendingImportExcludedCount = 0; $('#import-dialog').close(); }); $('#import-dialog').addEventListener('cancel', () => { pendingImport = null; pendingImportExcludedCount = 0; });
