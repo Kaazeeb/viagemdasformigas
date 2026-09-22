@@ -145,6 +145,29 @@
     if (!items.length) return;
     const ul = element('ul', className); for (const value of items) ul.append(element('li', '', value)); parent.append(ul);
   }
+  function menuPriceReferences(parent, restaurant, dish) {
+    if (finite(dish.priceCny)) return;
+    for (const reference of list(dish.menuPriceReferences)) {
+      const observations = list(reference.observations).filter(item => finite(item.amountCny) && item.amountCny > 0);
+      if (!observations.length) continue;
+      const box = element('div', 'menu-price-reference');
+      paragraph(box, text(reference.requiredDisplayNote, 'Preço de menu fotografado; vigência não confirmada.'), 'coverage-note');
+      for (const observation of observations) {
+        const unit = text(observation.unit, text(observation.unitZh));
+        const weight = finite(observation.weightGrams) ? ` · ${numberFormat.format(observation.weightGrams)} g` : '';
+        paragraph(box, `Referência na foto: ${money(observation.amountCny)}${unit ? ` / ${unit}` : ' · porção não informada'}${weight}`, 'item-price');
+      }
+      const dates = [...new Set([reference.photoTimestampDate, ...observations.map(item => item.photoTimestampDate)].filter(value => text(value)))];
+      for (const date of dates) paragraph(box, `Data visível na foto: ${dateLabel(date)}.`, 'muted');
+      const photos = uniquePhotos(observations.map(item => ({src: text(item.localPhotoPath).replace(/^restaurantes\//, ''),
+        alt: `Cardápio fotografado: ${text(dish.name, text(dish.nameZh, 'preço do prato'))}`, sourceUrl: item.sourceUrl, collectedAt: item.collectedAt})));
+      if (photos.length) {
+        const button = element('button', 'source-link menu-price-photo', 'Ver foto do cardápio'); button.type = 'button';
+        button.addEventListener('click', event => openGallery(restaurant, 'menu', photos, 0, event.currentTarget)); box.append(button);
+      } else sourceLink(box, observations[0].sourceUrl, 'Ver foto original do cardápio');
+      parent.append(box);
+    }
+  }
   function original(parent, value, label = 'Texto original em chinês') {
     if (!text(value)) return;
     const details = element('details', 'original-details'); details.append(element('summary', '', label));
@@ -295,7 +318,7 @@
         photoGrid(card, restaurant, 'dish', dish.photos, 'family-dish-photo');
         const content = element('div', 'family-dish-copy'); content.append(element('h4', '', text(dish.name, text(dish.nameZh, 'Prato sem nome'))));
         if (text(dish.nameZh) && text(dish.name)) paragraph(content, dish.nameZh, 'item-title-zh', 'zh-Hans');
-        paragraph(content, dishPrice(dish), 'family-dish-price'); paragraph(content, suggestion.note, 'family-dish-note');
+        paragraph(content, dishPrice(dish), 'family-dish-price'); menuPriceReferences(content, restaurant, dish); paragraph(content, suggestion.note, 'family-dish-note');
         sourceLink(content, dish.sourceUrl, 'Fonte do prato'); card.append(content); grid.append(card);
       }
       container.append(grid);
@@ -303,13 +326,44 @@
     if (list(profile.cautions).length) { container.append(element('h4', '', 'Conferir antes de escolher')); textList(container, profile.cautions); }
   }
 
+  function packageContents(parent, items) {
+    const groups = new Map();
+    for (const item of list(items)) {
+      const name = text(item.group, 'Itens informados');
+      if (!groups.has(name)) groups.set(name, []);
+      groups.get(name).push(item);
+    }
+    for (const [name, items] of groups) {
+      const group = element('section', 'package-content-group'); group.append(element('h4', '', name));
+      for (const rule of new Set(items.map(item => text(item.choiceRule)).filter(Boolean))) paragraph(group, rule, 'choice-rule');
+      const ul = element('ul', 'compact-list');
+      for (const item of items) {
+        const li = element('li', '', text(item.name, text(item.nameZh, 'Item sem nome')));
+        if (text(item.nameZh) && text(item.name)) { const zh = element('span', '', ` · ${item.nameZh}`); zh.lang = 'zh-Hans'; li.append(zh); }
+        if (item.quantity !== null && item.quantity !== undefined && item.quantity !== '') li.append(document.createTextNode(` · ${item.quantity}`));
+        if (text(item.quantityZh) && item.quantityZh !== item.quantity) { const zh = element('span', '', ` (${item.quantityZh})`); zh.lang = 'zh-Hans'; li.append(zh); }
+        if (finite(item.priceCny)) li.append(document.createTextNode(` · valor informado: ${money(item.priceCny)}`));
+        paragraph(li, item.note, 'muted'); ul.append(li);
+      }
+      group.append(ul); parent.append(group);
+    }
+  }
+  function packageConditions(parent, conditions, title) {
+    if (!conditions.length) return;
+    parent.append(element('h4', '', title));
+    for (const condition of conditions) {
+      const p = element('p', 'item-meta'); if (text(condition.label)) p.append(element('strong', '', `${condition.label}: `));
+      p.append(document.createTextNode(text(condition.text, text(condition.original, 'Não traduzido')))); parent.append(p);
+      if (text(condition.original) && text(condition.text)) original(parent, condition.original);
+    }
+  }
   function renderPackages(parent, restaurant) {
     const packages = list(rich(restaurant).packages); const container = section(parent, restaurant, 'packages', 'Pacotes e cupons', packages.length); coverage(container, restaurant, 'packages', packages.length);
     const grid = element('div', 'data-grid packages-grid');
     for (const item of packages) {
       const card = element('article', 'data-item package-item'); card.dataset.id = text(item.id);
       const isVoucher = item.kind === 'voucher' || item.kind === 'credit';
-      paragraph(card, isVoucher ? 'Vale-consumo — não é um combo de pratos' : 'Combo / promoção', 'item-meta');
+      paragraph(card, text(item.offerTypeLabel, isVoucher ? 'Vale-consumo — não é um combo de pratos' : 'Combo / promoção'), 'item-meta');
       card.append(element('h4', '', text(item.title, text(item.titleZh, 'Pacote sem título'))));
       if (text(item.titleZh) && text(item.title)) paragraph(card, item.titleZh, 'item-title-zh', 'zh-Hans');
       const price = element('p', 'item-price', money(item.priceCny)); if (finite(item.originalPriceCny)) price.append(element('span', 'original-price', money(item.originalPriceCny))); card.append(price);
@@ -335,37 +389,30 @@
       } else paragraph(availability, 'Uso na visita: data não definida nesta seleção regional. Confira dias, horários, validade e filial nas regras acima.');
       if (status === 'weekday_only' || status === 'rules_match') paragraph(availability, 'Isso não confirma estoque, compra ou reserva. Conferir validade, exceções e horário do almoço.', 'muted');
       card.append(availability);
-      card.append(element('h4', '', isVoucher ? 'Crédito e itens informados' : 'Composição e escolhas do pacote'));
-      paragraph(card, item.contentsNote, 'coverage-note');
+      const detailed = packageDetailed(item);
+      const listingItems = isVoucher || detailed ? [] : list(item.listingContents);
+      if (listingItems.length) {
+        const listing = element('section', 'package-listing-contents');
+        listing.append(element('h4', '', 'Itens mencionados na oferta'));
+        paragraph(listing, text(item.listingContentsNote, 'Nomes citados na prévia; não representam a composição completa do pacote.'), 'coverage-note');
+        packageContents(listing, listingItems); card.append(listing);
+      }
       if (list(item.contents).length) {
-        const groups = new Map();
-        for (const dish of item.contents) {
-          const groupName = text(dish.group, 'Itens informados');
-          if (!groups.has(groupName)) groups.set(groupName, []);
-          groups.get(groupName).push(dish);
-        }
-        for (const [groupName, dishes] of groups) {
-          const group = element('section', 'package-content-group'); group.append(element('h4', '', groupName));
-          const rules = [...new Set(dishes.map(dish => text(dish.choiceRule)).filter(Boolean))];
-          for (const rule of rules) paragraph(group, rule, 'choice-rule');
-          const ul = element('ul', 'compact-list');
-          for (const dish of dishes) {
-            const li = element('li', '', text(dish.name, text(dish.nameZh, 'Item sem nome')));
-            if (text(dish.nameZh) && text(dish.name)) { const zh = element('span', '', ` · ${dish.nameZh}`); zh.lang = 'zh-Hans'; li.append(zh); }
-            if (dish.quantity !== null && dish.quantity !== undefined && dish.quantity !== '') li.append(document.createTextNode(` · ${dish.quantity}`));
-            if (text(dish.quantityZh) && dish.quantityZh !== dish.quantity) { const zh = element('span', '', ` (${dish.quantityZh})`); zh.lang = 'zh-Hans'; li.append(zh); }
-            if (finite(dish.priceCny)) li.append(document.createTextNode(` · valor informado: ${money(dish.priceCny)}`)); ul.append(li);
-          }
-          group.append(ul); card.append(group);
-        }
-      } else paragraph(card, 'Composição não capturada. O título do pacote não substitui a lista de itens.', 'muted');
-      if (list(item.conditions).length) {
-        card.append(element('h4', '', 'Condições de uso'));
-        for (const condition of item.conditions) {
-          const p = element('p', 'item-meta'); if (text(condition.label)) p.append(element('strong', '', `${condition.label}: `)); p.append(document.createTextNode(text(condition.text, text(condition.original, 'Não traduzido')))); card.append(p);
-          if (text(condition.original) && text(condition.text)) original(card, condition.original);
-        }
-      } else paragraph(card, 'Regras detalhadas não capturadas.', 'muted');
+        card.append(element('h4', '', isVoucher ? 'Crédito e itens informados' : 'Composição e escolhas do pacote'));
+        paragraph(card, item.contentsNote, 'coverage-note'); packageContents(card, item.contents);
+      } else if (isVoucher) {
+        paragraph(card, text(item.listingContentsNote, 'Este vale oferece crédito para consumo; não inclui uma lista fixa de pratos. Confira os produtos elegíveis e as condições de uso.'), 'coverage-note');
+      } else {
+        if (!listingItems.length) paragraph(card, text(item.listingContentsNote, text(item.contentsNote)), 'coverage-note');
+        paragraph(card, 'Composição completa não recuperada. Quantidades, escolhas e acompanhamentos não estão confirmados.', 'muted');
+      }
+      const listingRules = detailed ? [] : list(item.listingConditions);
+      const listingOriginals = new Set(listingRules.map(rule => text(rule.original)).filter(Boolean));
+      const conditions = list(item.conditions).filter(rule => !listingOriginals.has(text(rule.original)));
+      packageConditions(card, listingRules, 'Condições informadas na prévia');
+      packageConditions(card, conditions, detailed ? 'Condições de uso' : 'Outras informações e limites da consulta');
+      if (!detailed) paragraph(card, 'Regras completas de uso não recuperadas.', 'muted');
+      else if (!conditions.length) paragraph(card, 'Regras detalhadas não capturadas.', 'muted');
       photoGrid(card, restaurant, 'package', item.photos);
       original(card, item.rawText, 'Texto original capturado do pacote');
       paragraph(card, packageDetailed(item) ? 'Detalhes consultados na fonte.' : 'Somente resumo do pacote consultado.', 'muted');
@@ -416,6 +463,7 @@
       if (text(dish.recommendationsPeriod)) fact(facts, 'Período', dish.recommendationsPeriod);
       else if (text(dish.recommendationsPeriodZh)) fact(facts, 'Período (original)', dish.recommendationsPeriodZh, 'zh-Hans');
       card.append(facts);
+      menuPriceReferences(card, restaurant, dish);
       paragraph(card, text(dish.description, text(dish.note)), 'dish-description');
       if (finite(dish.photoTotalShown) || text(dish.priceEvidenceNote)) {
         const evidence = element('details', 'dish-evidence'); evidence.append(element('summary', '', 'Detalhes da coleta'));
@@ -679,7 +727,7 @@
     if (mode === 'rating') sorted.sort((a, b) => (finite(b.rating) ? b.rating : -Infinity) - (finite(a.rating) ? a.rating : -Infinity));
     let count = 0; const grid = $('#restaurant-grid');
     for (const [index, restaurant] of sorted.entries()) {
-      const contents = list(rich(restaurant).packages).flatMap(item => list(item.contents));
+      const contents = list(rich(restaurant).packages).flatMap(item => [...list(item.contents), ...list(item.listingContents)]);
       const menuItems = list(rich(restaurant).menus).flatMap(menu => list(menu.items));
       const searchable = typeof restaurant.searchText === 'string' ? restaurant.searchText : normalized([restaurant.name, restaurant.nameZh, restaurant.cuisine, restaurant.area, ...list(restaurant.dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).dishes).map(dish => `${dish.name || ''} ${dish.nameZh || ''}`), ...list(rich(restaurant).packages).map(item => `${item.title || ''} ${item.titleZh || ''}`), ...contents.map(item => `${item.name || ''} ${item.nameZh || ''}`), ...menuItems.map(item => `${item.name || ''} ${item.nameZh || ''}`)].filter(Boolean).join(' '));
       const profileMatches = matchesProfile(restaurant, profile);

@@ -94,6 +94,19 @@ ficha: menus não são necessariamente atuais/completos, parte dos nomes permane
 em chinês e apenas quatro ofertas tiveram regras detalhadas recuperadas.
 Os demais pacotes mantêm as prévias e avisos de validade não confirmada.
 
+Revisão de 22/09: bloco de 20 restaurantes, com 287 preços digitais adicionais
+(690 → 977 pratos com preço entre os 1.185 registros do bloco; 208 ainda sem).
+As outras 79 fichas não foram alteradas. Foram consultadas até três páginas de
+19 catálogos; a rota de XiaoDadong retornou 404. Nenhum catálogo completo anterior
+foi substituído por essa amostra. Dezesseis pratos têm referências adicionais de
+cardápios fotografados; quando não há preço digital, a ficha mostra a referência
+com porção e ressalva de vigência, sem incluí-la no filtro de preços digitais.
+As 56 ofertas do bloco foram revisadas: 18 são vales-consumo, não combos; 18
+ofertas receberam 25 menções explícitas de pratos separadas da composição completa.
+Seis títulos foram traduzidos. A sonda de detalhes retornou 403: nenhuma composição
+completa nova nem validade de pacote foi confirmada. Os quatro detalhes anteriores
+permanecem preservados. A revisão parou após estas 20 filiais.
+
 Na primeira ampliação de 21/09, as 25 fichas foram capturadas, mas a paginação de pratos
 recebeu HTTP 403 e foi interrompida. Há três novos catálogos completos e dois
 parciais; nas outras vinte fichas permanecem as prévias e os menus fotografados.
