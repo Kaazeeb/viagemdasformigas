@@ -62,6 +62,175 @@ também os arquivos locais de fotos, CSS, JS e `assets/itinerary/maps/`.
 Fontes operacionais conferidas em 16/09/2026. Os horários são estimativas;
 reservas e equipamentos ainda pendentes aparecem explicitamente nas etapas.
 
+## Restaurantes
+
+A aba **Restaurantes**, em `restaurantes/index.html`, reúne 109 opções
+distintas em onze grupos geográficos, incluindo dez em **Niujie**.
+A revisão anterior retirou sete redes de fast-food
+ou similares (Pizza Hut, KFC, McDonald's, Big Pizza, Saizeriya e Yoshinoya),
+preservou as outras 90 fichas e adicionou nove restaurantes.
+
+Niujie acrescenta Jubaoyuan, Turpan, Hongji, Xiangyunxuan, Laochengyi,
+Xingyuelou, Baoyu, Silu Yilan e duas paradas de doces: Baiji e Nailaowei.
+As dez fichas e seus catálogos foram capturados diretamente: 2.232 registros
+de pratos, com 1.224 preços digitais, além de fotos, prévias de avaliações,
+ofertas e cardápios disponíveis. Catálogo completo significa que a paginação
+terminou no total anunciado, não que todos os pratos tenham preço ou tradução.
+As 99 fichas anteriores permanecem integralmente preservadas.
+Uma candidata com aviso de loja fechada foi substituída; não se presume
+fechamento definitivo. Menus fotografados podem ser antigos, e fotos com
+identidade divergente ficam sinalizadas sem atribuir seus preços à filial.
+
+O filtro **Internacionais** tem 16 opções, incluindo os novos Raj e Dastaan
+(indianos), Alameen (árabe), Traktir e Moscow (russos). A referência continua
+¥200 por pessoa; exceções moderadas podem chegar a ¥250 de média observada e
+recebem aviso. O Moscow, média ¥225, exige atenção especial a taxas de serviço
+e menus de banquete muito acima do orçamento. Média não é teto garantido da conta.
+
+O filtro **Yunnan** inclui Little Yunnan, Hani Gejiu e In & Out, além da Yun'er
+já cadastrada. Jinyang Baiguang acrescenta cozinha de Shanxi. A seleção não força
+restaurantes internacionais em cada região: lugares fora dos passeios ficam em
+**Outras regiões · Vale o desvio**, com endereço e deslocamento explícitos.
+Beiping Garden Beijing Fang continua compartilhado por Dashilar/Qianmen,
+sem duplicar ficha ou escolhas. Dados e fotos das opções retiradas ficam em apoio
+e no histórico Git; exclusão por preferência não significa restaurante fechado.
+A seleção é por região, não por dia. Desvios para ruas adjacentes são indicados
+nas fichas; proximidade regional não significa estar na porta da atração ou do hotel.
+O almoço de 24/09/2026 continua ligado à seção de Guozijian, sem restaurante definido.
+
+As fichas consideram três adultos e crianças de quatro anos e dezoito meses,
+com sugestões de pratos e ressalvas sobre pimenta, ingredientes e orçamento.
+Pratos, preços e fotos observados, menus transcritos, ofertas e avaliações
+traduzidas ficam disponíveis offline. Cobertura e lacunas aparecem na própria
+ficha: menus não são necessariamente atuais/completos, parte dos nomes permanece
+em chinês e apenas quatro ofertas tiveram regras detalhadas recuperadas.
+Os demais pacotes mantêm as prévias e avisos de validade não confirmada.
+
+Revisão de 22/09: bloco de 20 restaurantes, com 287 preços digitais adicionais
+(690 → 977 pratos com preço entre os 1.185 registros do bloco; 208 ainda sem).
+As outras 79 fichas não foram alteradas. Foram consultadas até três páginas de
+19 catálogos; a rota de XiaoDadong retornou 404. Nenhum catálogo completo anterior
+foi substituído por essa amostra. Dezesseis pratos têm referências adicionais de
+cardápios fotografados; quando não há preço digital, a ficha mostra a referência
+com porção e ressalva de vigência, sem incluí-la no filtro de preços digitais.
+As 56 ofertas do bloco foram revisadas: 18 são vales-consumo, não combos; 18
+ofertas receberam 25 menções explícitas de pratos separadas da composição completa.
+Seis títulos foram traduzidos. A sonda de detalhes retornou 403: nenhuma composição
+completa nova nem validade de pacote foi confirmada. Os quatro detalhes anteriores
+permanecem preservados. A revisão parou após estas 20 filiais.
+
+Segundo bloco de 22/09: outras 20 filiais, sem repetir as anteriores, com 360
+preços adicionais (50 → 410 entre 419 pratos; nove ainda sem preço digital).
+Uma referência de cardápio fotografado complementa uma dessas lacunas, sem
+substituir o preço digital. Todos os 20 catálogos responderam, consultando até
+três páginas por filial e preservando os catálogos e fotos já cadastrados.
+Foram revisadas 59 ofertas: 22 vales-consumo e 37 outras promoções, com 26
+menções a itens em 20 ofertas. Corrigidos três vales homônimos que herdavam ID e
+horário de outro vale: agora associados pelo ID real da oferta. Detalhes completos
+de pacotes não foram reconsultados após o bloqueio recente; a composição continua
+parcial. As outras 79 fichas, incluindo as 20 do primeiro bloco, não mudaram.
+Total: 40 restaurantes revisados, 647 preços adicionais; nova pausa após o bloco.
+
+Encerramento da revisão de 22/09: as 59 fichas restantes também foram auditadas,
+cobrindo todas as 99 selecionadas. Nesta etapa entraram 79 preços digitais e 18
+referências fotográficas separadas. Das 26 consultas de catálogo, 25 responderam
+normalmente e Duyichu Qianmen retornou 403; as outras 33 não foram reconsultadas,
+mas seus catálogos já salvos, cardápios e ofertas foram revisados. O diagnóstico
+de cada ficha distingue atualização direta, bloqueio e revisão de dados salvos.
+Isso não representa rechecagem integral de todos os pratos nem preços completos:
+8.419 lacunas anteriores dos catálogos completos já eram preços não fornecidos
+pela fonte, e a revisão preserva essas ausências em vez de estimar valores.
+
+As 154 ofertas restantes têm revisão por filial, inclusive nove IDs de ofertas
+compartilhados por mais de uma filial. Dos 150 resumos, 63 têm 80 menções explícitas
+a itens; os quatro pacotes detalhados foram preservados. Corrigidas três ofertas
+classificadas como vale por falta de correspondência na base. Menções parciais
+antigas deixam de aparecer sob o título de composição completa. A composição
+completa dos demais pacotes e sua validade na viagem continuam pendentes.
+Total das três etapas: 726 preços digitais adicionais e 35 referências fotográficas,
+com origem e ressalvas; sem alteração de IDs de pratos, fotos ou escolhas pessoais.
+
+Reconsulta de ofertas em 22/09: a regra passou a ser três tentativas totais por
+URL e parada após três URLs distintas esgotadas. A execução consultou os pacotes
+840611504 (Raj Houhai), 1409950786 (Dastaan) e 1479279692 (Xiao Dadong): todos
+retornaram HTTP 403 nas três tentativas. Foram nove recusas em cerca de 13 segundos,
+com três abas e inícios espaçados em 1,5 s; as 247 URLs seguintes não foram abertas.
+Nenhuma composição ou regra nova foi recuperada. Só o aviso dessas três ofertas
+foi atualizado; os quatro detalhes completos e todos os pratos, preços, fotos,
+menus e avaliações anteriores foram preservados. Capturas e ferramentas continuam
+em `apoio/restaurantes-pequim/revisoes/ofertas-retry-2026-09-22/` e `coleta/`.
+
+Na primeira ampliação de 21/09, as 25 fichas foram capturadas, mas a paginação de pratos
+recebeu HTTP 403 e foi interrompida. Há três novos catálogos completos e dois
+parciais; nas outras vinte fichas permanecem as prévias e os menus fotografados.
+O aviso de cobertura distingue catálogo não consultado de ausência de pratos.
+
+Na rodada western, foram acrescentados 240 registros de prévias de pratos,
+31 imagens de menus inspecionadas, 31 ocorrências de ofertas e 30 prévias de
+avaliações traduzidas. A API voltou a responder HTTP403 na paginação da Barblu
+e no detalhe de um pacote da Pebbles; os recursos foram interrompidos. Dez preços
+da primeira página válida da Barblu complementam as prévias, sem reduzir seus
+20 registros. Os demais catálogos novos não foram paginados. Nem todos os locais
+expuseram avaliações ou menus, e a validade dos novos pacotes continua não confirmada.
+
+As nove fichas da revisão internacional/regional tiveram captura direta, com
+pratos sugeridos, fotos, ofertas expostas, avaliações e menus disponíveis. Seus
+catálogos completos e regras de pacotes foram adiados por causa dos bloqueios
+anteriores desses recursos. O aviso diferencia adiamento de bloqueio individual:
+não foi atribuída uma resposta 403 a uma filial não consultada.
+
+Para procurar um prato em qualquer região, selecione **Buscar em → Pratos ·
+todas as regiões** e digite seu nome em português ou chinês. A tabela mostra
+os restaurantes encontrados e suas regiões; abrir uma ficha já filtra seus
+pratos pelo termo pesquisado. Os filtros de perfil e escolha continuam ativos.
+A busca cobre os nomes coletados, sem inferir ingredientes nem traduzir os
+nomes ainda pendentes. Clicar numa região retorna ao modo regional.
+
+Busca por prato, filtros de preço/foto e ordenação usam todo o catálogo coletado
+da filial. Apenas 60 cartões são montados por vez; “Mostrar mais” continua a lista.
+Escolhas pessoais são separadas por restaurante e a exportação inclui todas as regiões.
+
+O carregamento é sob demanda: `dados/restaurantes.js` contém somente o índice
+de comparação/busca (cerca de 1,94 MB, incluindo os nomes para busca global,
+contra 51 MB do conjunto integral atual, sem fotos).
+Pratos, menus, avaliações e demais informações ficam em 109 arquivos individuais
+em `dados/fichas/`, carregados apenas ao clicar no nome do restaurante e
+reutilizados na mesma sessão. A mediana por ficha é cerca de 264 KB; o maior
+catálogo ocupa 3,42 MB. Nenhum conteúdo foi removido. Busca por prato, filtros,
+contagens e escolhas não precisam baixar os catálogos. Falhas permitem nova
+tentativa, sem trocar a ficha quando uma resposta antiga chega atrasada.
+Para abrir offline no Windows, copie a pasta completa, incluindo `dados/fichas/`
+e `imagens/`; não é necessário servidor. Visitar o site online, por si só, não
+baixa todos os arquivos para uso offline posterior.
+
+A página é independente, sem iframe nem bibliotecas novas. Não carrega o catálogo
+ao visitar as outras abas. Escolhas anteriores do piloto podem ser importadas
+por JSON; o armazenamento de `file://` não é transferido automaticamente ao site.
+O site contém somente a interface, os dados publicados e as imagens utilizadas.
+Coletores, scripts de atualização, testes e evidências ficam fora do repositório,
+em `apoio/restaurantes-pequim/`; as instruções de manutenção estão no README dessa
+pasta auxiliar. HTML, CSS e JS da interface são mantidos apenas neste repositório.
+
+## Provar em Pequim
+
+A aba `comidas/index.html` tem 30 itens: 17 comidas, oito doces e cinco bebidas sem álcool,
+com uma foto real por item, nome em chinês, pinyin, referências de onde procurar
+e notas sobre ingredientes/pimenta. Inclui pato de Pequim, churrasco na chapa,
+bolinhos de carne de Niujie, lurou huoshao, niurou li, doufunao, chao geda,
+zha guanchang e jiaoquan. Dalian huoshao e tanghuoshao foram mantidos sem duplicar.
+Chuanr, jiaozi, baozi, macarrão em caldo bovino, tanghulu e cerveja foram retirados
+conforme a preferência da família; os outros 24 IDs e conteúdos foram preservados.
+Especialidades de outras regiões populares
+em Pequim são identificadas, sem apresentá-las como originárias da cidade.
+
+O checklist registra o que já foi provado, com busca, filtros e progresso.
+As marcações ficam neste navegador; exportação/importação JSON permite guardar
+backup ou trocar de aparelho. Funciona por `file://`, sem servidor, internet ou
+dependência do catálogo de restaurantes. Links de fontes precisam de internet.
+As 30 fotos somam cerca de 333 KB; são referências visuais dos pratos, não garantia
+de apresentação em qualquer restaurante. Proveniência, pesquisa e testes ficam
+em `apoio/comidas-pequim/`, fora do repositório do site.
+
 ## O que está incluído
 
 - Layout responsivo, com prioridade para celulares.

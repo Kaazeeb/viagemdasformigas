@@ -41,6 +41,36 @@
   gap: 22px;
 }
 
+.beijing-sibling-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: var(--content);
+  margin: 16px auto 0;
+}
+
+.beijing-sibling-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 9px 13px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.beijing-sibling-nav a[aria-current="page"] {
+  background: var(--bj-red-dark);
+  color: var(--white);
+}
+
+.beijing-sibling-nav a:hover,
+.beijing-sibling-nav a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .beijing-back {
   display: inline-flex;
   min-height: 42px;
