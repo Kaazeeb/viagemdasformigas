@@ -1,6 +1,6 @@
-/* Roteiro operacional revisto em 20/09/2026. Tempos estimados; reservas separadas. */
+/* Roteiro operacional revisto em 23/09/2026. Tempos estimados; reservas separadas. */
 window.BEIJING_FINAL = {
-  "updatedAt": "20/09/2026",
+  "updatedAt": "23/09/2026",
   "hotel": {
     "name": "Xingyi Hotel · Temple of Heaven Dongmen",
     "zh": "星怡酒店（北京天坛东门地铁站店）",
@@ -9,8 +9,8 @@ window.BEIJING_FINAL = {
   },
   "essentials": [
     {
-      "title": "Roteiro fechado · reservas separadas",
-      "text": "Os locais destes quatro dias estão definidos. Hotel e motorista do dia 26 estão confirmados; ingressos, equipamento de Mutianyu, guarda de malas e transporte ao aeroporto não constam como reservados."
+      "title": "Roteiro-base · trechos flexíveis",
+      "text": "Dia 24 está organizado em uma sequência contínua de Templo do Céu, Templo Lama, Guozijian, Nanluoguxiang, torres, Shichahai e Qianmen/Dashilar à noite. No dia 25, a tarde fica flexível; no dia 26, o tempo no Palácio de Verão e a noite ficam em aberto; o dia 27 fica livre antes do aeroporto."
     },
     {
       "title": "Passaportes e ingressos",
@@ -26,7 +26,7 @@ window.BEIJING_FINAL = {
     },
     {
       "title": "Refeições continuam em aberto",
-      "text": "Almoço e jantar têm blocos próprios. Restaurantes serão escolhidos depois: sem frutos do mar e com opções sem pimenta para a família."
+      "text": "Almoços e jantares continuam sem restaurante fechado. Dia 24: almoço em Guozijian e noite em Qianmen/Dashilar. Dia 25: jantar de pato a definir, com Niujie como uma das opções de região. Dia 26: almoço no Palácio de Verão e noite flexível."
     },
     {
       "title": "Acessos e mapas",
@@ -34,7 +34,7 @@ window.BEIJING_FINAL = {
     },
     {
       "title": "Confirmar antes de sair",
-      "text": "Dia 24: acesso ao metrô e almoço em Guozijian. Dia 25: praça pela manhã antes do palácio, ingresso da Cidade Proibida e circulação em Taihemen. Dia 26: equipamentos de Mutianyu e condições para as crianças. Dia 27: reserva do Príncipe Gong, guarda de malas e traslado ao aeroporto às 16:30."
+      "text": "Dia 24: metrô para Yonghegong e sequência Wudaoying/Guozijian/Nanluoguxiang/Shichahai. Dia 25: praça e Cidade Proibida pela manhã, com tarde flexível. Dia 26: saída muito cedo para Mutianyu, chegada ao Palácio de Verão ainda de manhã e almoço no local. Dia 27: checkout, guarda de malas e traslado ao aeroporto às 16:30."
     }
   ],
   "sources": [
@@ -404,11 +404,11 @@ window.BEIJING_FINAL = {
       "id": "24",
       "date": "24 setembro",
       "weekday": "Quinta-feira",
-      "title": "Templos e Wangfujing",
-      "summary": "Templo do Céu → Lama → Guozijian → pausa no hotel → Wangfujing",
+      "title": "Templo do Céu, hutongs e Qianmen à noite",
+      "summary": "Templo do Céu (sul → leste) → metrô → Lama → Confúcio/Guozijian → Nanluoguxiang → Sino e Tambor → Shichahai → hotel → Qianmen/Dashilar",
       "departure": "07:25",
-      "returnTime": "20:45",
-      "note": "Templos pela manhã, almoço em Guozijian e descanso no hotel antes de Wangfujing.",
+      "returnTime": "21:45",
+      "note": "Começamos pelo sul do Templo do Céu e terminamos no Portão Leste. Depois seguimos de metrô ao Templo Lama, fazemos o circuito pelos hutongs até Shichahai, descansamos no hotel e fechamos a noite em Qianmen/Dashilar.",
       "steps": [
         {
           "id": "24-hotel-ceu",
@@ -417,9 +417,8 @@ window.BEIJING_FINAL = {
           "title": "Hotel → Portão Sul do Templo do Céu",
           "instructions": [
             "Sair do Xingyi com passaportes, água, carrinho e ingressos. Pedir o carro na porta do hotel.",
-            "Mostrar 天坛公园南门 — Portão Sul do Parque do Templo do Céu. Descer no ponto autorizado da Yongdingmen East Street 永定门东街; o carro não entra no parque.",
-            "Entrar pelo Portão Sul por volta de 07:50. Seguir as placas 圜丘 para estar no setor do Altar Circular na abertura dos monumentos às 08:00.",
-            "A entrada sul permite atravessar o conjunto até o Portão Leste, já junto do metrô para o Lama."
+            "Mostrar 天坛公园南门 — Portão Sul do Parque do Templo do Céu. A ideia do dia é entrar pelo sul e atravessar o conjunto até o lado leste.",
+            "Entrar pelo Portão Sul e seguir primeiro para o Altar Circular 圜丘, mantendo o eixo sul–norte até os monumentos principais."
           ],
           "transport": {
             "walkBefore": "0–5 min até o carro",
@@ -440,11 +439,9 @@ window.BEIJING_FINAL = {
           "time": "08:00–10:10",
           "title": "Templo do Céu",
           "instructions": [
-            "08:00–08:20 — começar no Altar Circular 圜丘, plataforma cerimonial aberta.",
-            "08:20–08:40 — seguir ao norte para a Abóbada Imperial 皇穹宇 e o Muro do Eco 回音壁. O eco depende do ruído; não reservar uma fila longa para testá-lo.",
-            "08:40–09:00 — continuar para norte pela Ponte Danbi 丹陛桥, a larga passagem elevada que liga os conjuntos.",
-            "09:00–09:40 — Pavilhão das Orações pelas Boas Colheitas 祈年殿: pátio, fachada circular azul e fotos. Pausa curta com as crianças.",
-            "09:40–10:10 — sair do conjunto pelo lado leste, percorrer o Longo Corredor 长廊 e seguir placas 东门 até o Portão Leste externo do parque. O pórtico interno East Heavenly Gate não é a saída para a rua. Este trecho já inclui a caminhada de saída."
+            "Começar no Altar Circular 圜丘 e seguir para a Abóbada Imperial 皇穹宇 e o Muro do Eco 回音壁.",
+            "Continuar para norte pela Ponte Danbi 丹陛桥 até o Pavilhão das Orações pelas Boas Colheitas 祈年殿.",
+            "Depois da visita, seguir para o lado leste e sair pelo Portão Leste externo do parque. O objetivo é terminar a travessia a leste, já perto do metrô."
           ],
           "zh": "天坛公园",
           "summary": "Complexo de cerimônias imperiais. O edifício circular de telhado azul é a principal referência visual.",
@@ -452,7 +449,7 @@ window.BEIJING_FINAL = {
           "leave": "10:10",
           "duration": "2h10, incluindo pausas e caminhada interna",
           "entry": "南门 · Portão Sul",
-          "exit": "东门 · Portão Leste externo; depois localizar Tiantandongmen A2",
+          "exit": "东门 · Portão Leste externo; depois seguir ao metrô Tiantandongmen",
           "alerts": [
             "Escadarias nas plataformas; um adulto pode acompanhar o carrinho no nível dos pátios."
           ],
@@ -548,12 +545,11 @@ window.BEIJING_FINAL = {
           "id": "24-heaven-lama",
           "type": "transport",
           "time": "10:10–10:55",
-          "title": "Templo do Céu → Templo Lama",
+          "title": "Templo do Céu → Yonghegong de metrô",
           "instructions": [
-            "Ao sair do Portão Leste externo, localizar Tiantandongmen 天坛东门 A2, no lado noroeste da estação. Conferir a placa A2 e o acesso disponível antes de descer.",
-            "Pegar a linha 5 para norte, sentido Tiantongyuan North 天通苑北.",
-            "Passar por Ciqikou → Chongwenmen → Dongdan → Dengshikou → Dongsi → Zhangzizhonglu → Beixinqiao. Descer na 8ª parada: Yonghegong 雍和宫.",
-            "Em Yonghegong, seguir as placas para F (sudeste). Já na rua, caminhar para sul pela Yonghegong Dajie até o átrio e a entrada do templo. Se F estiver fechado, pedir ao funcionário o acesso alternativo e a orientação para 雍和宫入口."
+            "Ao sair pelo Portão Leste, localizar Tiantandongmen 天坛东门 e entrar no metrô.",
+            "Pegar a linha 5 para norte, sentido Tiantongyuan North 天通苑北, e descer em Yonghegong 雍和宫.",
+            "Na saída, seguir para a região ao norte/oeste do complexo para começar o trecho a pé antes do Templo Lama."
           ],
           "transport": {
             "walkBefore": "1–3 min do Portão Leste ao acesso A2",
@@ -573,14 +569,32 @@ window.BEIJING_FINAL = {
           ]
         },
         {
+          "sources": [],
+          "id": "24-wudaoying",
+          "type": "transport",
+          "time": "10:55–11:15",
+          "title": "Yonghegong → Wudaoying → Templo Lama",
+          "zh": "五道营胡同 → 雍和宫",
+          "instructions": [
+            "Depois do metrô, caminhar pela Wudaoying Hutong 五道营胡同 — a rua de cima — em direção ao Templo Lama.",
+            "Usar esse trecho como passeio de aproximação, sem pressa, e então seguir para a entrada do Templo Lama.",
+            "Depois da visita ao Lama, o retorno será pela região do Templo de Confúcio e pela Rua Guozijian."
+          ],
+          "transport": {
+            "ride": "A pé",
+            "transfer": "Sem baldeação",
+            "buffer": "Trecho de passeio entre hutongs"
+          }
+        },
+        {
           "id": "24-lama",
           "type": "visit",
-          "time": "10:55–12:05",
+          "time": "11:15–12:10",
           "title": "Templo Lama · Yonghegong",
           "instructions": [
-            "Começar pelos portais ao sul; seguir o eixo de pátios: Zhaotaimen 昭泰门 → Yonghemen 雍和门 → salão Yonghegong 雍和宫殿.",
-            "Continuar por Yongyoudian 永佑殿 e Falundian 法轮殿 até Wanfuge 万福阁, o pavilhão do grande Buda Maitreya.",
-            "Retornar ao acesso sul pelos pátios e passagens liberados, seguindo as placas de saída 出口. O desenho identifica a sequência de salões; não fixa um corredor lateral disponível nem uma saída turística ao norte."
+            "Entrar no Templo Lama e percorrer o eixo principal de pátios e salões até o Wanfuge 万福阁.",
+            "Fazer a visita no ritmo do grupo e retornar à saída sul.",
+            "Ao sair, seguir para oeste em direção ao Templo de Confúcio e à Rua Guozijian."
           ],
           "zh": "雍和宫",
           "summary": "Templo budista tibetano em atividade, com pátios, incenso e o grande Maitreya no último pavilhão.",
@@ -664,43 +678,22 @@ window.BEIJING_FINAL = {
           }
         },
         {
-          "id": "24-lama-guozijian",
-          "type": "transport",
-          "time": "12:05–12:15",
-          "title": "Lama → Rua Guozijian",
-          "instructions": [
-            "Ao sair pelo sul do templo, localizar uma travessia permitida de Yonghegong Dajie; a planta de bairro não marca uma faixa ou semáforo exatos.",
-            "Atravessar onde permitido e entrar para oeste na Guozijian Jie 国子监街, reconhecível pelos portais tradicionais."
-          ],
-          "transport": {
-            "walkBefore": "5–10 min a pé",
-            "ride": "Não se aplica",
-            "transfer": "Sem baldeação",
-            "walkAfter": "Chegada ao portal leste da rua",
-            "buffer": "Incluído no intervalo"
-          },
-          "zh": "国子监街",
-          "sources": [
-            "guozijian"
-          ]
-        },
-        {
           "id": "24-guozijian",
           "type": "visit",
-          "time": "12:15–12:45",
-          "title": "Rua Guozijian",
+          "time": "12:10–12:45",
+          "title": "Templo de Confúcio e Rua Guozijian",
           "instructions": [
-            "Caminhar do portal leste para oeste, observando os portais, as árvores e as fachadas do Templo de Confúcio e da antiga Academia Imperial.",
-            "Fazer fotos pelo lado de fora e manter a visita na rua. O roteiro não inclui ingresso nem entrada nos museus.",
-            "Encerrar na região da rua e fazer a pausa de almoço antes de voltar ao metrô."
+            "Ao sair do Lama, seguir para a Rua Guozijian 国子监街.",
+            "Passar pelo Templo de Confúcio e pela antiga Academia Imperial. A parada faz parte da rota; a entrada interna pode ser decidida no momento conforme tempo e ingresso.",
+            "Continuar pela Guozijian e terminar o trecho na região escolhida para o almoço."
           ],
           "zh": "国子监街",
-          "summary": "Rua histórica da antiga Academia Imperial; passagem curta pelas fachadas e portais.",
+          "summary": "Retorno pela Guozijian, passando pelo Templo de Confúcio e pela antiga Academia Imperial antes do almoço.",
           "arrival": "12:15",
           "leave": "12:45",
           "duration": "30 min",
-          "entry": "Extremo leste, junto de Yonghegong Dajie",
-          "exit": "Retorno para Yonghegong após o almoço",
+          "entry": "Lado leste, vindo do Templo Lama",
+          "exit": "Região de Guozijian, para o almoço",
           "photos": [
             {
               "src": "assets/images/templo-confucio-guozijian/02.webp",
@@ -755,30 +748,303 @@ window.BEIJING_FINAL = {
             "label": "Comparar restaurantes para este almoço"
           },
           "instructions": [
-            "Almoçar na região da Rua Guozijian antes de voltar ao hotel; restaurante a definir, com opções sem frutos do mar e sem pimenta para as crianças.",
-            "O bloco inclui sentar, alimentar as crianças e uma pausa. Não há estabelecimento reservado."
+            "Almoçar na região da Rua Guozijian antes de seguir para Nanluoguxiang.",
+            "Restaurante a definir; manter a pausa confortável para as crianças."
           ],
           "sources": []
         },
         {
-          "id": "24-back-hotel",
+          "sources": [],
+          "id": "24-guozijian-nanluo",
           "type": "transport",
-          "time": "13:40–14:35",
-          "title": "Guozijian → hotel",
+          "time": "13:40–14:10",
+          "title": "Guozijian → Nanluoguxiang",
+          "zh": "国子监街 → 南锣鼓巷",
           "instructions": [
-            "Voltar para leste pela Guozijian Jie, cruzar Yonghegong Dajie onde permitido e seguir para norte até Yonghegong 雍和宫 F, ou o acesso alternativo indicado pela equipe da estação.",
-            "Linha 5 para sul, sentido Songjiazhuang 宋家庄. Descer após 8 paradas em Tiantandongmen 天坛东门; não há baldeação.",
-            "Em Tiantandongmen, usar o acesso combinado com a recepção. A2 continua sendo a referência junto do Portão Leste; seguir o percurso salvo até 北京市东城区天坛东里甲48号1号楼.",
-            "Se o acesso combinado estiver indisponível, mostrar o endereço à equipe da estação e pedir a saída e o trajeto de pedestres adequados ao carrinho. O intervalo de 12–18 min precisa ser ajustado ao caminho realmente usado."
+            "Depois do almoço, descer pela via principal e seguir para o acesso de Nanluoguxiang.",
+            "A partir de Nanluoguxiang, subir para o norte pelo eixo dos hutongs, na direção das torres do Sino e do Tambor."
           ],
           "transport": {
-            "walkBefore": "10–15 min até Yonghegong F",
-            "ride": "17–20 min de metrô · 8 paradas",
+            "ride": "A pé",
             "transfer": "Sem baldeação",
-            "walkAfter": "12–18 min de Tiantandongmen A2 ao hotel",
-            "buffer": "5–10 min para segurança e espera"
+            "buffer": "Ritmo de passeio"
+          }
+        },
+        {
+          "sources": [],
+          "id": "24-nanluoguxiang",
+          "type": "visit",
+          "time": "14:10–15:20",
+          "title": "Nanluoguxiang",
+          "zh": "南锣鼓巷",
+          "summary": "Caminhada pelos hutongs no sentido norte, conectando Guozijian à região das torres.",
+          "arrival": "Após o almoço",
+          "leave": "Por volta de 15:20",
+          "duration": "Cerca de 1h, com paradas",
+          "instructions": [
+            "Percorrer Nanluoguxiang no sentido norte, fazendo paradas curtas nas travessas e fachadas.",
+            "Manter o deslocamento como parte do passeio, sem obrigação de entrar em atrações.",
+            "No fim do trecho, seguir para a região das torres do Sino e do Tambor."
+          ]
+        },
+        {
+          "sources": [],
+          "id": "24-nanluo-towers",
+          "type": "transport",
+          "time": "15:20–15:35",
+          "title": "Nanluoguxiang → Torre do Sino",
+          "zh": "南锣鼓巷 → 钟楼",
+          "instructions": [
+            "Continuar para norte/oeste em direção à praça das torres.",
+            "Chegar primeiro à Torre do Sino e depois atravessar para a Torre do Tambor."
+          ],
+          "transport": {
+            "ride": "A pé",
+            "transfer": "Sem baldeação"
+          }
+        },
+        {
+          "id": "25-bell",
+          "type": "visit",
+          "time": "15:35–15:50",
+          "title": "Torre do Sino",
+          "instructions": [
+            "Fazer uma parada curta na Torre do Sino para fotos externas.",
+            "Depois, atravessar a praça em direção à Torre do Tambor."
+          ],
+          "zh": "钟楼",
+          "summary": "Torre de alvenaria que marcava as horas com o sino; nesta viagem, visita externa para fotos.",
+          "arrival": "13:35",
+          "leave": "13:50",
+          "duration": "15 min",
+          "entry": "Praça ao sul da torre",
+          "exit": "Pelo sul da praça, em direção ao Tambor",
+          "photos": [
+            {
+              "src": "assets/images/torres-tambor-sino-hutongs/06.webp",
+              "alt": "Torre do Sino: edifício de alvenaria, ao norte da praça entre as duas torres.",
+              "caption": "Torre do Sino: edifício de alvenaria, ao norte da praça entre as duas torres.",
+              "credit": "Jan Bockaert / Wikimedia Commons",
+              "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_Beijing_Bell_Tower_01.jpg",
+              "license": "CC BY-SA 2.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+            }
+          ],
+          "map": {
+            "title": "Torres, Yandai e Shichahai · mapa das ruas e lagos",
+            "src": "assets/itinerary/maps/real/shichahai-hutong-detailed-original.jpg",
+            "alt": "Mapa turístico bilíngue do centro histórico, com torres Sino e Tambor, Yandai Xiejie, Ponte Yinding, lagos Houhai e Qianhai e a malha de hutongs.",
+            "caption": "No setor superior esquerdo: 8 Bell Tower / 钟楼 → 7 Drum Tower / 鼓楼 → 9 Yandai Xiejie / 烟袋斜街. O passeio deste dia termina na rua Yandai; depois há deslocamento de carro para Qianmen. A linha colorida é um circuito histórico maior, não o nosso percurso completo. Usar ruas e marcos, não os estabelecimentos antigos como garantia.",
+            "sourceLabel": "WIKIBEIJING · mapa turístico de hutongs",
+            "sourceUrl": "https://es.maps-beijing.com/beijing-hutong-mapa",
+            "credit": "WIKIBEIJING · mapa turístico histórico reproduzido por Maps Beijing."
           },
-          "zh": "星怡酒店（北京天坛东门地铁站店）",
+          "sources": [
+            "oldtown",
+            "towers-prices-2026",
+            "towers-booking-2026"
+          ],
+          "admission": {
+            "type": "free",
+            "label": "¥0 · fotos externas, sem subida",
+            "items": [
+              {
+                "label": "Passeio previsto",
+                "value": "Praça e fachadas externas gratuitas para todas as idades, incluindo bebê, criança de 4 anos e idosos. Sem ingresso ou reserva para essa parada externa."
+              },
+              {
+                "label": "Interior opcional",
+                "value": "Torre do Sino: ¥10 integral / ¥5 reduzido; as duas torres: ¥30 / ¥15. Subida e visita interna não estão previstas nesta parada."
+              },
+              {
+                "label": "Se decidir entrar",
+                "value": "Compra pelo WeChat 北京钟鼓楼. Bilhetes reduzidos são vendidos presencialmente com documento; confirmar os critérios de idade e passaporte antes de comprar."
+              }
+            ],
+            "links": [
+              {
+                "label": "Preços e condições oficiais das torres",
+                "url": "https://english.beijing.gov.cn/travellinginbeijing/routes/202609/t20260914_4862923.html"
+              },
+              {
+                "label": "Canal de compra e atendimento",
+                "url": "https://english.beijing.gov.cn/travellinginbeijing/events/202607/t20260728_4794062.html"
+              }
+            ],
+            "notes": []
+          }
+        },
+        {
+          "id": "25-bell-drum",
+          "type": "transport",
+          "time": "15:50–15:55",
+          "title": "Torre do Sino → Torre do Tambor",
+          "instructions": [
+            "Atravessar a praça para sul até o lado norte da Torre do Tambor, sem subir às torres."
+          ],
+          "transport": {
+            "ride": "5 min a pé"
+          },
+          "sources": [
+            "oldtown"
+          ]
+        },
+        {
+          "id": "25-drum",
+          "type": "visit",
+          "time": "15:55–16:15",
+          "title": "Torre do Tambor",
+          "instructions": [
+            "Fazer a parada externa na Torre do Tambor e contornar até o lado sul.",
+            "Dali, seguir a pé para Yandai Xiejie e para a região de Shichahai."
+          ],
+          "zh": "鼓楼",
+          "summary": "Torre vermelha dos tambores do antigo sistema de marcação das horas de Pequim.",
+          "arrival": "13:55",
+          "leave": "14:15",
+          "duration": "20 min",
+          "entry": "Lado norte, vindo da praça entre as torres",
+          "exit": "Lado sul, para Di’anmen Outer Street",
+          "photos": [
+            {
+              "src": "assets/images/torres-tambor-sino-hutongs/01.webp",
+              "alt": "Torre do Tambor vista da Torre do Sino: a foto ajuda a reconhecer o edifício vermelho, mas nosso passeio será ao nível da rua.",
+              "caption": "Torre do Tambor vista da Torre do Sino: a foto ajuda a reconhecer o edifício vermelho, mas nosso passeio será ao nível da rua.",
+              "credit": "Toadspike / Wikimedia Commons",
+              "page": "https://commons.wikimedia.org/wiki/File:Beijing_Drum_Tower.jpg",
+              "license": "CC BY-SA 4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+            }
+          ],
+          "sources": [
+            "oldtown",
+            "towers-prices-2026",
+            "towers-booking-2026"
+          ],
+          "admission": {
+            "type": "free",
+            "label": "¥0 · fotos externas, sem subida",
+            "items": [
+              {
+                "label": "Passeio previsto",
+                "value": "Praça e fachadas externas gratuitas para todas as idades, incluindo bebê, criança de 4 anos e idosos. Sem ingresso ou reserva para essa parada externa."
+              },
+              {
+                "label": "Interior opcional",
+                "value": "Torre do Tambor: ¥20 integral / ¥10 reduzido; as duas torres: ¥30 / ¥15. Subida e visita interna não estão previstas nesta parada."
+              },
+              {
+                "label": "Se decidir entrar",
+                "value": "Compra pelo WeChat 北京钟鼓楼. Bilhetes reduzidos são vendidos presencialmente com documento; confirmar os critérios de idade e passaporte antes de comprar."
+              }
+            ],
+            "links": [
+              {
+                "label": "Preços e condições oficiais das torres",
+                "url": "https://english.beijing.gov.cn/travellinginbeijing/routes/202609/t20260914_4862923.html"
+              },
+              {
+                "label": "Canal de compra e atendimento",
+                "url": "https://english.beijing.gov.cn/travellinginbeijing/events/202607/t20260728_4794062.html"
+              }
+            ],
+            "notes": []
+          }
+        },
+        {
+          "id": "25-yandai-walk",
+          "type": "transport",
+          "time": "16:15–16:25",
+          "title": "Torre do Tambor → Shichahai",
+          "instructions": [
+            "Descer da Torre do Tambor em direção a Yandai Xiejie 烟袋斜街.",
+            "Usar a rua como entrada para a região dos lagos de Shichahai."
+          ],
+          "transport": {
+            "walkBefore": "5–10 min a pé",
+            "ride": "Não se aplica",
+            "transfer": "Sem baldeação",
+            "walkAfter": "Portal leste da rua",
+            "buffer": "Incluído no intervalo"
+          },
+          "zh": "烟袋斜街",
+          "sources": [
+            "streets"
+          ]
+        },
+        {
+          "id": "25-yandai",
+          "type": "visit",
+          "time": "16:25–17:20",
+          "title": "Shichahai e Yandai Xiejie",
+          "instructions": [
+            "Percorrer Yandai Xiejie em direção aos lagos e entrar na região de Shichahai.",
+            "Passear pela margem conforme a energia do grupo, sem transformar o trecho em uma visita longa.",
+            "Encerrar o passeio em Shichahai e chamar o carro para voltar ao hotel."
+          ],
+          "zh": "烟袋斜街",
+          "summary": "Fim do passeio da tarde entre Yandai Xiejie e os lagos de Shichahai.",
+          "arrival": "16:25",
+          "leave": "17:20",
+          "duration": "Cerca de 55 min",
+          "entry": "Yandai Xiejie, vindo da Torre do Tambor",
+          "exit": "Região de Shichahai, para o carro ao hotel",
+          "photos": [
+            {
+              "src": "assets/images/shichahai/05.webp",
+              "alt": "Yandai Xiejie: rua comercial estreita que percorremos em direção aos lagos.",
+              "caption": "Yandai Xiejie: rua comercial estreita que percorremos em direção aos lagos.",
+              "credit": "EditQ / Wikimedia Commons",
+              "page": "https://commons.wikimedia.org/wiki/File:%E7%83%9F%E8%A2%8B%E6%96%9C%E8%A1%97.jpg",
+              "license": "CC BY-SA 4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+            }
+          ],
+          "sources": [
+            "streets",
+            "shichahai",
+            "yandai-free-2026"
+          ],
+          "admission": {
+            "type": "free",
+            "label": "¥0 · rua pública",
+            "items": [
+              {
+                "label": "Admissão",
+                "value": "Caminhada pela Yandai Xiejie gratuita, sem ingresso ou reserva, para adultos, idosos e crianças."
+              },
+              {
+                "label": "Gastos opcionais",
+                "value": "Compras, refeições e serviços contratados nas lojas são pagos separadamente."
+              }
+            ],
+            "links": [
+              {
+                "label": "Yandai: informações oficiais da rua",
+                "url": "https://www.visitbeijing.com.cn/article/4QGRiEdVoLm"
+              }
+            ],
+            "notes": []
+          }
+        },
+        {
+          "id": "24-back-hotel",
+          "type": "transport",
+          "time": "17:20–18:10",
+          "title": "Shichahai → hotel",
+          "instructions": [
+            "Na região de Shichahai, confirmar no aplicativo um ponto permitido de embarque.",
+            "Pedir carro para 星怡酒店（北京天坛东门地铁站店）.",
+            "Chegar ao hotel para descanso antes do passeio noturno."
+          ],
+          "transport": {
+            "walkBefore": "5–10 min até o embarque",
+            "ride": "30–45 min de táxi/DiDi",
+            "transfer": "Sem baldeação",
+            "walkAfter": "0–5 min",
+            "buffer": "Margem para trânsito"
+          },
+          "zh": "什刹海 → 星怡酒店",
           "sources": [
             "heaven-metro",
             "lama-metro"
@@ -787,139 +1053,168 @@ window.BEIJING_FINAL = {
         {
           "id": "24-rest",
           "type": "rest",
-          "time": "14:35–17:00",
+          "time": "18:10–19:15",
           "title": "Pausa no hotel",
           "instructions": [
-            "Descanso, troca das crianças e recarga dos celulares. Separar somente o necessário para o passeio e o jantar."
+            "Descansar no hotel, trocar as crianças e sair leve para a noite."
           ],
-          "duration": "Cerca de 2h25",
+          "duration": "Cerca de 1h",
           "sources": []
         },
         {
-          "id": "24-wangfujing-metro",
+          "id": "25-qianmen-car",
           "type": "transport",
-          "time": "17:00–17:50",
-          "title": "Hotel → Wangfujing",
+          "time": "19:15–19:50",
+          "title": "Hotel → Qianmen",
+          "zh": "星怡酒店 → 前门大街",
           "instructions": [
-            "Seguir o caminho hotel–Tiantandongmen 天坛东门 confirmado com a recepção. A2 é a referência junto ao Portão Leste; pedir ajuda ao funcionário caso o carrinho exija outro acesso.",
-            "Linha 5 para norte, sentido Tiantongyuan North 天通苑北. Descer em Dongdan 东单, 3 paradas: Ciqikou, Chongwenmen, Dongdan.",
-            "Seguir as placas de transferência para a linha 1. Pegar o sentido oeste: a próxima estação deve ser Wangfujing 王府井. Descer após 1 parada.",
-            "Em Wangfujing, seguir a indicação completa E3 até a saída junto de Gongmei 工美大厦. Há várias saídas chamadas “nordeste”; a letra e o número distinguem a chegada planejada. Na rua, seguir para norte rumo ao APM."
+            "Depois do descanso, pedir carro para a região norte da Rua Qianmen 前门大街.",
+            "Descer no ponto permitido mais próximo da área de pedestres e começar a caminhada noturna."
           ],
           "transport": {
-            "walkBefore": "12–18 min até Tiantandongmen A2",
-            "ride": "9–12 min no trem, somando as duas linhas",
-            "transfer": "Dongdan · linha 5 → linha 1 · 5–8 min a pé",
-            "walkAfter": "3–5 min da saída E3 ao início da rua",
-            "buffer": "5–10 min de segurança e espera"
+            "walkBefore": "0–5 min",
+            "ride": "20–30 min de táxi/DiDi",
+            "transfer": "Sem baldeação",
+            "walkAfter": "5–10 min",
+            "buffer": "Conforme trânsito"
           },
-          "zh": "王府井地铁站 E3口",
           "sources": [
-            "wangfujing-metro",
-            "heaven-metro",
-            "lama-metro"
-          ],
-          "alerts": [
-            "Em Dongdan, conferir as placas da linha 1 e a próxima estação 王府井 antes de embarcar. Para o carrinho, pedir a rota de transferência e saída à equipe; não foi comprovado um trajeto contínuo sem degraus até E3."
+            "qianmen-free",
+            "shichahai"
           ]
         },
         {
-          "id": "24-wangfujing",
+          "id": "25-qianmen",
           "type": "visit",
-          "time": "17:50–19:00",
-          "title": "Wangfujing",
+          "time": "19:50–20:30",
+          "title": "Rua Qianmen",
           "instructions": [
-            "Começar pelo extremo sul da rua, perto da estação, e seguir para norte pelo passeio comercial.",
-            "Percorrer as fachadas, lojas e a região do shopping APM; terminar junto da fachada da Igreja de São José / Dongtang 王府井天主堂.",
-            "O jantar fica em aberto nesta região. Depois dele, buscar o carro numa rua com acesso permitido; não é necessário voltar todo o caminho até o metrô."
+            "Caminhar pela Rua Qianmen à noite, observando as fachadas e o movimento da região.",
+            "Seguir para sul até o cruzamento com Dashilar e então virar para oeste."
           ],
-          "zh": "王府井大街",
-          "summary": "Rua de comércio e passeio, com grandes lojas, shoppings e a fachada da igreja Dongtang.",
-          "arrival": "17:50",
-          "leave": "19:00",
-          "duration": "1h10 antes do jantar",
-          "entry": "Extremo sul, estação Wangfujing E3",
-          "exit": "Região norte/APM/Dongtang; carro após jantar",
+          "zh": "前门大街",
+          "summary": "Rua comercial monumental do antigo centro, conectada diretamente à praça.",
+          "arrival": "19:50",
+          "leave": "20:30",
+          "duration": "40 min",
+          "entry": "Extremo norte, junto de Zhengyangmen",
+          "exit": "Entroncamento com Dashilar, a oeste",
           "photos": [
             {
-              "src": "assets/images/streets/wangfujing-street/01.webp",
-              "alt": "Wangfujing: rua comercial percorrida do sul para norte.",
-              "caption": "Wangfujing: rua comercial percorrida do sul para norte.",
-              "credit": "TurnOnTheNight",
-              "page": "https://commons.wikimedia.org/wiki/File:Wangfujing_Street_from_Oriental_Plaza_20251002155933.jpg",
-              "license": "CC BY-SA 4.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+              "src": "assets/images/streets/qianmen-street/01.webp",
+              "alt": "Qianmen: rua de pedestres de fachadas tradicionais, percorrida para sul.",
+              "caption": "Qianmen: rua de pedestres de fachadas tradicionais, percorrida para sul.",
+              "credit": "The Erica Chang",
+              "page": "https://commons.wikimedia.org/wiki/File:Beijing_Qianmen_Street_-_panoramio_%282%29.jpg",
+              "license": "CC BY 3.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
             }
           ],
           "sources": [
-            "wangfujing-metro",
-            "wangfujing-street-free",
-            "apm-official",
-            "dongtang-admission"
+            "streets",
+            "qianmen-free"
           ],
+          "map": {
+            "title": "Qianmen e Dashilar · ruas e fachadas de referência",
+            "src": "assets/itinerary/maps/real/qianmen-dashilar-bjd-official-original.jpg",
+            "alt": "Mapa ilustrado do bairro Qianmen–Dashilar, com ruas, quarteirões e fachadas. Qianmen segue ao sul e Dashilar se estende para oeste.",
+            "caption": "A região da praça fica acima do mapa. Caminhar para sul pela 前门大街 Rua Qianmen, no centro-direita; virar à direita, para oeste, na 大栅栏街 Rua Dashilar, e seguir até 煤市街 Meishi Street para organizar a saída. A linha vermelha e os 22 pontos pertencem ao circuito cultural da publicação: nosso passeio usa somente esse trecho de Qianmen e Dashilar. As fachadas ajudam a reconhecer os cruzamentos.",
+            "sourceLabel": "Mapa cultural de Qianmen–Dashilar · Beijing Daily",
+            "sourceUrl": "https://xinwen.bjd.com.cn/content/s676678dde4b000299badaf9c.html",
+            "credit": "Mapa divulgado pelo Beijing Daily / 北京日报 · imagem original da publicação."
+          },
           "admission": {
             "type": "free",
-            "label": "Gratuito · rua e fachada da igreja",
+            "label": "Rua gratuita · sem ingresso",
             "items": [
               {
-                "label": "Admissão",
-                "value": "¥0 para adultos, idosos e crianças na rua e no passeio externo. Não há ingresso turístico para entrar nas áreas comerciais comuns do APM."
+                "label": "Adultos e crianças",
+                "value": "¥0 para caminhar pela rua pública, incluindo bebê, criança de 4 anos e idosos. Sem bilhete de admissão para este passeio externo."
               },
               {
-                "label": "O que é pago",
-                "value": "Compras, refeições, cinema e outras atividades contratadas no local."
-              },
-              {
-                "label": "Dongtang",
-                "value": "Visita prevista somente à fachada. Entrada no interior depende dos horários de abertura e celebrações da igreja."
+                "label": "Compras e atrações",
+                "value": "Lojas, alimentação e eventual bonde são pagos separadamente. O roteiro prevê caminhada e não inclui ingresso para torres, museus ou passeio no bonde."
               }
             ],
             "links": [
               {
-                "label": "Rua gratuita · Turismo de Pequim",
-                "url": "https://s.visitbeijing.com.cn/attraction/101739"
-              },
-              {
-                "label": "APM · site oficial",
-                "url": "https://www.beijingapm.cn/"
-              },
-              {
-                "label": "Igreja · informações de visita",
-                "url": "https://s.visitbeijing.com.cn/attraction/101705"
+                "label": "Qianmen: acesso gratuito — Turismo de Pequim",
+                "url": "https://english.beijing.gov.cn/specials/beijinglifeonthesubway/landmarksalongthesubwaylines/line2/202206/t20220624_2750319.html"
               }
             ],
             "notes": [
-              "Para caminhar pela rua e observar a fachada, não há reserva de admissão a emitir. Lojas e atrações internas seguem seus próprios horários."
+              "O acesso à praça Tian’anmen tem regras próprias; estar na Qianmen não substitui a reserva da praça."
             ]
           }
         },
         {
-          "id": "24-dinner",
-          "type": "meal",
-          "time": "19:00–20:00",
-          "title": "Jantar — opção será escolhida posteriormente",
+          "id": "25-dashilar",
+          "type": "visit",
+          "time": "20:30–21:10",
+          "title": "Dashilar",
           "instructions": [
-            "Restaurante a definir. Área conveniente: Wangfujing / APM.",
-            "O bloco inclui sentar, alimentar as crianças e uma pausa. Não há estabelecimento reservado."
+            "Passear por Dashilar depois de Qianmen, com paradas livres para lojas, lanche ou jantar se quiserem.",
+            "Encerrar o passeio na região de Meishi Jie e localizar o ponto de embarque para o hotel."
           ],
-          "sources": []
+          "zh": "大栅栏商业街",
+          "summary": "Rua de comércio tradicional mais estreita, ligada à Qianmen; uma continuação da mesma caminhada.",
+          "arrival": "20:30",
+          "leave": "21:10",
+          "duration": "40 min",
+          "entry": "Lado leste, vindo da Qianmen",
+          "exit": "Lado oeste, região de Meishi Jie",
+          "photos": [
+            {
+              "src": "assets/images/streets/dashilar/01.webp",
+              "alt": "Dashilar: corredor comercial mais estreito, com placas e fachadas tradicionais.",
+              "caption": "Dashilar: corredor comercial mais estreito, com placas e fachadas tradicionais.",
+              "credit": "WiNG",
+              "page": "https://commons.wikimedia.org/wiki/File:Dashala_Overview_201005.jpg",
+              "license": "CC BY-SA 3.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+            }
+          ],
+          "sources": [
+            "streets",
+            "dashilar-free"
+          ],
+          "admission": {
+            "type": "free",
+            "label": "Rua gratuita · sem ingresso",
+            "items": [
+              {
+                "label": "Adultos e crianças",
+                "value": "¥0 para a caminhada na rua comercial, em todas as idades. Sem ingresso nem reserva de atração para o percurso externo."
+              },
+              {
+                "label": "Consumo e interiores",
+                "value": "Compras, refeições, apresentações e outras atividades internas obedecem aos preços de cada estabelecimento. O card não inclui atração interna paga."
+              }
+            ],
+            "links": [
+              {
+                "label": "Dashilar: gratuidade e informações oficiais",
+                "url": "https://english.visitbeijing.com.cn/article/47OOqHK8iU2"
+              }
+            ],
+            "notes": []
+          }
         },
         {
           "id": "24-night-return",
           "type": "transport",
-          "time": "20:00–20:45",
-          "title": "Wangfujing → hotel",
+          "time": "21:10–21:45",
+          "title": "Dashilar → hotel",
           "instructions": [
-            "Sair do setor pedonal e pedir o carro no ponto permitido indicado pelo aplicativo, na rua acessível mais próxima do jantar.",
-            "Mostrar 星怡酒店（北京天坛东门地铁站店） e o endereço 北京市东城区天坛东里甲48号1号楼.",
-            "Confirmar o nome do hotel com o motorista; o destino é o Xingyi perto do Portão Leste do Templo do Céu."
+            "Sair da área pedonal e pedir o carro no ponto permitido mais próximo.",
+            "Voltar ao Xingyi para encerrar o dia."
           ],
           "transport": {
-            "walkBefore": "5–10 min até a rua de embarque",
-            "ride": "20–35 min de táxi/DiDi",
+            "walkBefore": "5–10 min",
+            "ride": "20–30 min de táxi/DiDi",
             "transfer": "Sem baldeação",
-            "walkAfter": "0–5 min até a recepção",
-            "buffer": "Até 10 min de espera, conforme oferta"
+            "walkAfter": "0–5 min",
+            "buffer": "Conforme trânsito"
           },
           "zh": "星怡酒店（北京天坛东门地铁站店）",
           "sources": []
@@ -930,11 +1225,11 @@ window.BEIJING_FINAL = {
       "id": "25",
       "date": "25 setembro",
       "weekday": "Sexta-feira",
-      "title": "Tian’anmen, Cidade Proibida e bairros históricos",
-      "summary": "Tian’anmen → Cidade Proibida → Jingshan → Sino → Tambor → Yandai Xiejie → Qianmen → Dashilar",
+      "title": "Tian’anmen, Cidade Proibida e Jingshan",
+      "summary": "Tian’anmen → Cidade Proibida → Jingshan → almoço → tarde flexível → hotel → jantar de pato",
       "departure": "05:45",
-      "returnTime": "18:15",
-      "note": "Primeiro dia do feriado. A praça vem antes da Cidade Proibida. Horários estimados: almoço na região de Jingshan e Qianmen/Dashilar à tarde, depois das torres e de Yandai.",
+      "returnTime": "Após o jantar",
+      "note": "Praça Tian’anmen, Cidade Proibida e Jingshan são o núcleo do dia. Depois do almoço, escolher entre repetir Shichahai/Nanluoguxiang ou conhecer um hutong novo. Descanso no hotel antes do jantar de pato; local ainda a definir, com Niujie como uma das opções de região.",
       "steps": [
         {
           "id": "25-start",
@@ -1280,417 +1575,41 @@ window.BEIJING_FINAL = {
           "id": "25-lunch",
           "type": "meal",
           "time": "12:05–13:00",
-          "title": "Almoço na região de Jingshan — restaurante a definir",
+          "title": "Almoço após Jingshan — restaurante a definir",
           "instructions": [
-            "Pausa para refeição, banheiro e alimentação das crianças na região de Jingshan, antes de seguir às torres. Restaurante ainda a escolher.",
-            "Com as torres e Yandai nesta sequência, Qianmen será alcançada à tarde. Não adiar a refeição principal das crianças até lá."
+            "Almoçar depois de Jingshan, antes de decidir o passeio da tarde.",
+            "A partir daqui o roteiro fica propositalmente flexível."
           ],
           "sources": []
         },
         {
-          "id": "25-towers-car",
-          "type": "transport",
-          "time": "13:00–13:35",
-          "title": "Jingshan → Torre do Sino",
-          "zh": "钟楼 · 钟楼湾胡同",
+          "sources": [],
+          "id": "25-afternoon-flex",
+          "type": "visit",
+          "time": "13:00–16:30",
+          "title": "Tarde flexível · Shichahai/Nanluoguxiang ou hutong novo",
+          "summary": "Escolha no dia conforme energia do grupo e vontade de repetir a região do dia 24 ou conhecer outra área.",
           "instructions": [
-            "Após o almoço, confirmar no aplicativo um ponto permitido próximo do Portão Sul de Jingshan.",
-            "Pedir carro para a região de 钟楼 Torre do Sino; o desembarque ocorre na rua autorizada, sem presumir acesso de veículos à praça entre as torres.",
-            "Caminhar à praça ao sul da Torre do Sino."
-          ],
-          "transport": {
-            "walkBefore": "5 min até o embarque",
-            "ride": "15–20 min de táxi/DiDi",
-            "transfer": "Sem baldeação",
-            "walkAfter": "5 min até a praça",
-            "buffer": "5–10 min para espera e embarque"
-          },
-          "sources": [
-            "oldtown"
+            "Opção 1: voltar a Shichahai e/ou Nanluoguxiang para passear com mais calma.",
+            "Opção 2: escolher um hutong novo e fazer um passeio sem compromissos de horário.",
+            "Não há atração obrigatória nesta faixa; preservar tempo para retornar ao hotel e descansar antes do jantar."
           ]
-        },
-        {
-          "id": "25-bell",
-          "type": "visit",
-          "time": "13:35–13:50",
-          "title": "Torre do Sino",
-          "instructions": [
-            "Fotografar a fachada a partir da praça ao sul da torre.",
-            "Depois das fotos, atravessar a praça para sul em direção à Torre do Tambor; a caminhada tem etapa própria a seguir."
-          ],
-          "zh": "钟楼",
-          "summary": "Torre de alvenaria que marcava as horas com o sino; nesta viagem, visita externa para fotos.",
-          "arrival": "13:35",
-          "leave": "13:50",
-          "duration": "15 min",
-          "entry": "Praça ao sul da torre",
-          "exit": "Pelo sul da praça, em direção ao Tambor",
-          "photos": [
-            {
-              "src": "assets/images/torres-tambor-sino-hutongs/06.webp",
-              "alt": "Torre do Sino: edifício de alvenaria, ao norte da praça entre as duas torres.",
-              "caption": "Torre do Sino: edifício de alvenaria, ao norte da praça entre as duas torres.",
-              "credit": "Jan Bockaert / Wikimedia Commons",
-              "page": "https://commons.wikimedia.org/wiki/File:2015-01-14_Beijing_Bell_Tower_01.jpg",
-              "license": "CC BY-SA 2.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
-            }
-          ],
-          "map": {
-            "title": "Torres, Yandai e Shichahai · mapa das ruas e lagos",
-            "src": "assets/itinerary/maps/real/shichahai-hutong-detailed-original.jpg",
-            "alt": "Mapa turístico bilíngue do centro histórico, com torres Sino e Tambor, Yandai Xiejie, Ponte Yinding, lagos Houhai e Qianhai e a malha de hutongs.",
-            "caption": "No setor superior esquerdo: 8 Bell Tower / 钟楼 → 7 Drum Tower / 鼓楼 → 9 Yandai Xiejie / 烟袋斜街. O passeio deste dia termina na rua Yandai; depois há deslocamento de carro para Qianmen. A linha colorida é um circuito histórico maior, não o nosso percurso completo. Usar ruas e marcos, não os estabelecimentos antigos como garantia.",
-            "sourceLabel": "WIKIBEIJING · mapa turístico de hutongs",
-            "sourceUrl": "https://es.maps-beijing.com/beijing-hutong-mapa",
-            "credit": "WIKIBEIJING · mapa turístico histórico reproduzido por Maps Beijing."
-          },
-          "sources": [
-            "oldtown",
-            "towers-prices-2026",
-            "towers-booking-2026"
-          ],
-          "admission": {
-            "type": "free",
-            "label": "¥0 · fotos externas, sem subida",
-            "items": [
-              {
-                "label": "Passeio previsto",
-                "value": "Praça e fachadas externas gratuitas para todas as idades, incluindo bebê, criança de 4 anos e idosos. Sem ingresso ou reserva para essa parada externa."
-              },
-              {
-                "label": "Interior opcional",
-                "value": "Torre do Sino: ¥10 integral / ¥5 reduzido; as duas torres: ¥30 / ¥15. Subida e visita interna não estão previstas nesta parada."
-              },
-              {
-                "label": "Se decidir entrar",
-                "value": "Compra pelo WeChat 北京钟鼓楼. Bilhetes reduzidos são vendidos presencialmente com documento; confirmar os critérios de idade e passaporte antes de comprar."
-              }
-            ],
-            "links": [
-              {
-                "label": "Preços e condições oficiais das torres",
-                "url": "https://english.beijing.gov.cn/travellinginbeijing/routes/202609/t20260914_4862923.html"
-              },
-              {
-                "label": "Canal de compra e atendimento",
-                "url": "https://english.beijing.gov.cn/travellinginbeijing/events/202607/t20260728_4794062.html"
-              }
-            ],
-            "notes": []
-          }
-        },
-        {
-          "id": "25-bell-drum",
-          "type": "transport",
-          "time": "13:50–13:55",
-          "title": "Torre do Sino → Torre do Tambor",
-          "instructions": [
-            "Atravessar a praça para sul até o lado norte da Torre do Tambor, sem subir às torres."
-          ],
-          "transport": {
-            "ride": "5 min a pé"
-          },
-          "sources": [
-            "oldtown"
-          ]
-        },
-        {
-          "id": "25-drum",
-          "type": "visit",
-          "time": "13:55–14:15",
-          "title": "Torre do Tambor",
-          "instructions": [
-            "Chegar pelo lado norte, vindo da praça. Fazer fotos do edifício vermelho e contornar pelas ruas laterais permitidas até sua fachada sul.",
-            "Do lado sul, localizar Di’anmen Outer Street 地安门外大街 para continuar à Yandai Xiejie."
-          ],
-          "zh": "鼓楼",
-          "summary": "Torre vermelha dos tambores do antigo sistema de marcação das horas de Pequim.",
-          "arrival": "13:55",
-          "leave": "14:15",
-          "duration": "20 min",
-          "entry": "Lado norte, vindo da praça entre as torres",
-          "exit": "Lado sul, para Di’anmen Outer Street",
-          "photos": [
-            {
-              "src": "assets/images/torres-tambor-sino-hutongs/01.webp",
-              "alt": "Torre do Tambor vista da Torre do Sino: a foto ajuda a reconhecer o edifício vermelho, mas nosso passeio será ao nível da rua.",
-              "caption": "Torre do Tambor vista da Torre do Sino: a foto ajuda a reconhecer o edifício vermelho, mas nosso passeio será ao nível da rua.",
-              "credit": "Toadspike / Wikimedia Commons",
-              "page": "https://commons.wikimedia.org/wiki/File:Beijing_Drum_Tower.jpg",
-              "license": "CC BY-SA 4.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
-            }
-          ],
-          "sources": [
-            "oldtown",
-            "towers-prices-2026",
-            "towers-booking-2026"
-          ],
-          "admission": {
-            "type": "free",
-            "label": "¥0 · fotos externas, sem subida",
-            "items": [
-              {
-                "label": "Passeio previsto",
-                "value": "Praça e fachadas externas gratuitas para todas as idades, incluindo bebê, criança de 4 anos e idosos. Sem ingresso ou reserva para essa parada externa."
-              },
-              {
-                "label": "Interior opcional",
-                "value": "Torre do Tambor: ¥20 integral / ¥10 reduzido; as duas torres: ¥30 / ¥15. Subida e visita interna não estão previstas nesta parada."
-              },
-              {
-                "label": "Se decidir entrar",
-                "value": "Compra pelo WeChat 北京钟鼓楼. Bilhetes reduzidos são vendidos presencialmente com documento; confirmar os critérios de idade e passaporte antes de comprar."
-              }
-            ],
-            "links": [
-              {
-                "label": "Preços e condições oficiais das torres",
-                "url": "https://english.beijing.gov.cn/travellinginbeijing/routes/202609/t20260914_4862923.html"
-              },
-              {
-                "label": "Canal de compra e atendimento",
-                "url": "https://english.beijing.gov.cn/travellinginbeijing/events/202607/t20260728_4794062.html"
-              }
-            ],
-            "notes": []
-          }
-        },
-        {
-          "id": "25-yandai-walk",
-          "type": "transport",
-          "time": "14:15–14:25",
-          "title": "Torre do Tambor → Yandai Xiejie",
-          "instructions": [
-            "Da fachada sul da Torre do Tambor, seguir para sul pela Di’anmen Outer Street.",
-            "Entrar à direita, para oeste/sudoeste, na 烟袋斜街 Yandai Xiejie."
-          ],
-          "transport": {
-            "walkBefore": "5–10 min a pé",
-            "ride": "Não se aplica",
-            "transfer": "Sem baldeação",
-            "walkAfter": "Portal leste da rua",
-            "buffer": "Incluído no intervalo"
-          },
-          "zh": "烟袋斜街",
-          "sources": [
-            "streets"
-          ]
-        },
-        {
-          "id": "25-yandai",
-          "type": "visit",
-          "time": "14:25–14:55",
-          "title": "Yandai Xiejie",
-          "instructions": [
-            "Entrar pela Di’anmen Outer Street 地安门外大街 e percorrer a rua diagonal, com pequenas paradas nas fachadas e lojas.",
-            "Caminhar até o extremo sudoeste, próximo da Ponte Yinding, sem acrescentar passeio pelos lagos. A visita é à Yandai Xiejie.",
-            "Voltar pela própria rua ao lado leste para alcançar Di’anmen Outer Street e o ponto de embarque permitido, confirmado no aplicativo."
-          ],
-          "zh": "烟袋斜街",
-          "summary": "Rua histórica de lojas e fachadas; passeio curto antes do deslocamento para Qianmen.",
-          "arrival": "14:25",
-          "leave": "14:55",
-          "duration": "30 min, incluindo fotos e retorno ao lado leste",
-          "entry": "Leste, pela Di’anmen Outer Street",
-          "exit": "Retorno ao extremo leste, para Di’anmen Outer Street",
-          "photos": [
-            {
-              "src": "assets/images/shichahai/05.webp",
-              "alt": "Yandai Xiejie: rua comercial estreita que percorremos em direção aos lagos.",
-              "caption": "Yandai Xiejie: rua comercial estreita que percorremos em direção aos lagos.",
-              "credit": "EditQ / Wikimedia Commons",
-              "page": "https://commons.wikimedia.org/wiki/File:%E7%83%9F%E8%A2%8B%E6%96%9C%E8%A1%97.jpg",
-              "license": "CC BY-SA 4.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
-            }
-          ],
-          "sources": [
-            "streets",
-            "shichahai",
-            "yandai-free-2026"
-          ],
-          "admission": {
-            "type": "free",
-            "label": "¥0 · rua pública",
-            "items": [
-              {
-                "label": "Admissão",
-                "value": "Caminhada pela Yandai Xiejie gratuita, sem ingresso ou reserva, para adultos, idosos e crianças."
-              },
-              {
-                "label": "Gastos opcionais",
-                "value": "Compras, refeições e serviços contratados nas lojas são pagos separadamente."
-              }
-            ],
-            "links": [
-              {
-                "label": "Yandai: informações oficiais da rua",
-                "url": "https://www.visitbeijing.com.cn/article/4QGRiEdVoLm"
-              }
-            ],
-            "notes": []
-          }
-        },
-        {
-          "id": "25-qianmen-car",
-          "type": "transport",
-          "time": "14:55–15:55",
-          "title": "Yandai Xiejie → Rua Qianmen",
-          "zh": "地安门外大街 → 前门大街",
-          "instructions": [
-            "Do extremo leste de Yandai, alcançar o ponto de embarque permitido na Di’anmen Outer Street, conforme o aplicativo.",
-            "Pedir carro para a região norte da Rua Qianmen 前门大街. Usar 前门东大街 como referência de aproximação e combinar com o motorista o desembarque autorizado.",
-            "Caminhar à rua comercial de pedestres. O trajeto não exige retornar à praça Tian’anmen; não entrar novamente no controle da praça."
-          ],
-          "transport": {
-            "walkBefore": "5–10 min até o embarque",
-            "ride": "25–35 min de táxi/DiDi",
-            "transfer": "Sem baldeação",
-            "walkAfter": "5–10 min até a rua comercial",
-            "buffer": "5–15 min para espera e trânsito do feriado"
-          },
-          "sources": [
-            "qianmen-free",
-            "shichahai"
-          ]
-        },
-        {
-          "id": "25-qianmen",
-          "type": "visit",
-          "time": "15:55–16:35",
-          "title": "Rua Qianmen",
-          "instructions": [
-            "Começar no extremo norte, com as torres de Zhengyangmen e o pailou atrás do grupo, e caminhar para sul pela avenida de pedestres. A via larga e os trilhos ajudam a reconhecer Qianmen.",
-            "Observar as fachadas, placas e lojas tradicionais. O passeio é a pé; não depende de passeio no bonde.",
-            "No cruzamento, conferir a placa 大栅栏商业街 e virar à direita, para oeste, entrando em Dashilar. 鲜鱼口 Xianyukou fica para leste, do outro lado de Qianmen, e não é o trecho escolhido."
-          ],
-          "zh": "前门大街",
-          "summary": "Rua comercial monumental do antigo centro, conectada diretamente à praça.",
-          "arrival": "15:55",
-          "leave": "16:35",
-          "duration": "40 min",
-          "entry": "Extremo norte, junto de Zhengyangmen",
-          "exit": "Entroncamento com Dashilar, a oeste",
-          "photos": [
-            {
-              "src": "assets/images/streets/qianmen-street/01.webp",
-              "alt": "Qianmen: rua de pedestres de fachadas tradicionais, percorrida para sul.",
-              "caption": "Qianmen: rua de pedestres de fachadas tradicionais, percorrida para sul.",
-              "credit": "The Erica Chang",
-              "page": "https://commons.wikimedia.org/wiki/File:Beijing_Qianmen_Street_-_panoramio_%282%29.jpg",
-              "license": "CC BY 3.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
-            }
-          ],
-          "sources": [
-            "streets",
-            "qianmen-free"
-          ],
-          "map": {
-            "title": "Qianmen e Dashilar · ruas e fachadas de referência",
-            "src": "assets/itinerary/maps/real/qianmen-dashilar-bjd-official-original.jpg",
-            "alt": "Mapa ilustrado do bairro Qianmen–Dashilar, com ruas, quarteirões e fachadas. Qianmen segue ao sul e Dashilar se estende para oeste.",
-            "caption": "A região da praça fica acima do mapa. Caminhar para sul pela 前门大街 Rua Qianmen, no centro-direita; virar à direita, para oeste, na 大栅栏街 Rua Dashilar, e seguir até 煤市街 Meishi Street para organizar a saída. A linha vermelha e os 22 pontos pertencem ao circuito cultural da publicação: nosso passeio usa somente esse trecho de Qianmen e Dashilar. As fachadas ajudam a reconhecer os cruzamentos.",
-            "sourceLabel": "Mapa cultural de Qianmen–Dashilar · Beijing Daily",
-            "sourceUrl": "https://xinwen.bjd.com.cn/content/s676678dde4b000299badaf9c.html",
-            "credit": "Mapa divulgado pelo Beijing Daily / 北京日报 · imagem original da publicação."
-          },
-          "admission": {
-            "type": "free",
-            "label": "Rua gratuita · sem ingresso",
-            "items": [
-              {
-                "label": "Adultos e crianças",
-                "value": "¥0 para caminhar pela rua pública, incluindo bebê, criança de 4 anos e idosos. Sem bilhete de admissão para este passeio externo."
-              },
-              {
-                "label": "Compras e atrações",
-                "value": "Lojas, alimentação e eventual bonde são pagos separadamente. O roteiro prevê caminhada e não inclui ingresso para torres, museus ou passeio no bonde."
-              }
-            ],
-            "links": [
-              {
-                "label": "Qianmen: acesso gratuito — Turismo de Pequim",
-                "url": "https://english.beijing.gov.cn/specials/beijinglifeonthesubway/landmarksalongthesubwaylines/line2/202206/t20220624_2750319.html"
-              }
-            ],
-            "notes": [
-              "O acesso à praça Tian’anmen tem regras próprias; estar na Qianmen não substitui a reserva da praça."
-            ]
-          }
-        },
-        {
-          "id": "25-dashilar",
-          "type": "visit",
-          "time": "16:35–17:15",
-          "title": "Dashilar",
-          "instructions": [
-            "Seguir para oeste pela Dashilar Commercial Street 大栅栏商业街, com fotos nas fachadas e breves paradas.",
-            "Avançar até a região de Meishi Jie 煤市街, via de referência para deixar o setor pedonal.",
-            "Encerrar ali a caminhada e localizar no aplicativo um ponto permitido de embarque; não esperar que o carro entre na rua comercial."
-          ],
-          "zh": "大栅栏商业街",
-          "summary": "Rua de comércio tradicional mais estreita, ligada à Qianmen; uma continuação da mesma caminhada.",
-          "arrival": "16:35",
-          "leave": "17:15",
-          "duration": "40 min",
-          "entry": "Lado leste, vindo da Qianmen",
-          "exit": "Lado oeste, região de Meishi Jie",
-          "photos": [
-            {
-              "src": "assets/images/streets/dashilar/01.webp",
-              "alt": "Dashilar: corredor comercial mais estreito, com placas e fachadas tradicionais.",
-              "caption": "Dashilar: corredor comercial mais estreito, com placas e fachadas tradicionais.",
-              "credit": "WiNG",
-              "page": "https://commons.wikimedia.org/wiki/File:Dashala_Overview_201005.jpg",
-              "license": "CC BY-SA 3.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
-            }
-          ],
-          "sources": [
-            "streets",
-            "dashilar-free"
-          ],
-          "admission": {
-            "type": "free",
-            "label": "Rua gratuita · sem ingresso",
-            "items": [
-              {
-                "label": "Adultos e crianças",
-                "value": "¥0 para a caminhada na rua comercial, em todas as idades. Sem ingresso nem reserva de atração para o percurso externo."
-              },
-              {
-                "label": "Consumo e interiores",
-                "value": "Compras, refeições, apresentações e outras atividades internas obedecem aos preços de cada estabelecimento. O card não inclui atração interna paga."
-              }
-            ],
-            "links": [
-              {
-                "label": "Dashilar: gratuidade e informações oficiais",
-                "url": "https://english.visitbeijing.com.cn/article/47OOqHK8iU2"
-              }
-            ],
-            "notes": []
-          }
         },
         {
           "id": "25-return",
           "type": "transport",
-          "time": "17:15–18:15",
-          "title": "Dashilar → hotel",
+          "time": "16:30–17:30",
+          "title": "Passeio da tarde → hotel",
           "instructions": [
-            "Confirmar no aplicativo o ponto acessível ao carro na região de 煤市街 Meishi Jie; caminhar até o ponto confirmado.",
-            "Usar o destino 星怡酒店（北京天坛东门地铁站店）, endereço 北京市东城区天坛东里甲48号1号楼.",
-            "Chegada estimada às 18:15. Se o trânsito do feriado atrasar o retorno, ajustar a pausa no hotel e o jantar."
+            "Quando encerrarem a tarde, chamar carro ou usar o transporte mais conveniente para voltar ao Xingyi.",
+            "A prioridade é chegar ao hotel com folga para descanso antes do jantar."
           ],
           "transport": {
-            "walkBefore": "5–15 min até um embarque permitido em Meishi Jie",
-            "ride": "20–40 min de táxi/DiDi",
-            "transfer": "Sem baldeação",
-            "walkAfter": "0–5 min até a recepção",
-            "buffer": "5–15 min de espera; chegada pode passar de 18:00 com trânsito"
+            "walkBefore": "Conforme o local escolhido",
+            "ride": "Tempo variável",
+            "transfer": "A definir",
+            "walkAfter": "0–10 min",
+            "buffer": "Manter folga"
           },
           "zh": "星怡酒店（北京天坛东门地铁站店）",
           "sources": []
@@ -1698,23 +1617,28 @@ window.BEIJING_FINAL = {
         {
           "id": "25-rest",
           "type": "rest",
-          "time": "18:15–19:00",
+          "time": "17:30–19:00",
           "title": "Pausa no hotel",
           "instructions": [
-            "Descanso e troca das crianças antes do jantar."
+            "Descansar no hotel antes do jantar."
           ],
           "sources": []
         },
         {
           "id": "25-dinner",
           "type": "meal",
-          "time": "19:00–20:00",
-          "title": "Jantar — opção será escolhida posteriormente",
+          "time": "19:00–21:00",
+          "title": "Jantar de pato — local a definir",
           "instructions": [
-            "Restaurante a definir. Área conveniente: arredores do hotel / Tiantan Dongmen.",
-            "O bloco inclui sentar, alimentar as crianças e uma pausa. Não há estabelecimento reservado."
+            "Escolher um restaurante de pato de Pequim; o local ainda não está fechado.",
+            "Niujie é uma das opções de região para a noite. Se preferirem outra área para o pato, manter Niujie para outro momento.",
+            "Reservar tempo para um jantar tranquilo e voltar ao hotel depois."
           ],
-          "sources": []
+          "sources": [],
+          "relatedGuide": {
+            "href": "restaurantes/index.html",
+            "label": "Comparar restaurantes para o jantar"
+          }
         }
       ]
     },
@@ -1723,21 +1647,20 @@ window.BEIJING_FINAL = {
       "date": "26 setembro",
       "weekday": "Sábado",
       "title": "Muralha e Palácio de Verão",
-      "summary": "Mutianyu → Palácio de Verão → hotel · motorista contratado",
+      "summary": "Mutianyu bem cedo → Palácio de Verão ainda de manhã → almoço no palácio → tempo aberto → hotel → noite flexível",
       "departure": "05:30",
-      "returnTime": "18:00",
-      "note": "O motorista já está contratado. Confirmar na véspera os pontos de encontro e o equipamento de subida/descida da muralha.",
+      "returnTime": "Após a noite flexível",
+      "note": "Sair muito cedo para Mutianyu e seguir diretamente ao Palácio de Verão, buscando chegar ainda de manhã. Almoçar no palácio; o tempo de permanência depois do almoço fica a definir. Depois, descansar no hotel e escolher a noite entre Niujie, uma região nova, Qianmen/Dashilar ou Wangfujing.",
       "steps": [
         {
           "id": "26-driver",
           "type": "transport",
-          "time": "05:30–07:30",
+          "time": "05:30–07:15",
           "title": "Hotel → Mutianyu com motorista",
           "instructions": [
-            "Encontrar o motorista na porta do Xingyi às 05:30, com os passaportes e tudo que será usado até o retorno no fim do dia.",
-            "Destino 慕田峪长城游客中心 — Centro de Visitantes de Mutianyu. O estacionamento inferior não é o acesso direto à muralha.",
-            "Combinar agora o ponto de reencontro, telefone e mensagem para avisar a descida. Fotografar a placa/local do estacionamento.",
-            "Meta de chegada: 07:15–07:30. O trânsito de feriado pode alterar o intervalo."
+            "Encontrar o motorista na porta do Xingyi às 05:30, com passaportes e tudo que será usado até o retorno.",
+            "Seguir diretamente para Mutianyu e confirmar com o motorista que, depois da muralha, o próximo destino será o Palácio de Verão.",
+            "Meta: chegar cedo o suficiente para iniciar a visita assim que o acesso/equipamento estiver operando."
           ],
           "transport": {
             "walkBefore": "0–5 min até o veículo",
@@ -1755,13 +1678,12 @@ window.BEIJING_FINAL = {
         {
           "id": "26-ascent",
           "type": "transport",
-          "time": "07:30–08:30",
+          "time": "07:15–07:50",
           "title": "Centro de visitantes → muralha",
           "instructions": [
-            "Validar/comprar o ingresso do parque e o bilhete do shuttle. Entrar na fila do transporte interno para a base da encosta.",
-            "Antes de comprar a subida, confirmar o equipamento, os dois trajetos e as condições do operador para cada pessoa. Informar idade e altura das duas crianças; a possibilidade de tobogã precisa incluir uma alternativa de descida se alguém não puder usá-lo.",
-            "Cabine fechada 缆车: controle norte 北检票口, chegada perto da torre 14. Cadeirinha aberta 索道 e tobogã 滑道: procurar o controle específico do bilhete (“Slide Ticket Gate”) e as placas 施必得索道滑道, no setor sul, para a região das torres 5–6. 南检票口 também designa o controle sul das trilhas; não basta seguir apenas “Portão Sul”.",
-            "Seguir o controle do equipamento comprado e guardar os bilhetes. Cabine fechada e cadeirinha/tobogã têm operadores e bilhetes diferentes; um bilhete de ida e volta da cabine não cobre a descida no tobogã."
+            "Validar os ingressos e seguir para o equipamento de subida já escolhido/confirmado.",
+            "Manter o processo objetivo para não atrasar a saída rumo ao Palácio de Verão.",
+            "Confirmar novamente as condições para as crianças antes de embarcar."
           ],
           "transport": {
             "walkBefore": "10–15 min pela área comercial até o shuttle",
@@ -1827,20 +1749,18 @@ window.BEIJING_FINAL = {
         {
           "id": "26-wall",
           "type": "visit",
-          "time": "08:30–10:30",
+          "time": "07:50–09:15",
           "title": "Grande Muralha · Mutianyu",
           "instructions": [
-            "Ao desembarcar, identificar o número da torre, fotografar a sinalização e localizar o acesso de descida comprado.",
-            "Percorrer as torres próximas ao desembarque, com fotos e pausas. A janela de duas horas é de visita total, não uma estimativa de duas horas para caminhar 1,3 km.",
-            "Manter a caminhada em um trecho curto; não programar a subida íngreme até a torre 20.",
-            "Às 10:15, começar a voltar ao acesso de descida comprado. Tobogã/cadeirinha ficam na região das torres 5–6; a cabine fechada fica perto da 14. Não confundir número da torre com controle de ingresso na base.",
-            "Não começar pela torre 14 supondo que o tobogã esteja ao lado: entre as torres 14 e 6 existe um trecho real de muralha com degraus, a considerar antes de embarcar."
+            "Fazer um trecho curto de Mutianyu, com fotos e pausas, sem tentar percorrer uma longa extensão.",
+            "Manter o passeio concentrado nas torres próximas ao ponto de subida.",
+            "Por volta de 09:00, começar a retornar ao acesso de descida para sair de Mutianyu cedo."
           ],
           "zh": "慕田峪长城",
           "summary": "Trecho restaurado da muralha entre montanhas, com torres e escadarias. A visita principal da manhã já está definida.",
-          "arrival": "Aproximadamente 08:30",
-          "leave": "10:30",
-          "duration": "Cerca de 2h na muralha, incluindo fotos e pausas",
+          "arrival": "Por volta de 07:50",
+          "leave": "09:15",
+          "duration": "Cerca de 1h25 na muralha",
           "entry": "Torre do equipamento confirmado: região da 14 ou das 5–6",
           "exit": "Acesso de descida correspondente ao bilhete confirmado",
           "alerts": [
@@ -1919,12 +1839,11 @@ window.BEIJING_FINAL = {
         {
           "id": "26-descent",
           "type": "transport",
-          "time": "10:30–11:30",
+          "time": "09:15–10:00",
           "title": "Muralha → reencontro com motorista",
           "instructions": [
-            "Descer pelo equipamento e bilhete combinados antes da subida. Se o operador suspender o tobogã, seguir a alternativa acordada para cada adulto e criança; confirmar qualquer troca de bilhete com a equipe antes de entrar na fila.",
-            "Voltar à parada do shuttle e embarcar para o centro de visitantes inferior.",
-            "Avisar o motorista e encontrá-lo no ponto fotografado pela manhã. Banheiro e água antes de seguir viagem."
+            "Descer pelo equipamento confirmado, usar o shuttle se necessário e voltar ao ponto combinado com o motorista.",
+            "Assim que o grupo estiver reunido, sair direto para o Palácio de Verão."
           ],
           "transport": {
             "walkBefore": "5–15 min até/desde o equipamento",
@@ -1962,12 +1881,12 @@ window.BEIJING_FINAL = {
         {
           "id": "26-summer-drive",
           "type": "transport",
-          "time": "11:30–13:15",
-          "title": "Mutianyu → região do Palácio de Verão",
+          "time": "10:00–11:30",
+          "title": "Mutianyu → Palácio de Verão",
           "instructions": [
-            "Seguir com o motorista para a região do Portão Leste do Palácio de Verão: 颐和园东宫门.",
-            "Combinar uma parada de almoço nessa região; restaurante ainda a definir. Chegada de referência ao portão: 14:00, podendo ficar por volta de 14:15–14:30 se o trânsito ou a descida demorarem. Manter aproximadamente 2h30 de visita e avisar o motorista.",
-            "O motorista reencontrará o grupo no mesmo setor leste ao fim da visita. Confirmar o estacionamento/ponto permitido; não presumir parada na catraca."
+            "Seguir diretamente de Mutianyu para o Palácio de Verão com o motorista.",
+            "A meta é chegar ainda no fim da manhã. O trânsito pode alterar essa janela.",
+            "Ao chegar, combinar com o motorista o ponto e a forma de reencontro após a visita."
           ],
           "transport": {
             "walkBefore": "Até 5 min para embarcar",
@@ -1982,34 +1901,20 @@ window.BEIJING_FINAL = {
           ]
         },
         {
-          "id": "26-lunch",
-          "type": "meal",
-          "time": "13:15–14:00",
-          "title": "Almoço — restaurante a definir",
-          "instructions": [
-            "Restaurante a definir. Área conveniente: arredores do Portão Leste do Palácio de Verão.",
-            "O bloco inclui sentar, alimentar as crianças e uma pausa. Não há estabelecimento reservado."
-          ],
-          "sources": []
-        },
-        {
           "id": "26-summer",
           "type": "visit",
-          "time": "14:00–16:30",
-          "title": "Palácio de Verão",
+          "time": "11:30–12:30",
+          "title": "Palácio de Verão · primeira parte",
           "instructions": [
-            "14:00–14:25 — entrar por Donggongmen 东宫门, Portão Leste; alcançar o pátio de Renshoudian 仁寿殿 e seguir em direção ao lago. Renshoumen 仁寿门 é o portão desse conjunto, distinto do salão.",
-            "14:25–14:50 — passar pela região de Leshoutang 乐寿堂, entre os pátios e a margem norte do Lago Kunming.",
-            "14:50–15:30 — seguir para oeste pelo Longo Corredor 长廊 até a região de Paiyunmen 排云门. Na planta local, distinguir o portão 排云门 do salão 排云殿 e confirmar ali o ponto de retorno. Fotografar as pinturas e a vista do Pavilhão do Incenso Budista, sem subir a encosta.",
-            "15:30–16:10 — retornar para leste pelos caminhos abertos junto da margem norte, com pausa curta e fotos; reencontrar o setor de Renshoudian. Se houver trecho interrompido na margem, usar a volta sinalizada pelo corredor e pelos pátios.",
-            "16:10–16:30 — alcançar o Portão Leste, sair e caminhar ao ponto combinado com o motorista. O retorno pela mesma margem é intencional.",
-            "O percurso inclui lago, pátios e Longo Corredor. Não depende de barco, subida da colina ou acesso a setores extras pagos."
+            "Entrar no Palácio de Verão e começar a visita ainda de manhã.",
+            "Escolher um trecho inicial confortável, sem tentar fechar todo o parque antes do almoço.",
+            "Por volta de 12:30, fazer a pausa para comer dentro da região do palácio."
           ],
           "zh": "颐和园",
           "summary": "Jardins imperiais à beira do Lago Kunming. Percurso compacto pelo setor leste e pelo Longo Corredor.",
-          "arrival": "Por volta de 14:00",
-          "leave": "16:30, ajustável à chegada",
-          "duration": "2h30",
+          "arrival": "Fim da manhã",
+          "leave": "12:30 para o almoço",
+          "duration": "Primeira parte antes do almoço",
           "entry": "东宫门 · Donggongmen, Portão Leste",
           "exit": "O mesmo Portão Leste, para reencontrar o motorista",
           "alerts": [
@@ -2109,13 +2014,42 @@ window.BEIJING_FINAL = {
           }
         },
         {
+          "id": "26-lunch",
+          "type": "meal",
+          "time": "12:30–13:30",
+          "title": "Almoço no Palácio de Verão — local a definir",
+          "instructions": [
+            "Almoçar no Palácio de Verão ou imediatamente na área de visita, sem sair para outro bairro.",
+            "Depois do almoço, decidir quanto tempo ainda querem permanecer no palácio."
+          ],
+          "sources": []
+        },
+        {
+          "sources": [
+            "summer",
+            "summer-access",
+            "summer-map"
+          ],
+          "id": "26-summer-open",
+          "type": "visit",
+          "time": "13:30–a definir",
+          "title": "Palácio de Verão · continuação com tempo aberto",
+          "zh": "颐和园",
+          "summary": "A duração desta segunda parte será decidida no local.",
+          "instructions": [
+            "Continuar o passeio pelo Palácio de Verão pelo tempo que fizer sentido para o grupo.",
+            "Não há horário rígido para encerrar; considerar cansaço das crianças e o descanso planejado no hotel.",
+            "Quando decidirem sair, chamar o motorista e voltar ao Xingyi."
+          ]
+        },
+        {
           "id": "26-return",
           "type": "transport",
-          "time": "16:30–18:00",
+          "time": "A definir · após o Palácio",
           "title": "Palácio de Verão → hotel",
           "instructions": [
-            "Encontrar o motorista no setor leste combinado, usando a mensagem e a localização acordadas antes da visita.",
-            "Voltar diretamente ao Xingyi. A chegada de referência é 18:00; com trânsito intenso pode ficar mais tarde."
+            "Ao encerrar a visita, reencontrar o motorista e voltar ao hotel.",
+            "O horário depende de quanto tempo o grupo decidir permanecer no Palácio de Verão."
           ],
           "transport": {
             "walkBefore": "5–10 min do Portão Leste ao ponto combinado",
@@ -2128,13 +2062,25 @@ window.BEIJING_FINAL = {
           "sources": []
         },
         {
-          "id": "26-dinner",
-          "type": "meal",
-          "time": "19:00–20:00",
-          "title": "Jantar — opção será escolhida posteriormente",
+          "sources": [],
+          "id": "26-rest",
+          "type": "rest",
+          "time": "Após o retorno–fim da tarde",
+          "title": "Descanso no hotel",
           "instructions": [
-            "Restaurante a definir. Área conveniente: arredores do hotel; depois de descanso e troca das crianças.",
-            "O bloco inclui sentar, alimentar as crianças e uma pausa. Não há estabelecimento reservado."
+            "Descansar no hotel depois do Palácio de Verão.",
+            "Só decidir o passeio da noite depois dessa pausa."
+          ]
+        },
+        {
+          "id": "26-dinner",
+          "type": "visit",
+          "time": "19:00–21:30",
+          "title": "Noite flexível — região a escolher",
+          "instructions": [
+            "Escolher uma opção no dia: Niujie, uma região nova, Qianmen/Dashilar ou Wangfujing.",
+            "Usar a noite como passeio leve e jantar, sem obrigação de cumprir uma sequência fixa.",
+            "Se Qianmen/Dashilar já tiver sido suficiente no dia 24, priorizar uma das outras opções."
           ],
           "sources": []
         }
@@ -2144,11 +2090,11 @@ window.BEIJING_FINAL = {
       "id": "27",
       "date": "27 setembro",
       "weekday": "Domingo",
-      "title": "Príncipe Gong, Beihai e partida",
-      "summary": "Mansão do Príncipe Gong → Parque Beihai → hotel → aeroporto",
-      "departure": "08:00",
-      "returnTime": "15:00 ao hotel · voo 21:30",
-      "note": "Checkout antes do passeio. Reservar a manhã do Príncipe Gong para 27/09; malas no hotel conforme combinado. Preservar a saída ao aeroporto às 16:30.",
+      "title": "Dia livre e partida",
+      "summary": "Dia livre → hotel → aeroporto → voo para Shanghai",
+      "departure": "Livre",
+      "returnTime": "Saída ao aeroporto 16:30 · voo 21:30",
+      "note": "Sem atrações fixas. Manhã e começo da tarde livres; preservar checkout, guarda das malas e a saída do hotel para o aeroporto às 16:30.",
       "steps": [
         {
           "id": "27-checkout",
@@ -2156,9 +2102,9 @@ window.BEIJING_FINAL = {
           "time": "07:15–08:00",
           "title": "Checkout e guarda das malas",
           "instructions": [
-            "Entregar o quarto e combinar a guarda das malas até a tarde. Etiquetar/guardar o comprovante e confirmar como será a retirada.",
-            "Levar passaportes, itens das crianças e somente o necessário para o passeio. O acesso ao quarto termina no checkout.",
-            "Confirmar o transporte do hotel para PEK Terminal 2 às 16:30; o motorista do dia 26 não está presumido como contratado também no dia 27."
+            "Fazer checkout e combinar a guarda das malas até a tarde.",
+            "Separar passaportes e itens de mão; o restante pode ficar guardado no hotel.",
+            "Reconfirmar o transporte para o aeroporto às 16:30."
           ],
           "zh": "星怡酒店（北京天坛东门地铁站店）",
           "alerts": [
@@ -2167,275 +2113,26 @@ window.BEIJING_FINAL = {
           "sources": []
         },
         {
-          "id": "27-gong-car",
-          "type": "transport",
-          "time": "08:00–09:00",
-          "title": "Hotel → Mansão do Príncipe Gong",
-          "zh": "恭王府博物馆 一号门 · 前海西街17号",
+          "sources": [],
+          "id": "27-free-day",
+          "type": "rest",
+          "time": "08:00–15:00",
+          "title": "Dia livre",
           "instructions": [
-            "Após deixar as malas no hotel, pedir carro para 恭王府博物馆 一号门, entrada de visitantes da Mansão do Príncipe Gong.",
-            "O museu fica em hutongs com espaço restrito para veículos. Descer no ponto permitido e seguir a pé ao Portão 1; confirmar o acesso com o motorista.",
-            "Com passaporte, ir ao serviço de atendimento 综合服务处 para apresentar o documento da compra e obter o comprovante de entrada, conforme a regra publicada."
-          ],
-          "transport": {
-            "walkBefore": "0–5 min até o carro",
-            "ride": "30–40 min de táxi/DiDi",
-            "transfer": "Sem baldeação",
-            "walkAfter": "5–10 min até o portão",
-            "buffer": "10–20 min para fila e atendimento de passaportes"
-          },
-          "sources": [
-            "gong-visit",
-            "gong-tickets"
-          ]
-        },
-        {
-          "id": "27-gong",
-          "type": "visit",
-          "time": "09:00–11:00",
-          "title": "Mansão do Príncipe Gong",
-          "zh": "恭王府博物馆",
-          "summary": "Pátios da residência principesca e jardim histórico; visita de duas horas antes de Beihai.",
-          "arrival": "09:00",
-          "leave": "11:00",
-          "duration": "2 h, com pausas",
-          "entry": "一号门 · Portão 1, seguindo a reserva",
-          "exit": "Saída sinalizada para a rua; confirmar o caminho para Beihai Norte",
-          "instructions": [
-            "Após a validação, fotografar a planta do museu e percorrer os pátios da residência pelos espaços abertos ao público.",
-            "Continuar para o jardim, reconhecendo 西洋门 Portão Ocidental e os pavilhões. Seguir o circuito sinalizado, sem presumir uma passagem por salões fechados.",
-            "Na região da estela 福字碑, avaliar a fila e os degraus. Se houver espera longa, manter o passeio pelos pátios e jardins sem comprometer a saída.",
-            "Por volta de 10:45, seguir as placas de saída; reservar o fim do bloco para banheiro, crianças e encontro do grupo."
-          ],
-          "alerts": [
-            "Abre 08:30; fecha 17:00, com última entrada 16:10. O passeio é domingo, 27/09.",
-            "Jardins têm soleiras, degraus e passagens estreitas. Confirmar percurso com carrinho na entrada; não contar com espetáculo no teatro."
-          ],
-          "sources": [
-            "gong-visit",
-            "gong-tickets",
-            "gong-book"
-          ],
-          "admission": {
-            "type": "paid",
-            "label": "¥40 adulto · reserva antecipada",
-            "items": [
-              {
-                "label": "Ingresso",
-                "value": "¥40 por adulto para visitar a mansão e o jardim."
-              },
-              {
-                "label": "Bebê e criança de 4 anos",
-                "value": "Grátis: até 6 anos inclusive OU até 1,20 m inclusive. Levar passaportes e incluir no procedimento indicado pela reserva."
-              },
-              {
-                "label": "Jovens e idosos",
-                "value": "Meia ¥20 para maiores de 6 até 18 anos inclusive e estudantes elegíveis, incluindo estrangeiros com comprovação. A tabela prevê meia para 60+; confirmar a categoria para passaporte estrangeiro."
-              },
-              {
-                "label": "Reserva de 27/09",
-                "value": "Compra nominal antecipada, com abertura dez dias antes às 20h de Pequim: desde 17/09. Selecionar a manhã e conferir disponibilidade."
-              },
-              {
-                "label": "Passaporte",
-                "value": "Cadastrar o passaporte e levar o original ao 综合服务处 para trocar pelo comprovante de entrada. Prever tempo para esse atendimento."
-              }
-            ],
-            "links": [
-              {
-                "label": "Comprar no site oficial",
-                "url": "https://mall.pgm.org.cn/"
-              },
-              {
-                "label": "Regras de ingresso",
-                "url": "https://www.pgm.org.cn/pgm/pwfw/202307/3cbdbeee2c9d4c6584c6a8afbab7b21a.shtml"
-              },
-              {
-                "label": "Acessos e guia oficial",
-                "url": "https://www.pgm.org.cn/pgm/daolan/daolan.shtml"
-              }
-            ],
-            "notes": [
-              "Compra não confirmada. Atendimento de ingressos: +86 10 83286859."
-            ]
-          },
-          "photos": [
-            {
-              "src": "assets/images/mansao-principe-gong/01.webp",
-              "alt": "Fachada histórica da Mansão do Príncipe Gong. Foto de referência: confirmar a fila e o Portão 1 pela sinalização atual.",
-              "caption": "Fachada histórica da Mansão do Príncipe Gong. Foto de referência: confirmar a fila e o Portão 1 pela sinalização atual.",
-              "credit": "Hermann Luyken / Wikimedia Commons",
-              "page": "https://commons.wikimedia.org/wiki/File:2014.08.17.154948_Entrance_Prince_Gong%27s_Mansion_Beijing.jpg",
-              "license": "CC0",
-              "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
-            },
-            {
-              "src": "assets/images/mansao-principe-gong/02.webp",
-              "alt": "Pátio da residência com fachadas, corredores e soleiras; referência da arquitetura interna.",
-              "caption": "Pátio da residência com fachadas, corredores e soleiras; referência da arquitetura interna.",
-              "credit": "Caitriana Nicholson from 北京 ~ Beijing, 中国 ~ China / Wikimedia Commons",
-              "page": "https://commons.wikimedia.org/wiki/File:GongWangFu_courtyard_(2917111732).jpg",
-              "license": "CC BY-SA 2.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
-            }
-          ]
-        },
-        {
-          "id": "27-gong-beihai",
-          "type": "transport",
-          "time": "11:00–11:30",
-          "title": "Príncipe Gong → Portão Norte de Beihai",
-          "zh": "北海公园 北门",
-          "instructions": [
-            "Ao sair do museu, localizar o caminho de pedestres para 地安门西大街 Di’anmen West Street e 北海公园北门 Portão Norte de Beihai.",
-            "Usar as travessias sinalizadas para alcançar o lado do parque. A saída efetiva do museu define o começo do percurso; conferir o trajeto no aplicativo antes de caminhar.",
-            "Comprar ou validar o ingresso no Portão Norte. Não confundir 北海北, a estação de metrô, com o portão do parque."
-          ],
-          "transport": {
-            "walkBefore": "Incluída no percurso",
-            "ride": "20–25 min a pé, estimativa",
-            "transfer": "Sem baldeação",
-            "walkAfter": "Incluída até o Portão Norte",
-            "buffer": "5–10 min para bilheteria/validação"
-          },
-          "sources": [
-            "gong-visit",
-            "beihai-visit",
-            "beihai-onsite"
-          ]
-        },
-        {
-          "id": "27-beihai",
-          "type": "visit",
-          "time": "11:30–13:00",
-          "title": "Parque Beihai",
-          "zh": "北海公园",
-          "summary": "Circuito pela margem norte: Muro dos Nove Dragões, Pavilhões dos Cinco Dragões e vista da Pagoda Branca do outro lado do lago.",
-          "arrival": "11:30",
-          "leave": "13:00",
-          "duration": "1 h 30, com pausas",
-          "entry": "北门 · Portão Norte",
-          "exit": "北门 · Portão Norte, para almoço e carro ao hotel",
-          "instructions": [
-            "Entrar pelo Portão Norte e fotografar a planta. Seguir as placas 九龙壁 para o Muro dos Nove Dragões, conforme os recintos abertos.",
-            "Continuar à margem norte até 五龙亭 Pavilhões dos Cinco Dragões, com pausa para fotos do lago e da Pagoda Branca ao longe.",
-            "O percurso fica na margem norte; não inclui barco, travessia até a ilha nem subida à Pagoda Branca. Esses extras exigiriam mais tempo e outros bilhetes.",
-            "Por volta de 12:40, iniciar o retorno ao Portão Norte pelos caminhos sinalizados; sair às 13:00 para almoçar."
-          ],
-          "alerts": [
-            "Setembro: parque 06:00–21:00, entrada até 20:30; recintos internos 08:00–18:00, entrada até 17:30.",
-            "Manter o circuito curto neste dia de voo. Havendo atraso no museu ou no parque, reduzir a permanência, preservando a saída do hotel para o aeroporto às 16:30."
-          ],
-          "sources": [
-            "beihai-prices",
-            "beihai-visit",
-            "beihai-onsite",
-            "beihai-seniors",
-            "parks-minor-discounts",
-            "park-tickets"
-          ],
-          "admission": {
-            "type": "paid",
-            "label": "¥10 adulto · ingresso do parque",
-            "items": [
-              {
-                "label": "Bilhete deste passeio",
-                "value": "¥10 por adulto em setembro para o parque e o circuito da margem norte. Combinado ¥20, somente se ampliar a visita aos setores pagos; barco não incluído."
-              },
-              {
-                "label": "Bebê e criança de 4 anos",
-                "value": "Grátis: crianças até 6 anos inclusive OU até 1,20 m inclusive, com documento válido."
-              },
-              {
-                "label": "Meia e idosos",
-                "value": "Meia do parque ¥5 para jovens de mais de 6 até 18 anos e estudantes elegíveis, com comprovante. Para 60+, apresentar documento no atendimento; confirmar com o passaporte a aplicação da gratuidade publicada."
-              },
-              {
-                "label": "Compra",
-                "value": "Bilhete presencial no portão, sem reserva obrigatória, ou pelo Changyou Park. Levar passaportes e guardar QR/bilhete. Não é necessário reservar por telefone para comprar na entrada."
-              }
-            ],
-            "links": [
-              {
-                "label": "Comprar no Changyou Park",
-                "url": "https://www.bjgyol.com.cn/"
-              },
-              {
-                "label": "Compra presencial: orientação oficial atualizada",
-                "url": "https://english.beijing.gov.cn/12345hotline/faqs/all/202506/t20250620_4117982.html"
-              },
-              {
-                "label": "Atrações, preços e horários",
-                "url": "https://s.visitbeijing.com.cn/attraction/117807"
-              }
-            ],
-            "notes": [
-              "Atendimento: +86 10 64037972; inglês das 08:30 às 17:00."
-            ]
-          },
-          "photos": [
-            {
-              "src": "assets/images/parque-beihai/04.webp",
-              "alt": "Muro dos Nove Dragões 九龙壁, no setor norte de Beihai.",
-              "caption": "Muro dos Nove Dragões 九龙壁, no setor norte de Beihai.",
-              "credit": "EditQ / Wikimedia Commons",
-              "page": "https://commons.wikimedia.org/wiki/File:Nine_Dragon_Wall,_Beihai_Park_1.jpg",
-              "license": "CC BY-SA 4.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
-            },
-            {
-              "src": "assets/images/parque-beihai/03.webp",
-              "alt": "Pavilhões dos Cinco Dragões 五龙亭, na margem norte. Registro de inverno; vegetação e lago estarão diferentes em setembro.",
-              "caption": "Pavilhões dos Cinco Dragões 五龙亭, na margem norte. Registro de inverno; vegetação e lago estarão diferentes em setembro.",
-              "credit": "Ermell / Wikimedia Commons",
-              "page": "https://commons.wikimedia.org/wiki/File:Peking_Beihai_Park_Five_dragon_Pavilion-20110104-RM-110807.jpg",
-              "license": "CC BY-SA 4.0",
-              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
-            }
-          ]
-        },
-        {
-          "id": "27-lunch",
-          "type": "meal",
-          "time": "13:00–14:00",
-          "title": "Almoço perto do Portão Norte de Beihai",
-          "instructions": [
-            "Escolher um restaurante na região do Portão Norte / Di’anmen West Street; estabelecimento ainda a definir.",
-            "Almoçar antes de voltar ao hotel e combinar o ponto de embarque na rua permitida."
-          ],
-          "sources": []
-        },
-        {
-          "id": "27-back-hotel",
-          "type": "transport",
-          "time": "14:00–15:00",
-          "title": "Beihai → hotel para retirar malas",
-          "zh": "北海公园 北门 → 星怡酒店",
-          "instructions": [
-            "Após o almoço, confirmar no aplicativo um ponto permitido na região de 地安门西大街 Di’anmen West Street, perto do Portão Norte de Beihai.",
-            "Pedir carro para 星怡酒店（北京天坛东门地铁站店）, endereço 北京市东城区天坛东里甲48号1号楼.",
-            "Avisar a recepção da retirada das malas e reconfirmar a saída para o aeroporto às 16:30."
-          ],
-          "transport": {
-            "walkBefore": "5–10 min até o embarque",
-            "ride": "30–40 min de táxi/DiDi",
-            "transfer": "Sem baldeação",
-            "walkAfter": "0–5 min até a recepção",
-            "buffer": "5–15 min de espera e trânsito"
-          },
-          "sources": [
-            "beihai-visit"
+            "Não há passeio obrigatório programado para o dia 27.",
+            "Escolher no próprio dia entre descansar, passear perto do hotel ou revisitar algum lugar, conforme energia e clima.",
+            "Evitar um deslocamento que coloque em risco o retorno ao hotel para retirar as malas e sair às 16:30."
           ]
         },
         {
           "id": "27-bags",
           "type": "logistics",
           "time": "15:00–16:30",
-          "title": "Retirar malas e pausa antes do aeroporto",
+          "title": "Retirar malas e preparar saída",
           "instructions": [
-            "Retirar e conferir todas as malas na recepção. Deixar passaportes e documentos do voo na bolsa de mão.",
-            "Pausa em área comum conforme disponibilidade do hotel; não contar com retorno ao quarto, já entregue pela manhã.",
-            "Organizar água, lanche e itens das crianças para o aeroporto. Confirmar o veículo para saída às 16:30."
+            "Voltar ao hotel com folga, retirar e conferir todas as malas.",
+            "Deixar passaportes e documentos do voo na bagagem de mão.",
+            "Organizar água, lanche e itens das crianças e confirmar o veículo para 16:30."
           ],
           "duration": "Janela de cerca de 2h, incluindo folga de retorno",
           "sources": []
@@ -2491,5 +2188,5 @@ window.BEIJING_FINAL = {
       ]
     }
   ],
-  "reviewNote": "Roteiro, deslocamentos e ingressos revisados em 20/09/2026. Horários são estimativas; reservas e disponibilidade não foram confirmadas. Voo e terminal mantêm a informação de 16/09/2026 e devem ser reconferidos na viagem."
+  "reviewNote": "Roteiro revisado em 23/09/2026 com a nova ordem dos dias 24–27: dia 24 concentra templos, hutongs, Shichahai e Qianmen/Dashilar; dia 25 mantém Tian’anmen, Cidade Proibida e Jingshan com tarde flexível; dia 26 combina Mutianyu e Palácio de Verão com duração aberta após o almoço; dia 27 fica livre antes do aeroporto. Horários são estimativas e restaurantes continuam a definir."
 };
